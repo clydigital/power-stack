@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Power Stack — cross-market investment research vault for nuclear, AI infrastructure, grid, uranium, oil & gas and adjacent themes." />
+  <title>Power Stack</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">INVESTMENT RESEARCH VAULT</div>
+        <h1>POWER STACK</h1>
+        <p class="lede">Nuclear · AI infrastructure · grid · uranium · oil & gas · metals · Malaysia / HK / US</p>
+      </div>
+      <div class="hero-stats" id="heroStats"></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="controls panel">
+      <input id="search" type="search" placeholder="Search ticker, company, thesis, catalyst, risk, region…" autocomplete="off" />
+      <div class="filter-group"><span class="label">Theme</span><div id="themeFilters" class="chips"></div></div>
+      <div class="filter-group"><span class="label">Region</span><div id="regionFilters" class="chips"></div></div>
+      <div class="filter-group"><span class="label">Status</span><div id="statusFilters" class="chips"></div></div>
+    </section>
+
+    <section class="theme-map panel">
+      <div class="section-title">Adjacency Map</div>
+      <div class="flow"><b>AI compute</b><span>→</span> networking / cooling <span>→</span> switchgear / power management <span>→</span> cables / substations <span>→</span> grid builders <span>→</span> utilities / generation <span>→</span> gas / nuclear / renewables <span>→</span> uranium / fuel / metals</div>
+      <div class="flow oil"><b>Energy security</b><span>→</span> upstream oil & gas <span>→</span> pipelines / storage <span>→</span> LNG export <span>→</span> terminals <span>→</span> refining / products</div>
+      <p class="micro">AI-crash risk = likely share-price sensitivity to an AI capex bust. Theme dependency = how much the underlying business actually needs the current theme to stay strong.</p>
+    </section>
+
+    <section class="toolbar">
+      <div><span id="count">0</span> ideas</div>
+      <select id="sort">
+        <option value="conviction">Sort: conviction</option>
+        <option value="aiRisk">Sort: lowest AI risk</option>
+        <option value="themeDependency">Sort: lowest theme dependency</option>
+        <option value="cyclicality">Sort: lowest cyclicality</option>
+        <option value="ticker">Sort: ticker</option>
+      </select>
+    </section>
+
+    <section id="grid" class="grid"></section>
+  </main>
+
+  <dialog id="detailDialog">
+    <div class="dialog-head"><div><div class="eyebrow" id="dialogMarket"></div><h2 id="dialogTitle"></h2></div><button id="closeDialog" class="icon-btn">×</button></div>
+    <div id="dialogBody" class="dialog-body"></div>
+  </dialog>
+
+  <footer class="wrap footer">Source of truth: <code>data/ideas.json</code> in GitHub. Update the research by committing changes to that file.</footer>
+  <script src="app.js"></script>
+</body>
+</html>
