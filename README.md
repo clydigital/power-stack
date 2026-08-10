@@ -20,8 +20,13 @@ A scheduled GitHub Action refreshes the snapshot after the Live Desk research sl
 
 `context conviction = base conviction + theme score × (theme dependency / 5) × 0.5`
 
-The maximum adjustment is ±1.0 point.
+The maximum adjustment is ±1.0 point. Version 2 of the feed also exposes public-safe component signals. Power Stack shows each signal’s individual contribution, source/timestamp and any contradiction/research trigger. Stale packets or stale theme inputs apply **zero** adjustment.
 
 ## Hosting
 
 GitHub Pages publishes from `main`.
+
+
+## Context transparency
+
+For each idea, Power Stack now keeps **Base Conviction** separate from **Context-Adjusted Conviction**. Each contributing Live Desk signal is scaled by the idea’s `themeDependency`, listed in the detail view, and summed to the capped context delta. Contradictions and research triggers are displayed as watch items but do not directly change conviction.
