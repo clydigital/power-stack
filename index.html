@@ -2,58 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Power Stack — cross-market investment research vault for nuclear, AI infrastructure, grid, uranium, oil & gas and adjacent themes." />
   <title>Power Stack</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="hero">
-    <div class="wrap hero-grid">
-      <div>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-block">
         <div class="eyebrow">INVESTMENT RESEARCH VAULT</div>
-        <h1>POWER STACK</h1>
-        <p class="lede">Nuclear · AI infrastructure · grid · uranium · oil & gas · metals · Malaysia / HK / US</p>
+        <div class="brand">POWER STACK</div>
+        <div class="brand-sub">AI · POWER · NUCLEAR · OIL</div>
       </div>
-      <div class="hero-stats" id="heroStats"></div>
+
+      <nav class="side-scroll">
+        <section class="side-section">
+          <div class="side-heading">Idea universe</div>
+          <div id="allIdeasNav"></div>
+        </section>
+        <section class="side-section">
+          <div class="side-heading">Themes</div>
+          <div id="themeNav" class="side-nav"></div>
+        </section>
+        <section class="side-section">
+          <div class="side-heading">Regions</div>
+          <div id="regionNav" class="side-nav"></div>
+        </section>
+        <section class="side-section">
+          <div class="side-heading">Research state</div>
+          <div id="statusNav" class="side-nav"></div>
+        </section>
+        <section class="side-section live-pulse-section">
+          <div class="side-heading row-between"><span>Live Desk pulse</span><span id="sidebarLiveDot" class="live-dot"></span></div>
+          <div id="livePulse"></div>
+          <div id="liveTimestamp" class="side-micro">Waiting for Live Desk…</div>
+        </section>
+      </nav>
+
+      <div class="side-footer">
+        <span>Source of truth</span>
+        <strong>GitHub · ideas.json</strong>
+      </div>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">CROSS-MARKET IDEA DATABASE</div>
+          <h1>All Ideas</h1>
+          <p id="viewSubtitle">Long-duration theses with a separate Live Desk context overlay.</p>
+        </div>
+        <div class="top-actions">
+          <div id="liveBadge" class="live-badge offline"><span></span> Live Desk connecting</div>
+          <a class="ghost-link" href="https://alchemy-live-market-desk.vercel.app" target="_blank" rel="noopener">Open Live Desk ↗</a>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <section id="summaryStats" class="summary-grid"></section>
+
+        <section class="context-panel panel">
+          <div class="context-head">
+            <div>
+              <div class="eyebrow">LIVE DESK OVERLAY</div>
+              <h2 id="contextTitle">Cross-theme pulse</h2>
+            </div>
+            <div id="contextMeta" class="context-meta">Loading read-only context…</div>
+          </div>
+          <div id="contextBody" class="context-body"></div>
+          <div class="context-rule">The overlay can nudge context by at most ±1 conviction point. It never overwrites the long-term research score.</div>
+        </section>
+
+        <section class="control-row panel">
+          <div class="search-wrap">
+            <span>⌕</span>
+            <input id="search" type="search" placeholder="Search ticker, company, thesis, catalyst, risk…" autocomplete="off" />
+          </div>
+          <select id="sort" aria-label="Sort ideas">
+            <option value="conviction">Highest conviction</option>
+            <option value="contextConviction">Live-adjusted context</option>
+            <option value="aiRisk">Lowest AI crash risk</option>
+            <option value="themeDependency">Lowest theme dependency</option>
+            <option value="cyclicality">Lowest cyclicality</option>
+            <option value="ticker">Ticker A–Z</option>
+          </select>
+        </section>
+
+        <section class="result-bar">
+          <div><strong id="count">0</strong> ideas shown</div>
+          <button id="clearFilters" class="text-button">Clear filters</button>
+        </section>
+
+        <section id="grid" class="idea-grid"></section>
+      </main>
+
+      <footer class="footer">Power Stack is a research memory system, not an automated recommendation engine. Live Desk data is read-only context.</footer>
     </div>
-  </header>
-
-  <main class="wrap">
-    <section class="controls panel">
-      <input id="search" type="search" placeholder="Search ticker, company, thesis, catalyst, risk, region…" autocomplete="off" />
-      <div class="filter-group"><span class="label">Theme</span><div id="themeFilters" class="chips"></div></div>
-      <div class="filter-group"><span class="label">Region</span><div id="regionFilters" class="chips"></div></div>
-      <div class="filter-group"><span class="label">Status</span><div id="statusFilters" class="chips"></div></div>
-    </section>
-
-    <section class="theme-map panel">
-      <div class="section-title">Adjacency Map</div>
-      <div class="flow"><b>AI compute</b><span>→</span> networking / cooling <span>→</span> switchgear / power management <span>→</span> cables / substations <span>→</span> grid builders <span>→</span> utilities / generation <span>→</span> gas / nuclear / renewables <span>→</span> uranium / fuel / metals</div>
-      <div class="flow oil"><b>Energy security</b><span>→</span> upstream oil & gas <span>→</span> pipelines / storage <span>→</span> LNG export <span>→</span> terminals <span>→</span> refining / products</div>
-      <p class="micro">AI-crash risk = likely share-price sensitivity to an AI capex bust. Theme dependency = how much the underlying business actually needs the current theme to stay strong.</p>
-    </section>
-
-    <section class="toolbar">
-      <div><span id="count">0</span> ideas</div>
-      <select id="sort">
-        <option value="conviction">Sort: conviction</option>
-        <option value="aiRisk">Sort: lowest AI risk</option>
-        <option value="themeDependency">Sort: lowest theme dependency</option>
-        <option value="cyclicality">Sort: lowest cyclicality</option>
-        <option value="ticker">Sort: ticker</option>
-      </select>
-    </section>
-
-    <section id="grid" class="grid"></section>
-  </main>
+  </div>
 
   <dialog id="detailDialog">
-    <div class="dialog-head"><div><div class="eyebrow" id="dialogMarket"></div><h2 id="dialogTitle"></h2></div><button id="closeDialog" class="icon-btn">×</button></div>
+    <div class="dialog-head">
+      <div>
+        <div id="dialogMarket" class="eyebrow"></div>
+        <h2 id="dialogTitle"></h2>
+      </div>
+      <button id="closeDialog" class="icon-btn" aria-label="Close">×</button>
+    </div>
     <div id="dialogBody" class="dialog-body"></div>
   </dialog>
 
-  <footer class="wrap footer">Source of truth: <code>data/ideas.json</code> in GitHub. Update the research by committing changes to that file.</footer>
   <script src="app.js"></script>
 </body>
 </html>
