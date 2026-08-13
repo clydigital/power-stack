@@ -42,7 +42,7 @@
 
       <div class="side-footer">
         <span>Source of truth</span>
-        <strong>GitHub · ideas + robotics research</strong>
+        <strong>GitHub · ideas + category research</strong>
       </div>
     </aside>
 
@@ -119,29 +119,35 @@
         const url = typeof input === 'string' ? input : input?.url;
         if (url !== 'data/ideas.json') return nativeFetch(input, init);
 
-        const [coreRes, roboticsRes] = await Promise.all([
+        const [coreRes, roboticsRes, opportunityRes] = await Promise.all([
           nativeFetch(input, init),
-          nativeFetch('data/robotics-research.json', { cache: 'no-store' }).catch(() => null)
+          nativeFetch('data/robotics-research.json', { cache: 'no-store' }).catch(() => null),
+          nativeFetch('data/video-opportunity-research.json', { cache: 'no-store' }).catch(() => null)
         ]);
 
-        if (!coreRes.ok || !roboticsRes?.ok) return coreRes;
+        if (!coreRes.ok) return coreRes;
 
         const core = await coreRes.json();
-        const roboticsPayload = await roboticsRes.json();
-        const robotics = Array.isArray(roboticsPayload?.ideas) ? roboticsPayload.ideas : [];
+        const roboticsPayload = roboticsRes?.ok ? await roboticsRes.json() : null;
+        const opportunityPayload = opportunityRes?.ok ? await opportunityRes.json() : null;
+        const supplemental = [
+          ...(Array.isArray(roboticsPayload?.ideas) ? roboticsPayload.ideas : []),
+          ...(Array.isArray(opportunityPayload?.ideas) ? opportunityPayload.ideas : [])
+        ];
         const existing = new Set(core.map(x => x.ticker));
-        const normalisedRobotics = robotics
+        const normalisedSupplemental = supplemental
           .filter(x => !existing.has(x.ticker))
+          .filter((x, i, arr) => arr.findIndex(y => y.ticker === x.ticker) === i)
           .map(x => ({
             ...x,
             aiRisk: x.aiRisk ?? 3,
             themeDependency: x.themeDependency ?? 3,
             cyclicality: x.cyclicality ?? 3,
             speculation: x.speculation ?? (/speculative/i.test(x.status || '') ? 4 : 2),
-            lastUpdated: x.lastUpdated ?? roboticsPayload.lastUpdated ?? '2026-08-13'
+            lastUpdated: x.lastUpdated ?? roboticsPayload?.lastUpdated ?? opportunityPayload?.lastUpdated ?? '2026-08-13'
           }));
 
-        return new Response(JSON.stringify([...core, ...normalisedRobotics]), {
+        return new Response(JSON.stringify([...core, ...normalisedSupplemental]), {
           status: 200,
           headers: { 'Content-Type': 'application/json' }
         });
