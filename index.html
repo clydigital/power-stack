@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Power Stack — cross-market investment research vault for nuclear, AI infrastructure, grid, uranium, oil & gas and adjacent themes." />
+  <meta name="description" content="Power Stack — cross-market investment research vault for nuclear, AI infrastructure, grid, uranium, oil & gas, robotics and adjacent themes." />
   <title>Power Stack</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -13,7 +13,7 @@
       <div class="brand-block">
         <div class="eyebrow">INVESTMENT RESEARCH VAULT</div>
         <div class="brand">POWER STACK</div>
-        <div class="brand-sub">AI · POWER · NUCLEAR · OIL</div>
+        <div class="brand-sub">AI · POWER · NUCLEAR · OIL · ROBOTICS</div>
       </div>
 
       <nav class="side-scroll">
@@ -42,7 +42,7 @@
 
       <div class="side-footer">
         <span>Source of truth</span>
-        <strong>GitHub · ideas.json</strong>
+        <strong>GitHub · ideas + robotics research</strong>
       </div>
     </aside>
 
@@ -112,6 +112,42 @@
     <div id="dialogBody" class="dialog-body"></div>
   </dialog>
 
+  <script>
+    (() => {
+      const nativeFetch = window.fetch.bind(window);
+      window.fetch = async (input, init) => {
+        const url = typeof input === 'string' ? input : input?.url;
+        if (url !== 'data/ideas.json') return nativeFetch(input, init);
+
+        const [coreRes, roboticsRes] = await Promise.all([
+          nativeFetch(input, init),
+          nativeFetch('data/robotics-research.json', { cache: 'no-store' }).catch(() => null)
+        ]);
+
+        if (!coreRes.ok || !roboticsRes?.ok) return coreRes;
+
+        const core = await coreRes.json();
+        const roboticsPayload = await roboticsRes.json();
+        const robotics = Array.isArray(roboticsPayload?.ideas) ? roboticsPayload.ideas : [];
+        const existing = new Set(core.map(x => x.ticker));
+        const normalisedRobotics = robotics
+          .filter(x => !existing.has(x.ticker))
+          .map(x => ({
+            ...x,
+            aiRisk: x.aiRisk ?? 3,
+            themeDependency: x.themeDependency ?? 3,
+            cyclicality: x.cyclicality ?? 3,
+            speculation: x.speculation ?? (/speculative/i.test(x.status || '') ? 4 : 2),
+            lastUpdated: x.lastUpdated ?? roboticsPayload.lastUpdated ?? '2026-08-13'
+          }));
+
+        return new Response(JSON.stringify([...core, ...normalisedRobotics]), {
+          status: 200,
+          headers: { 'Content-Type': 'application/json' }
+        });
+      };
+    })();
+  </script>
   <script src="app.js"></script>
 </body>
 </html>
