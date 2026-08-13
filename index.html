@@ -80,13 +80,22 @@
             <input id="search" type="search" placeholder="Search ticker, company, thesis, catalyst, risk…" autocomplete="off" />
           </div>
           <select id="sort" aria-label="Sort ideas">
-            <option value="conviction">Highest conviction</option>
-            <option value="contextConviction">Live-adjusted context</option>
-            <option value="aiRisk">Lowest AI crash risk</option>
-            <option value="themeDependency">Lowest theme dependency</option>
-            <option value="cyclicality">Lowest cyclicality</option>
-            <option value="ticker">Ticker A–Z</option>
+            <option value="conviction">Base conviction</option>
+            <option value="contextConviction">Context-adjusted conviction</option>
+            <option value="aiRisk">AI crash risk</option>
+            <option value="themeDependency">Theme dependency</option>
+            <option value="cyclicality">Cyclicality</option>
+            <option value="speculation">Speculation</option>
+            <option value="ticker">Ticker / company</option>
           </select>
+          <div class="view-toggle" role="group" aria-label="Idea presentation">
+            <button id="cardViewBtn" class="view-button active" type="button" aria-pressed="true" title="Card View">
+              <span aria-hidden="true">▦</span> Card
+            </button>
+            <button id="rowViewBtn" class="view-button" type="button" aria-pressed="false" title="Row View">
+              <span aria-hidden="true">☷</span> Row
+            </button>
+          </div>
         </section>
 
         <section class="result-bar">
