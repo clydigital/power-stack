@@ -1,90 +1,41 @@
 {
   "lastUpdated": "2026-08-13",
-  "ideas": [
+  "purpose": "Personal-investment research only. Video transcripts were used only to generate candidates; inclusion and scoring below are based on primary company disclosures and regulatory filings.",
+  "included": [
+    "TSLA",
+    "PATH",
+    "NET",
+    "SPCX"
+  ],
+  "screenedOut": [
     {
-      "ticker": "TSLA",
-      "name": "Tesla",
-      "market": "NASDAQ",
-      "region": "US",
-      "themeGroup": "Robotics / Automation",
-      "theme": "Energy storage + autonomy + humanoid robotics",
-      "conviction": 7.2,
-      "aiRisk": 4,
-      "themeDependency": 4,
-      "cyclicality": 4,
-      "speculation": 4,
-      "status": "Crossover watch",
-      "thesis": "Tesla is a long-duration crossover between grid-scale storage, autonomous transport and humanoid robotics. The near-term earnings story is still dominated by autos, but the physical infrastructure optionality is real enough to monitor inside Power Stack.",
-      "catalysts": "Energy-storage deployment growth, Megapack economics, robotaxi rollout, Optimus production milestones and evidence that heavy capex converts into new revenue pools.",
-      "risks": "Automotive revenue stagnation, valuation premium, execution risk across multiple moonshot programs, regulatory risk and long time-to-monetisation for robotics.",
-      "valuationTechnical": "Treat as a high-duration optionality name rather than a current industrial-growth compounder. Avoid paying a robotics multiple without commercial deployment evidence.",
-      "researchNote": "Q2 2026 deliveries were 480,126 and energy-storage deployments reached 13.5 GWh. The storage business gives Tesla a genuine Power Stack bridge even before Optimus becomes material.",
-      "lastUpdated": "2026-08-13",
-      "sources": [
-        {"label":"Tesla Q2 2026 production, deliveries & deployments","url":"https://ir.tesla.com/press-release/tesla-second-quarter-2026-production-deliveries-and-deployments"},
-        {"label":"Tesla Q2 2026 financial results","url":"https://ir.tesla.com/press-release/tesla-releases-second-quarter-2026-financial-results"}
-      ]
+      "ticker": "ICE",
+      "reason": "High-quality market infrastructure, but the transcript did not establish a differentiated Power Stack catalyst; adding it would broaden the system into general compounders."
     },
     {
-      "ticker": "PATH",
-      "name": "UiPath",
-      "market": "NYSE",
-      "region": "US",
-      "themeGroup": "Robotics / Automation",
-      "theme": "Enterprise agentic automation + orchestration",
-      "conviction": 7.8,
-      "aiRisk": 4,
-      "themeDependency": 4,
-      "cyclicality": 3,
-      "speculation": 3,
-      "status": "Automation software watch",
-      "thesis": "UiPath is not physical robotics, but it is a credible orchestration layer for enterprise agents, software robots and human workflows. If agentic AI adoption shifts from pilots into production, orchestration and governance can become the bottleneck rather than the model itself.",
-      "catalysts": "Agentic products moving into production, stronger net-new ARR, expansion of coding-agent integrations and evidence that orchestration broadens wallet share beyond legacy RPA.",
-      "risks": "Crowded agentic-software competition, platform commoditisation by hyperscalers, slower enterprise AI budgets and dependence on successful repositioning beyond RPA.",
-      "valuationTechnical": "More interesting after profitability and cash flow improved, but still requires sustained acceleration in ARR and customer expansion to justify a durable rerating.",
-      "researchNote": "Q1 FY2027 revenue grew 17% to $418m, ARR grew 12% to $1.901bn, GAAP operating income turned positive at $28m and adjusted free cash flow reached $130m. This is stronger operating evidence than a pure agentic-AI narrative.",
-      "lastUpdated": "2026-08-13",
-      "sources": [
-        {"label":"UiPath Q1 FY2027 results","url":"https://ir.uipath.com/news/detail/452/uipath-reports-first-quarter-fiscal-2027-financial-results"}
-      ]
+      "ticker": "SPGI",
+      "reason": "Valuable financial-data and ratings moat, but insufficient direct fit with the current energy, AI-infrastructure and automation architecture."
     },
     {
-      "ticker": "NET",
-      "name": "Cloudflare",
-      "market": "NYSE",
-      "region": "US",
-      "themeGroup": "AI / Data centres",
-      "theme": "Agentic internet traffic + edge/network infrastructure",
-      "conviction": 7.7,
-      "aiRisk": 4,
-      "themeDependency": 4,
-      "cyclicality": 3,
-      "speculation": 3,
-      "status": "AI infrastructure watch",
-      "thesis": "Cloudflare is a differentiated way to own the traffic, security and routing layer of the agentic internet rather than another compute vendor. AI agents increase machine-to-machine requests, security complexity and the need for efficient edge infrastructure.",
-      "catalysts": "AI-agent traffic growth, higher security/network spend, monetisation of agentic-internet tools and continued guidance upgrades.",
-      "risks": "Premium valuation, hyperscaler competition, AI traffic not translating proportionally into monetisation and high expectations after strong reratings.",
-      "valuationTechnical": "High-quality thematic fit but valuation sensitivity is significant. Prefer evidence-backed pullbacks over chasing post-earnings spikes.",
-      "researchNote": "Cloudflare says bot traffic now accounts for roughly 57% of web requests, and the company raised its annual outlook after AI-driven demand strengthened. This is a cleaner bandwidth/security beneficiary than assuming raw internet traffic automatically accrues to telecom incumbents.",
-      "lastUpdated": "2026-08-13",
-      "sources": [
-        {"label":"Cloudflare Precursor / bot-traffic update","url":"https://www.cloudflare.net/news/news-details/2026/Cloudflare-Introduces-Precursor-One-Click-Behavioral-Defense-Against-Modern-Bots/default.aspx"},
-        {"label":"Cloudflare Radar bot traffic","url":"https://radar.cloudflare.com/bots"}
-      ]
+      "ticker": "V",
+      "reason": "Payments compounder rather than Power Stack infrastructure; excluded on thematic fit, not on business quality."
+    },
+    {
+      "ticker": "MA",
+      "reason": "Payments compounder rather than Power Stack infrastructure; excluded on thematic fit, not on business quality."
+    },
+    {
+      "ticker": "MU",
+      "reason": "Memory is an important AI bottleneck, but the current stack already has concentrated AI-cycle exposure and the transcript supplied no durable edge beyond cycle strength."
+    },
+    {
+      "ticker": "NVDA",
+      "reason": "Core AI compute leader, but adding the obvious model-cycle beneficiary would raise AI crash risk and duplicate exposure already captured through infrastructure and test names."
     }
   ],
-  "researchNotes": [
-    {
-      "ticker": "SPCX",
-      "name": "SpaceX",
-      "status": "Dedicated investment research candidate",
-      "reason": "SpaceX spans several investable Power Stack themes at once: Starlink connectivity, launch infrastructure and a rapidly expanding AI-compute footprint. Keep it as a dedicated investment research candidate rather than forcing it into one category, with valuation, capital intensity, unlock supply and returns on capital as the main decision variables.",
-      "keyPoints": [
-        "Starlink remains the core profit engine and continues international expansion, including Vietnam in August 2026.",
-        "Q2 2026 revenue was reported around $7.8bn, up roughly 92% YoY, while heavy AI and launch capex remains the central valuation risk.",
-        "The August 6 unlock more than doubled tradable supply, yet the stock subsequently recovered sharply; more unlocks remain a near-term technical overhang.",
-        "The core investment question is whether Starlink cash generation can fund AI and Starship expansion while still producing attractive returns on invested capital."
-      ]
-    }
+  "notes": [
+    "SpaceX is now treated as a listed investment candidate, not an editorial or article topic.",
+    "Reported share-price moves, short interest, unlock trading reactions, chatbot rankings and merger speculation from the transcript were not used as thesis evidence.",
+    "Cloudflare bot traffic is treated as demand context, not proof that request volume converts one-for-one into revenue."
   ]
 }
