@@ -2,7 +2,8 @@ let ideas=[];
 let liveContext=null;
 const LIVE_URL='https://alchemy-live-market-desk.vercel.app/api/power-stack-context';
 const CONTEXT_PACKET_MAX_HOURS=18;
-const state={theme:'All',region:'All',status:'All',q:'',sort:'conviction'};
+const savedView=localStorage.getItem('powerStackView');
+const state={theme:'All',region:'All',status:'All',q:'',sort:'conviction',sortDir:'desc',view:savedView==='row'?'row':'card'};
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
 const uniq=arr=>[...new Set(arr.filter(Boolean))].sort();
@@ -65,13 +66,24 @@ function renderLivePulse(){
   $('#liveTimestamp').textContent=packetOk?`Market context: ${timeLabel(liveContext.marketUpdatedAt||liveContext.generatedAt)}`:`Cached packet is ${ageHours(liveContext.generatedAt).toFixed(1)}h old · adjustments off`;
 }
 
+function defaultSortDir(key){return key==='ticker'?'asc':key==='conviction'||key==='contextConviction'?'desc':'asc'}
+function sortValue(x,key){if(key==='ticker')return `${x.ticker} ${x.name}`.toLowerCase();if(key==='contextConviction')return contextConviction(x);return Number(x[key]??0)}
 function filteredIdeas(){
   const q=state.q.trim().toLowerCase();
   const rows=ideas.filter(x=>{const blob=JSON.stringify(x).toLowerCase();return (state.theme==='All'||x.themeGroup===state.theme)&&(state.region==='All'||regionBucket(x)===state.region)&&(state.status==='All'||statusBucket(x)===state.status)&&(!q||blob.includes(q))});
-  rows.sort((a,b)=>{if(state.sort==='ticker')return a.ticker.localeCompare(b.ticker);if(state.sort==='conviction')return Number(b.conviction)-Number(a.conviction);if(state.sort==='contextConviction')return contextConviction(b)-contextConviction(a);return Number(a[state.sort]??9)-Number(b[state.sort]??9)});return rows;
+  const direction=state.sortDir==='asc'?1:-1;
+  rows.sort((a,b)=>{const av=sortValue(a,state.sort),bv=sortValue(b,state.sort);const primary=typeof av==='string'?av.localeCompare(bv):av-bv;return (primary||a.ticker.localeCompare(b.ticker))*direction});
+  return rows;
 }
 
 function scoreLine(label,value,max,cls=''){return `<div class="score-line"><span>${label}</span><div class="bar-track"><div class="bar-fill ${cls}" style="width:${pct(value,max)}"></div></div><b>${Number(value).toFixed(value%1?1:0)}/${max}</b></div>`}
+function compactMeter(value,max,cls=''){const n=Number(value||0);return `<div class="row-meter"><div class="row-meter-track"><span class="row-meter-fill ${cls}" style="width:${pct(n,max)}"></span></div><b>${n.toFixed(n%1?1:0)}<small>/${max}</small></b></div>`}
+function sortHeader(label,key){const active=state.sort===key,arrow=active?(state.sortDir==='asc'?'↑':'↓'):'↕';return `<button class="row-sort ${active?'active':''}" type="button" data-sort-key="${key}" aria-label="Sort by ${label} ${active?state.sortDir:''}"><span>${label}</span><b aria-hidden="true">${arrow}</b></button>`}
+function renderRow(x){const adj=contextConviction(x);return `<article class="idea-row" data-ticker="${esc(x.ticker)}" tabindex="0" role="button" aria-label="Open ${esc(x.ticker)} ${esc(x.name)} details"><div class="row-stock"><div class="row-stock-top"><strong>${esc(x.ticker)}</strong>${liveChip(x)}</div><span>${esc(x.name)} · ${esc(x.market)}</span><small>${esc(statusBucket(x))} · ${esc(x.themeGroup)}</small></div><div class="row-score" data-label="Base conviction">${compactMeter(x.conviction,10,'conv')}</div><div class="row-score" data-label="Context-adjusted conviction">${compactMeter(adj,10,'context')}</div><div class="row-score" data-label="AI crash risk">${compactMeter(x.aiRisk,5,'risk')}</div><div class="row-score" data-label="Theme dependency">${compactMeter(x.themeDependency,5,'dependency')}</div><div class="row-score" data-label="Cyclicality">${compactMeter(x.cyclicality,5,'cycle')}</div><div class="row-score" data-label="Speculation">${compactMeter(x.speculation,5,'spec')}</div></article>`}
+function renderRowView(rows){return `<div class="idea-table-wrap"><div class="idea-table"><div class="idea-table-head"><div>${sortHeader('Ticker / company','ticker')}</div><div>${sortHeader('Base conviction','conviction')}</div><div>${sortHeader('Adjusted now','contextConviction')}</div><div>${sortHeader('AI crash','aiRisk')}</div><div>${sortHeader('Theme dep.','themeDependency')}</div><div>${sortHeader('Cyclicality','cyclicality')}</div><div>${sortHeader('Speculation','speculation')}</div></div>${rows.map(renderRow).join('')}</div></div>`}
+function updateViewControls(){const card=state.view==='card';$('#cardViewBtn').classList.toggle('active',card);$('#rowViewBtn').classList.toggle('active',!card);$('#cardViewBtn').setAttribute('aria-pressed',String(card));$('#rowViewBtn').setAttribute('aria-pressed',String(!card))}
+function setView(view){state.view=view;localStorage.setItem('powerStackView',view);updateViewControls();render()}
+function bindIdeaOpeners(){document.querySelectorAll('.idea-card,.idea-row').forEach(c=>{const open=()=>openDetail(ideas.find(x=>x.ticker===c.dataset.ticker));c.onclick=open;c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}}});document.querySelectorAll('.row-sort').forEach(btn=>btn.onclick=e=>{e.stopPropagation();const key=btn.dataset.sortKey;if(state.sort===key)state.sortDir=state.sortDir==='asc'?'desc':'asc';else{state.sort=key;state.sortDir=defaultSortDir(key)};$('#sort').value=state.sort;render()})}
 function liveChip(x){const t=themeContext(x),mode=contextState(x),delta=contextDelta(x);if(!t)return'<span class="live-chip neutral">NO LIVE</span>';if(mode==='stale')return'<span class="live-chip stale">STALE</span>';return `<span class="live-chip ${scoreClass(delta)}">${fmtSigned(delta,2)} LIVE</span>`}
 function renderCard(x){
   const adj=contextConviction(x);
@@ -102,7 +114,7 @@ function renderReasonRows(x){
   return `<div class="context-explain"><div class="formula-line">Theme dependency ${Number(x.themeDependency||3)}/5 → signal scaling factor <b>${factor.toFixed(2)}</b>. Total context movement is capped at ±1.00.</div>${scored}${watch}</div>`;
 }
 
-function render(){const rows=filteredIdeas();$('#count').textContent=rows.length;$('#grid').innerHTML=rows.length?rows.map(renderCard).join(''):'<div class="empty">No matching ideas.</div>';$('#viewSubtitle').textContent=[state.theme!=='All'?state.theme:null,state.region!=='All'?state.region:null,state.status!=='All'?state.status:null].filter(Boolean).join(' · ')||'Long-duration theses with a separate Live Desk context overlay.';$('h1').textContent=state.theme!=='All'?state.theme:state.region!=='All'?state.region:state.status!=='All'?state.status:'All Ideas';renderSummary(rows);renderContext();document.querySelectorAll('.idea-card').forEach(c=>c.onclick=()=>openDetail(ideas.find(x=>x.ticker===c.dataset.ticker)))}
+function render(){const rows=filteredIdeas(),container=$('#grid');$('#count').textContent=rows.length;container.className=state.view==='row'?'idea-row-view':'idea-grid';container.innerHTML=rows.length?(state.view==='row'?renderRowView(rows):rows.map(renderCard).join('')):'<div class="empty">No matching ideas.</div>';$('#viewSubtitle').textContent=[state.theme!=='All'?state.theme:null,state.region!=='All'?state.region:null,state.status!=='All'?state.status:null].filter(Boolean).join(' · ')||'Long-duration theses with a separate Live Desk context overlay.';$('h1').textContent=state.theme!=='All'?state.theme:state.region!=='All'?state.region:state.status!=='All'?state.status:'All Ideas';renderSummary(rows);renderContext();updateViewControls();bindIdeaOpeners()}
 
 function openDetail(x){
   if(!x)return;const t=themeContext(x),delta=contextDelta(x),adj=contextConviction(x),mode=contextState(x);
@@ -118,5 +130,5 @@ async function loadLiveContext(){
   try{const r=await fetch(LIVE_URL,{cache:'no-store'});if(!r.ok)throw new Error(`HTTP ${r.status}`);liveContext=await r.json();const fresh=packetFresh();$('#liveBadge').className=`live-badge ${fresh?'online':'stale'}`;$('#liveBadge').innerHTML=fresh?'<span></span> Live Desk connected':'<span></span> Live Desk stale'}catch(err){liveContext=cached?.themes?.length?cached:null;const fresh=packetFresh();$('#liveBadge').className=liveContext?(fresh?'live-badge online':'live-badge stale'):'live-badge offline';$('#liveBadge').innerHTML=liveContext?(fresh?'<span></span> Live Desk cached':'<span></span> Cached context stale'):'<span></span> Live Desk unavailable'}
 }
 
-async function init(){const [ideaRes]=await Promise.all([fetch('data/ideas.json',{cache:'no-store'}),loadLiveContext()]);ideas=await ideaRes.json();renderSidebar();render();$('#search').oninput=e=>{state.q=e.target.value;render()};$('#sort').onchange=e=>{state.sort=e.target.value;render()};$('#clearFilters').onclick=()=>{state.theme='All';state.region='All';state.status='All';state.q='';$('#search').value='';renderSidebar();render()};$('#closeDialog').onclick=()=>$('#detailDialog').close();$('#detailDialog').addEventListener('click',e=>{if(e.target===$('#detailDialog'))$('#detailDialog').close()})}
+async function init(){const [ideaRes]=await Promise.all([fetch('data/ideas.json',{cache:'no-store'}),loadLiveContext()]);ideas=await ideaRes.json();renderSidebar();render();$('#search').oninput=e=>{state.q=e.target.value;render()};$('#sort').onchange=e=>{state.sort=e.target.value;state.sortDir=defaultSortDir(state.sort);render()};$('#cardViewBtn').onclick=()=>setView('card');$('#rowViewBtn').onclick=()=>setView('row');$('#clearFilters').onclick=()=>{state.theme='All';state.region='All';state.status='All';state.q='';$('#search').value='';renderSidebar();render()};$('#closeDialog').onclick=()=>$('#detailDialog').close();$('#detailDialog').addEventListener('click',e=>{if(e.target===$('#detailDialog'))$('#detailDialog').close()})}
 init().catch(err=>{$('#grid').innerHTML=`<div class="empty">Failed to load Power Stack: ${esc(err.message)}</div>`});
