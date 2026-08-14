@@ -1,0 +1,113 @@
+{
+  "date": "2026-08-14",
+  "macro": {
+    "stance": "Constructive demand, persistent physical bottlenecks, lower immediate Fed-hike risk but still-high input inflation.",
+    "marketContext": [
+      "July PPI was unchanged month-over-month, reducing immediate September Fed-hike pressure.",
+      "Brent settled near $87 after a 2% pullback as a large U.S. crude inventory build and weaker demand forecasts offset continuing Hormuz risk.",
+      "U.S. electricity demand is still projected by EIA to set records in both 2026 and 2027, with AI/data centres a key driver."
+    ],
+    "liveDesk": "Latest cached Live Desk packet was generated 2026-08-13 and still marks AI/Data centres stale/neutral, so no conviction changes were taken from the overlay."
+  },
+  "categoryReads": [
+    {
+      "category": "Power / Grid",
+      "stance": "Overweight / strongest",
+      "change": "Strengthened",
+      "why": "July ISM shows electrical-equipment and machinery expansion, too-low customer inventories, slower supplier deliveries and utility competition for electrical-equipment production slots. EIA electricity-demand forecasts remain structurally supportive.",
+      "actions": ["Add HUBB at 8.6 conviction", "Maintain GEV, PWR, ETN, TNB and Dongfang Electric as priority names"]
+    },
+    {
+      "category": "AI / Data centres",
+      "stance": "Positive but selective",
+      "change": "No broad upgrade",
+      "why": "ISM respondents describe active AI/data-centre procurement ramps and booming power/networking/photonics demand. Prefer power, electrical, cooling and network bottlenecks over adding more direct compute beta.",
+      "actions": ["Keep Southern Cable, YTL Power, SunCon, MN Holdings, nVent, Cloudflare and existing balance-of-system exposure under active review"]
+    },
+    {
+      "category": "Nuclear",
+      "stance": "Overweight quality operators/suppliers",
+      "change": "Maintained",
+      "why": "BWXT continues to expand U.S. commercial nuclear manufacturing capacity and nuclear demand remains supported by power scarcity. No evidence today justifies rotating from operating/supplier exposure toward higher-risk reactor developers.",
+      "actions": ["Maintain BWXT, CEG and CGN Power preference over development-stage SMR beta"]
+    },
+    {
+      "category": "Uranium / Fuel",
+      "stance": "Positive, valuation-sensitive",
+      "change": "Maintained",
+      "why": "Domestic enrichment/HALEU scarcity remains strategic and Cameco retains integrated fuel-cycle advantages. No new daily evidence warranted changing LEU or CCJ scores.",
+      "actions": ["Maintain LEU and CCJ; watch execution and contracting rather than spot-price headlines"]
+    },
+    {
+      "category": "Oil & Gas",
+      "stance": "Positive but more tactical",
+      "change": "Slightly less aggressive on upstream; stronger on midstream/refining",
+      "why": "Brent pulled back on a 17.4m-barrel U.S. crude build and weaker demand forecasts, while refining margins remain exceptionally strong because product supply is constrained. Gas infrastructure continues to benefit from LNG and power/data-centre load.",
+      "actions": ["Maintain XOM/CVX quality bias", "Keep WMB and KMI high on gas-infrastructure list", "Maintain MPC/VLO tactical refining preference but do not extrapolate record crack spreads indefinitely"]
+    },
+    {
+      "category": "Metals",
+      "stance": "Selective",
+      "change": "Maintained",
+      "why": "Copper, electrical components, memory and semiconductors remain reported supply bottlenecks, but commodity pricing is volatile and tariff/geopolitical effects are distorting spot signals.",
+      "actions": ["Prefer bottleneck beneficiaries with pricing power over undifferentiated metal beta"]
+    },
+    {
+      "category": "Robotics / Automation",
+      "stance": "Positive, evidence-led",
+      "change": "Framework unchanged",
+      "why": "Commercial evidence still favours warehouse/fixed automation first, then cobots/mobile manipulation, with humanoids remaining a later and more valuation-sensitive wave. Unitree's profitable IPO is useful evidence that humanoid economics are improving, but its extreme valuation does not overturn the adoption hierarchy.",
+      "actions": ["Keep SYM, Geekplus, CGNX and TER ahead of humanoid OEMs", "Keep UBTECH as speculative humanoid exposure"]
+    }
+  ],
+  "companyChanges": [
+    {
+      "ticker": "HUBB",
+      "action": "ADD",
+      "conviction": 8.6,
+      "reason": "Q2 net sales +15%, organic +10%, adjusted EPS +12%; first-half Utility Solutions book-to-bill about 1.2x with transmission/substation order strength tied to load growth and data centres. Diversifies grid exposure beyond turbines and switchgear."
+    },
+    {
+      "ticker": "GEV",
+      "action": "HOLD HIGH",
+      "conviction": 9.5,
+      "reason": "Q2 orders +88% organically, backlog +$13bn sequentially, data-centre orders above $5bn YTD and gas equipment commitments reached 116 GW. Thesis remains strongly validated; valuation is the primary restraint."
+    },
+    {
+      "ticker": "KMI",
+      "action": "UPGRADE WATCH QUALITY",
+      "conviction": 8.2,
+      "reason": "Q2 adjusted EBITDA +12% to a record second-quarter level and natural-gas transport volumes rose materially. Higher power/LNG demand plus the Western Gateway project improve visibility."
+    },
+    {
+      "ticker": "WMB",
+      "action": "HOLD",
+      "conviction": 8.5,
+      "reason": "Momentum Midstream acquisition deepens Haynesville/LNG exposure and new pipeline projects extend growth, but Q2 earnings were slightly below expectations and acquisition/integration risk rose."
+    },
+    {
+      "ticker": "CVX",
+      "action": "HOLD HIGH",
+      "conviction": 8.7,
+      "reason": "Q2 worldwide production +20%, Hess synergies ahead of plan, record U.S. production/refinery throughput and a 20-year Microsoft power agreement add a credible AI-power crossover."
+    },
+    {
+      "ticker": "MPC/VLO",
+      "action": "TACTICAL POSITIVE",
+      "reason": "U.S. refiners are capturing unusually strong product margins and returning substantial capital, but the setup is cyclical and crack spreads can normalise quickly if supply disruptions ease."
+    }
+  ],
+  "noChangeCoverage": "All other existing Power Stack names were reviewed at category and catalyst level. No additional thesis, conviction or status changes cleared the materiality bar today.",
+  "newIdeaScreen": {
+    "promoted": ["HUBB"],
+    "notPromoted": [
+      {"ticker": "UNITREE", "reason": "Commercially credible and profitable, but 219x projected 2025 earnings at IPO is too valuation-sensitive for a priority position and it remains outside the preferred HK/MY/US market set."},
+      {"ticker": "additional pure-play metal miners", "reason": "Current shortages are real, but existing Power Stack infrastructure names capture the bottleneck with less commodity-price dependence."}
+    ]
+  },
+  "researchGaps": [
+    "Some issuer Q2 pages are poorly indexed by search despite earnings having occurred; these names remain on primary-source follow-up rather than being changed from secondary summaries alone.",
+    "Live Desk cached theme context is stale for AI/Data centres, so the current daily changes are research-driven, not overlay-driven.",
+    "Exact real-time valuation multiples are not persisted in this run; valuation language is qualitative unless supported by issuer or market-source evidence."
+  ]
+}
