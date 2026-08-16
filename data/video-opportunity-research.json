@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-08-14",
-  "purpose": "Supplemental personal-investment research candidates sourced from transcript idea generation and daily Power Stack sweeps. Inclusion and scoring are based on primary company disclosures and regulatory filings, not creator claims.",
+  "lastUpdated": "2026-08-16",
+  "purpose": "Supplemental personal-investment research candidates sourced from transcript idea generation and daily Power Stack sweeps. Inclusion and scoring are based on primary company disclosures and regulatory filings where available, with current third-party reporting used only to bridge newly reported results that are not yet indexed on issuer pages.",
   "ideas": [
     {
       "ticker": "HUBB",
@@ -26,6 +26,32 @@
         {"label":"Hubbell investor overview","url":"https://hubbell.gcs-web.com/"},
         {"label":"July 2026 ISM Services report","url":"https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/services/july/"}
       ]
+    },
+    {
+      "ticker": "POWL",
+      "name": "Powell Industries",
+      "market": "NASDAQ",
+      "region": "US",
+      "themeGroup": "Power / Grid",
+      "theme": "Switchgear + engineered power distribution + data-centre electrical systems",
+      "conviction": 8.2,
+      "aiRisk": 3,
+      "themeDependency": 3,
+      "cyclicality": 3,
+      "speculation": 2,
+      "status": "Priority research",
+      "thesis": "Powell is a relatively pure electrical-distribution bottleneck play spanning medium- and low-voltage switchgear, substations, modular power-control rooms and integrated power systems. It adds differentiated exposure versus GEV/HUBB/ETN because it is smaller, engineered-to-order and directly levered to complex data-centre, utility, LNG and heavy-industrial electrical projects.",
+      "catalysts": "Conversion of the record backlog, the >$400m mega data-centre award, continued utility/LNG/data-centre order wins, Houston capacity expansion, Remsdaq/SCADA cross-selling and sustained book-to-bill above 1x.",
+      "risks": "Premium valuation, project timing and revenue-conversion volatility, execution on an unusually large backlog, customer/project concentration, labour and component constraints, and sharp multiple compression if order growth normalises.",
+      "valuationTechnical": "The business quality and backlog justify a premium, but this is not a cheap electrical-equipment stock. The post-earnings volatility is useful for entry discipline; avoid treating record orders as straight-line revenue or permanent margins.",
+      "researchNote": "Official Q2 FY2026 results showed revenue +6%, new orders +97% to $490m, backlog +33% to $1.8bn and a subsequent data-centre order above $400m. Current reporting on fiscal Q3 indicates revenue around $311.7m, record new orders around $934m, roughly 3.0x book-to-bill and backlog near $2.4bn, while EPS/revenue missed consensus. The combination is attractive: demand is exceptional, but execution and valuation risk are real enough to keep conviction below GEV/ETN/HUBB.",
+      "lastUpdated": "2026-08-16",
+      "sources": [
+        {"label":"Powell Q2 FY2026 results","url":"https://powellindustriesinc.gcs-web.com/news-releases/news-release-details/powell-industries-announces-second-quarter-fiscal-2026-results"},
+        {"label":"Powell investor relations","url":"https://powellindustriesinc.gcs-web.com/"},
+        {"label":"Powell markets and products","url":"https://www.powellind.com/"},
+        {"label":"Fiscal Q3 2026 result coverage","url":"https://ph.investing.com/news/stock-market-news/why-is-powell-industries-stock-sinking-today-93CH-2527645"}
+      ]
     }
   ],
   "included": [
@@ -33,7 +59,8 @@
     "PATH",
     "NET",
     "SPCX",
-    "HUBB"
+    "HUBB",
+    "POWL"
   ],
   "screenedOut": [
     {
@@ -59,11 +86,28 @@
     {
       "ticker": "NVDA",
       "reason": "Core AI compute leader, but it duplicates model/compute-cycle exposure rather than adding a differentiated Power Stack bottleneck."
+    },
+    {
+      "ticker": "CAT",
+      "reason": "Solar Turbines and generator capacity are increasingly relevant to behind-the-meter data-centre power, but Caterpillar remains too diversified to displace GEV or POWL as a cleaner Power Stack expression."
+    },
+    {
+      "ticker": "CMI",
+      "reason": "Cummins has credible data-centre generator growth, but the broader engine and transport exposure dilutes the Power Stack signal relative to dedicated electrical and generation-equipment names."
+    },
+    {
+      "ticker": "ON",
+      "reason": "Onsemi's AI data-centre power business is growing quickly and robotics optionality improves the fit, but semiconductor-cycle and acquisition risk make it less differentiated than the current physical-infrastructure priorities."
+    },
+    {
+      "ticker": "ANET",
+      "reason": "Excellent AI networking execution and guidance, but high AI-theme sensitivity and customer concentration make it a watch rather than a new promotion while Power Stack already has substantial AI-cycle exposure."
     }
   ],
   "notes": [
     "SpaceX remains a personal-investment research candidate evaluated on fundamentals, valuation, capital intensity and risk.",
     "Creator-reported price moves, short interest and speculative corporate actions are not treated as thesis evidence.",
-    "Daily-sweep additions must improve diversification or bottleneck exposure rather than simply increase ticker count."
+    "Daily-sweep additions must improve diversification or bottleneck exposure rather than simply increase ticker count.",
+    "Record backlog and orders are not treated as guaranteed revenue; conversion timing, margins and valuation remain explicit risk factors."
   ]
 }
