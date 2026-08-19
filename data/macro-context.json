@@ -1,0 +1,717 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-19T06:31:35Z",
+  "packetStaleAfterHours": 168,
+  "source": "Macro Indicators Dashboard",
+  "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+  "liveDeskInfluenceEnabled": false,
+  "methodology": "ChatGPT-reviewed macro snapshot. The browser does not scrape or score the source page. Macro readings are interpreted into regime blocks and Power Stack theme transmission, then stored in GitHub. Base Conviction is never overwritten; the macro overlay is capped at +/-1.00.",
+  "blocks": [
+    {
+      "key": "growth",
+      "label": "Growth",
+      "score": 1.0,
+      "regime": "expanding, uneven",
+      "confidence": 86,
+      "observedAt": "2026-08-18",
+      "staleAfterHours": 1080,
+      "drivers": [
+        {
+          "title": "ISM Manufacturing",
+          "detail": "July Manufacturing PMI 55.6, New Orders 56.7 and Production 58.5 point to a real manufacturing expansion rather than a headline-only improvement.",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar"
+        },
+        {
+          "title": "Services demand",
+          "detail": "July Services PMI 54.1 with Business Activity 59.1 and New Orders 57.2 keeps services demand in expansion.",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar"
+        },
+        {
+          "title": "Growth nowcast moderated",
+          "detail": "Atlanta Fed GDPNow for Q3 eased to 4.0% from 4.3%; industrial production rose 0.2% in July, slightly below the 0.3% forecast.",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar"
+        }
+      ]
+    },
+    {
+      "key": "inflation",
+      "label": "Inflation",
+      "score": -0.6,
+      "regime": "cooling headline, sticky pipeline",
+      "confidence": 88,
+      "observedAt": "2026-08-14",
+      "staleAfterHours": 504,
+      "drivers": [
+        {
+          "title": "CPI cooled",
+          "detail": "July CPI was 3.4% YoY and core CPI 2.5%, both slightly cooler than June.",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar"
+        },
+        {
+          "title": "PPI softened",
+          "detail": "July PPI was 0.0% MoM and 4.7% YoY, down from 5.5% YoY previously.",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar"
+        },
+        {
+          "title": "ISM price pressure remains high",
+          "detail": "Manufacturing Prices remained 71.1 and Services Prices rose to 70.3; Michigan 1-year inflation expectations were 4.3%.",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar"
+        }
+      ]
+    },
+    {
+      "key": "labour",
+      "label": "Labour",
+      "score": -0.7,
+      "regime": "softening",
+      "confidence": 87,
+      "observedAt": "2026-08-13",
+      "staleAfterHours": 336,
+      "drivers": [
+        {
+          "title": "Payroll shock",
+          "detail": "July nonfarm payrolls were -23K versus 85K expected; wage growth slowed to 0.1% MoM and 3.2% YoY.",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar"
+        },
+        {
+          "title": "Services employment contracted",
+          "detail": "ISM Services Employment fell to 47.4, while Manufacturing Employment improved to 52.8.",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar"
+        },
+        {
+          "title": "Claims remain contained",
+          "detail": "Initial claims were 209K with continuing claims 1.777M, preventing the labour signal from becoming outright recessionary.",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar"
+        }
+      ]
+    },
+    {
+      "key": "rates",
+      "label": "Rates",
+      "score": -1.0,
+      "regime": "restrictive long end",
+      "confidence": 92,
+      "observedAt": "2026-08-18",
+      "staleAfterHours": 168,
+      "drivers": [
+        {
+          "title": "10-year yield elevated",
+          "detail": "The US 10Y was 4.72%; TLT was down 3.38% MoM and 5.21% YoY.",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar"
+        },
+        {
+          "title": "Long auction yields rose",
+          "detail": "The latest 10-year auction cleared at 4.683% and the 30-year auction at 5.216%, reinforcing restrictive long-duration financing conditions.",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar"
+        }
+      ]
+    },
+    {
+      "key": "credit",
+      "label": "Credit",
+      "score": -0.2,
+      "regime": "broadly benign, tail stress",
+      "confidence": 90,
+      "observedAt": "2026-08-17",
+      "staleAfterHours": 168,
+      "drivers": [
+        {
+          "title": "Broad credit remains tight",
+          "detail": "IG OAS was 0.81 and HY OAS 2.70; HY sat near the 9th percentile of its three-year range.",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar"
+        },
+        {
+          "title": "Weakest borrowers are stressed",
+          "detail": "CCC & Lower OAS reached 10.18, around the 97th percentile of its three-year range, creating a sharp quality split inside credit.",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar"
+        }
+      ]
+    },
+    {
+      "key": "consumer",
+      "label": "Consumer",
+      "score": -1.0,
+      "regime": "weakening",
+      "confidence": 91,
+      "observedAt": "2026-08-14",
+      "staleAfterHours": 504,
+      "drivers": [
+        {
+          "title": "Retail sales missed",
+          "detail": "July Retail Sales fell 0.6% MoM versus +0.1% expected; Core Retail Sales fell 0.3% and Retail Control fell 0.4%.",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar"
+        },
+        {
+          "title": "Sentiment weakened",
+          "detail": "Michigan Consumer Sentiment fell to 51.0 and expectations to 50.6.",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar"
+        }
+      ]
+    },
+    {
+      "key": "housing",
+      "label": "Housing",
+      "score": -0.6,
+      "regime": "soft, mixed permits",
+      "confidence": 82,
+      "observedAt": "2026-08-18",
+      "staleAfterHours": 504,
+      "drivers": [
+        {
+          "title": "Starts contracted",
+          "detail": "July Housing Starts fell 12.4% MoM to 1.239M versus 1.340M expected.",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar"
+        },
+        {
+          "title": "Permits improved",
+          "detail": "Building Permits rose 5.0% MoM to 1.443M, while Pending Home Sales fell 2.3% and NAHB remained weak at 35.",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar"
+        }
+      ]
+    },
+    {
+      "key": "energy",
+      "label": "Energy",
+      "score": 0.0,
+      "regime": "mixed inventory signal",
+      "confidence": 72,
+      "observedAt": "2026-08-18",
+      "staleAfterHours": 168,
+      "drivers": [
+        {
+          "title": "Inventory picture reversed",
+          "detail": "The prior EIA report showed a 17.423M crude build, while the latest API estimate showed a 3.280M draw. The next EIA release is the cleaner confirmation point.",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar"
+        },
+        {
+          "title": "Positioning cooled",
+          "detail": "CFTC crude net longs fell to 99.2K from 112.4K in the prior week.",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar"
+        }
+      ]
+    },
+    {
+      "key": "positioning",
+      "label": "Positioning",
+      "score": -0.2,
+      "regime": "mixed risk appetite",
+      "confidence": 70,
+      "observedAt": "2026-08-14",
+      "staleAfterHours": 240,
+      "drivers": [
+        {
+          "title": "Nasdaq positioning turned more negative",
+          "detail": "CFTC Nasdaq 100 speculative positioning moved to -39.3K from -14.6K.",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar"
+        },
+        {
+          "title": "S&P positioning improved",
+          "detail": "CFTC S&P 500 speculative positioning improved to +11.3K from -27.3K, while copper and gold net longs increased.",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar"
+        }
+      ]
+    }
+  ],
+  "themes": [
+    {
+      "theme": "AI / Data centres",
+      "score": -0.08,
+      "regime": "mixed: strong demand, restrictive discount rate",
+      "confidence": 80,
+      "fresh": true,
+      "freshestAt": "2026-08-19T06:31:35Z",
+      "staleAfterHours": 168,
+      "signals": [
+        {
+          "kind": "growth",
+          "title": "Manufacturing expansion supports AI capex",
+          "detail": "ISM Manufacturing 55.6, New Orders 56.7 and Production 58.5 support physical AI and data-centre investment.",
+          "themeContribution": 0.32,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        },
+        {
+          "kind": "rates",
+          "title": "Long rates pressure long-duration multiples",
+          "detail": "US 10Y near 4.72% and weak TLT performance keep the discount-rate headwind elevated.",
+          "themeContribution": -0.28,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        },
+        {
+          "kind": "labour",
+          "title": "Labour and consumer slowdown add demand risk",
+          "detail": "Weak payrolls, ISM Services Employment below 50 and soft retail sales increase late-cycle risk.",
+          "themeContribution": -0.08,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        },
+        {
+          "kind": "credit",
+          "title": "Credit quality split matters",
+          "detail": "Broad HY remains calm but CCC stress argues for profitable, well-funded infrastructure leaders over speculative balance sheets.",
+          "themeContribution": -0.04,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        }
+      ],
+      "watch": [
+        {
+          "kind": "watch",
+          "title": "Capex can stay strong while multiples compress",
+          "detail": "Separate physical AI/data-centre order growth from equity duration risk.",
+          "nextTest": "Next hyperscaler capex/guidance cycle and long-end Treasury move."
+        }
+      ]
+    },
+    {
+      "theme": "Power / Grid",
+      "score": 0.32,
+      "regime": "supportive",
+      "confidence": 88,
+      "fresh": true,
+      "freshestAt": "2026-08-19T06:31:35Z",
+      "staleAfterHours": 168,
+      "signals": [
+        {
+          "kind": "growth",
+          "title": "Industrial expansion supports grid bottlenecks",
+          "detail": "Manufacturing production, orders and backlog are expanding, supporting electrical equipment and transmission demand.",
+          "themeContribution": 0.38,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        },
+        {
+          "kind": "inflation",
+          "title": "High equipment prices favour pricing power",
+          "detail": "ISM price and supply signals remain elevated, helping scarce equipment vendors more than low-margin contractors.",
+          "themeContribution": 0.1,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        },
+        {
+          "kind": "rates",
+          "title": "Long rates remain a headwind",
+          "detail": "Restrictive long yields pressure valuation and financing for rate-sensitive projects.",
+          "themeContribution": -0.12,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        },
+        {
+          "kind": "credit",
+          "title": "Tail credit stress is contained",
+          "detail": "Broad IG/HY spreads remain benign, limiting financing stress for high-quality infrastructure incumbents.",
+          "themeContribution": -0.04,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        }
+      ],
+      "watch": [
+        {
+          "kind": "watch",
+          "title": "Order strength vs valuation",
+          "detail": "Strong backlog does not immunise premium electrical names from higher real/nominal discount rates.",
+          "nextTest": "Next utility/electrical earnings and 10Y/30Y yield trend."
+        }
+      ]
+    },
+    {
+      "theme": "Nuclear",
+      "score": -0.01,
+      "regime": "neutral: structural demand, rate split",
+      "confidence": 82,
+      "fresh": true,
+      "freshestAt": "2026-08-19T06:31:35Z",
+      "staleAfterHours": 168,
+      "signals": [
+        {
+          "kind": "growth",
+          "title": "Power demand remains structurally supportive",
+          "detail": "Expansion in industrial activity supports the need for reliable generation capacity.",
+          "themeContribution": 0.18,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        },
+        {
+          "kind": "rates",
+          "title": "Rates punish development-stage nuclear",
+          "detail": "High long-end yields are much more negative for pre-revenue SMR developers than for profitable operators/components.",
+          "themeContribution": -0.15,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        },
+        {
+          "kind": "credit",
+          "title": "Weakest-borrower stress raises financing bar",
+          "detail": "CCC spread stress increases the value of backlog, cash flow and government-supported funding.",
+          "themeContribution": -0.04,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        }
+      ],
+      "watch": [
+        {
+          "kind": "watch",
+          "title": "Do not treat nuclear as one macro trade",
+          "detail": "BWXT/CEG/CGN Power and OKLO/SMR should respond differently to the same rates and credit regime.",
+          "nextTest": "Company-specific financing, contracts and project milestones."
+        }
+      ]
+    },
+    {
+      "theme": "Uranium / Fuel",
+      "score": 0.1,
+      "regime": "mildly supportive",
+      "confidence": 78,
+      "fresh": true,
+      "freshestAt": "2026-08-19T06:31:35Z",
+      "staleAfterHours": 168,
+      "signals": [
+        {
+          "kind": "growth",
+          "title": "Power-system demand supports fuel-chain scarcity",
+          "detail": "Industrial expansion and grid-load growth reinforce the longer-duration nuclear fuel thesis.",
+          "themeContribution": 0.16,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        },
+        {
+          "kind": "rates",
+          "title": "Commodity/fuel exposure is less duration-sensitive",
+          "detail": "High rates are a smaller headwind for uranium producers/fuel suppliers than for development-stage reactor equities.",
+          "themeContribution": -0.06,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        }
+      ],
+      "watch": [
+        {
+          "kind": "watch",
+          "title": "Macro is secondary to fuel-cycle fundamentals",
+          "detail": "Contracting, enrichment scarcity, utility inventories and project execution should dominate the macro overlay.",
+          "nextTest": "Uranium contracting, HALEU/enrichment developments and producer guidance."
+        }
+      ]
+    },
+    {
+      "theme": "Oil & Gas",
+      "score": -0.03,
+      "regime": "neutral / two-sided",
+      "confidence": 76,
+      "fresh": true,
+      "freshestAt": "2026-08-19T06:31:35Z",
+      "staleAfterHours": 168,
+      "signals": [
+        {
+          "kind": "growth",
+          "title": "Manufacturing expansion helps cyclical demand",
+          "detail": "Strong ISM manufacturing is supportive for industrial energy demand.",
+          "themeContribution": 0.12,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        },
+        {
+          "kind": "consumer",
+          "title": "Weak retail and labour temper demand",
+          "detail": "Consumer and labour softness argue against reading strong manufacturing as broad demand acceleration.",
+          "themeContribution": -0.1,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        },
+        {
+          "kind": "energy",
+          "title": "Inventory signal is conflicted",
+          "detail": "A huge EIA build was followed by an API draw; the near-term crude balance needs confirmation.",
+          "themeContribution": -0.05,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        }
+      ],
+      "watch": [
+        {
+          "kind": "watch",
+          "title": "Crude and products can diverge",
+          "detail": "Inventory, refinery utilisation and product tightness should be read separately for producers, pipelines and refiners.",
+          "nextTest": "Next EIA crude, gasoline, distillate and refinery-utilisation release."
+        }
+      ]
+    },
+    {
+      "theme": "Metals",
+      "score": 0.09,
+      "regime": "mildly supportive, cyclical split",
+      "confidence": 80,
+      "fresh": true,
+      "freshestAt": "2026-08-19T06:31:35Z",
+      "staleAfterHours": 168,
+      "signals": [
+        {
+          "kind": "growth",
+          "title": "Manufacturing expansion supports industrial metals",
+          "detail": "Orders, production and backlog are constructive for copper and electrification-linked demand.",
+          "themeContribution": 0.24,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        },
+        {
+          "kind": "consumer",
+          "title": "Housing and consumer softness offset part of the impulse",
+          "detail": "Weak starts, pending sales and retail reduce broad cyclical confirmation.",
+          "themeContribution": -0.12,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        },
+        {
+          "kind": "rates",
+          "title": "High yields remain a valuation and dollar headwind",
+          "detail": "Restrictive long rates can pressure duration-sensitive miners and non-yielding metals.",
+          "themeContribution": -0.08,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        },
+        {
+          "kind": "positioning",
+          "title": "Copper positioning strengthened",
+          "detail": "CFTC copper net longs rose to 80.4K from 77.1K.",
+          "themeContribution": 0.05,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        }
+      ],
+      "watch": [
+        {
+          "kind": "watch",
+          "title": "Copper is cleaner than broad metals",
+          "detail": "Power/grid capex has a stronger structural read-through to copper than to palladium or precious metals.",
+          "nextTest": "China/global industrial data and copper inventory/price confirmation."
+        }
+      ]
+    },
+    {
+      "theme": "Robotics / Automation",
+      "score": 0.02,
+      "regime": "neutral-positive",
+      "confidence": 76,
+      "fresh": true,
+      "freshestAt": "2026-08-19T06:31:35Z",
+      "staleAfterHours": 168,
+      "signals": [
+        {
+          "kind": "growth",
+          "title": "Factory expansion helps automation demand",
+          "detail": "Manufacturing New Orders and Production are above 50 and accelerating.",
+          "themeContribution": 0.24,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        },
+        {
+          "kind": "rates",
+          "title": "Long-duration robotics valuations remain rate-sensitive",
+          "detail": "High long-end yields reduce tolerance for distant cash flows.",
+          "themeContribution": -0.18,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        },
+        {
+          "kind": "credit",
+          "title": "Quality matters",
+          "detail": "Tail credit stress favours profitable automation incumbents over capital-hungry speculative robotics names.",
+          "themeContribution": -0.04,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        }
+      ],
+      "watch": [
+        {
+          "kind": "watch",
+          "title": "Adoption order still matters",
+          "detail": "Warehouse/fixed automation can monetise before general-purpose humanoids even in a supportive manufacturing regime.",
+          "nextTest": "Orders, backlog and commercial deployment evidence."
+        }
+      ]
+    },
+    {
+      "theme": "Water / Cooling",
+      "score": 0.11,
+      "regime": "supportive",
+      "confidence": 82,
+      "fresh": true,
+      "freshestAt": "2026-08-19T06:31:35Z",
+      "staleAfterHours": 168,
+      "signals": [
+        {
+          "kind": "growth",
+          "title": "Industrial and data-centre activity supports water/cooling demand",
+          "detail": "Manufacturing expansion and continued AI infrastructure buildout support cooling, reuse and water-treatment equipment.",
+          "themeContribution": 0.22,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        },
+        {
+          "kind": "rates",
+          "title": "Higher yields restrain project multiples",
+          "detail": "Long-end rates remain a valuation and financing headwind.",
+          "themeContribution": -0.08,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        },
+        {
+          "kind": "credit",
+          "title": "Broad financing conditions remain workable",
+          "detail": "Tight IG/HY spreads offset some rate pressure for established infrastructure operators.",
+          "themeContribution": -0.03,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        }
+      ],
+      "watch": [
+        {
+          "kind": "watch",
+          "title": "Separate recurring water economics from AI cooling beta",
+          "detail": "ECL/XYL and MOD/VRT should not receive the same macro interpretation.",
+          "nextTest": "Data-centre capex and industrial water/reuse order growth."
+        }
+      ]
+    },
+    {
+      "theme": "Agriculture / Food Systems",
+      "score": -0.07,
+      "regime": "slightly cautious",
+      "confidence": 72,
+      "fresh": true,
+      "freshestAt": "2026-08-19T06:31:35Z",
+      "staleAfterHours": 168,
+      "signals": [
+        {
+          "kind": "consumer",
+          "title": "Weak consumer data is a mild demand headwind",
+          "detail": "Retail and sentiment weakness are negative for discretionary food chains but less important for essential agricultural inputs.",
+          "themeContribution": -0.08,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        },
+        {
+          "kind": "rates",
+          "title": "High financing costs pressure farm/project economics",
+          "detail": "Restrictive long rates are a modest negative for equipment and capital-intensive agriculture.",
+          "themeContribution": -0.05,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        },
+        {
+          "kind": "inflation",
+          "title": "Sticky input prices preserve pricing complexity",
+          "detail": "High upstream prices can support nominal revenue but also squeeze margins.",
+          "themeContribution": 0.06,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        }
+      ],
+      "watch": [
+        {
+          "kind": "watch",
+          "title": "Weather and crop fundamentals dominate macro",
+          "detail": "WASDE, crop yields, fertiliser and commodity balances should override small macro changes.",
+          "nextTest": "WASDE/crop conditions and company-specific volume/margin guidance."
+        }
+      ]
+    },
+    {
+      "theme": "Healthcare / Metabolic",
+      "score": 0.03,
+      "regime": "defensive-neutral",
+      "confidence": 74,
+      "fresh": true,
+      "freshestAt": "2026-08-19T06:31:35Z",
+      "staleAfterHours": 168,
+      "signals": [
+        {
+          "kind": "consumer",
+          "title": "Weak consumer/labour data increases defensive value",
+          "detail": "Healthcare demand is less cyclical than discretionary spending, improving relative resilience.",
+          "themeContribution": 0.08,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        },
+        {
+          "kind": "rates",
+          "title": "Long rates still matter for valuation",
+          "detail": "High discount rates remain a mild headwind for premium-growth healthcare equities.",
+          "themeContribution": -0.05,
+          "observedAt": "2026-08-19",
+          "sourceName": "Macro Indicators Dashboard",
+          "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
+          "fresh": true
+        }
+      ],
+      "watch": [
+        {
+          "kind": "watch",
+          "title": "Company execution dominates macro",
+          "detail": "Drug efficacy, supply, reimbursement and adoption should matter more than the macro overlay.",
+          "nextTest": "Prescription/adoption data, supply capacity and payer coverage."
+        }
+      ]
+    }
+  ]
+}

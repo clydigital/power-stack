@@ -1,6 +1,10 @@
 [
   {
     "date": "2026-08-19",
+    "summary": "Replaced the active Live Desk Pulse with a macro-regime Pulse. Power Stack now reads data/macro-context.json, built from a reviewed scan of the Macro Indicators dashboard across Growth, Inflation, Labour, Rates, Credit, Consumer, Housing, Energy and Positioning, then translates that regime into all current Power Stack themes. Live Desk influence is zero and its scheduled sync is disabled but retained as a dormant stub. Base Conviction remains untouched; macro adjustment is transparent, stale-safe and capped at +/-1.00. No stock research scores were changed in this implementation commit."
+  },
+  {
+    "date": "2026-08-19",
     "summary": "Daily investment refresh: promoted BHP Group ADR (BHP) at 8.1 as a diversified Metals crossover after FY2026 results confirmed copper now generates roughly 55% of underlying EBITDA and has overtaken iron ore as the largest earnings contributor. Jansen adds potash/food-security exposure from 2027 and Olympic Dam adds uranium by-product optionality. Power/Grid remains the core category, but 30-year Treasury yields at their highest since 2007 and Brent above $91 increase valuation pressure on long-duration AI/infrastructure names. Water/Cooling, Agriculture, Healthcare/Metabolic and Robotics rankings were unchanged. July ISM remains the latest official dataset and was re-verified without timestamp churn. Added data/metals-research.json and data/powerstack-update-2026-08-19.json; no UI, scoring, automation or backend changes."
   },
   {

@@ -34,9 +34,9 @@
           <div id="statusNav" class="side-nav"></div>
         </section>
         <section class="side-section live-pulse-section">
-          <div class="side-heading row-between"><span>Live Desk pulse</span><span id="sidebarLiveDot" class="live-dot"></span></div>
+          <div class="side-heading row-between"><span>Macro pulse</span><span id="sidebarLiveDot" class="live-dot"></span></div>
           <div id="livePulse"></div>
-          <div id="liveTimestamp" class="side-micro">Waiting for Live Desk…</div>
+          <div id="liveTimestamp" class="side-micro">Waiting for macro snapshot…</div>
         </section>
       </nav>
 
@@ -51,11 +51,11 @@
         <div>
           <div class="eyebrow">CROSS-MARKET IDEA DATABASE</div>
           <h1>All Ideas</h1>
-          <p id="viewSubtitle">Long-duration theses with a separate Live Desk context overlay.</p>
+          <p id="viewSubtitle">Long-duration theses with a separate macro-regime overlay.</p>
         </div>
         <div class="top-actions">
-          <div id="liveBadge" class="live-badge offline"><span></span> Live Desk connecting</div>
-          <a class="ghost-link" href="https://alchemy-live-market-desk.vercel.app" target="_blank" rel="noopener">Open Live Desk ↗</a>
+          <div id="liveBadge" class="live-badge offline"><span></span> Macro snapshot loading</div>
+          <a class="ghost-link" href="https://macro-indicators-a3d.pages.dev/#econ_calendar" target="_blank" rel="noopener">Open Macro Dashboard ↗</a>
         </div>
       </header>
 
@@ -65,13 +65,13 @@
         <section class="context-panel panel">
           <div class="context-head">
             <div>
-              <div class="eyebrow">LIVE DESK OVERLAY</div>
-              <h2 id="contextTitle">Cross-theme pulse</h2>
+              <div class="eyebrow">MACRO REGIME OVERLAY</div>
+              <h2 id="contextTitle">Macro regime → Power Stack</h2>
             </div>
-            <div id="contextMeta" class="context-meta">Loading read-only context…</div>
+            <div id="contextMeta" class="context-meta">Loading macro snapshot…</div>
           </div>
           <div id="contextBody" class="context-body"></div>
-          <div class="context-rule">Every Live Desk driver shows its own contribution. Theme dependency scales the effect, total movement is capped at ±1 conviction point, and stale context applies no adjustment.</div>
+          <div class="context-rule">The Pulse reads a reviewed macro snapshot built from ISM, inflation, labour, rates, credit, consumer, housing, energy and positioning data. Macro movement is capped at ±1 conviction point and stale snapshots apply no adjustment.</div>
         </section>
 
         <section class="control-row panel">
@@ -81,7 +81,7 @@
           </div>
           <select id="sort" aria-label="Sort ideas">
             <option value="conviction">Base conviction</option>
-            <option value="contextConviction">Context-adjusted conviction</option>
+            <option value="contextConviction">Macro-adjusted conviction</option>
             <option value="aiRisk">AI crash risk</option>
             <option value="themeDependency">Theme dependency</option>
             <option value="cyclicality">Cyclicality</option>
@@ -106,7 +106,7 @@
         <section id="grid" class="idea-grid"></section>
       </main>
 
-      <footer class="footer">Power Stack is a research memory system, not an automated recommendation engine. Live Desk data is read-only context.</footer>
+      <footer class="footer">Power Stack is a research memory system, not an automated recommendation engine. Macro context is an interpretive overlay; Base Conviction remains the durable research score.</footer>
     </div>
   </div>
 
