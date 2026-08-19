@@ -1,0 +1,5213 @@
+{
+  "version": 1,
+  "updatedAt": "2026-08-19",
+  "model": "stock-specific macro fingerprint",
+  "fundamentalWeight": 0.65,
+  "marketWeight": 0.35,
+  "profileMethod": "Scanner-derived from stored Power Stack research, then normalized with semantic/economic guardrails. Lower confidence reduces influence. Refresh when business model, balance sheet or lifecycle changes materially.",
+  "channelSemantics": {
+    "growthDemand": "Higher = stronger broad/industrial demand",
+    "policyRelief": "Higher = more disinflation / more room for central-bank easing",
+    "financialConditions": "Higher = easier actual financial conditions / lower long-end yields",
+    "creditAvailability": "Higher = tighter broad spreads / easier credit availability",
+    "tailCreditStress": "Higher = MORE stress among weakest borrowers",
+    "consumerStrength": "Higher = stronger household spending / demand",
+    "housingStrength": "Higher = stronger housing/construction cycle",
+    "industrialCapex": "Higher = stronger power/grid/data-centre/industrial capex",
+    "inputCostPressure": "Higher = MORE raw-material/freight/wage/equipment cost pressure",
+    "labourStrength": "Higher = stronger employment and wage-income backdrop",
+    "riskAppetite": "Higher = stronger speculative/equity risk appetite",
+    "crudeTightness": "Higher = tighter/higher crude balance and prices",
+    "productTightness": "Higher = tighter product balance / wider crack spreads",
+    "gasTightness": "Higher = tighter/higher US natural-gas balance and prices"
+  },
+  "stocks": [
+    {
+      "ticker": "GEV",
+      "name": "GE Vernova",
+      "themeGroup": "Power / Grid",
+      "profileConfidence": 0.85,
+      "profileNote": "Strong demand from AI/data centres and grid capex outweighs valuation and execution risks.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 5,
+          "market": 4.0,
+          "weight": 0.16,
+          "confidence": 0.9,
+          "rationale": "AI/data-centre load drives demand"
+        },
+        "policyRelief": {
+          "fundamental": 0.9,
+          "market": 1.5,
+          "weight": 0.0439,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 2.0,
+          "market": 2.0,
+          "weight": 0.0799,
+          "confidence": 0.85,
+          "rationale": "Easier financing lowers cost of capex"
+        },
+        "creditAvailability": {
+          "fundamental": 1.5,
+          "market": 1.5,
+          "weight": 0.0571,
+          "confidence": 0.8,
+          "rationale": "Broad credit mainly affects customers/project financing, not core corporate solvency."
+        },
+        "consumerStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0686,
+          "confidence": 0.75,
+          "rationale": "Consumer power use boosts demand"
+        },
+        "housingStrength": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.0799,
+          "confidence": 0.8,
+          "rationale": "Housing builds electricity demand"
+        },
+        "energyTightness": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1371,
+          "confidence": 0.9,
+          "rationale": "Higher energy prices spur equipment sales"
+        },
+        "industrialCapex": {
+          "fundamental": 5,
+          "market": 4.0,
+          "weight": 0.1827,
+          "confidence": 0.9,
+          "rationale": "Infrastructure spend drives orders"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.0571,
+          "confidence": 0.8,
+          "rationale": "Cost inflation compresses margins"
+        },
+        "labourStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0686,
+          "confidence": 0.75,
+          "rationale": "Jobs boost power consumption"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 0.5,
+          "weight": 0.0365,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.5,
+          "weight": 0.0286,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "BWXT",
+      "name": "BWX Technologies",
+      "themeGroup": "Nuclear",
+      "profileConfidence": 0.78,
+      "profileNote": "Strong nuclear demand and defence spending offset valuation risks.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 1.5,
+          "market": 1.5,
+          "weight": 0.2651,
+          "confidence": 0.9,
+          "rationale": "Broad growth is secondary to structural nuclear/fuel demand and company-specific execution."
+        },
+        "policyRelief": {
+          "fundamental": 0.45,
+          "market": 0.9,
+          "weight": 0.0368,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 1.0,
+          "market": 1.2,
+          "weight": 0.0663,
+          "confidence": 0.9,
+          "rationale": "Backlog and existing operations reduce dependence on market financing."
+        },
+        "creditAvailability": {
+          "fundamental": 0.5,
+          "market": 0.8,
+          "weight": 0.0442,
+          "confidence": 0.88,
+          "rationale": "Existing operations and backlog limit dependence on credit conditions."
+        },
+        "consumerStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0589,
+          "confidence": 0.4,
+          "rationale": "Limited impact on defense‑focused revenue"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0442,
+          "confidence": 0.3,
+          "rationale": "Irrelevant to nuclear/defence business"
+        },
+        "energyTightness": {
+          "fundamental": 3.5,
+          "market": 2.5,
+          "weight": 0.0,
+          "confidence": 0.85,
+          "rationale": "Higher energy prices favor nuclear competitiveness"
+        },
+        "industrialCapex": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1915,
+          "confidence": 0.9,
+          "rationale": "Infrastructure spend drives nuclear component demand"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.5,
+          "weight": 0.1031,
+          "confidence": 0.7,
+          "rationale": "Rising input costs compress margins"
+        },
+        "labourStrength": {
+          "fundamental": 0.5,
+          "market": 0.5,
+          "weight": 0.0589,
+          "confidence": 0.6,
+          "rationale": "Stronger labor market may raise wages"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 0.5,
+          "weight": 0.0353,
+          "confidence": 0.9,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "crudeTightness": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0368,
+          "confidence": 0.6,
+          "rationale": "Higher hydrocarbon costs marginally improve nuclear relative economics."
+        },
+        "gasTightness": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0368,
+          "confidence": 0.6,
+          "rationale": "Higher gas costs can strengthen the case for firm nuclear generation."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.25,
+          "weight": 0.0221,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "0836.HK",
+      "name": "China Resources Power",
+      "themeGroup": "Power / Grid",
+      "profileConfidence": 0.88,
+      "profileNote": "Strong demand fundamentals, moderate policy risk, manageable cost pressures.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 2.0,
+          "market": 2.0,
+          "weight": 0.1193,
+          "confidence": 0.9,
+          "rationale": "Rising electricity demand lifts revenue"
+        },
+        "policyRelief": {
+          "fundamental": 0.68,
+          "market": 0.75,
+          "weight": 0.0478,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 1.5,
+          "market": 1.0,
+          "weight": 0.0868,
+          "confidence": 0.85,
+          "rationale": "Easier financing cuts cost of capital"
+        },
+        "creditAvailability": {
+          "fundamental": 1.5,
+          "market": 1.0,
+          "weight": 0.0651,
+          "confidence": 0.8,
+          "rationale": "Credit ease supports capex funding"
+        },
+        "consumerStrength": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.1194,
+          "confidence": 0.9,
+          "rationale": "Strong consumer spending boosts power use"
+        },
+        "housingStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0759,
+          "confidence": 0.75,
+          "rationale": "Housing builds drive electricity demand"
+        },
+        "energyTightness": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.1194,
+          "confidence": 0.85,
+          "rationale": "Higher fuel prices hurt thermal margins"
+        },
+        "industrialCapex": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0977,
+          "confidence": 0.8,
+          "rationale": "Infrastructure spend raises load growth"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.1194,
+          "confidence": 0.9,
+          "rationale": "Cost inflation squeezes margins"
+        },
+        "labourStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0977,
+          "confidence": 0.7,
+          "rationale": "Job growth fuels electricity consumption"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 0.5,
+          "weight": 0.0353,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.25,
+          "weight": 0.0162,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "TNB",
+      "name": "Tenaga Nasional",
+      "themeGroup": "Power / Grid",
+      "profileConfidence": 0.78,
+      "profileNote": "TNB benefits from growth and capex, but faces cost and regulatory risks.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 2.0,
+          "market": 2.0,
+          "weight": 0.1683,
+          "confidence": 0.85,
+          "rationale": "Data‑centre and economic growth boost electricity demand."
+        },
+        "policyRelief": {
+          "fundamental": 0.68,
+          "market": 1.5,
+          "weight": 0.0494,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 1.5,
+          "market": 2.0,
+          "weight": 0.0897,
+          "confidence": 0.8,
+          "rationale": "Lower yields ease financing of regulated assets."
+        },
+        "creditAvailability": {
+          "fundamental": 1.5,
+          "market": 1.0,
+          "weight": 0.0673,
+          "confidence": 0.75,
+          "rationale": "Easier credit supports capex funding."
+        },
+        "consumerStrength": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.1346,
+          "confidence": 0.85,
+          "rationale": "Higher consumer spending lifts power usage."
+        },
+        "housingStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0784,
+          "confidence": 0.7,
+          "rationale": "Housing growth adds residential electricity demand."
+        },
+        "energyTightness": {
+          "fundamental": -1.0,
+          "market": -1.0,
+          "weight": 0.0673,
+          "confidence": 0.6,
+          "rationale": "Tighter energy prices raise input costs."
+        },
+        "industrialCapex": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.157,
+          "confidence": 0.9,
+          "rationale": "Grid and data‑centre capex drive revenue growth."
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.0784,
+          "confidence": 0.65,
+          "rationale": "Rising fuel and material costs compress margins."
+        },
+        "labourStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.056,
+          "confidence": 0.6,
+          "rationale": "Stronger jobs increase overall demand."
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 0.5,
+          "weight": 0.0368,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.25,
+          "weight": 0.0168,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "PWR",
+      "name": "Quanta Services",
+      "themeGroup": "Power / Grid",
+      "profileConfidence": 0.85,
+      "profileNote": "Quanta benefits from electrification capex but faces cost pressures",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1934,
+          "confidence": 0.85,
+          "rationale": "Higher power demand lifts grid projects"
+        },
+        "policyRelief": {
+          "fundamental": 0.68,
+          "market": 1.12,
+          "weight": 0.0399,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 1.5,
+          "market": 1.5,
+          "weight": 0.0725,
+          "confidence": 0.8,
+          "rationale": "Lower yields ease project funding"
+        },
+        "creditAvailability": {
+          "fundamental": 1.5,
+          "market": 1.5,
+          "weight": 0.0605,
+          "confidence": 0.8,
+          "rationale": "Broad credit mainly affects customers/project financing, not core corporate solvency."
+        },
+        "consumerStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0846,
+          "confidence": 0.7,
+          "rationale": "Strong consumers drive electricity use"
+        },
+        "housingStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0846,
+          "confidence": 0.7,
+          "rationale": "Housing builds increase grid load"
+        },
+        "energyTightness": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.0483,
+          "confidence": 0.5,
+          "rationale": "Tight energy prices may spur upgrades"
+        },
+        "industrialCapex": {
+          "fundamental": 5,
+          "market": 4.0,
+          "weight": 0.2055,
+          "confidence": 0.9,
+          "rationale": "Infrastructure spend fuels core revenue"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.0967,
+          "confidence": 0.75,
+          "rationale": "Rising labor/material costs compress margins"
+        },
+        "labourStrength": {
+          "fundamental": 0,
+          "market": -1.0,
+          "weight": 0.0483,
+          "confidence": 0.6,
+          "rationale": "Strong labor raises wage expenses"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 0.5,
+          "weight": 0.0355,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.5,
+          "weight": 0.0302,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "ETN",
+      "name": "Eaton",
+      "themeGroup": "AI / Data centres",
+      "profileConfidence": 0.85,
+      "profileNote": "Strong industrial demand and capex support outweigh modest input cost and policy risks.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 2.0,
+          "weight": 0.1831,
+          "confidence": 0.85,
+          "rationale": "Data‑centre and electrification boost demand"
+        },
+        "policyRelief": {
+          "fundamental": 0.68,
+          "market": 1.12,
+          "weight": 0.0403,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 1.5,
+          "market": 1.5,
+          "weight": 0.0733,
+          "confidence": 0.8,
+          "rationale": "Lower yields ease financing"
+        },
+        "creditAvailability": {
+          "fundamental": 1.5,
+          "market": 1.5,
+          "weight": 0.061,
+          "confidence": 0.8,
+          "rationale": "Broad credit mainly affects customers/project financing, not core corporate solvency."
+        },
+        "consumerStrength": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0488,
+          "confidence": 0.5,
+          "rationale": "Consumer spend drives data‑centre use"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0244,
+          "confidence": 0.4,
+          "rationale": "Minimal direct impact"
+        },
+        "energyTightness": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0977,
+          "confidence": 0.7,
+          "rationale": "Higher energy prices raise efficiency demand"
+        },
+        "industrialCapex": {
+          "fundamental": 5,
+          "market": 4.0,
+          "weight": 0.2198,
+          "confidence": 0.9,
+          "rationale": "Core driver from infrastructure and grid spend"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.0977,
+          "confidence": 0.75,
+          "rationale": "Material cost inflation hurts margins"
+        },
+        "labourStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0854,
+          "confidence": 0.7,
+          "rationale": "Stronger jobs boost industrial activity"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 0.5,
+          "weight": 0.0379,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.5,
+          "weight": 0.0306,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "1816.HK",
+      "name": "CGN Power",
+      "themeGroup": "Nuclear",
+      "profileConfidence": 0.78,
+      "profileNote": "Strong state support and demand underpin bullish outlook",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 1.5,
+          "market": 1.5,
+          "weight": 0.2192,
+          "confidence": 0.9,
+          "rationale": "Broad growth is secondary to structural nuclear/fuel demand and company-specific execution."
+        },
+        "policyRelief": {
+          "fundamental": 0.68,
+          "market": 1.5,
+          "weight": 0.0496,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 1.5,
+          "market": 2.0,
+          "weight": 0.0902,
+          "confidence": 0.75,
+          "rationale": "Cheap financing improves project economics"
+        },
+        "creditAvailability": {
+          "fundamental": 1.5,
+          "market": 1.5,
+          "weight": 0.0774,
+          "confidence": 0.85,
+          "rationale": "Easier credit reduces financing costs"
+        },
+        "consumerStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0644,
+          "confidence": 0.7,
+          "rationale": "Strong consumption lifts electricity sales"
+        },
+        "housingStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0644,
+          "confidence": 0.65,
+          "rationale": "Housing growth raises power usage"
+        },
+        "energyTightness": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.0,
+          "confidence": 0.8,
+          "rationale": "Tighter energy prices raise tariffs"
+        },
+        "industrialCapex": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.1546,
+          "confidence": 0.75,
+          "rationale": "Industrial expansion fuels electricity demand"
+        },
+        "inputCostPressure": {
+          "fundamental": -2.0,
+          "market": -1.0,
+          "weight": 0.0902,
+          "confidence": 0.6,
+          "rationale": "Rising input costs compress margins"
+        },
+        "labourStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0644,
+          "confidence": 0.7,
+          "rationale": "Robust labor market boosts consumption"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 0.5,
+          "weight": 0.0417,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "crudeTightness": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0323,
+          "confidence": 0.6,
+          "rationale": "Higher hydrocarbon costs marginally improve nuclear relative economics."
+        },
+        "gasTightness": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0323,
+          "confidence": 0.6,
+          "rationale": "Higher gas costs can strengthen the case for firm nuclear generation."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.25,
+          "weight": 0.0193,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "XOM",
+      "name": "Exxon Mobil",
+      "themeGroup": "Oil & Gas",
+      "profileConfidence": 0.78,
+      "profileNote": "Exxon benefits from demand growth and high energy prices, but faces margin pressure from rising costs.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1329,
+          "confidence": 0.85,
+          "rationale": "Upstream benefits from rising global oil demand."
+        },
+        "policyRelief": {
+          "fundamental": 0.68,
+          "market": 1.5,
+          "weight": 0.0389,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 1.5,
+          "market": 2.0,
+          "weight": 0.0708,
+          "confidence": 0.75,
+          "rationale": "Lower yields ease financing for capex."
+        },
+        "creditAvailability": {
+          "fundamental": 1.5,
+          "market": 1.5,
+          "weight": 0.0532,
+          "confidence": 0.7,
+          "rationale": "Easier credit aids project funding."
+        },
+        "consumerStrength": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.1063,
+          "confidence": 0.8,
+          "rationale": "Strong consumer spending drives fuel demand."
+        },
+        "housingStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0621,
+          "confidence": 0.6,
+          "rationale": "Housing activity lifts energy consumption."
+        },
+        "energyTightness": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.0,
+          "confidence": 0.9,
+          "rationale": "Replaced by crude/product/gas subchannels."
+        },
+        "industrialCapex": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0621,
+          "confidence": 0.65,
+          "rationale": "Infrastructure spend raises oil demand."
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.0708,
+          "confidence": 0.7,
+          "rationale": "Rising input costs compress margins."
+        },
+        "labourStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0621,
+          "confidence": 0.75,
+          "rationale": "Job growth lifts demand for transportation fuels."
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 0.5,
+          "weight": 0.0353,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "crudeTightness": {
+          "fundamental": 5,
+          "market": 4.5,
+          "weight": 0.2125,
+          "confidence": 0.95,
+          "rationale": "Upstream cash flow is highly sensitive to crude-price and balance strength."
+        },
+        "productTightness": {
+          "fundamental": 2.0,
+          "market": 1.5,
+          "weight": 0.0443,
+          "confidence": 0.75,
+          "rationale": "Refining exposure adds some benefit from tight product markets."
+        },
+        "gasTightness": {
+          "fundamental": 1.5,
+          "market": 1.0,
+          "weight": 0.0354,
+          "confidence": 0.65,
+          "rationale": "Natural-gas balance sensitivity."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.25,
+          "weight": 0.0133,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "WMB",
+      "name": "Williams Companies",
+      "themeGroup": "Oil & Gas",
+      "profileConfidence": 0.78,
+      "profileNote": "Balanced outlook; fundamentals dominate with modest market tilt.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 2.0,
+          "market": 2.0,
+          "weight": 0.2358,
+          "confidence": 0.85,
+          "rationale": "Higher gas demand lifts volumes"
+        },
+        "policyRelief": {
+          "fundamental": 0.68,
+          "market": 0.75,
+          "weight": 0.0413,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 1.5,
+          "market": 1.0,
+          "weight": 0.0751,
+          "confidence": 0.8,
+          "rationale": "Lower yields ease financing"
+        },
+        "creditAvailability": {
+          "fundamental": 1.5,
+          "market": 1.0,
+          "weight": 0.0644,
+          "confidence": 0.8,
+          "rationale": "Easier credit supports capex"
+        },
+        "consumerStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.0536,
+          "confidence": 0.75,
+          "rationale": "Strong consumers boost demand"
+        },
+        "housingStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.0536,
+          "confidence": 0.75,
+          "rationale": "Housing growth drives gas use"
+        },
+        "energyTightness": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.0,
+          "confidence": 0.85,
+          "rationale": "Replaced by crude/product/gas subchannels."
+        },
+        "industrialCapex": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.1073,
+          "confidence": 0.8,
+          "rationale": "Industrial capex fuels throughput"
+        },
+        "inputCostPressure": {
+          "fundamental": -2.0,
+          "market": -1.0,
+          "weight": 0.0751,
+          "confidence": 0.7,
+          "rationale": "Higher input costs compress earnings"
+        },
+        "labourStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.0536,
+          "confidence": 0.75,
+          "rationale": "Job growth lifts demand"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 0.5,
+          "weight": 0.0364,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "crudeTightness": {
+          "fundamental": 0.5,
+          "market": 0.5,
+          "weight": 0.0161,
+          "confidence": 0.5,
+          "rationale": "Direct crude-balance sensitivity."
+        },
+        "productTightness": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.0,
+          "confidence": 0.85,
+          "rationale": "Refined-product and crack-spread sensitivity."
+        },
+        "gasTightness": {
+          "fundamental": 2.0,
+          "market": 1.5,
+          "weight": 0.1716,
+          "confidence": 0.85,
+          "rationale": "Gas tightness can support throughput/infrastructure demand, though contracts damp price beta."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.25,
+          "weight": 0.0161,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "SCGBHD",
+      "name": "Southern Cable",
+      "themeGroup": "AI / Data centres",
+      "profileConfidence": 0.78,
+      "profileNote": "Strong grid demand offsets copper cost risk",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.1315,
+          "confidence": 0.85,
+          "rationale": "Grid upgrades and data centre expansion boost cable demand"
+        },
+        "policyRelief": {
+          "fundamental": 0.9,
+          "market": 0.75,
+          "weight": 0.062,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.1126,
+          "confidence": 0.8,
+          "rationale": "Lower yields ease financing for capital projects"
+        },
+        "creditAvailability": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.1033,
+          "confidence": 0.8,
+          "rationale": "Easier credit improves project funding"
+        },
+        "consumerStrength": {
+          "fundamental": 0,
+          "market": 0.0,
+          "weight": 0.0375,
+          "confidence": 0.5,
+          "rationale": "Consumer spending less relevant to cable demand"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0375,
+          "confidence": 0.5,
+          "rationale": "Housing market impact minimal for high‑voltage cables"
+        },
+        "energyTightness": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.0751,
+          "confidence": 0.75,
+          "rationale": "Higher energy prices increase grid load"
+        },
+        "industrialCapex": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1502,
+          "confidence": 0.9,
+          "rationale": "Strong capex drives extensive grid infrastructure build‑out"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.1126,
+          "confidence": 0.7,
+          "rationale": "Rising copper costs compress margins"
+        },
+        "labourStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.0564,
+          "confidence": 0.75,
+          "rationale": "Job growth supports overall economic activity"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 2.5,
+          "weight": 0.0697,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": -1.0,
+          "market": -2.0,
+          "weight": 0.0516,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "YTLPOWR",
+      "name": "YTL Power",
+      "themeGroup": "AI / Data centres",
+      "profileConfidence": 0.78,
+      "profileNote": "Strong AI/data‑centre growth drive; capex heavy but execution risk; benefits from higher energy prices.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1387,
+          "confidence": 0.9,
+          "rationale": "AI/data‑centre demand boosts power usage"
+        },
+        "policyRelief": {
+          "fundamental": 0.45,
+          "market": 0.75,
+          "weight": 0.0509,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0924,
+          "confidence": 0.7,
+          "rationale": "Easier financing supports capex and expansion"
+        },
+        "creditAvailability": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.0578,
+          "confidence": 0.5,
+          "rationale": "Credit spreads modestly affect project funding"
+        },
+        "consumerStrength": {
+          "fundamental": 0,
+          "market": 0.0,
+          "weight": 0.0463,
+          "confidence": 0.4,
+          "rationale": "Consumer spending less linked to power demand"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0.0,
+          "weight": 0.0463,
+          "confidence": 0.4,
+          "rationale": "Housing market not primary driver for YTL Power"
+        },
+        "energyTightness": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.1387,
+          "confidence": 0.85,
+          "rationale": "Higher energy prices improve generation margins"
+        },
+        "industrialCapex": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1845,
+          "confidence": 0.9,
+          "rationale": "Data‑centre and grid capex boost growth"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.1155,
+          "confidence": 0.7,
+          "rationale": "Rising fuel costs compress profit margins"
+        },
+        "labourStrength": {
+          "fundamental": 0,
+          "market": 0.0,
+          "weight": 0.0463,
+          "confidence": 0.4,
+          "rationale": "Labour market less relevant to power output"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 1.5,
+          "weight": 0.0537,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.5,
+          "weight": 0.0289,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "LEU",
+      "name": "Centrus Energy",
+      "themeGroup": "Uranium / Fuel",
+      "profileConfidence": 0.75,
+      "profileNote": "US policy and demand drive upside; cost and market risks moderate.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 1.5,
+          "market": 1.5,
+          "weight": 0.1624,
+          "confidence": 0.75,
+          "rationale": "Broad growth is secondary to structural nuclear/fuel demand and company-specific execution."
+        },
+        "policyRelief": {
+          "fundamental": 0.9,
+          "market": 0.75,
+          "weight": 0.0574,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.1044,
+          "confidence": 0.7,
+          "rationale": "Easier financing aids projects"
+        },
+        "creditAvailability": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0928,
+          "confidence": 0.7,
+          "rationale": "Credit eases capital needs"
+        },
+        "consumerStrength": {
+          "fundamental": 0,
+          "market": -1.0,
+          "weight": 0.0464,
+          "confidence": 0.5,
+          "rationale": "Weak consumer link"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0348,
+          "confidence": 0.5,
+          "rationale": "Irrelevant housing market"
+        },
+        "energyTightness": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.0,
+          "confidence": 0.78,
+          "rationale": "Tighter energy prices favor nuclear"
+        },
+        "industrialCapex": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.116,
+          "confidence": 0.75,
+          "rationale": "Capex boosts enrichment demand"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.1044,
+          "confidence": 0.65,
+          "rationale": "Rising input costs hurt margins"
+        },
+        "labourStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0464,
+          "confidence": 0.5,
+          "rationale": "Limited direct impact"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 3.5,
+          "weight": 0.0958,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "crudeTightness": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.029,
+          "confidence": 0.6,
+          "rationale": "Higher hydrocarbon costs marginally improve nuclear relative economics."
+        },
+        "gasTightness": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.029,
+          "confidence": 0.6,
+          "rationale": "Higher gas costs can strengthen the case for firm nuclear generation."
+        },
+        "tailCreditStress": {
+          "fundamental": -1.5,
+          "market": -3.0,
+          "weight": 0.0812,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "CCJ",
+      "name": "Cameco",
+      "themeGroup": "Uranium / Fuel",
+      "profileConfidence": 0.78,
+      "profileNote": "Strong fundamentals from demand and policy; cost pressures moderate risk.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 2.0,
+          "market": 2.0,
+          "weight": 0.169,
+          "confidence": 0.9,
+          "rationale": "Broad growth is secondary to structural nuclear/fuel demand and company-specific execution."
+        },
+        "policyRelief": {
+          "fundamental": 0.9,
+          "market": 0.75,
+          "weight": 0.062,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.1128,
+          "confidence": 0.7,
+          "rationale": "Lower yields reduce cost of capital for mining projects."
+        },
+        "creditAvailability": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.1016,
+          "confidence": 0.7,
+          "rationale": "Easier credit improves project funding and expansion."
+        },
+        "consumerStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0677,
+          "confidence": 0.5,
+          "rationale": "Limited impact; uranium demand not consumer‑driven."
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": -1.0,
+          "weight": 0.0677,
+          "confidence": 0.5,
+          "rationale": "Housing activity unrelated to uranium market."
+        },
+        "energyTightness": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.0,
+          "confidence": 0.8,
+          "rationale": "Higher energy costs compress mining margins."
+        },
+        "industrialCapex": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.1016,
+          "confidence": 0.7,
+          "rationale": "Grid and infrastructure capex boost long‑term nuclear demand."
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.1128,
+          "confidence": 0.8,
+          "rationale": "Rising input costs erode profit margins."
+        },
+        "labourStrength": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0677,
+          "confidence": 0.6,
+          "rationale": "Stronger labor market supports electricity demand, modest uranium benefit."
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 1.5,
+          "weight": 0.0525,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "crudeTightness": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0282,
+          "confidence": 0.6,
+          "rationale": "Higher hydrocarbon costs marginally improve nuclear relative economics."
+        },
+        "gasTightness": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0282,
+          "confidence": 0.6,
+          "rationale": "Higher gas costs can strengthen the case for firm nuclear generation."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.5,
+          "weight": 0.0282,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "1072.HK",
+      "name": "Dongfang Electric",
+      "themeGroup": "Power / Grid",
+      "profileConfidence": 0.85,
+      "profileNote": "Strong Chinese power-gen buildout and policy support outweigh cost pressures",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 5,
+          "market": 3.0,
+          "weight": 0.2396,
+          "confidence": 0.9,
+          "rationale": "China power-gen expansion lifts equipment demand"
+        },
+        "policyRelief": {
+          "fundamental": 0.9,
+          "market": 0.75,
+          "weight": 0.0329,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0599,
+          "confidence": 0.7,
+          "rationale": "Easier financing aids project funding"
+        },
+        "creditAvailability": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0599,
+          "confidence": 0.7,
+          "rationale": "Credit ease supports order flow"
+        },
+        "consumerStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.036,
+          "confidence": 0.6,
+          "rationale": "Consumer demand drives power use"
+        },
+        "housingStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.024,
+          "confidence": 0.5,
+          "rationale": "Housing construction adds load"
+        },
+        "energyTightness": {
+          "fundamental": 4.0,
+          "market": 2.0,
+          "weight": 0.1437,
+          "confidence": 0.85,
+          "rationale": "Tight energy markets spur equipment orders"
+        },
+        "industrialCapex": {
+          "fundamental": 5,
+          "market": 3.0,
+          "weight": 0.1916,
+          "confidence": 0.9,
+          "rationale": "Industrial capex drives turbine sales"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.0958,
+          "confidence": 0.8,
+          "rationale": "Rising input costs squeeze margins"
+        },
+        "labourStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.036,
+          "confidence": 0.6,
+          "rationale": "Labour strength lifts power demand"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 1.5,
+          "weight": 0.0506,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.5,
+          "weight": 0.03,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "0883.HK",
+      "name": "CNOOC",
+      "themeGroup": "Oil & Gas",
+      "profileConfidence": 0.88,
+      "profileNote": "CNOOC benefits from demand, energy tightness; cost pressure a downside.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1462,
+          "confidence": 0.9,
+          "rationale": "Higher oil demand lifts revenue"
+        },
+        "policyRelief": {
+          "fundamental": 0.68,
+          "market": 0.75,
+          "weight": 0.0429,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 1.5,
+          "market": 1.0,
+          "weight": 0.078,
+          "confidence": 0.85,
+          "rationale": "Lower yields ease financing"
+        },
+        "creditAvailability": {
+          "fundamental": 1.5,
+          "market": 1.0,
+          "weight": 0.0585,
+          "confidence": 0.85,
+          "rationale": "Easier credit supports projects"
+        },
+        "consumerStrength": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.078,
+          "confidence": 0.8,
+          "rationale": "Strong consumers boost oil demand"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0585,
+          "confidence": 0.6,
+          "rationale": "Limited direct impact"
+        },
+        "energyTightness": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.0,
+          "confidence": 0.9,
+          "rationale": "Replaced by crude/product/gas subchannels."
+        },
+        "industrialCapex": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0877,
+          "confidence": 0.85,
+          "rationale": "More capex drives fuel use"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.078,
+          "confidence": 0.8,
+          "rationale": "Rising costs squeeze margins"
+        },
+        "labourStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.0488,
+          "confidence": 0.75,
+          "rationale": "Jobs boost demand modestly"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 0.5,
+          "weight": 0.0358,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "crudeTightness": {
+          "fundamental": 5,
+          "market": 4.5,
+          "weight": 0.234,
+          "confidence": 0.95,
+          "rationale": "Upstream cash flow is highly sensitive to crude-price and balance strength."
+        },
+        "productTightness": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.0,
+          "confidence": 0.85,
+          "rationale": "Refined-product and crack-spread sensitivity."
+        },
+        "gasTightness": {
+          "fundamental": 1.5,
+          "market": 1.0,
+          "weight": 0.039,
+          "confidence": 0.65,
+          "rationale": "Natural-gas balance sensitivity."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.25,
+          "weight": 0.0146,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "CVX",
+      "name": "Chevron",
+      "themeGroup": "Oil & Gas",
+      "profileConfidence": 0.85,
+      "profileNote": "Strong oil demand and tight energy markets drive upside",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1698,
+          "confidence": 0.9,
+          "rationale": "Oil demand growth lifts earnings"
+        },
+        "policyRelief": {
+          "fundamental": 0.68,
+          "market": 0.75,
+          "weight": 0.0393,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 1.5,
+          "market": 1.0,
+          "weight": 0.0715,
+          "confidence": 0.75,
+          "rationale": "Easier financing supports capex"
+        },
+        "creditAvailability": {
+          "fundamental": 1.5,
+          "market": 1.0,
+          "weight": 0.0536,
+          "confidence": 0.75,
+          "rationale": "Credit ease funds development"
+        },
+        "consumerStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0715,
+          "confidence": 0.7,
+          "rationale": "Strong consumer demand boosts fuel sales"
+        },
+        "housingStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.0447,
+          "confidence": 0.6,
+          "rationale": "Housing growth modestly lifts energy use"
+        },
+        "energyTightness": {
+          "fundamental": 5,
+          "market": 4.0,
+          "weight": 0.0,
+          "confidence": 0.95,
+          "rationale": "Replaced by crude/product/gas subchannels."
+        },
+        "industrialCapex": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0715,
+          "confidence": 0.8,
+          "rationale": "Industrial capex drives LNG demand"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.0804,
+          "confidence": 0.85,
+          "rationale": "Rising input costs compress margins"
+        },
+        "labourStrength": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0536,
+          "confidence": 0.7,
+          "rationale": "Job growth supports fuel consumption"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 0.5,
+          "weight": 0.0356,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "crudeTightness": {
+          "fundamental": 5,
+          "market": 4.5,
+          "weight": 0.2147,
+          "confidence": 0.95,
+          "rationale": "Upstream cash flow is highly sensitive to crude-price and balance strength."
+        },
+        "productTightness": {
+          "fundamental": 2.0,
+          "market": 1.5,
+          "weight": 0.0447,
+          "confidence": 0.75,
+          "rationale": "Refining exposure adds some benefit from tight product markets."
+        },
+        "gasTightness": {
+          "fundamental": 1.5,
+          "market": 1.0,
+          "weight": 0.0357,
+          "confidence": 0.65,
+          "rationale": "Natural-gas balance sensitivity."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.25,
+          "weight": 0.0134,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "5263",
+      "name": "Sunway Construction",
+      "themeGroup": "AI / Data centres",
+      "profileConfidence": 0.78,
+      "profileNote": "Strong data‑centre construction exposure; benefits from capex growth, but cost pressures and policy risks moderate outlook.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 2.0,
+          "weight": 0.1862,
+          "confidence": 0.9,
+          "rationale": "Data‑centre buildout drives demand"
+        },
+        "policyRelief": {
+          "fundamental": 0.9,
+          "market": 0.75,
+          "weight": 0.0513,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0933,
+          "confidence": 0.85,
+          "rationale": "Easier financing boosts projects"
+        },
+        "creditAvailability": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0933,
+          "confidence": 0.8,
+          "rationale": "Credit eases construction funding"
+        },
+        "consumerStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0519,
+          "confidence": 0.5,
+          "rationale": "Limited direct impact"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0519,
+          "confidence": 0.5,
+          "rationale": "Housing demand irrelevant"
+        },
+        "energyTightness": {
+          "fundamental": -2.0,
+          "market": -1.0,
+          "weight": 0.0519,
+          "confidence": 0.7,
+          "rationale": "Energy price rise raises costs"
+        },
+        "industrialCapex": {
+          "fundamental": 4.0,
+          "market": 2.5,
+          "weight": 0.1659,
+          "confidence": 0.9,
+          "rationale": "Infrastructure spending fuels projects"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.1037,
+          "confidence": 0.85,
+          "rationale": "Rising input costs compress margins"
+        },
+        "labourStrength": {
+          "fundamental": 0,
+          "market": -1.0,
+          "weight": 0.0726,
+          "confidence": 0.75,
+          "rationale": "Wage pressure impacts margins"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 1.5,
+          "weight": 0.0521,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.5,
+          "weight": 0.0259,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "MNHLDG",
+      "name": "MN Holdings",
+      "themeGroup": "AI / Data centres",
+      "profileConfidence": 0.8,
+      "profileNote": "Direct exposure to growing data centre infrastructure in Malaysia.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1529,
+          "confidence": 0.8,
+          "rationale": "Strong growth in data centre infrastructure"
+        },
+        "policyRelief": {
+          "fundamental": 0.9,
+          "market": 1.5,
+          "weight": 0.0561,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 2.0,
+          "market": 2.0,
+          "weight": 0.102,
+          "confidence": 0.7,
+          "rationale": "Favorable for growth stocks"
+        },
+        "creditAvailability": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.051,
+          "confidence": 0.6,
+          "rationale": "Easier credit for growth sectors"
+        },
+        "consumerStrength": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.102,
+          "confidence": 0.8,
+          "rationale": "Strong consumer spending on tech"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0.0,
+          "weight": 0.0204,
+          "confidence": 0.3,
+          "rationale": "Not directly related"
+        },
+        "energyTightness": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0816,
+          "confidence": 0.6,
+          "rationale": "Higher energy prices benefit infrastructure"
+        },
+        "industrialCapex": {
+          "fundamental": 5,
+          "market": 4.0,
+          "weight": 0.2038,
+          "confidence": 0.9,
+          "rationale": "High capex in data centre infrastructure"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.051,
+          "confidence": 0.7,
+          "rationale": "Execution and cost risks"
+        },
+        "labourStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.051,
+          "confidence": 0.6,
+          "rationale": "Strong labour market in tech"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 2.5,
+          "weight": 0.0721,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": -1.0,
+          "market": -2.0,
+          "weight": 0.0561,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "CEG",
+      "name": "Constellation Energy",
+      "themeGroup": "Nuclear",
+      "profileConfidence": 0.8,
+      "profileNote": "Direct AI + nuclear crossover with real operating assets.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 2.0,
+          "market": 2.0,
+          "weight": 0.1409,
+          "confidence": 0.8,
+          "rationale": "Broad growth is secondary to structural nuclear/fuel demand and company-specific execution."
+        },
+        "policyRelief": {
+          "fundamental": 0.68,
+          "market": 1.5,
+          "weight": 0.0351,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 1.5,
+          "market": 2.0,
+          "weight": 0.064,
+          "confidence": 0.6,
+          "rationale": "Easier financing conditions"
+        },
+        "creditAvailability": {
+          "fundamental": 1.5,
+          "market": 1.5,
+          "weight": 0.0768,
+          "confidence": 0.6,
+          "rationale": "Easier credit availability"
+        },
+        "consumerStrength": {
+          "fundamental": 2.0,
+          "market": 2.0,
+          "weight": 0.1279,
+          "confidence": 0.7,
+          "rationale": "Strong consumer spending"
+        },
+        "housingStrength": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0512,
+          "confidence": 0.5,
+          "rationale": "Moderate housing strength impact"
+        },
+        "energyTightness": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.0,
+          "confidence": 0.8,
+          "rationale": "Higher energy prices"
+        },
+        "industrialCapex": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.1408,
+          "confidence": 0.7,
+          "rationale": "Increased industrial capex"
+        },
+        "inputCostPressure": {
+          "fundamental": -2.0,
+          "market": -2.0,
+          "weight": 0.1023,
+          "confidence": 0.6,
+          "rationale": "Input cost pressure risks"
+        },
+        "labourStrength": {
+          "fundamental": 2.0,
+          "market": 2.0,
+          "weight": 0.1279,
+          "confidence": 0.7,
+          "rationale": "Strong labour market"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 1.5,
+          "weight": 0.0501,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "crudeTightness": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0319,
+          "confidence": 0.6,
+          "rationale": "Higher hydrocarbon costs marginally improve nuclear relative economics."
+        },
+        "gasTightness": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0319,
+          "confidence": 0.6,
+          "rationale": "Higher gas costs can strengthen the case for firm nuclear generation."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.25,
+          "weight": 0.0192,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "KMI",
+      "name": "Kinder Morgan",
+      "themeGroup": "Oil & Gas",
+      "profileConfidence": 0.8,
+      "profileNote": "Steadier than high-beta power names.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 2.0,
+          "market": 2.0,
+          "weight": 0.1266,
+          "confidence": 0.8,
+          "rationale": "Stronger demand growth"
+        },
+        "policyRelief": {
+          "fundamental": 0.68,
+          "market": 1.5,
+          "weight": 0.0464,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 1.5,
+          "market": 2.0,
+          "weight": 0.0843,
+          "confidence": 0.75,
+          "rationale": "Easier financing"
+        },
+        "creditAvailability": {
+          "fundamental": 1.5,
+          "market": 1.5,
+          "weight": 0.0633,
+          "confidence": 0.7,
+          "rationale": "Easier credit conditions"
+        },
+        "consumerStrength": {
+          "fundamental": 1.0,
+          "market": 2.0,
+          "weight": 0.0633,
+          "confidence": 0.6,
+          "rationale": "Stronger consumer spending"
+        },
+        "housingStrength": {
+          "fundamental": 0.5,
+          "market": 1.0,
+          "weight": 0.0527,
+          "confidence": 0.5,
+          "rationale": "Moderate housing impact"
+        },
+        "energyTightness": {
+          "fundamental": 2.0,
+          "market": 3.0,
+          "weight": 0.0,
+          "confidence": 0.8,
+          "rationale": "Replaced by crude/product/gas subchannels."
+        },
+        "industrialCapex": {
+          "fundamental": 2.5,
+          "market": 3.0,
+          "weight": 0.1476,
+          "confidence": 0.85,
+          "rationale": "More industrial investment"
+        },
+        "inputCostPressure": {
+          "fundamental": -2.0,
+          "market": -3.0,
+          "weight": 0.0949,
+          "confidence": 0.7,
+          "rationale": "Higher costs"
+        },
+        "labourStrength": {
+          "fundamental": 1.5,
+          "market": 2.0,
+          "weight": 0.0843,
+          "confidence": 0.65,
+          "rationale": "Stronger labour market"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 0.5,
+          "weight": 0.036,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "crudeTightness": {
+          "fundamental": 0.5,
+          "market": 0.5,
+          "weight": 0.0158,
+          "confidence": 0.5,
+          "rationale": "Direct crude-balance sensitivity."
+        },
+        "productTightness": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.0,
+          "confidence": 0.85,
+          "rationale": "Refined-product and crack-spread sensitivity."
+        },
+        "gasTightness": {
+          "fundamental": 2.0,
+          "market": 1.5,
+          "weight": 0.169,
+          "confidence": 0.85,
+          "rationale": "Gas tightness can support throughput/infrastructure demand, though contracts damp price beta."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.25,
+          "weight": 0.0158,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "LNG",
+      "name": "Cheniere Energy",
+      "themeGroup": "Oil & Gas",
+      "profileConfidence": 0.78,
+      "profileNote": "Cheniere benefits from strong LNG demand and tight energy prices, offset by feedgas cost pressure.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1928,
+          "confidence": 0.9,
+          "rationale": "Rising global LNG demand lifts contracts and export volumes."
+        },
+        "policyRelief": {
+          "fundamental": 0.9,
+          "market": 0.75,
+          "weight": 0.053,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0964,
+          "confidence": 0.75,
+          "rationale": "Lower yields ease financing of new LNG projects."
+        },
+        "creditAvailability": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0843,
+          "confidence": 0.75,
+          "rationale": "Easier credit improves capital deployment for expansion."
+        },
+        "consumerStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.0602,
+          "confidence": 0.6,
+          "rationale": "Higher consumer income modestly boosts gas consumption."
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0361,
+          "confidence": 0.5,
+          "rationale": "Housing activity has limited impact on LNG exports."
+        },
+        "energyTightness": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.0,
+          "confidence": 0.9,
+          "rationale": "Replaced by crude/product/gas subchannels."
+        },
+        "industrialCapex": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.1687,
+          "confidence": 0.85,
+          "rationale": "Infrastructure spending expands export terminal capacity."
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.1205,
+          "confidence": 0.8,
+          "rationale": "Higher feedgas costs compress margins."
+        },
+        "labourStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.0602,
+          "confidence": 0.6,
+          "rationale": "Strong labor market supports demand and operations."
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 0.5,
+          "weight": 0.0375,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "crudeTightness": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.0,
+          "confidence": 0.85,
+          "rationale": "Direct crude-balance sensitivity."
+        },
+        "productTightness": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.0,
+          "confidence": 0.85,
+          "rationale": "Refined-product and crack-spread sensitivity."
+        },
+        "gasTightness": {
+          "fundamental": 0.0,
+          "market": 0.5,
+          "weight": 0.0602,
+          "confidence": 0.55,
+          "rationale": "Henry Hub alone is insufficient; global LNG spreads matter more than US gas direction."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.5,
+          "weight": 0.0301,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "6033",
+      "name": "PETRONAS Gas",
+      "themeGroup": "Oil & Gas",
+      "profileConfidence": 0.75,
+      "profileNote": "Stable contracted infrastructure with moderate demand; regulatory risk and slower growth are key concerns.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 1.5,
+          "market": 1.5,
+          "weight": 0.2012,
+          "confidence": 0.8,
+          "rationale": "Industrial gas demand drives revenue growth."
+        },
+        "policyRelief": {
+          "fundamental": 0.45,
+          "market": 0.75,
+          "weight": 0.0491,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0893,
+          "confidence": 0.6,
+          "rationale": "Lower yields ease financing costs."
+        },
+        "creditAvailability": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0669,
+          "confidence": 0.6,
+          "rationale": "Easier credit supports capex projects."
+        },
+        "consumerStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.0669,
+          "confidence": 0.5,
+          "rationale": "Consumer gas use modestly boosts volumes."
+        },
+        "housingStrength": {
+          "fundamental": 0.5,
+          "market": 0.0,
+          "weight": 0.0558,
+          "confidence": 0.4,
+          "rationale": "Residential gas demand adds minor revenue."
+        },
+        "energyTightness": {
+          "fundamental": 2.0,
+          "market": 2.0,
+          "weight": 0.0,
+          "confidence": 0.8,
+          "rationale": "Replaced by crude/product/gas subchannels."
+        },
+        "industrialCapex": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.1339,
+          "confidence": 0.7,
+          "rationale": "Pipeline and utility capex expands capacity."
+        },
+        "inputCostPressure": {
+          "fundamental": -2.0,
+          "market": -1.0,
+          "weight": 0.0893,
+          "confidence": 0.6,
+          "rationale": "Rising input costs compress margins."
+        },
+        "labourStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.0669,
+          "confidence": 0.5,
+          "rationale": "Stronger jobs increase demand, offset wage pressure."
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 0.5,
+          "weight": 0.0357,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "crudeTightness": {
+          "fundamental": 0.5,
+          "market": 0.5,
+          "weight": 0.0167,
+          "confidence": 0.5,
+          "rationale": "Direct crude-balance sensitivity."
+        },
+        "productTightness": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.0,
+          "confidence": 0.85,
+          "rationale": "Refined-product and crack-spread sensitivity."
+        },
+        "gasTightness": {
+          "fundamental": 1.0,
+          "market": 1.5,
+          "weight": 0.1116,
+          "confidence": 0.85,
+          "rationale": "Gas tightness can support throughput/infrastructure demand, though contracts damp price beta."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.25,
+          "weight": 0.0167,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "NVT",
+      "name": "nVent Electric",
+      "themeGroup": "AI / Data centres",
+      "profileConfidence": 0.85,
+      "profileNote": "Strong AI‑infrastructure tailwinds offset cost pressures; fundamentals dominate.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 2.0,
+          "weight": 0.1705,
+          "confidence": 0.9,
+          "rationale": "AI/data‑center expansion drives product demand"
+        },
+        "policyRelief": {
+          "fundamental": 0.68,
+          "market": 1.5,
+          "weight": 0.0438,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 1.5,
+          "market": 2.0,
+          "weight": 0.0796,
+          "confidence": 0.85,
+          "rationale": "Lower yields ease capex financing"
+        },
+        "creditAvailability": {
+          "fundamental": 1.5,
+          "market": 1.0,
+          "weight": 0.0568,
+          "confidence": 0.8,
+          "rationale": "Broad credit mainly affects customers/project financing, not core corporate solvency."
+        },
+        "consumerStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.0682,
+          "confidence": 0.7,
+          "rationale": "Consumer spending fuels cloud usage"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0.0,
+          "weight": 0.0568,
+          "confidence": 0.6,
+          "rationale": "Housing growth modestly competes for power"
+        },
+        "energyTightness": {
+          "fundamental": 0.0,
+          "market": -1.0,
+          "weight": 0.0796,
+          "confidence": 0.75,
+          "rationale": "Energy price pressure offsets cooling demand"
+        },
+        "industrialCapex": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1818,
+          "confidence": 0.9,
+          "rationale": "DC and grid capex boost sales"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.1137,
+          "confidence": 0.85,
+          "rationale": "Material cost inflation compresses margins"
+        },
+        "labourStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.0682,
+          "confidence": 0.7,
+          "rationale": "Job growth sustains enterprise IT spend"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 1.5,
+          "weight": 0.0525,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.5,
+          "weight": 0.0285,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "VRT",
+      "name": "Vertiv",
+      "themeGroup": "AI / Data centres",
+      "profileConfidence": 0.85,
+      "profileNote": "Vertiv benefits from AI‑driven data‑centre growth but faces cost pressure and capex sensitivity.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1597,
+          "confidence": 0.9,
+          "rationale": "AI data‑centre demand lifts revenue"
+        },
+        "policyRelief": {
+          "fundamental": 0.68,
+          "market": 1.5,
+          "weight": 0.0471,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 1.5,
+          "market": 2.0,
+          "weight": 0.0856,
+          "confidence": 0.8,
+          "rationale": "Lower yields ease financing"
+        },
+        "creditAvailability": {
+          "fundamental": 1.5,
+          "market": 1.0,
+          "weight": 0.0571,
+          "confidence": 0.75,
+          "rationale": "Broad credit mainly affects customers/project financing, not core corporate solvency."
+        },
+        "consumerStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0685,
+          "confidence": 0.5,
+          "rationale": "Indirect effect, minimal"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0571,
+          "confidence": 0.5,
+          "rationale": "Not material to business"
+        },
+        "energyTightness": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0913,
+          "confidence": 0.7,
+          "rationale": "Higher energy prices favor efficient cooling"
+        },
+        "industrialCapex": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1825,
+          "confidence": 0.9,
+          "rationale": "Data‑centre capex drives growth"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.0913,
+          "confidence": 0.85,
+          "rationale": "Rising component costs compress margins"
+        },
+        "labourStrength": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0799,
+          "confidence": 0.7,
+          "rationale": "Strong jobs boost data demand"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 1.5,
+          "weight": 0.0514,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.5,
+          "weight": 0.0285,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "FIX",
+      "name": "Comfort Systems USA",
+      "themeGroup": "AI / Data centres",
+      "profileConfidence": 0.85,
+      "profileNote": "Strong exposure to data‑centre build‑out, offset by labour and input‑cost risks.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 2.0,
+          "weight": 0.1656,
+          "confidence": 0.9,
+          "rationale": "Higher data‑centre demand lifts HVAC construction"
+        },
+        "policyRelief": {
+          "fundamental": 0.68,
+          "market": 1.12,
+          "weight": 0.0364,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 1.5,
+          "market": 1.5,
+          "weight": 0.0663,
+          "confidence": 0.85,
+          "rationale": "Easier financing spurs project starts"
+        },
+        "creditAvailability": {
+          "fundamental": 1.5,
+          "market": 1.0,
+          "weight": 0.0552,
+          "confidence": 0.8,
+          "rationale": "Broad credit mainly affects customers/project financing, not core corporate solvency."
+        },
+        "consumerStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0442,
+          "confidence": 0.5,
+          "rationale": "Limited direct impact"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0552,
+          "confidence": 0.4,
+          "rationale": "Minimal relevance to core business"
+        },
+        "energyTightness": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0663,
+          "confidence": 0.7,
+          "rationale": "Tighter energy prices boost efficient HVAC demand"
+        },
+        "industrialCapex": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1767,
+          "confidence": 0.9,
+          "rationale": "Data‑centre and grid capex drive large projects"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.1326,
+          "confidence": 0.85,
+          "rationale": "Rising material wages compress margins"
+        },
+        "labourStrength": {
+          "fundamental": 3.0,
+          "market": 1.0,
+          "weight": 0.1215,
+          "confidence": 0.8,
+          "rationale": "Improved labour eases staffing constraints"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 1.5,
+          "weight": 0.0524,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.5,
+          "weight": 0.0276,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "0857.HK",
+      "name": "PetroChina",
+      "themeGroup": "Oil & Gas",
+      "profileConfidence": 0.78,
+      "profileNote": "Diversified Chinese energy exposure benefits from demand and price tailwinds",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 2.0,
+          "weight": 0.1081,
+          "confidence": 0.8,
+          "rationale": "Upstream production growth lifts earnings"
+        },
+        "policyRelief": {
+          "fundamental": 0.68,
+          "market": 0.75,
+          "weight": 0.0397,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 1.5,
+          "market": 1.0,
+          "weight": 0.0721,
+          "confidence": 0.75,
+          "rationale": "Easier financing improves capital allocation"
+        },
+        "creditAvailability": {
+          "fundamental": 1.5,
+          "market": 1.0,
+          "weight": 0.0541,
+          "confidence": 0.7,
+          "rationale": "Easier credit supports upstream investment"
+        },
+        "consumerStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0901,
+          "confidence": 0.7,
+          "rationale": "Strong consumer demand drives fuel consumption"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0541,
+          "confidence": 0.5,
+          "rationale": "Housing impact limited for integrated oil"
+        },
+        "energyTightness": {
+          "fundamental": 4.0,
+          "market": 2.0,
+          "weight": 0.0,
+          "confidence": 0.85,
+          "rationale": "Replaced by crude/product/gas subchannels."
+        },
+        "industrialCapex": {
+          "fundamental": 3.0,
+          "market": 1.0,
+          "weight": 0.0901,
+          "confidence": 0.75,
+          "rationale": "Industrial capex fuels energy demand"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -1.0,
+          "weight": 0.0721,
+          "confidence": 0.7,
+          "rationale": "Rising input costs compress margins"
+        },
+        "labourStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0721,
+          "confidence": 0.7,
+          "rationale": "Job growth supports energy consumption"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 0.5,
+          "weight": 0.0363,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "crudeTightness": {
+          "fundamental": 5,
+          "market": 4.5,
+          "weight": 0.2165,
+          "confidence": 0.95,
+          "rationale": "Upstream cash flow is highly sensitive to crude-price and balance strength."
+        },
+        "productTightness": {
+          "fundamental": 2.0,
+          "market": 1.5,
+          "weight": 0.0451,
+          "confidence": 0.75,
+          "rationale": "Refining exposure adds some benefit from tight product markets."
+        },
+        "gasTightness": {
+          "fundamental": 1.5,
+          "market": 1.0,
+          "weight": 0.036,
+          "confidence": 0.65,
+          "rationale": "Natural-gas balance sensitivity."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.25,
+          "weight": 0.0136,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "ENPH",
+      "name": "Enphase Energy",
+      "themeGroup": "Power / Grid",
+      "profileConfidence": 0.78,
+      "profileNote": "Turnaround hinges on policy support and sustained solar demand",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 2.0,
+          "weight": 0.1651,
+          "confidence": 0.9,
+          "rationale": "Solar demand drives inverter sales"
+        },
+        "policyRelief": {
+          "fundamental": 0.9,
+          "market": 0.75,
+          "weight": 0.0484,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.088,
+          "confidence": 0.75,
+          "rationale": "Low yields ease project financing"
+        },
+        "creditAvailability": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.088,
+          "confidence": 0.75,
+          "rationale": "Easier credit spurs homeowner upgrades"
+        },
+        "consumerStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.088,
+          "confidence": 0.7,
+          "rationale": "Higher disposable income fuels solar buys"
+        },
+        "housingStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.088,
+          "confidence": 0.7,
+          "rationale": "New homes increase rooftop solar installs"
+        },
+        "energyTightness": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.132,
+          "confidence": 0.85,
+          "rationale": "Rising energy prices improve solar economics"
+        },
+        "industrialCapex": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.044,
+          "confidence": 0.6,
+          "rationale": "Limited impact on utility-scale capex"
+        },
+        "inputCostPressure": {
+          "fundamental": -2.0,
+          "market": -1.0,
+          "weight": 0.077,
+          "confidence": 0.8,
+          "rationale": "Component cost hikes pressure margins"
+        },
+        "labourStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.044,
+          "confidence": 0.6,
+          "rationale": "Labor market effects are neutral"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 2.5,
+          "weight": 0.0769,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": -1.0,
+          "market": -2.0,
+          "weight": 0.0606,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "1164.HK",
+      "name": "CGN Mining",
+      "themeGroup": "Uranium / Fuel",
+      "profileConfidence": 0.78,
+      "profileNote": "Uranium exposure benefits from China reactor growth but faces energy cost and geopolitical risks.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 2.0,
+          "market": 2.0,
+          "weight": 0.2052,
+          "confidence": 0.85,
+          "rationale": "Broad growth is secondary to structural nuclear/fuel demand and company-specific execution."
+        },
+        "policyRelief": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.0439,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.0799,
+          "confidence": 0.6,
+          "rationale": "Neutral impact from financing environment."
+        },
+        "creditAvailability": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.1369,
+          "confidence": 0.8,
+          "rationale": "Easier credit benefits capital‑intensive mining."
+        },
+        "consumerStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0457,
+          "confidence": 0.5,
+          "rationale": "Limited direct effect on uranium demand."
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0.0,
+          "weight": 0.0457,
+          "confidence": 0.5,
+          "rationale": "No material link to mining operations."
+        },
+        "energyTightness": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.0,
+          "confidence": 0.75,
+          "rationale": "Higher energy costs squeeze mining margins."
+        },
+        "industrialCapex": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.1026,
+          "confidence": 0.8,
+          "rationale": "Nuclear infrastructure capex supports demand."
+        },
+        "inputCostPressure": {
+          "fundamental": -2.0,
+          "market": -1.0,
+          "weight": 0.0912,
+          "confidence": 0.7,
+          "rationale": "Rising input costs pressure profitability."
+        },
+        "labourStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.057,
+          "confidence": 0.6,
+          "rationale": "Stronger jobs boost macro demand."
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 2.5,
+          "weight": 0.0721,
+          "confidence": 0.85,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "crudeTightness": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0285,
+          "confidence": 0.6,
+          "rationale": "Higher hydrocarbon costs marginally improve nuclear relative economics."
+        },
+        "gasTightness": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0285,
+          "confidence": 0.6,
+          "rationale": "Higher gas costs can strengthen the case for firm nuclear generation."
+        },
+        "tailCreditStress": {
+          "fundamental": -1.0,
+          "market": -2.0,
+          "weight": 0.0628,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "OKLO",
+      "name": "Oklo",
+      "themeGroup": "Nuclear",
+      "profileConfidence": 0.65,
+      "profileNote": "Oklo thrives on demand, policy support, and risk appetite but faces cost and execution risks.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 1.5,
+          "market": 1.5,
+          "weight": 0.1381,
+          "confidence": 0.7,
+          "rationale": "Broad growth is secondary to structural nuclear/fuel demand and company-specific execution."
+        },
+        "policyRelief": {
+          "fundamental": 1.8,
+          "market": 3.75,
+          "weight": 0.069,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 4.0,
+          "market": 5,
+          "weight": 0.1565,
+          "confidence": 0.9,
+          "rationale": "Lower long yields materially improve project financing and distant-cash-flow valuation."
+        },
+        "creditAvailability": {
+          "fundamental": 4.0,
+          "market": 4.5,
+          "weight": 0.1196,
+          "confidence": 0.88,
+          "rationale": "Large future funding needs make access to capital a core execution variable."
+        },
+        "consumerStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0184,
+          "confidence": 0.4,
+          "rationale": "Limited direct impact on nuclear business."
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0.0,
+          "weight": 0.0184,
+          "confidence": 0.4,
+          "rationale": "Housing activity marginally affects power demand."
+        },
+        "energyTightness": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.0,
+          "confidence": 0.7,
+          "rationale": "Tighter energy prices increase nuclear's competitive appeal."
+        },
+        "industrialCapex": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.092,
+          "confidence": 0.6,
+          "rationale": "Infrastructure spending funds large‑scale reactor builds."
+        },
+        "inputCostPressure": {
+          "fundamental": -2.0,
+          "market": -1.0,
+          "weight": 0.0737,
+          "confidence": 0.5,
+          "rationale": "Rising construction costs pressure project economics."
+        },
+        "labourStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.0368,
+          "confidence": 0.5,
+          "rationale": "Stronger jobs raise overall electricity consumption."
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 4.5,
+          "weight": 0.121,
+          "confidence": 0.95,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "crudeTightness": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.023,
+          "confidence": 0.6,
+          "rationale": "Higher hydrocarbon costs marginally improve nuclear relative economics."
+        },
+        "gasTightness": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.023,
+          "confidence": 0.6,
+          "rationale": "Higher gas costs can strengthen the case for firm nuclear generation."
+        },
+        "tailCreditStress": {
+          "fundamental": -4.5,
+          "market": -5,
+          "weight": 0.1105,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "SMR",
+      "name": "NuScale Power",
+      "themeGroup": "Nuclear",
+      "profileConfidence": 0.8,
+      "profileNote": "Speculative nuclear play; regulatory approval and financing critical.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 1.5,
+          "market": 1.0,
+          "weight": 0.0818,
+          "confidence": 0.6,
+          "rationale": "Broad growth is secondary to structural nuclear/fuel demand and company-specific execution."
+        },
+        "policyRelief": {
+          "fundamental": 1.8,
+          "market": 3.75,
+          "weight": 0.0653,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 4.0,
+          "market": 5,
+          "weight": 0.1476,
+          "confidence": 0.9,
+          "rationale": "Lower long yields materially improve project financing and distant-cash-flow valuation."
+        },
+        "creditAvailability": {
+          "fundamental": 4.0,
+          "market": 4.5,
+          "weight": 0.1131,
+          "confidence": 0.88,
+          "rationale": "Large future funding needs make access to capital a core execution variable."
+        },
+        "consumerStrength": {
+          "fundamental": 1.0,
+          "market": 0.5,
+          "weight": 0.0513,
+          "confidence": 0.4,
+          "rationale": "Strong consumers boost energy"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0304,
+          "confidence": 0.3,
+          "rationale": "Limited direct evidence in stored research."
+        },
+        "energyTightness": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.0,
+          "confidence": 0.7,
+          "rationale": "Higher energy prices help"
+        },
+        "industrialCapex": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1122,
+          "confidence": 0.8,
+          "rationale": "More infrastructure spend"
+        },
+        "inputCostPressure": {
+          "fundamental": -2.0,
+          "market": -1.0,
+          "weight": 0.0818,
+          "confidence": 0.6,
+          "rationale": "Cost inflation risks"
+        },
+        "labourStrength": {
+          "fundamental": 1.0,
+          "market": 0.5,
+          "weight": 0.0513,
+          "confidence": 0.4,
+          "rationale": "Labour strength supports"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 4.5,
+          "weight": 0.1174,
+          "confidence": 0.95,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "crudeTightness": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0217,
+          "confidence": 0.6,
+          "rationale": "Higher hydrocarbon costs marginally improve nuclear relative economics."
+        },
+        "gasTightness": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0217,
+          "confidence": 0.6,
+          "rationale": "Higher gas costs can strengthen the case for firm nuclear generation."
+        },
+        "tailCreditStress": {
+          "fundamental": -4.5,
+          "market": -5,
+          "weight": 0.1044,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "0916.HK",
+      "name": "China Longyuan Power",
+      "themeGroup": "Power / Grid",
+      "profileConfidence": 0.78,
+      "profileNote": "Renewable growth and policy support offset tariff pressure",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 2.0,
+          "market": 2.0,
+          "weight": 0.1568,
+          "confidence": 0.7,
+          "rationale": "Higher renewable demand lifts revenue"
+        },
+        "policyRelief": {
+          "fundamental": 1.35,
+          "market": 0.75,
+          "weight": 0.0574,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 3.0,
+          "market": 1.0,
+          "weight": 0.1043,
+          "confidence": 0.7,
+          "rationale": "Easier financing reduces cost of capital"
+        },
+        "creditAvailability": {
+          "fundamental": 3.0,
+          "market": 1.0,
+          "weight": 0.1043,
+          "confidence": 0.7,
+          "rationale": "Easier credit supports capex projects"
+        },
+        "consumerStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.1043,
+          "confidence": 0.7,
+          "rationale": "Strong consumer spending boosts power demand"
+        },
+        "housingStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.1043,
+          "confidence": 0.7,
+          "rationale": "Housing growth drives electricity consumption"
+        },
+        "energyTightness": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.1043,
+          "confidence": 0.7,
+          "rationale": "Tighter energy prices enhance renewable spreads"
+        },
+        "industrialCapex": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.0835,
+          "confidence": 0.7,
+          "rationale": "Grid capex expands renewable connections"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.0522,
+          "confidence": 0.6,
+          "rationale": "Rising turbine costs squeeze margins"
+        },
+        "labourStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0522,
+          "confidence": 0.7,
+          "rationale": "Robust labor market sustains demand"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 1.5,
+          "weight": 0.0503,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.5,
+          "weight": 0.0261,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "0270",
+      "name": "NationGate",
+      "themeGroup": "AI / Data centres",
+      "profileConfidence": 0.78,
+      "profileNote": "Strong AI capex tailwinds offset cost pressures; dependent on semiconductor cycle and credit conditions.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 2.0,
+          "weight": 0.1616,
+          "confidence": 0.8,
+          "rationale": "AI server demand fuels revenue"
+        },
+        "policyRelief": {
+          "fundamental": 0.9,
+          "market": 0.75,
+          "weight": 0.0471,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0856,
+          "confidence": 0.7,
+          "rationale": "Lower yields ease financing for capex"
+        },
+        "creditAvailability": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.076,
+          "confidence": 0.7,
+          "rationale": "Easier credit supports manufacturing expansion"
+        },
+        "consumerStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.057,
+          "confidence": 0.6,
+          "rationale": "Enterprise spending drives AI server sales"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0.0,
+          "weight": 0.0381,
+          "confidence": 0.5,
+          "rationale": "Housing market unrelated to AI hardware"
+        },
+        "energyTightness": {
+          "fundamental": -2.0,
+          "market": -1.0,
+          "weight": 0.0665,
+          "confidence": 0.6,
+          "rationale": "Higher energy costs compress margins"
+        },
+        "industrialCapex": {
+          "fundamental": 5,
+          "market": 3.0,
+          "weight": 0.1711,
+          "confidence": 0.85,
+          "rationale": "AI capex drives infrastructure demand"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.076,
+          "confidence": 0.75,
+          "rationale": "Semiconductor cycle raises component costs"
+        },
+        "labourStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.057,
+          "confidence": 0.6,
+          "rationale": "Skilled labor needed for high-tech output"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 3.5,
+          "weight": 0.0975,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": -1.5,
+          "market": -3.0,
+          "weight": 0.0665,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "5199",
+      "name": "Hibiscus Petroleum",
+      "themeGroup": "Oil & Gas",
+      "profileConfidence": 0.8,
+      "profileNote": "Based on oil price exposure and production growth.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.1124,
+          "confidence": 0.7,
+          "rationale": "Stronger oil demand growth"
+        },
+        "policyRelief": {
+          "fundamental": 0.45,
+          "market": 1.5,
+          "weight": 0.0412,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 1.0,
+          "market": 2.0,
+          "weight": 0.075,
+          "confidence": 0.5,
+          "rationale": "Lower long yields"
+        },
+        "creditAvailability": {
+          "fundamental": 1.0,
+          "market": 2.0,
+          "weight": 0.0656,
+          "confidence": 0.5,
+          "rationale": "Easier credit access"
+        },
+        "consumerStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0374,
+          "confidence": 0.4,
+          "rationale": "Neutral consumer impact"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0281,
+          "confidence": 0.3,
+          "rationale": "Neutral housing impact"
+        },
+        "energyTightness": {
+          "fundamental": 4.0,
+          "market": 4.0,
+          "weight": 0.0,
+          "confidence": 0.9,
+          "rationale": "Replaced by crude/product/gas subchannels."
+        },
+        "industrialCapex": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0656,
+          "confidence": 0.5,
+          "rationale": "Moderate capex impact"
+        },
+        "inputCostPressure": {
+          "fundamental": -2.0,
+          "market": -1.0,
+          "weight": 0.0937,
+          "confidence": 0.6,
+          "rationale": "Higher input costs"
+        },
+        "labourStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0374,
+          "confidence": 0.4,
+          "rationale": "Neutral labour impact"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 2.5,
+          "weight": 0.0734,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "crudeTightness": {
+          "fundamental": 5,
+          "market": 4.5,
+          "weight": 0.2812,
+          "confidence": 0.95,
+          "rationale": "Upstream cash flow is highly sensitive to crude-price and balance strength."
+        },
+        "productTightness": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.0,
+          "confidence": 0.85,
+          "rationale": "Refined-product and crack-spread sensitivity."
+        },
+        "gasTightness": {
+          "fundamental": 1.5,
+          "market": 1.0,
+          "weight": 0.0374,
+          "confidence": 0.65,
+          "rationale": "Natural-gas balance sensitivity."
+        },
+        "tailCreditStress": {
+          "fundamental": -1.0,
+          "market": -2.0,
+          "weight": 0.0516,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "7277",
+      "name": "DIALOG Group",
+      "themeGroup": "Oil & Gas",
+      "profileConfidence": 0.78,
+      "profileNote": "Steady oil‑infrastructure exposure benefits from demand and financing trends",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.1736,
+          "confidence": 0.85,
+          "rationale": "Higher oil throughput boosts earnings"
+        },
+        "policyRelief": {
+          "fundamental": 0.9,
+          "market": 0.75,
+          "weight": 0.0635,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.1154,
+          "confidence": 0.82,
+          "rationale": "Lower yields ease project funding"
+        },
+        "creditAvailability": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.1038,
+          "confidence": 0.8,
+          "rationale": "Easier credit supports capex"
+        },
+        "consumerStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.0807,
+          "confidence": 0.75,
+          "rationale": "Spending lifts fuel demand"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0576,
+          "confidence": 0.7,
+          "rationale": "Neutral impact"
+        },
+        "energyTightness": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.0,
+          "confidence": 0.88,
+          "rationale": "Replaced by crude/product/gas subchannels."
+        },
+        "industrialCapex": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.1154,
+          "confidence": 0.8,
+          "rationale": "Infrastructure spend drives usage"
+        },
+        "inputCostPressure": {
+          "fundamental": -2.0,
+          "market": -1.0,
+          "weight": 0.0807,
+          "confidence": 0.78,
+          "rationale": "Rising costs squeeze margins"
+        },
+        "labourStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.0576,
+          "confidence": 0.74,
+          "rationale": "Jobs boost demand"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 0.5,
+          "weight": 0.0365,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "crudeTightness": {
+          "fundamental": 1.0,
+          "market": 0.5,
+          "weight": 0.0288,
+          "confidence": 0.6,
+          "rationale": "Direct crude-balance sensitivity."
+        },
+        "productTightness": {
+          "fundamental": 1.0,
+          "market": 0.5,
+          "weight": 0.0288,
+          "confidence": 0.6,
+          "rationale": "Refined-product and crack-spread sensitivity."
+        },
+        "gasTightness": {
+          "fundamental": 1.0,
+          "market": 0.5,
+          "weight": 0.0288,
+          "confidence": 0.6,
+          "rationale": "Natural-gas balance sensitivity."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.5,
+          "weight": 0.0288,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "SLB",
+      "name": "SLB",
+      "themeGroup": "Oil & Gas",
+      "profileConfidence": 0.78,
+      "profileNote": "Upstream capex remains strong, but cost pressures and cyclical risks moderate outlook.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 2.0,
+          "weight": 0.1318,
+          "confidence": 0.85,
+          "rationale": "Higher oil demand drives upstream capex, boosting services."
+        },
+        "policyRelief": {
+          "fundamental": 1.35,
+          "market": 1.5,
+          "weight": 0.0483,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.088,
+          "confidence": 0.75,
+          "rationale": "Lower yields ease financing for oil producers' capex plans."
+        },
+        "creditAvailability": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.0704,
+          "confidence": 0.7,
+          "rationale": "Easier credit reduces cost of funding service contracts."
+        },
+        "consumerStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.0352,
+          "confidence": 0.5,
+          "rationale": "Consumer spending indirectly supports energy demand."
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": -1.0,
+          "weight": 0.044,
+          "confidence": 0.4,
+          "rationale": "Housing slowdown reduces energy demand, hurting services."
+        },
+        "energyTightness": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.0,
+          "confidence": 0.8,
+          "rationale": "Replaced by crude/product/gas subchannels."
+        },
+        "industrialCapex": {
+          "fundamental": 5,
+          "market": 4.0,
+          "weight": 0.1582,
+          "confidence": 0.9,
+          "rationale": "Robust upstream capex directly fuels service demand."
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.0616,
+          "confidence": 0.65,
+          "rationale": "Rising input costs compress service margins."
+        },
+        "labourStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0528,
+          "confidence": 0.6,
+          "rationale": "Strong labor market sustains operational capacity and demand."
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 1.5,
+          "weight": 0.0506,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "crudeTightness": {
+          "fundamental": 4.0,
+          "market": 4.0,
+          "weight": 0.1932,
+          "confidence": 0.9,
+          "rationale": "Higher crude economics support upstream customer spending and service activity."
+        },
+        "productTightness": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.0,
+          "confidence": 0.85,
+          "rationale": "Refined-product and crack-spread sensitivity."
+        },
+        "gasTightness": {
+          "fundamental": 2.0,
+          "market": 1.5,
+          "weight": 0.044,
+          "confidence": 0.7,
+          "rationale": "Natural-gas balance sensitivity."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.5,
+          "weight": 0.0219,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "MPC",
+      "name": "Marathon Petroleum",
+      "themeGroup": "Oil & Gas",
+      "profileConfidence": 0.7,
+      "profileNote": "Based on refining and midstream strengths",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0994,
+          "confidence": 0.7,
+          "rationale": "Stronger growth boosts refining demand"
+        },
+        "policyRelief": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.0336,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.0612,
+          "confidence": 0.5,
+          "rationale": "Easier financing conditions help"
+        },
+        "creditAvailability": {
+          "fundamental": 1.0,
+          "market": 2.0,
+          "weight": 0.0535,
+          "confidence": 0.6,
+          "rationale": "Easier credit boosts operations"
+        },
+        "consumerStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0917,
+          "confidence": 0.7,
+          "rationale": "Strong consumer spending aids demand"
+        },
+        "housingStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.0382,
+          "confidence": 0.5,
+          "rationale": "Housing strength supports economy"
+        },
+        "energyTightness": {
+          "fundamental": 3.0,
+          "market": 4.0,
+          "weight": 0.0,
+          "confidence": 0.8,
+          "rationale": "Replaced by crude/product/gas subchannels."
+        },
+        "industrialCapex": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0612,
+          "confidence": 0.6,
+          "rationale": "More capex supports infrastructure"
+        },
+        "inputCostPressure": {
+          "fundamental": -2.0,
+          "market": -3.0,
+          "weight": 0.0688,
+          "confidence": 0.7,
+          "rationale": "Higher input costs pressure margins"
+        },
+        "labourStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0688,
+          "confidence": 0.6,
+          "rationale": "Stronger jobs market supports spending"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 1.5,
+          "weight": 0.0493,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "crudeTightness": {
+          "fundamental": -2.0,
+          "market": -1.0,
+          "weight": 0.0917,
+          "confidence": 0.9,
+          "rationale": "Higher crude input costs can compress margins unless product prices outrun feedstock."
+        },
+        "productTightness": {
+          "fundamental": 5,
+          "market": 4.0,
+          "weight": 0.2444,
+          "confidence": 0.95,
+          "rationale": "Tight gasoline/distillate markets and wider crack spreads directly support refinery economics."
+        },
+        "gasTightness": {
+          "fundamental": -1.0,
+          "market": -0.5,
+          "weight": 0.0191,
+          "confidence": 0.7,
+          "rationale": "Higher gas prices raise refinery operating costs."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.5,
+          "weight": 0.0191,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "VLO",
+      "name": "Valero Energy",
+      "themeGroup": "Oil & Gas",
+      "profileConfidence": 0.88,
+      "profileNote": "Valero benefits from tight product markets and strong demand, but vulnerable to crude cost spikes",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.104,
+          "confidence": 0.9,
+          "rationale": "Higher product demand lifts margins"
+        },
+        "policyRelief": {
+          "fundamental": 0.45,
+          "market": 0.75,
+          "weight": 0.0308,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0559,
+          "confidence": 0.6,
+          "rationale": "Lower yields ease financing"
+        },
+        "creditAvailability": {
+          "fundamental": 2.0,
+          "market": 2.0,
+          "weight": 0.048,
+          "confidence": 0.8,
+          "rationale": "Easier credit fuels capex and inventories"
+        },
+        "consumerStrength": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.096,
+          "confidence": 0.9,
+          "rationale": "Strong consumers boost fuel consumption"
+        },
+        "housingStrength": {
+          "fundamental": 1.0,
+          "market": 0.0,
+          "weight": 0.024,
+          "confidence": 0.5,
+          "rationale": "Modest impact via construction fuel"
+        },
+        "energyTightness": {
+          "fundamental": 5,
+          "market": 4.0,
+          "weight": 0.0,
+          "confidence": 0.95,
+          "rationale": "Replaced by crude/product/gas subchannels."
+        },
+        "industrialCapex": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.08,
+          "confidence": 0.85,
+          "rationale": "Infrastructure spend raises diesel demand"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.064,
+          "confidence": 0.8,
+          "rationale": "Rising crude costs compress margins"
+        },
+        "labourStrength": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.0559,
+          "confidence": 0.85,
+          "rationale": "Job growth fuels transportation fuel"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 1.5,
+          "weight": 0.0493,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "crudeTightness": {
+          "fundamental": -2.0,
+          "market": -1.0,
+          "weight": 0.096,
+          "confidence": 0.9,
+          "rationale": "Higher crude input costs can compress margins unless product prices outrun feedstock."
+        },
+        "productTightness": {
+          "fundamental": 5,
+          "market": 4.0,
+          "weight": 0.2561,
+          "confidence": 0.95,
+          "rationale": "Tight gasoline/distillate markets and wider crack spreads directly support refinery economics."
+        },
+        "gasTightness": {
+          "fundamental": -1.0,
+          "market": -0.5,
+          "weight": 0.02,
+          "confidence": 0.7,
+          "rationale": "Higher gas prices raise refinery operating costs."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.5,
+          "weight": 0.02,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "0217",
+      "name": "Powerwell Holdings",
+      "themeGroup": "AI / Data centres",
+      "profileConfidence": 0.75,
+      "profileNote": "Strong upside from data‑centre and infrastructure capex, cost pressure a risk",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1691,
+          "confidence": 0.9,
+          "rationale": "Data‑centre projects boost demand"
+        },
+        "policyRelief": {
+          "fundamental": 0.9,
+          "market": 0.75,
+          "weight": 0.0492,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0895,
+          "confidence": 0.6,
+          "rationale": "Lower yields ease financing"
+        },
+        "creditAvailability": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0895,
+          "confidence": 0.7,
+          "rationale": "Easier credit supports orders"
+        },
+        "consumerStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0398,
+          "confidence": 0.5,
+          "rationale": "Limited direct impact"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0398,
+          "confidence": 0.5,
+          "rationale": "Limited relevance"
+        },
+        "energyTightness": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0796,
+          "confidence": 0.7,
+          "rationale": "Higher energy prices raise equipment need"
+        },
+        "industrialCapex": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1988,
+          "confidence": 0.9,
+          "rationale": "Infrastructure and DC capex drive growth"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.0796,
+          "confidence": 0.8,
+          "rationale": "Cost inflation squeezes margins"
+        },
+        "labourStrength": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0398,
+          "confidence": 0.5,
+          "rationale": "Jobs boost demand modestly"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 2.5,
+          "weight": 0.0706,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": -1.0,
+          "market": -2.0,
+          "weight": 0.0547,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "COPPER",
+      "name": "Copper complex",
+      "themeGroup": "Metals",
+      "profileConfidence": 0.85,
+      "profileNote": "Copper benefits from electrification, grid capex, and supportive financing; China demand and recession risk remain.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.5,
+          "market": 2.0,
+          "weight": 0.158,
+          "confidence": 0.9,
+          "rationale": "Electrification drives copper demand as economies grow."
+        },
+        "policyRelief": {
+          "fundamental": 1.35,
+          "market": 1.5,
+          "weight": 0.0695,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.1264,
+          "confidence": 0.9,
+          "rationale": "Lower yields ease financing for capex projects."
+        },
+        "creditAvailability": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.1053,
+          "confidence": 0.9,
+          "rationale": "Easier credit supports copper‑intensive construction."
+        },
+        "consumerStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0421,
+          "confidence": 0.5,
+          "rationale": "Limited direct impact on copper demand."
+        },
+        "housingStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0737,
+          "confidence": 0.7,
+          "rationale": "Housing builds use copper wiring and plumbing."
+        },
+        "energyTightness": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0843,
+          "confidence": 0.9,
+          "rationale": "Higher energy prices spur renewable grid expansion."
+        },
+        "industrialCapex": {
+          "fundamental": 5,
+          "market": 3.0,
+          "weight": 0.1895,
+          "confidence": 0.9,
+          "rationale": "Grid and data‑centre capex core demand driver."
+        },
+        "inputCostPressure": {
+          "fundamental": -2.0,
+          "market": -1.0,
+          "weight": 0.0211,
+          "confidence": 0.6,
+          "rationale": "Rising input costs may compress margins."
+        },
+        "labourStrength": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0527,
+          "confidence": 0.6,
+          "rationale": "Stronger jobs boost industrial activity."
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 1.5,
+          "weight": 0.0511,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.5,
+          "weight": 0.0263,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "PALLADIUM",
+      "name": "Palladium",
+      "themeGroup": "Metals",
+      "profileConfidence": 0.8,
+      "profileNote": "Based on PALLADIUM research and market trends.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 3.5,
+          "market": 2.0,
+          "weight": 0.1394,
+          "confidence": 0.8,
+          "rationale": "Stronger automotive and electronics growth"
+        },
+        "policyRelief": {
+          "fundamental": 0.0,
+          "market": 1.5,
+          "weight": 0.0384,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 0.0,
+          "market": 2.0,
+          "weight": 0.0697,
+          "confidence": 0.7,
+          "rationale": "Easier financing supports industrial growth"
+        },
+        "creditAvailability": {
+          "fundamental": 0.0,
+          "market": 2.0,
+          "weight": 0.0583,
+          "confidence": 0.7,
+          "rationale": "Easier credit supports related sectors"
+        },
+        "consumerStrength": {
+          "fundamental": 2.0,
+          "market": 2.0,
+          "weight": 0.1165,
+          "confidence": 0.8,
+          "rationale": "Stronger consumer spending"
+        },
+        "housingStrength": {
+          "fundamental": 1.0,
+          "market": 1.0,
+          "weight": 0.0468,
+          "confidence": 0.6,
+          "rationale": "Housing strength supports related sectors"
+        },
+        "energyTightness": {
+          "fundamental": -2.0,
+          "market": -2.0,
+          "weight": 0.0936,
+          "confidence": 0.7,
+          "rationale": "Higher energy prices increase costs"
+        },
+        "industrialCapex": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.1165,
+          "confidence": 0.8,
+          "rationale": "Increased industrial capex"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.1051,
+          "confidence": 0.7,
+          "rationale": "Higher input costs pressure"
+        },
+        "labourStrength": {
+          "fundamental": 2.0,
+          "market": 2.0,
+          "weight": 0.0936,
+          "confidence": 0.8,
+          "rationale": "Stronger labour market"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 2.5,
+          "weight": 0.0696,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": -1.0,
+          "market": -2.0,
+          "weight": 0.0525,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "SYM",
+      "name": "Symbotic",
+      "themeGroup": "Robotics / Automation",
+      "profileConfidence": 0.78,
+      "profileNote": "Strong automation demand, but watch customer concentration and execution risk.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 2.0,
+          "weight": 0.1514,
+          "confidence": 0.85,
+          "rationale": "Automation demand rising with e‑commerce growth"
+        },
+        "policyRelief": {
+          "fundamental": 0.9,
+          "market": 0.75,
+          "weight": 0.0444,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0808,
+          "confidence": 0.8,
+          "rationale": "Lower yields ease financing"
+        },
+        "creditAvailability": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.1212,
+          "confidence": 0.8,
+          "rationale": "Easier credit spurs deployments"
+        },
+        "consumerStrength": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.1009,
+          "confidence": 0.85,
+          "rationale": "Strong consumer spend drives warehousing"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0404,
+          "confidence": 0.6,
+          "rationale": "Neutral impact"
+        },
+        "energyTightness": {
+          "fundamental": -1.0,
+          "market": -1.0,
+          "weight": 0.0505,
+          "confidence": 0.7,
+          "rationale": "Higher energy costs pressure margins"
+        },
+        "industrialCapex": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.1212,
+          "confidence": 0.8,
+          "rationale": "Capex growth fuels automation"
+        },
+        "inputCostPressure": {
+          "fundamental": -2.0,
+          "market": -1.0,
+          "weight": 0.0707,
+          "confidence": 0.75,
+          "rationale": "Component cost inflation hurts margins"
+        },
+        "labourStrength": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.0909,
+          "confidence": 0.85,
+          "rationale": "Tight labor makes automation valuable"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 2.5,
+          "weight": 0.072,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": -1.0,
+          "market": -2.0,
+          "weight": 0.0556,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "2590.HK",
+      "name": "Geekplus",
+      "themeGroup": "Robotics / Automation",
+      "profileConfidence": 0.8,
+      "profileNote": "Strong growth and positive financials with stable conditions.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 5,
+          "market": 5,
+          "weight": 0.1236,
+          "confidence": 0.9,
+          "rationale": "Strong growth in revenue and orders"
+        },
+        "policyRelief": {
+          "fundamental": 1.8,
+          "market": 2.25,
+          "weight": 0.0681,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1235,
+          "confidence": 0.8,
+          "rationale": "Improved profitability and cash flow"
+        },
+        "creditAvailability": {
+          "fundamental": 2.0,
+          "market": 2.0,
+          "weight": 0.0619,
+          "confidence": 0.6,
+          "rationale": "Stable credit conditions"
+        },
+        "consumerStrength": {
+          "fundamental": 4.0,
+          "market": 4.0,
+          "weight": 0.1237,
+          "confidence": 0.8,
+          "rationale": "Strong consumer/business demand"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0619,
+          "confidence": 0.5,
+          "rationale": "Neutral housing impact"
+        },
+        "energyTightness": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.0619,
+          "confidence": 0.5,
+          "rationale": "Neutral energy impact"
+        },
+        "industrialCapex": {
+          "fundamental": 4.0,
+          "market": 4.0,
+          "weight": 0.1237,
+          "confidence": 0.8,
+          "rationale": "Increasing industrial capex"
+        },
+        "inputCostPressure": {
+          "fundamental": -2.0,
+          "market": -2.0,
+          "weight": 0.0619,
+          "confidence": 0.6,
+          "rationale": "Some input cost pressure"
+        },
+        "labourStrength": {
+          "fundamental": 2.0,
+          "market": 2.0,
+          "weight": 0.0619,
+          "confidence": 0.6,
+          "rationale": "Stable labor conditions"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 2.5,
+          "weight": 0.0735,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": -1.0,
+          "market": -2.0,
+          "weight": 0.0544,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "CGNX",
+      "name": "Cognex",
+      "themeGroup": "Robotics / Automation",
+      "profileConfidence": 0.88,
+      "profileNote": "Cognex benefits from strong industrial capex and AI vision adoption.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 2.0,
+          "weight": 0.1398,
+          "confidence": 0.85,
+          "rationale": "Automation demand lifts revenue"
+        },
+        "policyRelief": {
+          "fundamental": 1.35,
+          "market": 1.5,
+          "weight": 0.0659,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.1198,
+          "confidence": 0.8,
+          "rationale": "Lower yields ease financing"
+        },
+        "creditAvailability": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.0798,
+          "confidence": 0.8,
+          "rationale": "Easier credit boosts orders"
+        },
+        "consumerStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0599,
+          "confidence": 0.5,
+          "rationale": "Limited direct impact"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.04,
+          "confidence": 0.5,
+          "rationale": "Irrelevant to machine vision"
+        },
+        "energyTightness": {
+          "fundamental": -2.0,
+          "market": -1.0,
+          "weight": 0.0698,
+          "confidence": 0.75,
+          "rationale": "Higher energy costs squeeze margins"
+        },
+        "industrialCapex": {
+          "fundamental": 5,
+          "market": 4.0,
+          "weight": 0.2,
+          "confidence": 0.9,
+          "rationale": "Core driver of demand"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.0798,
+          "confidence": 0.75,
+          "rationale": "Material inflation hurts margins"
+        },
+        "labourStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0698,
+          "confidence": 0.7,
+          "rationale": "Stronger jobs boost industrial spend"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 1.5,
+          "weight": 0.0505,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.5,
+          "weight": 0.0249,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "TER",
+      "name": "Teradyne",
+      "themeGroup": "Robotics / Automation",
+      "profileConfidence": 0.85,
+      "profileNote": "Strong growth; robotics modest, test dominant; high conviction.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 5,
+          "market": 5,
+          "weight": 0.2281,
+          "confidence": 0.9,
+          "rationale": "Strong revenue growth"
+        },
+        "policyRelief": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.0376,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.0684,
+          "confidence": 0.5,
+          "rationale": "Neutral financial conditions"
+        },
+        "creditAvailability": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.0684,
+          "confidence": 0.5,
+          "rationale": "Neutral credit conditions"
+        },
+        "consumerStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0684,
+          "confidence": 0.5,
+          "rationale": "Neutral consumer impact"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0684,
+          "confidence": 0.5,
+          "rationale": "Neutral housing impact"
+        },
+        "energyTightness": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.0684,
+          "confidence": 0.5,
+          "rationale": "Neutral energy impact"
+        },
+        "industrialCapex": {
+          "fundamental": 3.0,
+          "market": 3.0,
+          "weight": 0.1711,
+          "confidence": 0.8,
+          "rationale": "Positive industrial capex"
+        },
+        "inputCostPressure": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.0684,
+          "confidence": 0.5,
+          "rationale": "Neutral input costs"
+        },
+        "labourStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0684,
+          "confidence": 0.5,
+          "rationale": "Neutral labour impact"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 1.5,
+          "weight": 0.0558,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": 0.0,
+          "market": -0.5,
+          "weight": 0.0286,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "9880.HK",
+      "name": "UBTECH Robotics",
+      "themeGroup": "Robotics / Automation",
+      "profileConfidence": 0.78,
+      "profileNote": "Strong growth upside but high cash burn risk",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 2.0,
+          "weight": 0.0965,
+          "confidence": 0.8,
+          "rationale": "Higher robot demand lifts revenue"
+        },
+        "policyRelief": {
+          "fundamental": 0.9,
+          "market": 2.62,
+          "weight": 0.0531,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 2.0,
+          "market": 3.5,
+          "weight": 0.0965,
+          "confidence": 0.6,
+          "rationale": "Cheaper financing aids expansion"
+        },
+        "creditAvailability": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0527,
+          "confidence": 0.6,
+          "rationale": "Easier credit funds growth"
+        },
+        "consumerStrength": {
+          "fundamental": 0,
+          "market": -1.0,
+          "weight": 0.0351,
+          "confidence": 0.5,
+          "rationale": "Weak consumer spend reduces ancillary demand"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0.0,
+          "weight": 0.0175,
+          "confidence": 0.4,
+          "rationale": "Housing unrelated"
+        },
+        "energyTightness": {
+          "fundamental": -2.0,
+          "market": -1.0,
+          "weight": 0.0615,
+          "confidence": 0.6,
+          "rationale": "Higher energy costs squeeze margins"
+        },
+        "industrialCapex": {
+          "fundamental": 5,
+          "market": 3.0,
+          "weight": 0.2458,
+          "confidence": 0.85,
+          "rationale": "Capex surge drives robot orders"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.079,
+          "confidence": 0.7,
+          "rationale": "Material inflation raises unit cost"
+        },
+        "labourStrength": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.079,
+          "confidence": 0.75,
+          "rationale": "Tight labor pushes automation"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 4.5,
+          "weight": 0.1175,
+          "confidence": 0.9,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": -2.0,
+          "market": -3.5,
+          "weight": 0.0658,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla",
+      "themeGroup": "Robotics / Automation",
+      "profileConfidence": 0.78,
+      "profileNote": "Tesla benefits from storage growth, policy support; cost pressure a risk",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1275,
+          "confidence": 0.85,
+          "rationale": "Storage demand drives revenue growth"
+        },
+        "policyRelief": {
+          "fundamental": 0.9,
+          "market": 2.62,
+          "weight": 0.0551,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 2.0,
+          "market": 3.5,
+          "weight": 0.1002,
+          "confidence": 0.75,
+          "rationale": "Lower yields ease financing"
+        },
+        "creditAvailability": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.082,
+          "confidence": 0.7,
+          "rationale": "Easier credit supports capex"
+        },
+        "consumerStrength": {
+          "fundamental": 2.0,
+          "market": 2.0,
+          "weight": 0.1002,
+          "confidence": 0.78,
+          "rationale": "Strong consumer spend aids EV sales"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0455,
+          "confidence": 0.5,
+          "rationale": "Minimal direct impact"
+        },
+        "energyTightness": {
+          "fundamental": 4.0,
+          "market": 2.0,
+          "weight": 0.1093,
+          "confidence": 0.9,
+          "rationale": "Higher prices lift storage demand"
+        },
+        "industrialCapex": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.1002,
+          "confidence": 0.82,
+          "rationale": "Capex on grid/storage expands"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.082,
+          "confidence": 0.6,
+          "rationale": "Rising material costs compress margins"
+        },
+        "labourStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0365,
+          "confidence": 0.55,
+          "rationale": "Neutral labor market effect"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 3.5,
+          "weight": 0.0932,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": -2.0,
+          "market": -3.5,
+          "weight": 0.0683,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "PATH",
+      "name": "UiPath",
+      "themeGroup": "Robotics / Automation",
+      "profileConfidence": 0.85,
+      "profileNote": "Strong growth drivers, modest policy/energy impact",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1398,
+          "confidence": 0.85,
+          "rationale": "Higher enterprise automation spend"
+        },
+        "policyRelief": {
+          "fundamental": 0.9,
+          "market": 2.62,
+          "weight": 0.0564,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 2.0,
+          "market": 3.5,
+          "weight": 0.1026,
+          "confidence": 0.8,
+          "rationale": "Lower yields boost tech valuations"
+        },
+        "creditAvailability": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.0933,
+          "confidence": 0.8,
+          "rationale": "Easier credit supports SaaS growth"
+        },
+        "consumerStrength": {
+          "fundamental": 0,
+          "market": 0.0,
+          "weight": 0.0466,
+          "confidence": 0.5,
+          "rationale": "Not a consumer‑focused firm"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.028,
+          "confidence": 0.4,
+          "rationale": "Irrelevant to automation"
+        },
+        "energyTightness": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.0187,
+          "confidence": 0.4,
+          "rationale": "Energy prices not material"
+        },
+        "industrialCapex": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.1399,
+          "confidence": 0.85,
+          "rationale": "Capex drives automation demand"
+        },
+        "inputCostPressure": {
+          "fundamental": -2.0,
+          "market": -1.0,
+          "weight": 0.0933,
+          "confidence": 0.7,
+          "rationale": "Cost inflation hurts margins"
+        },
+        "labourStrength": {
+          "fundamental": 3.0,
+          "market": 2.0,
+          "weight": 0.1399,
+          "confidence": 0.85,
+          "rationale": "Labor pressure spurs automation"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 2.5,
+          "weight": 0.0715,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": -2.0,
+          "market": -3.5,
+          "weight": 0.07,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "NET",
+      "name": "Cloudflare",
+      "themeGroup": "AI / Data centres",
+      "profileConfidence": 0.8,
+      "profileNote": "Based on Cloudflare's Q1 2026 performance and AI/data center theme.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 5,
+          "market": 5,
+          "weight": 0.1977,
+          "confidence": 0.9,
+          "rationale": "Strong revenue and RPO growth"
+        },
+        "policyRelief": {
+          "fundamental": 0.68,
+          "market": 2.62,
+          "weight": 0.0598,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 1.5,
+          "market": 3.5,
+          "weight": 0.1087,
+          "confidence": 0.6,
+          "rationale": "Easier financing can boost growth stocks"
+        },
+        "creditAvailability": {
+          "fundamental": 0.0,
+          "market": 3.0,
+          "weight": 0.0495,
+          "confidence": 0.6,
+          "rationale": "Tighter spreads can help credit"
+        },
+        "consumerStrength": {
+          "fundamental": 0,
+          "market": 2.0,
+          "weight": 0.0495,
+          "confidence": 0.5,
+          "rationale": "Stronger consumer spending can boost digital infra"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0197,
+          "confidence": 0.4,
+          "rationale": "Limited direct evidence in stored research."
+        },
+        "energyTightness": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.0197,
+          "confidence": 0.4,
+          "rationale": "Limited direct evidence in stored research."
+        },
+        "industrialCapex": {
+          "fundamental": 4.0,
+          "market": 4.0,
+          "weight": 0.1483,
+          "confidence": 0.8,
+          "rationale": "More infrastructure capex"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.1483,
+          "confidence": 0.7,
+          "rationale": "Cost inflation risks"
+        },
+        "labourStrength": {
+          "fundamental": 0,
+          "market": 2.0,
+          "weight": 0.0495,
+          "confidence": 0.5,
+          "rationale": "Stronger jobs can boost tech"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 2.5,
+          "weight": 0.0751,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": -2.0,
+          "market": -3.5,
+          "weight": 0.0742,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    },
+    {
+      "ticker": "SPCX",
+      "name": "SpaceX",
+      "themeGroup": "AI / Data centres",
+      "profileConfidence": 0.7,
+      "profileNote": "Based on SpaceX growth, capital intensity, and speculative outlook.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1166,
+          "confidence": 0.8,
+          "rationale": "Starlink growth"
+        },
+        "policyRelief": {
+          "fundamental": 0.68,
+          "market": 2.62,
+          "weight": 0.0588,
+          "confidence": 0.8,
+          "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move."
+        },
+        "financialConditions": {
+          "fundamental": 1.5,
+          "market": 3.5,
+          "weight": 0.107,
+          "confidence": 0.7,
+          "rationale": "High leverage"
+        },
+        "creditAvailability": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0487,
+          "confidence": 0.6,
+          "rationale": "Easier credit access"
+        },
+        "consumerStrength": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1167,
+          "confidence": 0.8,
+          "rationale": "Starlink subscriber growth"
+        },
+        "housingStrength": {
+          "fundamental": 0,
+          "market": 0,
+          "weight": 0.0487,
+          "confidence": 0.5,
+          "rationale": "Neutral housing impact"
+        },
+        "energyTightness": {
+          "fundamental": 0.0,
+          "market": 0.0,
+          "weight": 0.0487,
+          "confidence": 0.5,
+          "rationale": "Neutral energy impact"
+        },
+        "industrialCapex": {
+          "fundamental": 4.0,
+          "market": 3.0,
+          "weight": 0.1167,
+          "confidence": 0.7,
+          "rationale": "High infrastructure capex"
+        },
+        "inputCostPressure": {
+          "fundamental": -3.0,
+          "market": -2.0,
+          "weight": 0.0972,
+          "confidence": 0.6,
+          "rationale": "High capital intensity"
+        },
+        "labourStrength": {
+          "fundamental": 2.0,
+          "market": 1.0,
+          "weight": 0.0487,
+          "confidence": 0.6,
+          "rationale": "Growing workforce"
+        },
+        "riskAppetite": {
+          "fundamental": 0,
+          "market": 4.5,
+          "weight": 0.1193,
+          "confidence": 0.8,
+          "rationale": "Higher risk appetite supports valuation more as speculation rises."
+        },
+        "tailCreditStress": {
+          "fundamental": -2.0,
+          "market": -3.5,
+          "weight": 0.0729,
+          "confidence": 0.9,
+          "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities."
+        }
+      },
+      "derivedFrom": "Stored Power Stack thesis, catalysts, risks, lifecycle and financing descriptors where available.",
+      "reviewStatus": "scanner-derived + semantic audit v2",
+      "updatedAt": "2026-08-19"
+    }
+  ]
+}

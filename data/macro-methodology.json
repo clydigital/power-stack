@@ -1,0 +1,67 @@
+{
+  "version": 2,
+  "verifiedAt": "2026-08-19T07:24:00Z",
+  "sourceUrl": "https://macro-indicators-a3d.pages.dev/",
+  "verificationStatus": "Deployed HTML/source directly fetched and parsed; independent browser automation failed, so implementation relies on the successfully inspected deployed source.",
+  "sourceSemantics": {
+    "genericPercentChange": {
+      "formula": "((current - comparison) / abs(comparison)) * 100",
+      "sourceBehavior": "Used by transformTimeSeries for MoM/YoY chart views. Comparison target is approximately 30.44 days for MoM and 365.25 days for YoY, using the nearest prior point within tolerance.",
+      "investmentMeaning": "NONE. Positive means the underlying series rose; negative means it fell."
+    },
+    "numericColoring": {
+      "rule": "v > 0 => pct-positive; v < 0 => pct-negative; else neutral",
+      "investmentMeaning": "NONE. Dashboard green/red is numeric direction only and must never be inherited as bullish/bearish."
+    },
+    "calendarSurprise": {
+      "formula": "(actual - forecast) / abs(forecast) * 100",
+      "verification": "Numerically verified from rendered rows such as crude inventories +17.423M versus -1.700M forecast = +1124.9%. The calendar row is server-rendered; the client-side formula was not located.",
+      "guardrail": "Do not use the percentage surprise when forecasts are near zero. Use actual-minus-forecast and indicator-specific normalization."
+    },
+    "ratesAndSpreads": {
+      "rule": "For yields/OAS use absolute percentage-point or basis-point changes from the dedicated yield/spread tables, not generic percent change in the yield level.",
+      "example": "A 10Y move from roughly 4.55% to 4.72% is about +17 bps, not an economically interpreted +3.7%."
+    },
+    "alreadyRateSeries": {
+      "rule": "If a source series is already a MoM/YoY rate, use its published level directly. Do not recursively percent-change the percent-change series.",
+      "example": "The dashboard contains retail MoM-rate series whose secondary mom_pct can show extreme values such as -400%; those are not valid economic surprises."
+    },
+    "inflation": {
+      "rule": "Separate raw price-index change, inflation rate, inflation momentum, composition, and policy implication. A negative MoM price-index move is raw deflation for that month, not automatically bullish or bearish.",
+      "example": "Headline PCE MoM -0.11% while Core PCE MoM +0.13% is not broad deflation; composition must be checked."
+    },
+    "ism": {
+      "rule": "Treat ISM as diffusion indices around 50 and interpret subindices by their own semantics. Do not transform them as ordinary price indices. Supplier Deliveries above 50 means slower deliveries, not automatically stronger demand."
+    },
+    "energy": {
+      "rule": "Separate crude tightness, refined-product tightness/crack spreads, and gas tightness. Do not apply a single oil/energy direction to producers, refiners, midstream and LNG."
+    },
+    "credit": {
+      "rule": "Separate broad credit availability from tail-credit stress. Tight HY can coexist with stressed CCC, which should penalize financing-dependent/speculative names more than strong incumbents."
+    }
+  },
+  "stockScoring": {
+    "formula": "contribution_i = (channelScore_i / 2) * ((0.65 * fundamentalSensitivity_i + 0.35 * marketSensitivity_i) / 5) * factorWeight_i * factorConfidence_i * profileConfidence * channelConfidence * freshnessWeight_i",
+    "fundamentalWeight": 0.65,
+    "marketWeight": 0.35,
+    "macroAdjustmentCap": 1.0,
+    "freshness": "Fresh channels decay gently with age, then contribute zero at staleAfterHours. A stale packet contributes zero globally.",
+    "baseConviction": "Never overwritten. Current rating = Base Conviction + capped macro adjustment."
+  },
+  "channelDirection": {
+    "growthDemand": "Higher = stronger broad/industrial demand",
+    "policyRelief": "Higher = more disinflation / more room for central-bank easing",
+    "financialConditions": "Higher = easier actual financial conditions / lower long-end yields",
+    "creditAvailability": "Higher = tighter broad spreads / easier credit availability",
+    "tailCreditStress": "Higher = MORE stress among weakest borrowers",
+    "consumerStrength": "Higher = stronger household spending / demand",
+    "housingStrength": "Higher = stronger housing/construction cycle",
+    "industrialCapex": "Higher = stronger power/grid/data-centre/industrial capex",
+    "inputCostPressure": "Higher = MORE raw-material/freight/wage/equipment cost pressure",
+    "labourStrength": "Higher = stronger employment and wage-income backdrop",
+    "riskAppetite": "Higher = stronger speculative/equity risk appetite",
+    "crudeTightness": "Higher = tighter/higher crude balance and prices",
+    "productTightness": "Higher = tighter product balance / wider crack spreads",
+    "gasTightness": "Higher = tighter/higher US natural-gas balance and prices"
+  }
+}

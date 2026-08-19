@@ -10,27 +10,35 @@ A searchable, versioned investment-research vault for nuclear, AI infrastructure
 - Category research files add specialised research without replacing `ideas.json`.
 - `data/live-context.json` is retained only as historical/dormant integration data and is not read by the Power Stack frontend.
 
-## Macro Pulse
+## Macro Pulse v2
 
-The active Pulse is based on a reviewed scan of `https://macro-indicators-a3d.pages.dev/#econ_calendar`, with particular attention to ISM, inflation, labour, rates, credit, consumer, housing, energy and positioning.
+The active Pulse reads a reviewed snapshot of `https://macro-indicators-a3d.pages.dev/#econ_calendar` and applies it through **stock-specific macro fingerprints**.
 
-The browser does **not** scrape the dashboard and does **not** invent a macro score from raw releases. ChatGPT/research updates interpret the data first and write a structured snapshot to `data/macro-context.json`. This keeps the site deterministic and makes the reasoning auditable in Git history.
+The source dashboard is treated as a data/visualization layer, not as an investment signal. Its deployed HTML was inspected directly. Generic chart MoM/YoY uses `(current - comparison) / abs(comparison) * 100`, and generic positive/negative colors reflect numeric direction only. Power Stack therefore preserves raw arithmetic first and interprets it separately.
 
-The snapshot has two layers:
+Active data files:
 
-1. **Macro regime blocks** — Growth, Inflation, Labour, Rates, Credit, Consumer, Housing, Energy and Positioning.
-2. **Theme transmission** — the interpreted effect on AI/Data Centres, Power/Grid, Nuclear, Uranium/Fuel, Oil & Gas, Metals, Robotics/Automation, Water/Cooling, Agriculture/Food Systems and Healthcare/Metabolic.
+- `data/macro-context.json` — current directional macro channels, evidence, confidence and freshness.
+- `data/macro-sensitivities.json` — slow-moving stock fingerprints with fundamental and market sensitivity, weights and confidence.
+- `data/macro-methodology.json` — verified source semantics and interpretation guardrails.
 
-## Scoring
+The engine separates, among other things:
 
-`conviction` remains the durable research score. Macro context is a separate overlay:
+- raw CPI/PCE index changes from inflation momentum and policy implications;
+- basis-point yield changes from generic percentage changes in yield levels;
+- broad credit availability from CCC/weak-end credit stress;
+- crude tightness from refined-product tightness/crack spreads and US gas tightness;
+- already-transformed rate series from level series, avoiding recursive percent-change artifacts.
 
-`macro-adjusted conviction = base conviction + sum(theme macro contributions × macroSensitivity)`
+### Stock scoring
 
-- The total macro adjustment is capped at **±1.00**.
-- If an idea does not yet have a researched `macroSensitivity`, the frontend uses **1.00×**.
-- A stale macro packet applies **zero** adjustment.
-- Macro context never rewrites Base Conviction.
+For factor `i`:
+
+`contribution_i = (channelScore_i / 2) × ((0.65 × fundamentalSensitivity_i + 0.35 × marketSensitivity_i) / 5) × factorWeight_i × factorConfidence_i × profileConfidence × channelConfidence × freshnessWeight_i`
+
+The stock's Macro adjustment is the sum of fresh contributions and is capped at **±1.00**. Base Conviction is never overwritten. If a stock has no researched fingerprint, or the macro packet is stale, its macro adjustment is zero.
+
+Theme bars are now summaries of the **average stock-level macro adjustment inside the theme**, not a theme score copied into every stock.
 
 ## Live Desk status
 

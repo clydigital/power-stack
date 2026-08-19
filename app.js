@@ -1,5 +1,7 @@
 let ideas=[];
 let macroContext=null;
+let macroSensitivityData=null;
+let macroProfileMap=new Map();
 const MACRO_PACKET_MAX_HOURS=168;
 const savedView=localStorage.getItem('powerStackView');
 const state={theme:'All',region:'All',status:'All',q:'',sort:'conviction',sortDir:'desc',view:savedView==='row'?'row':'card'};
@@ -11,38 +13,44 @@ const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
 function regionBucket(x){const r=(x.region||'').toLowerCase();if(r.includes('malaysia'))return'Malaysia';if(r.includes('hong kong')||r.includes('china')||r.includes('kazakhstan'))return'HK / China';if(r==='us'||r.includes('united states'))return'US';return'Global'}
 function statusBucket(x){const s=(x.status||'').toLowerCase();if(s.includes('priority'))return'Priority';if(s.includes('core'))return'Core';if(s.includes('speculative')||s.includes('high-beta'))return'Speculative';if(s.includes('queue')||s.includes('low-priority'))return'Research Queue';return'Watchlist'}
 function themeContext(x){return macroContext?.themes?.find(t=>t.theme===x.themeGroup)||null}
+function stockProfile(x){return macroProfileMap.get(x?.ticker)||null}
+function channelContext(key){return macroContext?.channels?.find(c=>c.key===key)||null}
 function parseMs(v){const ms=Date.parse(v||'');return Number.isFinite(ms)?ms:null}
 function ageHours(v){const ms=parseMs(v);return ms===null?Infinity:(Date.now()-ms)/36e5}
 function packetFresh(){if(!macroContext)return false;const max=Number(macroContext.packetStaleAfterHours||MACRO_PACKET_MAX_HOURS);return ageHours(macroContext.generatedAt)<=max}
-function themeFresh(t){if(!t||!packetFresh())return false;if(t.fresh===false)return false;const max=Number(t.staleAfterHours||macroContext.packetStaleAfterHours||MACRO_PACKET_MAX_HOURS);const stamp=t.freshestAt||macroContext.generatedAt;return ageHours(stamp)<=max}
-function blockFresh(b){if(!b||!packetFresh())return false;if(b.fresh===false)return false;const max=Number(b.staleAfterHours||macroContext.packetStaleAfterHours||MACRO_PACKET_MAX_HOURS);return ageHours(b.observedAt||macroContext.generatedAt)<=max}
+function channelFresh(c){if(!c||!packetFresh()||c.fresh===false)return false;const max=Number(c.staleAfterHours||macroContext.packetStaleAfterHours||MACRO_PACKET_MAX_HOURS);return ageHours(c.observedAt||macroContext.generatedAt)<max}
+function channelFreshnessWeight(c){if(!channelFresh(c))return 0;const max=Number(c.staleAfterHours||macroContext.packetStaleAfterHours||MACRO_PACKET_MAX_HOURS);return clamp(1-.35*(ageHours(c.observedAt||macroContext.generatedAt)/max),.65,1)}
+function themeFresh(t){return !!t&&packetFresh()}
 function scoreClass(v){return v>0.015?'pos':v<-0.015?'neg':'neutral'}
 function fmtSigned(v,d=1){const n=Number(v||0);return `${n>0?'+':''}${n.toFixed(d)}`}
 function pct(v,max){return `${clamp(Number(v||0)/max*100,0,100)}%`}
 function counts(items,getter){const out={};items.forEach(x=>{const k=getter(x);out[k]=(out[k]||0)+1});return out}
-function prettyKind(kind){return ({growth:'Growth',inflation:'Inflation',labour:'Labour',rates:'Rates',credit:'Credit',consumer:'Consumer',housing:'Housing',energy:'Energy',positioning:'Positioning',macro_indicator:'Macro indicator'})[kind]||'Macro signal'}
+function prettyKind(kind){const c=channelContext(kind);return c?.label||({growthDemand:'Growth / Demand',policyRelief:'Policy Relief',financialConditions:'Financial Conditions',creditAvailability:'Broad Credit',tailCreditStress:'Weak-End Credit Stress',consumerStrength:'Consumer',housingStrength:'Housing',industrialCapex:'Industrial / Power Capex',inputCostPressure:'Input Costs',labourStrength:'Labour',riskAppetite:'Risk Appetite',crudeTightness:'Crude',productTightness:'Refined Products',gasTightness:'US Gas'})[kind]||'Macro signal'}
 function safeUrl(url){return /^https?:\/\//i.test(String(url||''))?String(url):null}
 function timeLabel(v){if(!v)return'No timestamp';const d=new Date(v);return Number.isNaN(d.getTime())?'No timestamp':d.toLocaleString()}
-function macroSensitivity(x){const n=Number(x.macroSensitivity);return Number.isFinite(n)?clamp(n,0,1.5):1}
-
 function contextSignalContributions(x){
-  const t=themeContext(x);
-  if(!t||!themeFresh(t))return[];
-  const factor=macroSensitivity(x);
-  const available=(t.signals||[]).filter(s=>s.fresh!==false&&Number.isFinite(Number(s.themeContribution))&&Math.abs(Number(s.themeContribution))>0.0001);
-  let rows=available.map(s=>({...s,adjustment:Number(s.themeContribution)*factor}));
-  if(!rows.length&&Number.isFinite(Number(t.score))&&Math.abs(Number(t.score))>0.0001){
-    rows=[{id:'macro-theme-score',kind:'macro_indicator',title:`${t.theme} macro transmission`,detail:(t.drivers||[])[0]||'Aggregate macro-theme score.',themeContribution:Number(t.score),adjustment:Number(t.score)*factor,observedAt:t.freshestAt||macroContext.generatedAt,sourceName:macroContext.source||'Macro Indicators Dashboard',sourceUrl:macroContext.sourceUrl||null,fresh:true}];
-  }
-  const sum=rows.reduce((s,r)=>s+r.adjustment,0);
-  const clipped=clamp(sum,-1,1);
-  if(Math.abs(sum)>1&&Math.abs(sum)>0.0001){const scale=clipped/sum;rows=rows.map(r=>({...r,adjustment:r.adjustment*scale}))}
+  const p=stockProfile(x);if(!p||!packetFresh())return[];
+  const fw=Number(p.fundamentalWeight??macroSensitivityData?.fundamentalWeight??.65),mw=Number(p.marketWeight??macroSensitivityData?.marketWeight??.35),pc=clamp(Number(p.profileConfidence??.5),0,1);
+  let rows=[];
+  Object.entries(p.factors||{}).forEach(([key,f])=>{
+    const c=channelContext(key);if(!c||!channelFresh(c)||Number(f.weight||0)<=0)return;
+    const fundamental=clamp(Number(f.fundamental||0),-5,5),market=clamp(Number(f.market||0),-5,5);
+    const effective=(fw*fundamental+mw*market)/5;
+    const freshW=channelFreshnessWeight(c),factorC=clamp(Number(f.confidence??.5),0,1),channelC=clamp(Number(c.confidence??.5),0,1);
+    const adjustment=(Number(c.score||0)/2)*effective*Number(f.weight||0)*factorC*pc*channelC*freshW;
+    if(Math.abs(adjustment)<.00005)return;
+    rows.push({id:`${x.ticker}:${key}`,kind:key,title:c.label||prettyKind(key),detail:c.interpretation||'',adjustment,channelScore:Number(c.score||0),effectiveSensitivity:effective,fundamentalSensitivity:fundamental,marketSensitivity:market,factorWeight:Number(f.weight||0),factorConfidence:factorC,profileConfidence:pc,channelConfidence:channelC,freshnessWeight:freshW,rationale:f.rationale||'',observedAt:c.observedAt||macroContext.generatedAt,sourceName:macroContext.source||'Macro Indicators Dashboard',sourceUrl:macroContext.sourceUrl||null});
+  });
+  const sum=rows.reduce((s,r)=>s+r.adjustment,0),clipped=clamp(sum,-1,1);
+  if(Math.abs(sum)>1&&Math.abs(sum)>.0001){const scale=clipped/sum;rows=rows.map(r=>({...r,adjustment:r.adjustment*scale}))}
   return rows.sort((a,b)=>Math.abs(b.adjustment)-Math.abs(a.adjustment));
 }
-function contextWatchSignals(x){const t=themeContext(x);if(!t||!themeFresh(t))return[];return (t.watch||[]).slice(0,5)}
+function contextWatchSignals(x){const t=themeContext(x);return packetFresh()?(t?.watch||[]).slice(0,5):[]}
 function contextDelta(x){return clamp(contextSignalContributions(x).reduce((s,r)=>s+Number(r.adjustment||0),0),-1,1)}
 function contextConviction(x){return clamp(Number(x.conviction||0)+contextDelta(x),0,10)}
-function contextState(x){const t=themeContext(x);if(!t)return'none';return themeFresh(t)?'fresh':'stale'}
+function contextState(x){if(!stockProfile(x))return'none';if(!packetFresh())return'stale';return contextSignalContributions(x).length?'fresh':'none'}
+function themeDelta(theme){const rows=ideas.filter(x=>x.themeGroup===theme&&stockProfile(x));return rows.length?rows.reduce((s,x)=>s+contextDelta(x),0)/rows.length:0}
+function themeTopDrivers(theme){const rows=ideas.filter(x=>x.themeGroup===theme&&stockProfile(x));const sums={};rows.forEach(x=>contextSignalContributions(x).forEach(r=>{sums[r.kind]=(sums[r.kind]||0)+r.adjustment}));return Object.entries(sums).map(([kind,total])=>({kind,total:rows.length?total/rows.length:0})).sort((a,b)=>Math.abs(b.total)-Math.abs(a.total)).slice(0,5)}
 
 function navButton(label,count,total,group,active){return `<button class="nav-item ${active?'active':''}" data-group="${group}" data-value="${esc(label)}"><div class="nav-top"><span>${esc(label)}</span><b>${count}</b></div><div class="mini-track"><span class="mini-fill" style="width:${total?count/total*100:0}%"></span></div></button>`}
 function renderSidebar(){
@@ -61,9 +69,9 @@ function renderSidebar(){
 
 function renderMacroPulse(){
   const box=$('#livePulse'),dot=$('#sidebarLiveDot');
-  if(!macroContext?.blocks?.length){box.innerHTML='<div class="side-micro">No macro snapshot yet. Using base research scores.</div>';dot.className='live-dot';return}
+  if(!macroContext?.channels?.length){box.innerHTML='<div class="side-micro">No macro snapshot yet. Using base research scores.</div>';dot.className='live-dot';return}
   const packetOk=packetFresh();dot.className=`live-dot ${packetOk?'online':'stale'}`;
-  box.innerHTML=macroContext.blocks.map(b=>{const fresh=blockFresh(b);const pos=clamp((Number(b.score)+2)/4*100,0,100);return `<div class="pulse-row ${fresh?'':'stale'}"><div class="pulse-label"><span>${esc(b.label||b.key)}</span><b class="${fresh?scoreClass(b.score):'stale-text'}">${fresh?fmtSigned(b.score):'STALE'}</b></div><div class="pulse-track"><span class="pulse-marker" style="left:${pos}%"></span></div><div class="pulse-regime">${esc(b.regime||'')}</div></div>`}).join('');
+  box.innerHTML=macroContext.channels.map(c=>{const fresh=channelFresh(c);const pos=clamp((Number(c.score)+2)/4*100,0,100);return `<div class="pulse-row ${fresh?'':'stale'}"><div class="pulse-label"><span>${esc(c.label||c.key)}</span><b class="${fresh?scoreClass(c.score):'stale-text'}">${fresh?fmtSigned(c.score):'STALE'}</b></div><div class="pulse-track"><span class="pulse-marker" style="left:${pos}%"></span></div><div class="pulse-regime">${esc(c.regime||'')}</div></div>`}).join('');
   $('#liveTimestamp').textContent=packetOk?`Macro snapshot: ${timeLabel(macroContext.generatedAt)}`:`Macro snapshot is ${ageHours(macroContext.generatedAt).toFixed(1)}h old · adjustments off`;
 }
 
@@ -85,7 +93,7 @@ function renderRowView(rows){return `<div class="idea-table-wrap"><div class="id
 function updateViewControls(){const card=state.view==='card';$('#cardViewBtn').classList.toggle('active',card);$('#rowViewBtn').classList.toggle('active',!card);$('#cardViewBtn').setAttribute('aria-pressed',String(card));$('#rowViewBtn').setAttribute('aria-pressed',String(!card))}
 function setView(view){state.view=view;localStorage.setItem('powerStackView',view);updateViewControls();render()}
 function bindIdeaOpeners(){document.querySelectorAll('.idea-card,.idea-row').forEach(c=>{const open=()=>openDetail(ideas.find(x=>x.ticker===c.dataset.ticker));c.onclick=open;c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open()}}});document.querySelectorAll('.row-sort').forEach(btn=>btn.onclick=e=>{e.stopPropagation();const key=btn.dataset.sortKey;if(state.sort===key)state.sortDir=state.sortDir==='asc'?'desc':'asc';else{state.sort=key;state.sortDir=defaultSortDir(key)};$('#sort').value=state.sort;render()})}
-function macroChip(x){const t=themeContext(x),mode=contextState(x),delta=contextDelta(x);if(!t)return'<span class="live-chip neutral">NO MACRO</span>';if(mode==='stale')return'<span class="live-chip stale">STALE</span>';return `<span class="live-chip ${scoreClass(delta)}">${fmtSigned(delta,2)} MACRO</span>`}
+function macroChip(x){const t=themeContext(x),mode=contextState(x),delta=contextDelta(x);if(!stockProfile(x))return'<span class="live-chip neutral">NO PROFILE</span>';if(mode==='stale')return'<span class="live-chip stale">STALE</span>';return `<span class="live-chip ${scoreClass(delta)}">${fmtSigned(delta,2)} MACRO</span>`}
 function renderCard(x){
   const adj=contextConviction(x);
   return `<article class="idea-card" data-ticker="${esc(x.ticker)}"><div class="card-head"><div><div class="ticker-row"><div class="ticker">${esc(x.ticker)}</div>${macroChip(x)}</div><div class="company">${esc(x.name)} · ${esc(x.market)}</div></div><div class="status-badge">${esc(statusBucket(x))}</div></div><div class="card-tags"><span class="tag">${esc(x.themeGroup)}</span><span class="tag">${esc(regionBucket(x))}</span><span class="tag">${esc(x.theme)}</span></div><p class="thesis">${esc(x.thesis)}</p><div class="score-block">${scoreLine('Base conviction',x.conviction,10,'conv')}${scoreLine('Adjusted now',adj,10,'context')}${scoreLine('AI crash',x.aiRisk,5,'risk')}${scoreLine('Theme dep.',x.themeDependency,5,'')}</div><div class="card-foot"><span>Cycle ${esc(x.cyclicality)}/5 · Spec ${esc(x.speculation)}/5</span><span class="desk-tilt ${scoreClass(contextDelta(x))}">${contextState(x)==='fresh'?`${contextSignalContributions(x).length} macro driver${contextSignalContributions(x).length===1?'':'s'}`:contextState(x)==='stale'?'Macro paused':'No macro overlay'}</span></div></article>`
@@ -93,30 +101,30 @@ function renderCard(x){
 
 function renderSummary(rows){const avg=rows.length?rows.reduce((s,x)=>s+Number(x.conviction||0),0)/rows.length:0;const ctxAvg=rows.length?rows.reduce((s,x)=>s+contextConviction(x),0)/rows.length:0;const priorities=rows.filter(x=>statusBucket(x)==='Priority').length;const lowTheme=rows.filter(x=>Number(x.themeDependency)<=2).length;$('#summaryStats').innerHTML=`<div class="summary-card"><b>${rows.length}</b><span>Ideas in view</span></div><div class="summary-card"><b>${avg.toFixed(1)}</b><span>Base conviction</span></div><div class="summary-card"><b>${ctxAvg.toFixed(1)}</b><span>Macro-adjusted</span></div><div class="summary-card"><b>${priorities} / ${lowTheme}</b><span>Priority / low dependency</span></div>`}
 
-function renderSignalMini(t){const fresh=themeFresh(t),width=Math.abs(Number(t.score))/1*50,cls=fresh?scoreClass(t.score):'neutral',driver=(t.signals||[]).find(s=>Math.abs(Number(s.themeContribution||0))>0.01)?.detail||(t.drivers||[])[0]||'No fresh macro driver summary.';return `<div class="theme-signal ${fresh?'':'stale-panel'}"><div class="signal-top"><span class="signal-name">${esc(t.theme)}</span><b class="signal-score ${cls}">${fresh?fmtSigned(t.score,2):'STALE'}</b></div><div class="signal-track"><span class="signal-fill ${cls}" style="width:${fresh?clamp(width,0,50):0}%"></span></div><div class="signal-driver">${esc(driver)}</div><div class="signal-freshness">${fresh?`macro transmission · ${timeLabel(t.freshestAt||macroContext.generatedAt)}`:'no adjustment · stale inputs'}</div></div>`}
-function renderBlockMini(b){const fresh=blockFresh(b),width=Math.abs(Number(b.score))/2*50,cls=fresh?scoreClass(b.score):'neutral',driver=(b.drivers||[])[0]?.detail||(b.drivers||[])[0]?.title||'No fresh macro driver.';return `<div class="theme-signal ${fresh?'':'stale-panel'}"><div class="signal-top"><span class="signal-name">${esc(b.label||b.key)}</span><b class="signal-score ${cls}">${fresh?fmtSigned(b.score):'STALE'}</b></div><div class="signal-track"><span class="signal-fill ${cls}" style="width:${fresh?clamp(width,0,50):0}%"></span></div><div class="signal-driver">${esc(b.regime||'')} · ${esc(driver)}</div><div class="signal-freshness">${fresh?`${b.confidence||0}% confidence · ${timeLabel(b.observedAt||macroContext.generatedAt)}`:'stale block · no influence'}</div></div>`}
+function renderSignalMini(t){const fresh=packetFresh(),impact=themeDelta(t.theme),drivers=themeTopDrivers(t.theme),top=drivers[0];return `<div class="theme-signal ${fresh?'':'stale-panel'}"><div class="signal-top"><span class="signal-name">${esc(t.theme)}</span><b class="signal-score ${fresh?scoreClass(impact):'neutral'}">${fresh?fmtSigned(impact,2):'STALE'}</b></div><div class="signal-track"><span class="signal-fill ${fresh?scoreClass(impact):'neutral'}" style="width:${fresh?clamp(Math.abs(impact)*50,0,50):0}%"></span></div><div class="signal-driver">${top?`${esc(prettyKind(top.kind))} ${fmtSigned(top.total,2)} avg`:`${esc(t.regime||'No stock-level driver')}`}</div><div class="signal-freshness">${fresh?'average stock macro adjustment · stock-specific':'no adjustment · stale snapshot'}</div></div>`}
+function renderBlockMini(c){const fresh=channelFresh(c),width=Math.abs(Number(c.score))/2*50,cls=fresh?scoreClass(c.score):'neutral';return `<div class="theme-signal ${fresh?'':'stale-panel'}"><div class="signal-top"><span class="signal-name">${esc(c.label||c.key)}</span><b class="signal-score ${cls}">${fresh?fmtSigned(c.score):'STALE'}</b></div><div class="signal-track"><span class="signal-fill ${cls}" style="width:${fresh?clamp(width,0,50):0}%"></span></div><div class="signal-driver">${esc(c.regime||'')} · ${esc(c.interpretation||'')}</div><div class="signal-freshness">${fresh?`${Math.round(Number(c.confidence||0)*100)}% confidence · ${timeLabel(c.observedAt||macroContext.generatedAt)}`:'stale channel · no influence'}</div></div>`}
 function renderContext(){
   const title=$('#contextTitle'),meta=$('#contextMeta'),body=$('#contextBody');
-  if(!macroContext?.themes?.length){title.textContent='Macro pulse';meta.textContent='Macro snapshot unavailable · using base scores';body.innerHTML='<div class="context-copy">Power Stack remains usable without macro context. Macro adjustments stay at zero until data/macro-context.json is refreshed.</div>';return}
+  if(!macroContext?.channels?.length){title.textContent='Macro pulse';meta.textContent='Macro snapshot unavailable · using base scores';body.innerHTML='<div class="context-copy">Power Stack remains usable without macro context. Macro adjustments stay at zero until data/macro-context.json is refreshed.</div>';return}
   const packetOk=packetFresh();meta.textContent=`${macroContext.source||'Macro Indicators Dashboard'} · ${packetOk?'fresh snapshot':'stale snapshot'} · ${timeLabel(macroContext.generatedAt)}`;
   if(state.theme!=='All'){
-    const t=macroContext.themes.find(v=>v.theme===state.theme);title.textContent=`${state.theme} · macro transmission`;if(!t){body.innerHTML='<div class="context-copy">No matching macro transmission profile for this theme.</div>';return}
-    const fresh=themeFresh(t);const signals=(t.signals||[]).filter(s=>s.fresh!==false).slice(0,6);body.innerHTML=`<div class="single-context"><div class="context-gauge"><strong class="${fresh?scoreClass(t.score):'neutral'}">${fresh?fmtSigned(t.score,2):'—'}</strong><span>${fresh?`${esc(t.regime)} · ${t.confidence}% confidence`:'Stale · adjustment disabled'}</span></div><div class="context-copy">${signals.length?`<ul>${signals.map(s=>`<li><b>${esc(s.title)}</b> — ${esc(s.detail)}</li>`).join('')}</ul>`:'No fresh macro driver detail.'}</div></div>`;return;
+    const t=macroContext.themes?.find(v=>v.theme===state.theme),impact=themeDelta(state.theme),drivers=themeTopDrivers(state.theme);title.textContent=`${state.theme} · stock-level macro impact`;
+    const lis=drivers.length?`<ul>${drivers.map(d=>`<li><b>${esc(prettyKind(d.kind))} ${fmtSigned(d.total,2)} avg</b> — average contribution across profiled stocks in this theme.</li>`).join('')}</ul>`:'No fresh profiled macro drivers.';
+    body.innerHTML=`<div class="single-context"><div class="context-gauge"><strong class="${packetOk?scoreClass(impact):'neutral'}">${packetOk?fmtSigned(impact,2):'—'}</strong><span>${packetOk?`${esc(t?.regime||'stock-specific')} · ${t?.confidence||'—'}% theme confidence`:'Stale · adjustment disabled'}</span></div><div class="context-copy">${lis}</div></div>`;return;
   }
-  title.textContent='Macro regime → Power Stack';
-  const blocks=`<div class="macro-section"><div class="macro-section-title">MACRO REGIME</div><div class="context-themes">${(macroContext.blocks||[]).map(renderBlockMini).join('')}</div></div>`;
-  const themes=`<div class="macro-section"><div class="macro-section-title">IMPACT ON POWER STACK</div><div class="context-themes">${macroContext.themes.map(renderSignalMini).join('')}</div></div>`;
+  title.textContent='Macro regime → stock fingerprints';
+  const blocks=`<div class="macro-section"><div class="macro-section-title">DIRECTIONAL MACRO CHANNELS</div><div class="context-themes">${macroContext.channels.map(renderBlockMini).join('')}</div></div>`;
+  const themes=`<div class="macro-section"><div class="macro-section-title">AVERAGE STOCK IMPACT BY THEME</div><div class="context-themes">${(macroContext.themes||[]).map(renderSignalMini).join('')}</div></div>`;
   body.innerHTML=blocks+themes;
 }
 
 function renderReasonRows(x){
-  const t=themeContext(x),mode=contextState(x),factor=macroSensitivity(x);
-  if(!t)return'<div class="reason-empty">No matching macro transmission profile exists for this idea.</div>';
-  if(mode==='stale')return `<div class="stale-callout"><b>No macro adjustment applied.</b><span>The latest macro snapshot or ${esc(t.theme)} transmission profile is stale. Base conviction remains unchanged.</span></div>`;
+  const p=stockProfile(x),mode=contextState(x);if(!p)return'<div class="reason-empty">No researched stock macro fingerprint exists yet, so this idea receives zero macro adjustment.</div>';
+  if(mode==='stale')return `<div class="stale-callout"><b>No macro adjustment applied.</b><span>The macro snapshot is stale. Base conviction remains unchanged.</span></div>`;
   const rows=contextSignalContributions(x),watches=contextWatchSignals(x);
-  const scored=rows.length?`<div class="reason-list">${rows.map(r=>{const url=safeUrl(r.sourceUrl||macroContext.sourceUrl);return `<div class="reason-row"><div class="reason-delta ${scoreClass(r.adjustment)}">${fmtSigned(r.adjustment,2)}</div><div class="reason-copy"><b>${esc(r.title)}</b><p>${esc(r.detail||'')}</p><div class="reason-meta"><span>${esc(prettyKind(r.kind))}</span><span>${esc(r.sourceName||macroContext.source||'Macro Indicators Dashboard')}</span><span>${esc(timeLabel(r.observedAt||macroContext.generatedAt))}</span>${url?`<a href="${esc(url)}" target="_blank" rel="noopener">source ↗</a>`:''}</div></div></div>`}).join('')}</div>`:'<div class="reason-empty">The current macro mix is neutral for this theme, so no conviction adjustment is applied.</div>';
+  const scored=rows.length?`<div class="reason-list">${rows.map(r=>{const url=safeUrl(r.sourceUrl);return `<div class="reason-row"><div class="reason-delta ${scoreClass(r.adjustment)}">${fmtSigned(r.adjustment,3)}</div><div class="reason-copy"><b>${esc(r.title)}</b><p>${esc(r.detail||'')} ${r.rationale?`Stock link: ${esc(r.rationale)}`:''}</p><div class="reason-meta"><span>Macro ${fmtSigned(r.channelScore,2)}</span><span>F ${fmtSigned(r.fundamentalSensitivity,1)}/5 · M ${fmtSigned(r.marketSensitivity,1)}/5</span><span>Weight ${(r.factorWeight*100).toFixed(1)}%</span><span>Sensitivity ${fmtSigned(r.effectiveSensitivity,2)}</span><span>${esc(timeLabel(r.observedAt))}</span>${url?`<a href="${esc(url)}" target="_blank" rel="noopener">source ↗</a>`:''}</div></div></div>`}).join('')}</div>`:'<div class="reason-empty">Fresh macro channels net to no material stock-specific adjustment.</div>';
   const watch=watches.length?`<div class="watch-block"><div class="watch-title">Macro tensions / next tests</div>${watches.map(s=>`<div class="watch-row"><span>${esc(s.kind||'watch')}</span><div><b>${esc(s.title)}</b><p>${esc(s.detail||'')}</p>${s.nextTest?`<small>Next test: ${esc(s.nextTest)}</small>`:''}</div></div>`).join('')}</div>`:'';
-  return `<div class="context-explain"><div class="formula-line">Macro sensitivity <b>${factor.toFixed(2)}×</b>. Theme transmission is scaled by this factor and total macro movement is capped at ±1.00. If an idea has no researched macroSensitivity field yet, Power Stack uses 1.00×.</div>${scored}${watch}</div>`;
+  return `<div class="context-explain"><div class="formula-line"><b>Stock fingerprint confidence ${Math.round(Number(p.profileConfidence||0)*100)}%.</b> Each channel uses 65% fundamental + 35% market sensitivity, then factor/channel confidence and freshness. Contributions sum to the Macro adjustment, capped at ±1.00.</div>${scored}${watch}</div>`;
 }
 
 function render(){const rows=filteredIdeas(),container=$('#grid');$('#count').textContent=rows.length;container.className=state.view==='row'?'idea-row-view':'idea-grid';container.innerHTML=rows.length?(state.view==='row'?renderRowView(rows):rows.map(renderCard).join('')):'<div class="empty">No matching ideas.</div>';$('#viewSubtitle').textContent=[state.theme!=='All'?state.theme:null,state.region!=='All'?state.region:null,state.status!=='All'?state.status:null].filter(Boolean).join(' · ')||'Long-duration theses with a separate macro-regime overlay.';$('h1').textContent=state.theme!=='All'?state.theme:state.region!=='All'?state.region:state.status!=='All'?state.status:'All Ideas';renderSummary(rows);renderContext();updateViewControls();bindIdeaOpeners()}
@@ -126,13 +134,14 @@ function openDetail(x){
   $('#dialogMarket').textContent=`${x.market} · ${x.region} · updated ${x.lastUpdated||'—'}`;$('#dialogTitle').textContent=`${x.ticker} — ${x.name}`;
   const sources=(x.sources||[]).map(s=>`<a class="source-link" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label||s.url)} ↗</a>`).join('')||'<p>No stored source link yet.</p>';
   const comparison=`<div class="conviction-compare"><div><span>BASE</span><b>${Number(x.conviction).toFixed(1)}</b></div><div class="compare-arrow">→</div><div><span>MACRO-ADJUSTED</span><b class="${scoreClass(delta)}">${adj.toFixed(1)}</b></div>${mode==='fresh'?`<div class="big-live-chip ${scoreClass(delta)}">${fmtSigned(delta,2)} MACRO</div>`:`<div class="big-live-chip stale">${mode==='stale'?'STALE':'NO MACRO'}</div>`}</div>`;
-  $('#dialogBody').innerHTML=`${comparison}<div class="detail-grid"><div class="detail"><h3>Thesis</h3><p>${esc(x.thesis)}</p></div><div class="detail"><h3>Catalysts</h3><p>${esc(x.catalysts)}</p></div><div class="detail"><h3>Risks</h3><p>${esc(x.risks)}</p></div><div class="detail"><h3>Research stance</h3><p>${esc(x.researchNote||'—')}</p></div><div class="detail full live-rationale"><h3>Why Macro moved this idea</h3>${renderReasonRows(x)}</div><div class="detail full"><h3>Scores</h3><p>Base conviction ${x.conviction}/10 · Macro-adjusted ${adj.toFixed(1)}/10 · AI crash ${x.aiRisk}/5 · Theme dependency ${x.themeDependency}/5 · Cyclicality ${x.cyclicality}/5 · Speculation ${x.speculation}/5.${t?` Theme regime: ${esc(t.regime)}.`:''}</p></div><div class="detail full"><h3>Sources</h3>${sources}</div></div>`;
+  $('#dialogBody').innerHTML=`${comparison}<div class="detail-grid"><div class="detail"><h3>Thesis</h3><p>${esc(x.thesis)}</p></div><div class="detail"><h3>Catalysts</h3><p>${esc(x.catalysts)}</p></div><div class="detail"><h3>Risks</h3><p>${esc(x.risks)}</p></div><div class="detail"><h3>Research stance</h3><p>${esc(x.researchNote||'—')}</p></div><div class="detail full live-rationale"><h3>Why Macro moved this idea</h3>${renderReasonRows(x)}</div><div class="detail full"><h3>Scores</h3><p>Base conviction ${x.conviction}/10 · Macro-adjusted ${adj.toFixed(1)}/10 · AI crash ${x.aiRisk}/5 · Theme dependency ${x.themeDependency}/5 · Cyclicality ${x.cyclicality}/5 · Speculation ${x.speculation}/5.${t?` Theme regime: ${esc(t.regime)}. Stock macro-profile confidence ${Math.round(Number(stockProfile(x)?.profileConfidence||0)*100)}%.`:''}</p></div><div class="detail full"><h3>Sources</h3>${sources}</div></div>`;
   $('#detailDialog').showModal();
 }
 
 async function loadMacroContext(){
   try{const r=await fetch('data/macro-context.json',{cache:'no-store'});if(!r.ok)throw new Error(`HTTP ${r.status}`);macroContext=await r.json();const fresh=packetFresh();$('#liveBadge').className=`live-badge ${fresh?'online':'stale'}`;$('#liveBadge').innerHTML=fresh?'<span></span> Macro snapshot active':'<span></span> Macro snapshot stale'}catch(err){macroContext=null;$('#liveBadge').className='live-badge offline';$('#liveBadge').innerHTML='<span></span> Macro snapshot unavailable'}
 }
+async function loadMacroProfiles(){try{const r=await fetch('data/macro-sensitivities.json',{cache:'no-store'});if(!r.ok)throw new Error(`HTTP ${r.status}`);macroSensitivityData=await r.json();macroProfileMap=new Map((macroSensitivityData.stocks||[]).map(p=>[p.ticker,p]))}catch(err){macroSensitivityData=null;macroProfileMap=new Map()}}
 
-async function init(){const [ideaRes]=await Promise.all([fetch('data/ideas.json',{cache:'no-store'}),loadMacroContext()]);ideas=await ideaRes.json();renderSidebar();render();$('#search').oninput=e=>{state.q=e.target.value;render()};$('#sort').onchange=e=>{state.sort=e.target.value;state.sortDir=defaultSortDir(state.sort);render()};$('#cardViewBtn').onclick=()=>setView('card');$('#rowViewBtn').onclick=()=>setView('row');$('#clearFilters').onclick=()=>{state.theme='All';state.region='All';state.status='All';state.q='';$('#search').value='';renderSidebar();render()};$('#closeDialog').onclick=()=>$('#detailDialog').close();$('#detailDialog').addEventListener('click',e=>{if(e.target===$('#detailDialog'))$('#detailDialog').close()})}
+async function init(){const [ideaRes]=await Promise.all([fetch('data/ideas.json',{cache:'no-store'}),loadMacroContext(),loadMacroProfiles()]);ideas=await ideaRes.json();renderSidebar();render();$('#search').oninput=e=>{state.q=e.target.value;render()};$('#sort').onchange=e=>{state.sort=e.target.value;state.sortDir=defaultSortDir(state.sort);render()};$('#cardViewBtn').onclick=()=>setView('card');$('#rowViewBtn').onclick=()=>setView('row');$('#clearFilters').onclick=()=>{state.theme='All';state.region='All';state.status='All';state.q='';$('#search').value='';renderSidebar();render()};$('#closeDialog').onclick=()=>$('#detailDialog').close();$('#detailDialog').addEventListener('click',e=>{if(e.target===$('#detailDialog'))$('#detailDialog').close()})}
 init().catch(err=>{$('#grid').innerHTML=`<div class="empty">Failed to load Power Stack: ${esc(err.message)}</div>`});

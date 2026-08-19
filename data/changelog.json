@@ -1,6 +1,10 @@
 [
   {
     "date": "2026-08-19",
+    "summary": "Macro Pulse v2: verified the deployed Macro Indicators dashboard source semantics, then replaced theme-level stock scoring with stock-specific macro fingerprints. Added raw-measurement guardrails for CPI/PCE, yields, calendar surprises and already-transformed series; split broad credit from tail credit stress and crude from refined-product/gas tightness. Added 49 stock sensitivity profiles with 65% fundamental / 35% market weighting, confidence/freshness scaling, zero adjustment when stale/unprofiled, and a ±1.00 cap. Base Conviction values were not changed."
+  },
+  {
+    "date": "2026-08-19",
     "summary": "Replaced the active Live Desk Pulse with a macro-regime Pulse. Power Stack now reads data/macro-context.json, built from a reviewed scan of the Macro Indicators dashboard across Growth, Inflation, Labour, Rates, Credit, Consumer, Housing, Energy and Positioning, then translates that regime into all current Power Stack themes. Live Desk influence is zero and its scheduled sync is disabled but retained as a dormant stub. Base Conviction remains untouched; macro adjustment is transparent, stale-safe and capped at +/-1.00. No stock research scores were changed in this implementation commit."
   },
   {
