@@ -180,3 +180,79 @@ dialog{
 .reason-copy b{color:#e1e8ee}.reason-copy p{color:#aebbc6!important}
 .reason-meta{color:#718292}.pulse-regime{color:#718292}
 .empty{border-color:#314356}
+
+
+/* Futuristic Research Vault pass — 2026-08-19 */
+:root{
+  --glow-green:rgba(142,227,176,.18);
+  --glow-blue:rgba(133,184,255,.16);
+  --grid-line:rgba(119,158,193,.045);
+}
+body{
+  background:
+    linear-gradient(var(--grid-line) 1px,transparent 1px),
+    linear-gradient(90deg,var(--grid-line) 1px,transparent 1px),
+    radial-gradient(circle at 74% 8%,rgba(80,160,139,.08),transparent 34%),
+    linear-gradient(180deg,#080c11 0%,#0a1017 52%,#080c11 100%);
+  background-size:42px 42px,42px 42px,auto,auto;
+  background-attachment:fixed;
+}
+.workspace{position:relative;isolation:isolate}
+.workspace:before{content:"";pointer-events:none;position:fixed;inset:0 0 auto var(--sidebar);height:1px;background:linear-gradient(90deg,transparent,var(--green),transparent);opacity:.22;z-index:20}
+.sidebar{box-shadow:12px 0 40px rgba(0,0,0,.18)}
+.brand-block{position:relative;overflow:hidden}
+.brand-block:after{content:"";position:absolute;right:-34px;top:-52px;width:130px;height:130px;border:1px solid rgba(142,227,176,.10);transform:rotate(45deg);pointer-events:none}
+.brand{font-weight:850;text-shadow:0 0 22px rgba(142,227,176,.07)}
+.eyebrow,.side-heading,.macro-section-title{font-variant-numeric:tabular-nums}
+.nav-item,.summary-card,.panel,.idea-card,.theme-signal,.detail,.control-row,.idea-table-wrap{backdrop-filter:blur(8px)}
+.summary-card,.panel,.idea-card,.idea-table-wrap{box-shadow:0 0 0 1px rgba(255,255,255,.012) inset,0 12px 32px rgba(0,0,0,.12)}
+.summary-card:hover,.idea-card:hover{box-shadow:0 0 0 1px rgba(142,227,176,.055) inset,0 16px 38px rgba(0,0,0,.18)}
+.topbar{position:relative;overflow:hidden}
+.topbar:after{content:"";position:absolute;right:5%;bottom:-78px;width:280px;height:150px;border:1px solid rgba(133,184,255,.08);border-radius:50%;box-shadow:0 0 60px rgba(133,184,255,.035);pointer-events:none}
+.topbar h1{font-weight:850;text-shadow:0 0 35px rgba(142,227,176,.055)}
+.live-badge.online{box-shadow:0 0 22px rgba(142,227,176,.06) inset}
+.tag,.status-badge,.live-chip,.big-live-chip{box-shadow:0 0 0 1px rgba(255,255,255,.012) inset}
+.idea-card{position:relative;overflow:hidden}
+.idea-card:before{content:"";position:absolute;left:-1px;top:20px;width:2px;height:36px;background:linear-gradient(var(--green),transparent);opacity:.35}
+
+/* Row ratings lead; segmented cartridge/ammo meters follow. */
+.idea-table-wrap{border-color:#263746;background:rgba(9,15,22,.88);border-radius:14px}
+.idea-table{min-width:1140px;padding:0 10px 10px}
+.idea-table-head,.idea-row{grid-template-columns:minmax(235px,1.5fr) repeat(6,minmax(125px,1fr));gap:10px}
+.idea-table-head{background:rgba(10,16,23,.96);border-bottom-color:#263746;padding:9px 5px;box-shadow:0 8px 24px rgba(0,0,0,.16)}
+.row-sort{color:#778a9b;letter-spacing:.085em;font-size:8px}
+.row-sort.active{color:#dfe8ef;text-shadow:0 0 14px rgba(142,227,176,.16)}
+.idea-row{min-height:63px;border-bottom-color:#1c2a36;padding:10px 5px;transition:.16s background,.16s border-color,.16s box-shadow,.16s transform}
+.idea-row:nth-child(even){background:rgba(15,23,32,.28)}
+.idea-row:hover{background:linear-gradient(90deg,rgba(142,227,176,.035),rgba(133,184,255,.025));border-color:#315067;border-radius:9px;box-shadow:0 0 0 1px rgba(133,184,255,.035) inset,0 8px 22px rgba(0,0,0,.12);transform:translateX(1px)}
+.row-stock strong{font-size:16px;font-weight:850;color:#f1f6f9}
+.row-stock>span{color:#aab8c4}.row-stock small{color:#718394;letter-spacing:.025em}
+.row-score{padding:0 5px}
+.row-meter{display:grid;grid-template-columns:38px minmax(72px,1fr);gap:9px;align-items:center}
+.row-meter>b{order:0;font-size:12px;color:#e7eef3;text-align:left;font-variant-numeric:tabular-nums;font-weight:800;letter-spacing:-.025em}
+.row-meter small{font-size:7px;color:#647789;font-weight:650;margin-left:1px}
+.row-meter-track.ammo-track{order:1;height:12px;display:grid;grid-auto-flow:column;grid-auto-columns:minmax(6px,1fr);gap:3px;background:transparent;border-radius:0;overflow:visible;align-items:stretch}
+.ammo-cell{position:relative;display:block;min-width:6px;height:12px;border:1px solid #263746;border-radius:2px 5px 5px 2px;background:linear-gradient(180deg,#17232e,#111a23);overflow:hidden;box-shadow:0 1px 0 rgba(255,255,255,.025) inset}
+.ammo-cell:before{content:"";position:absolute;inset:0 auto 0 0;width:var(--load);background:linear-gradient(180deg,currentColor,rgba(255,255,255,.10));opacity:.88;box-shadow:0 0 8px currentColor}
+.ammo-cell:after{content:"";position:absolute;left:2px;right:2px;top:2px;height:1px;background:rgba(255,255,255,.12);border-radius:2px}
+.ammo-cell.conv{color:var(--green);border-color:rgba(142,227,176,.26)}
+.ammo-cell.context{color:var(--blue);border-color:rgba(133,184,255,.27)}
+.ammo-cell.risk{color:var(--red);border-color:rgba(255,140,140,.25)}
+.ammo-cell.dependency{color:#ae9cff;border-color:rgba(174,156,255,.24)}
+.ammo-cell.cycle{color:var(--amber);border-color:rgba(243,197,104,.24)}
+.ammo-cell.spec{color:#ec8fba;border-color:rgba(236,143,186,.24)}
+.idea-row:hover .ammo-cell{border-color:#38516a}
+.idea-row:hover .ammo-cell.conv{border-color:rgba(142,227,176,.40)}
+.idea-row:hover .ammo-cell.context{border-color:rgba(133,184,255,.42)}
+
+/* Carry the segmented, instrument-panel feel into the rest without changing layout. */
+.mini-track,.bar-track,.signal-track,.pulse-track{box-shadow:0 0 0 1px rgba(255,255,255,.018) inset}
+.control-row{background:linear-gradient(180deg,rgba(17,24,33,.96),rgba(13,20,28,.96));border-color:#263746}
+.view-button.active{box-shadow:0 0 0 1px #37536b inset,0 0 14px rgba(133,184,255,.055)}
+.search-wrap:focus-within{border-color:#3b5d75;box-shadow:0 0 0 2px rgba(133,184,255,.045),0 0 22px rgba(133,184,255,.035)}
+.context-panel{background:linear-gradient(180deg,rgba(17,25,35,.96),rgba(12,19,27,.96))}
+.theme-signal{position:relative;overflow:hidden}
+.theme-signal:before{content:"";position:absolute;left:0;top:0;width:34px;height:1px;background:var(--green);opacity:.35}
+.dialog-head{border-bottom-color:#2a3b4b}
+dialog{box-shadow:0 30px 90px rgba(0,0,0,.52),0 0 0 1px rgba(133,184,255,.025) inset}
+@media(max-width:900px){.workspace:before{left:0}.idea-table{min-width:1080px}}
