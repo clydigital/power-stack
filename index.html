@@ -7,10 +7,11 @@
   <title>Power Stack</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Courier+Prime:wght@400;700&family=Figtree:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="theme-ui.css" />
 </head>
-<body>
+<body data-font="bebas" data-theme="dark" data-bg="default">
   <div class="app-shell">
     <aside class="sidebar">
       <div class="brand-block">
@@ -58,7 +59,7 @@
         </div>
         <div class="top-actions">
           <div id="liveBadge" class="live-badge offline"><span></span> Macro snapshot loading</div>
-          <a class="ghost-link" href="themes.html">Developing Themes →</a>
+          <a class="ghost-link primary-link" href="themes.html">Developing Themes →</a>
           <a class="ghost-link" href="https://macro-indicators-a3d.pages.dev/#econ_calendar" target="_blank" rel="noopener">Open Macro Dashboard ↗</a>
         </div>
       </header>
@@ -132,10 +133,12 @@
         const url = typeof input === 'string' ? input : input?.url;
         if (url !== 'data/ideas.json') return nativeFetch(input, init);
 
-        const [coreRes, roboticsRes, opportunityRes] = await Promise.all([
+        const [coreRes, roboticsRes, opportunityRes, videoScreenRes, ttRes] = await Promise.all([
           nativeFetch(input, init),
           nativeFetch('data/robotics-research.json', { cache: 'no-store' }).catch(() => null),
-          nativeFetch('data/video-opportunity-research.json', { cache: 'no-store' }).catch(() => null)
+          nativeFetch('data/video-opportunity-research.json', { cache: 'no-store' }).catch(() => null),
+          nativeFetch('data/video-screen-2026-08-20.json', { cache: 'no-store' }).catch(() => null),
+          nativeFetch('data/tt-research.json', { cache: 'no-store' }).catch(() => null)
         ]);
 
         if (!coreRes.ok) return coreRes;
@@ -143,9 +146,13 @@
         const core = await coreRes.json();
         const roboticsPayload = roboticsRes?.ok ? await roboticsRes.json() : null;
         const opportunityPayload = opportunityRes?.ok ? await opportunityRes.json() : null;
+        const videoScreenPayload = videoScreenRes?.ok ? await videoScreenRes.json() : null;
+        const ttPayload = ttRes?.ok ? await ttRes.json() : null;
         const supplemental = [
           ...(Array.isArray(roboticsPayload?.ideas) ? roboticsPayload.ideas : []),
-          ...(Array.isArray(opportunityPayload?.ideas) ? opportunityPayload.ideas : [])
+          ...(Array.isArray(opportunityPayload?.ideas) ? opportunityPayload.ideas : []),
+          ...(Array.isArray(videoScreenPayload?.promotedOrAdded) ? videoScreenPayload.promotedOrAdded : []),
+          ...(ttPayload?.ticker ? [ttPayload] : [])
         ];
         const existing = new Set(core.map(x => x.ticker));
         const normalisedSupplemental = supplemental
@@ -157,7 +164,7 @@
             themeDependency: x.themeDependency ?? 3,
             cyclicality: x.cyclicality ?? 3,
             speculation: x.speculation ?? (/speculative/i.test(x.status || '') ? 4 : 2),
-            lastUpdated: x.lastUpdated ?? roboticsPayload?.lastUpdated ?? opportunityPayload?.lastUpdated ?? '2026-08-13'
+            lastUpdated: x.lastUpdated ?? roboticsPayload?.lastUpdated ?? opportunityPayload?.lastUpdated ?? videoScreenPayload?.date ?? ttPayload?.lastUpdated ?? '2026-08-20'
           }));
 
         return new Response(JSON.stringify([...core, ...normalisedSupplemental]), {
@@ -167,6 +174,7 @@
       };
     })();
   </script>
+  <script src="ui-settings.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
