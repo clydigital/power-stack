@@ -1,12 +1,24 @@
 {
   "date": "2026-08-20",
-  "scope": "Full daily personal-investment research refresh across the existing Power Stack universe and established themes. No UI, scoring, automation or backend changes.",
+  "scope": "Full daily personal-investment research refresh across the existing Power Stack universe and established themes. Intraday re-check completed around midday MYT. No UI, scoring, automation or backend changes.",
   "promotions": [],
   "demotions": [],
   "keyChanges": [
     {
+      "theme": "Rates / Macro",
+      "change": "The U.S. Treasury doubled long-end liquidity-support buyback caps from $2bn to at least $4bn per operation for the 10-30Y sectors, effective September 9 through November 4. The 30Y yield fell from recent 19-year highs toward roughly 5.19%-5.20%. This is a modest near-term valuation relief for long-duration grid, AI, cooling and robotics names, but does not remove the underlying fiscal/inflation risk because Treasury still must issue large amounts of debt."
+    },
+    {
+      "theme": "Healthcare / Oncology",
+      "change": "Moderna/Merck personalized mRNA melanoma data is now the most material stock-specific development in the new healthcare sleeve. The Phase 3 combination with Keytruda met its primary recurrence/metastasis endpoint, strengthening MRNA's non-COVID platform case and MRK's oncology optionality. Full efficacy detail, overall survival, safety, manufacturing scalability and commercial economics remain gating items; no conviction change yet beyond the recently assigned 7.4 MRNA and 8.0 MRK research scores."
+    },
+    {
+      "theme": "Power / Grid + Energy Storage",
+      "change": "Ford Energy remains a valid crossover watch rather than a clean BESS pure play. Ford's planned utility/data-centre storage business and EDF framework improve optionality, but Ford Energy remains immaterial relative to the auto parent today. Keep F at 7.8 until backlog, revenue and margins become visible enough to justify a stronger infrastructure weighting."
+    },
+    {
       "theme": "Robotics / Automation",
-      "change": "Unitree's Shanghai STAR Market debut materially strengthens evidence of investor appetite for humanoid robotics but weakens the stock-specific risk/reward after the shares closed roughly 460% above the IPO price. Commercial adoption remains much less mature than the valuation signal. Keep the adoption hierarchy unchanged: warehouse/fixed automation, then cobots/mobile manipulation, then industrial humanoids, then general-purpose humanoids. Do not promote Unitree at debut valuation."
+      "change": "Unitree's Shanghai STAR Market debut materially strengthens evidence of investor appetite for humanoid robotics but weakens the stock-specific risk/reward after the shares closed roughly 460% above the IPO price. Commercial adoption remains much less mature than the valuation signal. Keep the adoption hierarchy unchanged: warehouse/fixed automation, then cobots/mobile manipulation, then industrial humanoids, then general-purpose humanoids. UBTECH remains the tracked listed humanoid OEM exposure; do not chase Unitree at debut valuation."
     },
     {
       "theme": "AI / Data Centres + Power / Grid + Water / Cooling",
@@ -22,9 +34,16 @@
     },
     {
       "theme": "Metals",
-      "change": "BHP's FY2026 result continues to validate the copper crossover thesis: copper has overtaken iron ore as its largest earnings contributor. No conviction change one day after promotion; valuation and execution discipline remain the gating issues."
+      "change": "BHP's FY2026 result continues to validate the copper crossover thesis: copper has overtaken iron ore as its largest earnings contributor. First Majestic Silver was added only as a tactical high-beta metals watch, not a core infrastructure compounder. No conviction change to BHP or the core copper thesis."
     }
   ],
+  "universeReview": {
+    "status": "completed_no_broad_score_changes",
+    "summary": "Re-screened the tracked core universe plus supplemental Water/Cooling, Agriculture, Healthcare, Robotics and transcript-derived ideas. No additional stock cleared the promotion bar and no existing core conviction required a downgrade. The strongest current clusters remain Power/Grid, Water/Cooling and Nuclear/Fuel, with Metals and Oil/Refining as cyclical diversifiers and Healthcare/Robotics as selective satellites.",
+    "newlyScreenedToday": ["F", "MRK", "MRNA", "HIMS", "AG", "CRWD", "WMT", "BABA", "COIN", "SOFI", "IBIT"],
+    "newlyAddedToResearch": ["F", "MRK", "MRNA", "HIMS", "AG"],
+    "notPromoted": ["CRWD", "WMT", "BABA", "COIN", "SOFI", "IBIT"]
+  },
   "ism": {
     "status": "unchanged_latest_release",
     "manufacturingMonth": "2026-07",
@@ -68,10 +87,16 @@
     "Reassess Texas data-centre project economics after the August 20 PUCT/ERCOT discussion is fully published, particularly which projects can self-supply power and water rather than merely holding interconnection requests.",
     "Build a more granular China/Hong Kong robotics component screen for motion control, reducers, servos, machine vision and sensors; Unitree's debut increases urgency but not the attractiveness of chasing the OEM at debut valuation.",
     "Continue the Malaysia-listed water/cooling screen for a genuinely differentiated Bursa exposure rather than forcing a weak proxy.",
-    "Maintain live valuation discipline on high-conviction grid/cooling names as long-end yields remain a material discount-rate risk."
+    "Track Ford Energy separately inside Ford so the storage thesis can be upgraded only when backlog/revenue/margins become material.",
+    "Wait for full Moderna/Merck Phase 3 melanoma disclosure before revising MRNA/MRK conviction again.",
+    "Maintain live valuation discipline on high-conviction grid/cooling names even after the Treasury buyback-induced long-yield relief."
   ],
   "sources": [
-    "https://www.reuters.com/world/asia-pacific/chinese-humanoid-robot-maker-unitree-set-jump-over-600-shanghai-debut-2026-08-19/",
+    "https://www.reuters.com/world/us-treasury-double-sizes-some-debt-buyback-operations-least-4-billion-2026-08-19/",
+    "https://www.reuters.com/legal/litigation/view-moderna-merck-melanoma-vaccine-data-boosts-outlook-analysts-await-full-2026-08-19/",
+    "https://www.fordenergy.com/newsroom/introducing-ford-energy",
+    "https://www.fordenergy.com/newsroom/ford-energy-edf",
+    "https://apnews.com/article/f33facc61122faf0c0b08af5020bd170",
     "https://gov.texas.gov/uploads/files/press/Thomas_Gleeson_Pablo_Vegas_Data_Centers_Directive_Letter_to_PUCT_ERCOT_August_2026_.pdf",
     "https://www.reuters.com/business/energy/oil-edges-up-uncertainty-over-exports-through-hormuz-2026-08-19/",
     "https://www.world-nuclear-news.org/articles/china-approves-construction-of-eight-more-reactors",
