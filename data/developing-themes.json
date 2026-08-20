@@ -1,0 +1,187 @@
+{
+  "lastUpdated": "2026-08-20",
+  "purpose": "A lightweight thematic radar for personal investing. Themes are updated only when the underlying investment story changes materially; news links explain what is moving each theme without changing stock conviction automatically.",
+  "themes": [
+    {
+      "id": "ai-power-bottleneck",
+      "name": "AI Power Bottleneck",
+      "status": "High conviction / accelerating",
+      "direction": "strengthening",
+      "lastUpdated": "2026-08-20",
+      "summary": "AI infrastructure is increasingly constrained by generation, transmission, substations, switchgear and interconnection rather than compute alone. The investment edge remains in physical equipment and buildout capacity where demand is contracted or visible.",
+      "whyDeveloping": "Texas is forcing large data-centre projects to disclose grid dependence, on-site generation, water sourcing and cooling methods. That shifts attention from headline AI capex toward whether projects can actually secure power and infrastructure.",
+      "powerStackTickers": ["GEV", "ETN", "PWR", "HUBB", "POWL", "TNB", "SCGBHD", "YTLPOWR"],
+      "watch": ["Long-end Treasury yields", "hyperscaler capex", "utility interconnection rules", "gas turbine backlog", "switchgear lead times"],
+      "mainNews": [
+        {
+          "date": "2026-08-20",
+          "title": "Texas data-centre review broadens the bottleneck from power to full-site infrastructure",
+          "source": "Office of the Governor of Texas / PUCT-ERCOT directive",
+          "url": "https://gov.texas.gov/uploads/files/press/Thomas_Gleeson_Pablo_Vegas_Data_Centers_Directive_Letter_to_PUCT_ERCOT_August_2026_.pdf",
+          "implication": "Projects dependent on assumed grid capacity become riskier; grid equipment, on-site power, water reuse and efficient cooling gain strategic value."
+        }
+      ]
+    },
+    {
+      "id": "water-cooling",
+      "name": "Water + Data-Centre Cooling",
+      "status": "Emerging structural bottleneck",
+      "direction": "strengthening",
+      "lastUpdated": "2026-08-20",
+      "summary": "Higher rack densities and water constraints are turning cooling and water management into core AI infrastructure. Closed-loop cooling, direct liquid cooling, reuse and ultrapure-water systems are becoming more important as sites face local water and permitting constraints.",
+      "whyDeveloping": "The Texas data-centre audit explicitly asks developers to disclose water sourcing, reuse and cooling technology, making water availability part of site economics rather than a secondary ESG issue.",
+      "powerStackTickers": ["ECL", "MOD", "XYL", "VRT"],
+      "watch": ["liquid-cooling adoption", "hyperscaler cooling design", "municipal water restrictions", "reuse mandates", "semiconductor ultrapure-water demand"],
+      "mainNews": [
+        {
+          "date": "2026-08-20",
+          "title": "Texas brings water sourcing and cooling technology into the data-centre capacity review",
+          "source": "Office of the Governor of Texas / PUCT-ERCOT directive",
+          "url": "https://gov.texas.gov/uploads/files/press/Thomas_Gleeson_Pablo_Vegas_Data_Centers_Directive_Letter_to_PUCT_ERCOT_August_2026_.pdf",
+          "implication": "Water-efficient and closed-loop systems should command more strategic value where large AI projects compete with municipal and industrial users for water."
+        },
+        {
+          "date": "2026-07-20",
+          "title": "Ecolab closes CoolIT acquisition and expands direct-liquid-cooling exposure",
+          "source": "Ecolab",
+          "url": "https://investor.ecolab.com/news/news-details/2026/Ecolab-Closes-CoolIT-Acquisition-and-Expands-AI-Cooling-Platform-as-Global-High-Tech-Business-Targets-4-Billion-by-2030/default.aspx",
+          "implication": "Ecolab now combines industrial/ultrapure water with direct liquid cooling, creating one of the broadest listed water-plus-AI-cooling platforms."
+        }
+      ]
+    },
+    {
+      "id": "humanoid-robotics",
+      "name": "Humanoid Robotics / Physical AI",
+      "status": "Fast-growing, valuation-sensitive",
+      "direction": "accelerating but speculative",
+      "lastUpdated": "2026-08-20",
+      "summary": "China is rapidly scaling humanoid-robot supply, capital formation and industrial pilots. The investable question is shifting from whether humanoids can move to whether they can perform useful work at acceptable cost and uptime.",
+      "whyDeveloping": "Unitree's Shanghai debut and the World Robot Conference show enormous capital appetite, while manufacturers are increasingly demonstrating parcel sorting, factory work and constrained industrial tasks rather than only entertainment demos.",
+      "powerStackTickers": ["9880.HK", "SYM", "2590.HK", "CGNX", "TER", "TSLA"],
+      "watch": ["commercial deployments", "unit economics", "utilisation", "robot shipments", "servo/reducer supply", "government-backed demand versus genuine customer demand"],
+      "mainNews": [
+        {
+          "date": "2026-08-20",
+          "title": "Chinese robot makers push humanoids from spectacle toward useful industrial work",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/world/asia-pacific/china-robot-makers-flock-beijing-show-seek-path-mass-adoption-2026-08-19/",
+          "implication": "The commercialisation sequence still favours structured warehouse and industrial tasks before general-purpose humanoids, but the deployment evidence is improving."
+        },
+        {
+          "date": "2026-08-19",
+          "title": "Unitree closes about 460% above its IPO price on Shanghai debut",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/world/asia-pacific/chinese-humanoid-robot-maker-unitree-set-jump-over-600-shanghai-debut-2026-08-19/",
+          "implication": "The capital cycle is real, but valuation has outrun proven commercial adoption; UBTECH and component/system names remain more disciplined ways to track the theme."
+        }
+      ]
+    },
+    {
+      "id": "nuclear-fuel-cycle",
+      "name": "Nuclear Buildout + Fuel Security",
+      "status": "Structural multi-year theme",
+      "direction": "strengthening",
+      "lastUpdated": "2026-08-20",
+      "summary": "Nuclear investment is broadening from uranium price exposure into operating reactors, enrichment, reactor components and new-build execution. Fuel security and domestic enrichment remain distinct bottlenecks from reactor demand itself.",
+      "whyDeveloping": "China continues approving and commissioning reactors while Western markets pursue enrichment and fuel security. The strongest opportunities remain differentiated: operating nuclear, scarce enrichment and high-quality component suppliers.",
+      "powerStackTickers": ["BWXT", "1816.HK", "CCJ", "LEU", "NXE", "SMR"],
+      "watch": ["reactor approvals", "uranium contracting", "HALEU/enrichment awards", "Rook I financing", "SMR commercial milestones"],
+      "mainNews": [
+        {
+          "date": "2026-08-03",
+          "title": "CGN Taipingling 2 enters commercial operation",
+          "source": "World Nuclear News",
+          "url": "https://www.world-nuclear-news.org/articles/chinese-reactors-start-up-milestones",
+          "implication": "China's nuclear programme is progressing from approvals into operating capacity, supporting equipment, utility and fuel demand."
+        },
+        {
+          "date": "2026-07-31",
+          "title": "China approves construction of eight additional reactors",
+          "source": "World Nuclear News",
+          "url": "https://www.world-nuclear-news.org/articles/china-approves-construction-of-eight-more-reactors",
+          "implication": "The scale and consistency of approvals reinforce nuclear as a long-duration buildout rather than a one-cycle commodity story."
+        }
+      ]
+    },
+    {
+      "id": "copper-electrification",
+      "name": "Copper / Electrification Scarcity",
+      "status": "Core physical bottleneck",
+      "direction": "strengthening",
+      "lastUpdated": "2026-08-20",
+      "summary": "Copper is increasingly the shared input across grids, data centres, electrification and automation. Supply growth remains difficult enough that major diversified miners are reallocating capital toward copper-heavy portfolios.",
+      "whyDeveloping": "BHP's FY2026 results showed copper overtaking iron ore as its largest earnings contributor, validating the strategic shift toward copper as a primary growth and margin engine.",
+      "powerStackTickers": ["BHP", "COPPER", "SCGBHD"],
+      "watch": ["LME inventories", "mine disruptions", "Chinese demand", "grid capex", "copper project capex and grades"],
+      "mainNews": [
+        {
+          "date": "2026-08-18",
+          "title": "Copper becomes BHP's largest earnings contributor",
+          "source": "BHP FY2026 results / Reuters coverage",
+          "url": "https://www.bhp.com/news/media-centre/releases/2026/08/bhp-results-for-the-year-ended-30-june-2026",
+          "implication": "The world's largest listed miner is increasingly behaving like a copper-led company, reinforcing the structural capital-allocation shift toward electrification metals."
+        }
+      ]
+    },
+    {
+      "id": "refining-product-tightness",
+      "name": "Refining + Product Tightness",
+      "status": "Tactical / geopolitical",
+      "direction": "elevated",
+      "lastUpdated": "2026-08-20",
+      "summary": "The energy theme is split: crude faces demand and inventory uncertainty, while refined-product margins remain supported by constrained supply and elevated utilisation. This can favour refiners even when the crude thesis is less clear.",
+      "whyDeveloping": "Hormuz uncertainty and high refinery utilisation are keeping product markets tight. The key is not to confuse geopolitical crude support with permanent refining margins.",
+      "powerStackTickers": ["XOM", "CVX", "MPC", "VLO", "WMB", "KMI", "LNG", "0883.HK"],
+      "watch": ["Brent/WTI", "diesel and gasoline cracks", "Hormuz flows", "US inventories", "refinery utilisation"],
+      "mainNews": [
+        {
+          "date": "2026-08-19",
+          "title": "Oil holds above $90 Brent as Hormuz uncertainty persists",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/business/energy/oil-edges-up-uncertainty-over-exports-through-hormuz-2026-08-19/",
+          "implication": "Energy remains a useful portfolio hedge, but refined-product scarcity may offer a cleaner tactical signal than simply adding upstream beta."
+        }
+      ]
+    },
+    {
+      "id": "metabolic-health",
+      "name": "Metabolic Health + Obesity",
+      "status": "Structural healthcare growth",
+      "direction": "strengthening",
+      "lastUpdated": "2026-08-20",
+      "summary": "Obesity and type-2 diabetes treatment are becoming durable healthcare platforms spanning drugs, monitoring and consumer distribution. The investment question is increasingly about access, manufacturing capacity, adherence and next-generation therapies rather than whether demand exists.",
+      "whyDeveloping": "Oral GLP-1 approvals and continued prescription growth broaden the addressable market while monitoring and telehealth platforms compete around patient access and ongoing care.",
+      "powerStackTickers": ["LLY", "DXCM", "HIMS"],
+      "watch": ["oral GLP-1 adoption", "pricing/reimbursement", "manufacturing capacity", "retatrutide data", "CGM penetration", "telehealth regulation"],
+      "mainNews": [
+        {
+          "date": "2026-08-10",
+          "title": "UK regulator approves Lilly's oral GLP-1 orforglipron",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/eli-lilly-weight-loss-pill-gets-uk-approval-2026-08-10/",
+          "implication": "Oral treatment expands the obesity market beyond injectables and could increase both treatment penetration and competitive intensity."
+        }
+      ]
+    },
+    {
+      "id": "agri-water-productivity",
+      "name": "Agriculture + Water Productivity",
+      "status": "Early / selective",
+      "direction": "developing",
+      "lastUpdated": "2026-08-20",
+      "summary": "Agriculture is increasingly a water-productivity and yield-efficiency theme rather than a simple crop-price trade. Irrigation efficiency, genetics and crop protection are more differentiated exposures than commodity processors.",
+      "whyDeveloping": "Recurring drought and groundwater stress are forcing growers toward targeted irrigation and productivity investment, although weak farm economics can delay adoption and make the cycle uneven.",
+      "powerStackTickers": ["VMI", "CTVA", "BHP"],
+      "watch": ["farm income", "crop prices", "drought severity", "irrigation orders", "seed pricing", "potash economics"],
+      "mainNews": [
+        {
+          "date": "2026-08-10",
+          "title": "Persistent heat and drought highlight targeted-irrigation need in Europe",
+          "source": "Reuters Connect",
+          "url": "https://www.reutersconnect.com/item/italy-persistent-heat-drought-threaten-grape-yield-in-italy/dGFnOnJldXRlcnMuY29tLDIwMjY6bmV3c21sX09XU0hCQzExNzQ4NDI",
+          "implication": "Water scarcity supports the long-duration irrigation thesis, but growers still need financing and policy support for adoption to translate into equipment demand."
+        }
+      ]
+    }
+  ]
+}
