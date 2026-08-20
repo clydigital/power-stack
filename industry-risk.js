@@ -4,11 +4,10 @@
     .theme-risk-section{margin-bottom:16px}
     .theme-risk-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-end;margin-bottom:8px}
     .theme-risk-title{font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:#7f8992;font-weight:800}
-    .theme-risk-note{font-size:8px;line-height:1.35;color:#64717b;text-align:right;max-width:620px}
+    .theme-risk-note{font-size:8px;line-height:1.4;color:#64717b;text-align:right;max-width:720px}
     .theme-risk-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}
-    .theme-risk-card{--risk:#93dfb4;border:1px solid #202a31;background:linear-gradient(180deg,#0c1216,#0a0f12);border-radius:9px;padding:10px;text-align:left;color:inherit;cursor:pointer;min-width:0;position:relative;overflow:hidden}
+    .theme-risk-card{--risk:#93dfb4;border:1px solid #202a31;background:linear-gradient(180deg,#0c1216,#0a0f12);border-radius:9px;padding:10px;text-align:left;color:inherit;min-width:0;position:relative;overflow:hidden}
     .theme-risk-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--risk);box-shadow:0 0 10px var(--risk)}
-    .theme-risk-card:hover{border-color:#3a4650;transform:translateY(-1px)}
     .theme-risk-top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
     .theme-risk-name{font-size:10px;font-weight:750;line-height:1.2;color:#d8dfe4;min-width:0}
     .theme-risk-score{font-size:14px;font-weight:900;color:var(--risk);font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -16,39 +15,55 @@
     .theme-risk-track{height:4px;border-radius:8px;background:#202a33;overflow:hidden;margin:8px 0 7px}
     .theme-risk-fill{height:100%;width:var(--risk-pct);background:var(--risk);box-shadow:0 0 9px var(--risk)}
     .theme-risk-meta{font-size:8px;line-height:1.35;color:#78858f}
+    .theme-risk-driver{margin-top:5px;font-size:7.5px;line-height:1.35;color:#65727c}
     .theme-risk-card.low{--risk:#72e0a3}.theme-risk-card.moderate{--risk:#d8d56a}.theme-risk-card.elevated{--risk:#e8ad5e}.theme-risk-card.high{--risk:#ee7d64}.theme-risk-card.severe{--risk:#ef667c}
     @media(max-width:1180px){.theme-risk-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
     @media(max-width:720px){.theme-risk-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.theme-risk-head{align-items:flex-start;flex-direction:column}.theme-risk-note{text-align:left}}
   `;
   document.head.appendChild(style);
 
-  function avg(rows,key){return rows.length?rows.reduce((s,x)=>s+Number(x[key]||0),0)/rows.length:0}
+  const INDUSTRIES=[
+    {name:'AI / Data Centres',f:[['financialConditions','low',1.4],['industrialCapex','low',1.3],['riskAppetite','low',1.0],['inputCostPressure','high',.7],['creditAvailability','low',.8]]},
+    {name:'Semiconductors',f:[['financialConditions','low',1.2],['industrialCapex','low',1.1],['growthDemand','low',1.0],['riskAppetite','low',1.0],['inputCostPressure','high',.5]]},
+    {name:'Robotics / Automation',f:[['industrialCapex','low',1.4],['growthDemand','low',1.0],['financialConditions','low',1.0],['riskAppetite','low',.8],['inputCostPressure','high',.6]]},
+    {name:'Power / Grid',f:[['financialConditions','low',.9],['industrialCapex','low',1.4],['inputCostPressure','high',1.0],['creditAvailability','low',.5],['growthDemand','low',.5]]},
+    {name:'Water / Cooling',f:[['industrialCapex','low',1.2],['financialConditions','low',.8],['inputCostPressure','high',.7],['growthDemand','low',.5]]},
+    {name:'Nuclear / Uranium',f:[['industrialCapex','low',1.0],['financialConditions','low',.7],['riskAppetite','low',.6],['inputCostPressure','high',.4],['growthDemand','low',.4]]},
+    {name:'Metals / Mining',f:[['growthDemand','low',1.3],['industrialCapex','low',1.0],['financialConditions','low',.8],['inputCostPressure','high',.5],['riskAppetite','low',.5]]},
+    {name:'Oil & Gas / Refining',f:[['crudeTightness','low',1.2],['productTightness','low',1.0],['growthDemand','low',.7],['financialConditions','low',.4],['inputCostPressure','high',.3]]},
+    {name:'Agriculture / Food',f:[['inputCostPressure','high',1.1],['financialConditions','low',.6],['growthDemand','low',.4],['consumerStrength','low',.4]]},
+    {name:'Healthcare',f:[['financialConditions','low',.4],['consumerStrength','low',.3],['riskAppetite','low',.2],['growthDemand','low',.1]]},
+    {name:'Consumer Discretionary',f:[['consumerStrength','low',1.5],['labourStrength','low',1.0],['financialConditions','low',1.0],['inputCostPressure','high',.7],['creditAvailability','low',.6]]},
+    {name:'Housing / Construction',f:[['housingStrength','low',1.5],['financialConditions','low',1.3],['creditAvailability','low',.8],['inputCostPressure','high',.6],['labourStrength','low',.3]]},
+    {name:'Financials / Credit',f:[['financialConditions','low',1.0],['creditAvailability','low',1.2],['tailCreditStress','high',1.4],['growthDemand','low',.6],['consumerStrength','low',.5]]},
+    {name:'Utilities',f:[['financialConditions','low',1.2],['inputCostPressure','high',.6],['creditAvailability','low',.7],['growthDemand','low',.2]]}
+  ];
+
   function riskClass(score){if(score<35)return['low','Low'];if(score<50)return['moderate','Moderate'];if(score<65)return['elevated','Elevated'];if(score<80)return['high','High'];return['severe','Severe']}
-  function themeRisk(theme){
-    const rows=ideas.filter(x=>(x.themeGroup||'Other')===theme);
-    const structural=(avg(rows,'aiRisk')*.30+avg(rows,'themeDependency')*.25+avg(rows,'cyclicality')*.25+avg(rows,'speculation')*.20)/5*100;
-    const profiled=rows.filter(x=>typeof stockProfile==='function'&&stockProfile(x));
-    const macro=(typeof packetFresh==='function'&&packetFresh()&&profiled.length)?profiled.reduce((s,x)=>s+contextDelta(x),0)/profiled.length:0;
-    const score=clamp(structural-macro*12,0,100);
+  function channel(key){return typeof channelContext==='function'?channelContext(key):macroContext?.channels?.find(c=>c.key===key)}
+  function riskSignal(key,mode){const c=channel(key);if(!c||!(typeof channelFresh==='function'?channelFresh(c):true))return null;const score=Number(c.score||0);return {c,signal:(mode==='high'?score:-score)*Number(c.confidence??1)} }
+  function industryRisk(ind){
+    let weighted=0,total=0,drivers=[];
+    ind.f.forEach(([key,mode,w])=>{const r=riskSignal(key,mode);if(!r)return;weighted+=r.signal*w;total+=w;drivers.push({label:r.c.label||key,impact:r.signal*w});});
+    const avg=total?weighted/total:0;
+    const score=clamp(50+avg*22,0,100);
     const [cls,label]=riskClass(score);
-    return {theme,rows,score,cls,label,structural,macro,profiled:profiled.length};
+    drivers.sort((a,b)=>b.impact-a.impact);
+    const top=drivers.filter(d=>d.impact>0).slice(0,2).map(d=>d.label).join(' + ')||'No major macro stress driver';
+    return {...ind,score,cls,label,avg,top,coverage:drivers.length};
   }
   function renderRisk(){
     const body=document.getElementById('contextBody');
-    if(!body||document.getElementById('themeRiskNow')||!Array.isArray(ideas)||!ideas.length)return;
-    const themes=[...new Set(ideas.map(x=>x.themeGroup||'Other'))].map(themeRisk).sort((a,b)=>b.score-a.score);
+    if(!body||document.getElementById('themeRiskNow'))return;
     const fresh=typeof packetFresh==='function'&&packetFresh();
+    const industries=INDUSTRIES.map(industryRisk).sort((a,b)=>b.score-a.score);
     const section=document.createElement('div');
     section.id='themeRiskNow';section.className='theme-risk-section';
-    section.innerHTML=`<div class="theme-risk-head"><div class="theme-risk-title">INDUSTRY / THEME RISK NOW</div><div class="theme-risk-note">Power Stack relative risk: 30% AI exposure · 25% theme dependence · 25% cyclicality · 20% speculation, then current stock-level macro adjusts risk by up to ±12 points. ${fresh?'Live macro included.':'Macro stale/unavailable — structural risk only.'}</div></div><div class="theme-risk-grid">${themes.map(r=>`<button class="theme-risk-card ${r.cls}" data-risk-theme="${esc(r.theme)}" type="button"><div class="theme-risk-top"><span class="theme-risk-name">${esc(r.theme)}</span><b class="theme-risk-score">${r.score.toFixed(0)}</b></div><div class="theme-risk-label">${r.label} risk</div><div class="theme-risk-track"><div class="theme-risk-fill" style="--risk-pct:${r.score.toFixed(1)}%"></div></div><div class="theme-risk-meta">Structural ${r.structural.toFixed(0)} · Macro ${fresh?fmtSigned(r.macro,2):'—'} · ${r.rows.length} idea${r.rows.length===1?'':'s'}</div></button>`).join('')}</div>`;
+    section.innerHTML=`<div class="theme-risk-head"><div class="theme-risk-title">MACRO INDUSTRY RISK NOW</div><div class="theme-risk-note">Pure macro view — not based on Power Stack holdings, stock scores or portfolio exposure. Each industry is mapped to the live macro channels it is most sensitive to. 50 = neutral macro risk; higher = more hostile macro backdrop. ${fresh?'Current macro snapshot applied.':'Macro snapshot stale/unavailable.'}</div></div><div class="theme-risk-grid">${industries.map(r=>`<div class="theme-risk-card ${r.cls}"><div class="theme-risk-top"><span class="theme-risk-name">${esc(r.name)}</span><b class="theme-risk-score">${r.score.toFixed(0)}</b></div><div class="theme-risk-label">${r.label} macro risk</div><div class="theme-risk-track"><div class="theme-risk-fill" style="--risk-pct:${r.score.toFixed(1)}%"></div></div><div class="theme-risk-meta">Macro pressure ${r.avg>=0?'+':''}${r.avg.toFixed(2)} · ${r.coverage} live channels</div><div class="theme-risk-driver">Main pressure: ${esc(r.top)}</div></div>`).join('')}</div>`;
     body.prepend(section);
-    section.querySelectorAll('[data-risk-theme]').forEach(btn=>btn.onclick=()=>{state.theme=btn.dataset.riskTheme;state.region='All';state.status='All';renderSidebar();render()});
   }
 
   const body=document.getElementById('contextBody');
-  if(body){
-    const observer=new MutationObserver(()=>{if(!document.getElementById('themeRiskNow'))queueMicrotask(renderRisk)});
-    observer.observe(body,{childList:true});
-  }
+  if(body){const observer=new MutationObserver(()=>{if(!document.getElementById('themeRiskNow'))queueMicrotask(renderRisk)});observer.observe(body,{childList:true});}
   queueMicrotask(renderRisk);
 })();
