@@ -15,7 +15,7 @@
     'ai-financing-cash-conversion': '2026-08-21',
     'personalized-oncology': '2026-08-21',
     'china-fiscal-infrastructure': '2026-08-21',
-    'fertilizer-nitrogen-sulphur': '2026-08-21',
+    'fertilizer-feedstock-divergence': '2026-08-21',
     'water-food-energy-collision': '2026-08-21',
     'rubber-acreage-squeeze': '2026-08-21'
   };
