@@ -1,0 +1,225 @@
+{
+  "lastUpdated": "2026-08-21",
+  "scope": "Second-pass stock screen sourced from the July-August 2026 natural-resource scarcity map. Research-only. Scores are provisional research priority scores and do not change Base Conviction.",
+  "screenRule": "Prefer companies where the physical bottleneck is already improving realised pricing, utilisation, margins or funded order demand. Avoid assuming that every producer of a scarce commodity benefits when its own constrained inputs rise faster.",
+  "candidateAdds": {
+    "fertilizer-feedstock-divergence": ["UAN", "PCHEM", "CRPMATE", "LXU"],
+    "water-food-energy-collision": ["HWKN", "BMI", "RANHILL"]
+  },
+  "newThemes": [
+    {
+      "id": "aluminium-western-scarcity",
+      "name": "Aluminium: Western Scarcity Hidden by Chinese Exports",
+      "emergedAt": "2026-08-21",
+      "status": "New physical-market divergence / underappreciated",
+      "direction": "tight physical supply, muted headline price",
+      "lastUpdated": "2026-08-21",
+      "summary": "Western aluminium availability is much tighter than the headline LME price suggests. LME stocks have fallen to their lowest level since 1990 after Gulf supply disruption, but sharply higher Chinese alloy and semi-finished exports are bridging the deficit and suppressing the visible price signal.",
+      "whyDeveloping": "LME aluminium inventories have roughly halved this year to around 250,000 tonnes, with much of the remaining metal Russian-branded or otherwise difficult for Western buyers to use. At the same time, Chinese alloy exports nearly doubled in the first half and semi-finished exports rose about 18%, allowing China to replace missing processing supply without exporting much primary metal. The divergence is physical scarcity in the West versus a calmer benchmark price because Chinese processing exports are filling the gap.",
+      "powerStackTickers": [],
+      "researchCandidates": ["AA", "CENX", "NHYDY"],
+      "watch": ["LME live stocks", "share of Russian-branded inventory", "China alloy and semi exports", "Gulf smelter restarts", "US and European regional premiums", "power costs", "LME time spreads"],
+      "mainNews": [
+        {
+          "date": "2026-08-13",
+          "title": "LME aluminium stocks fall to their lowest level since 1990",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/commentary/reuters-open-interest/aluminium-thin-ice-lme-stocks-hit-36-year-low-2026-08-13/",
+          "implication": "Exchange inventory suggests a much thinner Western physical buffer than the relatively orderly benchmark price implies."
+        },
+        {
+          "date": "2026-08-18",
+          "title": "Chinese alloy and semi-finished exports cushion the Iran-war aluminium shock",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/commentary/reuters-open-interest/china-eases-iran-war-aluminium-shock-cost-2026-08-18/",
+          "implication": "China is relieving the immediate shortage while increasing Western dependence on Chinese processing capacity, which can delay the benchmark price signal without resolving strategic scarcity."
+        }
+      ]
+    }
+  ],
+  "stockCandidates": [
+    {
+      "ticker": "UAN",
+      "company": "CVR Partners",
+      "market": "NYSE",
+      "provisionalScore": 8.6,
+      "classification": "Priority new resource candidate",
+      "theme": "Nitrogen fertilizer scarcity / advantaged feedstock",
+      "thesis": "A more concentrated nitrogen expression than diversified fertilizer groups. Global nitrogen scarcity is already reaching realised prices while high plant utilisation and lower petcoke cost improve the operating transmission.",
+      "evidence": [
+        "Q2 2026 EBITDA rose to $107m from $67m a year earlier and net income doubled to $78m.",
+        "Combined ammonia utilisation was 99%.",
+        "Realised ammonia and UAN prices rose 33% and 24% year over year to $791/t and $392/t.",
+        "Petcoke feedstock cost fell to $44.94/t from $56.68/t a year earlier.",
+        "Management described global nitrogen supplies as constrained and said it had secured a solid H2 order book."
+      ],
+      "risks": [
+        "Variable-distribution MLP rather than a conventional dividend stock.",
+        "East Dubuque has a planned six-week turnaround beginning in August.",
+        "High relative UAN pricing can cause customer substitution.",
+        "Highly cyclical and less diversified than CF or NTR."
+      ],
+      "sourceUrl": "https://investors.cvrpartners.com/news/news-details/2026/CVR-Partners-Reports-Second-Quarter-2026-Results/default.aspx"
+    },
+    {
+      "ticker": "AA",
+      "company": "Alcoa",
+      "market": "NYSE",
+      "provisionalScore": 8.5,
+      "classification": "Priority aluminium candidate / higher quality",
+      "theme": "Western primary aluminium scarcity",
+      "thesis": "Large, liquid primary aluminium and alumina producer with current earnings confirmation. Better-quality way to express Western metal scarcity than chasing the LME squeeze itself.",
+      "evidence": [
+        "Q2 2026 revenue approached $4.0bn and adjusted EBITDA reached about $901m.",
+        "Adjusted net income was $562m and free cash flow was about $422m.",
+        "Higher realised aluminium prices and shipments are already reaching earnings.",
+        "Recent portfolio changes increase bauxite/alumina/aluminium exposure."
+      ],
+      "risks": [
+        "Energy, diesel, tariff and alumina costs can offset stronger metal pricing.",
+        "Gulf smelter recovery or continued Chinese exports can suppress benchmark pricing.",
+        "Still a cyclical commodity producer."
+      ],
+      "sourceUrl": "https://investors.alcoa.com/news-releases/news-release-details/2026/Alcoa-Corporation-Reports-Second-Quarter-2026-Results/default.aspx"
+    },
+    {
+      "ticker": "CENX",
+      "company": "Century Aluminum",
+      "market": "NASDAQ",
+      "provisionalScore": 8.4,
+      "classification": "Higher-beta aluminium scarcity candidate",
+      "theme": "US/Iceland primary aluminium capacity",
+      "thesis": "A more direct, higher-beta primary aluminium expression than Alcoa. Production restarts and stronger realised metal prices are translating quickly into earnings and balance-sheet improvement.",
+      "evidence": [
+        "Q2 adjusted EBITDA rose to $326.9m from $231.4m in Q1.",
+        "Adjusted EPS increased to $2.46 from $1.63 sequentially.",
+        "Shipments rose to 130,632 tonnes from 122,865 tonnes.",
+        "Mt. Holly restart was completed, Grundartangi returned near full production and July cash exceeded total debt.",
+        "Q3 adjusted EBITDA guidance is $325m-$345m."
+      ],
+      "risks": [
+        "Higher operating and commodity beta than AA or Hydro.",
+        "Power, raw-material and equipment reliability are major earnings variables.",
+        "Recent price appreciation raises entry risk."
+      ],
+      "sourceUrl": "https://centuryaluminum.com/insights/century-aluminum-company-reports-second-quarter-2026-results/"
+    },
+    {
+      "ticker": "HWKN",
+      "company": "Hawkins",
+      "market": "NASDAQ",
+      "provisionalScore": 8.2,
+      "classification": "Differentiated water/agriculture crossover",
+      "theme": "Water treatment chemicals + agricultural inputs",
+      "thesis": "A less obvious scarcity beneficiary. Hawkins combines municipal/industrial water-treatment distribution with agricultural, nutrition and specialty-chemical exposure, and current revenue growth shows the need is already monetising.",
+      "evidence": [
+        "Fiscal Q1 2027 revenue reached a record $315.7m, up 8%.",
+        "Water Treatment sales rose 6% to $158.3m.",
+        "Agricultural-product sales grew 30% on higher volumes.",
+        "Free cash flow increased more than 30% to $23.5m.",
+        "The company continued consolidating regional water-treatment distribution with the Aqua-Chem acquisition."
+      ],
+      "risks": [
+        "EPS fell 4% despite record revenue and EBITDA.",
+        "Valuation is materially richer than commodity producers.",
+        "Part of recent water growth is acquisition-driven rather than purely organic."
+      ],
+      "sourceUrl": "https://www.globenewswire.com/news-release/2026/07/29/3335586/0/en/hawkins-inc-reports-first-quarter-fiscal-2027-results.html"
+    },
+    {
+      "ticker": "NHYDY",
+      "company": "Norsk Hydro",
+      "market": "OTC / Oslo",
+      "provisionalScore": 8.2,
+      "classification": "Balanced aluminium / recycling / energy candidate",
+      "theme": "Primary aluminium + recycling + captive power",
+      "thesis": "More diversified and lower-beta than CENX, with primary aluminium, recycling and energy assets. Q2 earnings confirm higher all-in metal prices are reaching the P&L while recycling adds a second scarcity channel.",
+      "evidence": [
+        "Q2 adjusted EBITDA rose to NOK8.923bn from NOK7.790bn a year earlier.",
+        "Aluminium Metal adjusted EBITDA rose to NOK6.421bn from NOK2.423bn.",
+        "Free cash flow was NOK4bn.",
+        "Realised all-in metal prices increased 14% sequentially and recycling margins improved."
+      ],
+      "risks": [
+        "Hydrology reduced energy earnings and reservoirs were below normal.",
+        "World-ex-China primary aluminium consumption remains weak.",
+        "Chinese exports and Gulf recovery can cap pricing."
+      ],
+      "sourceUrl": "https://www.hydro.com/en/global/media/news/2026/hydros-second-quarter-2026-operational-strength-delivering-solid-results/"
+    },
+    {
+      "ticker": "PCHEM",
+      "company": "PETRONAS Chemicals",
+      "market": "Bursa Malaysia",
+      "provisionalScore": 7.8,
+      "classification": "Malaysia nitrogen/petrochemical watch",
+      "theme": "Ammonia/urea exposure within diversified petrochemicals",
+      "thesis": "A Malaysian route into fertilizer and chemical tightness, with a strong Q2 earnings recovery. The problem is purity: petrochemical oversupply and weak global demand dilute the nitrogen thesis.",
+      "evidence": [
+        "Q2 revenue rose to RM7.903bn from RM6.437bn.",
+        "Attributable profit was RM414m versus a RM1.081bn loss a year earlier.",
+        "The company declared a 6 sen interim dividend."
+      ],
+      "risks": [
+        "Management still describes the outlook as challenging because of geopolitical, trade and supply-demand uncertainty.",
+        "Not a pure fertilizer company.",
+        "2026 may prove a cyclical earnings peak if petrochemical pricing normalises."
+      ],
+      "sourceUrl": "https://www.reuters.com/world/asia-pacific/petronas-chemicals-reports-higher-revenue-profit-flags-challenging-outlook-year-2026-08-19/"
+    },
+    {
+      "ticker": "CRPMATE",
+      "company": "Cropmate Berhad",
+      "market": "Bursa Malaysia",
+      "provisionalScore": 7.7,
+      "classification": "Small-cap Malaysia fertilizer candidate",
+      "theme": "Fertilizer formulation and distribution",
+      "thesis": "A small-cap local expression where higher fertilizer selling prices and volumes are already driving revenue and profit growth, but liquidity and input-cost pass-through keep it below the larger nitrogen names.",
+      "evidence": [
+        "Q2 revenue rose 49% to RM68.18m from RM45.74m.",
+        "Q2 attributable profit rose about 39% to RM4.79m.",
+        "H1 revenue reached RM126.74m versus RM94.36m a year earlier."
+      ],
+      "risks": [
+        "Micro-cap liquidity and execution risk.",
+        "Higher selling prices can be offset by fertilizer/raw-material input inflation.",
+        "Limited diversification and shorter listed-company track record."
+      ],
+      "sourceUrl": "https://www.klsescreener.com/v2/announcements/view/11649323"
+    },
+    {
+      "ticker": "RANHILL",
+      "company": "Ranhill Utilities",
+      "market": "Bursa Malaysia",
+      "provisionalScore": 7.2,
+      "classification": "Water infrastructure watch / valuation constrained",
+      "theme": "Johor water supply + non-revenue-water management",
+      "thesis": "Operationally interesting because Johor data-centre growth increases water demand and Ranhill has direct water-network exposure. The stock's rerating makes valuation the gating variable rather than the resource thesis itself.",
+      "evidence": [
+        "FY-end quarter revenue was RM657.0m with attributable profit of RM70.1m.",
+        "FY cumulative attributable profit was RM196.6m.",
+        "Ranhill directly participates in water/wastewater and non-revenue-water management in Johor."
+      ],
+      "risks": [
+        "Share price has rerated sharply.",
+        "Utility regulation and capex requirements limit operating leverage.",
+        "Current valuation may already discount much of the Johor data-centre water story."
+      ],
+      "sourceUrl": "https://www.klsescreener.com/v2/announcements/view/11650731"
+    }
+  ],
+  "watchOnly": [
+    {
+      "ticker": "LXU",
+      "reason": "Nitrogen exposure is attractive, but Q2 remained loss-making because of turnaround expense and leverage is less comfortable than UAN/CF."
+    },
+    {
+      "ticker": "BMI",
+      "reason": "High-quality smart-water franchise, but Q2 sales and earnings fell year over year; wait for awarded utility projects to reaccelerate revenue."
+    },
+    {
+      "ticker": "HEXIND",
+      "reason": "Malaysia fertilizer revenue/profit improved in Q2, but H1 earnings quality was weakened by a Q1 loss."
+    }
+  ]
+}
