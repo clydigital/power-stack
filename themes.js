@@ -10,6 +10,31 @@
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#039;');
 
+  const seededEmergenceDates = {
+    'long-end-duration-stress': '2026-08-21',
+    'ai-financing-cash-conversion': '2026-08-21',
+    'personalized-oncology': '2026-08-21',
+    'china-fiscal-infrastructure': '2026-08-21',
+    'fertilizer-nitrogen-sulphur': '2026-08-21',
+    'water-food-energy-collision': '2026-08-21',
+    'rubber-acreage-squeeze': '2026-08-21'
+  };
+
+  const emergedAt = theme => theme.emergedAt || seededEmergenceDates[theme.id] || '';
+
+  const isNewTheme = theme => {
+    const raw = emergedAt(theme);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(raw)) return false;
+
+    const [year, month, day] = raw.split('-').map(Number);
+    const emergedDay = Date.UTC(year, month - 1, day);
+    const now = new Date();
+    const today = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+    const ageDays = Math.floor((today - emergedDay) / 86400000);
+
+    return ageDays >= 0 && ageDays <= 2;
+  };
+
   const directionClass = (direction = '') => {
     const d = direction.toLowerCase();
     if (d.includes('strength') || d.includes('accelerat')) return 'strong';
@@ -35,7 +60,10 @@
     <article class="theme-card" id="${esc(theme.id || '')}">
       <div class="theme-head">
         <div>
-          <div class="theme-title">${esc(theme.name || 'Theme')}</div>
+          <div class="theme-title-row">
+            <div class="theme-title">${esc(theme.name || 'Theme')}</div>
+            ${isNewTheme(theme) ? `<span class="new-theme-badge" title="New Power Stack theme — emerged ${esc(emergedAt(theme))}"><span class="new-theme-dot"></span>NEW <small>≤3D</small></span>` : ''}
+          </div>
           <div class="theme-status">
             <span class="theme-pill ${directionClass(theme.direction)}">${esc(theme.direction || 'monitoring')}</span>
             <span class="theme-pill">${esc(theme.status || 'Researching')}</span>
