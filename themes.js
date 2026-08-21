@@ -90,15 +90,38 @@
       </div>
     </article>`;
 
+  const applyResearchOverlay = (themes, overlay) => {
+    if (!overlay) return;
+
+    const additions = overlay.candidateAdds && typeof overlay.candidateAdds === 'object'
+      ? overlay.candidateAdds
+      : {};
+
+    Object.entries(additions).forEach(([themeId, tickers]) => {
+      const theme = themes.find(item => item.id === themeId);
+      if (!theme || !Array.isArray(tickers)) return;
+      theme.researchCandidates = [...new Set([...(theme.researchCandidates || []), ...tickers])];
+      theme.lastUpdated = overlay.lastUpdated || theme.lastUpdated;
+    });
+
+    if (Array.isArray(overlay.newThemes)) {
+      overlay.newThemes.forEach(theme => {
+        if (!theme?.id || themes.some(item => item.id === theme.id)) return;
+        themes.push({ ...theme });
+      });
+    }
+  };
+
   Promise.all([
     fetch('data/developing-themes.json', { cache: 'no-store' }).then(res => {
       if (!res.ok) throw new Error(`Theme feed HTTP ${res.status}`);
       return res.json();
     }),
     fetch('data/water-cooling-research.json', { cache: 'no-store' }).then(res => res.ok ? res.json() : null).catch(() => null),
-    fetch('data/resource-stock-screen-2026-08-21.json', { cache: 'no-store' }).then(res => res.ok ? res.json() : null).catch(() => null)
+    fetch('data/resource-stock-screen-2026-08-21.json', { cache: 'no-store' }).then(res => res.ok ? res.json() : null).catch(() => null),
+    fetch('data/deep-bottleneck-stock-screen-2026-08-21.json', { cache: 'no-store' }).then(res => res.ok ? res.json() : null).catch(() => null)
   ])
-    .then(([data, water, resource]) => {
+    .then(([data, water, resource, deep]) => {
       const themes = Array.isArray(data?.themes) ? data.themes.map(theme => ({ ...theme })) : [];
 
       if (water) {
@@ -123,28 +146,11 @@
         }
       }
 
-      if (resource) {
-        const additions = resource.candidateAdds && typeof resource.candidateAdds === 'object'
-          ? resource.candidateAdds
-          : {};
-
-        Object.entries(additions).forEach(([themeId, tickers]) => {
-          const theme = themes.find(item => item.id === themeId);
-          if (!theme || !Array.isArray(tickers)) return;
-          theme.researchCandidates = [...new Set([...(theme.researchCandidates || []), ...tickers])];
-          theme.lastUpdated = resource.lastUpdated || theme.lastUpdated;
-        });
-
-        if (Array.isArray(resource.newThemes)) {
-          resource.newThemes.forEach(theme => {
-            if (!theme?.id || themes.some(item => item.id === theme.id)) return;
-            themes.push({ ...theme });
-          });
-        }
-      }
+      applyResearchOverlay(themes, resource);
+      applyResearchOverlay(themes, deep);
 
       count.textContent = themes.length;
-      updated.textContent = resource?.lastUpdated || data?.lastUpdated || water?.lastUpdated || '—';
+      updated.textContent = deep?.lastUpdated || resource?.lastUpdated || data?.lastUpdated || water?.lastUpdated || '—';
       list.innerHTML = themes.length
         ? themes.map(renderTheme).join('')
         : '<div class="empty-themes">No developing themes are currently recorded.</div>';
