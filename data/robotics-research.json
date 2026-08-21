@@ -1,58 +1,49 @@
 {
-  "lastUpdated": "2026-08-14",
+  "lastUpdated": "2026-08-21",
   "purpose": "Personal-investment research only. Robotics claims are checked against issuer disclosures and current market evidence before affecting the framework.",
   "framework": {
-    "summary": "Adoption is ranked by task structure and customer payback, not by how human-like the machine looks. The August 2026 evidence does not change the sequence.",
+    "summary": "Adoption is ranked by task structure and customer payback, not by how human-like the machine looks. The August 21 evidence strengthens, rather than changes, the sequence.",
     "waves": [
-      {
-        "rank": 1,
-        "name": "Structured logistics + fixed industrial automation",
-        "timing": "Now",
-        "why": "Controlled environments, repeatable tasks, mature safety practices and measurable labour and throughput ROI."
-      },
-      {
-        "rank": 2,
-        "name": "Cobots + mobile manipulation + constrained service robots",
-        "timing": "Scaling next",
-        "why": "AI expands task coverage while deployments remain geofenced, supervised and workflow-specific."
-      },
-      {
-        "rank": 3,
-        "name": "Industrial humanoids",
-        "timing": "Pilots now; scale later",
-        "why": "Human-shaped facilities help, but dexterity, reliability, battery life, safety and total cost still need proof."
-      },
-      {
-        "rank": 4,
-        "name": "Open-world consumer robots",
-        "timing": "Later",
-        "why": "Unstructured environments compound edge cases, liability and price sensitivity."
-      }
+      {"rank":1,"name":"Structured logistics + fixed industrial automation","timing":"Now","why":"Controlled environments, repeatable tasks, mature safety practices and measurable labour and throughput ROI."},
+      {"rank":2,"name":"Cobots + mobile manipulation + constrained service robots","timing":"Scaling next","why":"AI expands task coverage while deployments remain geofenced, supervised and workflow-specific."},
+      {"rank":3,"name":"Industrial humanoids","timing":"Pilots now; scale later","why":"Human-shaped facilities help, but dexterity, reliability, battery life, safety and total cost still need proof."},
+      {"rank":4,"name":"Open-world consumer robots","timing":"Later","why":"Unstructured environments compound edge cases, liability and price sensitivity."}
     ]
   },
-  "included": ["SYM", "2590.HK", "CGNX", "TER", "9880.HK"],
+  "included": ["SYM","2590.HK","CGNX","TER","9880.HK","ROK"],
   "currentRead": {
-    "commercialSignal": "Warehouse/fixed automation remains the strongest public-market evidence set. Symbotic continues to expand deployments and has added warehouse-operations optimisation capability through ARMS Innovations; Teradyne combines robotics with increasingly AI-linked semiconductor test demand.",
-    "humanoidSignal": "Unitree's Shanghai listing confirms that at least one Chinese humanoid/robotics vendor has reached profitability and international scale. That improves sector credibility but does not establish attractive public-market risk/reward at a 219x projected 2025 earnings IPO valuation.",
-    "portfolioImplication": "Keep component, perception, warehouse and cobot exposure ahead of humanoid-OEM exposure until paid deployments, repeat orders, utilisation and unit economics are consistently visible."
+    "commercialSignal": "Warehouse/fixed automation remains the strongest public-market evidence set. Rockwell Automation's fiscal Q3 2026 organic sales rose 10%, management raised FY2026 organic growth guidance to 7.5%-9.5%, and it specifically cited strength in semiconductor, data centre and warehouse automation. Symbotic, Geekplus and Cognex remain cleaner direct enabling-layer exposures within their respective niches.",
+    "humanoidSignal": "The World Robot Conference and Unitree commentary reinforce sector momentum, but Unitree's own CEO still framed a broad embodied-intelligence breakthrough as potentially two to ten years away. China has scale and policy support, yet current humanoids remain less efficient than human labour in many tasks. UBTECH remains a speculative listed OEM rather than a core holding.",
+    "portfolioImplication": "Keep fixed automation, machine vision, motion/control and cobot exposure ahead of humanoid OEMs until paid deployments, repeat orders, utilisation and unit economics are consistently visible."
+  },
+  "newResearchCandidate": {
+    "ticker": "ROK",
+    "name": "Rockwell Automation",
+    "market": "NYSE",
+    "region": "US",
+    "themeGroup": "Robotics / Automation",
+    "theme": "Factory automation + controls + motion + software",
+    "conviction": 8.3,
+    "status": "Priority research candidate",
+    "thesis": "Rockwell adds profitable, broad industrial-automation exposure across controls, drives, motion, software and factory systems. It is less pure than Symbotic or Cognex but more diversified and directly exposed to the first commercial automation wave rather than humanoid optionality.",
+    "catalysts": "Warehouse automation, semiconductor and data-centre automation demand, improving automotive/life-sciences activity, margin leverage and software ARR growth.",
+    "risks": "Premium industrial valuation, cyclical factory capex, slower discrete-automation recovery and competition from Siemens, Schneider, ABB and Emerson.",
+    "evidence": "Fiscal Q3 2026 sales rose 8%, organic sales rose 10%, enterprise operating margin reached 22.3%, free cash flow was $654m, and FY2026 organic-sales guidance was raised to 7.5%-9.5% with adjusted EPS guidance of $13.00-$13.30.",
+    "sourceUrl": "https://www.rockwellautomation.com/en-se/company/news/press-releases/Rockwell-Automation-Reports-Third-Quarter-2026-Results.html"
   },
   "screenedOut": [
-    {
-      "ticker": "SERV",
-      "reason": "Commercial deployment is real, but current revenue scale and cash-burn economics do not clear the Power Stack bar."
-    },
-    {
-      "ticker": "SFTBY",
-      "reason": "ABB Robotics is strategically relevant, but robotics remains diluted within SoftBank's conglomerate and investment-portfolio risk."
-    },
-    {
-      "ticker": "UNITREE",
-      "reason": "Profitable and commercially credible, but the August 2026 Shanghai IPO valuation around 219x projected 2025 earnings is too aggressive for promotion and the listing remains outside the preferred HK/MY/US market set."
-    }
+    {"ticker":"SERV","reason":"Commercial deployment is real, but current revenue scale and cash-burn economics do not clear the Power Stack bar."},
+    {"ticker":"SFTBY","reason":"ABB Robotics is strategically relevant, but robotics remains diluted within SoftBank's conglomerate and investment-portfolio risk."},
+    {"ticker":"UNITREE","reason":"Commercial credibility is improving, but post-IPO valuation and hype remain too aggressive; current evidence does not justify chasing the OEM."}
   ],
   "notes": [
     "Deployment counts alone are not proof of attractive unit economics.",
     "Component and enabling-layer exposure ranks ahead of humanoid-OEM hype when financial evidence is stronger.",
-    "No adoption-wave reorder on 2026-08-14."
+    "No adoption-wave reorder on 2026-08-21."
+  ],
+  "sources": [
+    "https://www.rockwellautomation.com/en-se/company/news/press-releases/Rockwell-Automation-Reports-Third-Quarter-2026-Results.html",
+    "https://www.reuters.com/world/asia-pacific/robots-poised-chatgpt-moment-unitree-ceo-says-2026-08-20/",
+    "https://www.reuters.com/world/asia-pacific/chinese-companies-watch-world-robot-conference-2026-08-20/"
   ]
 }
