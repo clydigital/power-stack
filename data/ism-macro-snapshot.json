@@ -1,57 +1,72 @@
 {
-  "lastUpdated": "2026-08-14",
+  "lastUpdated": "2026-08-21",
+  "lastVerifiedAt": "2026-08-21T08:59:00+08:00",
   "sourcePolicy": "Official ISM monthly reports are authoritative. This file stores a compact analytical snapshot and selected Power Stack-relevant observations, not a reconstructed ISM index database or confidential survey submissions.",
+  "releaseStatus": {
+    "latestManufacturingReportMonth": "July 2026",
+    "latestServicesReportMonth": "July 2026",
+    "nextManufacturingRelease": "2026-09-01 10:00 ET",
+    "nextServicesRelease": "2026-09-03 10:00 ET",
+    "releaseCalendarUrl": "https://www.ismworld.org/supply-management-news-and-reports/reports/rob-report-calendar/"
+  },
   "manufacturing": {
     "reportMonth": "July 2026",
     "sourceUrl": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/july/",
-    "headlinePMI": {"value": 55.6, "prior": 53.3, "change": 2.3},
+    "headlinePMI": {"value":55.6,"prior":53.3,"change":2.3},
     "subindices": {
-      "newOrders": {"value": 56.7, "prior": 56.0, "change": 0.7},
-      "production": {"value": 58.5, "prior": 52.2, "change": 6.3},
-      "employment": {"value": 52.8, "prior": 49.7, "change": 3.1},
-      "supplierDeliveries": {"value": 58.9, "prior": 57.4, "change": 1.5},
-      "inventories": {"value": 51.2, "prior": 51.4, "change": -0.2},
-      "customersInventories": {"value": 40.7, "prior": 42.3, "change": -1.6},
-      "prices": {"value": 71.1, "prior": 73.0, "change": -1.9},
-      "backlog": {"value": 55.0, "prior": 50.5, "change": 4.5},
-      "newExportOrders": {"value": 53.0, "prior": 48.5, "change": 4.5},
-      "imports": {"value": 55.7, "prior": 52.9, "change": 2.8}
+      "newOrders":{"value":56.7,"prior":56.0,"change":0.7},
+      "production":{"value":58.5,"prior":52.2,"change":6.3},
+      "employment":{"value":52.8,"prior":49.7,"change":3.1},
+      "supplierDeliveries":{"value":58.9,"prior":57.4,"change":1.5},
+      "inventories":{"value":51.2,"prior":51.4,"change":-0.2},
+      "customersInventories":{"value":40.7,"prior":42.3,"change":-1.6},
+      "prices":{"value":71.1,"prior":73.0,"change":-1.9},
+      "backlog":{"value":55.0,"prior":50.5,"change":4.5},
+      "newExportOrders":{"value":53.0,"prior":48.5,"change":4.5},
+      "imports":{"value":55.7,"prior":52.9,"change":2.8}
     },
     "industryRead": {
-      "expandingPowerStackRelevant": ["Electrical Equipment, Appliances & Components", "Primary Metals", "Transportation Equipment", "Machinery", "Computer & Electronic Products", "Fabricated Metal Products"],
-      "contracting": ["Chemical Products"]
+      "expandingPowerStackRelevant":["Electrical Equipment, Appliances & Components","Primary Metals","Transportation Equipment","Machinery","Computer & Electronic Products","Fabricated Metal Products"],
+      "contracting":["Chemical Products"]
     },
     "selectedSupplySignals": {
-      "upInPrice": ["Copper", "Electrical Components", "Electronic Components", "Integrated Circuits", "Memory Components", "Freight", "Oil Based Products", "Printed Circuit Boards", "Semiconductors", "Steel"],
-      "shortSupply": ["Copper", "Electrical Components", "Electronic Components", "Integrated Circuits", "Memory", "Printed Circuit Boards", "Rare Earth Components", "Semiconductors", "Steel", "Tungsten Products"]
+      "upInPrice":["Copper","Electrical Components","Electronic Components","Integrated Circuits","Memory Components","Freight","Fuel","Oil Based Products","Printed Circuit Boards","Semiconductors","Steel"],
+      "downInPrice":["Aluminum","Fuel","Polypropylene Resin"],
+      "shortSupply":["Aluminum","Copper","Electrical Components","Electronic Components","Integrated Circuits","Memory","Oil Based Products","Printed Circuit Boards","Rare Earth Components","Semiconductors","Steel","Hot Rolled Steel","Tungsten Products"]
     },
-    "powerStackInterpretation": "Strongly supportive of the physical-infrastructure thesis. Production, orders and backlog accelerated while customer inventories fell further into 'too low' territory. Computer/electronics, machinery and electrical-equipment respondents described active AI/data-centre procurement ramps, semiconductor/connectivity demand and defence strength. The counterweight is still-hot input inflation and worsening delivery times, which favour suppliers with pricing power and backlog visibility over low-margin contractors."
+    "powerStackInterpretation": "Still strongly supportive of physical-infrastructure demand. Production, orders and backlog accelerated, while customers' inventories fell further into 'too low' territory. The short-supply list continues to include copper, electrical/electronic components, memory and semiconductors. The counterweight is high Prices and slower Supplier Deliveries, which favour suppliers with pricing power and backlog visibility over low-margin contractors."
   },
   "services": {
     "reportMonth": "July 2026",
     "sourceUrl": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/services/july/",
-    "headlinePMI": {"value": 54.1, "prior": 54.0, "change": 0.1},
+    "headlinePMI":{"value":54.1,"prior":54.0,"change":0.1},
     "subindices": {
-      "businessActivity": {"value": 59.1, "prior": 55.4, "change": 3.7},
-      "newOrders": {"value": 57.2, "prior": 55.1, "change": 2.1},
-      "employment": {"value": 47.4, "prior": 51.2, "change": -3.8},
-      "supplierDeliveries": {"value": 52.8, "prior": 54.4, "change": -1.6},
-      "inventories": {"value": 51.4, "prior": 51.2, "change": 0.2},
-      "prices": {"value": 70.3, "prior": 67.7, "change": 2.6},
-      "backlog": {"value": 50.9, "prior": 54.9, "change": -4.0},
-      "newExportOrders": {"value": 52.0, "prior": 50.4, "change": 1.6},
-      "imports": {"value": 51.8, "prior": 49.4, "change": 2.4},
-      "inventorySentiment": {"value": 52.5, "prior": 52.6, "change": -0.1}
+      "businessActivity":{"value":59.1,"prior":55.4,"change":3.7},
+      "newOrders":{"value":57.2,"prior":55.1,"change":2.1},
+      "employment":{"value":47.4,"prior":51.2,"change":-3.8},
+      "supplierDeliveries":{"value":52.8,"prior":54.4,"change":-1.6},
+      "inventories":{"value":51.4,"prior":51.2,"change":0.2},
+      "prices":{"value":70.3,"prior":67.7,"change":2.6},
+      "backlog":{"value":50.9,"prior":54.9,"change":-4.0},
+      "newExportOrders":{"value":52.0,"prior":50.4,"change":1.6},
+      "imports":{"value":51.8,"prior":49.4,"change":2.4},
+      "inventorySentiment":{"value":52.5,"prior":52.6,"change":-0.1}
     },
     "industryRead": {
-      "expandingPowerStackRelevant": ["Transportation & Warehousing", "Wholesale Trade", "Information", "Construction", "Utilities", "Mining", "Professional, Scientific & Technical Services"]
+      "expandingPowerStackRelevant":["Transportation & Warehousing","Wholesale Trade","Information","Construction","Utilities","Mining","Professional, Scientific & Technical Services"]
     },
     "selectedSupplySignals": {
-      "upInPrice": ["Computers and Related Items", "Memory Products", "Petroleum Based Products", "Switchgear", "Transformers", "Transportation"],
-      "shortSupply": ["Electronic Components", "Labor - Technical", "Memory Components", "Switchgear", "Wire and Cable"]
+      "upInPrice":["Computers and Related Items","Memory Products","Petroleum Based Products","Switchgear","Transformers","Transportation"],
+      "shortSupply":["Electronic Components","Labor - Technical","Memory Components","Switchgear","Wire and Cable"]
     },
-    "powerStackInterpretation": "Demand remains resilient, but inflation is not solved. Business activity and new orders accelerated while employment contracted and prices moved back above 70. Utility respondents reported persistent competition for electrical-equipment production slots; network gear lead times remain long. That supports grid, switchgear, cable and data-centre balance-of-system names, while high fuel/labour costs remain a margin risk for contractors and transport-intensive businesses."
+    "powerStackInterpretation": "Demand remains resilient, but inflation is not solved. Business activity and new orders accelerated while employment contracted and Prices returned above 70. Grid, switchgear, transformer, cable and data-centre balance-of-system suppliers retain strong demand support; high fuel, financing and labour costs remain a risk for contractors and transport-intensive businesses."
   },
-  "combinedRead": "July ISM is more bullish for Power Stack demand than for the broad economy: manufacturing re-accelerated sharply and services demand stayed firm, but both surveys still show physical bottlenecks and elevated prices. The best-positioned exposures remain grid equipment, electrical components, power generation, gas infrastructure and selected automation suppliers with pricing power and backlog visibility.",
+  "respondentCommentReview": {
+    "scope": "Only ISM-selected public respondent comments and aggregate diffusion data were reviewed.",
+    "powerStackTopics": ["AI/data centres","electrical equipment","semiconductors","memory","copper","transformers","switchgear","wire/cable","oil/fuel/freight","defence/aerospace","construction","industrial demand"],
+    "conclusion": "Selected comments and commodity tables continue to corroborate AI/data-centre procurement, electrical-equipment slot competition, semiconductor/memory demand, defence strength and elevated fuel/freight costs. No evidence today justifies changing the adoption or category hierarchy beyond the existing physical-bottleneck bias."
+  },
+  "combinedRead": "July ISM remains more bullish for Power Stack physical demand than for a clean disinflation story: manufacturing re-accelerated sharply and services demand stayed firm, but both surveys still show bottlenecks and high prices. The best-positioned exposures remain grid equipment, electrical components, power generation, gas infrastructure and selected automation suppliers with pricing power and backlog visibility.",
+  "historicalFallback": "https://github.com/HelloThereMatey/tedata",
   "rawSubmissionNote": "ISM does not publish the confidential individual survey submission database. Only aggregate diffusion data and selected respondent comments are public; Power Stack does not claim access to raw panel submissions."
 }
