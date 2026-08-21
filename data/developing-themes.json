@@ -83,28 +83,133 @@
     },
     {
       "id": "refining-product-inflation",
-      "name": "Refining > Crude: Product Inflation",
-      "status": "Active tactical theme / macro transmission",
-      "direction": "strengthening",
+      "name": "Middle Distillates > Gasoline: Product Split",
+      "status": "Active tactical theme / policy divergence",
+      "direction": "diesel and jet remain extreme; gasoline starting to ease",
       "lastUpdated": "2026-08-21",
-      "summary": "The cleaner energy signal is no longer simply higher crude. Refinery outages, restricted Middle Eastern flows and Russian disruptions have pushed diesel and other refined-product margins to extreme levels, creating an inflation channel that can persist even if Brent stops rising.",
-      "whyDeveloping": "The U.S. diesel crack exceeded $100 per barrel for the first time while seasonal distillate inventories remain exceptionally tight. That links energy directly back into freight, agriculture, consumer prices and long-end yields, while favouring refiners with available capacity.",
-      "powerStackTickers": ["VLO", "MPC", "XOM", "CVX", "LNG", "0883.HK"],
-      "watch": ["diesel crack", "gasoline crack", "refinery utilisation", "distillate inventories", "Hormuz traffic", "Russian refinery outages", "fuel export policy"],
+      "summary": "The refined-product shortage is splitting internally. Washington can add gasoline supply relatively quickly by relaxing blending rules, but it cannot manufacture diesel and jet-fuel refining capacity nearly as fast. The useful hierarchy is increasingly diesel/jet >> gasoline >> crude rather than treating the 3-2-1 as one uniform signal.",
+      "whyDeveloping": "The EPA authorised an early September 1 switch to winter-grade gasoline, potentially adding hundreds of thousands of barrels per day of gasoline supply. That arrives as gasoline cracks soften while the U.S. diesel crack remains around the unprecedented $100-per-barrel area. A falling headline 3-2-1 could therefore hide a still-severe middle-distillate shortage.",
+      "powerStackTickers": ["VLO", "MPC", "PSX", "XOM", "CVX"],
+      "watch": ["RBOB crack below $50 while ULSD crack remains above $100", "diesel and jet cracks", "distillate inventories", "gasoline inventories", "EPA/state fuel waivers", "Hormuz traffic", "Russian refinery outages", "US distillate exports"],
       "mainNews": [
+        {
+          "date": "2026-08-20",
+          "title": "US ends summer-blend gasoline requirement early to increase supply",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/business/energy/us-end-summer-blend-gasoline-requirement-early-attempt-lower-prices-2026-08-20/",
+          "implication": "Policy may compress RBOB and the headline 3-2-1 without resolving the harder diesel/jet refining-capacity shortage."
+        },
         {
           "date": "2026-08-17",
           "title": "U.S. diesel crack surpasses $100 per barrel for the first time",
           "source": "Reuters",
           "url": "https://www.reuters.com/business/energy/us-diesel-crack-surpasses-100-barrel-first-time-supply-disruptions-2026-08-17/",
-          "implication": "Product scarcity is a more direct inflation and refiner-profit signal than flat crude alone."
+          "implication": "The global replacement barrel for middle distillates remains scarce even with U.S. refineries running hard."
         },
         {
           "date": "2026-08-20",
           "title": "Iran-war energy stress is increasingly a refining-capacity problem",
           "source": "Reuters",
           "url": "https://www.reuters.com/commentary/reuters-open-interest/iran-war-energy-crisis-is-just-getting-started-2026-08-20/",
-          "implication": "Even diplomatic progress would not instantly repair damaged processing capacity or rebuild depleted product inventories."
+          "implication": "Damaged processing capacity and depleted inventories can keep industrial-fuel inflation elevated after crude stops accelerating."
+        }
+      ]
+    },
+    {
+      "id": "fertilizer-feedstock-divergence",
+      "name": "Fertilizer: Nitrogen Advantage vs Sulphur Constraint",
+      "status": "New resource-scarcity theme / high agriculture relevance",
+      "direction": "tight but highly differentiated",
+      "lastUpdated": "2026-08-21",
+      "summary": "Fertilizer is not one trade. Global nitrogen remains constrained by Gulf outages and trade disruption while U.S. natural gas stays comparatively cheap, creating a potential margin advantage for North American nitrogen producers. Phosphate faces the opposite problem: scarce sulphur is raising input costs so aggressively that high fertilizer prices can coexist with producer curtailments and weak margins.",
+      "whyDeveloping": "CF Industries estimates the Iran conflict removed roughly 4.0-4.5 million tonnes of traded Middle East urea and about 1 million tonnes of ammonia, while the Power Stack macro dashboard still shows Henry Hub around $2.8. At the same time, nearly half of seaborne sulphur normally moves through Hormuz and Mosaic has curtailed phosphate production because spot sulphur economics are unsustainable. This is an unusually clean example of the bottleneck sitting one layer below the headline commodity.",
+      "powerStackTickers": ["CTVA", "VMI"],
+      "researchCandidates": ["CF", "NTR", "CHE.UN"],
+      "watch": ["Henry Hub versus global urea", "urea and ammonia export flows", "India/Brazil import demand", "sulphur and sulphuric-acid prices", "phosphate operating rates", "farmer application cuts", "wheat COT positioning"],
+      "mainNews": [
+        {
+          "date": "2026-07-09",
+          "title": "Iran-war fertilizer disruption exposes food-production vulnerability",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/world/iran/iran-war-threatened-food-crisis-next-gulf-conflict-could-do-same-2026-07-09/",
+          "implication": "High fertilizer costs can reduce planting and application, turning an input shortage into a later crop-yield problem."
+        },
+        {
+          "date": "2026-08-05",
+          "title": "CF Industries says global nitrogen supply remains constructive into 2027",
+          "source": "CF Industries",
+          "url": "https://ir.cfindustries.com/Investors/news/news-details/2026/CF-Industries-Holdings-Inc--Reports-First-Half-2026-Net-Earnings-of-1-34-Billion-Adjusted-EBITDA-of-2-18-Billion/default.aspx",
+          "implication": "Cheap North American gas plus globally supported nitrogen pricing creates a differentiated producer setup rather than generic fertilizer beta."
+        },
+        {
+          "date": "2026-07-08",
+          "title": "Mosaic reduces phosphate operations in Brazil because of sulphur constraints",
+          "source": "Reuters",
+          "url": "https://www.agriculture.com/partners-mosaic-temporarily-reduces-phosphate-operations-in-brazil-due-to-sulfur-constraints-12014861",
+          "implication": "High phosphate prices do not guarantee producer margins when the scarce input is sulphur."
+        }
+      ]
+    },
+    {
+      "id": "water-food-energy-collision",
+      "name": "Water Scarcity: Food + Power + Freight Collision",
+      "status": "New cross-sector physical constraint",
+      "direction": "strengthening",
+      "lastUpdated": "2026-08-21",
+      "summary": "Water scarcity is broadening beyond data-centre cooling. The same drought is reducing crop yields, constraining river freight and forcing nuclear/hydro generation cuts, making leak reduction, reuse, distribution efficiency and resilient water infrastructure more economically valuable.",
+      "whyDeveloping": "Europe's August drought has pushed major rivers toward historic lows, cut French maize expectations sharply and forced nuclear output reductions across the Danube region. Yet irrigation-equipment sales remain weak because farm economics are poor, creating an important investment split between municipally financed water infrastructure and farmer-funded equipment.",
+      "powerStackTickers": ["XYL", "ECL", "VMI"],
+      "researchCandidates": ["MWA"],
+      "watch": ["Rhine and Danube levels", "European maize and wheat yields", "nuclear cooling restrictions", "municipal leak/reuse capex", "MWA order mix", "irrigation orders versus farm income", "water restrictions"],
+      "mainNews": [
+        {
+          "date": "2026-08-11",
+          "title": "Europe's deepening drought hits water, crops, shipping and power",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/sustainability/europes-deepening-drought-2026-08-11/",
+          "implication": "Water is becoming a multi-sector operating constraint rather than a standalone environmental theme."
+        },
+        {
+          "date": "2026-08-14",
+          "title": "French drought threatens severe maize losses and deeper EU crop shortfall",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/business/environment/french-drought-could-halve-maize-crop-deepen-eu-harvest-losses-2026-08-14/",
+          "implication": "Water scarcity is beginning to transmit directly into crop supply and import requirements."
+        },
+        {
+          "date": "2026-08-05",
+          "title": "Mueller Water Products raises EBITDA guidance after strong margin expansion",
+          "source": "Mueller Water Products",
+          "url": "https://ir.muellerwaterproducts.com/press-releases/2026/08-05-2026-211118748",
+          "implication": "Municipal water-network equipment is already converting infrastructure need into earnings even while residential construction remains soft."
+        }
+      ]
+    },
+    {
+      "id": "rubber-acreage-squeeze",
+      "name": "Natural Rubber: Acreage + Labour Squeeze",
+      "status": "New structural supply signal / Asia-focused",
+      "direction": "strengthening but early",
+      "lastUpdated": "2026-08-21",
+      "summary": "Natural-rubber supply is being eroded by farm economics rather than just weather. Indonesian growers are replacing labour-intensive rubber with more profitable oil palm, creating a slow-moving acreage squeeze that can persist even if tire demand is only moderate.",
+      "whyDeveloping": "Indonesia's rubber plantation area has fallen about 17% in five years and national output has dropped from above 3 million to roughly 2 million tonnes as growers switch to palm. Sri Trang's Q2 natural-rubber ASP rose to a 12-year high, providing company-level confirmation that supply pressure is reaching realised pricing, although volumes and utilisation remain weak.",
+      "powerStackTickers": [],
+      "researchCandidates": ["STA", "NC2.SI"],
+      "watch": ["Indonesia rubber acreage", "palm-versus-rubber farm returns", "skilled tapper availability", "TSR20/SIR20 spreads", "China tire demand", "West African supply", "STA utilisation and volumes"],
+      "mainNews": [
+        {
+          "date": "2026-08-07",
+          "title": "Indonesian rubber growers switch acreage to oil palm",
+          "source": "Reuters",
+          "url": "https://www.reuters.com/world/asia-pacific/indonesian-rubber-growers-bet-farm-oil-palm-2026-08-07/",
+          "implication": "Palm and biodiesel economics can structurally remove rubber supply, which is harder to reverse than a temporary weather disruption."
+        },
+        {
+          "date": "2026-08-14",
+          "title": "Sri Trang reports 12-year-high natural-rubber ASP in Q2",
+          "source": "Sri Trang Agro-Industry / Thai SEC",
+          "url": "https://market.sec.or.th/public/idisc/Download?FILEID=dat%2Fnews%2F202608%2F0254NWS140820262008222980E.pdf",
+          "implication": "Realised prices confirm the scarcity signal, but falling YoY volumes and only 50.5% utilisation keep the equity thesis higher-risk."
         }
       ]
     },
@@ -206,11 +311,11 @@
   "parkedThemes": [
     {
       "name": "Nuclear Buildout + Fuel Security",
-      "reason": "Structural thesis remains intact, but there is no fresh regime change in the latest dossier/live-deck cycle. Keep it in sector research and promote it again on a material approval, contracting, enrichment or financing change."
+      "reason": "Structural thesis remains intact, but there is no fresh fuel-cycle regime change in the latest dossier/live-deck cycle. Water-driven nuclear curtailments are now tracked separately under Water Scarcity: Food + Power + Freight Collision."
     },
     {
       "name": "Water + Data-Centre Cooling",
-      "reason": "Merged into AI Buildout: Power, Grid + Cooling Bottlenecks because the current evidence is about full-site feasibility rather than water as a separate trade."
+      "reason": "The AI-specific water/cooling thesis remains merged into AI Buildout: Power, Grid + Cooling Bottlenecks. A separate active water card now tracks the new drought-driven food/power/freight collision rather than duplicating data-centre cooling."
     },
     {
       "name": "Metabolic Health + Obesity",
@@ -218,7 +323,7 @@
     },
     {
       "name": "Agriculture + Water Productivity",
-      "reason": "Remains an early selective theme without enough fresh cross-source change to justify an active developing-theme card."
+      "reason": "The old category was too broad. Its investable pieces are now split into the more specific Fertilizer: Nitrogen Advantage vs Sulphur Constraint and Water Scarcity: Food + Power + Freight Collision themes."
     },
     {
       "name": "Humanoid Robotics / Physical AI",
