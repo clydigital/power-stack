@@ -1,0 +1,301 @@
+{
+  "lastUpdated": "2026-08-21",
+  "scope": "July-August 2026 physical-resource tightening sweep across refined products, fertilizer feedstocks, water, agriculture, rubber, soft commodities and industrial metals. Research-only; candidate scores are provisional and do not alter Base Conviction.",
+  "coreRead": "The strongest common pattern is not generic commodity inflation. It is scarcity moving one layer deeper into processing capacity and enabling inputs: middle-distillate refining, sulphur/sulphuric acid, water distribution and cooling, nitrogen feedstock arbitrage, and natural-rubber acreage/labour. Policy can often relieve the headline commodity faster than it can create the constrained processing layer.",
+  "macroCrossCheck": {
+    "source": "Power Stack Macro Pulse v2 / Macro Indicators Dashboard",
+    "sourceFile": "data/macro-context.json",
+    "signals": [
+      {
+        "signal": "Input-cost pressure remains high",
+        "evidence": "ISM Manufacturing Prices 71.1 and Services Prices 70.3 despite softer headline PPI.",
+        "implication": "Physical input shortages are consistent with survey pricing pressure rather than being isolated commodity spikes."
+      },
+      {
+        "signal": "Refined products are much tighter than crude",
+        "evidence": "3-2-1 crack at the 99.6th percentile in the dashboard snapshot, diesel +45.3% YoY, jet fuel +87.0% YoY and refinery utilisation 96.2%.",
+        "implication": "Refining capacity, not crude availability alone, is the key energy bottleneck."
+      },
+      {
+        "signal": "US natural gas remains loose",
+        "evidence": "Henry Hub around $2.79/MMBtu, -8.5% YoY and -30.3% YTD in the dashboard snapshot.",
+        "implication": "Low-cost North American nitrogen producers have a feedstock advantage while global fertilizer pricing remains supported by disrupted Gulf supply."
+      },
+      {
+        "signal": "Industrial demand is still expansionary but household demand is weaker",
+        "evidence": "ISM Manufacturing New Orders 56.7 and Production 58.5 versus weak retail sales and sentiment.",
+        "implication": "Prefer scarcity beneficiaries with contracted/municipal/industrial demand over discretionary farm-equipment purchases that require strong farmer balance sheets."
+      }
+    ]
+  },
+  "cotPositioning": {
+    "framework": "COT is used as positioning context, not as a standalone fundamental signal. COTSignal is useful conceptually because it normalises trader groups versus their one-year range, but the public snapshot available during this sweep was stale at June 9/12, so current CFTC and Investing.com releases were used for July-August positioning.",
+    "observations": [
+      {
+        "commodity": "Corn",
+        "latest": "Speculative net long about +244.9K contracts on Aug 14",
+        "change": "Up from about +64.2K in early July",
+        "read": "The obvious crop-scarcity trade is already crowded; avoid using corn length as the main expression."
+      },
+      {
+        "commodity": "Wheat",
+        "latest": "Speculative net short about -24.9K contracts on Aug 14",
+        "change": "Still net short despite drought and fertilizer/fuel pressure",
+        "read": "Potential positioning divergence if European crop losses and input under-application worsen."
+      },
+      {
+        "commodity": "Soybeans",
+        "latest": "Large net long built through July, then began cooling in August",
+        "change": "About +211.8K at Jul 31 versus +175.5K on Aug 7",
+        "read": "Bullish positioning exists but is less extreme than corn and has started to de-risk."
+      },
+      {
+        "commodity": "Sugar No. 11",
+        "latest": "Non-commercial futures-only position was roughly -68.5K net on Aug 4",
+        "change": "Positioning was bearish before India's late-August import intervention",
+        "read": "Interesting short-covering risk after India became an importer for the first time in nearly a decade, but listed equity expressions are operationally messy."
+      },
+      {
+        "commodity": "Cocoa",
+        "latest": "Non-commercial futures-only position was modestly net short on Aug 4 and remained more clearly net short in options-plus-futures data on Aug 11",
+        "change": "Positioning remains sceptical despite West African weather/regulatory supply concerns",
+        "read": "Interesting commodity divergence, but clean listed upstream beneficiaries are scarce."
+      }
+    ]
+  },
+  "rankedDivergences": [
+    {
+      "rank": 1,
+      "theme": "Nitrogen fertilizer: global scarcity versus cheap US gas",
+      "whyInteresting": "Iran/Hormuz disruptions removed millions of tonnes of traded urea/ammonia while Henry Hub remains weak. This creates a margin wedge for efficient North American ammonia/urea producers rather than a generic fertilizer trade.",
+      "bestExpression": "CF Industries",
+      "whatCouldBreakIt": "Rapid Gulf production/transit normalisation, a spike in US gas, or farmer demand destruction severe enough to overwhelm higher pricing."
+    },
+    {
+      "rank": 2,
+      "theme": "Middle distillates separate from gasoline",
+      "whyInteresting": "Washington can relax gasoline blending rules and add supply quickly, but cannot quickly replace damaged or offline diesel/jet refining capacity. The headline 3-2-1 can therefore fall while the industrial-fuel shortage remains severe.",
+      "bestExpression": "VLO / MPC / PSX rather than generic upstream crude beta",
+      "whatCouldBreakIt": "ULSD crack compresses together with RBOB as Russian/Middle East refinery runs and product inventories normalise."
+    },
+    {
+      "rank": 3,
+      "theme": "Sulphur is a hidden food-and-metals bottleneck",
+      "whyInteresting": "Nearly half of seaborne sulphur normally moves through Hormuz. Sulphur/sulphuric acid is required for phosphate fertilizer and several hydrometallurgical copper/nickel processes. High phosphate prices therefore do not automatically mean high phosphate-producer margins if sulphur input costs rise faster.",
+      "bestExpression": "Chemtrade Logistics as a North American merchant/regen acid and water-chemicals supplier; avoid treating MOS as a simple fertilizer-price beneficiary",
+      "whatCouldBreakIt": "Normalised Gulf sulphur exports and materially lower acid prices."
+    },
+    {
+      "rank": 4,
+      "theme": "Water scarcity is colliding with food, power and freight",
+      "whyInteresting": "European drought is simultaneously reducing maize yields, limiting Rhine/Danube freight and curtailing nuclear/hydro output. This is broader than data-centre cooling and creates demand for municipal leak reduction, reuse and water-network efficiency.",
+      "bestExpression": "MWA / XYL / ECL; VMI is longer-duration because farmer affordability is currently weak",
+      "whatCouldBreakIt": "Weather normalisation plus delayed municipal capex; for irrigation equipment specifically, weak farm income can postpone orders even when physical need rises."
+    },
+    {
+      "rank": 5,
+      "theme": "Natural rubber supply is being cannibalised by palm-oil economics",
+      "whyInteresting": "Indonesia is losing rubber acreage because palm offers better returns and easier labour economics. This is a structural supply removal mechanism rather than a one-season weather shock.",
+      "bestExpression": "Sri Trang Agro-Industry (STA Thailand / NC2 Singapore)",
+      "whatCouldBreakIt": "West African supply growth, weaker tire demand, lower rubber prices, or continued low utilisation at processors."
+    },
+    {
+      "rank": 6,
+      "theme": "Sugar policy response may export India's shortage to the world market",
+      "whyInteresting": "India authorised 1 Mt of duty-free raw sugar imports after domestic prices rose roughly 40% in two months. Domestic intervention can cap Indian prices while adding a large buyer to the global market; positioning had been net short before the policy shift.",
+      "bestExpression": "Commodity watch first; Brazilian sugar equities require a separate operating/debt screen",
+      "whatCouldBreakIt": "A strong Brazil crop, Indian production recovery or rapid domestic price normalisation."
+    },
+    {
+      "rank": 7,
+      "theme": "Aluminium physical scarcity is masked by Chinese semi-finished exports",
+      "whyInteresting": "LME inventories fell to a 36-year low and much of the remaining metal is Russian/concentrated, yet Chinese alloy/semi exports are cushioning Western availability and suppressing the headline price signal.",
+      "bestExpression": "Watch primary producers with reliable non-sanctioned supply; requires a valuation and cost-curve screen before promotion",
+      "whatCouldBreakIt": "Gulf smelter recovery, Indonesian additions or continued weak Chinese domestic demand sustaining exports."
+    }
+  ],
+  "stockResearch": [
+    {
+      "ticker": "CF",
+      "company": "CF Industries",
+      "provisionalScore": 8.8,
+      "classification": "Priority new research candidate",
+      "theme": "Low-cost US nitrogen / global fertilizer scarcity",
+      "positiveEvidence": [
+        "H1 2026 adjusted EBITDA $2.18bn and trailing-12-month free cash flow $1.82bn.",
+        "98% of available ammonia capacity operated during the period.",
+        "Management estimates the Iran conflict removed roughly 4.0-4.5 Mt of Middle East traded urea and about 1 Mt of ammonia and expects constrained supply into 2027.",
+        "Forward P/E around 8x in the Aug 17 market snapshot despite strong 2026 earnings and shareholder returns.",
+        "US gas is materially cheaper/looser than the global energy backdrop, supporting feedstock economics."
+      ],
+      "risks": [
+        "Stock had already risen more than 50% YTD by mid-August.",
+        "Sales volumes are down and farmer demand destruction is real.",
+        "US gas costs can rise and Gulf supply can recover faster than expected.",
+        "Yazoo City outage and project execution remain company-specific risks."
+      ],
+      "nextWork": "Valuation normalisation against mid-cycle EBITDA, nitrogen price sensitivity and technical entry levels."
+    },
+    {
+      "ticker": "MWA",
+      "company": "Mueller Water Products",
+      "provisionalScore": 8.6,
+      "classification": "Priority new research candidate",
+      "theme": "Municipal water distribution / leak reduction / network resilience",
+      "positiveEvidence": [
+        "Q3 net sales +4.1% YoY while adjusted EBITDA rose 24.3% and adjusted EBITDA margin expanded to 27.1%.",
+        "Adjusted EPS +47.1% YoY and annual adjusted EBITDA guidance was raised.",
+        "Business is directly exposed to transmission, distribution, measurement, leak detection and pressure management rather than relying on discretionary household water spending.",
+        "Forward P/E was roughly 15x in the Aug 18 snapshot, materially less demanding than many AI/water-growth names."
+      ],
+      "risks": [
+        "Volumes were slightly lower and residential construction remains soft.",
+        "Drought itself does not guarantee immediate municipal orders.",
+        "Pricing and margin expansion could normalise."
+      ],
+      "nextWork": "Municipal backlog/order mix, federal/state water funding exposure and valuation versus historical margin regime."
+    },
+    {
+      "ticker": "CHE.UN",
+      "company": "Chemtrade Logistics Income Fund",
+      "provisionalScore": 8.4,
+      "classification": "Differentiated cross-resource candidate",
+      "theme": "Sulphuric acid + water treatment chemicals",
+      "positiveEvidence": [
+        "One of North America's largest sulphuric-acid and spent-acid processors, with water-treatment chemicals and high-purity semiconductor acid exposure.",
+        "Q2 revenue +16.5% YoY, helped by higher merchant acid, sulphur and regen-acid pricing.",
+        "Acid segment adjusted EBITDA rose to $53.2m from $43.5m as higher selling prices more than offset higher sulphur costs.",
+        "Water Solutions revenue rose to $181.9m from $139.1m, although input-cost recovery is lagged by fixed-price contracts.",
+        "Approximate Aug 14 valuation: ~12.6x trailing P/E, ~11.4x forward P/E and ~4.3% distribution yield."
+      ],
+      "risks": [
+        "Not a pure sulphur-price beneficiary because sulphur is also an input.",
+        "Water Solutions margins are temporarily squeezed by contract repricing lags.",
+        "Canadian income-fund structure, commodity cyclicality and smaller-cap liquidity."
+      ],
+      "nextWork": "Acid contract structure, source-of-sulphur exposure, free-cash-flow coverage of distribution and sensitivity to normalised acid pricing."
+    },
+    {
+      "ticker": "NTR",
+      "company": "Nutrien",
+      "provisionalScore": 8.0,
+      "classification": "Diversified fertilizer candidate / less clean than CF",
+      "theme": "Potash + nitrogen + retail",
+      "positiveEvidence": [
+        "Global nitrogen market expected to stay tight in H2 2026 from disruptions, outages and strong India/Brazil import demand.",
+        "Potash remains the most affordable major nutrient and first-half potash volumes were strong.",
+        "Approximate Aug 18 valuation around 13x forward P/E and 7x EV/EBITDA."
+      ],
+      "risks": [
+        "Q2 nitrogen sales volumes fell more than 25% and lower volumes offset higher prices.",
+        "Phosphate is exposed to sulphur-feedstock inflation and weak economics.",
+        "More diversified exposure means less direct capture of the US-gas/global-nitrogen arbitrage."
+      ],
+      "nextWork": "Separate potash, nitrogen and retail earnings sensitivities rather than valuing NTR as one fertilizer beta."
+    },
+    {
+      "ticker": "STA / NC2",
+      "company": "Sri Trang Agro-Industry",
+      "provisionalScore": 7.8,
+      "classification": "Higher-risk natural-rubber candidate",
+      "theme": "Natural rubber acreage/labour scarcity",
+      "positiveEvidence": [
+        "Natural rubber represented 80.3% of Q2 revenue.",
+        "Q2 natural-rubber ASP rose 12.4% QoQ to the highest level in 12 years; SICOM TSR20 reached the highest level in more than 10 years in June.",
+        "Q2 natural-rubber revenue rose 16.5% QoQ.",
+        "Dual-listed exposure is available as STA in Thailand and NC2 in Singapore.",
+        "Shares traded around 0.6x book in early August."
+      ],
+      "risks": [
+        "Natural-rubber sales volume fell 10.9% YoY and facility utilisation was only 50.5%.",
+        "China represented 60.2% of revenue.",
+        "The company was loss-making in 2025 and its enterprise-value/EBITDA multiple remains high despite low price-to-book.",
+        "Glove segment adds a separate cycle and raw-material/freight exposure."
+      ],
+      "nextWork": "Q2 net-profit bridge, debt/working-capital cycle, rubber inventory accounting and sensitivity to TSR20 prices."
+    },
+    {
+      "ticker": "CTVA",
+      "company": "Corteva",
+      "provisionalScore": 8.0,
+      "classification": "Quality agriculture exposure, not a direct scarcity trade",
+      "theme": "Seeds / crop protection / yield productivity",
+      "positiveEvidence": [
+        "Raised full-year adjusted profit outlook in July.",
+        "Scarcer fertilizer and water make yield-protecting genetics and precision input use more valuable over time."
+      ],
+      "risks": [
+        "Q2 revenue missed estimates, seed sales were flat and crop protection sales fell 4%.",
+        "Weak crop prices and high input costs constrain farmer spending."
+      ],
+      "nextWork": "Trait pricing, seed share and whether proprietary products can gain while farmers cut commodity inputs."
+    },
+    {
+      "ticker": "VMI",
+      "company": "Valmont Industries",
+      "provisionalScore": 7.9,
+      "classification": "Long-term irrigation beneficiary but near-term demand is gated",
+      "theme": "Irrigation efficiency + infrastructure crossover",
+      "positiveEvidence": [
+        "Drought and water restrictions increase the economic value of efficient irrigation.",
+        "Infrastructure business provides diversification from the farm cycle."
+      ],
+      "risks": [
+        "Q2 agriculture sales fell 15.8%, North American irrigation sales fell 2.3% and international agriculture sales fell 28.9%.",
+        "Physical need is not translating into orders quickly because farm economics are weak."
+      ],
+      "nextWork": "Wait for irrigation order inflection or policy/subsidy support rather than assuming drought alone creates near-term earnings."
+    }
+  ],
+  "falseFriends": [
+    {
+      "ticker": "MOS",
+      "reason": "High phosphate prices look bullish, but sulphur scarcity has forced phosphate curtailments and can squeeze producer margins. Treat as a conditional recovery trade, not an automatic scarcity beneficiary."
+    },
+    {
+      "ticker": "DE",
+      "reason": "Latest earnings strength is being driven by construction/data-centre equipment; Production & Precision Agriculture revenue still fell 6%. Do not confuse Deere's share-price strength with an agriculture-scarcity earnings inflection."
+    },
+    {
+      "ticker": "AGCO",
+      "reason": "Farmers are delaying equipment purchases because fertilizer and fuel costs rose sharply. Precision-ag efficiency tools are strategically relevant, but the current farm-equipment cycle remains weak."
+    },
+    {
+      "ticker": "SMTO3",
+      "reason": "India's sugar import pivot is interesting for the commodity, but São Martinho's latest quarter still showed lower sugar pricing and weaker profit. Needs a fresh price/hedge/operations screen before promotion."
+    }
+  ],
+  "watchOnly": [
+    {
+      "theme": "Aluminium",
+      "signal": "LME stocks at a 36-year low while Chinese alloy/semi exports suppress the headline shortage signal.",
+      "nextResearch": "Screen low-cost primary aluminium producers outside disrupted Gulf capacity and quantify China-export sensitivity."
+    },
+    {
+      "theme": "Sugar",
+      "signal": "India's first duty-free raw-sugar import move in nearly a decade arrived after speculative positioning was net short.",
+      "nextResearch": "Track whether global futures reprice before Brazilian producer earnings do."
+    },
+    {
+      "theme": "Cocoa",
+      "signal": "West African supply/regulatory risks coexist with net-short speculative positioning.",
+      "nextResearch": "No clean listed upstream equity found yet; avoid forcing chocolate manufacturers into a beneficiary bucket when cocoa inflation is a cost."
+    },
+    {
+      "theme": "Cattle / beef",
+      "signal": "US cattle scarcity drives record input costs, but processors can lose money when cattle costs outrun boxed-beef pricing.",
+      "nextResearch": "Look for substitution beneficiaries rather than assuming meat processors benefit from higher beef prices."
+    }
+  ],
+  "sources": [
+    {"date":"2026-08-20","title":"US to end summer blend gasoline requirement early in attempt to lower prices","url":"https://www.reuters.com/business/energy/us-end-summer-blend-gasoline-requirement-early-attempt-lower-prices-2026-08-20/"},
+    {"date":"2026-08-17","title":"US diesel crack surpasses $100 a barrel for the first time on supply disruptions","url":"https://www.reuters.com/business/energy/us-diesel-crack-surpasses-100-barrel-first-time-supply-disruptions-2026-08-17/"},
+    {"date":"2026-07-09","title":"The Iran War threatened a food crisis. The next Gulf conflict could do the same","url":"https://www.reuters.com/world/iran/iran-war-threatened-food-crisis-next-gulf-conflict-could-do-same-2026-07-09/"},
+    {"date":"2026-06-26","title":"Fertiliser shipments begin exiting through Hormuz strait","url":"https://www.reuters.com/world/middle-east/fertiliser-shipments-begin-exiting-through-hormuz-strait-2026-06-26/"},
+    {"date":"2026-08-07","title":"Indonesian rubber growers bet the farm on oil palm","url":"https://www.reuters.com/world/asia-pacific/indonesian-rubber-growers-bet-farm-oil-palm-2026-08-07/"},
+    {"date":"2026-08-11","title":"Europe's deepening drought","url":"https://www.reuters.com/sustainability/europes-deepening-drought-2026-08-11/"},
+    {"date":"2026-08-14","title":"French drought could halve maize crop, deepen EU harvest losses","url":"https://www.reuters.com/business/environment/french-drought-could-halve-maize-crop-deepen-eu-harvest-losses-2026-08-14/"},
+    {"date":"2026-08-20","title":"India allows duty-free imports of 1 million metric tons of raw sugar","url":"https://www.reuters.com/world/india/india-allows-duty-free-imports-sugar-2026-08-20/"},
+    {"date":"2026-08-13","title":"Aluminium on thin ice as LME stocks hit 36-year low","url":"https://www.reuters.com/commentary/reuters-open-interest/aluminium-thin-ice-lme-stocks-hit-36-year-low-2026-08-13/"}
+  ]
+}
