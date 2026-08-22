@@ -1,35 +1,59 @@
 {
-  "lastUpdated": "2026-08-21",
-  "asOf": "2026-08-21T08:59:00+08:00",
-  "summary": "The macro backdrop is mixed-to-hostile for long-duration equities despite strong physical infrastructure demand. Long-end Treasury yields rebounded after the initial buyback relief, energy inflation remains elevated because refining/product disruptions are severe, China is leaning on fiscal infrastructure rather than fresh rate cuts, and copper is physically tight but partly distorted by a flash squeeze.",
+  "lastUpdated": "2026-08-22",
+  "asOf": "2026-08-22T08:58:00+08:00",
+  "marketDataThrough": "2026-08-21 US close",
+  "summary": "The macro regime remains supportive for physical infrastructure demand but hostile to indiscriminate duration. Long-end Treasury yields stayed elevated after the temporary buyback relief, oil rose for a sixth session as Iran risk persisted, the dollar weakened on fiscal/buyback concerns, and technology finished the week under pressure. Strong industrial demand therefore coexists with a higher discount rate and renewed energy inflation risk.",
   "usRates": {
-    "tenYearYieldApprox": 4.70,
-    "thirtyYearYieldApprox": 5.247,
-    "read": "Restrictive long-end discount rates remain the main valuation headwind for AI/data-centre, grid and robotics growth names. Treasury buybacks improved liquidity but did not solve fiscal/inflation pressure.",
-    "source": "https://www.reuters.com/world/china/global-markets-global-markets-2026-08-20/"
+    "tenYearYieldApprox": 4.71,
+    "thirtyYearYieldApprox": 5.25,
+    "recentThirtyYearHigh": 5.34,
+    "read": "Treasury buybacks improved liquidity for roughly a day but did not reverse the fiscal/inflation-driven long-end repricing. This remains the principal valuation risk for high-multiple AI infrastructure, speculative nuclear developers and humanoid robotics.",
+    "sources": [
+      "https://www.reuters.com/world/china/global-markets-global-markets-2026-08-21/",
+      "https://www.reuters.com/commentary/reuters-open-interest/global-markets-view-usa-2026-08-21/"
+    ]
+  },
+  "fx": {
+    "dollarIndexApprox": 98.80,
+    "read": "The dollar weakened to roughly three-month lows despite high nominal yields as Treasury-buyback and fiscal-sustainability concerns reduced the usual rate support. A softer dollar is incrementally supportive for globally priced commodities, but the signal is currently mixed with elevated real/long-end yields.",
+    "source": "https://www.reuters.com/business/dollar-wobbles-investors-balk-us-treasurys-rescue-efforts-2026-08-21/"
   },
   "energy": {
-    "brentApprox": 93.49,
-    "read": "Crude is geopolitically supported, but the more important current signal is refined-product scarcity. U.S. diesel crack spreads exceeded $100/bbl and global refinery outages keep product inflation elevated.",
+    "brentApprox": 93.5,
+    "weeklyDirection": "up more than 6%",
+    "read": "Crude remains geopolitically supported, but refined products are still the stronger signal. U.S. diesel crack spreads exceeded $100/bbl, distillate inventories are historically tight and refinery outages in the Middle East/Russia keep middle-distillate margins structurally stronger than gasoline or crude beta alone.",
     "sources": [
       "https://www.reuters.com/business/energy/us-diesel-crack-surpasses-100-barrel-first-time-supply-disruptions-2026-08-17/",
-      "https://www.reuters.com/commentary/reuters-open-interest/iran-war-energy-crisis-is-just-getting-started-2026-08-20/"
+      "https://www.reuters.com/business/us-stock-futures-rise-after-sharp-losses-prior-session-2026-08-21/"
     ]
+  },
+  "riskAssets": {
+    "sp500FridayClose": 7674.37,
+    "sp500WeeklyChangePct": -1.4,
+    "nasdaqWeeklyChangePct": -2.1,
+    "read": "Friday's rebound did not repair the weekly duration shock. Semiconductor and long-duration growth remain highly sensitive to the bond market, so technical stance should distinguish strong operating momentum from stretched entry points.",
+    "source": "https://apnews.com/article/09c079b43680c3e4564346892b5dc824"
   },
   "china": {
     "oneYearLPR": 3.00,
     "fiveYearLPR": 3.50,
-    "read": "Rates were left unchanged for a 15th month. Weak July domestic data persists, but policy is leaning toward accelerated fiscal/infrastructure execution rather than aggressive monetary easing.",
+    "read": "Benchmark lending rates remain unchanged. The preferred China expression remains selective fiscal/state-capex exposure in power, grid, nuclear and automation rather than a broad domestic-demand reflation trade.",
     "source": "https://www.reuters.com/world/asia-pacific/china-leaves-loan-rates-steady-15th-consecutive-month-august-2026-08-20/"
   },
   "metals": {
-    "copperCashHighApproxPerTonne": 14912,
-    "read": "Copper's structural bottleneck thesis is strengthened, but near-term price action is distorted by concentrated positions, low live LME stocks and U.S.-bound inventory arbitrage. Do not extrapolate squeeze pricing into permanent margins.",
-    "source": "https://www.reuters.com/commentary/reuters-open-interest/lme-gripped-by-flash-squeeze-copper-tensions-boil-over-2026-08-19/"
+    "copperRead": "Structural scarcity remains valid, reinforced by ISM short-supply signals, but recent LME price action contains squeeze/positioning noise. Avoid capitalising extreme spot pricing into permanent earnings.",
+    "aluminiumRead": "Western aluminium availability remains unusually tight even as Chinese alloy/semi exports soften the visible benchmark-price response.",
+    "sources": [
+      "https://www.reuters.com/commentary/reuters-open-interest/lme-gripped-by-flash-squeeze-copper-tensions-boil-over-2026-08-19/",
+      "https://www.reuters.com/commentary/reuters-open-interest/aluminium-thin-ice-lme-stocks-hit-36-year-low-2026-08-13/"
+    ]
   },
-  "riskAssets": {
-    "read": "The S&P 500 and Nasdaq fell on August 20 as bond yields rebounded, confirming that duration sensitivity remains high even while AI enthusiasm persists.",
-    "source": "https://www.reuters.com/world/china/global-markets-global-markets-2026-08-20/"
-  },
-  "powerStackImplication": "Keep highest conviction in profitable physical bottlenecks with backlog and pricing power. Treat long-duration AI infrastructure and speculative robotics/nuclear developers more tactically while 10Y/30Y yields remain elevated. Refiners retain a stronger near-term setup than generic crude beta. China/HK power and nuclear remain supported by fiscal/state capex, but weak domestic demand argues against a broad cyclical upgrade."
+  "nextTests": [
+    "Nvidia Q2 earnings on 2026-08-26 as the next major AI-capex demand/cash-return test",
+    "Jackson Hole guidance and July PCE for the long-end inflation/rate regime",
+    "Diesel/jet cracks versus gasoline after US fuel-policy interventions",
+    "Any sustained move in 30Y yields above the recent 5.34% high",
+    "September 1/3 official ISM releases"
+  ],
+  "powerStackImplication": "Keep highest conviction in profitable grid/electrical/generation and selected first-wave automation businesses with backlog, pricing power and real cash flow. Maintain tactical refining strength. Keep speculative nuclear/humanoid and the most AI-duration-sensitive equities below the physical bottleneck layer until either yields ease or operating cash conversion improves."
 }
