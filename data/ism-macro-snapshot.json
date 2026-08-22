@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-08-21",
-  "lastVerifiedAt": "2026-08-21T08:59:00+08:00",
+  "lastUpdated": "2026-08-22",
+  "lastVerifiedAt": "2026-08-22T08:58:00+08:00",
   "sourcePolicy": "Official ISM monthly reports are authoritative. This file stores a compact analytical snapshot and selected Power Stack-relevant observations, not a reconstructed ISM index database or confidential survey submissions.",
   "releaseStatus": {
     "latestManufacturingReportMonth": "July 2026",
@@ -27,14 +27,14 @@
     },
     "industryRead": {
       "expandingPowerStackRelevant":["Electrical Equipment, Appliances & Components","Primary Metals","Transportation Equipment","Machinery","Computer & Electronic Products","Fabricated Metal Products"],
-      "contracting":["Chemical Products"]
+      "notableDetail":"Electrical Equipment and Computer & Electronic Products reported higher new orders; both also reported higher prices, slower supplier deliveries and customers' inventories that were too low. Computer & Electronic Products also reported higher production, employment and backlog."
     },
     "selectedSupplySignals": {
-      "upInPrice":["Copper","Electrical Components","Electronic Components","Integrated Circuits","Memory Components","Freight","Fuel","Oil Based Products","Printed Circuit Boards","Semiconductors","Steel"],
+      "upInPrice":["Aluminum","Copper","Electrical Components","Electronic Components","Freight","Fuel","Integrated Circuits","Memory Components","Ocean Freight","Oil Based Products","Printed Circuit Boards","Semiconductors","Steel","Sulfur Products"],
       "downInPrice":["Aluminum","Fuel","Polypropylene Resin"],
       "shortSupply":["Aluminum","Copper","Electrical Components","Electronic Components","Integrated Circuits","Memory","Oil Based Products","Printed Circuit Boards","Rare Earth Components","Semiconductors","Steel","Hot Rolled Steel","Tungsten Products"]
     },
-    "powerStackInterpretation": "Still strongly supportive of physical-infrastructure demand. Production, orders and backlog accelerated, while customers' inventories fell further into 'too low' territory. The short-supply list continues to include copper, electrical/electronic components, memory and semiconductors. The counterweight is high Prices and slower Supplier Deliveries, which favour suppliers with pricing power and backlog visibility over low-margin contractors."
+    "powerStackInterpretation": "Manufacturing demand is not merely holding up; orders, production, employment and backlog all strengthened. The strongest direct Power Stack confirmation is the combination of electrical/electronics growth with too-low customer inventories and persistent component scarcity. Prices at 71.1 and slower deliveries mean supplier pricing power remains valuable, while low-margin contractors face input and schedule risk."
   },
   "services": {
     "reportMonth": "July 2026",
@@ -53,20 +53,22 @@
       "inventorySentiment":{"value":52.5,"prior":52.6,"change":-0.1}
     },
     "industryRead": {
-      "expandingPowerStackRelevant":["Transportation & Warehousing","Wholesale Trade","Information","Construction","Utilities","Mining","Professional, Scientific & Technical Services"]
+      "expandingPowerStackRelevant":["Transportation & Warehousing","Wholesale Trade","Information","Construction","Utilities","Mining","Professional, Scientific & Technical Services"],
+      "commentRead":"Construction remained in expansion and reported higher new orders and employment, but the selected public comment described softer overall business volume alongside mounting cost pressures. This supports demand for infrastructure while warning against assuming every contractor converts demand into margin."
     },
     "selectedSupplySignals": {
       "upInPrice":["Computers and Related Items","Memory Products","Petroleum Based Products","Switchgear","Transformers","Transportation"],
       "shortSupply":["Electronic Components","Labor - Technical","Memory Components","Switchgear","Wire and Cable"]
     },
-    "powerStackInterpretation": "Demand remains resilient, but inflation is not solved. Business activity and new orders accelerated while employment contracted and Prices returned above 70. Grid, switchgear, transformer, cable and data-centre balance-of-system suppliers retain strong demand support; high fuel, financing and labour costs remain a risk for contractors and transport-intensive businesses."
+    "powerStackInterpretation": "Services demand remains resilient but expensive. Business Activity and New Orders accelerated while Prices rose above 70 and employment contracted. Switchgear, transformers, wire/cable and technical labour remain bottlenecks, directly supporting the grid/electrical thesis while increasing execution risk for labour- and freight-heavy construction names."
   },
   "respondentCommentReview": {
     "scope": "Only ISM-selected public respondent comments and aggregate diffusion data were reviewed.",
     "powerStackTopics": ["AI/data centres","electrical equipment","semiconductors","memory","copper","transformers","switchgear","wire/cable","oil/fuel/freight","defence/aerospace","construction","industrial demand"],
-    "conclusion": "Selected comments and commodity tables continue to corroborate AI/data-centre procurement, electrical-equipment slot competition, semiconductor/memory demand, defence strength and elevated fuel/freight costs. No evidence today justifies changing the adoption or category hierarchy beyond the existing physical-bottleneck bias."
+    "finding":"No public July comment explicitly used the phrase artificial intelligence, so Power Stack does not infer a confidential AI-specific survey signal. The aggregate industry and commodity evidence is nevertheless strong: Electrical Equipment and Computer & Electronic Products expanded orders and production, customers' inventories were too low, and memory/semiconductors/electrical components remained scarce. Services separately listed switchgear, transformers and transportation among rising-price items and switchgear/wire-cable among short-supply items.",
+    "conclusion": "The official July reports reinforce the physical-bottleneck framework but do not justify claiming direct respondent evidence on specific hyperscalers, transformer OEMs or individual data-centre projects."
   },
-  "combinedRead": "July ISM remains more bullish for Power Stack physical demand than for a clean disinflation story: manufacturing re-accelerated sharply and services demand stayed firm, but both surveys still show bottlenecks and high prices. The best-positioned exposures remain grid equipment, electrical components, power generation, gas infrastructure and selected automation suppliers with pricing power and backlog visibility.",
+  "combinedRead": "July ISM is bullish for Power Stack physical demand but not for disinflation: manufacturing re-accelerated sharply and services demand stayed firm, while prices, supplier delays and scarce electrical/electronic inputs remained elevated. Prefer backlog-rich equipment, generation, grid, cable, water and first-wave automation suppliers with pricing power over low-margin contractors and long-duration concept equities.",
   "historicalFallback": "https://github.com/HelloThereMatey/tedata",
   "rawSubmissionNote": "ISM does not publish the confidential individual survey submission database. Only aggregate diffusion data and selected respondent comments are public; Power Stack does not claim access to raw panel submissions."
 }
