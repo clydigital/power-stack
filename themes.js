@@ -119,9 +119,10 @@
     }),
     fetch('data/water-cooling-research.json', { cache: 'no-store' }).then(res => res.ok ? res.json() : null).catch(() => null),
     fetch('data/resource-stock-screen-2026-08-21.json', { cache: 'no-store' }).then(res => res.ok ? res.json() : null).catch(() => null),
-    fetch('data/deep-bottleneck-stock-screen-2026-08-21.json', { cache: 'no-store' }).then(res => res.ok ? res.json() : null).catch(() => null)
+    fetch('data/deep-bottleneck-stock-screen-2026-08-21.json', { cache: 'no-store' }).then(res => res.ok ? res.json() : null).catch(() => null),
+    fetch('data/adjacent-theme-overlay-2026-08-24.json', { cache: 'no-store' }).then(res => res.ok ? res.json() : null).catch(() => null)
   ])
-    .then(([data, water, resource, deep]) => {
+    .then(([data, water, resource, deep, adjacent]) => {
       const themes = Array.isArray(data?.themes) ? data.themes.map(theme => ({ ...theme })) : [];
 
       if (water) {
@@ -148,9 +149,10 @@
 
       applyResearchOverlay(themes, resource);
       applyResearchOverlay(themes, deep);
+      applyResearchOverlay(themes, adjacent);
 
       count.textContent = themes.length;
-      updated.textContent = deep?.lastUpdated || resource?.lastUpdated || data?.lastUpdated || water?.lastUpdated || '—';
+      updated.textContent = adjacent?.lastUpdated || deep?.lastUpdated || resource?.lastUpdated || data?.lastUpdated || water?.lastUpdated || '—';
       list.innerHTML = themes.length
         ? themes.map(renderTheme).join('')
         : '<div class="empty-themes">No developing themes are currently recorded.</div>';
