@@ -133,13 +133,14 @@
         const url = typeof input === 'string' ? input : input?.url;
         if (url !== 'data/ideas.json') return nativeFetch(input, init);
 
-        const [coreRes, roboticsRes, opportunityRes, videoScreenRes, ttRes, nbisRes] = await Promise.all([
+        const [coreRes, roboticsRes, opportunityRes, videoScreenRes, ttRes, nbisRes, aug24Res] = await Promise.all([
           nativeFetch(input, init),
           nativeFetch('data/robotics-research.json', { cache: 'no-store' }).catch(() => null),
           nativeFetch('data/video-opportunity-research.json', { cache: 'no-store' }).catch(() => null),
           nativeFetch('data/video-screen-2026-08-20.json', { cache: 'no-store' }).catch(() => null),
           nativeFetch('data/tt-research.json', { cache: 'no-store' }).catch(() => null),
-          nativeFetch('data/nbis-research.json', { cache: 'no-store' }).catch(() => null)
+          nativeFetch('data/nbis-research.json', { cache: 'no-store' }).catch(() => null),
+          nativeFetch('data/idea-promotions-2026-08-24.json', { cache: 'no-store' }).catch(() => null)
         ]);
 
         if (!coreRes.ok) return coreRes;
@@ -150,12 +151,15 @@
         const videoScreenPayload = videoScreenRes?.ok ? await videoScreenRes.json() : null;
         const ttPayload = ttRes?.ok ? await ttRes.json() : null;
         const nbisPayload = nbisRes?.ok ? await nbisRes.json() : null;
+        const aug24Payload = aug24Res?.ok ? await aug24Res.json() : null;
         const supplemental = [
           ...(Array.isArray(roboticsPayload?.ideas) ? roboticsPayload.ideas : []),
           ...(Array.isArray(opportunityPayload?.ideas) ? opportunityPayload.ideas : []),
           ...(Array.isArray(videoScreenPayload?.promotedOrAdded) ? videoScreenPayload.promotedOrAdded : []),
           ...(ttPayload?.ticker ? [ttPayload] : []),
-          ...(nbisPayload?.ticker ? [nbisPayload] : [])
+          ...(nbisPayload?.ticker ? [nbisPayload] : []),
+          ...(Array.isArray(aug24Payload?.promotions) ? aug24Payload.promotions : []),
+          ...(Array.isArray(aug24Payload?.tacticalWatches) ? aug24Payload.tacticalWatches : [])
         ];
         const existing = new Set(core.map(x => x.ticker));
         const normalisedSupplemental = supplemental
@@ -167,7 +171,11 @@
             themeDependency: x.themeDependency ?? 3,
             cyclicality: x.cyclicality ?? 3,
             speculation: x.speculation ?? (/speculative/i.test(x.status || '') ? 4 : 2),
-            lastUpdated: x.lastUpdated ?? roboticsPayload?.lastUpdated ?? opportunityPayload?.lastUpdated ?? videoScreenPayload?.date ?? ttPayload?.lastUpdated ?? nbisPayload?.lastUpdated ?? '2026-08-20'
+            thesis: x.thesis ?? x.researchNote ?? 'Research watch; full thesis is in the current deep-research packet.',
+            catalysts: x.catalysts ?? 'Monitor the current catalyst set in the Aug 24 deep-research packet.',
+            risks: x.risks ?? 'Theme and cycle risk remain elevated; treat as research-stage exposure.',
+            sources: Array.isArray(x.sources) ? x.sources : [],
+            lastUpdated: x.lastUpdated ?? aug24Payload?.date ?? roboticsPayload?.lastUpdated ?? opportunityPayload?.lastUpdated ?? videoScreenPayload?.date ?? ttPayload?.lastUpdated ?? nbisPayload?.lastUpdated ?? '2026-08-24'
           }));
 
         return new Response(JSON.stringify([...core, ...normalisedSupplemental]), {
