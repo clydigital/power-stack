@@ -3,25 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Power Stack current holdings — fundamental anchor with live Macro Dashboard and Developing Themes overlays." />
+  <meta name="description" content="Power Stack current holdings — fundamentals-only scorecard for earnings, cash flow, balance sheet, business quality, growth and valuation." />
   <title>Current Holdings · Power Stack</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .holdings-nav{display:grid;gap:4px}.holdings-nav a{text-decoration:none;display:block}.holdings-nav .nav-item.active{border:1px solid #6b4721;background:#1d140b}
-    .rule-strip{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}.rule-chip{font-size:8px;text-transform:uppercase;letter-spacing:.07em;color:#9aa4ac;border:1px solid #242c33;background:#090d10;border-radius:999px;padding:5px 7px}.rule-chip.live{color:#ffd89a;border-color:#5c3d1d;background:#1b1209}.rule-chip.excluded{color:#7f8992;text-decoration:line-through}
+    .holdings-nav{display:grid;gap:4px}.holdings-nav a{text-decoration:none;display:block}.holdings-nav .nav-item.active{border:1px solid #294337;background:#0d1812}
+    .rule-strip{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}.rule-chip{font-size:8px;text-transform:uppercase;letter-spacing:.07em;color:#9aa4ac;border:1px solid #242c33;background:#090d10;border-radius:999px;padding:5px 7px}.rule-chip.excluded{color:#7f8992;text-decoration:line-through}
     .method-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(320px,.8fr);gap:16px}.method-copy{font-size:11px;line-height:1.6;color:#b8c0c7}.method-copy p{margin:0 0 10px}.weights{display:grid;gap:8px}.weight-row{display:grid;grid-template-columns:minmax(0,1fr) 45px;gap:10px;align-items:center;font-size:10px;color:#aeb7bf}.weight-row b{text-align:right;color:#e8e5db;font-variant-numeric:tabular-nums}.weight-track{grid-column:1/-1;height:4px;border-radius:10px;background:#20262c;overflow:hidden;margin-top:-4px}.weight-fill{height:100%;background:var(--green)}
-    .live-method{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0}.live-method-card{border:1px solid var(--line);background:#0b0f12;border-radius:10px;padding:12px}.live-method-card span,.live-method-card small{display:block}.live-method-card span{font-size:8px;text-transform:uppercase;letter-spacing:.08em;color:#77818a}.live-method-card b{display:block;font-size:18px;margin:4px 0;color:#e8e5db}.live-method-card small{font-size:8px;line-height:1.35;color:#6f7880}.live-method-card.live-ok{border-color:#2c4d3b}.live-method-card.live-stale{border-color:#50462c}
-    .ranking-panel{padding:0;overflow:hidden;margin:12px 0}.ranking-head{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:15px 17px;border-bottom:1px solid var(--line)}.ranking-head h2{font-size:18px;margin:4px 0 0}.ranking-head span{font-size:9px;color:#78838c}.ranking-wrap{overflow:auto}.ranking{width:100%;border-collapse:collapse;min-width:980px}.ranking th,.ranking td{text-align:left;padding:11px 14px;border-bottom:1px solid #1c2227;font-size:10px}.ranking th{font-size:8px;color:#707a84;text-transform:uppercase;letter-spacing:.1em;background:#0b0f12}.ranking tr:last-child td{border-bottom:0}.ranking td:nth-child(1){width:42px;color:#68727b}.ranking td:nth-child(2) strong{display:block;font-size:12px;color:#eef0ed}.ranking td:nth-child(2) span{font-size:9px;color:#7b858e}.ranking-score{font-weight:900;font-size:14px;font-variant-numeric:tabular-nums}.live-ranking-score{color:#ffd07d}.overlay-number{font-weight:800;font-variant-numeric:tabular-nums}.overlay-pos{color:var(--green)!important}.overlay-neg{color:var(--red)!important}.overlay-neutral{color:#9099a0!important}
-    .grade-pill{display:inline-flex;border:1px solid #303840;border-radius:999px;padding:4px 7px;font-size:8px;font-weight:800;letter-spacing:.05em}.grade-a{color:var(--green);border-color:#2c4d3b;background:#0d1913}.grade-b{color:#c7d9e8;border-color:#314455;background:#0d141a}.grade-c{color:var(--amber);border-color:#50462c;background:#18150d}.grade-f{color:var(--red);border-color:#513033;background:#1a1011}
-    .holdings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.holding-card{border:1px solid var(--line);background:linear-gradient(180deg,#101419,#0c1013);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:13px}.holding-card-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}.holding-title{display:flex;gap:10px;align-items:center}.holding-ticker{font-size:24px;font-weight:900;letter-spacing:-.045em}.holding-name{font-size:10px;color:#7f8992;margin-top:2px}.holding-status{font-size:10px;font-weight:700;color:#cbd1d5;margin-top:2px}.score-stack{display:flex;gap:7px}.score-orb{width:58px;height:58px;flex:0 0 58px;border:1px solid #31403a;border-radius:50%;display:grid;place-items:center;background:#0a0f0d}.score-orb b{font-size:18px;letter-spacing:-.05em}.score-orb span{font-size:7px;color:#728078;text-transform:uppercase;letter-spacing:.08em;display:block;text-align:center;margin-top:-5px}.live-orb{border-color:#7d5428;background:radial-gradient(circle at 50% 35%,#24180d,#0b0d0f)}.live-orb b{color:#ffd07d}.fundamental-orb{opacity:.82}
-    .overlay-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.overlay-strip>div{border:1px solid #20272d;background:#090d10;border-radius:8px;padding:8px 9px}.overlay-strip span{display:block;font-size:7px;color:#6f7880;text-transform:uppercase;letter-spacing:.08em}.overlay-strip b{display:block;font-size:12px;margin-top:3px;font-variant-numeric:tabular-nums}.metric-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.metric{border:1px solid #20272d;background:#090d10;border-radius:8px;padding:8px 9px;font-size:9px;color:#9da7af;line-height:1.35}.component-grid{display:grid;gap:7px}.component-row{display:grid;grid-template-columns:125px minmax(0,1fr) 48px;gap:8px;align-items:center;font-size:8px;color:#77818a}.component-row b{font-size:9px;text-align:right;color:#c8cfd5;font-variant-numeric:tabular-nums}.component-track{height:4px;border-radius:10px;background:#20262c;overflow:hidden}.component-fill{height:100%;border-radius:inherit;background:var(--blue)}
-    .context-drivers-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.context-driver-panel{border:1px solid #20272d;background:#090d10;border-radius:9px;padding:10px}.context-driver-panel h3{font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:#ffd07d;margin:0 0 8px}.driver-row{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-top:1px solid #171d22}.driver-row:first-of-type{border-top:0;padding-top:0}.driver-row div{min-width:0}.driver-row strong,.driver-row span{display:block}.driver-row strong{font-size:9px;color:#c3cbd1}.driver-row span{font-size:7px;color:#69737b;margin-top:2px}.driver-row b{font-size:9px;font-variant-numeric:tabular-nums}.driver-empty{font-size:8px;color:#68727b;line-height:1.4}
-    .card-section{border-top:1px solid #1b2126;padding-top:10px}.card-section h3{font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin:0 0 5px}.card-section p{margin:0;font-size:10px;line-height:1.55;color:#adb6be}.card-section.risk h3{color:var(--red)}.card-section.verdict h3{color:var(--blue)}.source-list{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto;padding-top:2px}.source-list a{font-size:8px;color:#8fb8df;text-decoration:none;border:1px solid #253341;border-radius:999px;padding:5px 7px}.source-list a:hover{border-color:#45627a;color:#c6def2}.error-state{grid-column:1/-1;padding:50px;text-align:center;color:var(--red);border:1px dashed #513033;border-radius:12px}
-    @media(max-width:1100px){.holdings-grid{grid-template-columns:1fr}.method-grid{grid-template-columns:1fr}.live-method{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:650px){.metric-grid,.context-drivers-grid,.overlay-strip{grid-template-columns:1fr}.component-row{grid-template-columns:110px minmax(0,1fr) 42px}.ranking-head{align-items:flex-start;flex-direction:column}.score-orb{width:52px;height:52px;flex-basis:52px}.live-method{grid-template-columns:1fr}.score-stack{gap:4px}}
+    .ranking-panel{padding:0;overflow:hidden;margin:12px 0}.ranking-head{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:15px 17px;border-bottom:1px solid var(--line)}.ranking-head h2{font-size:18px;margin:4px 0 0}.ranking-head span{font-size:9px;color:#78838c}.ranking-wrap{overflow:auto}.ranking{width:100%;border-collapse:collapse;min-width:760px}.ranking th,.ranking td{text-align:left;padding:11px 14px;border-bottom:1px solid #1c2227;font-size:10px}.ranking th{font-size:8px;color:#707a84;text-transform:uppercase;letter-spacing:.1em;background:#0b0f12}.ranking tr:last-child td{border-bottom:0}.ranking td:nth-child(1){width:42px;color:#68727b}.ranking td:nth-child(2) strong{display:block;font-size:12px;color:#eef0ed}.ranking td:nth-child(2) span{font-size:9px;color:#7b858e}.ranking-score{font-weight:900;font-size:14px;font-variant-numeric:tabular-nums}.grade-pill,.confidence-pill{display:inline-flex;border:1px solid #303840;border-radius:999px;padding:4px 7px;font-size:8px;font-weight:800;letter-spacing:.05em}.grade-a{color:var(--green);border-color:#2c4d3b;background:#0d1913}.grade-b{color:#c7d9e8;border-color:#314455;background:#0d141a}.grade-c{color:var(--amber);border-color:#50462c;background:#18150d}.grade-f{color:var(--red);border-color:#513033;background:#1a1011}.confidence-pill{color:#89939c;font-weight:600}.confidence-pill.provisional{color:var(--amber);border-color:#50462c;background:#18150d}
+    .holdings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.holding-card{border:1px solid var(--line);background:linear-gradient(180deg,#101419,#0c1013);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:13px}.holding-card-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}.holding-title{display:flex;gap:10px;align-items:center}.holding-ticker{font-size:24px;font-weight:900;letter-spacing:-.045em}.holding-name{font-size:10px;color:#7f8992;margin-top:2px}.score-orb{width:58px;height:58px;flex:0 0 58px;border:1px solid #31403a;border-radius:50%;display:grid;place-items:center;background:#0a0f0d}.score-orb b{font-size:20px;letter-spacing:-.05em}.score-orb span{font-size:7px;color:#728078;text-transform:uppercase;letter-spacing:.08em;display:block;text-align:center;margin-top:-6px}.holding-status{font-size:10px;font-weight:700;color:#cbd1d5;margin-top:2px}.metric-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.metric{border:1px solid #20272d;background:#090d10;border-radius:8px;padding:8px 9px;font-size:9px;color:#9da7af;line-height:1.35}.component-grid{display:grid;gap:7px}.component-row{display:grid;grid-template-columns:125px minmax(0,1fr) 48px;gap:8px;align-items:center;font-size:8px;color:#77818a}.component-row b{font-size:9px;text-align:right;color:#c8cfd5;font-variant-numeric:tabular-nums}.component-track{height:4px;border-radius:10px;background:#20262c;overflow:hidden}.component-fill{height:100%;border-radius:inherit;background:var(--blue)}.card-section{border-top:1px solid #1b2126;padding-top:10px}.card-section h3{font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin:0 0 5px}.card-section p{margin:0;font-size:10px;line-height:1.55;color:#adb6be}.card-section.risk h3{color:var(--red)}.card-section.verdict h3{color:var(--blue)}.source-list{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto;padding-top:2px}.source-list a{font-size:8px;color:#8fb8df;text-decoration:none;border:1px solid #253341;border-radius:999px;padding:5px 7px}.source-list a:hover{border-color:#45627a;color:#c6def2}.error-state{padding:50px;text-align:center;color:var(--red);border:1px dashed #513033;border-radius:12px}
+    @media(max-width:1100px){.holdings-grid{grid-template-columns:1fr}.method-grid{grid-template-columns:1fr}}
+    @media(max-width:650px){.metric-grid{grid-template-columns:1fr}.component-row{grid-template-columns:110px minmax(0,1fr) 42px}.ranking-head{align-items:flex-start;flex-direction:column}.score-orb{width:52px;height:52px;flex-basis:52px}}
   </style>
 </head>
 <body>
@@ -30,7 +25,7 @@
       <div class="brand-block">
         <div class="eyebrow">INVESTMENT RESEARCH VAULT</div>
         <div class="brand">POWER STACK</div>
-        <div class="brand-sub">CURRENT PORTFOLIO · LIVE CONTEXT</div>
+        <div class="brand-sub">CURRENT PORTFOLIO · FUNDAMENTALS ONLY</div>
       </div>
       <nav class="side-scroll">
         <section class="side-section">
@@ -42,13 +37,13 @@
           </div>
         </section>
         <section class="side-section">
-          <div class="side-heading">Scoring discipline</div>
-          <div class="side-micro">Fundamentals stay fixed until the business, financials or valuation change. Macro Dashboard and Developing Themes move only the separate live overlay.</div>
+          <div class="side-heading">Rating discipline</div>
+          <div class="side-micro">Financial statements first. Theme excitement, crowding, technicals and Macro Pulse are intentionally excluded from this page.</div>
         </section>
       </nav>
       <div class="side-footer">
         <span>Source of truth</span>
-        <strong>GitHub · fundamentals + live context</strong>
+        <strong>GitHub · holdings fundamentals</strong>
       </div>
     </aside>
 
@@ -57,35 +52,34 @@
         <div>
           <div class="eyebrow">PORTFOLIO REALITY CHECK</div>
           <h1>Current Holdings</h1>
-          <p>Fundamental anchor + the same Macro Dashboard logic + explicit Developing Themes exposure.</p>
+          <p>One question only: how good are the businesses and financials at today's valuation?</p>
           <div class="rule-strip">
-            <span class="rule-chip">Fundamentals</span><span class="rule-chip live">Macro live</span><span class="rule-chip live">Themes live</span><span class="rule-chip excluded">Technicals</span><span class="rule-chip excluded">Crowding</span>
+            <span class="rule-chip">Earnings</span><span class="rule-chip">Cash flow</span><span class="rule-chip">Balance sheet</span><span class="rule-chip">Business quality</span><span class="rule-chip">Growth</span><span class="rule-chip">Valuation</span>
+            <span class="rule-chip excluded">Macro</span><span class="rule-chip excluded">Crowding</span><span class="rule-chip excluded">Technicals</span>
           </div>
         </div>
         <div class="top-actions">
           <a class="ghost-link" href="index.html">← All Ideas</a>
           <a class="ghost-link" href="themes.html">Developing Themes →</a>
-          <a class="ghost-link" href="https://macro-indicators-a3d.pages.dev/#econ_calendar" target="_blank" rel="noopener">Macro Dashboard ↗</a>
         </div>
       </header>
 
       <main class="main-content">
         <section id="summaryStats" class="summary-grid"></section>
-        <section id="liveMethod" class="live-method"></section>
 
         <section class="context-panel panel">
           <div class="context-head">
             <div>
               <div class="eyebrow">SCORING METHOD</div>
-              <h2>One stable score, two live overlays</h2>
+              <h2>Fundamentals are separated from the thesis</h2>
             </div>
             <div id="asOf" class="context-meta">Loading…</div>
           </div>
           <div class="method-grid context-body">
             <div class="method-copy">
-              <p><strong>Fundamental Score</strong> remains the slow-moving 0–100 anchor. Earnings, cash flow, balance sheet, business quality, growth and valuation are not altered by a hot theme or a friendly macro print.</p>
-              <p><strong>Macro</strong> reuses the All Ideas stock-specific channel formula and is capped at ±1.00. <strong>Developing Themes</strong> reads the same live theme feed and only contributes when a holding is explicitly listed as Power Stack exposure or a research candidate.</p>
-              <p><strong>Live Score = Fundamental + 5×Macro + 5×Themes.</strong> Each overlay can move the portfolio score by at most five points, so the business remains the anchor. Stale macro packets automatically contribute zero.</p>
+              <p>The score is deliberately harsher than the main Power Stack conviction system. A great narrative cannot rescue weak cash flow, excessive leverage or an extreme valuation here.</p>
+              <p>Scores are cross-sector judgements, not mechanical screens. Property companies are judged with more weight on book value, core earnings and leverage; software and gaming receive more credit for recurring revenue and IP quality; cyclical energy is judged through-cycle rather than on a single oil-price quarter.</p>
+              <p><strong>Important:</strong> this is not a buy/sell signal and does not include portfolio sizing, entry price timing, macro regime, technicals or hedge-fund positioning.</p>
             </div>
             <div id="weights" class="weights"></div>
           </div>
@@ -93,19 +87,104 @@
 
         <section class="ranking-panel panel">
           <div class="ranking-head">
-            <div><div class="eyebrow">RANKED BY LIVE PORTFOLIO SCORE</div><h2>Portfolio scorecard</h2></div>
-            <span>Fundamental score remains visible and unchanged beside the live overlays.</span>
+            <div><div class="eyebrow">RANKED BY FUNDAMENTALS</div><h2>Portfolio scorecard</h2></div>
+            <span>Highest score = strongest current financial proposition, not highest expected share-price return.</span>
           </div>
-          <div class="ranking-wrap"><table class="ranking"><thead><tr><th>#</th><th>Holding</th><th>Fund.</th><th>Macro</th><th>Themes</th><th>Live</th><th>Grade</th><th>Current fundamental read</th></tr></thead><tbody id="rankingBody"></tbody></table></div>
+          <div class="ranking-wrap"><table class="ranking"><thead><tr><th>#</th><th>Holding</th><th>Score</th><th>Grade</th><th>Confidence</th><th>Current fundamental read</th></tr></thead><tbody id="rankingBody"></tbody></table></div>
         </section>
 
         <section id="holdingsGrid" class="holdings-grid"></section>
       </main>
 
-      <footer class="footer">Power Stack · Current Holdings keeps fundamentals separate from live context. Macro uses the same stock-specific engine as All Ideas; Developing Themes only move holdings with explicit ticker links in the curated theme feed.</footer>
+      <footer class="footer">Power Stack · Current Holdings is a fundamentals-only research ledger. Scores should be refreshed after material earnings, balance-sheet or valuation changes.</footer>
     </div>
   </div>
 
-  <script src="holdings-live.js"></script>
+  <script>
+    const maxByComponent = {
+      'Earnings & cash generation': 25,
+      'Balance sheet': 20,
+      'Business quality': 20,
+      'Growth trajectory': 15,
+      'Valuation': 20
+    };
+
+    const gradeClass = grade => grade === 'A' ? 'grade-a' : grade.startsWith('B') ? 'grade-b' : grade.startsWith('C') ? 'grade-c' : 'grade-f';
+    const confidenceClass = value => value === 'Provisional' ? 'confidence-pill provisional' : 'confidence-pill';
+
+    function renderSummary(holdings){
+      const avg = Math.round(holdings.reduce((s,h)=>s+h.score,0)/holdings.length);
+      const strong = holdings.filter(h=>h.score>=70).length;
+      const stretched = holdings.filter(h=>h.score<65).length;
+      const top = [...holdings].sort((a,b)=>b.score-a.score)[0];
+      document.getElementById('summaryStats').innerHTML = [
+        [holdings.length, 'Current holdings scored'],
+        [avg, 'Average fundamental score'],
+        [strong, 'Scores 70+'],
+        [top.ticker, 'Strongest fundamentals']
+      ].map(([v,l])=>`<div class="summary-card"><b>${v}</b><span>${l}</span></div>`).join('');
+    }
+
+    function renderWeights(weights){
+      document.getElementById('weights').innerHTML = Object.entries(weights).map(([name,weight])=>`
+        <div class="weight-row"><span>${name}</span><b>${weight}%</b><div class="weight-track"><div class="weight-fill" style="width:${weight*4}%"></div></div></div>
+      `).join('');
+    }
+
+    function renderRanking(holdings){
+      const sorted = [...holdings].sort((a,b)=>b.score-a.score);
+      document.getElementById('rankingBody').innerHTML = sorted.map((h,i)=>`
+        <tr>
+          <td>${i+1}</td>
+          <td><strong>${h.ticker}</strong><span>${h.name} · ${h.market}</span></td>
+          <td><span class="ranking-score">${h.score}</span></td>
+          <td><span class="grade-pill ${gradeClass(h.grade)}">${h.grade}</span></td>
+          <td><span class="${confidenceClass(h.confidence)}">${h.confidence}</span></td>
+          <td>${h.status}</td>
+        </tr>`).join('');
+    }
+
+    function renderCards(holdings){
+      const sorted = [...holdings].sort((a,b)=>b.score-a.score);
+      document.getElementById('holdingsGrid').innerHTML = sorted.map(h=>{
+        const components = Object.entries(h.components).map(([name,value])=>{
+          const max = maxByComponent[name] || 20;
+          const width = Math.min(100, Math.max(0, value/max*100));
+          return `<div class="component-row"><span>${name}</span><div class="component-track"><div class="component-fill" style="width:${width}%"></div></div><b>${value}/${max}</b></div>`;
+        }).join('');
+        const metrics = h.metrics.map(m=>`<div class="metric">${m}</div>`).join('');
+        const sources = h.sources.map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${s.label} ↗</a>`).join('');
+        return `<article class="holding-card">
+          <div class="holding-card-head">
+            <div>
+              <div class="holding-title"><div><div class="holding-ticker">${h.ticker}</div><div class="holding-name">${h.name} · ${h.market}</div></div><span class="grade-pill ${gradeClass(h.grade)}">${h.grade}</span></div>
+              <div class="holding-status">${h.status}</div>
+            </div>
+            <div class="score-orb"><div><b>${h.score}</b><span>/100</span></div></div>
+          </div>
+          <div class="metric-grid">${metrics}</div>
+          <div class="component-grid">${components}</div>
+          <div class="card-section"><h3>What supports the score</h3><p>${h.strength}</p></div>
+          <div class="card-section risk"><h3>What drags the score</h3><p>${h.weakness}</p></div>
+          <div class="card-section verdict"><h3>Fundamental verdict</h3><p>${h.verdict}</p></div>
+          <div class="source-list">${sources}</div>
+        </article>`;
+      }).join('');
+    }
+
+    fetch('data/holdings-fundamentals.json', {cache:'no-store'})
+      .then(r=>{if(!r.ok) throw new Error(`HTTP ${r.status}`); return r.json();})
+      .then(data=>{
+        document.getElementById('asOf').textContent = `Research snapshot · ${data.asOf}`;
+        renderSummary(data.holdings);
+        renderWeights(data.methodology.weights);
+        renderRanking(data.holdings);
+        renderCards(data.holdings);
+      })
+      .catch(err=>{
+        document.getElementById('holdingsGrid').innerHTML = `<div class="error-state">Could not load holdings data: ${err.message}</div>`;
+        document.getElementById('asOf').textContent = 'Holdings data unavailable';
+      });
+  </script>
 </body>
 </html>
