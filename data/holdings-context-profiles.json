@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "updatedAt": "2026-08-26",
+  "purpose": "Fallback macro fingerprints for current holdings that are not yet present in data/macro-sensitivities.json, plus the holdings live-score policy. Canonical macro-sensitivities always take precedence when a ticker exists there.",
+  "liveScorePolicy": {
+    "formula": "liveScore = fundamentalScore + 5 * macroAdjustment + 5 * themeAdjustment",
+    "macroAdjustmentRange": [-1, 1],
+    "themeAdjustmentRange": [-1, 1],
+    "fundamentalScoreRange": [0, 100],
+    "liveScoreRange": [0, 100],
+    "note": "Fundamentals are never overwritten. Macro and Developing Themes are separate overlays worth at most five score points each."
+  },
+  "themePolicy": {
+    "maxAgeDays": 30,
+    "perThemeScale": 0.35,
+    "candidateExposureMultiplier": 0.5,
+    "directionSignals": {
+      "strengthening": 1.0,
+      "accelerating": 0.8,
+      "improving": 0.6,
+      "cooling": -0.6,
+      "weakening": -0.8,
+      "deteriorating": -1.0
+    },
+    "statusWeights": {
+      "core": 1.0,
+      "active": 1.0,
+      "developing": 0.85,
+      "new": 0.85,
+      "tactical": 0.75,
+      "research": 0.6,
+      "default": 0.75
+    }
+  },
+  "fallbackMacroProfiles": [
+    {
+      "ticker": "XOM",
+      "name": "ExxonMobil",
+      "profileConfidence": 0.9,
+      "profileNote": "Integrated upstream/refining cash flows are most sensitive to crude and refined-product tightness; broad macro demand is secondary.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {"fundamental": 3.0, "market": 2.0, "weight": 0.10, "confidence": 0.85, "rationale": "Stronger activity supports hydrocarbon demand."},
+        "financialConditions": {"fundamental": 0.5, "market": 1.0, "weight": 0.04, "confidence": 0.75, "rationale": "Discount rates matter less than commodity cash flows."},
+        "creditAvailability": {"fundamental": 0.5, "market": 0.5, "weight": 0.03, "confidence": 0.75, "rationale": "Balance-sheet strength limits dependence on credit."},
+        "consumerStrength": {"fundamental": 1.0, "market": 0.5, "weight": 0.03, "confidence": 0.65, "rationale": "Consumer mobility affects fuel demand at the margin."},
+        "industrialCapex": {"fundamental": 1.5, "market": 0.5, "weight": 0.05, "confidence": 0.7, "rationale": "Industrial activity supports energy demand."},
+        "riskAppetite": {"fundamental": 0.0, "market": 0.5, "weight": 0.03, "confidence": 0.65, "rationale": "Equity risk appetite is a minor valuation input."},
+        "crudeTightness": {"fundamental": 5.0, "market": 4.0, "weight": 0.34, "confidence": 0.95, "rationale": "Higher crude realizations directly lift upstream cash generation."},
+        "productTightness": {"fundamental": 4.5, "market": 3.5, "weight": 0.26, "confidence": 0.95, "rationale": "Tighter diesel/gasoline markets support refining margins."},
+        "gasTightness": {"fundamental": 2.0, "market": 1.5, "weight": 0.08, "confidence": 0.8, "rationale": "Gas pricing contributes to integrated upstream economics."},
+        "tailCreditStress": {"fundamental": 0.0, "market": -0.5, "weight": 0.04, "confidence": 0.75, "rationale": "Weak-end credit stress can pressure broad equity multiples but not core solvency."}
+      }
+    },
+    {
+      "ticker": "CTOS",
+      "name": "CTOS Digital Berhad",
+      "profileConfidence": 0.75,
+      "profileNote": "Credit-data demand benefits from healthy lending and transaction activity; weak-end stress is mixed because screening demand can rise as volumes soften.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {"fundamental": 3.0, "market": 2.0, "weight": 0.24, "confidence": 0.85, "rationale": "Business formation and transaction activity support data demand."},
+        "policyRelief": {"fundamental": 1.0, "market": 1.5, "weight": 0.06, "confidence": 0.7, "rationale": "Lower discount rates support growth valuations."},
+        "financialConditions": {"fundamental": 2.0, "market": 2.0, "weight": 0.14, "confidence": 0.8, "rationale": "Easier financing supports lending activity and valuation."},
+        "creditAvailability": {"fundamental": 3.0, "market": 2.0, "weight": 0.16, "confidence": 0.85, "rationale": "Healthy credit creation expands screening and analytics volumes."},
+        "consumerStrength": {"fundamental": 2.5, "market": 1.5, "weight": 0.14, "confidence": 0.8, "rationale": "Consumer activity supports retail-credit demand."},
+        "housingStrength": {"fundamental": 1.5, "market": 1.0, "weight": 0.05, "confidence": 0.65, "rationale": "Housing transactions are a secondary credit-data driver."},
+        "labourStrength": {"fundamental": 1.5, "market": 1.0, "weight": 0.05, "confidence": 0.65, "rationale": "Employment supports household borrowing capacity."},
+        "riskAppetite": {"fundamental": 0.0, "market": 1.0, "weight": 0.05, "confidence": 0.65, "rationale": "Risk appetite primarily affects the multiple."},
+        "tailCreditStress": {"fundamental": 0.5, "market": -1.5, "weight": 0.11, "confidence": 0.7, "rationale": "Screening demand can rise, but severe stress hurts credit volumes and valuation."}
+      }
+    },
+    {
+      "ticker": "IOIPG",
+      "name": "IOI Properties Group Berhad",
+      "profileConfidence": 0.85,
+      "profileNote": "A leveraged property and investment-property group is highly exposed to long-end financing conditions, credit availability and property demand.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {"fundamental": 3.0, "market": 2.0, "weight": 0.15, "confidence": 0.8, "rationale": "Economic growth supports sales, rents and occupancy."},
+        "policyRelief": {"fundamental": 3.0, "market": 4.0, "weight": 0.12, "confidence": 0.85, "rationale": "Rate-relief expectations support property valuations."},
+        "financialConditions": {"fundamental": 5.0, "market": 4.0, "weight": 0.22, "confidence": 0.95, "rationale": "High leverage makes financing costs a primary earnings and NAV variable."},
+        "creditAvailability": {"fundamental": 4.0, "market": 3.0, "weight": 0.15, "confidence": 0.9, "rationale": "Project funding and buyer financing depend on healthy credit markets."},
+        "consumerStrength": {"fundamental": 2.0, "market": 1.5, "weight": 0.06, "confidence": 0.7, "rationale": "Consumer confidence supports residential demand."},
+        "housingStrength": {"fundamental": 4.0, "market": 3.0, "weight": 0.15, "confidence": 0.9, "rationale": "Property-cycle strength directly supports development sales."},
+        "inputCostPressure": {"fundamental": -3.0, "market": -2.0, "weight": 0.06, "confidence": 0.8, "rationale": "Construction-cost inflation compresses project economics."},
+        "labourStrength": {"fundamental": 1.0, "market": 1.0, "weight": 0.02, "confidence": 0.6, "rationale": "Employment is a secondary housing-demand input."},
+        "riskAppetite": {"fundamental": 0.0, "market": 1.0, "weight": 0.03, "confidence": 0.65, "rationale": "Risk appetite affects discounts to NAV."},
+        "tailCreditStress": {"fundamental": -4.0, "market": -3.0, "weight": 0.04, "confidence": 0.85, "rationale": "Weak-end credit stress is adverse for leveraged property exposures."}
+      }
+    },
+    {
+      "ticker": "TTWO",
+      "name": "Take-Two Interactive Software",
+      "profileConfidence": 0.8,
+      "profileNote": "The business is driven primarily by consumer discretionary spending and franchise execution, with macro mostly affecting demand and valuation rather than solvency.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {"fundamental": 1.5, "market": 1.0, "weight": 0.08, "confidence": 0.65, "rationale": "Broad growth modestly supports entertainment spend."},
+        "policyRelief": {"fundamental": 0.5, "market": 1.5, "weight": 0.05, "confidence": 0.7, "rationale": "Lower discount rates mainly support the valuation multiple."},
+        "financialConditions": {"fundamental": 0.5, "market": 1.5, "weight": 0.05, "confidence": 0.7, "rationale": "Financing conditions are secondary to franchise economics."},
+        "creditAvailability": {"fundamental": 0.5, "market": 1.0, "weight": 0.03, "confidence": 0.6, "rationale": "Credit availability is a minor market input."},
+        "consumerStrength": {"fundamental": 4.0, "market": 3.0, "weight": 0.40, "confidence": 0.9, "rationale": "Consumer discretionary capacity supports game and recurrent-spend demand."},
+        "labourStrength": {"fundamental": 2.0, "market": 1.0, "weight": 0.08, "confidence": 0.7, "rationale": "Employment supports household entertainment budgets."},
+        "inputCostPressure": {"fundamental": -1.0, "market": -1.0, "weight": 0.04, "confidence": 0.6, "rationale": "Wage and development-cost inflation can pressure margins."},
+        "riskAppetite": {"fundamental": 0.5, "market": 2.0, "weight": 0.17, "confidence": 0.75, "rationale": "Risk appetite affects the multiple paid for future franchise cash flows."},
+        "tailCreditStress": {"fundamental": -1.0, "market": -1.5, "weight": 0.10, "confidence": 0.7, "rationale": "Severe household/market stress is negative for discretionary spend and valuation."}
+      }
+    },
+    {
+      "ticker": "GPACKET",
+      "name": "Green Packet Berhad",
+      "profileConfidence": 0.55,
+      "profileNote": "A speculative small-cap with weak current fundamentals is unusually sensitive to financing conditions, weak-end credit stress and equity risk appetite.",
+      "fundamentalWeight": 0.65,
+      "marketWeight": 0.35,
+      "factors": {
+        "growthDemand": {"fundamental": 2.0, "market": 2.0, "weight": 0.10, "confidence": 0.6, "rationale": "Better activity can support technology-services demand."},
+        "policyRelief": {"fundamental": 1.0, "market": 2.0, "weight": 0.05, "confidence": 0.6, "rationale": "Easing expectations can help speculative valuations."},
+        "financialConditions": {"fundamental": 4.0, "market": 4.0, "weight": 0.20, "confidence": 0.8, "rationale": "Funding conditions matter heavily for weak-cash-flow small caps."},
+        "creditAvailability": {"fundamental": 5.0, "market": 5.0, "weight": 0.20, "confidence": 0.8, "rationale": "Access to capital is a key survival and dilution variable."},
+        "consumerStrength": {"fundamental": 1.5, "market": 1.0, "weight": 0.05, "confidence": 0.5, "rationale": "Consumer demand is a secondary operating input."},
+        "industrialCapex": {"fundamental": 2.0, "market": 2.0, "weight": 0.07, "confidence": 0.55, "rationale": "Digital infrastructure spending can support some business lines."},
+        "riskAppetite": {"fundamental": 0.0, "market": 5.0, "weight": 0.18, "confidence": 0.9, "rationale": "Speculative equity appetite strongly affects the share-price environment."},
+        "tailCreditStress": {"fundamental": -5.0, "market": -5.0, "weight": 0.15, "confidence": 0.9, "rationale": "Weak-end credit stress is directly adverse to speculative funding conditions."}
+      }
+    }
+  ]
+}
