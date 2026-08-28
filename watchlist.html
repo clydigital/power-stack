@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Power Stack action watchlist — staged entries, confirmation levels, risk flags and current holdings." />
+  <title>Watchlist · Power Stack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .watch-nav{display:grid;gap:4px}.watch-nav a{text-decoration:none;display:block}.watch-nav .nav-item.active{border:1px solid #41365f;background:linear-gradient(135deg,#141022,#0d1318)}
+    .watch-hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(280px,.7fr);gap:14px;margin-bottom:14px}.watch-hero-copy{padding:18px}.watch-hero-copy h2{font-size:24px;letter-spacing:-.04em;margin:5px 0 8px}.watch-hero-copy p{font-size:11px;color:#aab3bb;line-height:1.6;margin:0;max-width:840px}.watch-hero-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:14px}.watch-stat{border:1px solid #232a31;background:#090d10;border-radius:9px;padding:11px}.watch-stat b{display:block;font-size:20px;letter-spacing:-.04em}.watch-stat span{display:block;font-size:8px;color:#77818a;text-transform:uppercase;letter-spacing:.08em;margin-top:3px}
+    .bucket-section{margin:14px 0}.bucket-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:8px}.bucket-head h2{font-size:18px;margin:3px 0 0}.bucket-head p{font-size:9px;color:#77818a;margin:0;text-align:right}.bucket-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.watch-card{border:1px solid #232a31;background:linear-gradient(180deg,#101419,#0b0f12);border-radius:12px;padding:14px;display:grid;gap:11px}.watch-card.buy{border-color:#29503b}.watch-card.selective{border-color:#4a422b}.watch-card.wait{border-color:#293845}.watch-card.avoid{border-color:#4b2e31}.watch-card-top{display:flex;justify-content:space-between;gap:12px;align-items:start}.ticker-line{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.watch-ticker{font-size:22px;font-weight:900;letter-spacing:-.045em}.watch-name{font-size:9px;color:#77818a;margin-top:2px}.watch-score{min-width:56px;text-align:right}.watch-score b{font-size:19px}.watch-score span{display:block;font-size:7px;color:#6f7982;text-transform:uppercase;letter-spacing:.08em}.action-pill,.holding-pill{display:inline-flex;border-radius:999px;padding:4px 7px;font-size:7px;font-weight:850;letter-spacing:.06em;text-transform:uppercase}.action-pill.buy{color:#8fe0b0;border:1px solid #28503a;background:#0d1913}.action-pill.selective{color:#efcf83;border:1px solid #50462c;background:#18150d}.action-pill.wait{color:#9fc4e2;border:1px solid #30485a;background:#0d151b}.action-pill.avoid{color:#e39b9f;border:1px solid #513033;background:#1a1011}.holding-pill{color:#ffbc75;border:1px solid #5b3e22;background:#1c1209}
+    .watch-levels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.level{border:1px solid #20272d;background:#090d10;border-radius:8px;padding:8px}.level span{display:block;font-size:7px;text-transform:uppercase;letter-spacing:.08em;color:#68737c;margin-bottom:3px}.level b{font-size:9px;line-height:1.35;color:#cbd2d7}.theme-line{font-size:8px;color:#91a0aa;text-transform:uppercase;letter-spacing:.07em}.thesis{font-size:10px;color:#aeb7bf;line-height:1.55;border-top:1px solid #1b2126;padding-top:9px}
+    .holdings-panel{padding:0;overflow:hidden;margin-top:18px}.holdings-head{display:flex;justify-content:space-between;gap:16px;align-items:end;padding:15px 17px;border-bottom:1px solid var(--line)}.holdings-head h2{font-size:18px;margin:4px 0 0}.holdings-head p{margin:0;font-size:9px;color:#78838c;text-align:right}.holdings-wrap{overflow:auto}.holdings-table{width:100%;border-collapse:collapse;min-width:820px}.holdings-table th,.holdings-table td{text-align:left;padding:11px 14px;border-bottom:1px solid #1c2227;font-size:9px}.holdings-table th{font-size:7px;color:#707a84;text-transform:uppercase;letter-spacing:.1em;background:#0b0f12}.holdings-table tr:last-child td{border-bottom:0}.holdings-table strong{font-size:11px}.holding-action{font-weight:800}.holding-action.core{color:var(--green)}.holding-action.hold{color:#c7d9e8}.holding-action.watch{color:var(--amber)}.holding-action.risk{color:var(--red)}
+    .error-state{padding:40px;text-align:center;color:var(--red);border:1px dashed #513033;border-radius:12px}.ghost-link.watch-link{color:#f5efff;background:linear-gradient(100deg,#5f47a7,#8e66d8);border-color:transparent;font-weight:850;box-shadow:0 0 22px rgba(142,102,216,.16)}
+    @media(max-width:1000px){.watch-hero{grid-template-columns:1fr}.bucket-grid{grid-template-columns:1fr}}
+    @media(max-width:650px){.watch-levels{grid-template-columns:1fr}.bucket-head,.holdings-head{align-items:flex-start;flex-direction:column}.bucket-head p,.holdings-head p{text-align:left}.watch-hero-meta{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-block">
+        <div class="eyebrow">INVESTMENT RESEARCH VAULT</div>
+        <div class="brand">POWER STACK</div>
+        <div class="brand-sub">ACTION QUEUE · ENTRIES · HOLDINGS</div>
+      </div>
+      <nav class="side-scroll">
+        <section class="side-section">
+          <div class="side-heading">Navigate</div>
+          <div class="watch-nav">
+            <a class="nav-item" href="index.html"><div class="nav-top"><span>All Ideas</span><b>↗</b></div></a>
+            <a class="nav-item" href="themes.html"><div class="nav-top"><span>Developing Themes</span><b>↗</b></div></a>
+            <a class="nav-item active" href="watchlist.html"><div class="nav-top"><span>Watchlist</span><b>●</b></div></a>
+            <a class="nav-item" href="holdings.html"><div class="nav-top"><span>Current Holdings</span><b>↗</b></div></a>
+          </div>
+        </section>
+        <section class="side-section">
+          <div class="side-heading">Discipline</div>
+          <div class="side-micro">A good company at a bad entry stays on watch. A good theme with weak economics stays out. Current holdings are shown separately so new-money decisions do not get mixed with sunk-cost thinking.</div>
+        </section>
+      </nav>
+      <div class="side-footer"><span>Snapshot</span><strong id="sideAsOf">Loading…</strong></div>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">PRICE + THESIS + CONFIRMATION</div>
+          <h1>Watchlist</h1>
+          <p>Where the next dollar should wait, enter, or stay away.</p>
+        </div>
+        <div class="top-actions">
+          <a class="ghost-link" href="index.html">← All Ideas</a>
+          <a class="ghost-link watch-link" href="watchlist.html">Watchlist</a>
+          <a class="ghost-link" href="holdings.html">Current Holdings →</a>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <section class="watch-hero">
+          <div class="panel watch-hero-copy">
+            <div class="eyebrow">AUG 28 ACTION MAP</div>
+            <h2>Separate “interesting” from “buyable now”.</h2>
+            <p>The candidate score is an action-oriented Power Stack read that combines thesis quality with current price location and confirmation risk. It is intentionally separate from the fundamentals-only score used on the Current Holdings page.</p>
+          </div>
+          <div id="watchStats" class="panel watch-hero-meta"></div>
+        </section>
+
+        <div id="bucketRoot"></div>
+
+        <section class="holdings-panel panel">
+          <div class="holdings-head">
+            <div><div class="eyebrow">EXISTING CAPITAL</div><h2>Current Holdings</h2></div>
+            <p>Fundamental score shown here. DAYANG is treated as a hold/risk-review position, not a fresh buy.</p>
+          </div>
+          <div class="holdings-wrap">
+            <table class="holdings-table">
+              <thead><tr><th>Holding</th><th>Fundamental score</th><th>Action</th><th>Current read</th><th>Theme / macro overlay</th></tr></thead>
+              <tbody id="holdingsBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">Power Stack Watchlist is an action queue, not an automated trading system. Entry levels are research checkpoints and should move when price structure or fundamentals materially change.</footer>
+    </div>
+  </div>
+
+  <script>
+    const bucketClass = id => id === 'buy' ? 'buy' : id === 'selective' ? 'selective' : id === 'wait' ? 'wait' : 'avoid';
+    const holdingAction = h => {
+      if (h.ticker === 'DAYANG') return {label:'HOLD · DO NOT AVERAGE DOWN', cls:'risk'};
+      if (h.ticker === 'IOIPG') return {label:'HOLD · REVIEW Q4 RESET', cls:'watch'};
+      if (h.ticker === 'TSLA') return {label:'HOLD · VALUATION WATCH', cls:'watch'};
+      if (h.score >= 80) return {label:'CORE HOLD', cls:'core'};
+      return {label:'HOLD', cls:'hold'};
+    };
+
+    function renderStats(data, holdings){
+      const buyCount = data.candidates.filter(x=>x.bucket==='buy').length;
+      const selectiveCount = data.candidates.filter(x=>x.bucket==='selective').length;
+      document.getElementById('watchStats').innerHTML = [
+        [data.candidates.length, 'Candidates tracked'],
+        [buyCount, 'Buy / accumulate'],
+        [selectiveCount, 'Selective / retest'],
+        [holdings.length, 'Current holdings']
+      ].map(([v,l])=>`<div class="watch-stat"><b>${v}</b><span>${l}</span></div>`).join('');
+    }
+
+    function renderBuckets(data){
+      document.getElementById('bucketRoot').innerHTML = data.buckets.map(bucket=>{
+        const items = data.candidates.filter(x=>x.bucket===bucket.id).sort((a,b)=>a.rank-b.rank);
+        if(!items.length) return '';
+        return `<section class="bucket-section">
+          <div class="bucket-head"><div><div class="eyebrow">ACTION BUCKET</div><h2>${bucket.label}</h2></div><p>${bucket.description}</p></div>
+          <div class="bucket-grid">${items.map(item=>`
+            <article class="watch-card ${bucketClass(item.bucket)}">
+              <div class="watch-card-top">
+                <div><div class="ticker-line"><span class="watch-ticker">${item.ticker}</span><span class="action-pill ${bucketClass(item.bucket)}">${item.action}</span></div><div class="watch-name">${item.name} · ${item.market}</div></div>
+                <div class="watch-score"><b>${item.score.toFixed(1)}</b><span>PS / 10</span></div>
+              </div>
+              <div class="theme-line">${item.theme} · current ${item.price}</div>
+              <div class="watch-levels">
+                <div class="level"><span>Entry</span><b>${item.entry}</b></div>
+                <div class="level"><span>Confirmation</span><b>${item.confirmation}</b></div>
+                <div class="level"><span>Risk / invalidation</span><b>${item.invalidation}</b></div>
+              </div>
+              <div class="thesis">${item.thesis}</div>
+            </article>`).join('')}</div>
+        </section>`;
+      }).join('');
+    }
+
+    function renderHoldings(holdings){
+      const sorted = [...holdings].sort((a,b)=>b.score-a.score);
+      document.getElementById('holdingsBody').innerHTML = sorted.map(h=>{
+        const a = holdingAction(h);
+        const overlay = h.dailyOverlay || {};
+        return `<tr>
+          <td><strong>${h.ticker}</strong><br><span style="color:#77818a">${h.name}</span></td>
+          <td><strong>${h.score}/100</strong> · ${h.grade}</td>
+          <td><span class="holding-action ${a.cls}">${a.label}</span></td>
+          <td>${h.status}</td>
+          <td>${overlay.read || '—'}${overlay.themeScore ? ` · ${overlay.themeScore}/100` : ''}</td>
+        </tr>`;
+      }).join('');
+    }
+
+    Promise.all([
+      fetch('data/watchlist.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`watchlist HTTP ${r.status}`);return r.json();}),
+      fetch('data/holdings-fundamentals.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`holdings HTTP ${r.status}`);return r.json();})
+    ]).then(([watch,holdingData])=>{
+      document.getElementById('sideAsOf').textContent = `Reviewed ${watch.asOf}`;
+      renderStats(watch, holdingData.holdings);
+      renderBuckets(watch);
+      renderHoldings(holdingData.holdings);
+    }).catch(err=>{
+      document.getElementById('bucketRoot').innerHTML = `<div class="error-state">Could not load watchlist: ${err.message}</div>`;
+      document.getElementById('sideAsOf').textContent = 'Data unavailable';
+    });
+  </script>
+</body>
+</html>
