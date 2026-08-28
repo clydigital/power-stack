@@ -13,7 +13,7 @@
     .watch-nav{display:grid;gap:4px}.watch-nav a{text-decoration:none;display:block}.watch-nav .nav-item.active{border:1px solid #41365f;background:linear-gradient(135deg,#141022,#0d1318)}
     .watch-hero{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(280px,.7fr);gap:14px;margin-bottom:14px}.watch-hero-copy{padding:18px}.watch-hero-copy h2{font-size:24px;letter-spacing:-.04em;margin:5px 0 8px}.watch-hero-copy p{font-size:11px;color:#aab3bb;line-height:1.6;margin:0;max-width:840px}.watch-hero-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:14px}.watch-stat{border:1px solid #232a31;background:#090d10;border-radius:9px;padding:11px}.watch-stat b{display:block;font-size:20px;letter-spacing:-.04em}.watch-stat span{display:block;font-size:8px;color:#77818a;text-transform:uppercase;letter-spacing:.08em;margin-top:3px}
     .bucket-section{margin:14px 0}.bucket-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin-bottom:8px}.bucket-head h2{font-size:18px;margin:3px 0 0}.bucket-head p{font-size:9px;color:#77818a;margin:0;text-align:right}.bucket-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.watch-card{border:1px solid #232a31;background:linear-gradient(180deg,#101419,#0b0f12);border-radius:12px;padding:14px;display:grid;gap:11px}.watch-card.buy{border-color:#29503b}.watch-card.selective{border-color:#4a422b}.watch-card.wait{border-color:#293845}.watch-card.avoid{border-color:#4b2e31}.watch-card-top{display:flex;justify-content:space-between;gap:12px;align-items:start}.ticker-line{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.watch-ticker{font-size:22px;font-weight:900;letter-spacing:-.045em}.watch-name{font-size:9px;color:#77818a;margin-top:2px}.watch-score{min-width:56px;text-align:right}.watch-score b{font-size:19px}.watch-score span{display:block;font-size:7px;color:#6f7982;text-transform:uppercase;letter-spacing:.08em}.action-pill,.holding-pill{display:inline-flex;border-radius:999px;padding:4px 7px;font-size:7px;font-weight:850;letter-spacing:.06em;text-transform:uppercase}.action-pill.buy{color:#8fe0b0;border:1px solid #28503a;background:#0d1913}.action-pill.selective{color:#efcf83;border:1px solid #50462c;background:#18150d}.action-pill.wait{color:#9fc4e2;border:1px solid #30485a;background:#0d151b}.action-pill.avoid{color:#e39b9f;border:1px solid #513033;background:#1a1011}.holding-pill{color:#ffbc75;border:1px solid #5b3e22;background:#1c1209}
-    .watch-levels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.level{border:1px solid #20272d;background:#090d10;border-radius:8px;padding:8px}.level span{display:block;font-size:7px;text-transform:uppercase;letter-spacing:.08em;color:#68737c;margin-bottom:3px}.level b{font-size:9px;line-height:1.35;color:#cbd2d7}.theme-line{font-size:8px;color:#91a0aa;text-transform:uppercase;letter-spacing:.07em}.thesis{font-size:10px;color:#aeb7bf;line-height:1.55;border-top:1px solid #1b2126;padding-top:9px}
+    .watch-levels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}.level{border:1px solid #20272d;background:#090d10;border-radius:8px;padding:8px}.level span{display:block;font-size:7px;text-transform:uppercase;letter-spacing:.08em;color:#68737c;margin-bottom:3px}.level b{font-size:9px;line-height:1.35;color:#cbd2d7}.theme-line{font-size:8px;color:#91a0aa;text-transform:uppercase;letter-spacing:.07em}.thesis{font-size:10px;color:#aeb7bf;line-height:1.55;border-top:1px solid #1b2126;padding-top:9px}.chart-link{display:inline-flex;align-items:center;gap:6px;width:max-content;max-width:100%;text-decoration:none;border:1px solid #3e365b;background:linear-gradient(100deg,#151126,#111924);color:#d8c8ff;border-radius:8px;padding:7px 9px;font-size:8px;font-weight:800;letter-spacing:.03em}.chart-link:hover{border-color:#795ec1;color:#fff;filter:brightness(1.08)}.holdings-table .chart-link{margin-top:6px;padding:5px 7px;font-size:7px}
     .holdings-panel{padding:0;overflow:hidden;margin-top:18px}.holdings-head{display:flex;justify-content:space-between;gap:16px;align-items:end;padding:15px 17px;border-bottom:1px solid var(--line)}.holdings-head h2{font-size:18px;margin:4px 0 0}.holdings-head p{margin:0;font-size:9px;color:#78838c;text-align:right}.holdings-wrap{overflow:auto}.holdings-table{width:100%;border-collapse:collapse;min-width:820px}.holdings-table th,.holdings-table td{text-align:left;padding:11px 14px;border-bottom:1px solid #1c2227;font-size:9px}.holdings-table th{font-size:7px;color:#707a84;text-transform:uppercase;letter-spacing:.1em;background:#0b0f12}.holdings-table tr:last-child td{border-bottom:0}.holdings-table strong{font-size:11px}.holding-action{font-weight:800}.holding-action.core{color:var(--green)}.holding-action.hold{color:#c7d9e8}.holding-action.watch{color:var(--amber)}.holding-action.risk{color:var(--red)}
     .error-state{padding:40px;text-align:center;color:var(--red);border:1px dashed #513033;border-radius:12px}.ghost-link.watch-link{color:#f5efff;background:linear-gradient(100deg,#5f47a7,#8e66d8);border-color:transparent;font-weight:850;box-shadow:0 0 22px rgba(142,102,216,.16)}
     @media(max-width:1000px){.watch-hero{grid-template-columns:1fr}.bucket-grid{grid-template-columns:1fr}}
@@ -92,6 +92,24 @@
 
   <script>
     const bucketClass = id => id === 'buy' ? 'buy' : id === 'selective' ? 'selective' : id === 'wait' ? 'wait' : 'avoid';
+    const chartSnapshots = {
+      'XYL':'assets/charts/2026-08-28/xyl.webp',
+      '1816.HK':'assets/charts/2026-08-28/1816-hk.webp',
+      'PWR':'assets/charts/2026-08-28/pwr.webp',
+      'TENAGA':'assets/charts/2026-08-28/tenaga.webp',
+      'F':'assets/charts/2026-08-28/f.webp',
+      'MOD':'assets/charts/2026-08-28/mod.webp',
+      'MCD':'assets/charts/2026-08-28/mcd.webp',
+      'HAL':'assets/charts/2026-08-28/hal.webp',
+      'CVX':'assets/charts/2026-08-28/cvx.webp',
+      'SPCX':'assets/charts/2026-08-28/spcx.webp',
+      '0836.HK':'assets/charts/2026-08-28/0836-hk.webp',
+      'ENPH':'assets/charts/2026-08-28/enph.webp',
+      'SMR':'assets/charts/2026-08-28/smr.webp',
+      '0968.HK':'assets/charts/2026-08-28/0968-hk.webp',
+      'DAYANG':'assets/charts/2026-08-28/dayang.webp'
+    };
+    const chartButton = ticker => chartSnapshots[ticker] ? `<a class="chart-link" href="${chartSnapshots[ticker]}" target="_blank" rel="noopener" title="User-uploaded TradingView chart snapshot">▧ View chart · uploaded 28 Aug 2026 ↗</a>` : '';
     const holdingAction = h => {
       if (h.ticker === 'DAYANG') return {label:'HOLD · DO NOT AVERAGE DOWN', cls:'risk'};
       if (h.ticker === 'IOIPG') return {label:'HOLD · REVIEW Q4 RESET', cls:'watch'};
@@ -130,6 +148,7 @@
                 <div class="level"><span>Risk / invalidation</span><b>${item.invalidation}</b></div>
               </div>
               <div class="thesis">${item.thesis}</div>
+              ${chartButton(item.ticker)}
             </article>`).join('')}</div>
         </section>`;
       }).join('');
@@ -144,7 +163,7 @@
           <td><strong>${h.ticker}</strong><br><span style="color:#77818a">${h.name}</span></td>
           <td><strong>${h.score}/100</strong> · ${h.grade}</td>
           <td><span class="holding-action ${a.cls}">${a.label}</span></td>
-          <td>${h.status}</td>
+          <td>${h.status}${chartButton(h.ticker)}</td>
           <td>${overlay.read || '—'}${overlay.themeScore ? ` · ${overlay.themeScore}/100` : ''}</td>
         </tr>`;
       }).join('');
