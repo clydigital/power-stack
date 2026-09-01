@@ -14,205 +14,83 @@
 <body>
   <div class="app-shell">
     <aside class="sidebar">
-      <div class="brand-block">
-        <div class="eyebrow">INVESTMENT RESEARCH VAULT</div>
-        <div class="brand">POWER STACK</div>
-        <div class="brand-sub">AI · POWER · NUCLEAR · OIL · ROBOTICS</div>
-      </div>
-
+      <div class="brand-block"><div class="eyebrow">INVESTMENT RESEARCH VAULT</div><div class="brand">POWER STACK</div><div class="brand-sub">AI · POWER · NUCLEAR · OIL · ROBOTICS</div></div>
       <nav class="side-scroll">
-        <section class="side-section">
-          <div class="side-heading">Idea universe</div>
-          <div id="allIdeasNav"></div>
-        </section>
-        <section class="side-section">
-          <div class="side-heading">Themes</div>
-          <div id="themeNav" class="side-nav"></div>
-        </section>
-        <section class="side-section">
-          <div class="side-heading">Regions</div>
-          <div id="regionNav" class="side-nav"></div>
-        </section>
-        <section class="side-section">
-          <div class="side-heading">Research state</div>
-          <div id="statusNav" class="side-nav"></div>
-        </section>
-        <section class="side-section live-pulse-section">
-          <div class="side-heading row-between"><span>Macro pulse</span><span id="sidebarLiveDot" class="live-dot"></span></div>
-          <div id="livePulse"></div>
-          <div id="liveTimestamp" class="side-micro">Waiting for macro snapshot…</div>
-        </section>
+        <section class="side-section"><div class="side-heading">Idea universe</div><div id="allIdeasNav"></div></section>
+        <section class="side-section"><div class="side-heading">Themes</div><div id="themeNav" class="side-nav"></div></section>
+        <section class="side-section"><div class="side-heading">Regions</div><div id="regionNav" class="side-nav"></div></section>
+        <section class="side-section"><div class="side-heading">Research state</div><div id="statusNav" class="side-nav"></div></section>
+        <section class="side-section live-pulse-section"><div class="side-heading row-between"><span>Macro pulse</span><span id="sidebarLiveDot" class="live-dot"></span></div><div id="livePulse"></div><div id="liveTimestamp" class="side-micro">Waiting for macro snapshot…</div></section>
       </nav>
-
-      <div class="side-footer">
-        <span>Source of truth</span>
-        <strong>GitHub · ideas + live research overlays</strong>
-      </div>
+      <div class="side-footer"><span>Source of truth</span><strong>GitHub · ideas + live research overlays</strong></div>
     </aside>
-
     <div class="workspace">
       <header class="topbar">
-        <div>
-          <div class="eyebrow">CROSS-MARKET IDEA DATABASE</div>
-          <h1>All Ideas</h1>
-          <p id="viewSubtitle">Current research scores, rescanned against the live theme hierarchy, with a separate macro-regime overlay.</p>
-        </div>
-        <div class="top-actions">
-          <div id="liveBadge" class="live-badge offline"><span></span> Macro snapshot loading</div>
-          <a class="ghost-link holdings-link" href="holdings.html">Current Holdings →</a>
-          <a class="ghost-link watchlist-link" href="watchlist.html">Watchlist →</a>
-          <a class="ghost-link primary-link" href="themes.html">Developing Themes →</a>
-          <a class="ghost-link" href="https://dailyinvestmentbrief.com/macroeconomic-dashboard/" target="_blank" rel="noopener">Macro Dashboard ↗</a>
-          <a class="ghost-link" href="https://en.macromicro.me/" target="_blank" rel="noopener">MacroMicro ↗</a>
-        </div>
+        <div><div class="eyebrow">CROSS-MARKET IDEA DATABASE</div><h1>All Ideas</h1><p id="viewSubtitle">Current research scores, rescanned against the live theme hierarchy, with a separate macro-regime overlay.</p></div>
+        <div class="top-actions"><div id="liveBadge" class="live-badge offline"><span></span> Macro snapshot loading</div><a class="ghost-link holdings-link" href="holdings.html">Current Holdings →</a><a class="ghost-link watchlist-link" href="watchlist.html">Watchlist →</a><a class="ghost-link primary-link" href="themes.html">Developing Themes →</a><a class="ghost-link" href="https://dailyinvestmentbrief.com/macroeconomic-dashboard/" target="_blank" rel="noopener">Macro Dashboard ↗</a><a class="ghost-link" href="https://en.macromicro.me/" target="_blank" rel="noopener">MacroMicro ↗</a></div>
       </header>
-
       <main class="main-content">
         <section id="summaryStats" class="summary-grid"></section>
-
-        <section class="context-panel panel">
-          <div class="context-head">
-            <div>
-              <div class="eyebrow">MACRO REGIME OVERLAY</div>
-              <h2 id="contextTitle">Macro regime → Power Stack</h2>
-            </div>
-            <div id="contextMeta" class="context-meta">Loading macro snapshot…</div>
-          </div>
-          <div id="contextBody" class="context-body"></div>
-          <div class="context-rule">The current research score is rescanned when stock-specific evidence or the significance/lifecycle of an investable theme materially changes. Macro Pulse is then applied separately through stock-specific sensitivities and stale channels contribute zero.</div>
-        </section>
-
-        <section class="control-row panel">
-          <div class="search-wrap">
-            <span>⌕</span>
-            <input id="search" type="search" placeholder="Search ticker, company, thesis, catalyst, risk…" autocomplete="off" />
-          </div>
-          <select id="sort" aria-label="Sort ideas">
-            <option value="conviction">Current research score</option>
-            <option value="contextConviction">Macro-adjusted now</option>
-            <option value="aiRisk">AI crash risk</option>
-            <option value="themeDependency">Theme dependency</option>
-            <option value="cyclicality">Cyclicality</option>
-            <option value="speculation">Speculation</option>
-            <option value="ticker">Ticker / company</option>
-          </select>
-          <div class="view-toggle" role="group" aria-label="Idea presentation">
-            <button id="cardViewBtn" class="view-button active" type="button" aria-pressed="true" title="Card View">
-              <span aria-hidden="true">▦</span> Card
-            </button>
-            <button id="rowViewBtn" class="view-button" type="button" aria-pressed="false" title="Row View">
-              <span aria-hidden="true">☷</span> Row
-            </button>
-          </div>
-        </section>
-
-        <section class="result-bar">
-          <div><strong id="count">0</strong> ideas shown</div>
-          <button id="clearFilters" class="text-button">Clear filters</button>
-        </section>
-
-        <section id="grid" class="idea-grid"></section>
+        <section class="context-panel panel"><div class="context-head"><div><div class="eyebrow">MACRO REGIME OVERLAY</div><h2 id="contextTitle">Macro regime → Power Stack</h2></div><div id="contextMeta" class="context-meta">Loading macro snapshot…</div></div><div id="contextBody" class="context-body"></div><div class="context-rule">The current research score is rescanned when stock-specific evidence or the significance/lifecycle of an investable theme materially changes. Macro Pulse is then applied separately through stock-specific sensitivities and stale channels contribute zero.</div></section>
+        <section class="control-row panel"><div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Search ticker, company, thesis, catalyst, risk…" autocomplete="off" /></div><select id="sort" aria-label="Sort ideas"><option value="conviction">Current research score</option><option value="contextConviction">Macro-adjusted now</option><option value="aiRisk">AI crash risk</option><option value="themeDependency">Theme dependency</option><option value="cyclicality">Cyclicality</option><option value="speculation">Speculation</option><option value="ticker">Ticker / company</option></select><div class="view-toggle" role="group" aria-label="Idea presentation"><button id="cardViewBtn" class="view-button active" type="button" aria-pressed="true" title="Card View"><span aria-hidden="true">▦</span> Card</button><button id="rowViewBtn" class="view-button" type="button" aria-pressed="false" title="Row View"><span aria-hidden="true">☷</span> Row</button></div></section>
+        <section class="result-bar"><div><strong id="count">0</strong> ideas shown</div><button id="clearFilters" class="text-button">Clear filters</button></section><section id="grid" class="idea-grid"></section>
       </main>
-
       <footer class="footer">Power Stack is a research memory and capital-allocation aid, not an automated recommendation engine. Current Research Scores can move when evidence or theme significance changes; Macro Pulse remains a separate current-regime overlay.</footer>
     </div>
   </div>
-
-  <dialog id="detailDialog">
-    <div class="dialog-head">
-      <div>
-        <div id="dialogMarket" class="eyebrow"></div>
-        <h2 id="dialogTitle"></h2>
-      </div>
-      <button id="closeDialog" class="icon-btn" aria-label="Close">×</button>
-    </div>
-    <div id="dialogBody" class="dialog-body"></div>
-  </dialog>
-
+  <dialog id="detailDialog"><div class="dialog-head"><div><div id="dialogMarket" class="eyebrow"></div><h2 id="dialogTitle"></h2></div><button id="closeDialog" class="icon-btn" aria-label="Close">×</button></div><div id="dialogBody" class="dialog-body"></div></dialog>
   <script>
     (() => {
       const nativeFetch = window.fetch.bind(window);
       window.fetch = async (input, init) => {
         const url = typeof input === 'string' ? input : input?.url;
         if (url !== 'data/ideas.json') return nativeFetch(input, init);
-
         const [coreRes, roboticsRes, opportunityRes, videoScreenRes, ttRes, nbisRes, aug24Res, rescanRes] = await Promise.all([
           nativeFetch(input, init),
-          nativeFetch('data/robotics-research.json', { cache: 'no-store' }).catch(() => null),
-          nativeFetch('data/video-opportunity-research.json', { cache: 'no-store' }).catch(() => null),
-          nativeFetch('data/video-screen-2026-08-20.json', { cache: 'no-store' }).catch(() => null),
-          nativeFetch('data/tt-research.json', { cache: 'no-store' }).catch(() => null),
-          nativeFetch('data/nbis-research.json', { cache: 'no-store' }).catch(() => null),
-          nativeFetch('data/idea-promotions-2026-08-24.json', { cache: 'no-store' }).catch(() => null),
-          nativeFetch('data/universe-rescan-2026-09-01.json', { cache: 'no-store' }).catch(() => null)
+          nativeFetch('data/robotics-research.json',{cache:'no-store'}).catch(()=>null),
+          nativeFetch('data/video-opportunity-research.json',{cache:'no-store'}).catch(()=>null),
+          nativeFetch('data/video-screen-2026-08-20.json',{cache:'no-store'}).catch(()=>null),
+          nativeFetch('data/tt-research.json',{cache:'no-store'}).catch(()=>null),
+          nativeFetch('data/nbis-research.json',{cache:'no-store'}).catch(()=>null),
+          nativeFetch('data/idea-promotions-2026-08-24.json',{cache:'no-store'}).catch(()=>null),
+          nativeFetch('data/universe-rescan-2026-09-01.json',{cache:'no-store'}).catch(()=>null)
         ]);
-
-        if (!coreRes.ok) return coreRes;
-
-        const core = await coreRes.json();
-        const roboticsPayload = roboticsRes?.ok ? await roboticsRes.json() : null;
-        const opportunityPayload = opportunityRes?.ok ? await opportunityRes.json() : null;
-        const videoScreenPayload = videoScreenRes?.ok ? await videoScreenRes.json() : null;
-        const ttPayload = ttRes?.ok ? await ttRes.json() : null;
-        const nbisPayload = nbisRes?.ok ? await nbisRes.json() : null;
-        const aug24Payload = aug24Res?.ok ? await aug24Res.json() : null;
-        const rescanPayload = rescanRes?.ok ? await rescanRes.json() : null;
-        const extensionRes = await nativeFetch('data/market-extension-2026-09-01.json', { cache: 'no-store' }).catch(() => null);
-        const extensionPayload = extensionRes?.ok ? await extensionRes.json() : null;
-        const supplemental = [
-          ...(Array.isArray(roboticsPayload?.ideas) ? roboticsPayload.ideas : []),
-          ...(Array.isArray(opportunityPayload?.ideas) ? opportunityPayload.ideas : []),
-          ...(Array.isArray(videoScreenPayload?.promotedOrAdded) ? videoScreenPayload.promotedOrAdded : []),
-          ...(ttPayload?.ticker ? [ttPayload] : []),
-          ...(nbisPayload?.ticker ? [nbisPayload] : []),
-          ...(Array.isArray(aug24Payload?.promotions) ? aug24Payload.promotions : []),
-          ...(Array.isArray(aug24Payload?.tacticalWatches) ? aug24Payload.tacticalWatches : [])
+        if(!coreRes.ok) return coreRes;
+        const core=await coreRes.json();
+        const roboticsPayload=roboticsRes?.ok?await roboticsRes.json():null;
+        const opportunityPayload=opportunityRes?.ok?await opportunityRes.json():null;
+        const videoScreenPayload=videoScreenRes?.ok?await videoScreenRes.json():null;
+        const ttPayload=ttRes?.ok?await ttRes.json():null;
+        const nbisPayload=nbisRes?.ok?await nbisRes.json():null;
+        const aug24Payload=aug24Res?.ok?await aug24Res.json():null;
+        const rescanPayload=rescanRes?.ok?await rescanRes.json():null;
+        const [extensionRes,extension2Res]=await Promise.all([
+          nativeFetch('data/market-extension-2026-09-01.json',{cache:'no-store'}).catch(()=>null),
+          nativeFetch('data/market-extension-2-2026-09-01.json',{cache:'no-store'}).catch(()=>null)
+        ]);
+        const extensionPayload=extensionRes?.ok?await extensionRes.json():null;
+        const extension2Payload=extension2Res?.ok?await extension2Res.json():null;
+        const supplemental=[
+          ...(Array.isArray(roboticsPayload?.ideas)?roboticsPayload.ideas:[]),
+          ...(Array.isArray(opportunityPayload?.ideas)?opportunityPayload.ideas:[]),
+          ...(Array.isArray(videoScreenPayload?.promotedOrAdded)?videoScreenPayload.promotedOrAdded:[]),
+          ...(ttPayload?.ticker?[ttPayload]:[]),...(nbisPayload?.ticker?[nbisPayload]:[]),
+          ...(Array.isArray(aug24Payload?.promotions)?aug24Payload.promotions:[]),
+          ...(Array.isArray(aug24Payload?.tacticalWatches)?aug24Payload.tacticalWatches:[])
         ];
-        const existing = new Set(core.map(x => x.ticker));
-        const normalisedSupplemental = supplemental
-          .filter(x => !existing.has(x.ticker))
-          .filter((x, i, arr) => arr.findIndex(y => y.ticker === x.ticker) === i)
-          .map(x => ({
-            ...x,
-            aiRisk: x.aiRisk ?? 3,
-            themeDependency: x.themeDependency ?? 3,
-            cyclicality: x.cyclicality ?? 3,
-            speculation: x.speculation ?? (/speculative/i.test(x.status || '') ? 4 : 2),
-            thesis: x.thesis ?? x.researchNote ?? 'Research watch; full thesis is in the current deep-research packet.',
-            catalysts: x.catalysts ?? 'Monitor the current catalyst set in the current deep-research packet.',
-            risks: x.risks ?? 'Theme and cycle risk remain elevated; treat as research-stage exposure.',
-            sources: Array.isArray(x.sources) ? x.sources : [],
-            lastUpdated: x.lastUpdated ?? aug24Payload?.date ?? roboticsPayload?.lastUpdated ?? opportunityPayload?.lastUpdated ?? videoScreenPayload?.date ?? ttPayload?.lastUpdated ?? nbisPayload?.lastUpdated ?? '2026-08-24'
-          }));
-
-        const byTicker = new Map([...core, ...normalisedSupplemental].map(x => [x.ticker, {...x}]));
-        (Array.isArray(rescanPayload?.newIdeas) ? rescanPayload.newIdeas : []).forEach(x => {
-          if(!x?.ticker) return;
-          byTicker.set(x.ticker, {...(byTicker.get(x.ticker)||{}), ...x});
-        });
-        const overrides = rescanPayload?.overrides && typeof rescanPayload.overrides === 'object' ? rescanPayload.overrides : {};
-        Object.entries(overrides).forEach(([ticker,patch]) => {
-          if(!byTicker.has(ticker) || !patch || typeof patch !== 'object') return;
-          byTicker.set(ticker, {...byTicker.get(ticker), ...patch});
-        });
-        (Array.isArray(extensionPayload?.newIdeas) ? extensionPayload.newIdeas : []).forEach(x => {
-          if(!x?.ticker) return;
-          byTicker.set(x.ticker, {...(byTicker.get(x.ticker)||{}), ...x});
-        });
-        const extensionOverrides = extensionPayload?.overrides && typeof extensionPayload.overrides === 'object' ? extensionPayload.overrides : {};
-        Object.entries(extensionOverrides).forEach(([ticker,patch]) => {
-          if(!byTicker.has(ticker) || !patch || typeof patch !== 'object') return;
-          byTicker.set(ticker, {...byTicker.get(ticker), ...patch});
-        });
-
-        return new Response(JSON.stringify([...byTicker.values()]), {
-          status: 200,
-          headers: { 'Content-Type': 'application/json' }
-        });
+        const existing=new Set(core.map(x=>x.ticker));
+        const normalisedSupplemental=supplemental.filter(x=>!existing.has(x.ticker)).filter((x,i,arr)=>arr.findIndex(y=>y.ticker===x.ticker)===i).map(x=>({...x,aiRisk:x.aiRisk??3,themeDependency:x.themeDependency??3,cyclicality:x.cyclicality??3,speculation:x.speculation??(/speculative/i.test(x.status||'')?4:2),thesis:x.thesis??x.researchNote??'Research watch; full thesis is in the current deep-research packet.',catalysts:x.catalysts??'Monitor the current catalyst set in the current deep-research packet.',risks:x.risks??'Theme and cycle risk remain elevated; treat as research-stage exposure.',sources:Array.isArray(x.sources)?x.sources:[],lastUpdated:x.lastUpdated??aug24Payload?.date??roboticsPayload?.lastUpdated??opportunityPayload?.lastUpdated??videoScreenPayload?.date??ttPayload?.lastUpdated??nbisPayload?.lastUpdated??'2026-08-24'}));
+        const byTicker=new Map([...core,...normalisedSupplemental].map(x=>[x.ticker,{...x}]));
+        const applyPacket=packet=>{
+          (Array.isArray(packet?.newIdeas)?packet.newIdeas:[]).forEach(x=>{if(x?.ticker)byTicker.set(x.ticker,{...(byTicker.get(x.ticker)||{}),...x});});
+          const overrides=packet?.overrides&&typeof packet.overrides==='object'?packet.overrides:{};
+          Object.entries(overrides).forEach(([ticker,patch])=>{if(byTicker.has(ticker)&&patch&&typeof patch==='object')byTicker.set(ticker,{...byTicker.get(ticker),...patch});});
+        };
+        applyPacket(rescanPayload);applyPacket(extensionPayload);applyPacket(extension2Payload);
+        return new Response(JSON.stringify([...byTicker.values()]),{status:200,headers:{'Content-Type':'application/json'}});
       };
     })();
   </script>
-  <script src="app.js"></script>
-  <script src="industry-risk.js"></script>
+  <script src="app.js"></script><script src="industry-risk.js"></script>
 </body>
 </html>
