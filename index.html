@@ -157,6 +157,8 @@
         const nbisPayload = nbisRes?.ok ? await nbisRes.json() : null;
         const aug24Payload = aug24Res?.ok ? await aug24Res.json() : null;
         const rescanPayload = rescanRes?.ok ? await rescanRes.json() : null;
+        const extensionRes = await nativeFetch('data/market-extension-2026-09-01.json', { cache: 'no-store' }).catch(() => null);
+        const extensionPayload = extensionRes?.ok ? await extensionRes.json() : null;
         const supplemental = [
           ...(Array.isArray(roboticsPayload?.ideas) ? roboticsPayload.ideas : []),
           ...(Array.isArray(opportunityPayload?.ideas) ? opportunityPayload.ideas : []),
@@ -190,6 +192,15 @@
         });
         const overrides = rescanPayload?.overrides && typeof rescanPayload.overrides === 'object' ? rescanPayload.overrides : {};
         Object.entries(overrides).forEach(([ticker,patch]) => {
+          if(!byTicker.has(ticker) || !patch || typeof patch !== 'object') return;
+          byTicker.set(ticker, {...byTicker.get(ticker), ...patch});
+        });
+        (Array.isArray(extensionPayload?.newIdeas) ? extensionPayload.newIdeas : []).forEach(x => {
+          if(!x?.ticker) return;
+          byTicker.set(x.ticker, {...(byTicker.get(x.ticker)||{}), ...x});
+        });
+        const extensionOverrides = extensionPayload?.overrides && typeof extensionPayload.overrides === 'object' ? extensionPayload.overrides : {};
+        Object.entries(extensionOverrides).forEach(([ticker,patch]) => {
           if(!byTicker.has(ticker) || !patch || typeof patch !== 'object') return;
           byTicker.set(ticker, {...byTicker.get(ticker), ...patch});
         });
