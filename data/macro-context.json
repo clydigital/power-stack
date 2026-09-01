@@ -1,278 +1,48 @@
 {
-  "version": 3,
-  "generatedAt": "2026-08-26T11:35:00Z",
-  "packetStaleAfterHours": 168,
-  "source": "Macro Indicators Dashboard + Aug 26 Power Stack sweep",
-  "sourceUrl": "https://macro-indicators-a3d.pages.dev/#econ_calendar",
-  "liveDeskInfluenceEnabled": false,
-  "scoringModel": "stock-specific macro channels",
-  "methodologyVersion": 3,
-  "methodology": "Official macro data remains the anchor, but the Aug 26 sweep adds verified developing-story overlays as directional risk lenses: AI financing quality versus physical power scarcity, refined-product versus crude tightness, El Nino second-order supply-chain risk, and selective rather than bazooka China stimulus. Secondary research is hypothesis-generating only and does not override primary data.",
-  "channels": [
-    {
-      "key": "growthDemand",
-      "label": "Growth / Demand",
-      "score": 0.65,
-      "confidence": 0.88,
-      "regime": "industrial expansion, consumer uneven",
-      "observedAt": "2026-08-26",
-      "staleAfterHours": 720,
-      "directionMeaning": "Higher = stronger broad/industrial demand",
-      "interpretation": "July ISM still shows manufacturing and services expansion, but softer consumer and labour signals prevent a broad risk-on demand reading.",
-      "evidence": [
-        {"indicator": "ISM Manufacturing PMI", "actual": 55.6, "unit": "index", "measurement": "diffusion level", "note": "Latest official month remains July; August due Sep 1."},
-        {"indicator": "ISM Manufacturing New Orders", "actual": 56.7, "unit": "index", "measurement": "diffusion level"},
-        {"indicator": "ISM Services PMI", "actual": 54.1, "unit": "index", "measurement": "diffusion level", "note": "Latest official month remains July; August due Sep 3."}
-      ]
-    },
-    {
-      "key": "policyRelief",
-      "label": "Policy Relief",
-      "score": 0.4,
-      "confidence": 0.78,
-      "regime": "some rate relief, inflation still mixed",
-      "observedAt": "2026-08-26",
-      "staleAfterHours": 336,
-      "directionMeaning": "Higher = more disinflation / more room for central-bank easing",
-      "interpretation": "Lower bond yields and softer upstream inflation help duration, but elevated ISM price indices mean the easing case is not clean.",
-      "evidence": [
-        {"indicator": "ISM Manufacturing Prices", "actual": 71.1, "unit": "index", "measurement": "diffusion level"},
-        {"indicator": "ISM Services Prices", "actual": 70.3, "unit": "index", "measurement": "diffusion level"}
-      ]
-    },
-    {
-      "key": "financialConditions",
-      "label": "Financial Conditions",
-      "score": -0.55,
-      "confidence": 0.9,
-      "regime": "easing from extremes, still restrictive for long-duration capex",
-      "observedAt": "2026-08-26",
-      "staleAfterHours": 168,
-      "directionMeaning": "Higher = easier actual financial conditions / lower long-end yields",
-      "interpretation": "Bond yields have eased, but long-duration financing remains expensive. AI buildout increasingly relies on leases, SPVs, private credit, debt and customer commitments, so cost-of-capital discipline matters more than headline capex.",
-      "evidence": [
-        {"indicator": "AI financing quality", "measurement": "developing-story overlay", "note": "Treat off-balance-sheet commitment estimates as a stress lens, not as a substitute for company filings."},
-        {"indicator": "Long-end financing", "measurement": "regime", "note": "Improved from recent peaks but remains restrictive versus the prior easy-money cycle."}
-      ]
-    },
-    {
-      "key": "creditAvailability",
-      "label": "Broad Credit Availability",
-      "score": 0.25,
-      "confidence": 0.82,
-      "regime": "available for quality borrowers; funding structure risk rising",
-      "observedAt": "2026-08-26",
-      "staleAfterHours": 168,
-      "directionMeaning": "Higher = tighter broad spreads / easier credit availability",
-      "interpretation": "Credit is still available to strong issuers, but the source and cost of financing for the next AI infrastructure leg are becoming a first-order investment variable.",
-      "evidence": [
-        {"indicator": "Hyperscaler funding mix", "measurement": "company/market research", "note": "Leases, debt, reduced buybacks, equity and third-party financing are becoming more important."}
-      ]
-    },
-    {
-      "key": "tailCreditStress",
-      "label": "Weak-End / Structured Credit Stress",
-      "score": 1.55,
-      "confidence": 0.86,
-      "regime": "quality split widening",
-      "observedAt": "2026-08-26",
-      "staleAfterHours": 168,
-      "directionMeaning": "Higher = MORE stress among weakest or most financing-dependent borrowers",
-      "interpretation": "The risk is concentrated in weak cash-flow, heavily financed or long-duration projects rather than across all investment-grade balance sheets. Penalise speculative developers and funding-dependent stories more than cash-rich incumbents.",
-      "evidence": [
-        {"indicator": "AI SPV / lease / private-credit reliance", "measurement": "developing-story risk lens", "note": "Raises counterparty, refinancing and future depreciation/dilution sensitivity."}
-      ]
-    },
-    {
-      "key": "consumerStrength",
-      "label": "Consumer Strength",
-      "score": -0.8,
-      "confidence": 0.86,
-      "regime": "soft",
-      "observedAt": "2026-08-26",
-      "staleAfterHours": 336,
-      "directionMeaning": "Higher = stronger household spending / demand",
-      "interpretation": "Consumer demand remains the softer part of the macro mix, keeping discretionary and housing-sensitive exposures below industrial infrastructure on the current hierarchy.",
-      "evidence": [
-        {"indicator": "Recent retail / sentiment trend", "measurement": "macro regime", "note": "Still a counterweight to strong industrial survey data."}
-      ]
-    },
-    {
-      "key": "housingStrength",
-      "label": "Housing Strength",
-      "score": -0.6,
-      "confidence": 0.82,
-      "regime": "soft under high financing costs",
-      "observedAt": "2026-08-26",
-      "staleAfterHours": 336,
-      "directionMeaning": "Higher = stronger housing/construction cycle",
-      "interpretation": "High borrowing costs keep leveraged property and residential-cycle exposures sensitive to financing even as selected infrastructure construction remains strong.",
-      "evidence": [
-        {"indicator": "Mortgage / property financing", "measurement": "regime", "note": "Funding cost remains the main constraint."}
-      ]
-    },
-    {
-      "key": "industrialCapex",
-      "label": "Industrial / Power Capex",
-      "score": 1.6,
-      "confidence": 0.95,
-      "regime": "very strong, increasingly power-constrained",
-      "observedAt": "2026-08-26",
-      "staleAfterHours": 336,
-      "directionMeaning": "Higher = stronger power/grid/data-centre/industrial capex",
-      "interpretation": "The physical AI buildout remains strong, but the bottleneck is moving toward generation, transformers, switchgear, substations, cables, backup power and networking. Prefer contracted backlog and time-to-power beneficiaries over concept exposure.",
-      "evidence": [
-        {"indicator": "ISM Manufacturing New Orders", "actual": 56.7, "unit": "index", "measurement": "diffusion level"},
-        {"indicator": "Belden Q2 orders", "actual": 836, "unit": "USD millions", "measurement": "company reported", "note": "Record orders; 1.11 book-to-bill."},
-        {"indicator": "Generac data-centre backlog", "actual": 1.6, "unit": "USD billions approx.", "measurement": "company reported / management commentary", "note": "Supports backup-power reliability as a real bottleneck."}
-      ]
-    },
-    {
-      "key": "inputCostPressure",
-      "label": "Input / Supply-Chain Pressure",
-      "score": 1.2,
-      "confidence": 0.92,
-      "regime": "elevated with electrical scarcity; climate tail risk rising",
-      "observedAt": "2026-08-26",
-      "staleAfterHours": 336,
-      "directionMeaning": "Higher = MORE raw-material/freight/wage/equipment cost pressure",
-      "interpretation": "Copper, electrical/electronic components and other physical inputs remain constrained. A very strong El Nino raises second-order risks through export restrictions, fertilizer, hydro-to-thermal switching and freight rerouting rather than creating a simple grain trade.",
-      "evidence": [
-        {"indicator": "ISM Manufacturing Prices", "actual": 71.1, "unit": "index", "measurement": "diffusion level"},
-        {"indicator": "ISM Services Prices", "actual": 70.3, "unit": "index", "measurement": "diffusion level"},
-        {"indicator": "El Nino", "measurement": "developing-story overlay", "note": "Use as a forward supply-chain stress scenario; do not treat weather alone as the trade."}
-      ]
-    },
-    {
-      "key": "labourStrength",
-      "label": "Labour Strength",
-      "score": -0.45,
-      "confidence": 0.82,
-      "regime": "softening",
-      "observedAt": "2026-08-26",
-      "staleAfterHours": 336,
-      "directionMeaning": "Higher = stronger employment and wage-income backdrop",
-      "interpretation": "Services employment remains weak while manufacturing employment is firmer. Labour-heavy contractors still face a less attractive margin setup than equipment suppliers with pricing power.",
-      "evidence": [
-        {"indicator": "ISM Services Employment", "actual": 47.4, "unit": "index", "measurement": "diffusion level"},
-        {"indicator": "ISM Manufacturing Employment", "actual": 52.8, "unit": "index", "measurement": "diffusion level"}
-      ]
-    },
-    {
-      "key": "riskAppetite",
-      "label": "Risk Appetite / Crowding",
-      "score": -0.35,
-      "confidence": 0.78,
-      "regime": "mixed with AI-duration crowding risk",
-      "observedAt": "2026-08-26",
-      "staleAfterHours": 168,
-      "directionMeaning": "Higher = stronger speculative/equity risk appetite",
-      "interpretation": "AI spending, private credit, government debt, rates and valuation are being questioned more aggressively. This is a valuation and position-sizing constraint, not evidence that physical infrastructure demand has disappeared.",
-      "evidence": [
-        {"indicator": "AI valuation / ROI debate", "measurement": "developing-story overlay", "note": "Raise evidence threshold for high-duration and pre-commercial names."}
-      ]
-    },
-    {
-      "key": "crudeTightness",
-      "label": "Crude Tightness",
-      "score": 0.15,
-      "confidence": 0.9,
-      "regime": "war premium fading; no broad crude shortage signal",
-      "observedAt": "2026-08-26",
-      "staleAfterHours": 168,
-      "directionMeaning": "Higher = tighter/higher crude balance and prices",
-      "interpretation": "Crude has weakened despite Iran/Hormuz headlines, so do not upgrade generic upstream beta simply because geopolitical risk remains elevated.",
-      "evidence": [
-        {"indicator": "WTI Aug 25 settlement", "actual": 82.36, "unit": "USD/bbl", "measurement": "market close", "note": "Down despite sanctions/geopolitical headlines."}
-      ]
-    },
-    {
-      "key": "productTightness",
-      "label": "Refined-Product Tightness",
-      "score": 1.8,
-      "confidence": 0.96,
-      "regime": "very tight; shortage concentrated downstream",
-      "observedAt": "2026-08-26",
-      "staleAfterHours": 168,
-      "directionMeaning": "Higher = tighter product balance / wider crack spreads",
-      "interpretation": "The physical shortage remains more convincing in diesel, jet and gasoline than in crude. This favours refiners and product logistics tactically over indiscriminate upstream exposure.",
-      "evidence": [
-        {"indicator": "Asian refined-product imports", "actual": -21, "unit": "% versus pre-conflict approx.", "measurement": "reported flow comparison", "note": "Use directionally; crisis-driven margins are not permanent."}
-      ]
-    },
-    {
-      "key": "gasTightness",
-      "label": "US Gas Tightness / Thermal Switch",
-      "score": -0.1,
-      "confidence": 0.76,
-      "regime": "spot gas loose; forward power-demand skew improving",
-      "observedAt": "2026-08-26",
-      "staleAfterHours": 168,
-      "directionMeaning": "Higher = tighter/higher US natural-gas balance and prices",
-      "interpretation": "Current US gas is not tight enough to justify a commodity upgrade, but AI power demand and a potential El Nino hydro-to-thermal switch improve the medium-term demand skew for gas infrastructure and LNG.",
-      "evidence": [
-        {"indicator": "Hydro-to-thermal risk", "measurement": "forward scenario", "note": "Potential El Nino transmission channel, not yet a realised spot-gas shortage."}
-      ]
-    }
+  "version": 4,
+  "generatedAt": "2026-09-01T07:10:00Z",
+  "packetStaleAfterHours": 48,
+  "source": "Daily Investment Brief Macroeconomic Dashboard + MacroMicro + primary-source cross-checks",
+  "sourceUrl": "https://dailyinvestmentbrief.com/macroeconomic-dashboard/",
+  "supplementalSourceUrl": "https://en.macromicro.me/",
+  "sourceStatus": "Daily Investment Brief is the primary dashboard, but its live indicator values render client-side and returned placeholders in the machine-readable fetch. Power Stack therefore never interprets 'Analyzing' or '--' as data; missing readings are supplemented with MacroMicro and authoritative source checks.",
+  "methodology": "Directional channels are scored from -2 to +2. Dashboard data is an input, not an investment signal. Creator/video and social-flow claims are hypothesis generators only and have zero direct scoring weight until independently verified.",
+  "regime": "Higher real/nominal yields + energy/product inflation + strong physical capex, with fragile breadth beneath the indices",
+  "keyReadings":[
+    {"label":"US 10Y Treasury","value":"4.76%","observedAt":"2026-08-31","source":"MacroMicro / Treasury market"},
+    {"label":"US 10Y breakeven inflation","value":"2.31%","observedAt":"2026-08-31","source":"MacroMicro / FRED"},
+    {"label":"US 10Y real TIPS yield","value":"2.34%","observedAt":"2026-08-27","source":"MacroMicro / Federal Reserve"},
+    {"label":"US CCC & lower HY effective yield","value":"14.6%","observedAt":"2026-08-28","source":"MacroMicro / ICE BofA"},
+    {"label":"Brent","value":"~$91.15/bbl","observedAt":"2026-09-01","source":"Reuters"},
+    {"label":"WTI","value":"~$86.46/bbl","observedAt":"2026-09-01","source":"Reuters"},
+    {"label":"Henry Hub futures","value":"~$2.93","observedAt":"2026-08-31","source":"MacroMicro"},
+    {"label":"Japan 10Y government yield","value":"3.0%","observedAt":"2026-09-01","source":"Reuters"},
+    {"label":"Hormuz visible commodity transits","value":"5 vessels vs ~14 10-day average; no liquid tankers","observedAt":"2026-08-31","source":"Reuters / Kpler"}
   ],
-  "themes": [
-    {
-      "theme": "AI / Data centres",
-      "regime": "physical demand strong; financing quality and ROI now first-order",
-      "confidence": 94,
-      "watch": [
-        {"kind": "watch", "title": "Physical backlog versus funding quality", "detail": "Separate real orders, customer prepayments and installed capacity from SPV/lease/private-credit financed announcements.", "nextTest": "Hyperscaler cash flow, debt/lease disclosures, data-centre cancellations and supplier backlog conversion."},
-        {"kind": "watch", "title": "Time to power", "detail": "Generation, switchgear, transformers, cable, backup power and networking can outperform chip-linked beta if grid connection becomes the binding constraint.", "nextTest": "Lead times, backlog, customer funding and grid interconnection commentary."}
-      ]
-    },
-    {
-      "theme": "Power / Grid",
-      "regime": "strongest structural category; scarcity and pricing power outweigh macro noise",
-      "confidence": 96,
-      "watch": [
-        {"kind": "watch", "title": "Scarcity versus valuation", "detail": "The fundamental setup is strongest where backlog is contracted and equipment is difficult to substitute; entry price still matters.", "nextTest": "GEV/PWR/ETN/TNB-style backlog, margins, lead times and cash conversion."}
-      ]
-    },
-    {
-      "theme": "Nuclear",
-      "regime": "existing generation/components upgraded relative to pre-commercial developers",
-      "confidence": 93,
-      "watch": [
-        {"kind": "watch", "title": "Cash earnings beat optionality", "detail": "Power scarcity strengthens nuclear, but financing risk penalises unbuilt reactors more than operating fleets, fuel and components.", "nextTest": "Binding contracts, financing, construction milestones and operating cash flow."}
-      ]
-    },
-    {
-      "theme": "Uranium / Fuel",
-      "regime": "structural scarcity intact; prefer operating/fuel-cycle quality",
-      "confidence": 86,
-      "watch": [
-        {"kind": "watch", "title": "Fuel-cycle economics", "detail": "Contracting, enrichment scarcity and utility inventories remain more important than broad China stimulus or daily AI sentiment.", "nextTest": "Long-term contracts, enrichment awards and inventory signals."}
-      ]
-    },
-    {
-      "theme": "Oil & Gas",
-      "regime": "refined products tighter than crude; gas infrastructure gains medium-term power optionality",
-      "confidence": 94,
-      "watch": [
-        {"kind": "watch", "title": "Products, not just crude", "detail": "Keep refiners/product tankers tactical while integrated majors and gas infrastructure remain the higher-quality expressions.", "nextTest": "Crack spreads, refinery utilisation, product flows, Hormuz routing and gas-to-power demand."},
-        {"kind": "watch", "title": "El Nino thermal switch", "detail": "Hydro weakness can raise LNG, gas, coal and tanker tonne-miles, but only if rainfall and grid substitution evidence confirms it.", "nextTest": "Hydro reservoir data, LNG demand, canal restrictions and freight rates."}
-      ]
-    },
-    {
-      "theme": "Metals",
-      "regime": "copper structurally supported; China demand prevents indiscriminate cyclical upgrades",
-      "confidence": 87,
-      "watch": [
-        {"kind": "watch", "title": "Copper remains the cleanest metal", "detail": "Grid and electrical scarcity support copper, while China's just-enough policy stance argues against treating all industrial metals as a stimulus trade.", "nextTest": "Inventories, treatment charges, Chinese demand and grid capex."}
-      ]
-    },
-    {
-      "theme": "Robotics / Automation",
-      "regime": "commercial ROI favoured over humanoid duration",
-      "confidence": 88,
-      "watch": [
-        {"kind": "watch", "title": "Deployment evidence first", "detail": "Warehouse automation and machine vision rank above pre-scale humanoids because customer ROI and cash economics are observable now.", "nextTest": "Orders, deployments, customer concentration and positive cash conversion."}
-      ]
-    }
+  "channels":[
+    {"key":"growthDemand","label":"Growth / Demand","score":0.45,"confidence":0.66,"regime":"Resilient headline growth; weaker rate-sensitive breadth","observedAt":"2026-09-01T06:30:00Z","staleAfterHours":72,"interpretation":"Copper and physical capex remain constructive, but small caps, housing and other rate-sensitive areas are weakening. Treat this as uneven late-cycle resilience, not broad acceleration."},
+    {"key":"policyRelief","label":"Policy Relief","score":-1.35,"confidence":0.88,"regime":"Hawkish repricing","observedAt":"2026-09-01T06:30:00Z","staleAfterHours":48,"interpretation":"Oil-driven inflation and hawkish Fed communication have pushed the market toward renewed hike risk rather than easing. Long-duration equities lose a key valuation tailwind."},
+    {"key":"financialConditions","label":"Financial Conditions","score":-1.55,"confidence":0.94,"regime":"Global bond selloff / higher real yields","observedAt":"2026-09-01T06:30:00Z","staleAfterHours":48,"interpretation":"US 10Y is around 4.76–4.78%, 10Y real TIPS about 2.34%, and Japan 10Y reached 3%. Higher discount rates and term premium penalize leverage, speculative duration and capital-intensive projects."},
+    {"key":"creditAvailability","label":"Broad Credit","score":0.05,"confidence":0.55,"regime":"Open for quality, more expensive","observedAt":"2026-09-01T06:30:00Z","staleAfterHours":72,"interpretation":"Financing is still available to quality issuers, but the cost of capital is rising. Separate access to credit from cheap credit."},
+    {"key":"tailCreditStress","label":"Weak-End Credit Stress","score":1.45,"confidence":0.83,"regime":"Elevated weak-borrower stress","observedAt":"2026-08-31T23:59:00Z","staleAfterHours":72,"interpretation":"CCC-and-lower yields near 14.6% and higher risk-free rates increase refinancing stress. This is a headwind for levered consumers, speculative AI financing and development-stage equities."},
+    {"key":"consumerStrength","label":"Consumer","score":-0.55,"confidence":0.61,"regime":"Selective pressure from fuel and financing costs","observedAt":"2026-09-01T06:30:00Z","staleAfterHours":96,"interpretation":"Higher gasoline/diesel and borrowing costs are a tax on households. Consumer demand has not collapsed, but discretionary and travel exposure deserve a higher hurdle."},
+    {"key":"housingStrength","label":"Housing","score":-1.15,"confidence":0.78,"regime":"Rate-sensitive deterioration","observedAt":"2026-09-01T06:30:00Z","staleAfterHours":96,"interpretation":"The long-end yield breakout is directly adverse for mortgages, builders and housing-linked capex. Housing remains one of the clearest places where bond stress transmits to the real economy."},
+    {"key":"industrialCapex","label":"Industrial / Power Capex","score":1.55,"confidence":0.91,"regime":"Physical AI/grid investment still strong","observedAt":"2026-09-01T06:30:00Z","staleAfterHours":96,"interpretation":"Copper, electrical backlogs, data-centre power demand and continued AI investment support the physical-capex thesis. Higher yields make financing quality and cash conversion more important, not the demand theme irrelevant."},
+    {"key":"inputCostPressure","label":"Input Costs","score":1.75,"confidence":0.93,"regime":"Energy, freight and fertilizer inflation","observedAt":"2026-09-01T06:30:00Z","staleAfterHours":48,"interpretation":"Oil, diesel/refined products, freight and fertilizer constraints are broadening cost pressure. This favors producers with pricing power and hurts low-margin users of energy/freight."},
+    {"key":"labourStrength","label":"Labour","score":-0.25,"confidence":0.48,"regime":"Awaiting fresh jobs confirmation","observedAt":"2026-09-01T06:30:00Z","staleAfterHours":72,"interpretation":"Do not overstate the labor signal before JOLTS and payrolls. Current macro risk is being driven more by energy and bonds than by a confirmed labor break."},
+    {"key":"riskAppetite","label":"Risk Appetite","score":-0.15,"confidence":0.62,"regime":"Crowded exposure, narrow index action, active rotation","observedAt":"2026-09-01T06:30:00Z","staleAfterHours":72,"interpretation":"A secondary reproduction puts NAAIM exposure at 102.7, while software/energy/agriculture rotation is happening under flat indices. The claimed record QQQ block trade is not independently verified and receives zero direct score impact."},
+    {"key":"crudeTightness","label":"Crude","score":1.55,"confidence":0.95,"regime":"Hormuz-constrained, but demand destruction matters","observedAt":"2026-09-01T06:30:00Z","staleAfterHours":36,"interpretation":"Brent is above $91 and visible Hormuz traffic remains far below normal. Morgan Stanley's $100 Q4 peak forecast is now consistent with a tighter supply path, but high prices can destroy demand and accelerate supply rerouting."},
+    {"key":"productTightness","label":"Refined Products","score":1.9,"confidence":0.96,"regime":"Middle-distillate scarcity remains severe","observedAt":"2026-09-01T06:30:00Z","staleAfterHours":36,"interpretation":"Diesel/distillate tightness remains a more important inflation channel than crude alone. Refiners and integrated producers benefit more directly than airlines, cruises and freight-intensive consumers."},
+    {"key":"gasTightness","label":"US Gas / Global LNG","score":0.65,"confidence":0.74,"regime":"US feedgas manageable; global LNG security premium rising","observedAt":"2026-09-01T06:30:00Z","staleAfterHours":72,"interpretation":"Henry Hub near $2.93 keeps US feedgas economics manageable while Gulf/LNG disruption and European storage risk support US export infrastructure such as Cheniere."}
+  ],
+  "themes":[
+    {"theme":"Power / Grid","regime":"Structural demand strong; valuation-sensitive","confidence":91,"watch":[{"kind":"rates","title":"10Y/real yields","detail":"Higher yields raise utility/project funding costs.","nextTest":"US10Y 4.8–4.9% zone"},{"kind":"orders","title":"Electrical/grid backlog","detail":"Require continued order/backlog evidence.","nextTest":"Next PWR/ETN/GEV updates"}]},
+    {"theme":"AI / Data centres","regime":"Demand intact; financing quality is the discriminator","confidence":87,"watch":[{"kind":"funding","title":"AI financing / dilution","detail":"Debt and off-balance-sheet structures matter more as yields rise.","nextTest":"New debt/convertible issuance"},{"kind":"rotation","title":"Software vs hardware","detail":"Software relative strength is improving beneath the index.","nextTest":"IGV/equal-weight software breakout"}]},
+    {"theme":"Nuclear","regime":"Operating assets preferred to pre-revenue duration","confidence":88,"watch":[{"kind":"fuel","title":"Fuel availability","detail":"HALEU/uranium availability remains a gating variable.","nextTest":"Contracting and fuel awards"}]},
+    {"theme":"Uranium / Fuel","regime":"Constructive scarcity / contracting","confidence":89,"watch":[{"kind":"contracts","title":"Long-term contracting","detail":"Prefer contract evidence over spot-price excitement.","nextTest":"CCJ/LEU contracting updates"}]},
+    {"theme":"Oil & Gas","regime":"Tight physical market with demand-destruction ceiling","confidence":94,"watch":[{"kind":"shipping","title":"Hormuz transits","detail":"Visible vessel counts remain far below normal.","nextTest":"Sustained tanker normalization or renewed decline"},{"kind":"oil","title":"Brent","detail":"Watch inflation/demand response as crude approaches triple digits.","nextTest":"$95 then $100"}]},
+    {"theme":"Metals","regime":"Copper structurally strong; do not chase tariff distortions","confidence":82,"watch":[{"kind":"copper","title":"Copper breakout","detail":"Grid/capex demand is constructive, but inventory/tariff flows distort price.","nextTest":"FCX $70–72 support / >$80.25 breakout"}]},
+    {"theme":"Robotics / Automation","regime":"Commercial ROI still favors structured automation","confidence":76,"watch":[{"kind":"rates","title":"Duration pressure","detail":"Higher yields penalize speculative humanoid valuations.","nextTest":"Factory deployment economics"}]},
+    {"theme":"Agriculture / Fertilizer / Food","regime":"Scarcity strengthening; input elasticity must be separated from food demand","confidence":90,"watch":[{"kind":"fertilizer","title":"Nitrogen vs farmer affordability","detail":"Nitrogen is harder to defer than P/K but still faces marginal application cuts.","nextTest":"CF/NTR pricing and farm margins"},{"kind":"weather","title":"El Niño / crop yields","detail":"Weather damage can convert input stress into later crop-price support.","nextTest":"Yield and export revisions"}]}
   ]
 }
