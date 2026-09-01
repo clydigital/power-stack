@@ -2,124 +2,24 @@
   const list = document.getElementById('themeList');
   const count = document.getElementById('themeCount');
   const updated = document.getElementById('themesUpdated');
-
-  const esc = (value = '') => String(value)
-    .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;').replaceAll("'", '&#039;');
-
-  const seededEmergenceDates = {
-    'long-end-duration-stress':'2026-08-21','ai-financing-cash-conversion':'2026-08-21',
-    'personalized-oncology':'2026-08-21','china-fiscal-infrastructure':'2026-08-21',
-    'fertilizer-feedstock-divergence':'2026-08-21','water-food-energy-collision':'2026-08-21',
-    'rubber-acreage-squeeze':'2026-08-21'
-  };
-  const emergedAt = theme => theme.emergedAt || seededEmergenceDates[theme.id] || '';
-  const isNewTheme = theme => {
-    const raw = emergedAt(theme);
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(raw)) return false;
-    const [y,m,d] = raw.split('-').map(Number);
-    const now = new Date();
-    const age = Math.floor((Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate()) - Date.UTC(y,m-1,d))/86400000);
-    return age >= 0 && age <= 2;
-  };
-  const directionClass = (direction='') => {
-    const d=direction.toLowerCase();
-    if(d.includes('strength')||d.includes('accelerat')||d.includes('dominant')||d.includes('phasing in')) return 'strong';
-    if(d.includes('weak')||d.includes('phase')||d.includes('dormant')||d.includes('risk')) return 'warn';
-    return '';
-  };
-  const renderNews = (items=[]) => items.length ? items.map(item => `
-    <article class="news-item">
-      <div class="news-date">${esc(item.date||'')}</div>
-      <a class="news-title" href="${esc(item.url||item.source||'#')}" target="_blank" rel="noopener">${esc(item.title||item.headline||'Untitled')}</a>
-      <div class="news-source">${esc(item.publisher||item.sourceLabel||item.sourceName||(item.url?item.source||'':''))}</div>
-      ${item.implication?`<div class="news-implication">${esc(item.implication)}</div>`:''}
-    </article>`).join('') : '<div class="news-implication">No material news link recorded yet.</div>';
-  const renderChips = (items=[],cls='ticker-chip') => items.length
-    ? items.map(item=>`<span class="${cls}">${esc(typeof item==='string'?item:item.ticker||item.name||'')}</span>`).join('')
-    : '<span class="watch-chip">None recorded</span>';
-  const scorePill = (label,value) => Number.isFinite(Number(value)) ? `<span class="theme-pill">${esc(label)} ${esc(Math.round(Number(value)))}/100</span>` : '';
-  const renderTheme = theme => `
-    <article class="theme-card" id="${esc(theme.id||'')}">
-      <div class="theme-head"><div>
-        <div class="theme-title-row"><div class="theme-title">${theme.priorityRank?`<span style="color:#6f7c85;font-size:.68em;margin-right:7px">#${esc(theme.priorityRank)}</span>`:''}${esc(theme.name||'Theme')}</div>
-          ${isNewTheme(theme)?`<span class="new-theme-badge" title="New Power Stack theme — emerged ${esc(emergedAt(theme))}"><span class="new-theme-dot"></span>NEW <small>≤3D</small></span>`:''}
-        </div>
-        <div class="theme-status">
-          ${theme.lifecycleState?`<span class="theme-pill ${directionClass(theme.lifecycleState)}">${esc(theme.lifecycleState)}</span>`:''}
-          <span class="theme-pill ${directionClass(theme.directionOfTravel||theme.direction)}">${esc(theme.directionOfTravel||theme.direction||'monitoring')}</span>
-          ${scorePill('SIGNIFICANCE',theme.significanceScore)}${scorePill('FRESHNESS',theme.freshnessScore)}
-        </div>
-        <div class="theme-copy">${esc(theme.summary||'')}</div>
-      </div><div class="theme-updated">Last material change<br><strong>${esc(theme.lastMaterialChange||theme.lastUpdated||'—')}</strong></div></div>
-      ${theme.whyNow?`<div class="theme-why"><strong>Why now:</strong> ${esc(theme.whyNow)}</div>`:(theme.whyDeveloping?`<div class="theme-why"><strong>Why it is developing:</strong> ${esc(theme.whyDeveloping)}</div>`:'')}
-      ${theme.marketTransmission?`<div class="theme-why"><strong>Market transmission:</strong> ${esc(theme.marketTransmission)}</div>`:''}
-      <div class="theme-grid">
-        <div class="theme-panel"><h3>Main news + implications</h3>${renderNews(theme.mainNews)}</div>
-        <div class="theme-panel"><h3>Power Stack exposure</h3><div class="ticker-cloud">${renderChips(theme.powerStackTickers)}</div>
-          ${Array.isArray(theme.researchCandidates)&&theme.researchCandidates.length?`<h3 style="margin-top:14px">Research candidates</h3><div class="ticker-cloud">${renderChips(theme.researchCandidates)}</div>`:''}
-          <h3 style="margin-top:14px">Watch next</h3><div class="watch-cloud">${renderChips(theme.watch,'watch-chip')}</div>
-          ${theme.nextTest?`<div class="news-implication" style="margin-top:12px"><strong>Next test:</strong> ${esc(theme.nextTest)}</div>`:''}
-          ${theme.confirmation?`<div class="news-implication" style="margin-top:8px"><strong>Confirm:</strong> ${esc(theme.confirmation)}</div>`:''}
-          ${theme.invalidation?`<div class="news-implication" style="margin-top:8px"><strong>Invalidate:</strong> ${esc(theme.invalidation)}</div>`:''}
-          ${theme.watchlistAction?`<div class="news-implication" style="margin-top:8px"><strong>Portfolio/watchlist:</strong> ${esc(theme.watchlistAction)}</div>`:''}
-        </div>
-      </div>
-    </article>`;
-
-  const applyOverlay = (themes,overlay) => {
-    if(!overlay) return;
-    const additions = overlay.candidateAdds && typeof overlay.candidateAdds==='object' ? overlay.candidateAdds : {};
-    Object.entries(additions).forEach(([themeId,tickers])=>{
-      const theme=themes.find(x=>x.id===themeId);
-      if(!theme||!Array.isArray(tickers)) return;
-      theme.researchCandidates=[...new Set([...(theme.researchCandidates||[]),...tickers])];
-      theme.lastUpdated=overlay.lastUpdated||overlay.asOf||theme.lastUpdated;
-    });
-    if(Array.isArray(overlay.newThemes)) overlay.newThemes.forEach(theme=>{
-      if(!theme?.id) return;
-      const existing=themes.find(x=>x.id===theme.id);
-      if(existing) Object.assign(existing,theme);
-      else themes.push({...theme});
-    });
-    const overrides=overlay.themeOverrides && typeof overlay.themeOverrides==='object' ? overlay.themeOverrides : {};
-    Object.entries(overrides).forEach(([themeId,patch])=>{
-      const theme=themes.find(x=>x.id===themeId);
-      if(theme && patch && typeof patch==='object') Object.assign(theme,patch);
-    });
-  };
-  const getJson = path => fetch(path,{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null);
-
+  const esc = (value='') => String(value).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
+  const seededEmergenceDates={'long-end-duration-stress':'2026-08-21','ai-financing-cash-conversion':'2026-08-21','personalized-oncology':'2026-08-21','china-fiscal-infrastructure':'2026-08-21','fertilizer-feedstock-divergence':'2026-08-21','water-food-energy-collision':'2026-08-21','rubber-acreage-squeeze':'2026-08-21'};
+  const emergedAt=theme=>theme.emergedAt||seededEmergenceDates[theme.id]||'';
+  const isNewTheme=theme=>{const raw=emergedAt(theme);if(!/^\d{4}-\d{2}-\d{2}$/.test(raw))return false;const[y,m,d]=raw.split('-').map(Number);const now=new Date();const age=Math.floor((Date.UTC(now.getUTCFullYear(),now.getUTCMonth(),now.getUTCDate())-Date.UTC(y,m-1,d))/86400000);return age>=0&&age<=2;};
+  const directionClass=(direction='')=>{const d=direction.toLowerCase();if(d.includes('strength')||d.includes('accelerat')||d.includes('dominant')||d.includes('phasing in'))return'strong';if(d.includes('weak')||d.includes('phase')||d.includes('dormant')||d.includes('risk'))return'warn';return'';};
+  const renderNews=(items=[])=>items.length?items.map(item=>`<article class="news-item"><div class="news-date">${esc(item.date||'')}</div><a class="news-title" href="${esc(item.url||item.source||'#')}" target="_blank" rel="noopener">${esc(item.title||item.headline||'Untitled')}</a><div class="news-source">${esc(item.publisher||item.sourceLabel||item.sourceName||(item.url?item.source||'':''))}</div>${item.implication?`<div class="news-implication">${esc(item.implication)}</div>`:''}</article>`).join(''):'<div class="news-implication">No material news link recorded yet.</div>';
+  const renderChips=(items=[],cls='ticker-chip')=>items.length?items.map(item=>`<span class="${cls}">${esc(typeof item==='string'?item:item.ticker||item.name||'')}</span>`).join(''):'<span class="watch-chip">None recorded</span>';
+  const scorePill=(label,value)=>Number.isFinite(Number(value))?`<span class="theme-pill">${esc(label)} ${esc(Math.round(Number(value)))}/100</span>`:'';
+  const renderTheme=theme=>`<article class="theme-card" id="${esc(theme.id||'')}"><div class="theme-head"><div><div class="theme-title-row"><div class="theme-title">${theme.priorityRank?`<span style="color:#6f7c85;font-size:.68em;margin-right:7px">#${esc(theme.priorityRank)}</span>`:''}${esc(theme.name||'Theme')}</div>${isNewTheme(theme)?`<span class="new-theme-badge" title="New Power Stack theme — emerged ${esc(emergedAt(theme))}"><span class="new-theme-dot"></span>NEW <small>≤3D</small></span>`:''}</div><div class="theme-status">${theme.lifecycleState?`<span class="theme-pill ${directionClass(theme.lifecycleState)}">${esc(theme.lifecycleState)}</span>`:''}<span class="theme-pill ${directionClass(theme.directionOfTravel||theme.direction)}">${esc(theme.directionOfTravel||theme.direction||'monitoring')}</span>${scorePill('SIGNIFICANCE',theme.significanceScore)}${scorePill('FRESHNESS',theme.freshnessScore)}</div><div class="theme-copy">${esc(theme.summary||'')}</div></div><div class="theme-updated">Last material change<br><strong>${esc(theme.lastMaterialChange||theme.lastUpdated||'—')}</strong></div></div>${theme.whyNow?`<div class="theme-why"><strong>Why now:</strong> ${esc(theme.whyNow)}</div>`:(theme.whyDeveloping?`<div class="theme-why"><strong>Why it is developing:</strong> ${esc(theme.whyDeveloping)}</div>`:'')}${theme.marketTransmission?`<div class="theme-why"><strong>Market transmission:</strong> ${esc(theme.marketTransmission)}</div>`:''}<div class="theme-grid"><div class="theme-panel"><h3>Main news + implications</h3>${renderNews(theme.mainNews)}</div><div class="theme-panel"><h3>Power Stack exposure</h3><div class="ticker-cloud">${renderChips(theme.powerStackTickers)}</div>${Array.isArray(theme.researchCandidates)&&theme.researchCandidates.length?`<h3 style="margin-top:14px">Research candidates</h3><div class="ticker-cloud">${renderChips(theme.researchCandidates)}</div>`:''}<h3 style="margin-top:14px">Watch next</h3><div class="watch-cloud">${renderChips(theme.watch,'watch-chip')}</div>${theme.nextTest?`<div class="news-implication" style="margin-top:12px"><strong>Next test:</strong> ${esc(theme.nextTest)}</div>`:''}${theme.confirmation?`<div class="news-implication" style="margin-top:8px"><strong>Confirm:</strong> ${esc(theme.confirmation)}</div>`:''}${theme.invalidation?`<div class="news-implication" style="margin-top:8px"><strong>Invalidate:</strong> ${esc(theme.invalidation)}</div>`:''}${theme.watchlistAction?`<div class="news-implication" style="margin-top:8px"><strong>Portfolio/watchlist:</strong> ${esc(theme.watchlistAction)}</div>`:''}</div></div></article>`;
+  const applyOverlay=(themes,overlay)=>{if(!overlay)return;const additions=overlay.candidateAdds&&typeof overlay.candidateAdds==='object'?overlay.candidateAdds:{};Object.entries(additions).forEach(([themeId,tickers])=>{const theme=themes.find(x=>x.id===themeId);if(!theme||!Array.isArray(tickers))return;theme.researchCandidates=[...new Set([...(theme.researchCandidates||[]),...tickers])];theme.lastUpdated=overlay.lastUpdated||overlay.asOf||theme.lastUpdated;});if(Array.isArray(overlay.newThemes))overlay.newThemes.forEach(theme=>{if(!theme?.id)return;const existing=themes.find(x=>x.id===theme.id);if(existing)Object.assign(existing,theme);else themes.push({...theme});});const overrides=overlay.themeOverrides&&typeof overlay.themeOverrides==='object'?overlay.themeOverrides:{};Object.entries(overrides).forEach(([themeId,patch])=>{const theme=themes.find(x=>x.id===themeId);if(theme&&patch&&typeof patch==='object')Object.assign(theme,patch);});};
+  const getJson=path=>fetch(path,{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null);
   Promise.all([
-    getJson('data/developing-themes.json'),
-    getJson('data/water-cooling-research.json'),
-    getJson('data/resource-stock-screen-2026-08-21.json'),
-    getJson('data/deep-bottleneck-stock-screen-2026-08-21.json'),
-    getJson('data/adjacent-theme-overlay-2026-08-24.json'),
-    getJson('data/beef-cycle-overlay-2026-08-27.json'),
-    getJson('data/intraday-theme-overlay-2026-09-01.json'),
-    getJson('data/theme-priority-overlay-2026-09-01.json'),
-    getJson('data/market-extension-2026-09-01.json')
-  ]).then(([data,water,resource,deep,adjacent,beef,intraday,priority,extension])=>{
+    getJson('data/developing-themes.json'),getJson('data/water-cooling-research.json'),getJson('data/resource-stock-screen-2026-08-21.json'),getJson('data/deep-bottleneck-stock-screen-2026-08-21.json'),getJson('data/adjacent-theme-overlay-2026-08-24.json'),getJson('data/beef-cycle-overlay-2026-08-27.json'),getJson('data/intraday-theme-overlay-2026-09-01.json'),getJson('data/theme-priority-overlay-2026-09-01.json'),getJson('data/market-extension-2026-09-01.json'),getJson('data/market-extension-2-2026-09-01.json')
+  ]).then(([data,water,resource,deep,adjacent,beef,intraday,priority,extension,extension2])=>{
     const themes=Array.isArray(data?.themes)?data.themes.map(t=>({...t})):[];
-    if(water){
-      const waterTheme=themes.find(t=>t.id==='water-cooling');
-      if(waterTheme){
-        const tickers=Array.isArray(water.newResearchCandidates)?water.newResearchCandidates.map(x=>x.ticker).filter(Boolean):[];
-        const freshNews=Array.isArray(water.currentThemeNews)?water.currentThemeNews.map(item=>({date:item.date,title:item.headline,url:item.source,publisher:'Current research',implication:item.implication})):[];
-        waterTheme.researchCandidates=[...new Set([...(waterTheme.researchCandidates||[]),...tickers])];
-        waterTheme.mainNews=[...freshNews,...(waterTheme.mainNews||[])];
-        waterTheme.lastUpdated=water.lastUpdated||waterTheme.lastUpdated;
-        waterTheme.summary=water.themeRead||waterTheme.summary;
-      }
-    }
-    [resource,deep,adjacent,beef,intraday,priority,extension].forEach(o=>applyOverlay(themes,o));
+    if(water){const waterTheme=themes.find(t=>t.id==='water-cooling');if(waterTheme){const tickers=Array.isArray(water.newResearchCandidates)?water.newResearchCandidates.map(x=>x.ticker).filter(Boolean):[];const freshNews=Array.isArray(water.currentThemeNews)?water.currentThemeNews.map(item=>({date:item.date,title:item.headline,url:item.source,publisher:'Current research',implication:item.implication})):[];waterTheme.researchCandidates=[...new Set([...(waterTheme.researchCandidates||[]),...tickers])];waterTheme.mainNews=[...freshNews,...(waterTheme.mainNews||[])];waterTheme.lastUpdated=water.lastUpdated||waterTheme.lastUpdated;waterTheme.summary=water.themeRead||waterTheme.summary;}}
+    [resource,deep,adjacent,beef,intraday,priority,extension,extension2].forEach(o=>applyOverlay(themes,o));
     themes.sort((a,b)=>(Number(a.priorityRank)||999)-(Number(b.priorityRank)||999)||String(a.name||'').localeCompare(String(b.name||'')));
-    count.textContent=themes.length;
-    updated.textContent=extension?.asOf||extension?.lastUpdated||priority?.lastUpdated||intraday?.lastUpdated||beef?.lastUpdated||adjacent?.lastUpdated||deep?.lastUpdated||resource?.lastUpdated||data?.lastUpdated||water?.lastUpdated||'—';
-    list.innerHTML=themes.length?themes.map(renderTheme).join(''):'<div class="empty-themes">No developing themes are currently recorded.</div>';
-  }).catch(err=>{
-    console.error('Developing themes load failed',err);
-    list.innerHTML='<div class="empty-themes">Unable to load the thematic research feed.</div>';
-  });
+    count.textContent=themes.length;updated.textContent=extension2?.asOf||extension?.asOf||extension?.lastUpdated||priority?.lastUpdated||intraday?.lastUpdated||beef?.lastUpdated||adjacent?.lastUpdated||deep?.lastUpdated||resource?.lastUpdated||data?.lastUpdated||water?.lastUpdated||'—';list.innerHTML=themes.length?themes.map(renderTheme).join(''):'<div class="empty-themes">No developing themes are currently recorded.</div>';
+  }).catch(err=>{console.error('Developing themes load failed',err);list.innerHTML='<div class="empty-themes">Unable to load the thematic research feed.</div>';});
 })();
