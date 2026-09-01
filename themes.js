@@ -24,8 +24,8 @@
   };
   const directionClass = (direction='') => {
     const d=direction.toLowerCase();
-    if(d.includes('strength')||d.includes('accelerat')) return 'strong';
-    if(d.includes('speculative')||d.includes('elevated')||d.includes('tactical')) return 'warn';
+    if(d.includes('strength')||d.includes('accelerat')||d.includes('dominant')||d.includes('phasing in')) return 'strong';
+    if(d.includes('weak')||d.includes('phase')||d.includes('dormant')||d.includes('risk')) return 'warn';
     return '';
   };
   const renderNews = (items=[]) => items.length ? items.map(item => `
@@ -38,21 +38,31 @@
   const renderChips = (items=[],cls='ticker-chip') => items.length
     ? items.map(item=>`<span class="${cls}">${esc(typeof item==='string'?item:item.ticker||item.name||'')}</span>`).join('')
     : '<span class="watch-chip">None recorded</span>';
+  const scorePill = (label,value) => Number.isFinite(Number(value)) ? `<span class="theme-pill">${esc(label)} ${esc(Math.round(Number(value)))}/100</span>` : '';
   const renderTheme = theme => `
     <article class="theme-card" id="${esc(theme.id||'')}">
       <div class="theme-head"><div>
-        <div class="theme-title-row"><div class="theme-title">${esc(theme.name||'Theme')}</div>
+        <div class="theme-title-row"><div class="theme-title">${theme.priorityRank?`<span style="color:#6f7c85;font-size:.68em;margin-right:7px">#${esc(theme.priorityRank)}</span>`:''}${esc(theme.name||'Theme')}</div>
           ${isNewTheme(theme)?`<span class="new-theme-badge" title="New Power Stack theme — emerged ${esc(emergedAt(theme))}"><span class="new-theme-dot"></span>NEW <small>≤3D</small></span>`:''}
         </div>
-        <div class="theme-status"><span class="theme-pill ${directionClass(theme.direction)}">${esc(theme.direction||'monitoring')}</span><span class="theme-pill">${esc(theme.status||'Researching')}</span></div>
+        <div class="theme-status">
+          ${theme.lifecycleState?`<span class="theme-pill ${directionClass(theme.lifecycleState)}">${esc(theme.lifecycleState)}</span>`:''}
+          <span class="theme-pill ${directionClass(theme.directionOfTravel||theme.direction)}">${esc(theme.directionOfTravel||theme.direction||'monitoring')}</span>
+          ${scorePill('SIGNIFICANCE',theme.significanceScore)}${scorePill('FRESHNESS',theme.freshnessScore)}
+        </div>
         <div class="theme-copy">${esc(theme.summary||'')}</div>
-      </div><div class="theme-updated">Last updated<br><strong>${esc(theme.lastUpdated||'—')}</strong></div></div>
-      ${theme.whyDeveloping?`<div class="theme-why"><strong>Why it is developing:</strong> ${esc(theme.whyDeveloping)}</div>`:''}
+      </div><div class="theme-updated">Last material change<br><strong>${esc(theme.lastMaterialChange||theme.lastUpdated||'—')}</strong></div></div>
+      ${theme.whyNow?`<div class="theme-why"><strong>Why now:</strong> ${esc(theme.whyNow)}</div>`:(theme.whyDeveloping?`<div class="theme-why"><strong>Why it is developing:</strong> ${esc(theme.whyDeveloping)}</div>`:'')}
+      ${theme.marketTransmission?`<div class="theme-why"><strong>Market transmission:</strong> ${esc(theme.marketTransmission)}</div>`:''}
       <div class="theme-grid">
         <div class="theme-panel"><h3>Main news + implications</h3>${renderNews(theme.mainNews)}</div>
         <div class="theme-panel"><h3>Power Stack exposure</h3><div class="ticker-cloud">${renderChips(theme.powerStackTickers)}</div>
           ${Array.isArray(theme.researchCandidates)&&theme.researchCandidates.length?`<h3 style="margin-top:14px">Research candidates</h3><div class="ticker-cloud">${renderChips(theme.researchCandidates)}</div>`:''}
           <h3 style="margin-top:14px">Watch next</h3><div class="watch-cloud">${renderChips(theme.watch,'watch-chip')}</div>
+          ${theme.nextTest?`<div class="news-implication" style="margin-top:12px"><strong>Next test:</strong> ${esc(theme.nextTest)}</div>`:''}
+          ${theme.confirmation?`<div class="news-implication" style="margin-top:8px"><strong>Confirm:</strong> ${esc(theme.confirmation)}</div>`:''}
+          ${theme.invalidation?`<div class="news-implication" style="margin-top:8px"><strong>Invalidate:</strong> ${esc(theme.invalidation)}</div>`:''}
+          ${theme.watchlistAction?`<div class="news-implication" style="margin-top:8px"><strong>Portfolio/watchlist:</strong> ${esc(theme.watchlistAction)}</div>`:''}
         </div>
       </div>
     </article>`;
@@ -72,6 +82,11 @@
       if(existing) Object.assign(existing,theme);
       else themes.push({...theme});
     });
+    const overrides=overlay.themeOverrides && typeof overlay.themeOverrides==='object' ? overlay.themeOverrides : {};
+    Object.entries(overrides).forEach(([themeId,patch])=>{
+      const theme=themes.find(x=>x.id===themeId);
+      if(theme && patch && typeof patch==='object') Object.assign(theme,patch);
+    });
   };
   const getJson = path => fetch(path,{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null);
 
@@ -82,8 +97,9 @@
     getJson('data/deep-bottleneck-stock-screen-2026-08-21.json'),
     getJson('data/adjacent-theme-overlay-2026-08-24.json'),
     getJson('data/beef-cycle-overlay-2026-08-27.json'),
-    getJson('data/intraday-theme-overlay-2026-09-01.json')
-  ]).then(([data,water,resource,deep,adjacent,beef,intraday])=>{
+    getJson('data/intraday-theme-overlay-2026-09-01.json'),
+    getJson('data/theme-priority-overlay-2026-09-01.json')
+  ]).then(([data,water,resource,deep,adjacent,beef,intraday,priority])=>{
     const themes=Array.isArray(data?.themes)?data.themes.map(t=>({...t})):[];
     if(water){
       const waterTheme=themes.find(t=>t.id==='water-cooling');
@@ -96,9 +112,10 @@
         waterTheme.summary=water.themeRead||waterTheme.summary;
       }
     }
-    [resource,deep,adjacent,beef,intraday].forEach(o=>applyOverlay(themes,o));
+    [resource,deep,adjacent,beef,intraday,priority].forEach(o=>applyOverlay(themes,o));
+    themes.sort((a,b)=>(Number(a.priorityRank)||999)-(Number(b.priorityRank)||999)||String(a.name||'').localeCompare(String(b.name||'')));
     count.textContent=themes.length;
-    updated.textContent=intraday?.lastUpdated||beef?.lastUpdated||adjacent?.lastUpdated||deep?.lastUpdated||resource?.lastUpdated||data?.lastUpdated||water?.lastUpdated||'—';
+    updated.textContent=priority?.lastUpdated||intraday?.lastUpdated||beef?.lastUpdated||adjacent?.lastUpdated||deep?.lastUpdated||resource?.lastUpdated||data?.lastUpdated||water?.lastUpdated||'—';
     list.innerHTML=themes.length?themes.map(renderTheme).join(''):'<div class="empty-themes">No developing themes are currently recorded.</div>';
   }).catch(err=>{
     console.error('Developing themes load failed',err);
