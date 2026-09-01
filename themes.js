@@ -74,7 +74,7 @@
       const theme=themes.find(x=>x.id===themeId);
       if(!theme||!Array.isArray(tickers)) return;
       theme.researchCandidates=[...new Set([...(theme.researchCandidates||[]),...tickers])];
-      theme.lastUpdated=overlay.lastUpdated||theme.lastUpdated;
+      theme.lastUpdated=overlay.lastUpdated||overlay.asOf||theme.lastUpdated;
     });
     if(Array.isArray(overlay.newThemes)) overlay.newThemes.forEach(theme=>{
       if(!theme?.id) return;
@@ -98,8 +98,9 @@
     getJson('data/adjacent-theme-overlay-2026-08-24.json'),
     getJson('data/beef-cycle-overlay-2026-08-27.json'),
     getJson('data/intraday-theme-overlay-2026-09-01.json'),
-    getJson('data/theme-priority-overlay-2026-09-01.json')
-  ]).then(([data,water,resource,deep,adjacent,beef,intraday,priority])=>{
+    getJson('data/theme-priority-overlay-2026-09-01.json'),
+    getJson('data/market-extension-2026-09-01.json')
+  ]).then(([data,water,resource,deep,adjacent,beef,intraday,priority,extension])=>{
     const themes=Array.isArray(data?.themes)?data.themes.map(t=>({...t})):[];
     if(water){
       const waterTheme=themes.find(t=>t.id==='water-cooling');
@@ -112,10 +113,10 @@
         waterTheme.summary=water.themeRead||waterTheme.summary;
       }
     }
-    [resource,deep,adjacent,beef,intraday,priority].forEach(o=>applyOverlay(themes,o));
+    [resource,deep,adjacent,beef,intraday,priority,extension].forEach(o=>applyOverlay(themes,o));
     themes.sort((a,b)=>(Number(a.priorityRank)||999)-(Number(b.priorityRank)||999)||String(a.name||'').localeCompare(String(b.name||'')));
     count.textContent=themes.length;
-    updated.textContent=priority?.lastUpdated||intraday?.lastUpdated||beef?.lastUpdated||adjacent?.lastUpdated||deep?.lastUpdated||resource?.lastUpdated||data?.lastUpdated||water?.lastUpdated||'—';
+    updated.textContent=extension?.asOf||extension?.lastUpdated||priority?.lastUpdated||intraday?.lastUpdated||beef?.lastUpdated||adjacent?.lastUpdated||deep?.lastUpdated||resource?.lastUpdated||data?.lastUpdated||water?.lastUpdated||'—';
     list.innerHTML=themes.length?themes.map(renderTheme).join(''):'<div class="empty-themes">No developing themes are currently recorded.</div>';
   }).catch(err=>{
     console.error('Developing themes load failed',err);
