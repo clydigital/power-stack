@@ -7,28 +7,41 @@ A searchable, versioned investment-research vault for nuclear, AI infrastructure
 - `data/ideas.json` is the canonical long-term research database.
 - `data/macro-context.json` is the active Power Stack Pulse snapshot.
 - `data/ism-macro-snapshot.json` stores the deeper official-ISM analytical snapshot used as one input to macro interpretation.
-- Category research files add specialised research without replacing `ideas.json`.
+- `data/holdings-fundamentals.json` is the canonical current-holdings fundamentals ledger.
+- `data/watchlist.json` is the live price/action queue.
+- Category and intraday research files add specialised research without replacing the long-term database.
 - `data/live-context.json` is retained only as historical/dormant integration data and is not read by the Power Stack frontend.
 
-## Macro Pulse v2
+## Macro Pulse v4
 
-The active Pulse reads a reviewed snapshot of `https://macro-indicators-a3d.pages.dev/#econ_calendar` and applies it through **stock-specific macro fingerprints**.
+The active Pulse now uses the **Daily Investment Brief Macroeconomic Dashboard** as its primary dashboard layer:
 
-The source dashboard is treated as a data/visualization layer, not as an investment signal. Its deployed HTML was inspected directly. Generic chart MoM/YoY uses `(current - comparison) / abs(comparison) * 100`, and generic positive/negative colors reflect numeric direction only. Power Stack therefore preserves raw arithmetic first and interprets it separately.
+`https://dailyinvestmentbrief.com/macroeconomic-dashboard/`
+
+Missing or inaccessible readings are supplemented with **MacroMicro**:
+
+`https://en.macromicro.me/`
+
+Official releases, company filings and authoritative market data remain the verification layer. The Daily Investment Brief dashboard currently renders some live readings client-side; when an automated research pass receives placeholders such as `Analyzing...` or `--`, Power Stack does **not** infer a value. It falls back to MacroMicro and authoritative sources instead.
+
+The source dashboards are treated as data/visualisation layers, not investment signals. Creator videos, social posts, block-trade claims and technical commentary are also hypothesis generators only. They receive zero direct score weight until independently verified.
 
 Active data files:
 
 - `data/macro-context.json` — current directional macro channels, evidence, confidence and freshness.
 - `data/macro-sensitivities.json` — slow-moving stock fingerprints with fundamental and market sensitivity, weights and confidence.
 - `data/macro-methodology.json` — verified source semantics and interpretation guardrails.
+- `data/creator-view-overlay-2026-09-01.json` — current audit of user-supplied creator views and their verification status.
+- `data/intraday-research-2026-09-01.json` — current intraday research state and implementation record.
 
 The engine separates, among other things:
 
-- raw CPI/PCE index changes from inflation momentum and policy implications;
-- basis-point yield changes from generic percentage changes in yield levels;
+- nominal yields, real yields, breakeven inflation and term-premium pressure;
 - broad credit availability from CCC/weak-end credit stress;
-- crude tightness from refined-product tightness/crack spreads and US gas tightness;
-- already-transformed rate series from level series, avoiding recursive percent-change artifacts.
+- crude tightness from refined-product tightness/crack spreads and US gas/global LNG conditions;
+- end-food demand from farmer input elasticity;
+- AI demand from financing quality, dilution and cash conversion;
+- social/creator flow observations from verified macro/fundamental evidence.
 
 ### Stock scoring
 
@@ -38,7 +51,7 @@ For factor `i`:
 
 The stock's Macro adjustment is the sum of fresh contributions and is capped at **±1.00**. Base Conviction is never overwritten. If a stock has no researched fingerprint, or the macro packet is stale, its macro adjustment is zero.
 
-Theme bars are now summaries of the **average stock-level macro adjustment inside the theme**, not a theme score copied into every stock.
+Theme bars are summaries of the **average stock-level macro adjustment inside the theme**, not a theme score copied into every stock.
 
 ## Live Desk status
 
