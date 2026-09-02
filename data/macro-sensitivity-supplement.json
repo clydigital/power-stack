@@ -1,0 +1,264 @@
+{
+  "version": 1,
+  "updatedAt": "2026-09-02T04:35:00Z",
+  "purpose": "Supplemental researched macro fingerprints for tracked names that were missing from the legacy macro-sensitivities file or need current-holding aliases. Loaded after the base file; same-ticker entries intentionally override the base profile.",
+  "fundamentalWeight": 0.65,
+  "marketWeight": 0.35,
+  "methodology": "Macro profiles describe economic sensitivity, not fundamental quality and not a buy/sell score. Factor weights are normalized near 1.00; sensitivities are -5 to +5. Only channels present in the current macro-context participate in the live adjustment.",
+  "coverageAdded": ["TSLA","SYM","CGNX","TER","2590.HK","9880.HK","SLB","MPC","VLO","ENPH","NVT","SPCX","0270","7277","0217","TTWO","MISC","DAYANG","HIBISCS"],
+  "stocks": [
+    {
+      "ticker":"TSLA","name":"Tesla","themeGroup":"Robotics / Automation","profileConfidence":0.84,"profileNote":"Current earnings still come mainly from autos and energy storage; market sensitivity is unusually high because autonomy/Optimus optionality is capitalised far ahead of cash flows.","fundamentalWeight":0.65,"marketWeight":0.35,
+      "factors":{
+        "industrialCapex":{"fundamental":3.0,"market":3.0,"weight":0.22,"confidence":0.85,"rationale":"Grid-scale storage and manufacturing expansion benefit from power/industrial capex."},
+        "financialConditions":{"fundamental":2.0,"market":5.0,"weight":0.20,"confidence":0.95,"rationale":"Long-duration autonomy/robotics expectations make the equity highly sensitive to real yields and discount rates."},
+        "riskAppetite":{"fundamental":0.5,"market":5.0,"weight":0.18,"confidence":0.95,"rationale":"Narrative optionality and a premium multiple amplify changes in speculative appetite."},
+        "consumerStrength":{"fundamental":4.0,"market":3.0,"weight":0.10,"confidence":0.85,"rationale":"Vehicle demand and financing affordability remain exposed to household strength."},
+        "inputCostPressure":{"fundamental":-3.0,"market":-2.0,"weight":0.10,"confidence":0.8,"rationale":"Battery metals, electronics and logistics inflation can pressure vehicle and storage margins."},
+        "policyRelief":{"fundamental":1.0,"market":3.0,"weight":0.08,"confidence":0.8,"rationale":"Lower expected rates improve auto affordability and duration valuation."},
+        "growthDemand":{"fundamental":3.0,"market":3.0,"weight":0.07,"confidence":0.8,"rationale":"Broad growth supports vehicle, energy and automation demand."},
+        "tailCreditStress":{"fundamental":0.0,"market":-3.0,"weight":0.05,"confidence":0.85,"rationale":"Tesla's balance sheet is strong, but weak-end credit stress usually compresses premium-growth multiples and auto financing demand."}
+      },"derivedFrom":"Current Power Stack holdings/robotics research and Sep 2 macro regime.","reviewStatus":"researched supplement v1","updatedAt":"2026-09-02"
+    },
+    {
+      "ticker":"SYM","name":"Symbotic","themeGroup":"Robotics / Automation","profileConfidence":0.86,"profileNote":"Commercial warehouse automation with real deployments; materially less dependent on humanoid adoption but still duration-sensitive.","fundamentalWeight":0.65,"marketWeight":0.35,
+      "factors":{
+        "industrialCapex":{"fundamental":5.0,"market":4.0,"weight":0.25,"confidence":0.95,"rationale":"Warehouse automation budgets and deployment cadence are the primary demand channel."},
+        "growthDemand":{"fundamental":3.0,"market":3.0,"weight":0.15,"confidence":0.85,"rationale":"Retail/logistics growth supports automation investment."},
+        "financialConditions":{"fundamental":2.0,"market":4.0,"weight":0.15,"confidence":0.85,"rationale":"Higher real yields pressure growth multiples and customer capex hurdle rates."},
+        "riskAppetite":{"fundamental":0.0,"market":4.5,"weight":0.15,"confidence":0.9,"rationale":"High-growth automation equities rerate with risk appetite."},
+        "labourStrength":{"fundamental":-2.5,"market":-1.0,"weight":0.10,"confidence":0.75,"rationale":"Labour scarcity/wage pressure improves automation ROI; an abundant cheap-labour backdrop weakens urgency."},
+        "inputCostPressure":{"fundamental":-2.0,"market":-1.0,"weight":0.08,"confidence":0.7,"rationale":"Electronics/mechanical inflation can pressure project margins."},
+        "policyRelief":{"fundamental":1.0,"market":2.0,"weight":0.07,"confidence":0.75,"rationale":"Easier expected policy helps duration valuation."},
+        "tailCreditStress":{"fundamental":-0.5,"market":-2.5,"weight":0.05,"confidence":0.8,"rationale":"Weak credit can defer customer expansion and compress high-growth multiples."}
+      },"derivedFrom":"Power Stack robotics research; commercial-deployment hierarchy.","reviewStatus":"researched supplement v1","updatedAt":"2026-09-02"
+    },
+    {
+      "ticker":"CGNX","name":"Cognex","themeGroup":"Robotics / Automation","profileConfidence":0.88,"profileNote":"Machine vision is a mature enabling layer for factory and warehouse automation with better current-economics visibility than humanoid exposure.","fundamentalWeight":0.65,"marketWeight":0.35,
+      "factors":{
+        "industrialCapex":{"fundamental":5.0,"market":4.0,"weight":0.28,"confidence":0.95,"rationale":"Factory automation and machine-vision capex drive demand."},
+        "growthDemand":{"fundamental":3.5,"market":3.0,"weight":0.18,"confidence":0.9,"rationale":"Industrial and electronics production cycles affect orders."},
+        "financialConditions":{"fundamental":1.0,"market":3.0,"weight":0.12,"confidence":0.8,"rationale":"Rates mainly affect valuation and customer capex rather than solvency."},
+        "riskAppetite":{"fundamental":0.0,"market":3.0,"weight":0.12,"confidence":0.85,"rationale":"Automation multiple expands/contracts with growth appetite."},
+        "inputCostPressure":{"fundamental":-2.0,"market":-1.0,"weight":0.10,"confidence":0.75,"rationale":"Component inflation and shortages can pressure margins/delivery."},
+        "labourStrength":{"fundamental":-2.0,"market":-1.0,"weight":0.08,"confidence":0.7,"rationale":"Labour scarcity raises the ROI of automation."},
+        "policyRelief":{"fundamental":0.5,"market":1.5,"weight":0.07,"confidence":0.75,"rationale":"Lower expected rates help valuation."},
+        "tailCreditStress":{"fundamental":0.0,"market":-1.5,"weight":0.05,"confidence":0.8,"rationale":"Credit stress can delay smaller industrial customers' capex."}
+      },"derivedFrom":"Power Stack robotics/machine-vision research.","reviewStatus":"researched supplement v1","updatedAt":"2026-09-02"
+    },
+    {
+      "ticker":"TER","name":"Teradyne","themeGroup":"Robotics / Automation","profileConfidence":0.84,"profileNote":"Semiconductor-test cyclicality plus collaborative/mobile robotics exposure makes industrial capex and electronics demand the dominant macro channels.","fundamentalWeight":0.65,"marketWeight":0.35,
+      "factors":{
+        "industrialCapex":{"fundamental":4.5,"market":4.0,"weight":0.25,"confidence":0.9,"rationale":"Semiconductor test and automation orders follow capex cycles."},
+        "growthDemand":{"fundamental":4.0,"market":3.5,"weight":0.20,"confidence":0.9,"rationale":"Electronics/semiconductor demand drives test utilisation and orders."},
+        "riskAppetite":{"fundamental":0.0,"market":3.5,"weight":0.15,"confidence":0.85,"rationale":"Semiconductor and robotics valuation responds to growth appetite."},
+        "financialConditions":{"fundamental":1.0,"market":3.0,"weight":0.12,"confidence":0.8,"rationale":"Higher real yields pressure semiconductor growth multiples."},
+        "inputCostPressure":{"fundamental":-2.0,"market":-1.0,"weight":0.08,"confidence":0.75,"rationale":"Component constraints can affect margins and deliveries."},
+        "policyRelief":{"fundamental":0.5,"market":1.5,"weight":0.08,"confidence":0.75,"rationale":"Easier expected rates help duration valuation."},
+        "labourStrength":{"fundamental":-1.0,"market":0.0,"weight":0.07,"confidence":0.6,"rationale":"Labour scarcity modestly supports automation ROI."},
+        "tailCreditStress":{"fundamental":0.0,"market":-1.5,"weight":0.05,"confidence":0.8,"rationale":"Credit stress weakens cyclical capex appetite."}
+      },"derivedFrom":"Power Stack robotics and semiconductor-test research.","reviewStatus":"researched supplement v1","updatedAt":"2026-09-02"
+    },
+    {
+      "ticker":"2590.HK","name":"Geekplus","themeGroup":"Robotics / Automation","profileConfidence":0.74,"profileNote":"Warehouse AMR exposure has a clearer adoption path than humanoids, but the equity remains young and sensitive to China/global capex and risk appetite.","fundamentalWeight":0.65,"marketWeight":0.35,
+      "factors":{
+        "industrialCapex":{"fundamental":5.0,"market":4.0,"weight":0.25,"confidence":0.9,"rationale":"Warehouse automation budgets are the core demand driver."},
+        "growthDemand":{"fundamental":4.0,"market":3.0,"weight":0.18,"confidence":0.8,"rationale":"E-commerce/logistics activity supports deployments."},
+        "financialConditions":{"fundamental":2.0,"market":4.5,"weight":0.17,"confidence":0.8,"rationale":"Young growth equity is sensitive to discount rates and expansion funding."},
+        "riskAppetite":{"fundamental":0.0,"market":5.0,"weight":0.15,"confidence":0.9,"rationale":"Post-IPO valuation is highly sentiment sensitive."},
+        "consumerStrength":{"fundamental":2.5,"market":2.0,"weight":0.10,"confidence":0.7,"rationale":"Retail/e-commerce volumes influence customer automation ROI."},
+        "inputCostPressure":{"fundamental":-2.5,"market":-1.5,"weight":0.07,"confidence":0.7,"rationale":"Electronics, motors and logistics inflation can pressure hardware margins."},
+        "tailCreditStress":{"fundamental":-1.0,"market":-3.0,"weight":0.05,"confidence":0.8,"rationale":"Funding/customer-capex risk rises when weak credit deteriorates."},
+        "policyRelief":{"fundamental":0.5,"market":1.5,"weight":0.03,"confidence":0.65,"rationale":"Lower rates modestly help valuation and capex."}
+      },"derivedFrom":"Power Stack warehouse automation research.","reviewStatus":"researched supplement v1","updatedAt":"2026-09-02"
+    },
+    {
+      "ticker":"9880.HK","name":"UBTECH Robotics","themeGroup":"Robotics / Automation","profileConfidence":0.68,"profileNote":"Industrial humanoid optionality remains pre-scale relative to conventional automation; financing and risk appetite dominate the equity response.","fundamentalWeight":0.65,"marketWeight":0.35,
+      "factors":{
+        "industrialCapex":{"fundamental":3.5,"market":4.0,"weight":0.22,"confidence":0.75,"rationale":"Factory deployment budgets are necessary for commercialisation."},
+        "financialConditions":{"fundamental":4.0,"market":5.0,"weight":0.22,"confidence":0.9,"rationale":"Long-duration, capital-intensive commercialisation is highly rate sensitive."},
+        "riskAppetite":{"fundamental":0.0,"market":5.0,"weight":0.20,"confidence":0.95,"rationale":"Humanoid narrative exposure is highly sentiment driven."},
+        "growthDemand":{"fundamental":2.5,"market":3.0,"weight":0.12,"confidence":0.7,"rationale":"Industrial demand supports pilot-to-production conversion."},
+        "inputCostPressure":{"fundamental":-3.0,"market":-2.0,"weight":0.08,"confidence":0.7,"rationale":"Actuators, reducers, electronics and batteries are cost-sensitive inputs."},
+        "tailCreditStress":{"fundamental":-3.0,"market":-4.0,"weight":0.08,"confidence":0.9,"rationale":"Funding-dependent concept equities are especially vulnerable to weak-credit stress."},
+        "policyRelief":{"fundamental":1.5,"market":3.0,"weight":0.05,"confidence":0.75,"rationale":"Lower expected rates support duration valuation."},
+        "labourStrength":{"fundamental":-1.5,"market":0.0,"weight":0.03,"confidence":0.55,"rationale":"Labour scarcity can improve the long-run automation case but is not the near-term earnings driver."}
+      },"derivedFrom":"Power Stack humanoid/robotics research.","reviewStatus":"researched supplement v1","updatedAt":"2026-09-02"
+    },
+    {
+      "ticker":"SLB","name":"SLB","themeGroup":"Oil & Gas","profileConfidence":0.9,"profileNote":"Oilfield-services cash flow remains tied to upstream spending, while the Kelvion transaction adds a growing data-centre thermal-management crossover.","fundamentalWeight":0.65,"marketWeight":0.35,
+      "factors":{
+        "crudeTightness":{"fundamental":4.5,"market":4.0,"weight":0.25,"confidence":0.95,"rationale":"Sustained crude strength supports customer upstream budgets and service intensity."},
+        "industrialCapex":{"fundamental":3.5,"market":3.0,"weight":0.15,"confidence":0.85,"rationale":"Upstream, energy-infrastructure and data-centre cooling investment support orders."},
+        "growthDemand":{"fundamental":3.0,"market":2.5,"weight":0.10,"confidence":0.8,"rationale":"Global activity affects oil demand and producer spending."},
+        "gasTightness":{"fundamental":2.5,"market":2.0,"weight":0.10,"confidence":0.8,"rationale":"Gas/LNG investment supports international service activity."},
+        "inputCostPressure":{"fundamental":-2.5,"market":-1.5,"weight":0.10,"confidence":0.75,"rationale":"Labour/equipment/logistics inflation can pressure service margins."},
+        "financialConditions":{"fundamental":1.0,"market":1.5,"weight":0.08,"confidence":0.75,"rationale":"Rates affect customer project economics and acquisition financing."},
+        "productTightness":{"fundamental":1.0,"market":1.0,"weight":0.07,"confidence":0.65,"rationale":"Refined-product tightness can indirectly sustain upstream/refinery spending but is not the primary earnings channel."},
+        "riskAppetite":{"fundamental":0.0,"market":1.5,"weight":0.05,"confidence":0.7,"rationale":"Energy-equity multiples respond modestly to risk appetite."},
+        "labourStrength":{"fundamental":-1.5,"market":-0.5,"weight":0.05,"confidence":0.65,"rationale":"Tight skilled labour raises service costs."},
+        "tailCreditStress":{"fundamental":0.0,"market":-1.0,"weight":0.05,"confidence":0.8,"rationale":"Weak producer/project financing can reduce marginal activity."}
+      },"derivedFrom":"Power Stack oil-services and Sep 1 SLB/Kelvion research.","reviewStatus":"researched supplement v1","updatedAt":"2026-09-02"
+    },
+    {
+      "ticker":"MPC","name":"Marathon Petroleum","themeGroup":"Oil & Gas","profileConfidence":0.91,"profileNote":"Refining economics are driven more by product cracks and utilisation than flat crude direction; current product scarcity is the key macro channel.","fundamentalWeight":0.65,"marketWeight":0.35,
+      "factors":{
+        "productTightness":{"fundamental":5.0,"market":5.0,"weight":0.35,"confidence":0.98,"rationale":"Diesel/gasoline/jet crack strength directly supports refining margins."},
+        "growthDemand":{"fundamental":3.0,"market":2.0,"weight":0.15,"confidence":0.8,"rationale":"Transport and industrial demand support product volumes."},
+        "crudeTightness":{"fundamental":-1.0,"market":1.0,"weight":0.15,"confidence":0.75,"rationale":"Crude spikes can raise feedstock cost unless product cracks widen faster."},
+        "consumerStrength":{"fundamental":2.0,"market":1.5,"weight":0.10,"confidence":0.7,"rationale":"Driving/fuel demand has a consumer component."},
+        "financialConditions":{"fundamental":0.5,"market":1.0,"weight":0.05,"confidence":0.7,"rationale":"Balance-sheet sensitivity is modest relative to margin cycles."},
+        "inputCostPressure":{"fundamental":-1.5,"market":-1.0,"weight":0.05,"confidence":0.65,"rationale":"Non-crude operating and maintenance inflation can pressure margins."},
+        "riskAppetite":{"fundamental":0.0,"market":1.0,"weight":0.05,"confidence":0.7,"rationale":"Cyclical energy multiples respond modestly to risk appetite."},
+        "policyRelief":{"fundamental":0.0,"market":0.5,"weight":0.05,"confidence":0.6,"rationale":"Rates matter less than physical product balances."},
+        "tailCreditStress":{"fundamental":0.0,"market":-0.5,"weight":0.05,"confidence":0.75,"rationale":"Stress mainly affects valuation/demand at the margin."}
+      },"derivedFrom":"Power Stack refined-product research.","reviewStatus":"researched supplement v1","updatedAt":"2026-09-02"
+    },
+    {
+      "ticker":"VLO","name":"Valero Energy","themeGroup":"Oil & Gas","profileConfidence":0.92,"profileNote":"High-quality refining beta: product tightness is the dominant positive channel, while crude-only spikes without demand resilience can be adverse.","fundamentalWeight":0.65,"marketWeight":0.35,
+      "factors":{
+        "productTightness":{"fundamental":5.0,"market":5.0,"weight":0.37,"confidence":0.98,"rationale":"Middle-distillate and gasoline cracks are the core earnings transmission."},
+        "growthDemand":{"fundamental":3.0,"market":2.0,"weight":0.15,"confidence":0.8,"rationale":"Fuel volumes depend on transport/industrial activity."},
+        "crudeTightness":{"fundamental":-1.5,"market":1.0,"weight":0.15,"confidence":0.75,"rationale":"Feedstock spikes are adverse if product prices do not keep pace."},
+        "consumerStrength":{"fundamental":2.0,"market":1.5,"weight":0.08,"confidence":0.7,"rationale":"Gasoline demand remains partly consumer-sensitive."},
+        "inputCostPressure":{"fundamental":-1.5,"market":-1.0,"weight":0.05,"confidence":0.65,"rationale":"Operating-cost inflation can pressure throughput economics."},
+        "financialConditions":{"fundamental":0.5,"market":1.0,"weight":0.05,"confidence":0.7,"rationale":"Rates are secondary to cracks/utilisation."},
+        "riskAppetite":{"fundamental":0.0,"market":1.0,"weight":0.05,"confidence":0.7,"rationale":"Energy multiple modestly follows risk appetite."},
+        "tailCreditStress":{"fundamental":0.0,"market":-0.5,"weight":0.05,"confidence":0.75,"rationale":"Stress mainly works through end demand and valuation."},
+        "policyRelief":{"fundamental":0.0,"market":0.5,"weight":0.05,"confidence":0.6,"rationale":"Physical product balance dominates monetary-policy sensitivity."}
+      },"derivedFrom":"Power Stack refined-product research.","reviewStatus":"researched supplement v1","updatedAt":"2026-09-02"
+    },
+    {
+      "ticker":"ENPH","name":"Enphase Energy","themeGroup":"AI / Data centres","profileConfidence":0.8,"profileNote":"Turnaround solar/storage exposure is highly sensitive to financing costs and housing demand; power scarcity helps but does not override residential-rate sensitivity.","fundamentalWeight":0.65,"marketWeight":0.35,
+      "factors":{
+        "financialConditions":{"fundamental":5.0,"market":5.0,"weight":0.25,"confidence":0.95,"rationale":"Residential solar/storage economics are highly sensitive to borrowing costs."},
+        "housingStrength":{"fundamental":4.5,"market":4.0,"weight":0.20,"confidence":0.9,"rationale":"Residential installations correlate with housing/household investment activity."},
+        "policyRelief":{"fundamental":3.0,"market":4.0,"weight":0.15,"confidence":0.9,"rationale":"Lower expected rates improve project economics and growth valuation."},
+        "consumerStrength":{"fundamental":3.5,"market":3.0,"weight":0.10,"confidence":0.8,"rationale":"Household balance sheets affect discretionary energy upgrades."},
+        "industrialCapex":{"fundamental":2.0,"market":2.0,"weight":0.10,"confidence":0.7,"rationale":"Storage/electrification demand benefits from broader power investment, though residential remains primary."},
+        "riskAppetite":{"fundamental":0.0,"market":4.0,"weight":0.10,"confidence":0.9,"rationale":"Turnaround clean-tech multiples are sentiment sensitive."},
+        "inputCostPressure":{"fundamental":-2.0,"market":-1.5,"weight":0.05,"confidence":0.7,"rationale":"Electronics/logistics costs can pressure margins."},
+        "tailCreditStress":{"fundamental":-1.5,"market":-3.0,"weight":0.05,"confidence":0.85,"rationale":"Weak consumer/project credit sharply reduces financed installations."}
+      },"derivedFrom":"Power Stack ENPH turnaround/watchlist research.","reviewStatus":"researched supplement v1","updatedAt":"2026-09-02"
+    },
+    {
+      "ticker":"NVT","name":"nVent Electric","themeGroup":"AI / Data centres","profileConfidence":0.9,"profileNote":"Electrical distribution and data-centre power infrastructure are structurally advantaged, with acquisition/integration and input costs the main macro-sensitive offsets.","fundamentalWeight":0.65,"marketWeight":0.35,
+      "factors":{
+        "industrialCapex":{"fundamental":5.0,"market":4.0,"weight":0.30,"confidence":0.95,"rationale":"Data-centre and electrification capex drive enclosure/power-distribution demand."},
+        "growthDemand":{"fundamental":3.0,"market":2.5,"weight":0.15,"confidence":0.85,"rationale":"Industrial expansion broadens electrical demand."},
+        "inputCostPressure":{"fundamental":-2.5,"market":-1.5,"weight":0.10,"confidence":0.8,"rationale":"Copper/steel/electrical-component inflation can pressure margins without pricing."},
+        "financialConditions":{"fundamental":1.5,"market":2.5,"weight":0.10,"confidence":0.8,"rationale":"Rates affect customer capex and acquisition economics."},
+        "riskAppetite":{"fundamental":0.0,"market":2.5,"weight":0.10,"confidence":0.8,"rationale":"AI-infrastructure multiple is partly sentiment driven."},
+        "policyRelief":{"fundamental":0.5,"market":1.5,"weight":0.08,"confidence":0.7,"rationale":"Lower rates modestly support capex/valuation."},
+        "consumerStrength":{"fundamental":1.0,"market":0.5,"weight":0.07,"confidence":0.55,"rationale":"Consumer exposure is secondary to industrial/data-centre demand."},
+        "housingStrength":{"fundamental":1.0,"market":0.5,"weight":0.05,"confidence":0.55,"rationale":"Construction matters at the margin."},
+        "tailCreditStress":{"fundamental":0.0,"market":-1.5,"weight":0.05,"confidence":0.8,"rationale":"Project-credit stress can defer marginal customer builds."}
+      },"derivedFrom":"Power Stack physical-AI/electrical research.","reviewStatus":"researched supplement v1","updatedAt":"2026-09-02"
+    },
+    {
+      "ticker":"SPCX","name":"SpaceX","themeGroup":"Robotics / Automation","profileConfidence":0.62,"profileNote":"Private/illiquid long-duration optionality; market value is dominated by risk appetite, capital availability and execution rather than near-term public-market fundamentals.","fundamentalWeight":0.65,"marketWeight":0.35,
+      "factors":{
+        "financialConditions":{"fundamental":4.0,"market":5.0,"weight":0.30,"confidence":0.9,"rationale":"Large capital requirements and distant cash-flow optionality are highly rate sensitive."},
+        "riskAppetite":{"fundamental":0.0,"market":5.0,"weight":0.25,"confidence":0.95,"rationale":"Private-market valuation and secondary liquidity depend heavily on speculative appetite."},
+        "industrialCapex":{"fundamental":3.0,"market":3.0,"weight":0.15,"confidence":0.75,"rationale":"Launch, satellite and infrastructure investment support growth."},
+        "growthDemand":{"fundamental":2.5,"market":2.5,"weight":0.10,"confidence":0.7,"rationale":"Enterprise/government connectivity demand benefits from economic activity."},
+        "policyRelief":{"fundamental":1.5,"market":3.0,"weight":0.10,"confidence":0.75,"rationale":"Lower expected rates improve duration/private-market valuation."},
+        "tailCreditStress":{"fundamental":-2.0,"market":-4.0,"weight":0.10,"confidence":0.9,"rationale":"Private-capital stress reduces secondary liquidity and funding appetite."}
+      },"derivedFrom":"Power Stack private-space/automation crossover research.","reviewStatus":"researched supplement v1","updatedAt":"2026-09-02"
+    },
+    {
+      "ticker":"0270","name":"NationGate Holdings","themeGroup":"AI / Data centres","profileConfidence":0.78,"profileNote":"Malaysia AI-server manufacturing exposure has real demand but higher customer-concentration, margin and capex-cycle sensitivity than grid/electrical bottlenecks.","fundamentalWeight":0.65,"marketWeight":0.35,
+      "factors":{
+        "industrialCapex":{"fundamental":5.0,"market":4.5,"weight":0.30,"confidence":0.9,"rationale":"AI-server and electronics buildout is the core demand driver."},
+        "growthDemand":{"fundamental":4.0,"market":3.5,"weight":0.20,"confidence":0.85,"rationale":"Electronics/cloud demand affects order growth."},
+        "riskAppetite":{"fundamental":0.0,"market":4.0,"weight":0.15,"confidence":0.9,"rationale":"High-beta AI manufacturing valuation is sentiment sensitive."},
+        "financialConditions":{"fundamental":2.0,"market":3.0,"weight":0.10,"confidence":0.8,"rationale":"Capex funding and valuation respond to rates."},
+        "inputCostPressure":{"fundamental":-3.0,"market":-2.0,"weight":0.10,"confidence":0.8,"rationale":"Memory/semiconductor/component inflation can squeeze contract-manufacturing margins."},
+        "tailCreditStress":{"fundamental":-1.0,"market":-2.5,"weight":0.10,"confidence":0.85,"rationale":"AI-financing stress can defer customer orders and compress high-beta multiples."},
+        "policyRelief":{"fundamental":0.5,"market":1.5,"weight":0.05,"confidence":0.7,"rationale":"Lower rates modestly help capex and valuation."}
+      },"derivedFrom":"Power Stack Malaysia AI-server research.","reviewStatus":"researched supplement v1","updatedAt":"2026-09-02"
+    },
+    {
+      "ticker":"7277","name":"DIALOG Group","themeGroup":"Oil & Gas","profileConfidence":0.86,"profileNote":"Tank terminals, storage and downstream infrastructure provide more fee/infrastructure exposure than pure upstream beta; product/gas flows matter alongside crude.","fundamentalWeight":0.65,"marketWeight":0.35,
+      "factors":{
+        "productTightness":{"fundamental":3.0,"market":2.5,"weight":0.20,"confidence":0.85,"rationale":"Tight product markets support storage/logistics utilisation and downstream activity."},
+        "crudeTightness":{"fundamental":2.5,"market":2.5,"weight":0.15,"confidence":0.8,"rationale":"Higher regional oil flows can support terminal/infrastructure activity."},
+        "gasTightness":{"fundamental":2.5,"market":2.0,"weight":0.15,"confidence":0.75,"rationale":"Gas/LNG infrastructure investment is supportive."},
+        "industrialCapex":{"fundamental":3.0,"market":2.5,"weight":0.15,"confidence":0.8,"rationale":"Petrochemical/energy infrastructure projects drive engineering activity."},
+        "growthDemand":{"fundamental":2.5,"market":2.0,"weight":0.10,"confidence":0.75,"rationale":"Regional industrial demand influences throughput and projects."},
+        "financialConditions":{"fundamental":1.0,"market":1.5,"weight":0.10,"confidence":0.75,"rationale":"Project economics respond to financing costs."},
+        "inputCostPressure":{"fundamental":-2.0,"market":-1.0,"weight":0.05,"confidence":0.7,"rationale":"Construction/material inflation can pressure project margins."},
+        "riskAppetite":{"fundamental":0.0,"market":1.0,"weight":0.05,"confidence":0.65,"rationale":"Cyclical energy sentiment affects valuation modestly."},
+        "tailCreditStress":{"fundamental":0.0,"market":-1.0,"weight":0.05,"confidence":0.75,"rationale":"Weak project credit can delay marginal developments."}
+      },"derivedFrom":"Power Stack Malaysia energy-infrastructure research.","reviewStatus":"researched supplement v1","updatedAt":"2026-09-02"
+    },
+    {
+      "ticker":"0217","name":"Powerwell Holdings","themeGroup":"Power / Grid","profileConfidence":0.79,"profileNote":"Small-cap switchboard/power-distribution exposure benefits directly from Malaysia data-centre and grid capex, but input costs and project concentration increase volatility.","fundamentalWeight":0.65,"marketWeight":0.35,
+      "factors":{
+        "industrialCapex":{"fundamental":5.0,"market":4.5,"weight":0.35,"confidence":0.9,"rationale":"Data-centre, industrial and electrical-distribution projects are the main demand driver."},
+        "growthDemand":{"fundamental":3.5,"market":3.0,"weight":0.15,"confidence":0.8,"rationale":"Malaysia industrial/construction activity supports orders."},
+        "inputCostPressure":{"fundamental":-3.5,"market":-2.0,"weight":0.15,"confidence":0.85,"rationale":"Copper/electrical-component inflation can pressure project margins."},
+        "financialConditions":{"fundamental":2.0,"market":3.0,"weight":0.10,"confidence":0.75,"rationale":"Small-cap/customer project financing is rate sensitive."},
+        "riskAppetite":{"fundamental":0.0,"market":3.5,"weight":0.10,"confidence":0.85,"rationale":"Small-cap data-centre-theme valuation is sentiment sensitive."},
+        "housingStrength":{"fundamental":1.5,"market":1.0,"weight":0.05,"confidence":0.6,"rationale":"Construction demand contributes but is secondary to industrial/data-centre projects."},
+        "policyRelief":{"fundamental":0.5,"market":1.5,"weight":0.05,"confidence":0.65,"rationale":"Lower rates modestly support project finance/valuation."},
+        "tailCreditStress":{"fundamental":-1.0,"market":-2.5,"weight":0.05,"confidence":0.8,"rationale":"Small-cap and project-finance sensitivity rises in weak credit."}
+      },"derivedFrom":"Power Stack Malaysia power-distribution research.","reviewStatus":"researched supplement v1","updatedAt":"2026-09-02"
+    },
+    {
+      "ticker":"TTWO","name":"Take-Two Interactive Software","themeGroup":"Software / Cybersecurity","profileConfidence":0.82,"profileNote":"Mostly idiosyncratic GTA VI/franchise exposure; macro works primarily through consumer demand and the discount rate rather than industrial themes.","fundamentalWeight":0.65,"marketWeight":0.35,
+      "factors":{
+        "consumerStrength":{"fundamental":4.0,"market":3.0,"weight":0.30,"confidence":0.85,"rationale":"Premium game spending and engagement benefit from healthy discretionary demand."},
+        "financialConditions":{"fundamental":1.0,"market":4.0,"weight":0.20,"confidence":0.85,"rationale":"Large future-title cash flows make valuation moderately duration sensitive."},
+        "riskAppetite":{"fundamental":0.0,"market":3.0,"weight":0.15,"confidence":0.8,"rationale":"Catalyst-heavy growth valuation responds to equity appetite."},
+        "growthDemand":{"fundamental":2.0,"market":2.0,"weight":0.12,"confidence":0.7,"rationale":"Broad growth supports discretionary entertainment spending."},
+        "policyRelief":{"fundamental":0.0,"market":1.5,"weight":0.08,"confidence":0.65,"rationale":"Lower expected rates help valuation more than operations."},
+        "inputCostPressure":{"fundamental":-1.0,"market":-0.5,"weight":0.05,"confidence":0.55,"rationale":"Labour/development costs matter but are mostly company-specific."},
+        "labourStrength":{"fundamental":1.5,"market":1.0,"weight":0.05,"confidence":0.6,"rationale":"Employment/income supports consumer spending."},
+        "tailCreditStress":{"fundamental":0.0,"market":-1.5,"weight":0.05,"confidence":0.7,"rationale":"Credit stress mainly transmits via consumer spending and valuation."}
+      },"derivedFrom":"Current holdings review; GTA VI remains the dominant idiosyncratic catalyst.","reviewStatus":"current-holding alias profile v1","updatedAt":"2026-09-02"
+    },
+    {
+      "ticker":"MISC","name":"MISC Berhad","themeGroup":"Oil & Gas","profileConfidence":0.87,"profileNote":"Shipping/energy-infrastructure cash flows are driven by tanker/LNG rates and contract structure; current transaction/funding risk remains company-specific.","fundamentalWeight":0.65,"marketWeight":0.35,
+      "factors":{
+        "crudeTightness":{"fundamental":2.5,"market":3.0,"weight":0.20,"confidence":0.8,"rationale":"Oil rerouting and seaborne flows can tighten tanker utilisation/rates."},
+        "gasTightness":{"fundamental":3.0,"market":2.5,"weight":0.20,"confidence":0.8,"rationale":"LNG security demand supports shipping/related infrastructure."},
+        "productTightness":{"fundamental":2.0,"market":2.5,"weight":0.15,"confidence":0.75,"rationale":"Energy-logistics disruption can raise tonne-mile demand, though MISC is not a pure product-tanker play."},
+        "financialConditions":{"fundamental":2.0,"market":2.0,"weight":0.12,"confidence":0.8,"rationale":"Capital-intensive fleet/project funding is sensitive to yields."},
+        "growthDemand":{"fundamental":2.0,"market":2.0,"weight":0.10,"confidence":0.7,"rationale":"Global trade/energy demand affect utilisation."},
+        "inputCostPressure":{"fundamental":-1.5,"market":-1.0,"weight":0.08,"confidence":0.65,"rationale":"Operating, maintenance and financing costs can pressure returns."},
+        "riskAppetite":{"fundamental":0.0,"market":1.0,"weight":0.05,"confidence":0.65,"rationale":"Cyclical shipping valuation moves modestly with risk appetite."},
+        "tailCreditStress":{"fundamental":-0.5,"market":-1.5,"weight":0.05,"confidence":0.75,"rationale":"Funding stress matters to capital-intensive transactions/projects."},
+        "policyRelief":{"fundamental":0.5,"market":1.0,"weight":0.05,"confidence":0.6,"rationale":"Lower rates marginally improve funding economics."}
+      },"derivedFrom":"Current holdings review and energy-logistics thesis.","reviewStatus":"current-holding alias profile v1","updatedAt":"2026-09-02"
+    },
+    {
+      "ticker":"DAYANG","name":"Dayang Enterprise Holdings","themeGroup":"Oil & Gas","profileConfidence":0.83,"profileNote":"Offshore maintenance/OSV exposure benefits from sustained upstream activity, but utilisation and work-order conversion dominate over spot oil alone.","fundamentalWeight":0.65,"marketWeight":0.35,
+      "factors":{
+        "crudeTightness":{"fundamental":4.0,"market":3.5,"weight":0.30,"confidence":0.9,"rationale":"Sustained oil strength supports Malaysian upstream maintenance and offshore activity."},
+        "growthDemand":{"fundamental":2.0,"market":2.0,"weight":0.10,"confidence":0.7,"rationale":"Energy demand influences producer budgets."},
+        "industrialCapex":{"fundamental":3.5,"market":3.0,"weight":0.20,"confidence":0.85,"rationale":"Upstream maintenance/capex and work-order awards drive utilisation."},
+        "inputCostPressure":{"fundamental":-2.5,"market":-1.5,"weight":0.10,"confidence":0.75,"rationale":"Marine labour, fuel and maintenance inflation pressure margins."},
+        "financialConditions":{"fundamental":1.0,"market":1.5,"weight":0.07,"confidence":0.7,"rationale":"Fleet/project financing matters, though balance sheet has improved."},
+        "riskAppetite":{"fundamental":0.0,"market":2.0,"weight":0.08,"confidence":0.75,"rationale":"Small-cap oil-services sentiment is cyclical."},
+        "productTightness":{"fundamental":1.0,"market":1.0,"weight":0.05,"confidence":0.6,"rationale":"Product tightness supports broader energy economics only indirectly."},
+        "tailCreditStress":{"fundamental":-0.5,"market":-1.5,"weight":0.05,"confidence":0.75,"rationale":"Weak project/customer credit can delay offshore activity."},
+        "policyRelief":{"fundamental":0.0,"market":0.5,"weight":0.05,"confidence":0.55,"rationale":"Rates are secondary to utilisation and upstream spending."}
+      },"derivedFrom":"Current holdings review; weak Q2 execution kept separate from macro sensitivity.","reviewStatus":"current-holding alias profile v1","updatedAt":"2026-09-02"
+    },
+    {
+      "ticker":"HIBISCS","name":"Hibiscus Petroleum","themeGroup":"Oil & Gas","profileConfidence":0.9,"profileNote":"Direct upstream oil beta with improving operating fundamentals; use this alias for the canonical holding while 5199 remains the All-Ideas ticker.","fundamentalWeight":0.65,"marketWeight":0.35,
+      "factors":{
+        "crudeTightness":{"fundamental":5.0,"market":4.5,"weight":0.42,"confidence":0.97,"rationale":"Realised oil price is the dominant cash-flow channel."},
+        "growthDemand":{"fundamental":2.0,"market":2.0,"weight":0.10,"confidence":0.7,"rationale":"Global demand affects oil balance and realised pricing."},
+        "industrialCapex":{"fundamental":2.5,"market":2.0,"weight":0.10,"confidence":0.7,"rationale":"Development/maintenance spending supports production growth but requires capital discipline."},
+        "financialConditions":{"fundamental":1.0,"market":1.5,"weight":0.08,"confidence":0.7,"rationale":"Rates affect project economics and valuation."},
+        "inputCostPressure":{"fundamental":-2.0,"market":-1.0,"weight":0.08,"confidence":0.7,"rationale":"Offshore service and operating-cost inflation can offset oil-price gains."},
+        "riskAppetite":{"fundamental":0.0,"market":2.0,"weight":0.07,"confidence":0.75,"rationale":"Small-cap upstream valuation responds to energy risk appetite."},
+        "productTightness":{"fundamental":0.5,"market":1.0,"weight":0.05,"confidence":0.55,"rationale":"Refined-product scarcity supports crude demand at the margin but is not direct refinery exposure."},
+        "tailCreditStress":{"fundamental":0.0,"market":-1.0,"weight":0.05,"confidence":0.75,"rationale":"Funding stress can compress small-cap cyclicals."},
+        "policyRelief":{"fundamental":0.0,"market":0.5,"weight":0.05,"confidence":0.55,"rationale":"Monetary policy is secondary to oil and execution."}
+      },"derivedFrom":"Current holdings review; alias of 5199 for portfolio records.","reviewStatus":"current-holding alias profile v1","updatedAt":"2026-09-02"
+    }
+  ]
+}
