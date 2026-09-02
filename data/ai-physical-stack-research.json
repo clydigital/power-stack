@@ -1,27 +1,45 @@
 {
-  "lastUpdated": "2026-09-01",
-  "purpose": "Category-level research for the physical AI stack beyond GPUs: networking, optics, memory/HBM packaging, power reliability, cooling and industrial automation. Research-only; no site/UI/scoring changes.",
-  "categoryRead": "The physical-AI thesis strengthened again through cooling. On Aug. 31 SLB agreed to acquire Kelvion for about $3.4bn cash plus $0.7bn assumed debt. The combined business is expected to exceed $2bn of 2026 data-centre revenue and ~$300m adjusted EBITDA, with SLB targeting $4.5-5.0bn revenue and $700-800m adjusted EBITDA in 2028. This is unusually useful evidence that cooling/thermal management is becoming a strategic infrastructure layer, while financing and valuation discipline still matter across AI capex.",
-  "stackMap": ["Compute accelerators","HBM / memory","Advanced packaging + test","Optical / high-speed interconnect","Data-centre + industrial networking","Power distribution + switchgear","Backup / temporary power + power quality","Cooling + water","Industrial automation / physical AI"],
-  "priorityResearch": {
-    "BDC": {"score":8.5,"role":"Networking / physical-AI crossover","read":"Record Q2 orders and explicit AI-data-centre/physical-AI demand remain strong confirmation without requiring direct GPU valuation exposure."},
-    "GNRC": {"score":8.4,"role":"Backup power / reliability","read":"Roughly $1.6bn data-centre backlog remains a direct contracted expression of grid-constrained reliability demand."},
-    "AMKR": {"score":8.3,"role":"Advanced packaging + HBM integration","read":"NVIDIA demand acceleration and its $1.5bn multi-year prepayment support packaging utilisation and financing quality; heavy capex/FCF conversion remain constraints."},
-    "0522.HK": {"score":8.5,"role":"HBM TCB/hybrid bonding + photonics + AI-server SMT","read":"HBM/advanced-packaging equipment demand remains strong; qualification/order conversion and valuation remain the next tests."},
-    "SLB": {"score":8.3,"role":"Data-centre cooling + energy infrastructure crossover","read":"Research-priority upgrade after the Kelvion acquisition. Purchase price is ~11x estimated 2026 EBITDA before synergies/~8.5x including expected run-rate synergies. SLB expects first-year EPS/FCF-per-share accretion, ~$120m annual EBITDA synergies within three years, and net debt/EBITDA within its <=1.5x target. Differentiated exposure, but integration and the rapid pivot from oilfield services into data-centre infrastructure require monitoring."},
-    "AGKO": {"score":8.2,"role":"Temporary / behind-the-meter power","read":"High-priority IPO watch. Aggreko monetises time-to-power while permanent grid connections lag. Do not promote until IPO valuation, leverage and sponsor sell-down are known."}
+  "lastUpdated":"2026-09-02",
+  "purpose":"Category-level research for the physical AI stack beyond GPUs: networking, optics, memory/HBM packaging, power/grid, funded interconnection, reliability, cooling, water and industrial automation. Research-only; no site/UI/scoring changes.",
+  "categoryRead":"The physical-AI thesis remains strong, but it now splits sharply between verified/funded demand and headline interconnection requests. Reuters reports more than 700 GW of US data-centre electricity requests - over 10x estimated current US data-centre power use - while Texas halted new grid connections and launched an audit and other utilities tightened deposit/funding requirements. Some demand forecasts fell after deposits were imposed. This does not invalidate real hyperscaler demand: August ISM still shows Production 58.3, Prices 71.1 and shortages/rising prices across electrical/electronic components, memory, semiconductors, copper and wire. The investment conclusion is to prefer customer-funded backlog, deposits, named projects and cash conversion over speculative MW pipelines.",
+  "newRiskLens":{
+    "name":"Funded load quality / ghost demand",
+    "status":"first-order gating variable",
+    "evidence":"US data-centre grid requests exceed 700 GW; Texas and several utilities are screening ownership, funding, deposits and duplicate requests.",
+    "implication":"Supplier order books backed by real customers become more valuable than utility load forecasts or developer announcements. Utilities/developers that overstate future load face capex, ratepayer and valuation risk.",
+    "confirmation":"Verified/deposit-backed MW remains strong while speculative requests are cancelled and supplier booked orders hold.",
+    "invalidation":"Audits show most requests are fully funded and committed, leaving headline queue totals broadly intact.",
+    "nextTest":"Texas/PJM/AEP/Exelon audit/deposit data and named hyperscaler interconnection milestones."
   },
-  "existingCoreCrossRead": {
-    "GEV":"Generation/grid demand remains the highest-quality structural layer.",
-    "ETN":"Switchgear and power management remain a core rack-to-grid bottleneck.",
-    "PWR":"Transmission/substations remain essential for large-load interconnection.",
+  "stackMap":["Verified / funded load + interconnection","Compute accelerators","HBM / memory","Advanced packaging + test","Optical / high-speed interconnect","Data-centre + industrial networking","Power distribution + switchgear","Backup / temporary power + power quality","Cooling + water","Industrial automation / physical AI"],
+  "priorityResearch":{
+    "BDC":{"score":8.5,"role":"Networking / physical-AI crossover","read":"Record Q2 orders remain stronger evidence than demand forecasts. Keep focus on book-to-bill and named data-centre/industrial wins."},
+    "GNRC":{"score":8.4,"role":"Backup power / reliability","read":"Roughly $1.6bn data-centre backlog remains useful because it is booked demand; audit the customer/project quality and backlog conversion rather than broad data-centre MW estimates."},
+    "AMKR":{"score":8.3,"role":"Advanced packaging + HBM integration","read":"NVIDIA demand and customer prepayments support utilisation/financing quality; heavy capex and FCF conversion remain constraints."},
+    "0522.HK":{"score":8.5,"role":"HBM TCB/hybrid bonding + photonics + AI-server SMT","read":"HBM/advanced-packaging equipment demand remains supported by component scarcity; qualification/order conversion and valuation are the next tests."},
+    "SLB":{"score":8.3,"role":"Data-centre cooling + energy infrastructure crossover","read":"Kelvion remains a differentiated thermal-management entry; require integration, customer quality and 2028 target execution before further promotion."},
+    "AGKO":{"score":8.2,"role":"Temporary / behind-the-meter power","read":"High-priority IPO watch because time-to-power can bypass grid queues, but ghost-demand evidence makes customer contracts and final IPO leverage/valuation even more important."}
+  },
+  "existingCoreCrossRead":{
+    "GEV":"Generation/grid demand remains high quality when orders are named/contracted; do not use aggregate interconnection queues as demand evidence by themselves.",
+    "ETN":"Switchgear/power-management shortages remain confirmed by ISM; Sep 1 price weakness improved entry asymmetry but high real yields remain a multiple headwind.",
+    "PWR":"Transmission/substations remain essential for verified large-load interconnections; require project awards and backlog, not utility queue totals.",
     "POWL":"Order/backlog evidence remains strong; valuation/execution constrain entry quality.",
-    "VRT":"Cooling/power-management demand is further validated by strategic M&A, but valuation discipline remains necessary.",
+    "VRT":"Cooling/power-management demand remains real, but valuation discipline and verified customer deployment matter.",
+    "FLEX":"Planned Cloud & Power Infrastructure spin is strategically aligned, but the new load-quality screen should be applied to backlog/customer concentration before treating growth guidance as fully de-risked.",
+    "YTLPOWR":"Strategic power/data-centre exposure remains strong, but leverage/cash conversion and actual contracted utilization matter more than Malaysian data-centre announcement volume.",
     "ROK":"Profitable factory/warehouse automation remains the preferred first-wave robotics/physical-AI expression."
   },
-  "memoryPackagingInterpretation": "NVIDIA's Q2 FY2027 result keeps the near-term demand case intact and preserves the importance of memory availability and packaging capacity. AMKR customer-funded expansion and ASMPT HBM bonding exposure remain differentiated scarce integration steps.",
-  "powerReliabilityInterpretation": "The strongest second-order AI expressions remain grid interconnection, switchgear, firm generation, backup/temporary power, cooling and water. SLB/Kelvion adds independent corporate-capital evidence that thermal management is large enough to become a strategic industrial market.",
-  "roboticsRead": "No adoption-wave change: warehouse/fixed industrial automation first, cobots/mobile manipulation second, industrial humanoids third, open-world/general-purpose robots last. Chinese humanoid shipment scale is rising, but factory-job readiness remains inferior to conventional automation.",
-  "nextTests": ["August ISM Manufacturing physical-stack subindices/comments","SLB/Kelvion regulatory close, integration and 2028 target execution","AMKR FCF/capex and Arizona capacity milestones","ASMPT HBM qualification/order conversion","BDC AI/data-centre order mix","GNRC hyperscaler backlog conversion","Aggreko IPO valuation and leverage"],
-  "sources": ["https://www.slb.com/newsroom/press-release/2026/pr-2026-0831","https://investor.nvidia.com/","https://ir.amkor.com/","https://investor.belden.com/","https://investors.generac.com/","https://www.asmpt.com/en/investor-relations/","https://www.reuters.com/business/energy/power-supply-firm-aggreko-files-us-ipo-2026-08-24/"]
+  "augustISMPhysicalStack":{
+    "manufacturingPMI":54.6,
+    "newOrders":53.7,
+    "production":58.3,
+    "prices":71.1,
+    "supplierDeliveries":59.3,
+    "backlog":51.8,
+    "signal":"Physical activity is still expanding, but orders/backlog slowed while input inflation and delivery stress stayed severe. Electrical/electronic components, memory, semiconductors, copper and wire remain direct bottleneck evidence."
+  },
+  "roboticsRead":"No adoption-wave change: warehouse/fixed industrial automation first, cobots/mobile manipulation second, industrial humanoids third, open-world/general-purpose robots last. Current ISM production supports factory automation, but slower New Orders argues against a broad industrial-capex chase.",
+  "nextTests":["Texas/PJM/AEP/Exelon data-centre load audits and deposits","PWR/ETN/GEV/FLEX named orders and backlog conversion","SLB/Kelvion close/integration","AMKR FCF/capex and customer prepayments","ASMPT HBM qualification/order conversion","GNRC hyperscaler backlog conversion","Aggreko IPO valuation/leverage/customer concentration"],
+  "sources":["https://www.reuters.com/business/texas-halt-powering-data-centers-reflects-us-reckoning-over-ghost-demand-2026-09-01/","https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/august/","https://www.slb.com/newsroom/press-release/2026/pr-2026-0831","https://investor.nvidia.com/","https://ir.amkor.com/","https://investor.belden.com/","https://investors.generac.com/","https://www.asmpt.com/en/investor-relations/","https://www.reuters.com/business/energy/power-supply-firm-aggreko-files-us-ipo-2026-08-24/"]
 }
