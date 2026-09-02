@@ -39,7 +39,7 @@ function contextSignalContributions(x){
     const freshW=channelFreshnessWeight(c),factorC=clamp(Number(f.confidence??.5),0,1),channelC=clamp(Number(c.confidence??.5),0,1);
     const adjustment=(Number(c.score||0)/2)*effective*Number(f.weight||0)*factorC*pc*channelC*freshW;
     if(Math.abs(adjustment)<.00005)return;
-    rows.push({id:`${x.ticker}:${key}`,kind:key,title:c.label||prettyKind(key),detail:c.interpretation||'',adjustment,channelScore:Number(c.score||0),effectiveSensitivity:effective,fundamentalSensitivity:fundamental,marketSensitivity:market,factorWeight:Number(f.weight||0),factorConfidence:factorC,profileConfidence:pc,channelConfidence:channelC,freshnessWeight:freshW,rationale:f.rationale||'',observedAt:c.observedAt||macroContext.generatedAt,sourceName:macroContext.source||'Macro Indicators Dashboard',sourceUrl:macroContext.sourceUrl||null});
+    rows.push({id:`${x.ticker}:${key}`,kind:key,title:c.label||prettyKind(key),detail:c.interpretation||'',adjustment,channelScore:Number(c.score||0),effectiveSensitivity:effective,fundamentalSensitivity:fundamental,marketSensitivity:market,factorWeight:Number(f.weight||0),factorConfidence:factorC,profileConfidence:pc,channelConfidence:channelC,freshnessWeight:freshW,rationale:f.rationale||'',observedAt:c.observedAt||macroContext.generatedAt,sourceName:macroContext.source||'Power Stack Macro Context',sourceUrl:macroContext.sourceUrl||null});
   });
   const sum=rows.reduce((s,r)=>s+r.adjustment,0),clipped=clamp(sum,-1,1);
   if(Math.abs(sum)>1&&Math.abs(sum)>.0001){const scale=clipped/sum;rows=rows.map(r=>({...r,adjustment:r.adjustment*scale}))}
@@ -106,7 +106,7 @@ function renderBlockMini(c){const fresh=channelFresh(c),width=Math.abs(Number(c.
 function renderContext(){
   const title=$('#contextTitle'),meta=$('#contextMeta'),body=$('#contextBody');
   if(!macroContext?.channels?.length){title.textContent='Macro pulse';meta.textContent='Macro snapshot unavailable · using base scores';body.innerHTML='<div class="context-copy">Power Stack remains usable without macro context. Macro adjustments stay at zero until data/macro-context.json is refreshed.</div>';return}
-  const packetOk=packetFresh();meta.textContent=`${macroContext.source||'Macro Indicators Dashboard'} · ${packetOk?'fresh snapshot':'stale snapshot'} · ${timeLabel(macroContext.generatedAt)}`;
+  const packetOk=packetFresh();meta.textContent=`${macroContext.source||'Power Stack Macro Context'} · ${packetOk?'fresh snapshot':'stale snapshot'} · ${timeLabel(macroContext.generatedAt)}`;
   if(state.theme!=='All'){
     const t=macroContext.themes?.find(v=>v.theme===state.theme),impact=themeDelta(state.theme),drivers=themeTopDrivers(state.theme);title.textContent=`${state.theme} · stock-level macro impact`;
     const lis=drivers.length?`<ul>${drivers.map(d=>`<li><b>${esc(prettyKind(d.kind))} ${fmtSigned(d.total,2)} avg</b> — average contribution across profiled stocks in this theme.</li>`).join('')}</ul>`:'No fresh profiled macro drivers.';
@@ -141,7 +141,16 @@ function openDetail(x){
 async function loadMacroContext(){
   try{const r=await fetch('data/macro-context.json',{cache:'no-store'});if(!r.ok)throw new Error(`HTTP ${r.status}`);macroContext=await r.json();const fresh=packetFresh();$('#liveBadge').className=`live-badge ${fresh?'online':'stale'}`;$('#liveBadge').innerHTML=fresh?'<span></span> Macro snapshot active':'<span></span> Macro snapshot stale'}catch(err){macroContext=null;$('#liveBadge').className='live-badge offline';$('#liveBadge').innerHTML='<span></span> Macro snapshot unavailable'}
 }
-async function loadMacroProfiles(){try{const r=await fetch('data/macro-sensitivities.json',{cache:'no-store'});if(!r.ok)throw new Error(`HTTP ${r.status}`);macroSensitivityData=await r.json();macroProfileMap=new Map((macroSensitivityData.stocks||[]).map(p=>[p.ticker,p]))}catch(err){macroSensitivityData=null;macroProfileMap=new Map()}}
+async function loadMacroProfiles(){
+  try{
+    const r=await fetch('data/macro-sensitivities.json',{cache:'no-store'});if(!r.ok)throw new Error(`HTTP ${r.status}`);
+    const base=await r.json();let supplement={stocks:[]};
+    try{const s=await fetch('data/macro-sensitivity-supplement.json',{cache:'no-store'});if(s.ok)supplement=await s.json()}catch(_){}
+    const merged=new Map((base.stocks||[]).map(p=>[p.ticker,p]));(supplement.stocks||[]).forEach(p=>merged.set(p.ticker,p));
+    macroSensitivityData={...base,updatedAt:supplement.updatedAt||base.updatedAt,profileCoverageUpdate:supplement.coverageAdded||[],stocks:[...merged.values()]};
+    macroProfileMap=new Map(macroSensitivityData.stocks.map(p=>[p.ticker,p]));
+  }catch(err){macroSensitivityData=null;macroProfileMap=new Map()}
+}
 
 async function init(){const [ideaRes]=await Promise.all([fetch('data/ideas.json',{cache:'no-store'}),loadMacroContext(),loadMacroProfiles()]);ideas=await ideaRes.json();renderSidebar();render();$('#search').oninput=e=>{state.q=e.target.value;render()};$('#sort').onchange=e=>{state.sort=e.target.value;state.sortDir=defaultSortDir(state.sort);render()};$('#cardViewBtn').onclick=()=>setView('card');$('#rowViewBtn').onclick=()=>setView('row');$('#clearFilters').onclick=()=>{state.theme='All';state.region='All';state.status='All';state.q='';$('#search').value='';renderSidebar();render()};$('#closeDialog').onclick=()=>$('#detailDialog').close();$('#detailDialog').addEventListener('click',e=>{if(e.target===$('#detailDialog'))$('#detailDialog').close()})}
 init().catch(err=>{$('#grid').innerHTML=`<div class="empty">Failed to load Power Stack: ${esc(err.message)}</div>`});
