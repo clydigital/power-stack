@@ -1,1 +1,67 @@
-{"lastUpdated":"2026-08-22","lastVerifiedAt":"2026-09-01","sourcePolicy":"Official ISM monthly reports are authoritative; aggregate diffusion data and selected public respondent comments only.","releaseStatus":{"latestManufacturingReportMonth":"July 2026","latestServicesReportMonth":"July 2026","nextManufacturingRelease":"2026-09-01 10:00 ET","nextServicesRelease":"2026-09-03 10:00 ET","note":"August Manufacturing is due later today after this research run; do not pre-empt the official release.","releaseCalendarUrl":"https://www.ismworld.org/supply-management-news-and-reports/reports/rob-report-calendar/"},"manufacturing":{"reportMonth":"July 2026","sourceUrl":"https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/july/","headlinePMI":{"value":55.6,"prior":53.3,"change":2.3},"subindices":{"newOrders":{"value":56.7,"prior":56.0,"change":0.7},"production":{"value":58.5,"prior":52.2,"change":6.3},"employment":{"value":52.8,"prior":49.7,"change":3.1},"supplierDeliveries":{"value":58.9,"prior":57.4,"change":1.5},"inventories":{"value":51.2,"prior":51.4,"change":-0.2},"customersInventories":{"value":40.7,"prior":42.3,"change":-1.6},"prices":{"value":71.1,"prior":73.0,"change":-1.9},"backlog":{"value":55.0,"prior":50.5,"change":4.5},"newExportOrders":{"value":53.0,"prior":48.5,"change":4.5},"imports":{"value":55.7,"prior":52.9,"change":2.8}},"powerStackInterpretation":"Orders, production, employment and backlog strengthened while customer inventories remained too low. Electrical/electronic expansion and component scarcity support equipment pricing power; high prices/slower deliveries remain contractor execution risks."},"services":{"reportMonth":"July 2026","sourceUrl":"https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/services/july/","headlinePMI":{"value":54.1,"prior":54.0,"change":0.1},"subindices":{"businessActivity":{"value":59.1,"prior":55.4,"change":3.7},"newOrders":{"value":57.2,"prior":55.1,"change":2.1},"employment":{"value":47.4,"prior":51.2,"change":-3.8},"supplierDeliveries":{"value":52.8,"prior":54.4,"change":-1.6},"inventories":{"value":51.4,"prior":51.2,"change":0.2},"prices":{"value":70.3,"prior":67.7,"change":2.6},"backlog":{"value":50.9,"prior":54.9,"change":-4.0},"newExportOrders":{"value":52.0,"prior":50.4,"change":1.6},"imports":{"value":51.8,"prior":49.4,"change":2.4},"inventorySentiment":{"value":52.5,"prior":52.6,"change":-0.1}},"powerStackInterpretation":"Business Activity/New Orders accelerated while Prices exceeded 70 and Employment contracted. Switchgear, transformers, wire/cable and technical labour remain direct infrastructure bottlenecks."},"respondentCommentReview":{"scope":"Only ISM-selected public respondent comments and aggregate diffusion data reviewed.","finding":"Re-verified Sep 1 before the scheduled 10:00 ET August Manufacturing release. July remains the latest published dataset at capture time. No confidential/raw respondent access is claimed."},"combinedRead":"Constructive for physical Power Stack demand but not cleanly disinflationary. Prefer backlog-rich generation/grid/electrical/cable and commercial automation suppliers with pricing power. August Manufacturing is the immediate next test.","historicalFallback":"https://github.com/HelloThereMatey/tedata","rawSubmissionNote":"ISM does not publish the confidential individual survey submission database."}
+{
+  "lastUpdated":"2026-09-02",
+  "lastVerifiedAt":"2026-09-02T09:18:00+08:00",
+  "sourcePolicy":"Official ISM monthly reports are authoritative; aggregate diffusion data and selected public respondent comments only. No confidential/raw survey submissions are claimed or used.",
+  "releaseStatus":{
+    "latestManufacturingReportMonth":"August 2026",
+    "latestServicesReportMonth":"July 2026",
+    "nextServicesRelease":"2026-09-03 10:00 ET",
+    "note":"August Manufacturing was released Sep 1. August Services is not yet published at this run; July remains authoritative for Services.",
+    "releaseCalendarUrl":"https://www.ismworld.org/supply-management-news-and-reports/reports/rob-report-calendar/"
+  },
+  "manufacturing":{
+    "reportMonth":"August 2026",
+    "sourceUrl":"https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/august/",
+    "headlinePMI":{"value":54.6,"prior":55.6,"change":-1.0},
+    "subindices":{
+      "newOrders":{"value":53.7,"prior":56.7,"change":-3.0},
+      "production":{"value":58.3,"prior":58.5,"change":-0.2},
+      "employment":{"value":51.2,"prior":52.8,"change":-1.6},
+      "supplierDeliveries":{"value":59.3,"prior":58.9,"change":0.4,"note":"Higher means slower deliveries."},
+      "inventories":{"value":50.6,"prior":51.2,"change":-0.6},
+      "customersInventories":{"value":42.8,"prior":40.7,"change":2.1,"note":"Still classified as too low."},
+      "prices":{"value":71.1,"prior":71.1,"change":0.0},
+      "backlog":{"value":51.8,"prior":55.0,"change":-3.2},
+      "newExportOrders":{"value":53.2,"prior":53.0,"change":0.2},
+      "imports":{"value":52.5,"prior":55.7,"change":-3.2}
+    },
+    "industries":{"expandingCount":15,"contracting":["Wood Products","Chemical Products"],"interpretation":"Breadth remains strong, but demand momentum cooled versus July."},
+    "commodities":{
+      "up":["Aluminum","Chemicals","Copper","Copper Products","Corrugated Products","Diesel Fuel","Electrical Components","Electronic Components","Freight","Fuel","Memory Components","Metal Products","Oil Based Products","Plastic Based Products","Printed Circuit Boards","Resin Based Products","Resins","Semiconductors","Steel","Steel - Cold Rolled","Steel - Hot Rolled","Steel - Stainless","Steel Products","Wire"],
+      "down":[],
+      "shortSupply":["Copper","Electrical Components","Electronic Components","Labor","Memory Components","Printed Circuit Boards","Steel","Tungsten"],
+      "note":"Short-supply list is retained only where it was explicitly identifiable in the official August ISM publication/review; no private submissions are inferred."
+    },
+    "respondentCommentReview":{
+      "scope":"ISM-selected public comments only.",
+      "themes":[
+        "Computer/electronics respondents described an unusually severe supply-chain environment driven by AI infrastructure demand plus war/trade uncertainty.",
+        "Machinery comments flagged rapidly rising energy, steel and labor costs while photonics, high-speed connectors, semiconductors and government-related demand remained strong.",
+        "Chemical-product comments highlighted tariff and Hormuz-linked inflation risk to customer spending power.",
+        "Multiple public comments tied AI-related consumption to component/material scarcity rather than broad finished-goods weakness."
+      ]
+    },
+    "powerStackInterpretation":"Still constructive for physical Power Stack demand, but more stagflationary than July: production remains very strong and customer inventories are still too low, while New Orders, Employment and Backlog cooled. Prices stayed at 71.1 and Supplier Deliveries slowed further. The clearest beneficiaries remain real bottlenecks with booked orders and pricing power - grid/electrical equipment, semiconductors/memory, wire/cable, copper-linked supply and industrial automation. The new risk is that high input prices and slower orders expose speculative or unfunded capacity plans."
+  },
+  "services":{
+    "reportMonth":"July 2026",
+    "sourceUrl":"https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/services/july/",
+    "headlinePMI":{"value":54.1,"prior":54.0,"change":0.1},
+    "subindices":{
+      "businessActivity":{"value":59.1,"prior":55.4,"change":3.7},
+      "newOrders":{"value":57.2,"prior":55.1,"change":2.1},
+      "employment":{"value":47.4,"prior":51.2,"change":-3.8},
+      "supplierDeliveries":{"value":52.8,"prior":54.4,"change":-1.6},
+      "inventories":{"value":51.4,"prior":51.2,"change":0.2},
+      "prices":{"value":70.3,"prior":67.7,"change":2.6},
+      "backlog":{"value":50.9,"prior":54.9,"change":-4.0},
+      "newExportOrders":{"value":52.0,"prior":50.4,"change":1.6},
+      "imports":{"value":51.8,"prior":49.4,"change":2.4},
+      "inventorySentiment":{"value":52.5,"prior":52.6,"change":-0.1}
+    },
+    "powerStackInterpretation":"July Services still shows strong activity/orders but contracting employment and high prices. Do not infer an August Services change before the Sep 3 official release."
+  },
+  "combinedRead":"August Manufacturing remains expansionary but slowed at the margin while inflation/supply-chain pressure stayed intense. This strengthens the quality split inside Power Stack: prefer funded, backlog-rich physical infrastructure and scarce components; raise the hurdle for long-duration projects whose demand exists only as interconnection requests or forecasts.",
+  "historicalFallback":"https://github.com/HelloThereMatey/tedata",
+  "rawSubmissionNote":"ISM publishes selected comments and aggregate diffusion data, not the confidential individual survey submission database."
+}
