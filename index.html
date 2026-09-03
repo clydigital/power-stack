@@ -64,12 +64,14 @@
         const nbisPayload=nbisRes?.ok?await nbisRes.json():null;
         const aug24Payload=aug24Res?.ok?await aug24Res.json():null;
         const rescanPayload=rescanRes?.ok?await rescanRes.json():null;
-        const [extensionRes,extension2Res]=await Promise.all([
+        const [extensionRes,extension2Res,extension3Res]=await Promise.all([
           nativeFetch('data/market-extension-2026-09-01.json',{cache:'no-store'}).catch(()=>null),
-          nativeFetch('data/market-extension-2-2026-09-01.json',{cache:'no-store'}).catch(()=>null)
+          nativeFetch('data/market-extension-2-2026-09-01.json',{cache:'no-store'}).catch(()=>null),
+          nativeFetch('data/market-extension-3-2026-09-03.json',{cache:'no-store'}).catch(()=>null)
         ]);
         const extensionPayload=extensionRes?.ok?await extensionRes.json():null;
         const extension2Payload=extension2Res?.ok?await extension2Res.json():null;
+        const extension3Payload=extension3Res?.ok?await extension3Res.json():null;
         const supplemental=[
           ...(Array.isArray(roboticsPayload?.ideas)?roboticsPayload.ideas:[]),
           ...(Array.isArray(opportunityPayload?.ideas)?opportunityPayload.ideas:[]),
@@ -86,7 +88,7 @@
           const overrides=packet?.overrides&&typeof packet.overrides==='object'?packet.overrides:{};
           Object.entries(overrides).forEach(([ticker,patch])=>{if(byTicker.has(ticker)&&patch&&typeof patch==='object')byTicker.set(ticker,{...byTicker.get(ticker),...patch});});
         };
-        applyPacket(rescanPayload);applyPacket(extensionPayload);applyPacket(extension2Payload);
+        applyPacket(rescanPayload);applyPacket(extensionPayload);applyPacket(extension2Payload);applyPacket(extension3Payload);
         return new Response(JSON.stringify([...byTicker.values()]),{status:200,headers:{'Content-Type':'application/json'}});
       };
     })();
