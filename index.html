@@ -44,6 +44,19 @@
       const nativeFetch = window.fetch.bind(window);
       window.fetch = async (input, init) => {
         const url = typeof input === 'string' ? input : input?.url;
+        if (url === 'data/macro-sensitivity-supplement.json') {
+          const [baseRes,extraRes]=await Promise.all([
+            nativeFetch(input,init),
+            nativeFetch('data/macro-sensitivity-supplement-2-2026-09-03.json',{cache:'no-store'}).catch(()=>null)
+          ]);
+          if(!baseRes.ok)return baseRes;
+          const base=await baseRes.json();
+          const extra=extraRes?.ok?await extraRes.json():null;
+          const merged=new Map((base.stocks||[]).map(x=>[x.ticker,x]));
+          (extra?.stocks||[]).forEach(x=>{if(x?.ticker)merged.set(x.ticker,x)});
+          const coverage=[...new Set([...(base.coverageAdded||[]),...(extra?.coverageAdded||[])])];
+          return new Response(JSON.stringify({...base,updatedAt:extra?.updatedAt||base.updatedAt,coverageAdded:coverage,stocks:[...merged.values()]}),{status:200,headers:{'Content-Type':'application/json'}});
+        }
         if (url !== 'data/ideas.json') return nativeFetch(input, init);
         const [coreRes, roboticsRes, opportunityRes, videoScreenRes, ttRes, nbisRes, aug24Res, rescanRes] = await Promise.all([
           nativeFetch(input, init),
