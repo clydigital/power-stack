@@ -1,7 +1,7 @@
 {
-  "lastUpdated":"2026-09-02",
-  "purpose":"Category-level research for the physical AI stack beyond GPUs: networking, optics, memory/HBM packaging, power/grid, funded interconnection, reliability, cooling, water and industrial automation. Research-only; no site/UI/scoring changes.",
-  "categoryRead":"The physical-AI thesis remains strong, but it now splits sharply between verified/funded demand and headline interconnection requests. Reuters reports more than 700 GW of US data-centre electricity requests - over 10x estimated current US data-centre power use - while Texas halted new grid connections and launched an audit and other utilities tightened deposit/funding requirements. Some demand forecasts fell after deposits were imposed. This does not invalidate real hyperscaler demand: August ISM still shows Production 58.3, Prices 71.1 and shortages/rising prices across electrical/electronic components, memory, semiconductors, copper and wire. The investment conclusion is to prefer customer-funded backlog, deposits, named projects and cash conversion over speculative MW pipelines.",
+  "lastUpdated":"2026-09-03",
+  "purpose":"Category-level research for the physical AI stack beyond GPUs: networking, optics, memory/HBM packaging, power/grid, funded interconnection, microgrids/time-to-power, reliability, cooling, water and industrial automation. Research-only; no site/UI/scoring architecture changes.",
+  "categoryRead":"The physical-AI thesis remains strong but increasingly bifurcates into three evidence tiers: funded utility interconnections, behind-the-meter/microgrid time-to-power, and speculative headline load requests. Vertiv's Sep 2 agreement to acquire UtilityInnovation Group is the freshest validation that onsite generation orchestration, microgrid controls and specialised switchgear are becoming a strategic data-centre category. At the same time, >700 GW of US grid requests still requires deposit/funding screens. August ISM remains constructive for real equipment demand: Production 58.3, Prices 71.1 and persistent electrical/electronic, memory, semiconductor, copper and wire scarcity.",
   "newRiskLens":{
     "name":"Funded load quality / ghost demand",
     "status":"first-order gating variable",
@@ -11,23 +11,34 @@
     "invalidation":"Audits show most requests are fully funded and committed, leaving headline queue totals broadly intact.",
     "nextTest":"Texas/PJM/AEP/Exelon audit/deposit data and named hyperscaler interconnection milestones."
   },
-  "stackMap":["Verified / funded load + interconnection","Compute accelerators","HBM / memory","Advanced packaging + test","Optical / high-speed interconnect","Data-centre + industrial networking","Power distribution + switchgear","Backup / temporary power + power quality","Cooling + water","Industrial automation / physical AI"],
+  "newOpportunityLens":{
+    "name":"Time-to-power / data-centre microgrids",
+    "status":"PHASING IN / commercially validated",
+    "evidence":"Vertiv agreed to acquire UtilityInnovation Group for ~$1.45B cash plus up to $1.15B contingent consideration. UIG adds microgrid controls, microgrid-specific switchgear and behind-the-meter power architecture to Vertiv's existing grid-to-chip platform.",
+    "implication":"Onsite generation and control can bridge slow utility interconnections, making microgrid architecture a monetising layer rather than merely a contingency plan. It also creates a second route to validate data-centre demand: actual equipment/control orders rather than requested MW.",
+    "beneficiaries":["VRT","ETN","GEV","PWR","FLEX","GNRC","AGKO"],
+    "confirmation":"Hyperscalers disclose more customer-funded onsite generation/microgrid deployments and VRT/UIG backlog/order conversion accelerates.",
+    "invalidation":"Utility interconnection times compress materially or customers reject onsite-generation economics.",
+    "nextTest":"VRT deal close/integration guidance, microgrid customer wins, and competitor orders."
+  },
+  "stackMap":["Verified / funded load + interconnection","Behind-the-meter generation + microgrid controls","Compute accelerators","HBM / memory","Advanced packaging + test","Optical / high-speed interconnect","Data-centre + industrial networking","Power distribution + switchgear","Backup / temporary power + power quality","Cooling + water","Industrial automation / physical AI"],
   "priorityResearch":{
+    "VRT":{"score":7.7,"role":"Power + cooling + microgrid/time-to-power integration","read":"UIG materially broadens the addressable stack from power/cooling into microgrid controls, specialised switchgear and onsite-generation orchestration. Strategic fit improved enough for a 7.3→7.7 research upgrade; premium valuation and integration cost still cap conviction."},
     "BDC":{"score":8.5,"role":"Networking / physical-AI crossover","read":"Record Q2 orders remain stronger evidence than demand forecasts. Keep focus on book-to-bill and named data-centre/industrial wins."},
-    "GNRC":{"score":8.4,"role":"Backup power / reliability","read":"Roughly $1.6bn data-centre backlog remains useful because it is booked demand; audit the customer/project quality and backlog conversion rather than broad data-centre MW estimates."},
+    "GNRC":{"score":8.4,"role":"Backup power / reliability","read":"Roughly $1.6bn data-centre backlog remains useful because it is booked demand; microgrid expansion increases the strategic value of controllable onsite generation, but customer/project quality and backlog conversion remain the tests."},
     "AMKR":{"score":8.3,"role":"Advanced packaging + HBM integration","read":"NVIDIA demand and customer prepayments support utilisation/financing quality; heavy capex and FCF conversion remain constraints."},
     "0522.HK":{"score":8.5,"role":"HBM TCB/hybrid bonding + photonics + AI-server SMT","read":"HBM/advanced-packaging equipment demand remains supported by component scarcity; qualification/order conversion and valuation are the next tests."},
     "SLB":{"score":8.3,"role":"Data-centre cooling + energy infrastructure crossover","read":"Kelvion remains a differentiated thermal-management entry; require integration, customer quality and 2028 target execution before further promotion."},
-    "AGKO":{"score":8.2,"role":"Temporary / behind-the-meter power","read":"High-priority IPO watch because time-to-power can bypass grid queues, but ghost-demand evidence makes customer contracts and final IPO leverage/valuation even more important."}
+    "AGKO":{"score":8.2,"role":"Temporary / behind-the-meter power","read":"High-priority IPO watch because time-to-power can bypass grid queues. VRT/UIG independently validates the category, but customer contracts, IPO leverage and valuation remain mandatory checks."}
   },
   "existingCoreCrossRead":{
-    "GEV":"Generation/grid demand remains high quality when orders are named/contracted; do not use aggregate interconnection queues as demand evidence by themselves.",
-    "ETN":"Switchgear/power-management shortages remain confirmed by ISM; Sep 1 price weakness improved entry asymmetry but high real yields remain a multiple headwind.",
-    "PWR":"Transmission/substations remain essential for verified large-load interconnections; require project awards and backlog, not utility queue totals.",
+    "GEV":"Generation/grid demand remains high quality when orders are named/contracted; microgrid/on-site generation can expand the addressable reliability stack but aggregate interconnection queues remain insufficient evidence by themselves.",
+    "ETN":"Switchgear/power-management shortages remain confirmed by ISM; microgrids add another demand path for distribution/control equipment. High real yields remain a multiple headwind.",
+    "PWR":"Transmission/substations remain essential for verified large-load interconnections, while microgrids are complementary rather than substitutes for long-term grid buildout.",
     "POWL":"Order/backlog evidence remains strong; valuation/execution constrain entry quality.",
-    "VRT":"Cooling/power-management demand remains real, but valuation discipline and verified customer deployment matter.",
-    "FLEX":"Planned Cloud & Power Infrastructure spin is strategically aligned, but the new load-quality screen should be applied to backlog/customer concentration before treating growth guidance as fully de-risked.",
-    "YTLPOWR":"Strategic power/data-centre exposure remains strong, but leverage/cash conversion and actual contracted utilization matter more than Malaysian data-centre announcement volume.",
+    "VRT":"UIG turns time-to-power into a more complete grid-to-chip offering. Upgrade research conviction to 7.7, but require deal close, integration and customer-funded order proof before another move.",
+    "FLEX":"Planned Cloud & Power Infrastructure spin is strategically aligned; apply both funded-load and customer-concentration tests to backlog/guidance.",
+    "YTLPOWR":"Strategic power/data-centre exposure remains strong. VRT/UIG validates the global bottleneck but does not substitute for YTLPOWR-specific contracted utilisation, leverage and cash conversion.",
     "ROK":"Profitable factory/warehouse automation remains the preferred first-wave robotics/physical-AI expression."
   },
   "augustISMPhysicalStack":{
@@ -39,7 +50,7 @@
     "backlog":51.8,
     "signal":"Physical activity is still expanding, but orders/backlog slowed while input inflation and delivery stress stayed severe. Electrical/electronic components, memory, semiconductors, copper and wire remain direct bottleneck evidence."
   },
-  "roboticsRead":"No adoption-wave change: warehouse/fixed industrial automation first, cobots/mobile manipulation second, industrial humanoids third, open-world/general-purpose robots last. Current ISM production supports factory automation, but slower New Orders argues against a broad industrial-capex chase.",
-  "nextTests":["Texas/PJM/AEP/Exelon data-centre load audits and deposits","PWR/ETN/GEV/FLEX named orders and backlog conversion","SLB/Kelvion close/integration","AMKR FCF/capex and customer prepayments","ASMPT HBM qualification/order conversion","GNRC hyperscaler backlog conversion","Aggreko IPO valuation/leverage/customer concentration"],
-  "sources":["https://www.reuters.com/business/texas-halt-powering-data-centers-reflects-us-reckoning-over-ghost-demand-2026-09-01/","https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/august/","https://www.slb.com/newsroom/press-release/2026/pr-2026-0831","https://investor.nvidia.com/","https://ir.amkor.com/","https://investor.belden.com/","https://investors.generac.com/","https://www.asmpt.com/en/investor-relations/","https://www.reuters.com/business/energy/power-supply-firm-aggreko-files-us-ipo-2026-08-24/"]
+  "roboticsRead":"No adoption-wave change: warehouse/fixed industrial automation first, cobots/mobile manipulation second, industrial humanoids third, open-world/general-purpose robots last. TSLA's Cybercab event is an autonomy catalyst, not evidence that industrial humanoids have leapfrogged fixed automation economics.",
+  "nextTests":["VRT/UIG close, integration guidance and microgrid wins","Texas/PJM/AEP/Exelon data-centre load audits and deposits","PWR/ETN/GEV/FLEX named orders and backlog conversion","SLB/Kelvion close/integration","AMKR FCF/capex and customer prepayments","ASMPT HBM qualification/order conversion","GNRC hyperscaler backlog conversion","Aggreko IPO valuation/leverage/customer concentration"],
+  "sources":["https://investors.vertiv.com/news/news-details/2026/Vertiv-Announces-Agreement-to-Acquire-UtilityInnovation-Group-to-Accelerate-Time-to-Power-for-AI-Data-Centers/default.aspx","https://www.reuters.com/business/texas-halt-powering-data-centers-reflects-us-reckoning-over-ghost-demand-2026-09-01/","https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/august/","https://www.slb.com/newsroom/press-release/2026/pr-2026-0831","https://investor.nvidia.com/","https://ir.amkor.com/","https://investor.belden.com/","https://investors.generac.com/","https://www.asmpt.com/en/investor-relations/","https://www.reuters.com/business/energy/power-supply-firm-aggreko-files-us-ipo-2026-08-24/"]
 }
