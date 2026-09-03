@@ -1,0 +1,40 @@
+name: Validate Live rating snapshot
+
+on:
+  pull_request:
+    paths:
+      - "app.js"
+      - "industry-risk.js"
+      - "data/live-rating-snapshot.json"
+      - "data/live-rating-export-config.json"
+      - "data/macro-context.json"
+      - "data/macro-methodology.json"
+      - "data/macro-sensitivity*.json"
+      - "data/market-extension*.json"
+      - "scripts/generate-live-rating-snapshot.mjs"
+      - ".github/workflows/validate-live-rating-snapshot.yml"
+  push:
+    branches: [main]
+    paths:
+      - "app.js"
+      - "industry-risk.js"
+      - "data/live-rating-snapshot.json"
+      - "data/live-rating-export-config.json"
+      - "data/macro-context.json"
+      - "data/macro-methodology.json"
+      - "data/macro-sensitivity*.json"
+      - "data/market-extension*.json"
+      - "scripts/generate-live-rating-snapshot.mjs"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/generate-live-rating-snapshot.mjs --check
