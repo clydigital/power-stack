@@ -1,0 +1,15 @@
+{
+  "contractVersion": "power-stack-rating-export-config/v1",
+  "baseIdeasFile": "data/market-extension-3-2026-09-03.json",
+  "macroContextFile": "data/macro-context.json",
+  "macroProfilesFile": "data/macro-sensitivity-supplement-2-2026-09-03.json",
+  "macroMethodologyFile": "data/macro-methodology.json",
+  "tickers": [
+    { "ticker": "AVGO", "industryRiskBucket": "Semiconductors" },
+    { "ticker": "MU", "industryRiskBucket": "Semiconductors" },
+    { "ticker": "CRDO", "industryRiskBucket": "AI / Data Centres" },
+    { "ticker": "DELL", "industryRiskBucket": "AI / Data Centres" },
+    { "ticker": "HPE", "industryRiskBucket": "AI / Data Centres" },
+    { "ticker": "SNOW", "industryRiskBucket": null, "industryRiskNote": "Power Stack's current pure-macro industry model does not define a dedicated software bucket; no proxy industry score is fabricated." }
+  ]
+}

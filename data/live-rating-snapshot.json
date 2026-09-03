@@ -1,0 +1,117 @@
+{
+  "contractVersion": "power-stack-rating-snapshot/v1",
+  "snapshotAt": "2026-09-03T09:48:00Z",
+  "sourceCommit": "7449dc8387d8b83f161e8397c39563a0a1250806",
+  "macroContextGeneratedAt": "2026-09-03T06:02:00Z",
+  "macroProfileUpdatedAt": "2026-09-03T06:08:00Z",
+  "methodology": {
+    "name": "Power Stack Macro Pulse v4 stock scoring",
+    "version": 2,
+    "fundamentalWeight": 0.65,
+    "marketWeight": 0.35,
+    "macroAdjustmentCap": 1.0,
+    "freshness": "Fresh channels decay by 0.35 * (ageHours / staleAfterHours), floored at 0.65 while the channel remains fresh; stale channels contribute zero.",
+    "formula": "contribution_i = (channelScore_i / 2) * ((0.65 * fundamentalSensitivity_i + 0.35 * marketSensitivity_i) / 5) * factorWeight_i * factorConfidence_i * profileConfidence * channelConfidence * freshnessWeight_i",
+    "industryRisk": "50 = neutral macro risk; weighted live channel pressure is mapped to 0-100. Higher is more hostile. This is separate from stock research score and Story confidence."
+  },
+  "ratings": [
+    {
+      "ticker": "AVGO",
+      "name": "Broadcom",
+      "themeGroup": "AI Infrastructure / Semiconductors",
+      "researchScore": 9.2,
+      "macroAdjustment": 0.30,
+      "adjustedScore": 9.5,
+      "industryMacroRisk": {
+        "industry": "Semiconductors",
+        "score": 55,
+        "label": "Elevated",
+        "asOf": "2026-09-03T09:48:00Z",
+        "pressures": ["Financial Conditions", "Input Costs"],
+        "offsets": ["Industrial / AI / Power Capex"]
+      }
+    },
+    {
+      "ticker": "MU",
+      "name": "Micron Technology",
+      "themeGroup": "AI Infrastructure / Memory",
+      "researchScore": 8.9,
+      "macroAdjustment": 0.47,
+      "adjustedScore": 9.4,
+      "industryMacroRisk": {
+        "industry": "Semiconductors",
+        "score": 55,
+        "label": "Elevated",
+        "asOf": "2026-09-03T09:48:00Z",
+        "pressures": ["Financial Conditions", "Input Costs"],
+        "offsets": ["Industrial / AI / Power Capex"]
+      }
+    },
+    {
+      "ticker": "CRDO",
+      "name": "Credo Technology Group",
+      "themeGroup": "AI Infrastructure / Networking & Interconnect",
+      "researchScore": 8.7,
+      "macroAdjustment": 0.36,
+      "adjustedScore": 9.1,
+      "industryMacroRisk": {
+        "industry": "AI / Data Centres",
+        "score": 56,
+        "label": "Elevated",
+        "asOf": "2026-09-03T09:48:00Z",
+        "pressures": ["Financial Conditions", "Input Costs"],
+        "offsets": ["Industrial / AI / Power Capex"]
+      }
+    },
+    {
+      "ticker": "DELL",
+      "name": "Dell Technologies",
+      "themeGroup": "AI Infrastructure / Systems",
+      "researchScore": 8.6,
+      "macroAdjustment": 0.16,
+      "adjustedScore": 8.8,
+      "industryMacroRisk": {
+        "industry": "AI / Data Centres",
+        "score": 56,
+        "label": "Elevated",
+        "asOf": "2026-09-03T09:48:00Z",
+        "pressures": ["Financial Conditions", "Input Costs"],
+        "offsets": ["Industrial / AI / Power Capex"]
+      }
+    },
+    {
+      "ticker": "HPE",
+      "name": "Hewlett Packard Enterprise",
+      "themeGroup": "AI Infrastructure / Systems & Networking",
+      "researchScore": 8.2,
+      "macroAdjustment": 0.06,
+      "adjustedScore": 8.3,
+      "industryMacroRisk": {
+        "industry": "AI / Data Centres",
+        "score": 56,
+        "label": "Elevated",
+        "asOf": "2026-09-03T09:48:00Z",
+        "pressures": ["Financial Conditions", "Input Costs"],
+        "offsets": ["Industrial / AI / Power Capex"]
+      }
+    },
+    {
+      "ticker": "SNOW",
+      "name": "Snowflake",
+      "themeGroup": "AI / Software",
+      "researchScore": 8.2,
+      "macroAdjustment": -0.01,
+      "adjustedScore": 8.2,
+      "industryMacroRisk": null,
+      "industryRiskNote": "Power Stack's current pure-macro industry model does not define a dedicated software bucket; no proxy industry score is fabricated."
+    }
+  ],
+  "sourceFiles": [
+    "data/market-extension-3-2026-09-03.json",
+    "data/macro-context.json",
+    "data/macro-sensitivity-supplement-2-2026-09-03.json",
+    "data/macro-methodology.json",
+    "app.js",
+    "industry-risk.js"
+  ]
+}
