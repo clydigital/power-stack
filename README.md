@@ -53,6 +53,27 @@ The stock's Macro adjustment is the sum of fresh contributions and is capped at 
 
 Theme bars are summaries of the **average stock-level macro adjustment inside the theme**, not a theme score copied into every stock.
 
+## Live Desk rating export
+
+`data/live-rating-snapshot.json` is the versioned, one-way exchange contract used by the Alchemy Live Market Desk. It contains Power Stack's base research score, the current macro adjustment, the resulting adjusted score and the pure-macro industry-risk reading where the current industry model has a valid bucket.
+
+The export is generated from committed Power Stack research inputs. It does not read from the Live Desk and does not reactivate the retired Live Desk → Power Stack pulse. The Live Desk may import this file **once at publication time** and freeze the packet into its immutable edition; Hybrid should render only that persisted Live-edition packet and must not fetch or recalculate Power Stack scores itself.
+
+The input mapping lives in `data/live-rating-export-config.json`. Regenerate after updating the referenced idea, macro-context or sensitivity files:
+
+```bash
+node scripts/generate-live-rating-snapshot.mjs
+```
+
+For a reproducible historical rebuild or review:
+
+```bash
+node scripts/generate-live-rating-snapshot.mjs --as-of=2026-09-03T09:48:00Z
+node scripts/generate-live-rating-snapshot.mjs --check
+```
+
+`--check` evaluates the committed snapshot at its own `snapshotAt` timestamp, so freshness decay is tested against the same publication moment rather than the current clock. A missing industry bucket remains `null`; the export must not substitute a proxy score.
+
 ## Live Desk status
 
 The former Live Desk → Power Stack pulse is **deactivated**. The historical `data/live-context.json` file and disabled workflow stub are retained so the integration can be restored later without rebuilding it, but Live Desk data currently has zero influence on rankings, cards, detail views or macro-adjusted conviction.
