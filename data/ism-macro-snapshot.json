@@ -1,12 +1,12 @@
 {
-  "lastUpdated":"2026-09-02",
-  "lastVerifiedAt":"2026-09-02T09:18:00+08:00",
+  "lastUpdated":"2026-09-03",
+  "lastVerifiedAt":"2026-09-03T09:01:00+08:00",
   "sourcePolicy":"Official ISM monthly reports are authoritative; aggregate diffusion data and selected public respondent comments only. No confidential/raw survey submissions are claimed or used.",
   "releaseStatus":{
     "latestManufacturingReportMonth":"August 2026",
     "latestServicesReportMonth":"July 2026",
     "nextServicesRelease":"2026-09-03 10:00 ET",
-    "note":"August Manufacturing was released Sep 1. August Services is not yet published at this run; July remains authoritative for Services.",
+    "note":"August Manufacturing remains the latest official manufacturing report. At this run, August Services has not yet been published; July remains authoritative for Services and no August value is inferred.",
     "releaseCalendarUrl":"https://www.ismworld.org/supply-management-news-and-reports/reports/rob-report-calendar/"
   },
   "manufacturing":{
@@ -30,7 +30,7 @@
       "up":["Aluminum","Chemicals","Copper","Copper Products","Corrugated Products","Diesel Fuel","Electrical Components","Electronic Components","Freight","Fuel","Memory Components","Metal Products","Oil Based Products","Plastic Based Products","Printed Circuit Boards","Resin Based Products","Resins","Semiconductors","Steel","Steel - Cold Rolled","Steel - Hot Rolled","Steel - Stainless","Steel Products","Wire"],
       "down":[],
       "shortSupply":["Copper","Electrical Components","Electronic Components","Labor","Memory Components","Printed Circuit Boards","Steel","Tungsten"],
-      "note":"Short-supply list is retained only where it was explicitly identifiable in the official August ISM publication/review; no private submissions are inferred."
+      "note":"Short-supply list is retained only where explicitly identifiable in the official August ISM publication/review; no private submissions are inferred."
     },
     "respondentCommentReview":{
       "scope":"ISM-selected public comments only.",
@@ -41,7 +41,7 @@
         "Multiple public comments tied AI-related consumption to component/material scarcity rather than broad finished-goods weakness."
       ]
     },
-    "powerStackInterpretation":"Still constructive for physical Power Stack demand, but more stagflationary than July: production remains very strong and customer inventories are still too low, while New Orders, Employment and Backlog cooled. Prices stayed at 71.1 and Supplier Deliveries slowed further. The clearest beneficiaries remain real bottlenecks with booked orders and pricing power - grid/electrical equipment, semiconductors/memory, wire/cable, copper-linked supply and industrial automation. The new risk is that high input prices and slower orders expose speculative or unfunded capacity plans."
+    "powerStackInterpretation":"Still constructive for physical Power Stack demand, but more stagflationary than July: production remains very strong and customer inventories are still too low, while New Orders, Employment and Backlog cooled. Prices stayed at 71.1 and Supplier Deliveries slowed further. The clearest beneficiaries remain real bottlenecks with booked orders and pricing power: grid/electrical equipment, semiconductors/memory, wire/cable, copper-linked supply and industrial automation. The new risk is that high input prices and slower orders expose speculative or unfunded capacity plans."
   },
   "services":{
     "reportMonth":"July 2026",
@@ -59,9 +59,9 @@
       "imports":{"value":51.8,"prior":49.4,"change":2.4},
       "inventorySentiment":{"value":52.5,"prior":52.6,"change":-0.1}
     },
-    "powerStackInterpretation":"July Services still shows strong activity/orders but contracting employment and high prices. Do not infer an August Services change before the Sep 3 official release."
+    "powerStackInterpretation":"July Services still shows strong activity/orders but contracting employment and high prices. August Services is due later Sep 3; no value is inferred before the official release."
   },
-  "combinedRead":"August Manufacturing remains expansionary but slowed at the margin while inflation/supply-chain pressure stayed intense. This strengthens the quality split inside Power Stack: prefer funded, backlog-rich physical infrastructure and scarce components; raise the hurdle for long-duration projects whose demand exists only as interconnection requests or forecasts.",
+  "combinedRead":"August Manufacturing remains expansionary but slowed at the margin while inflation/supply-chain pressure stayed intense. The Sep 3 macro cross-check adds weak ADP hiring and extreme refined-product prices, strengthening the quality split: prefer funded, backlog-rich physical infrastructure and scarce components; raise the hurdle for long-duration projects and financed discretionary demand.",
   "historicalFallback":"https://github.com/HelloThereMatey/tedata",
   "rawSubmissionNote":"ISM publishes selected comments and aggregate diffusion data, not the confidential individual survey submission database."
 }
