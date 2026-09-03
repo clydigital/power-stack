@@ -118,12 +118,12 @@ function industryRisk(bucket, macro, asOf) {
   const average = totalWeight ? weighted / totalWeight : 0;
   const score = clamp(50 + average * 22, 0, 100);
   const pressures = drivers
-    .filter((driver) => driver.impact > 0)
+    .filter((driver) => driver.impact > 0.1)
     .sort((a, b) => b.impact - a.impact)
     .slice(0, 2)
     .map((driver) => driver.label);
   const offsets = drivers
-    .filter((driver) => driver.impact < 0)
+    .filter((driver) => driver.impact < -0.1)
     .sort((a, b) => a.impact - b.impact)
     .slice(0, 2)
     .map((driver) => driver.label);
@@ -217,8 +217,7 @@ const snapshot = buildSnapshot({ asOf, sourceCommit });
 const rendered = `${JSON.stringify(snapshot, null, 2)}\n`;
 
 if (args.check) {
-  const current = fs.existsSync(OUTPUT_PATH) ? fs.readFileSync(OUTPUT_PATH, "utf8") : "";
-  if (current !== rendered) {
+  if (!existing || JSON.stringify(existing) !== JSON.stringify(snapshot)) {
     console.error("data/live-rating-snapshot.json is stale. Regenerate it with:");
     console.error(`node scripts/generate-live-rating-snapshot.mjs --as-of=${asOf}`);
     process.exitCode = 1;
