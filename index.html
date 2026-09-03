@@ -45,17 +45,20 @@
       window.fetch = async (input, init) => {
         const url = typeof input === 'string' ? input : input?.url;
         if (url === 'data/macro-sensitivity-supplement.json') {
-          const [baseRes,extraRes]=await Promise.all([
+          const [baseRes,extraRes,extra2Res]=await Promise.all([
             nativeFetch(input,init),
-            nativeFetch('data/macro-sensitivity-supplement-2-2026-09-03.json',{cache:'no-store'}).catch(()=>null)
+            nativeFetch('data/macro-sensitivity-supplement-2-2026-09-03.json',{cache:'no-store'}).catch(()=>null),
+            nativeFetch('data/macro-sensitivity-supplement-3-2026-09-03.json',{cache:'no-store'}).catch(()=>null)
           ]);
           if(!baseRes.ok)return baseRes;
           const base=await baseRes.json();
           const extra=extraRes?.ok?await extraRes.json():null;
+          const extra2=extra2Res?.ok?await extra2Res.json():null;
           const merged=new Map((base.stocks||[]).map(x=>[x.ticker,x]));
           (extra?.stocks||[]).forEach(x=>{if(x?.ticker)merged.set(x.ticker,x)});
-          const coverage=[...new Set([...(base.coverageAdded||[]),...(extra?.coverageAdded||[])])];
-          return new Response(JSON.stringify({...base,updatedAt:extra?.updatedAt||base.updatedAt,coverageAdded:coverage,stocks:[...merged.values()]}),{status:200,headers:{'Content-Type':'application/json'}});
+          (extra2?.stocks||[]).forEach(x=>{if(x?.ticker)merged.set(x.ticker,x)});
+          const coverage=[...new Set([...(base.coverageAdded||[]),...(extra?.coverageAdded||[]),...(extra2?.coverageAdded||[])])];
+          return new Response(JSON.stringify({...base,updatedAt:extra2?.updatedAt||extra?.updatedAt||base.updatedAt,coverageAdded:coverage,stocks:[...merged.values()]}),{status:200,headers:{'Content-Type':'application/json'}});
         }
         if (url !== 'data/ideas.json') return nativeFetch(input, init);
         const [coreRes, roboticsRes, opportunityRes, videoScreenRes, ttRes, nbisRes, aug24Res, rescanRes] = await Promise.all([
@@ -77,14 +80,16 @@
         const nbisPayload=nbisRes?.ok?await nbisRes.json():null;
         const aug24Payload=aug24Res?.ok?await aug24Res.json():null;
         const rescanPayload=rescanRes?.ok?await rescanRes.json():null;
-        const [extensionRes,extension2Res,extension3Res]=await Promise.all([
+        const [extensionRes,extension2Res,extension3Res,extension4Res]=await Promise.all([
           nativeFetch('data/market-extension-2026-09-01.json',{cache:'no-store'}).catch(()=>null),
           nativeFetch('data/market-extension-2-2026-09-01.json',{cache:'no-store'}).catch(()=>null),
-          nativeFetch('data/market-extension-3-2026-09-03.json',{cache:'no-store'}).catch(()=>null)
+          nativeFetch('data/market-extension-3-2026-09-03.json',{cache:'no-store'}).catch(()=>null),
+          nativeFetch('data/market-extension-4-2026-09-03.json',{cache:'no-store'}).catch(()=>null)
         ]);
         const extensionPayload=extensionRes?.ok?await extensionRes.json():null;
         const extension2Payload=extension2Res?.ok?await extension2Res.json():null;
         const extension3Payload=extension3Res?.ok?await extension3Res.json():null;
+        const extension4Payload=extension4Res?.ok?await extension4Res.json():null;
         const supplemental=[
           ...(Array.isArray(roboticsPayload?.ideas)?roboticsPayload.ideas:[]),
           ...(Array.isArray(opportunityPayload?.ideas)?opportunityPayload.ideas:[]),
@@ -101,7 +106,7 @@
           const overrides=packet?.overrides&&typeof packet.overrides==='object'?packet.overrides:{};
           Object.entries(overrides).forEach(([ticker,patch])=>{if(byTicker.has(ticker)&&patch&&typeof patch==='object')byTicker.set(ticker,{...byTicker.get(ticker),...patch});});
         };
-        applyPacket(rescanPayload);applyPacket(extensionPayload);applyPacket(extension2Payload);applyPacket(extension3Payload);
+        applyPacket(rescanPayload);applyPacket(extensionPayload);applyPacket(extension2Payload);applyPacket(extension3Payload);applyPacket(extension4Payload);
         return new Response(JSON.stringify([...byTicker.values()]),{status:200,headers:{'Content-Type':'application/json'}});
       };
     })();
