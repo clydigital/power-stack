@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "updatedAt": "2026-09-07",
+  "purpose": "Machine-readable contract for the recurring Power Stack macro, holdings, watchlist and regional rate-sensitivity sweep.",
+  "cranium": {
+    "name": "Market Research Cranium",
+    "tab": "26.09.07",
+    "url": "https://docs.google.com/document/d/1OVahYQkXWNsFlR7vdgKeY41hqUYgV1IP6iocGlAoZ4s/edit?tab=t.ryp83pg0ofyg",
+    "role": "Research seed, synthesis layer and source-URL registry. It is not direct canonical evidence or a scoring input until material claims are independently verified.",
+    "preserveLabels": ["[FACT]", "[SELL-SIDE VIEW]", "[CRANIUM SYNTHESIS]", "[WATCH]", "[INVALIDATION]"],
+    "ingestRule": "Read the current Cranium tab before the daily macro sweep. Extract claims, source URLs, PDFs/images and disagreements. Verify material factual claims independently. Preserve sell-side opinions as attributed views rather than converting them into facts."
+  },
+  "requiredSweepOrder": [
+    "Read current Cranium tab and extract new claims, source URLs, charts/PDF leads and explicit disagreements.",
+    "Independently verify material facts using official, company, regulatory or high-quality market sources.",
+    "Refresh global macro regime, then separate US and China/Hong Kong rate regimes rather than using one generic rates label.",
+    "Review every canonical current holding against the refreshed macro/rates packet.",
+    "Review every canonical watchlist candidate against the refreshed macro/rates packet, including valuation/funding sensitivity and China-demand exposure where relevant.",
+    "Run a China focus adjunct across tracked HK/China ideas even when those names are not in the canonical action watchlist.",
+    "Update developing themes only when the mechanism, timing, beneficiaries, confirmation or invalidation materially changed.",
+    "Keep Base Conviction separate from macro/rates sensitivity. Only change fundamental scores on new company-level evidence.",
+    "If macro-context or sensitivity inputs changed, regenerate and validate the one-way Live rating snapshot."
+  ],
+  "usRateSweep": {
+    "requiredFields": [
+      "Fed policy probability and reaction-function language",
+      "2Y Treasury yield",
+      "10Y Treasury yield",
+      "30Y Treasury yield",
+      "10Y real yield",
+      "10Y breakeven inflation",
+      "2s10s and 10s30s curve direction where material",
+      "term-premium / long-end pressure where a verified source is available",
+      "MOVE and VIX when volatility pricing is part of the thesis",
+      "broad credit availability and CCC/weak-end credit stress",
+      "Treasury issuance and buyback operations",
+      "USD transmission"
+    ],
+    "interpretationRule": "Distinguish front-end policy expectations from long-end financial conditions. A Fed hold is not automatically easing if real yields, term premium or long-end yields remain restrictive."
+  },
+  "chinaRateSweep": {
+    "requiredFields": [
+      "1Y and 5Y LPR",
+      "10Y China government bond yield",
+      "PBOC policy/liquidity operations when material",
+      "CNY/CNH direction and policy restraint",
+      "bank loan growth / credit demand",
+      "bank net-interest-margin pressure",
+      "fiscal/special-bond and financial-institution recapitalisation",
+      "equity-liquidity / insurer allocation channel",
+      "credit transmission into private-sector capex and consumption"
+    ],
+    "interpretationRule": "Low Chinese yields are not automatically a bullish easing signal. Separate low discount rates from weak domestic demand, low bank margins, trapped domestic savings and poor credit transmission. Treat fiscal/recapitalisation support separately from a PBOC rate cut."
+  },
+  "regionalSensitivityRule": "For each holding/watchlist name, record US-rate sensitivity and China-rate/demand sensitivity separately. Use low/moderate/high/very-high plus the causal mechanism; do not infer a buy/sell action from sensitivity alone.",
+  "sourceHierarchy": [
+    "Official government/central-bank/regulator/company sources",
+    "Primary filings and company investor relations",
+    "Reuters/FT/Bloomberg or equivalent high-quality market reporting",
+    "Specialist research and attributed sell-side commentary",
+    "Cranium/creator/social sources as research leads and synthesis only until corroborated"
+  ]
+}
