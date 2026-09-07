@@ -1,333 +1,434 @@
 {
-  "lastUpdated": "2026-08-21",
-  "purpose": "A research-only thematic radar for Power Stack. It is not a portfolio view. A theme stays active only when recent news, dossier work or the Live Market Deck materially changes the investment mechanism, timing, risk or beneficiaries.",
+  "lastUpdated": "2026-09-07",
+  "purpose": "A research-only thematic radar for Power Stack. It is not a portfolio view and does not mechanically change company fundamental scores. The canonical base stores durable economic mechanisms; faster daily overlays, Cranium work and Live Desk intake may change attention and rank, but require independent verification before becoming canonical evidence.",
+  "environment": {
+    "label": "Restrictive, inflation-sensitive risk-on with strong physical capex but fragile financial duration",
+    "significanceScore": 9.9,
+    "summary": "The dominant regime is no longer simply Fed-hike risk. Long-end nominal and real yields, term premium, credit conditions and competition for capital can stay restrictive even if the Fed holds. At the same time, physical AI, grid and energy-scarcity capex remains real, creating unusually wide dispersion between funded cash-generative infrastructure and leverage-dependent duration.",
+    "asOf": "2026-09-07"
+  },
   "themePolicy": {
     "promoteWhen": [
-      "A material catalyst changes the mechanism or timing of a thesis",
-      "At least two research streams converge, such as market news plus dossier or Live Market Deck evidence",
+      "A material catalyst changes the mechanism, timing, investability or beneficiary set of a thesis",
+      "At least two independent research streams converge, with preference for primary or official evidence",
       "The theme has a clear next test that can strengthen or invalidate it"
     ],
     "parkWhen": [
       "The thesis remains structurally valid but nothing material has changed",
       "The theme duplicates a broader active mechanism",
-      "The signal is mostly valuation excitement without improving commercial evidence"
+      "The signal is mostly valuation excitement, positioning or narrative without improving commercial evidence",
+      "A more recent cross-asset mechanism has materially higher significance"
+    ],
+    "evidenceHierarchy": [
+      "Primary company filings, company releases, regulators, central banks, government and official data",
+      "High-quality current reporting",
+      "Persisted Power Stack research and verified dossier outputs",
+      "Cranium, sell-side PDFs, positioning notes and creator transcripts as hypothesis inputs only unless independently corroborated"
     ]
   },
+  "methodology": {
+    "rankingScale": "0-10 significance",
+    "rankingWeights": {
+      "evidenceQuality": 0.3,
+      "crossAssetTransmission": 0.25,
+      "recency": 0.2,
+      "upcomingCatalystDensity": 0.15,
+      "investability": 0.1
+    },
+    "recencyRule": "Use the last 14 days as the sweep window, with substantially heavier weight on the most recent four days. Older evidence supports or contradicts the current mechanism but should not automatically outrank fresh evidence.",
+    "ratesRule": "Do not use one global high-rates/low-rates flag. For US/global assets separate refinancing/funding sensitivity, customer-financing sensitivity, capex/cash-flow sensitivity and valuation/discount-rate sensitivity. For China distinguish low funding rates from weak credit demand and poor transmission.",
+    "aiFundingRule": "Funded backlog is more valuable than announced capacity; contracted cash flow is more valuable than proposed megawatts; equipment and infrastructure sellers with visible orders are preferred to speculative project owners dependent on future financing.",
+    "portfolioGuardrail": "Theme rank changes research priority, action thresholds and required margin of safety. It does not mechanically change Base Conviction or holdings fundamental scores."
+  },
+  "regimeModifiers": [
+    {
+      "id": "low-vol-thin-protection-fragility",
+      "name": "Low Volatility / Thin Protection Fragility",
+      "status": "Active regime modifier",
+      "direction": "strengthening",
+      "summary": "Calm index volatility can coexist with violent theme and factor dispersion when positioning is crowded, short covering is heavy and put protection is thin. Treat VIX, MOVE, skew, put demand and weak-credit spreads as confirmation tools rather than a standalone directional signal.",
+      "watch": ["VIX", "MOVE", "SPX skew", "put demand", "high-yield and CCC spreads", "breadth versus index level"]
+    }
+  ],
   "themes": [
     {
       "id": "long-end-duration-stress",
-      "name": "Long-End Yield Stress / Duration Compression",
-      "status": "Active macro regime / high cross-asset impact",
+      "name": "Rates Ambiguity + Long-End Funding Stress",
+      "priorityRank": 1,
+      "significanceScore": 9.9,
+      "lifecycleState": "ACTIVE / DOMINANT",
+      "status": "Active macro regime / highest cross-asset impact",
       "direction": "strengthening",
-      "lastUpdated": "2026-08-21",
-      "summary": "Long-duration assets are being constrained by the long end of the Treasury curve even without a matching hawkish shift in near-term Fed pricing. Oil-driven inflation risk, heavy sovereign borrowing and term-premium concerns are keeping 10- to 30-year yields high enough to compress valuations across AI, grid, robotics and other capital-intensive growth themes.",
-      "whyDeveloping": "Treasury's larger long-end buybacks produced only temporary relief. By August 21, the U.S. 10-year yield was back around 4.7% and the 30-year near 5.24%-5.25%, while global equities were heading for their weakest week since mid-July. The useful question has shifted from 'will the Fed hike?' to 'how expensive is duration when fiscal and energy risk keep the long end elevated?'",
-      "powerStackTickers": ["NBIS", "GEV", "ETN", "VRT", "ROK", "POWL"],
-      "watch": ["US30Y and US10Y", "term premium", "Treasury auction demand", "long-end buybacks", "Brent and diesel inflation", "equity breadth versus yields"],
+      "lastUpdated": "2026-09-07",
+      "evidenceQuality": "High",
+      "summary": "Long-end nominal and real yields, term premium, credit spreads and funding availability are now first-order operating variables for capital-intensive themes. A Fed hold is not automatically easier financial conditions if the 10- to 30-year curve and real yields remain restrictive.",
+      "whyDeveloping": "By the latest official US cash close on September 4, Treasury yields were roughly 4.37% at 2 years, 4.78% at 10 years and 5.24% at 30 years. Stronger August labour and services evidence kept near-term policy uncertainty alive while fiscal supply, energy inflation and global duration pressure kept the long end restrictive. The analytical question has shifted from simply 'will the Fed hike?' to 'what is the all-in cost and availability of capital after the decision?'",
+      "powerStackTickers": ["YTLPOWR", "TTWO", "TSLA", "ETN", "PWR", "CRWD", "CRM", "FLEX", "COIN", "MSTR", "SMR"],
+      "watch": ["US2Y", "US10Y", "US30Y", "10Y real yield", "term premium", "Treasury auctions and buybacks", "high-yield and CCC spreads", "MOVE", "DXY", "PPI", "CPI", "FOMC guidance"],
+      "nextTest": "September 10 PPI, September 11 CPI and the September 15-16 FOMC, with emphasis on the post-event 10Y/30Y/real-yield and credit response rather than the policy headline alone.",
+      "invalidation": "Sustained easing in long-end nominal and real yields, credit spreads and funding conditions that materially lowers hurdle rates for capital-intensive growth.",
+      "sourceClasses": ["US Treasury", "Federal Reserve", "BLS", "high-quality reporting", "Cranium synthesis corroborated by official data"],
       "mainNews": [
         {
-          "date": "2026-08-21",
-          "title": "Bond yields and oil keep pressure on global equities after buyback relief fades",
+          "date": "2026-09-04",
+          "title": "US Treasury daily yield curve remains restrictive into September event risk",
+          "source": "US Treasury",
+          "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates",
+          "implication": "The long end remains restrictive enough to matter for discount rates and project economics before the September FOMC."
+        },
+        {
+          "date": "2026-09-07",
+          "title": "September inflation and FOMC calendar creates a dense rates repricing window",
+          "source": "BLS / Federal Reserve",
+          "url": "https://www.federalreserve.gov/newsevents/2026-september.htm",
+          "implication": "PPI, CPI and the FOMC can rapidly change the ranking, but only if the long end and funding markets confirm the move."
+        }
+      ]
+    },
+    {
+      "id": "hormuz-energy-products-shipping",
+      "name": "Hormuz Energy Stress: Refined Products + Shipping",
+      "priorityRank": 2,
+      "significanceScore": 9.8,
+      "lifecycleState": "ACTIVE / DOMINANT",
+      "status": "Active geopolitical and inflation transmission theme",
+      "direction": "strengthening but increasingly differentiated",
+      "lastUpdated": "2026-09-07",
+      "evidenceQuality": "High",
+      "summary": "The Iran/Hormuz shock is no longer best understood as one crude-oil trade. The sharper transmission is through refined products, tanker availability, insurance, route security, LNG and regional power while crude rerouting can partially adapt.",
+      "whyDeveloping": "Weekend US-Iran vessel attacks and unusually depressed Hormuz traffic materially increased maritime risk, while OPEC+ maintained October production policy. The market now has to price both immediate physical disruption and the possibility that crude flows adapt faster than diesel, jet, fuel oil, LNG and shipping bottlenecks.",
+      "powerStackTickers": ["XOM", "MISC", "HIBISCS", "DAYANG", "CVX", "SLB", "LNG", "VLO", "MPC", "PSX"],
+      "watch": ["Hormuz vessel traffic", "tanker and war-risk insurance rates", "Brent and WTI", "ULSD and jet cracks", "fuel-oil and bunker spreads", "distillate inventories", "Gulf LNG flows", "TTF versus Henry Hub", "refinery outages", "EIA weekly product data"],
+      "nextTest": "September 10 EIA petroleum report, September 11 IEA Oil Market Report and any material change in Hormuz vessel security or Iranian restrictions.",
+      "invalidation": "Normalised Hormuz traffic plus sustained normalisation in product cracks, freight/insurance and LNG risk premiums rather than crude alone.",
+      "sourceClasses": ["EIA", "OPEC", "IEA", "high-quality reporting"],
+      "mainNews": [
+        {
+          "date": "2026-09-06",
+          "title": "Hormuz traffic drops sharply after US-Iranian vessel attacks",
           "source": "Reuters",
-          "url": "https://www.reuters.com/world/china/global-markets-global-markets-2026-08-21/",
-          "implication": "The valuation regime for capital-intensive growth is increasingly set by long-end funding costs rather than the next Fed meeting alone."
+          "url": "https://www.reuters.com/world/middle-east/hormuz-traffic-dips-lowest-since-may-after-us-iranian-strikes-ships-2026-09-06/",
+          "implication": "Maritime security, freight and insurance have become direct energy-price transmission channels."
+        },
+        {
+          "date": "2026-09-06",
+          "title": "OPEC+ maintains September production requirements for October",
+          "source": "OPEC",
+          "url": "https://www.opec.org/pr-detail/613-6-september-2026.html",
+          "implication": "Producer policy does not currently offset the shipping and product bottleneck through an additional October supply increase."
         }
       ]
     },
     {
       "id": "ai-physical-bottlenecks",
-      "name": "AI Buildout: Power, Grid + Cooling Bottlenecks",
+      "name": "AI Buildout: Power, Grid + Time-to-Power",
+      "priorityRank": 3,
+      "significanceScore": 9.7,
+      "lifecycleState": "ACTIVE / CORE",
       "status": "Core structural theme / accelerating",
       "direction": "strengthening",
-      "lastUpdated": "2026-08-21",
-      "summary": "AI demand is still strong, but the scarce inputs are increasingly outside the GPU: generation, transmission, substations, switchgear, interconnection, cooling and water. The best evidence is moving from hyperscaler capex announcements toward actual equipment demand, lead times and site constraints.",
-      "whyDeveloping": "Texas now requires more explicit scrutiny of grid dependence, on-site power, water and cooling for large data-centre projects, while Rockwell Automation is reporting strong semiconductor, data-centre and warehouse-automation demand. That strengthens the case that enabling infrastructure can monetise before more speculative AI applications.",
-      "powerStackTickers": ["GEV", "ETN", "PWR", "HUBB", "POWL", "VRT", "ECL", "XYL", "TNB", "SCGBHD", "YTLPOWR"],
-      "watch": ["hyperscaler capex", "gas-turbine backlog", "switchgear lead times", "interconnection queues", "liquid-cooling adoption", "water sourcing and reuse"],
+      "lastUpdated": "2026-09-07",
+      "evidenceQuality": "High",
+      "summary": "AI demand remains strong, but scarce physical inputs increasingly sit outside the accelerator: generation, transmission, transformers, substations, switchgear, interconnection, cooling, water and construction capacity. Time-to-power and equipment lead times are becoming more investable than headline AI narratives.",
+      "whyDeveloping": "Recent research continues to show strong AI-server, electrical-equipment and data-centre demand while the market simultaneously questions the quality of some proposed load. This makes realised orders, backlog, deposits, interconnection progress and power procurement more important than announced megawatts.",
+      "powerStackTickers": ["GEV", "ETN", "PWR", "HUBB", "POWL", "VRT", "ECL", "MOD", "XYL", "TNB", "YTLPOWR", "Q", "ASMPT"],
+      "watch": ["hyperscaler capex", "electrical-equipment backlog", "gas-turbine backlog", "transformer and switchgear lead times", "interconnection queues", "contracted data-centre load", "liquid-cooling adoption", "water sourcing and reuse"],
+      "nextTest": "Supplier order/backlog updates, hyperscaler financing disclosures, data-centre utility interconnection evidence and any cancellation or deposit slippage that reaches equipment backlogs.",
+      "invalidation": "Broad deterioration in supplier backlog, deposits, utility interconnection commitments and actual funded load rather than isolated project cancellations.",
+      "sourceClasses": ["company releases", "utility and regulator evidence", "persisted Power Stack research", "independently corroborated Cranium themes"],
       "mainNews": [
         {
           "date": "2026-08-20",
           "title": "Texas data-centre review broadens the bottleneck from electricity to full-site infrastructure",
           "source": "Office of the Governor of Texas / PUCT-ERCOT directive",
           "url": "https://gov.texas.gov/uploads/files/press/Thomas_Gleeson_Pablo_Vegas_Data_Centers_Directive_Letter_to_PUCT_ERCOT_August_2026_.pdf",
-          "implication": "Projects without credible power, water and cooling plans face higher execution risk; scarce enabling equipment gains strategic value."
-        },
-        {
-          "date": "2026-08-04",
-          "title": "Rockwell reports 10% organic growth with strength in semiconductor, data centre and warehouse automation",
-          "source": "Rockwell Automation",
-          "url": "https://www.rockwellautomation.com/content/dam/rockwell-automation/documents/pdf/company/about-us/ir/2026/fy26-q3-earnings-deck.pdf",
-          "implication": "Real industrial demand is confirming that the physical layer of AI and automation is already commercialising."
+          "implication": "Projects without credible power, water and cooling plans face higher execution risk while scarce enabling equipment gains strategic value."
         }
       ]
     },
     {
       "id": "ai-financing-cash-conversion",
       "name": "AI Buildout: Financing + Cash Conversion",
-      "status": "New gating variable / valuation-sensitive",
-      "direction": "accelerating but riskier",
-      "lastUpdated": "2026-08-21",
-      "summary": "The AI capex debate is shifting from demand to funding quality. As infrastructure providers spend billions before cash flows arrive, debt capacity, convertibles, dilution, utilisation and contracted returns become as important as revenue growth.",
-      "whyDeveloping": "Nebius upsized its latest convertible offering to $5 billion, potentially $5.75 billion, after spending about $5.7 billion on Q2 capex despite a quarterly loss. Demand is not the immediate problem; the market is now testing how efficiently that demand can be financed without destroying per-share economics.",
-      "powerStackTickers": ["NBIS", "NVDA", "VRT", "GEV", "ETN"],
-      "watch": ["convertible issuance", "dilution", "capex-to-revenue", "GPU utilisation", "contracted cash flows", "free-cash-flow conversion", "cost of debt"],
+      "priorityRank": 4,
+      "significanceScore": 9.5,
+      "lifecycleState": "ACTIVE / GATING VARIABLE",
+      "status": "System-wide capital-allocation gate",
+      "direction": "strengthening",
+      "lastUpdated": "2026-09-07",
+      "evidenceQuality": "Medium-High",
+      "summary": "AI demand and AI project economics can diverge. Cost of capital, funding channel, customer prepayments, guarantees, project finance, converts, debt capacity, utilisation and free-cash-flow conversion now determine which announced projects create equity value.",
+      "whyDeveloping": "The latest rates and Cranium work shows that higher long-end yields can reduce project equity value even when customer demand remains intact. This broadens the theme from one company's convertible financing into a system-wide diligence lens for utilities, data centres, electrical equipment, semiconductors, automation and pre-revenue nuclear.",
+      "powerStackTickers": ["YTLPOWR", "ETN", "PWR", "FLEX", "NBIS", "SMR", "SYM", "Q", "TSLA"],
+      "watch": ["funding channel", "debt maturity wall", "convertible issuance", "dilution", "project finance spreads", "customer deposits and prepayments", "contracted utilisation", "capex-to-revenue", "free-cash-flow conversion", "cancelled or deferred projects"],
+      "nextTest": "Any new hyperscaler, utility or data-centre financing disclosure plus the September inflation/FOMC sequence and evidence that funding stress is or is not reaching supplier orders.",
+      "invalidation": "Broadly falling funding costs with improving cash conversion and sustained backlog quality across capital-intensive AI beneficiaries.",
+      "sourceClasses": ["company filings and releases", "official rates data", "high-quality reporting", "Cranium and sell-side work used as hypothesis input"],
       "mainNews": [
         {
           "date": "2026-08-20",
-          "title": "Nebius upsizes convertible financing to $5 billion as data-centre buildout accelerates",
+          "title": "Nebius upsizes convertible financing as data-centre buildout accelerates",
           "source": "Reuters",
           "url": "https://www.reuters.com/technology/nebius-plans-45-billion-convertible-debt-sale-fund-data-centers-ai-platform-2026-08-19/",
-          "implication": "Strong capital demand confirms the buildout, but financing quality and dilution are becoming the main discriminator between AI infrastructure winners."
+          "implication": "Strong demand does not remove financing, dilution and cash-conversion risk."
         }
       ]
     },
     {
-      "id": "refining-product-inflation",
-      "name": "Middle Distillates > Gasoline: Product Split",
-      "status": "Active tactical theme / policy divergence",
-      "direction": "diesel and jet remain extreme; gasoline starting to ease",
-      "lastUpdated": "2026-08-21",
-      "summary": "The refined-product shortage is splitting internally. Washington can add gasoline supply relatively quickly by relaxing blending rules, but it cannot manufacture diesel and jet-fuel refining capacity nearly as fast. The useful hierarchy is increasingly diesel/jet >> gasoline >> crude rather than treating the 3-2-1 as one uniform signal.",
-      "whyDeveloping": "The EPA authorised an early September 1 switch to winter-grade gasoline, potentially adding hundreds of thousands of barrels per day of gasoline supply. That arrives as gasoline cracks soften while the U.S. diesel crack remains around the unprecedented $100-per-barrel area. A falling headline 3-2-1 could therefore hide a still-severe middle-distillate shortage.",
-      "powerStackTickers": ["VLO", "MPC", "PSX", "XOM", "CVX"],
-      "watch": ["RBOB crack below $50 while ULSD crack remains above $100", "diesel and jet cracks", "distillate inventories", "gasoline inventories", "EPA/state fuel waivers", "Hormuz traffic", "Russian refinery outages", "US distillate exports"],
+      "id": "energy-security-rerouting",
+      "name": "Energy Security Rerouting + Asian Demand Destruction",
+      "priorityRank": 5,
+      "significanceScore": 9.4,
+      "lifecycleState": "PHASING IN / ACTIVE",
+      "status": "New countervailing energy mechanism",
+      "direction": "strengthening",
+      "lastUpdated": "2026-09-07",
+      "evidenceQuality": "Medium-High",
+      "summary": "The second leg of the Iran shock is adaptation. Rerouting, alternative crude sourcing, LNG substitution, inventory drawdowns and weaker Asian demand can cap outright crude convexity while still rewarding tankers, strategic corridors, US LNG and selected upstream capacity.",
+      "whyDeveloping": "The latest evidence increasingly separates immediate disruption from the market's ability to adapt. Crude can find replacement routes and barrels faster than some refined products and gas flows, so beneficiaries and losers are no longer identical to the first-stage oil shock.",
+      "powerStackTickers": ["MISC", "XOM", "LNG", "SLB", "CVX", "HIBISCS", "DAYANG", "BG"],
+      "watch": ["Asian crude import volumes", "tanker tonne-miles", "freight rates", "US LNG utilisation and contracting", "Gulf LNG rerouting", "IEA demand revisions", "Brent backwardation", "Chinese industrial demand"],
+      "nextTest": "IEA September OMR and continued vessel/import data showing whether adaptation is reducing the crude shortage faster than product and gas shortages.",
+      "invalidation": "A renewed physical escalation that overwhelms rerouting capacity, or a rapid full normalisation that removes both scarcity and rerouting economics.",
+      "sourceClasses": ["IEA", "EIA", "shipping data reported by high-quality media", "China demand data"],
       "mainNews": [
         {
-          "date": "2026-08-20",
-          "title": "US ends summer-blend gasoline requirement early to increase supply",
-          "source": "Reuters",
-          "url": "https://www.reuters.com/business/energy/us-end-summer-blend-gasoline-requirement-early-attempt-lower-prices-2026-08-20/",
-          "implication": "Policy may compress RBOB and the headline 3-2-1 without resolving the harder diesel/jet refining-capacity shortage."
+          "date": "2026-09-07",
+          "title": "Oil market increasingly balances disruption against rerouting and demand destruction",
+          "source": "Power Stack synthesis from verified energy and shipping data",
+          "url": "https://www.iea.org/events/oil-market-report-september-2026",
+          "implication": "The investable energy hierarchy is shifting from simple crude beta toward logistics, products, LNG and resilient low-cost supply."
+        }
+      ]
+    },
+    {
+      "id": "copper-grid-inventory-distortion",
+      "name": "Copper: Grid Demand vs Inventory Distortion",
+      "priorityRank": 6,
+      "significanceScore": 9.1,
+      "lifecycleState": "ACTIVE",
+      "status": "Structural demand theme with cyclical confirmation risk",
+      "direction": "strengthening selectively",
+      "lastUpdated": "2026-09-07",
+      "evidenceQuality": "Medium-High",
+      "summary": "Grid, transmission and AI-related electrical demand remain structurally copper-intensive, but price signals are distorted by inventory geography, tariff-related stockpiling and weak China credit transmission. The correct trade is not generic copper scarcity; it is scarcity confirmed by end demand and inventory drawdown.",
+      "whyDeveloping": "The physical AI and grid thesis remains strong enough to keep copper high in the hierarchy, while China's weak domestic transmission prevents a clean broad-demand call. This creates a useful split between structural grid consumption and macro-sensitive China industrial demand.",
+      "powerStackTickers": ["FCX", "ETN", "PWR", "GEV", "HUBB", "POWL", "XYL"],
+      "watch": ["LME/COMEX/Shanghai inventories", "China import premiums", "grid capex", "smelter treatment charges", "mine disruptions", "China credit impulse", "AI/data-centre electrical orders"],
+      "nextTest": "China activity/credit data and evidence that reported inventories begin drawing while grid and electrical-equipment orders remain firm.",
+      "invalidation": "Persistent inventory accumulation combined with weakening grid, industrial and China demand.",
+      "sourceClasses": ["official China data", "exchange inventory data", "company and utility capex evidence", "high-quality reporting"],
+      "mainNews": []
+    },
+    {
+      "id": "china-balance-sheet-selective-ai",
+      "name": "China: Balance-Sheet Support + Selective AI/Infrastructure",
+      "priorityRank": 7,
+      "significanceScore": 8.9,
+      "lifecycleState": "ACTIVE / MODIFIED",
+      "status": "Selective state-supported reflation, not broad demand repair",
+      "direction": "strengthening selectively",
+      "lastUpdated": "2026-09-07",
+      "evidenceQuality": "High",
+      "summary": "China's problem is cheap money with weak transmission, not an expensive sovereign funding curve. Fresh state-bank and insurer recapitalisation can improve capacity to lend and invest without proving households or private businesses want to borrow. The better exposures are policy-backed power, grid, industrial automation and confirmed AI infrastructure rather than generic growth beta.",
+      "whyDeveloping": "August manufacturing PMI improved to 49.8 with new orders above 50, while non-manufacturing activity remained weak. Fresh state financial-sector capital injections strengthen balance sheets but do not yet establish broad credit demand. This upgrades China from a generic fiscal-infrastructure card into a transmission-quality and beneficiary-selection theme.",
+      "powerStackTickers": ["1816.HK", "0836.HK", "1072.HK", "0522.HK", "2590.HK", "9880.HK", "FCX", "AGCO", "Q"],
+      "watch": ["credit impulse", "new loans and private borrowing", "PMI new orders", "industrial production", "retail sales", "fixed-asset investment", "RMB stability", "state infrastructure orders", "AI equipment orders"],
+      "nextTest": "Mid-September China activity and credit data. Promote only if credit transmission, private/new-order breadth and actual strategic capex improve together.",
+      "invalidation": "Continued weak private credit demand, deteriorating orders and currency stress despite additional balance-sheet support.",
+      "sourceClasses": ["China NBS", "China Ministry of Finance", "high-quality reporting"],
+      "mainNews": [
+        {
+          "date": "2026-09-01",
+          "title": "August China PMI shows selective manufacturing improvement but weak broader activity",
+          "source": "National Bureau of Statistics of China",
+          "url": "https://www.stats.gov.cn/english/PressRelease/202609/t20260901_1965170.html",
+          "implication": "Improving manufacturing orders are not yet equivalent to broad domestic reflation."
         },
         {
-          "date": "2026-08-17",
-          "title": "U.S. diesel crack surpasses $100 per barrel for the first time",
-          "source": "Reuters",
-          "url": "https://www.reuters.com/business/energy/us-diesel-crack-surpasses-100-barrel-first-time-supply-disruptions-2026-08-17/",
-          "implication": "The global replacement barrel for middle distillates remains scarce even with U.S. refineries running hard."
-        },
-        {
-          "date": "2026-08-20",
-          "title": "Iran-war energy stress is increasingly a refining-capacity problem",
-          "source": "Reuters",
-          "url": "https://www.reuters.com/commentary/reuters-open-interest/iran-war-energy-crisis-is-just-getting-started-2026-08-20/",
-          "implication": "Damaged processing capacity and depleted inventories can keep industrial-fuel inflation elevated after crude stops accelerating."
+          "date": "2026-09-04",
+          "title": "China adds fresh capital to major state financial institutions",
+          "source": "Ministry of Finance of China",
+          "url": "https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/202609/t20260904_3996751.htm",
+          "implication": "Balance-sheet capacity is improving before there is proof of stronger private credit demand."
         }
       ]
     },
     {
       "id": "fertilizer-feedstock-divergence",
-      "name": "Fertilizer: Nitrogen Advantage vs Sulphur Constraint",
-      "status": "New resource-scarcity theme / high agriculture relevance",
+      "name": "Food / Fertilizer Affordability + Feedstock Divergence",
+      "priorityRank": 8,
+      "significanceScore": 8.7,
+      "lifecycleState": "ACTIVE",
+      "status": "Resource-scarcity and farm-affordability theme",
       "direction": "tight but highly differentiated",
-      "lastUpdated": "2026-08-21",
-      "summary": "Fertilizer is not one trade. Global nitrogen remains constrained by Gulf outages and trade disruption while U.S. natural gas stays comparatively cheap, creating a potential margin advantage for North American nitrogen producers. Phosphate faces the opposite problem: scarce sulphur is raising input costs so aggressively that high fertilizer prices can coexist with producer curtailments and weak margins.",
-      "whyDeveloping": "CF Industries estimates the Iran conflict removed roughly 4.0-4.5 million tonnes of traded Middle East urea and about 1 million tonnes of ammonia, while the Power Stack macro dashboard still shows Henry Hub around $2.8. At the same time, nearly half of seaborne sulphur normally moves through Hormuz and Mosaic has curtailed phosphate production because spot sulphur economics are unsustainable. This is an unusually clean example of the bottleneck sitting one layer below the headline commodity.",
-      "powerStackTickers": ["CTVA", "VMI"],
-      "researchCandidates": ["CF", "NTR", "CHE.UN"],
-      "watch": ["Henry Hub versus global urea", "urea and ammonia export flows", "India/Brazil import demand", "sulphur and sulphuric-acid prices", "phosphate operating rates", "farmer application cuts", "wheat COT positioning"],
+      "lastUpdated": "2026-09-07",
+      "evidenceQuality": "Medium-High",
+      "summary": "Fertilizer remains a differentiated trade. North American nitrogen can benefit from comparatively cheap gas and constrained global supply, while phosphate economics can be hurt by sulphur and freight scarcity. The second-order risk is farmer affordability and application cuts rather than simply higher fertilizer prices.",
+      "whyDeveloping": "Iran/Hormuz shipping and energy stress keeps fertilizer feedstocks and freight relevant, but a stronger dollar, high rates and weak farm economics can destroy end demand. The investment edge remains in producers with advantaged feedstocks and resilient balance sheets rather than generic fertilizer beta.",
+      "powerStackTickers": ["CF", "NTR", "CTVA", "VMI", "AGCO", "BG"],
+      "watch": ["Henry Hub versus global urea", "urea and ammonia export flows", "sulphur prices", "phosphate operating rates", "grain prices", "farmer margins", "application rates", "Brazil and India import demand", "freight"],
+      "nextTest": "Autumn fertilizer demand, Gulf export recovery, sulphur availability and evidence of farmer application cuts.",
+      "invalidation": "Normalised fertilizer/feedstock trade with collapsing nitrogen margins and no measurable affordability or application stress.",
+      "sourceClasses": ["company releases", "USDA and agriculture data", "energy/shipping evidence", "high-quality reporting"],
       "mainNews": [
-        {
-          "date": "2026-07-09",
-          "title": "Iran-war fertilizer disruption exposes food-production vulnerability",
-          "source": "Reuters",
-          "url": "https://www.reuters.com/world/iran/iran-war-threatened-food-crisis-next-gulf-conflict-could-do-same-2026-07-09/",
-          "implication": "High fertilizer costs can reduce planting and application, turning an input shortage into a later crop-yield problem."
-        },
         {
           "date": "2026-08-05",
           "title": "CF Industries says global nitrogen supply remains constructive into 2027",
           "source": "CF Industries",
           "url": "https://ir.cfindustries.com/Investors/news/news-details/2026/CF-Industries-Holdings-Inc--Reports-First-Half-2026-Net-Earnings-of-1-34-Billion-Adjusted-EBITDA-of-2-18-Billion/default.aspx",
-          "implication": "Cheap North American gas plus globally supported nitrogen pricing creates a differentiated producer setup rather than generic fertilizer beta."
-        },
-        {
-          "date": "2026-07-08",
-          "title": "Mosaic reduces phosphate operations in Brazil because of sulphur constraints",
-          "source": "Reuters",
-          "url": "https://www.agriculture.com/partners-mosaic-temporarily-reduces-phosphate-operations-in-brazil-due-to-sulfur-constraints-12014861",
-          "implication": "High phosphate prices do not guarantee producer margins when the scarce input is sulphur."
+          "implication": "Cheap North American gas and constrained global nitrogen supply remain a differentiated producer advantage."
         }
       ]
     },
     {
+      "id": "uranium-nuclear-fuel-cycle",
+      "name": "Uranium / Nuclear Fuel-Cycle Scarcity",
+      "priorityRank": 9,
+      "significanceScore": 8.5,
+      "lifecycleState": "REACTIVATED / ACTIVE",
+      "status": "Structural fuel-security theme with financing split",
+      "direction": "strengthening selectively",
+      "lastUpdated": "2026-09-07",
+      "evidenceQuality": "Medium-High",
+      "summary": "Operating nuclear and fuel-cycle scarcity can benefit from energy-security demand while pre-revenue reactor developers remain highly exposed to financing costs and project execution. High rates therefore increase the attractiveness gap between proven fuel/operating assets and speculative project finance.",
+      "whyDeveloping": "The energy-security shock and AI power demand keep nuclear strategically relevant, while the new capital-sensitivity framework makes project stage decisive. Contracted uranium and operating nuclear cash flows are fundamentally different from pre-revenue SMR equity duration.",
+      "powerStackTickers": ["CCJ", "1816.HK", "SMR"],
+      "watch": ["uranium contracting", "conversion and enrichment prices", "utility inventory policy", "reactor restarts", "government support", "SMR customer commitments", "project finance and dilution"],
+      "nextTest": "New utility contracting, enrichment/fuel-cycle evidence and any SMR funding or customer milestone that materially changes financing risk.",
+      "invalidation": "Weakening fuel contracting and security demand together with improving alternative power availability; for SMRs, inability to secure credible funded customers remains a separate negative gate.",
+      "sourceClasses": ["company and utility releases", "government nuclear policy", "fuel-cycle market evidence"],
+      "mainNews": []
+    },
+    {
+      "id": "automation-before-humanoids",
+      "name": "Industrial Automation Before Humanoids",
+      "priorityRank": 10,
+      "significanceScore": 8.2,
+      "lifecycleState": "ACTIVE / SELECTIVE",
+      "status": "Commercial automation preferred to speculative robotics duration",
+      "direction": "stable to strengthening",
+      "lastUpdated": "2026-09-07",
+      "evidenceQuality": "Medium-High",
+      "summary": "High funding costs sharpen the difference between automation already generating customer ROI and humanoid platforms that still require substantial capital and commercialization proof. Prefer deployed warehouse, factory and logistics automation with visible orders, service revenue and payback periods.",
+      "whyDeveloping": "Current China and global rates conditions make the commercial sequence more important. Cheap local China funding does not guarantee private capex, while expensive global capital raises the hurdle for long-duration robotics. Proven order flow should outrank narrative TAM.",
+      "powerStackTickers": ["SYM", "ROK", "2590.HK", "9880.HK", "AGCO"],
+      "watch": ["orders and deployments", "customer concentration", "installation cycle", "service revenue", "payback periods", "gross margin", "cash burn", "equity issuance", "China private capex"],
+      "nextTest": "Confirmed deployments and backlog conversion, especially for China automation names, versus additional capital raises or delayed customer rollouts.",
+      "invalidation": "Broad deterioration in industrial automation orders or clear commercial proof that humanoid economics and funding quality have caught up with conventional automation.",
+      "sourceClasses": ["company releases", "customer deployment evidence", "official China activity data"],
+      "mainNews": []
+    },
+    {
+      "id": "gold-real-yield-hedge",
+      "name": "Gold / Fiscal-Monetary Hedge vs Real Yields",
+      "priorityRank": 11,
+      "significanceScore": 7.8,
+      "lifecycleState": "ACTIVE / CONDITIONAL",
+      "status": "Structural hedge with tactical real-yield headwind",
+      "direction": "mixed",
+      "lastUpdated": "2026-09-07",
+      "evidenceQuality": "High",
+      "summary": "Gold remains useful against fiscal, geopolitical and confidence risk, but high real yields and a firm dollar are direct tactical headwinds. The informative signal is whether gold can rise despite restrictive real yields; that would indicate unusually strong non-rate demand.",
+      "whyDeveloping": "Recent hawkish repricing weakened gold even as geopolitical stress remained elevated, reminding the portfolio that the hedge is not mechanically bullish during every crisis. This makes real-yield interaction the correct trigger rather than geopolitical headlines alone.",
+      "powerStackTickers": ["GLDM", "AEM", "KGC", "WPM", "GDX", "GDXJ"],
+      "watch": ["10Y real yield", "DXY", "central-bank demand", "ETF flows", "gold support levels", "miner margins and AISC"],
+      "nextTest": "US PPI/CPI/FOMC and whether bullion can hold or strengthen if real yields remain elevated.",
+      "invalidation": "Persistent higher real yields and dollar strength accompanied by a decisive breakdown in bullion and miner breadth.",
+      "sourceClasses": ["US Treasury real yields", "official reserve data", "market pricing", "company miner results"],
+      "mainNews": []
+    },
+    {
       "id": "water-food-energy-collision",
       "name": "Water Scarcity: Food + Power + Freight Collision",
-      "status": "New cross-sector physical constraint",
-      "direction": "strengthening",
-      "lastUpdated": "2026-08-21",
-      "summary": "Water scarcity is broadening beyond data-centre cooling. The same drought is reducing crop yields, constraining river freight and forcing nuclear/hydro generation cuts, making leak reduction, reuse, distribution efficiency and resilient water infrastructure more economically valuable.",
-      "whyDeveloping": "Europe's August drought has pushed major rivers toward historic lows, cut French maize expectations sharply and forced nuclear output reductions across the Danube region. Yet irrigation-equipment sales remain weak because farm economics are poor, creating an important investment split between municipally financed water infrastructure and farmer-funded equipment.",
+      "priorityRank": 12,
+      "significanceScore": 6.9,
+      "lifecycleState": "ACTIVE / LOWER PRIORITY",
+      "status": "Structural physical constraint with limited fresh four-day evidence",
+      "direction": "stable",
+      "lastUpdated": "2026-09-07",
+      "evidenceQuality": "Medium-High",
+      "summary": "Water scarcity remains a cross-sector constraint spanning crops, river freight, municipal systems, cooling and power generation. The structural thesis is intact, but it has less fresh evidence and lower immediate catalyst density than rates, Iran, AI and China.",
+      "whyDeveloping": "August drought evidence remains valid and municipal water-network economics remain investable, but the most recent four-day sweep did not produce a new regime-changing water catalyst. It stays active because the constraint can re-enter quickly through weather, nuclear cooling or crop losses.",
       "powerStackTickers": ["XYL", "ECL", "VMI"],
-      "researchCandidates": ["MWA"],
-      "watch": ["Rhine and Danube levels", "European maize and wheat yields", "nuclear cooling restrictions", "municipal leak/reuse capex", "MWA order mix", "irrigation orders versus farm income", "water restrictions"],
+      "watch": ["Rhine and Danube levels", "European crop yields", "nuclear cooling restrictions", "municipal leak/reuse capex", "irrigation orders", "water restrictions"],
+      "nextTest": "Updated European river/crop conditions, municipal water order books and any renewed cooling constraints on power generation.",
+      "invalidation": "Sustained hydrological normalisation combined with weaker water-infrastructure order growth and no material power/crop constraints.",
+      "sourceClasses": ["weather and river authorities", "agriculture data", "company water-infrastructure releases", "high-quality reporting"],
       "mainNews": [
         {
           "date": "2026-08-11",
           "title": "Europe's deepening drought hits water, crops, shipping and power",
           "source": "Reuters",
           "url": "https://www.reuters.com/sustainability/europes-deepening-drought-2026-08-11/",
-          "implication": "Water is becoming a multi-sector operating constraint rather than a standalone environmental theme."
-        },
-        {
-          "date": "2026-08-14",
-          "title": "French drought threatens severe maize losses and deeper EU crop shortfall",
-          "source": "Reuters",
-          "url": "https://www.reuters.com/business/environment/french-drought-could-halve-maize-crop-deepen-eu-harvest-losses-2026-08-14/",
-          "implication": "Water scarcity is beginning to transmit directly into crop supply and import requirements."
-        },
-        {
-          "date": "2026-08-05",
-          "title": "Mueller Water Products raises EBITDA guidance after strong margin expansion",
-          "source": "Mueller Water Products",
-          "url": "https://ir.muellerwaterproducts.com/press-releases/2026/08-05-2026-211118748",
-          "implication": "Municipal water-network equipment is already converting infrastructure need into earnings even while residential construction remains soft."
-        }
-      ]
-    },
-    {
-      "id": "rubber-acreage-squeeze",
-      "name": "Natural Rubber: Acreage + Labour Squeeze",
-      "status": "New structural supply signal / Asia-focused",
-      "direction": "strengthening but early",
-      "lastUpdated": "2026-08-21",
-      "summary": "Natural-rubber supply is being eroded by farm economics rather than just weather. Indonesian growers are replacing labour-intensive rubber with more profitable oil palm, creating a slow-moving acreage squeeze that can persist even if tire demand is only moderate.",
-      "whyDeveloping": "Indonesia's rubber plantation area has fallen about 17% in five years and national output has dropped from above 3 million to roughly 2 million tonnes as growers switch to palm. Sri Trang's Q2 natural-rubber ASP rose to a 12-year high, providing company-level confirmation that supply pressure is reaching realised pricing, although volumes and utilisation remain weak.",
-      "powerStackTickers": [],
-      "researchCandidates": ["STA", "NC2.SI"],
-      "watch": ["Indonesia rubber acreage", "palm-versus-rubber farm returns", "skilled tapper availability", "TSR20/SIR20 spreads", "China tire demand", "West African supply", "STA utilisation and volumes"],
-      "mainNews": [
-        {
-          "date": "2026-08-07",
-          "title": "Indonesian rubber growers switch acreage to oil palm",
-          "source": "Reuters",
-          "url": "https://www.reuters.com/world/asia-pacific/indonesian-rubber-growers-bet-farm-oil-palm-2026-08-07/",
-          "implication": "Palm and biodiesel economics can structurally remove rubber supply, which is harder to reverse than a temporary weather disruption."
-        },
-        {
-          "date": "2026-08-14",
-          "title": "Sri Trang reports 12-year-high natural-rubber ASP in Q2",
-          "source": "Sri Trang Agro-Industry / Thai SEC",
-          "url": "https://market.sec.or.th/public/idisc/Download?FILEID=dat%2Fnews%2F202608%2F0254NWS140820262008222980E.pdf",
-          "implication": "Realised prices confirm the scarcity signal, but falling YoY volumes and only 50.5% utilisation keep the equity thesis higher-risk."
-        }
-      ]
-    },
-    {
-      "id": "industrial-automation-first",
-      "name": "Industrial Automation Before Humanoids",
-      "status": "Commercial now / humanoids remain optionality",
-      "direction": "strengthening",
-      "lastUpdated": "2026-08-21",
-      "summary": "The robotics adoption sequence is becoming clearer: fixed industrial automation and warehouse systems are monetising now, while mobile manipulation and humanoids remain earlier and more valuation-sensitive. The investable edge is shifting toward systems and components with current utilisation rather than headline demonstrations.",
-      "whyDeveloping": "Rockwell's double-digit organic growth and roughly 30% warehouse-automation industry outlook provide harder commercial evidence than the humanoid capital cycle. Unitree's IPO and World Robot Conference show enormous funding appetite, but useful-work economics and reliability still lag the excitement.",
-      "powerStackTickers": ["ROK", "SYM", "9880.HK", "2590.HK", "CGNX", "TER", "TSLA"],
-      "watch": ["warehouse automation orders", "factory capex", "robot utilisation", "cost per productive hour", "servo and reducer demand", "commercial humanoid deployments"],
-      "mainNews": [
-        {
-          "date": "2026-08-04",
-          "title": "Rockwell raises growth outlook as warehouse and semiconductor automation strengthen",
-          "source": "Rockwell Automation",
-          "url": "https://www.rockwellautomation.com/content/dam/rockwell-automation/documents/pdf/company/about-us/ir/2026/fy26-q3-earnings-deck.pdf",
-          "implication": "Conventional automation is already converting demand into sales and margins, supporting it as the first stage of the robotics monetisation curve."
-        },
-        {
-          "date": "2026-08-19",
-          "title": "Chinese robot makers push humanoids toward industrial work, but mass adoption remains unproven",
-          "source": "Reuters",
-          "url": "https://www.reuters.com/world/asia-pacific/china-robot-makers-flock-beijing-show-seek-path-mass-adoption-2026-08-19/",
-          "implication": "Humanoids remain a high-upside later stage of the theme, not the base case for near-term robotics earnings."
-        }
-      ]
-    },
-    {
-      "id": "copper-scarcity-squeeze-risk",
-      "name": "Copper Scarcity, but Squeeze Risk",
-      "status": "Structural bullish / tactically crowded",
-      "direction": "strong thesis, unstable price signal",
-      "lastUpdated": "2026-08-21",
-      "summary": "Copper remains the shared physical input across grids, data centres, electrification and automation, but the recent LME spike mixed genuine scarcity with a positioning squeeze. The structural thesis is intact; the record cash price should not be treated as a clean new earnings baseline.",
-      "whyDeveloping": "LME cash copper briefly reached about $14,912 per tonne and cash-to-three-month backwardation widened to $545 per tonne as concentrated longs collided with thin available stocks. Warehouse inflows then rapidly eased the squeeze, showing why physical tightness and speculative positioning must be separated.",
-      "powerStackTickers": ["BHP", "COPPER", "SCGBHD"],
-      "watch": ["LME available stocks", "cash-to-three-month spread", "COMEX-LME arbitrage", "Chinese demand", "mine disruptions", "U.S. tariff policy", "project grades and capex"],
-      "mainNews": [
-        {
-          "date": "2026-08-19",
-          "title": "LME copper flash squeeze exposes a thin physical buffer",
-          "source": "Reuters",
-          "url": "https://www.reuters.com/commentary/reuters-open-interest/lme-gripped-by-flash-squeeze-copper-tensions-boil-over-2026-08-19/",
-          "implication": "Scarcity is real, but the extreme spot price partly reflects positioning; diversified miners remain a more disciplined expression than extrapolating squeeze pricing."
-        }
-      ]
-    },
-    {
-      "id": "personalized-oncology",
-      "name": "Personalized Oncology / mRNA Re-rating",
-      "status": "New platform signal / high event risk",
-      "direction": "strengthening but data-sensitive",
-      "lastUpdated": "2026-08-21",
-      "summary": "Healthcare has gained a new high-beta growth narrative after the first positive late-stage result for a personalised mRNA cancer vaccine. The opportunity is larger than one melanoma indication if the platform transfers to other solid tumours, but current valuations are already pricing some of that optionality.",
-      "whyDeveloping": "Moderna and Merck's Intismeran plus Keytruda reduced melanoma recurrence and spread in a Phase 3 trial, reviving confidence in mRNA outside infectious disease. The next step is not another headline; detailed efficacy, overall-survival, safety, manufacturing and cross-tumour data now determine whether this is a platform or a single-indication win.",
-      "powerStackTickers": ["MRNA", "MRK"],
-      "watch": ["full Phase 3 data", "overall survival", "regulatory discussions", "manufacturing turnaround", "pricing", "lung and other tumour trials", "biotech breadth"],
-      "mainNews": [
-        {
-          "date": "2026-08-19",
-          "title": "Moderna and Merck report first positive late-stage result for an mRNA cancer vaccine",
-          "source": "Reuters",
-          "url": "https://www.reuters.com/legal/litigation/merck-moderna-say-melanoma-skin-cancer-vaccine-meets-goals-large-trial-2026-08-19/",
-          "implication": "The result can reopen capital and valuation support for personalised oncology, but broader-platform expectations need confirmation from detailed and cross-cancer data."
-        }
-      ]
-    },
-    {
-      "id": "china-fiscal-infrastructure",
-      "name": "China: Fiscal Infrastructure > Broad Stimulus",
-      "status": "Policy rotation / selective",
-      "direction": "strengthening for infrastructure, weak for broad beta",
-      "lastUpdated": "2026-08-21",
-      "summary": "China's policy signal is increasingly selective. With benchmark lending rates left unchanged despite weak domestic data, Beijing is leaning more heavily on fiscal execution and already-funded infrastructure rather than a broad property or consumer reflation.",
-      "whyDeveloping": "The one-year LPR stayed at 3.00% and the five-year rate at 3.50% for a 15th month, while the finance ministry pledged faster fiscal outlays and bond-funded project execution. That favours power, grid, nuclear and selected industrial infrastructure more than a blanket China cyclical trade.",
-      "powerStackTickers": ["1816.HK", "1164.HK", "0836.HK", "0916.HK"],
-      "watch": ["special bond issuance", "grid capex", "nuclear approvals", "power demand", "property sales", "LPR/RRR changes", "local-government debt controls"],
-      "mainNews": [
-        {
-          "date": "2026-08-20",
-          "title": "China keeps LPRs unchanged for a 15th month despite softer activity",
-          "source": "Reuters",
-          "url": "https://www.reuters.com/world/asia-pacific/china-leaves-loan-rates-steady-15th-consecutive-month-august-2026-08-20/",
-          "implication": "The absence of rate cuts reinforces a selective infrastructure-over-broad-reflation reading."
-        },
-        {
-          "date": "2026-08-21",
-          "title": "China pledges faster fiscal support and execution of already-funded projects",
-          "source": "Reuters",
-          "url": "https://www.reuters.com/world/asia-pacific/china-pledges-timely-fiscal-support-bolster-growth-2026-08-21/",
-          "implication": "Fiscal implementation is the near-term policy channel to watch for power, grid, transport and other strategic infrastructure demand."
+          "implication": "Water remains a multi-sector operating constraint rather than a standalone environmental theme."
         }
       ]
     }
   ],
   "parkedThemes": [
     {
-      "name": "Nuclear Buildout + Fuel Security",
-      "reason": "Structural thesis remains intact, but there is no fresh fuel-cycle regime change in the latest dossier/live-deck cycle. Water-driven nuclear curtailments are now tracked separately under Water Scarcity: Food + Power + Freight Collision."
+      "id": "rubber-acreage-squeeze",
+      "name": "Natural Rubber: Acreage + Labour Squeeze",
+      "parkedOn": "2026-09-07",
+      "reason": "The structural acreage/labour thesis remains plausible, but there is insufficient fresh four-day evidence or near-term cross-asset transmission to justify active canonical bandwidth.",
+      "reactivateWhen": "Fresh producer pricing/volume evidence, material acreage contraction, weather shock or tire-demand change materially alters the mechanism."
     },
     {
-      "name": "Water + Data-Centre Cooling",
-      "reason": "The AI-specific water/cooling thesis remains merged into AI Buildout: Power, Grid + Cooling Bottlenecks. A separate active water card now tracks the new drought-driven food/power/freight collision rather than duplicating data-centre cooling."
+      "id": "personalised-oncology-mrna",
+      "name": "Personalised Oncology / mRNA Optionality",
+      "parkedOn": "2026-09-07",
+      "reason": "Event-specific healthcare optionality remains valid but lacks a recent catalyst strong enough to compete with current macro, energy and physical-infrastructure themes.",
+      "reactivateWhen": "A material clinical, regulatory, commercial or reimbursement catalyst changes probability-weighted economics."
+    }
+  ],
+  "upcomingCatalysts": [
+    {
+      "date": "2026-09-10",
+      "event": "US August PPI",
+      "themes": ["long-end-duration-stress", "ai-financing-cash-conversion", "gold-real-yield-hedge"],
+      "watchFor": "Whether inflation data moves the long end, real yields and credit rather than only front-end Fed pricing."
     },
     {
-      "name": "Metabolic Health + Obesity",
-      "reason": "Still a durable healthcare research category, but recent market-moving healthcare evidence has shifted to personalised oncology."
+      "date": "2026-09-10",
+      "event": "EIA holiday-delayed Weekly Petroleum Status Report",
+      "themes": ["hormuz-energy-products-shipping", "energy-security-rerouting", "fertilizer-feedstock-divergence"],
+      "watchFor": "Distillate inventories, refinery utilisation, imports/exports and whether product tightness persists even if crude builds."
     },
     {
-      "name": "Agriculture + Water Productivity",
-      "reason": "The old category was too broad. Its investable pieces are now split into the more specific Fertilizer: Nitrogen Advantage vs Sulphur Constraint and Water Scarcity: Food + Power + Freight Collision themes."
+      "date": "2026-09-10",
+      "event": "ECB monetary-policy decision",
+      "themes": ["long-end-duration-stress"],
+      "watchFor": "Global duration and FX spillovers into US long-end yields."
     },
     {
-      "name": "Humanoid Robotics / Physical AI",
-      "reason": "Reframed as Industrial Automation Before Humanoids to reflect the stronger commercial evidence in fixed and warehouse automation."
+      "date": "2026-09-11",
+      "event": "US August CPI",
+      "themes": ["long-end-duration-stress", "ai-financing-cash-conversion", "gold-real-yield-hedge"],
+      "watchFor": "Core/services inflation and the confirmation or rejection from 10Y/30Y and real yields."
+    },
+    {
+      "date": "2026-09-11",
+      "event": "IEA September Oil Market Report",
+      "themes": ["hormuz-energy-products-shipping", "energy-security-rerouting"],
+      "watchFor": "Whether demand destruction and supply substitution are becoming large enough to overwhelm the immediate Hormuz premium."
+    },
+    {
+      "date": "2026-09-15 to 2026-09-16",
+      "event": "Federal Open Market Committee meeting",
+      "themes": ["long-end-duration-stress", "ai-financing-cash-conversion", "gold-real-yield-hedge"],
+      "watchFor": "The post-decision 10Y, 30Y, real yields, credit spreads and funding conditions. A hold with a higher long end keeps the restrictive regime intact."
+    },
+    {
+      "date": "mid-September 2026",
+      "event": "China activity and credit-transmission data",
+      "themes": ["china-balance-sheet-selective-ai", "copper-grid-inventory-distortion", "automation-before-humanoids"],
+      "watchFor": "Credit impulse, private/new-order breadth, actual infrastructure/AI orders and RMB stability."
+    },
+    {
+      "date": "2026-09-17 to 2026-09-18",
+      "event": "Bank of Japan monetary-policy meeting",
+      "themes": ["long-end-duration-stress"],
+      "watchFor": "Global duration and FX spillovers that can move US funding conditions even without new US data."
     }
   ]
 }
