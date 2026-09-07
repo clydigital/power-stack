@@ -1,0 +1,80 @@
+{
+  "asOf": "2026-09-07",
+  "type": "Current Power Stack analysis composed from canonical themes + rates overlay",
+  "baseThemeRevision": "data/developing-themes.json@2026-09-07",
+  "ratesOverlay": "data/cranium-rates-sweep-2026-09-07.json",
+  "evidencePolicy": "The canonical theme file changes research priority, required proof and margin of safety. It does not mechanically change Base Conviction or company fundamental scores. Cranium, sell-side PDFs, positioning and transcripts remain hypothesis inputs unless independently verified.",
+  "environment": {
+    "label": "Restrictive, inflation-sensitive risk-on with strong physical capex but fragile financial duration",
+    "significance": 9.9,
+    "currentRead": "The market can remain risk-on while the cost of capital stays restrictive. The key transmission chain is now energy/products/shipping + inflation uncertainty + sovereign duration supply into long-end/real yields, which then separates funded cash-generative infrastructure from leverage-dependent duration."
+  },
+  "currentThemeOrder": [
+    {"rank":1,"id":"long-end-duration-stress","name":"Rates Ambiguity + Long-End Funding Stress","score":9.9},
+    {"rank":2,"id":"hormuz-energy-products-shipping","name":"Hormuz Energy Stress: Refined Products + Shipping","score":9.8},
+    {"rank":3,"id":"ai-physical-bottlenecks","name":"AI Buildout: Power, Grid + Time-to-Power","score":9.7},
+    {"rank":4,"id":"ai-financing-cash-conversion","name":"AI Buildout: Financing + Cash Conversion","score":9.5},
+    {"rank":5,"id":"energy-security-rerouting","name":"Energy Security Rerouting + Asian Demand Destruction","score":9.4},
+    {"rank":6,"id":"copper-grid-inventory-distortion","name":"Copper: Grid Demand vs Inventory Distortion","score":9.1},
+    {"rank":7,"id":"china-balance-sheet-selective-ai","name":"China: Balance-Sheet Support + Selective AI/Infrastructure","score":8.9},
+    {"rank":8,"id":"fertilizer-feedstock-divergence","name":"Food / Fertilizer Affordability + Feedstock Divergence","score":8.7},
+    {"rank":9,"id":"uranium-nuclear-fuel-cycle","name":"Uranium / Nuclear Fuel-Cycle Scarcity","score":8.5},
+    {"rank":10,"id":"automation-before-humanoids","name":"Industrial Automation Before Humanoids","score":8.2},
+    {"rank":11,"id":"gold-real-yield-hedge","name":"Gold / Fiscal-Monetary Hedge vs Real Yields","score":7.8},
+    {"rank":12,"id":"water-food-energy-collision","name":"Water Scarcity: Food + Power + Freight Collision","score":6.9}
+  ],
+  "portfolioRead": {
+    "highestPriorityExposure": [
+      "Energy and shipping exposures with real current cash flows and direct benefit from product/logistics scarcity",
+      "Funded grid, power, electrical and cooling suppliers with visible backlog and customer commitments",
+      "Nuclear/fuel-cycle assets with operating or contracted economics rather than pre-revenue financing dependence",
+      "Selective China state-backed power/infrastructure and confirmed AI equipment rather than broad China beta"
+    ],
+    "highestRequiredProof": [
+      "Long-duration equities dependent on future cash flows or multiple expansion",
+      "AI/data-centre projects dependent on debt, converts, dilution or uncontracted load",
+      "Humanoid/robotics concepts without deployment and cash-conversion proof",
+      "Pre-revenue SMR and other capital-intensive projects whose economics change materially with long-end yields"
+    ],
+    "regimeModifier": "Low index volatility and thin protection can hide wide factor/thematic fragility; do not interpret low VIX alone as a low-risk environment."
+  },
+  "holdings": [
+    {"ticker":"XOM","themeImpact":"POSITIVE / HEDGE","rateSensitivity":"LOW","currentRead":"Hold. Integrated cash generation and energy scarcity remain useful, but do not extrapolate the entire Hormuz premium; watch product tightness and Asian demand adaptation."},
+    {"ticker":"MISC","themeImpact":"POSITIVE / HIGH ATTENTION","rateSensitivity":"LOW-MODERATE","currentRead":"Hold. Shipping, rerouting, war-risk insurance and tonne-miles have moved higher in the theme hierarchy; funding remains the add gate."},
+    {"ticker":"HIBISCS","themeImpact":"POSITIVE BUT CYCLICAL","rateSensitivity":"LOW","currentRead":"Hold/selective. Oil-service/upstream benefit is offset by the possibility that Asian demand destruction caps crude after the initial shock."},
+    {"ticker":"YTLPOWR","themeImpact":"STRUCTURALLY POSITIVE / FUNDING-SENSITIVE","rateSensitivity":"HIGH","currentRead":"Hold. AI power demand remains strong, but contracted utilisation, project funding terms and free-cash-flow conversion matter more after the new sweep."},
+    {"ticker":"6742UW","themeImpact":"LEVERAGED YTLPOWR EXPOSURE","rateSensitivity":"VERY HIGH MARKET SENSITIVITY","currentRead":"Track parent plus warrant terms. Higher hurdle rates and time decay amplify parent risk."},
+    {"ticker":"TTWO","themeImpact":"NEUTRAL FUNDAMENTALLY / DURATION HEADWIND","rateSensitivity":"HIGH","currentRead":"Hold. Business catalyst still matters, but current regime requires stronger price/business confirmation before adding because real yields remain restrictive."},
+    {"ticker":"TSLA","themeImpact":"MIXED / HIGH-RISK DURATION","rateSensitivity":"VERY HIGH","currentRead":"Hold/no add. Auto financing, long-duration autonomy/robotics valuation and China demand all sit on the wrong side of the current funding regime; require operational and regulatory proof."},
+    {"ticker":"DAYANG","themeImpact":"POSITIVE ENERGY BETA / OPERATING-PROOF GATE","rateSensitivity":"LOW-MODERATE","currentRead":"Hold; do not average down without utilisation/contract evidence. Energy theme helps, but operating proof still dominates."}
+  ],
+  "watchlistPriorityChanges": {
+    "promoteResearchAttention": [
+      {"ticker":"PWR","reason":"Grid backlog + time-to-power theme remains strong; still rate-sensitive through project hurdle rates and premium valuation."},
+      {"ticker":"ETN","reason":"Electrical bottleneck beneficiary with current backlog/cash-flow protection; preferred to speculative AI project owners."},
+      {"ticker":"CCJ","reason":"Fuel-cycle security reactivated and operating/contract economics are less duration-sensitive than pre-revenue nuclear."},
+      {"ticker":"LNG","reason":"Hormuz shock has broadened into gas/rerouting; contracted LNG economics offer cleaner exposure than headline crude beta."},
+      {"ticker":"FCX","reason":"Copper stays high priority, but only if China demand and inventory drawdown confirm structural grid demand."},
+      {"ticker":"0522.HK","reason":"ASMPT remains a differentiated China/HK AI-infrastructure candidate if order/backlog evidence confirms capex demand."},
+      {"ticker":"1816.HK","reason":"CGN Power fits the low-rate/state-backed China power theme better than speculative duration."},
+      {"ticker":"0836.HK","reason":"China Resources Power offers selective lower-duration infrastructure exposure with policy support."}
+    ],
+    "raiseHurdle": [
+      {"ticker":"SMR","reason":"Extreme funding sensitivity; require credible funded customers and financing milestones."},
+      {"ticker":"MSTR","reason":"Extreme liquidity/credit/rates convexity in the current long-end regime."},
+      {"ticker":"COIN","reason":"Very high real-yield/liquidity sensitivity despite crypto-specific catalysts."},
+      {"ticker":"9880.HK","reason":"UBTECH remains high-duration and capital-intensive; cheap China rates do not solve weak credit transmission or commercialization risk."},
+      {"ticker":"SYM","reason":"Commercial automation remains valid, but premium valuation and customer-capex sensitivity require deployment/backlog proof."}
+    ]
+  },
+  "upcomingTests": [
+    "Sep 10 US PPI: watch 10Y/30Y/real yields, not only Fed probabilities.",
+    "Sep 10 EIA petroleum report: watch distillates, refinery utilisation, imports/exports and product tightness.",
+    "Sep 10 ECB: watch global duration spillover.",
+    "Sep 11 US CPI: key pre-FOMC inflation test.",
+    "Sep 11 IEA OMR: test whether rerouting/demand destruction is overtaking immediate Hormuz scarcity.",
+    "Sep 15-16 FOMC: a hold is not automatically bullish if the long end stays high.",
+    "Mid-September China activity/credit data: require evidence that balance-sheet support reaches private demand and real orders.",
+    "Sep 17-18 BoJ: watch global duration and FX spillovers."
+  ]
+}
