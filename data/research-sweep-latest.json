@@ -1,7 +1,10 @@
 {
   "asOf": "2026-09-07",
   "config": "data/research-sweep-config.json",
-  "currentOverlay": "data/cranium-rates-sweep-2026-09-07.json",
+  "currentOverlay": "data/current-analysis-2026-09-07.json",
+  "componentOverlays": [
+    "data/cranium-rates-sweep-2026-09-07.json"
+  ],
   "requiredCanonicalInputs": [
     "data/macro-context.json",
     "data/macro-sensitivities.json",
@@ -11,5 +14,5 @@
     "data/ideas.json",
     "data/developing-themes.json"
   ],
-  "note": "Read the Cranium-informed overlay during the daily sweep, but do not promote its synthesis or sell-side views into canonical evidence without independent verification. The overlay changes research attention and regional rate-risk interpretation; it does not itself change Base Conviction."
+  "note": "Current analysis is composed from the refreshed 7 Sep canonical theme hierarchy plus the separately persisted Cranium/rates overlay. Theme and overlay changes affect research priority, action thresholds and required proof; they do not mechanically change Base Conviction or fundamental company scores. Sell-side, positioning, Cranium and transcript material remain non-canonical until independently verified."
 }
