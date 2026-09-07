@@ -9,8 +9,16 @@ A searchable, versioned investment-research vault for nuclear, AI infrastructure
 - `data/ism-macro-snapshot.json` stores the deeper official-ISM analytical snapshot used as one input to macro interpretation.
 - `data/holdings-fundamentals.json` is the canonical current-holdings fundamentals ledger.
 - `data/watchlist.json` is the live price/action queue.
+- `data/research-sweep-config.json` is the recurring research-process contract. It requires the current Market Research Cranium to be read first as a research seed/source registry, followed by independent verification, a global macro sweep, separate US and China/Hong Kong rate sweeps, every current holding, the full canonical watchlist and a China-focused tracked-idea adjunct.
+- Dated `data/cranium-rates-sweep-YYYY-MM-DD.json` files are research overlays that preserve Cranium-driven hypotheses, regional rate regimes and stock-level rate sensitivities without overwriting Base Conviction or company fundamentals.
 - Category and intraday research files add specialised research without replacing the long-term database.
 - `data/live-context.json` is retained only as historical/dormant integration data and is not read by the Power Stack frontend.
+
+### Cranium ingestion guardrail
+
+The Market Research Cranium is a **research seed, synthesis layer and source-URL registry**, not direct canonical evidence. Daily research should preserve its `[FACT]`, `[SELL-SIDE VIEW]`, `[CRANIUM SYNTHESIS]`, `[WATCH]` and `[INVALIDATION]` distinctions. Material factual claims must be independently verified before they can alter `macro-context.json`, a fundamental score or a Live rating export. Sell-side disagreements should remain attributed disagreements rather than being averaged into a false consensus.
+
+The rate sweep is explicitly jurisdictional. US sensitivity separates Fed expectations from 2Y/10Y/30Y yields, real yields, breakevens, long-end/term-premium pressure, volatility, credit and Treasury operations. China/Hong Kong sensitivity separately tracks LPRs, China government yields, PBOC/liquidity conditions, CNY/CNH, credit demand, bank margins, recapitalisation/fiscal support and whether liquidity actually transmits into private-sector capex and consumption. Low China yields are not automatically treated as bullish easing when they coexist with weak credit demand.
 
 ## Macro Pulse v4
 
@@ -31,17 +39,20 @@ Active data files:
 - `data/macro-context.json` — current directional macro channels, evidence, confidence and freshness.
 - `data/macro-sensitivities.json` — slow-moving stock fingerprints with fundamental and market sensitivity, weights and confidence.
 - `data/macro-methodology.json` — verified source semantics and interpretation guardrails.
+- `data/research-sweep-config.json` — required daily research order and US/China jurisdictional rates checklist.
+- `data/cranium-rates-sweep-2026-09-07.json` — current Cranium-informed macro/holdings/watchlist rate overlay.
 - `data/creator-view-overlay-2026-09-01.json` — current audit of user-supplied creator views and their verification status.
 - `data/intraday-research-2026-09-01.json` — current intraday research state and implementation record.
 
 The engine separates, among other things:
 
 - nominal yields, real yields, breakeven inflation and term-premium pressure;
+- US discount-rate/financing stress from China low-yield/weak-credit-transmission conditions;
 - broad credit availability from CCC/weak-end credit stress;
 - crude tightness from refined-product tightness/crack spreads and US gas/global LNG conditions;
 - end-food demand from farmer input elasticity;
 - AI demand from financing quality, dilution and cash conversion;
-- social/creator flow observations from verified macro/fundamental evidence.
+- social/creator/Cranium observations from independently verified macro/fundamental evidence.
 
 ### Stock scoring
 
