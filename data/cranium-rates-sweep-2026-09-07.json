@@ -1,0 +1,122 @@
+{
+  "asOf": "2026-09-07",
+  "type": "Cranium-informed macro + holdings + watchlist rate-sensitivity overlay",
+  "evidencePolicy": "Cranium supplied the research questions, source URLs and sell-side disagreements. Facts below were independently checked where material. Qualitative stock sensitivities are Power Stack synthesis and are not fundamental score changes.",
+  "cranium": {
+    "tab": "26.09.07",
+    "url": "https://docs.google.com/document/d/1OVahYQkXWNsFlR7vdgKeY41hqUYgV1IP6iocGlAoZ4s/edit?tab=t.ryp83pg0ofyg",
+    "coreResearchFrames": [
+      "Fed ambiguity is itself a pricing variable; Morgan Stanley's attached piece has HOLD as the September base case, not hike.",
+      "Long-end yields can remain restrictive even if the Fed holds; do not equate hold with easier financial conditions.",
+      "AI financing method and long-end yields are now part of the AI-capex thesis, not an external macro footnote.",
+      "Low index/rates volatility plus lower put protection can underprice a wide macro outcome distribution.",
+      "China bank/insurer recapitalisation and China 'alternative AI beta' are separate mechanisms; neither proves domestic macro repair.",
+      "Energy risk can migrate from headline crude into gas, refined products, shipping and power."
+    ]
+  },
+  "macroSweep": {
+    "US": {
+      "regime": "Restrictive long-end and real yields; September policy outcome still genuinely ambiguous ahead of CPI/PPI.",
+      "verifiedReadings": [
+        "August NFP +162k versus +56k expected; unemployment 4.1%.",
+        "Sep 4 US Treasury references: 2Y ~4.37%, 10Y ~4.78%, 30Y ~5.24%; 10Y real yield ~2.43-2.45%.",
+        "Fed September hike probability was about 57% in current Sep 7 reporting after the jobs report.",
+        "Brent was around $97 and WTI around $92 on Sep 7, keeping the inflation tail active.",
+        "CPI and PPI are the decisive pre-FOMC inflation tests; the Sep FOMC is Sep 15-16."
+      ],
+      "craniumInterpretation": "The important distinction is front-end policy ambiguity versus already-restrictive long-end financing. A hold can still be bearish for duration if inflation credibility, Treasury supply/buybacks or term-premium pressure keep the 10Y/30Y high.",
+      "watch": ["PPI", "CPI", "Fed reaction-function wording", "2Y", "10Y", "30Y", "10Y real yield", "breakevens", "MOVE", "VIX", "CCC stress", "Treasury buybacks", "DXY"]
+    },
+    "China": {
+      "regime": "Very low sovereign yields and unchanged benchmark lending rates coexist with weak domestic credit demand. Current support is more balance-sheet/fiscal than a fresh PBOC easing cycle.",
+      "verifiedReadings": [
+        "August 1Y LPR held at 3.00% and 5Y LPR at 3.50% for a 15th consecutive month.",
+        "China 10Y government yield was below 1.7% in early September, more than 300bp below US Treasuries.",
+        "Loan growth slowed to a record-low 5.1% in July in current Reuters/Breakingviews reporting.",
+        "Beijing is recapitalising major state banks and insurers with roughly CNY360-365bn / ~$54bn of capital support, including ICBC and Agricultural Bank.",
+        "The recap improves solvency/lending capacity and supports long-term equity investment, but weak credit demand means transmission into the real economy is not guaranteed.",
+        "Q2 GDP growth slowed to 4.3%; domestic investment/demand remained weak while exports and AI-linked manufacturing stayed comparatively resilient."
+      ],
+      "craniumInterpretation": "China is the mirror image of the US rates problem. The US problem is expensive money. China's problem is cheap money with weak demand and weak transmission. Lower Chinese yields help duration/funding mathematically, but can simultaneously signal deflationary pressure, trapped savings and poor private credit demand. Bank recapitalisation should therefore be tracked separately from rate cuts.",
+      "watch": ["1Y/5Y LPR", "10Y CGB", "PBOC liquidity operations", "CNY/CNH", "loan growth", "new yuan loans", "bank NIMs", "credit impulse", "special-bond/fiscal deployment", "CSI breadth and options flows"]
+    },
+    "crossMarketConclusion": "Do not use one global 'rates up/down' tag. US rate sensitivity is predominantly discount-rate/financing stress; China sensitivity must combine low yields with credit-demand weakness, state balance-sheet support and CNY transmission."
+  },
+  "holdingsRateSensitivity": [
+    {"ticker":"XOM","usRates":"LOW","chinaRatesDemand":"MODERATE","mechanism":"Cash-generative integrated energy is less duration-sensitive than growth equities. Higher US rates are mainly a demand/USD valuation headwind; China matters through crude demand and rerouting rather than its discount rate alone.","currentRead":"HOLD; energy hedge remains useful but do not annualise the war premium."},
+    {"ticker":"MISC","usRates":"LOW-MODERATE","chinaRatesDemand":"MODERATE-HIGH","mechanism":"Shipping cash flows are more exposed to trade routes, tanker rates and financing/capital allocation than equity duration. China import demand and route substitution directly affect tonne-miles and tanker economics.","currentRead":"HOLD; funding clarity still gates adds."},
+    {"ticker":"HIBISCS","usRates":"LOW","chinaRatesDemand":"HIGH","mechanism":"Upstream realised pricing dominates direct rate sensitivity. China/Asian crude-demand weakness is the more important offset to the Hormuz premium.","currentRead":"HOLD / selective only."},
+    {"ticker":"YTLPOWR","usRates":"HIGH","chinaRatesDemand":"MODERATE","mechanism":"Large power/data-centre capex and monetisation create a meaningful financing-rate hurdle. The AI demand thesis can stay intact while higher funding costs reduce project equity value; China matters mainly through regional AI demand/supply chains rather than domestic LPR.","currentRead":"HOLD; contracted utilisation and FCF conversion are now the decisive rate-proofing evidence."},
+    {"ticker":"6742UW","usRates":"VERY HIGH MARKET SENSITIVITY","chinaRatesDemand":"MODERATE","mechanism":"The warrant inherits YTLPOWR's funding sensitivity and adds time decay/option convexity, so tighter financial conditions can hit the instrument more than the parent.","currentRead":"Track parent plus warrant terms only."},
+    {"ticker":"TTWO","usRates":"HIGH","chinaRatesDemand":"LOW-MODERATE","mechanism":"Catalyst-duration equity with cash flows weighted toward future releases. High real yields raise the valuation hurdle even without balance-sheet stress.","currentRead":"HOLD; require price/business confirmation rather than treating a Fed hold as automatic relief."},
+    {"ticker":"TSLA","usRates":"VERY HIGH","chinaRatesDemand":"HIGH","mechanism":"Autos are financing-sensitive and autonomy/robotics optionality is long duration. China also matters through EV demand, competitive pricing, supply chain and local financing conditions; state liquidity support is helpful only if it reaches consumers/capex.","currentRead":"HOLD / no add while Cybercab regulatory test is open; rates remain a separate headwind."},
+    {"ticker":"DAYANG","usRates":"LOW-MODERATE","chinaRatesDemand":"LOW-MODERATE","mechanism":"Oil-service demand and customer budgets dominate. Rates matter through offshore project economics and weaker balance-sheet/capex conditions, but company utilisation is the main gate.","currentRead":"HOLD / do not average down without operating proof."}
+  ],
+  "watchlistRateSensitivity": [
+    {"ticker":"CCJ","usRates":"LOW-MODERATE","chinaRatesDemand":"MODERATE","note":"Operating fuel-cycle scarcity and contracts matter more than duration; China nuclear buildout is supportive."},
+    {"ticker":"ETN","usRates":"MODERATE-HIGH","chinaRatesDemand":"MODERATE","note":"Premium valuation and customer capex are rate-sensitive, but backlog/current cash flows provide protection."},
+    {"ticker":"VMI","usRates":"MODERATE","chinaRatesDemand":"LOW-MODERATE","note":"Grid/water infrastructure is resilient; irrigation/farm capex is financing-sensitive."},
+    {"ticker":"CF","usRates":"LOW","chinaRatesDemand":"MODERATE","note":"Feedstock/fertilizer spreads dominate; China/global farm demand is more relevant than discount rate."},
+    {"ticker":"CTVA","usRates":"LOW-MODERATE","chinaRatesDemand":"MODERATE","note":"Quality agriculture compounder; rates mostly affect multiple and farmer economics, not solvency."},
+    {"ticker":"VYX","usRates":"HIGH","chinaRatesDemand":"LOW","note":"Leverage and cash-flow inflection make cost of capital/credit availability material."},
+    {"ticker":"PWR","usRates":"MODERATE-HIGH","chinaRatesDemand":"LOW-MODERATE","note":"Actual awarded grid backlog is strong, but long-end rates affect utility/project hurdle rates and premium valuation."},
+    {"ticker":"CRWD","usRates":"HIGH","chinaRatesDemand":"LOW","note":"Mission-critical recurring software with strong economics, but premium-duration multiple remains real-yield sensitive."},
+    {"ticker":"LNG","usRates":"LOW-MODERATE","chinaRatesDemand":"HIGH","note":"Contracted LNG reduces pure duration exposure; Asian/China gas demand and route security matter more."},
+    {"ticker":"BG","usRates":"LOW-MODERATE","chinaRatesDemand":"HIGH","note":"Commodity flows/crush/merchandising dominate; China import demand is a first-order agricultural flow variable."},
+    {"ticker":"FCX","usRates":"MODERATE","chinaRatesDemand":"VERY HIGH","note":"Copper is highly exposed to Chinese industrial demand/credit impulse; US rates matter through global growth/USD."},
+    {"ticker":"FLEX","usRates":"HIGH","chinaRatesDemand":"MODERATE-HIGH","note":"AI power/thermal growth is real, but capex/customer funding and premium multiple make long-end yields important; China supply chain remains relevant."},
+    {"ticker":"FCFS","usRates":"MIXED / MODERATE","chinaRatesDemand":"LOW","note":"Higher household borrowing stress can support pawn demand while excessive credit stress/regulation becomes a downside risk."},
+    {"ticker":"GLDM","usRates":"VERY HIGH INVERSE","chinaRatesDemand":"LOW-MODERATE","note":"Real yields and USD are primary tactical drivers; lower real yields are supportive, higher real yields hostile."},
+    {"ticker":"AEM","usRates":"HIGH INVERSE","chinaRatesDemand":"LOW-MODERATE","note":"Gold sensitivity plus equity/miner beta; operating quality reduces financing risk."},
+    {"ticker":"NTR","usRates":"LOW-MODERATE","chinaRatesDemand":"HIGH","note":"Global fertilizer demand and crop economics dominate; China commodity/agriculture demand matters more than US duration."},
+    {"ticker":"CRM","usRates":"HIGH","chinaRatesDemand":"LOW-MODERATE","note":"Profitable software but still a long-duration multiple; rate relief helps valuation only if growth/FCF hold."},
+    {"ticker":"KGC","usRates":"HIGH INVERSE","chinaRatesDemand":"LOW-MODERATE","note":"Gold/real-yield channel dominates; higher operating torque than physical gold."},
+    {"ticker":"WPM","usRates":"HIGH INVERSE","chinaRatesDemand":"LOW-MODERATE","note":"Streaming economics are clean but metal prices remain real-yield sensitive."},
+    {"ticker":"SOLS","usRates":"MODERATE","chinaRatesDemand":"MODERATE","note":"Cash-generative materials exposure is less duration-heavy; end-market/industrial demand matters."},
+    {"ticker":"LHX","usRates":"LOW-MODERATE","chinaRatesDemand":"LOW","note":"Defense backlog/federal spending dominate; rate sensitivity is mainly valuation and capital-allocation related."},
+    {"ticker":"Q","usRates":"MODERATE-HIGH","chinaRatesDemand":"HIGH","note":"AI/HPC semiconductor materials benefit from capex but remain cyclical and China/electronics-demand sensitive."},
+    {"ticker":"COIN","usRates":"VERY HIGH","chinaRatesDemand":"LOW","note":"Crypto liquidity/duration beta makes real yields and dollar liquidity first-order."},
+    {"ticker":"SLB","usRates":"LOW-MODERATE","chinaRatesDemand":"HIGH","note":"Upstream capex and global oil demand dominate; China demand is important, while rates affect marginal projects/acquisition financing."},
+    {"ticker":"GDX","usRates":"VERY HIGH INVERSE","chinaRatesDemand":"LOW-MODERATE","note":"Gold + equity beta; real-yield direction is a major tactical gate."},
+    {"ticker":"BTC","usRates":"VERY HIGH","chinaRatesDemand":"LOW","note":"Global liquidity/real yields/USD dominate near-term valuation."},
+    {"ticker":"MP","usRates":"MODERATE-HIGH","chinaRatesDemand":"VERY HIGH STRATEGIC","note":"Project funding is rate-sensitive while China rare-earth policy/supply-chain competition is a first-order strategic variable."},
+    {"ticker":"HONA","usRates":"MODERATE","chinaRatesDemand":"LOW-MODERATE","note":"Aerospace backlog supports cash flow; rates mainly affect valuation and customer financing."},
+    {"ticker":"SYM","usRates":"HIGH","chinaRatesDemand":"LOW-MODERATE","note":"Commercial automation has real deployments but remains high-growth and customer-capex sensitive."},
+    {"ticker":"AGCO","usRates":"HIGH","chinaRatesDemand":"HIGH","note":"Farm machinery is highly financing/cycle sensitive; China/global crop economics matter materially."},
+    {"ticker":"MSTR","usRates":"EXTREME","chinaRatesDemand":"LOW","note":"BTC plus leveraged/capital-structure convexity makes rates/liquidity/credit conditions exceptionally important."},
+    {"ticker":"GDXJ","usRates":"EXTREME INVERSE","chinaRatesDemand":"LOW-MODERATE","note":"Junior miners combine gold real-yield sensitivity with financing/dilution risk."},
+    {"ticker":"SMR","usRates":"EXTREME","chinaRatesDemand":"LOW-MODERATE","note":"Pre-revenue/project-financing duration is highly exposed to long-end yields and capital availability."}
+  ],
+  "chinaFocusAdjunct": [
+    {"ticker":"2590.HK","name":"Geekplus","chinaRates":"VERY HIGH","usRates":"MODERATE-HIGH GLOBAL DISCOUNT-RATE BETA","mechanism":"Young warehouse-automation growth equity; low China rates help funding mathematically, but weak private credit/capex demand can delay deployments. Bank recap is bullish only if it improves real credit transmission.","stance":"Commercial automation remains preferable to humanoid scarcity pricing, but require order/deployment proof."},
+    {"ticker":"9880.HK","name":"UBTECH Robotics","chinaRates":"EXTREME","usRates":"HIGH GLOBAL DURATION BETA","mechanism":"Capital-intensive humanoid commercialisation and narrative-heavy valuation make funding conditions, risk appetite and credit transmission first-order.","stance":"More vulnerable than Geekplus to a failure of China liquidity to reach private capex."},
+    {"ticker":"1816.HK","name":"CGN Power","chinaRates":"LOW-MODERATE","usRates":"LOW","mechanism":"Operating nuclear utility/capex exposure is policy-backed and less dependent on speculative funding; lower domestic yields can support utility duration while state capex matters more than consumer credit.","stance":"Preferred China strategic-power exposure over high-duration concepts."},
+    {"ticker":"0836.HK","name":"China Resources Power","chinaRates":"MODERATE","usRates":"LOW","mechanism":"Diversified power utility benefits from low funding costs and policy-backed electricity demand, but weak macro can affect power demand and merchant economics.","stance":"Selective lower-multiple China power exposure."},
+    {"ticker":"1072.HK","name":"Dongfang Electric","chinaRates":"MODERATE-HIGH","usRates":"LOW-MODERATE","mechanism":"Power-equipment orders benefit from fiscal/state infrastructure execution; low rates help project economics, but weak credit transmission matters less if orders are state-backed.","stance":"Prefer confirmed equipment orders over broad China beta."},
+    {"ticker":"0522.HK","name":"ASMPT","chinaRates":"HIGH","usRates":"HIGH GLOBAL TECH BETA","mechanism":"HBM/advanced-packaging/photonics equipment is capex-sensitive. China liquidity and global AI demand can support orders, while high global yields compress semiconductor-equipment multiples.","stance":"Still the strongest differentiated recent HK/China AI-infrastructure candidate; require order/backlog confirmation."}
+  ],
+  "portfolioImplications": [
+    "Do not broadly de-risk the physical AI/grid sleeve solely because rates are high; instead separate funded backlog/cash conversion (ETN/PWR/YTLPOWR/FLEX) from long-duration narrative exposure (SMR, MSTR, higher-beta robotics).",
+    "Within current holdings, the clearest rate-risk concentration is TSLA + TTWO + YTLPOWR/6742UW. XOM/HIBISCS/MISC are more exposed to China demand and energy-flow changes than to the US discount rate.",
+    "Within the watchlist, the highest US-rate/liquidity fragility is MSTR, SMR, COIN/BTC, GDXJ and high-growth automation/software. Quality operating scarcity names such as CCJ, LHX and cash-generative energy/agriculture are less directly duration-sensitive.",
+    "China's bank recap should raise attention on CSI/onshore AI optionality and state-backed power/equipment names, but it does not yet justify promoting broad China cyclicals. Confirmation is credit creation, breadth and earnings, not the recap headline itself.",
+    "FCX, BG/NTR/AGCO, LNG/SLB and China/HK automation are the watchlist names where China macro/credit demand has the most direct fundamental read-through.",
+    "No fundamental score change is justified by the rates sweep alone. This overlay changes macro risk ranking and what evidence must be demanded before adding."
+  ],
+  "nextTests": {
+    "US": ["PPI", "CPI", "Fed September decision", "10Y/30Y response", "real yields", "Treasury buyback effectiveness", "MOVE/VIX", "CCC spreads"],
+    "China": ["August trade data", "new yuan loans/aggregate financing", "loan-growth response after recap", "LPR/PBOC guidance", "10Y CGB", "CNY/CNH", "CSI 300/500/1000 breadth and options flows"],
+    "holdings": ["YTLPOWR contracted utilisation/FCF", "TSLA Cybercab audit + financing-sensitive demand", "TTWO bookings/cash conversion", "MISC funding structure", "China crude demand for XOM/HIBISCS/MISC", "DAYANG utilisation/work orders"]
+  },
+  "sources": [
+    "https://www.reuters.com/world/china/global-markets-wrapup-1-2026-09-04/",
+    "https://www.reuters.com/world/asia-pacific/dollar-gets-little-lift-boost-fed-hike-expectations-2026-09-07/",
+    "https://www.reuters.com/world/china/global-markets-global-markets-2026-09-07/",
+    "https://www.reuters.com/world/asia-pacific/china-leaves-loan-rates-steady-15th-consecutive-month-august-2026-08-20/",
+    "https://www.reuters.com/commentary/reuters-open-interest/china-escapes-global-bond-rout-wrong-reasons-mcgeever-2026-09-02/",
+    "https://www.reuters.com/world/asia-pacific/china-pump-47-bln-into-state-banks-insurers-capital-boosting-push-2026-09-06/",
+    "https://www.reuters.com/commentary/breakingviews/chinas-bank-recap-may-achieve-least-important-aim-2026-09-07/",
+    "https://www.reuters.com/world/asia-pacific/chinas-export-growth-seen-accelerating-august-2026-09-07/",
+    "https://www.zerohedge.com/markets/morgan-stanley-lays-out-value-fed-ambiguity-four-uncertainties-facing-makets"
+  ]
+}
