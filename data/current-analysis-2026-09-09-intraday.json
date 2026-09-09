@@ -1,56 +1,52 @@
 {
   "asOf":"2026-09-09",
-  "capturedAt":"2026-09-09 14:04 MYT",
-  "type":"Intraday Power Stack research overlay — Iran/Hormuz escalation + peak-load/cooling stress + AI credit supply",
-  "baseThemeRevision":"data/developing-themes.json@2026-09-07",
-  "evidencePolicy":"This overlay changes theme significance, research priority and action thresholds. It does not mechanically change company fundamental scores. ZeroHedge/sell-side material is treated as a hypothesis input and independently checked where possible against CAISO, company filings and Reuters.",
-  "headlineRead":"Three fresh signals reinforce one regime rather than three separate trades: Middle East attacks are tightening energy/shipping risk and inflation pressure; California and Malaysia heat are exposing the value of dispatchable power, grid capacity and cooling; and record AI-related borrowing is making financing quality a gating variable. Prefer contracted/operating scarcity and visible backlog over unfunded duration. Do not chase stocks that have already broken above prior entry zones.",
+  "capturedAt":"2026-09-09 15:43 MYT",
+  "type":"Current Power Stack analysis — Sep 9 dossier + MacroMicro cross-market verification",
+  "baseThemeRevision":"data/developing-themes.json@2026-09-09",
+  "macroContext":"data/macro-context.json@v14",
+  "evidencePolicy":"Theme significance, research priority and action thresholds can change intraday. Company fundamental scores require stock-specific evidence. MacroMicro is supporting cross-market verification, not sole canonical proof; fresher primary data controls.",
+  "headlineRead":"The regime is now best described as inflationary physical-capex expansion confronting a global duration shortage. The decisive distinction is not AI versus non-AI or risk-on versus risk-off; it is funded operating scarcity versus financing-dependent duration.",
+  "macroMicroCrossCheck":{
+    "US10Y":"4.79% Sep 8",
+    "USReal10Y":"2.42% Sep 3",
+    "Japan10Y":"2.89% Sep 8",
+    "Japan10Y2Y":"1.06pp Sep 7",
+    "IGOAS":"0.81pp Sep 3",
+    "HYOAS":"2.68pp Sep 7",
+    "CCCOAS":"10.55pp Sep 7",
+    "SP500EarningsYield":"3.79% Sep 2026",
+    "DXY":"98.84 Sep 8",
+    "ChinaCreditImpulse":"20.84 vs 21.03 prior",
+    "interpretation":"Broad high-grade credit remains orderly, but the cost of duration is high and weak-end credit is stressed. The S&P earnings yield is about 1pp below the US10Y, reinforcing the valuation hurdle. China credit data do not confirm broad domestic reflation."
+  },
   "currentThemeOrder":[
-    {"rank":1,"id":"mideast-products-shipping","name":"Middle East Oil / Refined Products / Shipping Risk","score":10.0,"direction":"strengthening sharply","whyNow":"Iran attacked a US-used base near Al Azraq and ships around Hormuz after US strikes on Iranian tankers; Houthi attacks also hit Saudi energy infrastructure. Hormuz commodity traffic fell to six vessels versus a recent average near twelve and Brent approached $100."},
-    {"rank":2,"id":"rates-ai-credit-stress","name":"Long-End Funding Stress + AI Credit Supply","score":9.9,"direction":"strengthening","whyNow":"Oil-driven inflation pressure is colliding with a very large AI financing wave. Independent Reuters reporting confirms AI-linked debt supply and investor fatigue, while the attached Goldman/ZeroHedge note points to a temporary late-2026 issuance breather followed by a potentially heavier 2027 supply wave."},
-    {"rank":3,"id":"power-cooling-peakload","name":"Power / Grid / Cooling + Peak-Load Resilience","score":9.9,"direction":"strengthening","whyNow":"CAISO issued a Sep 9 statewide Flex Alert and EEA1 as prolonged heat raises air-conditioning demand while solar output falls in the evening. Malaysia separately reported data-centre power use at a record 9.3% of demand during August heat, versus a 7% 2026 average, with cooling cited as the driver."},
-    {"rank":4,"id":"ai-financing-cash-conversion","name":"AI Buildout: Financing + Cash Conversion","score":9.8,"direction":"strengthening","whyNow":"The physical AI buildout remains real, but lenders and bond investors are requiring stronger permits, leases, guarantees and economics. Funded backlog, signed offtake and short cash-conversion cycles deserve a higher premium."},
-    {"rank":5,"id":"copper-grid-inputs","name":"Copper / Grid Input Inflation","score":9.6,"direction":"strengthening but crowded","whyNow":"Record copper prices strengthen scarcity economics while raising equipment and project input costs. Pricing power and pass-through now matter more for ETN/PWR/VMI-style beneficiaries."},
-    {"rank":6,"id":"energy-rerouting-demand-destruction","name":"Energy Security Rerouting + Demand Destruction","score":9.4,"direction":"active counterweight","whyNow":"Alternative export routes, non-OPEC supply and weaker Asian demand still argue against extrapolating an unlimited one-way crude spike even as products, shipping and insurance remain tight."}
+    {"rank":1,"id":"global-duration-absorption","name":"Global Duration Absorption Stress","score":10.0},
+    {"rank":2,"id":"hormuz-energy-products-shipping","name":"Middle East Refined Products + Shipping Stress","score":10.0},
+    {"rank":3,"id":"power-cooling-peakload","name":"Power / Grid / Cooling + Peak-Load Resilience","score":9.9},
+    {"rank":4,"id":"ai-financing-cash-conversion","name":"AI Financial Structure + Cash Conversion","score":9.8},
+    {"rank":5,"id":"ai-physical-bottlenecks","name":"AI Physical Buildout + Funded Demand","score":9.7},
+    {"rank":6,"id":"japan-global-liquidity","name":"Japan Normalisation + Global Liquidity","score":9.5},
+    {"rank":7,"id":"energy-security-rerouting","name":"Energy Security Rerouting + Bypass Vulnerability","score":9.4},
+    {"rank":8,"id":"gold-real-yield-hedge","name":"Gold: Reserve Diversification vs Real Yields","score":9.2},
+    {"rank":9,"id":"china-credit-transmission","name":"China Weak Credit Transmission + State Balance Sheets","score":9.1},
+    {"rank":10,"id":"copper-grid-inventory-distortion","name":"Copper: Grid Scarcity vs China Divergence","score":9.0},
+    {"rank":11,"id":"fertilizer-feedstock-divergence","name":"Fertilizer / Nitrogen Scarcity vs Farm Affordability","score":8.7},
+    {"rank":12,"id":"consumer-credit-bifurcation","name":"Consumer Credit + Trade-Down Bifurcation","score":8.5},
+    {"rank":13,"id":"uranium-nuclear-fuel-cycle","name":"Uranium / Nuclear Fuel-Cycle Scarcity","score":8.4},
+    {"rank":14,"id":"automation-before-humanoids","name":"Selective Automation Before Humanoids","score":7.8}
   ],
-  "holdingsImpact":[
-    {"ticker":"XOM","impact":"POSITIVE / NO SCORE CHANGE","action":"HOLD; do not chase geopolitical gaps","read":"Near-$100 Brent, product tightness and energy-security rerouting support cash flow. Papua LNG remains a separate positive. Keep reversal/demand-destruction risk in the price discipline."},
-    {"ticker":"MISC","impact":"POSITIVE / HIGHER MACRO ATTENTION / NO SCORE CHANGE","action":"HOLD; Yinson funding remains the add gate","read":"Lower Hormuz traffic and attacks on vessels increase tanker tonne-mile, scarcity and war-risk relevance, but also raise insurance/operational risk. The company-specific funding issue still dominates fresh capital."},
-    {"ticker":"HIBISCS","impact":"POSITIVE CYCLICAL / NO SCORE CHANGE","action":"HOLD; selective add only on disciplined setup","read":"Higher oil improves realised-price and customer-budget backdrop, but do not capitalise conflict pricing as permanent."},
-    {"ticker":"YTLPOWR","impact":"THESIS STRENGTHENED / NO SCORE CHANGE","action":"HOLD; require funded utilisation and FCF proof","read":"Malaysia's record 9.3% data-centre share of electricity use during heat directly validates the power-and-cooling bottleneck. The same evidence also raises the value of reliable gas/grid capacity. High yields, copper/input costs and project funding remain the equity-value gates."},
-    {"ticker":"6742UW","impact":"PARENT THESIS STRONGER / WARRANT RISK UNCHANGED","action":"Track parent and instrument terms only","read":"Same YTLPOWR benefit, amplified by expiry, liquidity and time-decay risk."},
-    {"ticker":"TTWO","impact":"NEGATIVE MACRO / NO SCORE CHANGE","action":"HOLD; require $216-217 repair","read":"Oil/inflation and AI-capital competition keep long-end hurdle rates restrictive for catalyst-duration equities."},
-    {"ticker":"TSLA","impact":"MIXED / NO SCORE CHANGE","action":"HOLD / NO ADD","read":"Peak-load stress is incrementally positive for storage/VPP economics, but higher yields and the unresolved Cybercab regulatory audit dominate near-term risk."},
-    {"ticker":"DAYANG","impact":"POSITIVE ENERGY BETA / NO SCORE CHANGE","action":"HOLD; do not average down","read":"Higher oil supports customer budgets but still does not repair utilisation/work-order execution evidence."}
+  "portfolioRead":{
+    "promote":["Existing generation and signed power economics: VST","Regulated/awarded grid: TENAGA, PWR, ETN, MNHLDG, VMI","Fuel-cycle scarcity: CCJ","Refined-product economics: VLO, MPC, PSX","Contracted LNG/rerouting: LNG","Strategic gold: GLDM, then AEM","Shipping scarcity: MISC"],
+    "raiseHurdle":["Pre-revenue nuclear: SMR","Leveraged crypto duration: MSTR","Liquidity-sensitive crypto equity: COIN","Premium software duration: CRM and similar","Unfunded AI/data-centre capacity","Capital-intensive automation without proven ROI"],
+    "keyRule":"A stronger structural theme can coexist with a worse buy-now entry. Do not chase ETN/PWR/VST/refiners after vertical moves."
+  },
+  "dashboardPriority":[
+    {"rank":1,"block":"Global Duration Absorption","signals":["US10Y","US30Y","real10Y","JGB10Y","Treasury auctions","Japanese foreign-bond flows","AI IG spreads"]},
+    {"rank":2,"block":"Energy Physical Stress","signals":["Hormuz vessel count","ULSD/jet cracks","distillate inventories","refinery utilisation","war-risk insurance","Saudi bypass infrastructure"]},
+    {"rank":3,"block":"AI Credit / Funding Quality","signals":["AI IG spread","CDS","new-issue concession","signed leases","permits","guarantees","prepayments","FCF conversion"]},
+    {"rank":4,"block":"Power / Cooling / Real Load","signals":["CAISO alerts","Malaysia data-centre share","firm MW","substation awards","switchgear backlog","cooling demand"]},
+    {"rank":5,"block":"China Credit Transmission","signals":["credit impulse","household loans","TSF composition","property sales","bank margins"]},
+    {"rank":6,"block":"Gold / Reserve Diversification","signals":["real10Y","DXY","PBOC gold reserves","central-bank purchases"]}
   ],
-  "watchlistChanges":[
-    {"ticker":"VST","change":"PROMOTE TO TOP-TIER RETEST WATCH","reason":"Vistra has direct CAISO exposure through Moss Landing gas generation and other West assets; CAISO peak stress makes dispatchable generation/capacity economically relevant now. Existing signed PPAs/Helix funding quality remain superior to speculative load. Sep 8 close around $151.72 is above the old preferred entry, so do not chase."},
-    {"ticker":"ETN","change":"THESIS STRONGER, ACTION MORE SELECTIVE","reason":"Grid/electrical scarcity is validated, but Sep 8 close around $422.13 is above the old support-entry zone and around/above prior confirmation. Wait for retest rather than upgrading into price strength."},
-    {"ticker":"PWR","change":"THESIS STRONGER, WAIT RETEST","reason":"Transmission/time-to-power remains one of the cleanest beneficiaries of real load, but Sep 8 close around $639.05 is near the prior stronger confirmation area. No chase."},
-    {"ticker":"TENAGA","change":"PROMOTE TO CANONICAL RESEARCH/WATCH","reason":"Malaysia data-centre load is now an observed grid fact, not only forecast demand. TNB already supplies operating/under-construction data-centre projects and regulated network capex provides a lower-duration way to own the buildout."},
-    {"ticker":"MNHLDG","change":"PROMOTE TO CANONICAL RESEARCH/WATCH","reason":"FY26 revenue and profit growth plus an approximately RM1.64bn order book give company-specific proof behind the Malaysia substation/grid thesis. Price near RM3.72 is close to the recent high, so research priority rises faster than buy-now attractiveness."},
-    {"ticker":"LNG","change":"RAISE RESEARCH ATTENTION","reason":"Direct attacks on Gulf energy/shipping reinforce the value of non-Hormuz LNG corridors and contracted export capacity. Pullback-first remains appropriate."},
-    {"ticker":"SLB","change":"RAISE CROSSOVER ATTENTION","reason":"Iran supports traditional energy-service optionality while the Kelvion acquisition creates a second leg in data-centre cooling. Integration and valuation still matter."},
-    {"ticker":"FLEX","change":"KEEP HIGH / FUNDED-BACKLOG SCREEN","reason":"Power and thermal infrastructure remain core beneficiaries, but the AI credit story raises the value of customer funding and signed backlog."},
-    {"ticker":"SMR","change":"RAISE HURDLE FURTHER","reason":"The nuclear theme remains strong, but financing-heavy pre-revenue reactor equities sit on the wrong side of long-end and AI-capital competition."}
-  ],
-  "dashboardTriggers":[
-    {"signal":"Hormuz commodity transits","bullishScarcityTrigger":"Sustained materially below the recent ~12-vessel average / further outbound disruption","reliefTrigger":"Durable normalisation in traffic and war-risk insurance"},
-    {"signal":"Brent / refined products","bullishScarcityTrigger":"Sustained >$100 with diesel/product cracks widening","reliefTrigger":"Crude and product spreads normalise together"},
-    {"signal":"CAISO","bullishScarcityTrigger":"EEA escalation, repeated Flex Alerts, higher evening price spikes or reserve stress","reliefTrigger":"Heat breaks and reserve margins normalise"},
-    {"signal":"Malaysia data-centre load","bullishScarcityTrigger":"Further rise above the 9.3% observed share / new firm load and network awards","reliefTrigger":"Project delays, weaker utilisation or cancelled interconnections"},
-    {"signal":"US 10Y / credit","bullishForCashFlowScarcityTrigger":"10Y holds near/above 4.8% while AI credit spreads/orderbooks deteriorate","reliefTrigger":"Sustained long-end and spread compression"},
-    {"signal":"AI financing quality","bullishQualityTrigger":"More signed leases, guarantees, permits and customer prepayments","riskTrigger":"Unfunded capacity, delayed interconnections, wider concessions or refinancing pressure"}
-  ],
-  "sources":[
-    {"class":"official","name":"California ISO Flex Alert / EEA1 — Sep 9","url":"https://www.caiso.com/about/news/news-releases/california-iso-extends-flex-alert-for-today-4-9-pm"},
-    {"class":"company","name":"Vistra Q2 2026 investor presentation / West asset fleet","url":"https://investor.vistracorp.com/image/Q2_2026_Results_Presentation_vFinal.pdf"},
-    {"class":"reporting","name":"Reuters — Iran attacks US-used base and ships near Hormuz","url":"https://www.reuters.com/world/middle-east/iran-attacks-us-base-jordan-ships-near-hormuz-after-tankers-sunk-2026-09-09/"},
-    {"class":"reporting","name":"Reuters — Hormuz shipping traffic below recent average","url":"https://www.reuters.com/world/middle-east/shipping-traffic-via-strait-hormuz-stays-below-10-day-average-data-shows-2026-09-09/"},
-    {"class":"reporting","name":"Reuters — Malaysia data-centre power consumption rises with heat","url":"https://www.reuters.com/world/asia-pacific/malaysian-data-centres-guzzle-more-power-temperatures-soar-2026-09-08/"},
-    {"class":"reporting","name":"Reuters — AI construction crunch widens credit fault lines","url":"https://www.reuters.com/commentary/breakingviews/ai-construction-crunch-widens-credit-fault-lines-2026-09-08/"},
-    {"class":"reporting","name":"Reuters — US corporate AI debt surge tests investor limits","url":"https://www.reuters.com/legal/transactional/us-corporate-ai-debt-surge-tests-investor-limits-fatigue-emerges-2026-08-21/"},
-    {"class":"discovery/corroborated","name":"ZeroHedge — Intense SoCal Heatwave Sparks Cooling Demand Surge","url":"https://www.zerohedge.com/weather/california-hot-burst-test-grid-surging-cooling-demand"},
-    {"class":"sell-side/discovery","name":"ZeroHedge excerpt of Goldman credit note — AI debt issuance","url":"https://www.zerohedge.com/markets/goldman-credit-desk-sees-eye-hurricane-ai-debt-issuance-then-all-hell-breaks-loose"}
-  ]
+  "nextTests":["Sep 10 PPI","Sep 11 CPI","Sep 15-16 FOMC","Sep 17-18 BOJ","continuous Hormuz/Saudi physical-flow monitoring","AI credit/new-issue concessions into the Q4 issuance pause"]
 }
