@@ -1,0 +1,111 @@
+{
+  "asOf":"2026-09-10",
+  "capturedAt":"2026-09-10T04:20:00Z",
+  "type":"Three-day Power Stack rerank — Sep 8, Sep 9 and Sep 10 verified research",
+  "inputs":[
+    "data/daily-research-2026-09-08.json",
+    "data/daily-research-2026-09-09.json",
+    "data/current-analysis-2026-09-10-transcript-sweep.json",
+    "data/macro-context.json@v16",
+    "data/developing-themes.json@2026-09-10",
+    "data/latest-market-review.json",
+    "data/watchlist.json"
+  ],
+  "evidencePolicy":"Theme and action rankings may move on independently verified macro, market and company evidence. Canonical holding fundamental scores remain unchanged unless stock-specific earnings, balance-sheet, cash-flow, business-quality, growth or valuation evidence changes. Transcript material remains zero-weight discovery input.",
+  "regime":"Inflationary physical scarcity and record power demand are colliding with restrictive long-end yields, weak breadth and rising AI funding burden. Prefer cash-generative scarcity, contracted/funded infrastructure and operating assets over financing-dependent duration. Positive earnings revisions remain the main broad-equity counterweight.",
+  "threeDayChange":[
+    "Sep 8 established that Malaysia data-centre load is already observable, not merely projected, while copper and energy security strengthened and battery manufacturing overcapacity became a negative quality filter.",
+    "Sep 9 hardened the duration and commodity regime: crude, product shortages, copper and fertilizer moved together while the 10Y tested 4.8%, increasing the premium on cash conversion and funded backlog.",
+    "Sep 10 promoted refined products/shipping, global duration, AI financing quality, LNG rerouting and gold reserve diversification. Breadth is a fragility overlay, not a crash call, because forward earnings revisions remain constructive.",
+    "The portfolio-level implication is to separate physical demand from financing quality: power/grid demand can strengthen while high-duration developers, software and leveraged capital structures weaken."
+  ],
+  "holdingsActionRanking":[
+    {"rank":1,"ticker":"XOM","fundamentalScore":88,"action":"CORE HOLD / BEST CURRENT ANCHOR","reason":"Integrated upstream, refining and LNG exposure captures the current crude/product/LNG regime while balance-sheet and cash-flow quality reduce duration sensitivity. Do not chase the geopolitical premium."},
+    {"rank":2,"ticker":"MISC","fundamentalScore":80,"action":"HOLD / SHIPPING-SCARCITY BENEFICIARY","reason":"Tanker, shipping and energy-logistics stress strengthened materially over the last three days. Yinson transaction funding remains the main reason this does not become an add."},
+    {"rank":3,"ticker":"HIBISCS","fundamentalScore":74,"action":"HOLD / SELECTIVE ADD ONLY ON DISCIPLINED SETUP","reason":"Direct realised-price leverage to $100+ Brent is useful, but the current theme is increasingly products/shipping rather than crude alone and the conflict premium remains reversible."},
+    {"rank":4,"ticker":"YTLPOWR","fundamentalScore":71,"action":"HOLD / STRUCTURAL POWER THESIS; FUNDING SCREEN","reason":"Record Malaysia data-centre load and global power demand validate the mechanism. High long yields, copper and project capex make contracted utilisation and FCF conversion the gating variables."},
+    {"rank":5,"ticker":"TTWO","fundamentalScore":68,"action":"HOLD / CATALYST DURATION; SUPPORT TEST","reason":"Elite franchise quality remains intact, but cash economics are catalyst-dated and high real yields make the current support/reclaim structure important."},
+    {"rank":6,"ticker":"TSLA","fundamentalScore":61,"action":"HOLD / NO ADD","reason":"Storage/VPP economics fit the power-scarcity regime, but autonomy duration, auto financing sensitivity, battery manufacturing overcapacity and unresolved Cybercab regulation keep the hurdle high."},
+    {"rank":7,"ticker":"DAYANG","fundamentalScore":57,"action":"HOLD / DO NOT AVERAGE DOWN","reason":"High oil improves customer budgets but no new operating evidence repairs utilisation and work-order conversion. Macro tailwind cannot substitute for company execution."},
+    {"rank":8,"ticker":"6742UW","fundamentalScore":"linked 71","action":"TRACK PARENT / INSTRUMENT TERMS ONLY","reason":"Parent fundamentals are constructive but strike, expiry, liquidity and time decay can dominate the linked instrument; no standalone rating is fabricated."}
+  ],
+  "watchlistRerankPrinciples":[
+    "Promote operating assets and funded backlog ahead of requested MW or pre-revenue concepts.",
+    "Promote LNG, product shipping and gas-power equipment because the Gulf shock now transmits through global gas and refined products, not crude alone.",
+    "Raise gold as strategic diversification but retain real-yield entry discipline.",
+    "Keep refiners high conviction but below less-extended opportunities because product scarcity is increasingly priced.",
+    "Lower duration/liquidity beta and leveraged speculative structures while 10Y/real yields and weak-end credit remain restrictive."
+  ],
+  "adjacentIdeas":[
+    {
+      "ticker":"GEV",
+      "name":"GE Vernova",
+      "status":"PROMOTE TO TOP-TIER WATCHLIST",
+      "researchScore":9.4,
+      "theme":"Gas power + electrification + grid equipment + data-centre power",
+      "whyNow":"Q2 2026 orders reached $24.2B, backlog $176B, free cash flow $5.1B and data-centre orders exceeded $5B YTD. The business directly monetises the Power Stack split between record physical load and funded equipment backlog.",
+      "risk":"Premium valuation, Wind losses and execution/capacity expansion risk. Require a fresh price/retest before action.",
+      "sources":[
+        {"publisher":"GE Vernova","date":"2026-07-22","url":"https://www.gevernova.com/news/articles/ge-vernova-releases-second-quarter-2026-financial-results"},
+        {"publisher":"Reuters","date":"2026-09-03","url":"https://www.reuters.com/business/energy/us-says-deal-aims-stabilize-venezuela-power-grid-6-12-months-2026-09-03/"}
+      ]
+    },
+    {
+      "ticker":"BKR",
+      "name":"Baker Hughes",
+      "status":"PROMOTE TO WATCHLIST",
+      "researchScore":8.9,
+      "theme":"LNG equipment + gas turbines + data-centre power + thermal management",
+      "whyNow":"Q2 IET orders were $7.1B with record $37.1B IET RPO; awards span Venture Global, Cheniere and 1.3GW of mobile gas turbines for data-centre/oil-and-gas applications. Chart adds thermal-management and gas-handling exposure, making BKR a multi-theme beneficiary of LNG rerouting and time-to-power.",
+      "risk":"Chart integration, acquisition leverage, hydrogen weakness and timing volatility in LNG equipment orders.",
+      "sources":[
+        {"publisher":"Baker Hughes","date":"2026-07-26","url":"https://investors.bakerhughes.com/news/press-releases/news-details/2026/Baker-Hughes-Announces-Second-Quarter-2026-Results/default.aspx"},
+        {"publisher":"Reuters","date":"2026-09-09","url":"https://www.reuters.com/business/energy/baker-hughes-raises-annual-forecasts-after-chart-acquisition-2026-09-09/"}
+      ]
+    },
+    {
+      "ticker":"STNG",
+      "name":"Scorpio Tankers",
+      "status":"PROMOTE TO WATCHLIST",
+      "researchScore":8.9,
+      "theme":"Product tankers + refined-product rerouting",
+      "whyNow":"Q3 contracted LR2 spot/pool TCE was about $64,900/day as of Sep 3, while new multi-year charter-outs lock part of the current rate environment. This is a direct operating expression of the refined-product/shipping bottleneck rather than a crude-price proxy.",
+      "risk":"Tanker-rate mean reversion, de-escalation, fleet supply and convertible dilution. Do not extrapolate wartime rates permanently.",
+      "sources":[
+        {"publisher":"Scorpio Tankers","date":"2026-09-03","url":"https://www.scorpiotankers.com/scorpio-tankers-inc-announces-updates-on-third-quarter-2026-tce-rates-and-time-charter-out-agreements/"},
+        {"publisher":"Reuters","date":"2026-09-10","url":"https://www.reuters.com/world/middle-east/hormuz-shipping-traffic-single-digits-data-shows-2026-09-10/"}
+      ]
+    },
+    {
+      "ticker":"NVT",
+      "name":"nVent Electric",
+      "status":"PROMOTE TO WATCHLIST",
+      "researchScore":8.8,
+      "theme":"Electrical protection + liquid cooling + data-centre infrastructure",
+      "whyNow":"nVent is expanding liquid-cooling manufacturing for the third time in three years, adding more than 400,000 square feet of capacity. This is a narrower, component-level beneficiary of the cooling and electrical bottlenecks highlighted by record AI power demand.",
+      "risk":"Execution on capacity additions, acquisition integration and valuation sensitivity if AI infrastructure spending slows.",
+      "sources":[
+        {"publisher":"nVent","date":"2026-07-31","url":"https://investors.nvent.com/press-releases/press-release-details/2026/nVent-Expands-Data-Center-Liquid-Cooling-Capacity/default.aspx"}
+      ]
+    },
+    {
+      "ticker":"WMB",
+      "name":"Williams Companies",
+      "status":"RESEARCH QUEUE / NOT PROMOTED YET",
+      "researchScore":8.3,
+      "theme":"US gas pipelines + Gulf Coast LNG + power demand",
+      "whyNow":"Q2 adjusted EBITDA rose and guidance increased after the Momentum Midstream acquisition, directly connecting Haynesville supply to Gulf Coast LNG and power demand.",
+      "risk":"A Sep 9 federal court decision vacated a key New Jersey permit for the NESE project. The company says timing is unchanged, but permitting risk prevents top-tier promotion today.",
+      "sources":[
+        {"publisher":"Williams","date":"2026-08-03","url":"https://investor.williams.com/news-releases/news-release-details/williams-delivers-strong-second-quarter-2026-results-announces"},
+        {"publisher":"Reuters","date":"2026-09-09","url":"https://www.reuters.com/business/energy/us-court-vacates-key-nj-permit-williams-nese-gas-pipe-pennsylvania-new-york-2026-09-09/"}
+      ]
+    }
+  ],
+  "notPromoted":[
+    "Pre-revenue nuclear/SMR concepts: strategic nuclear demand is strong, but duration and funding conditions favour CCJ/BWXT/operating generation over project-finance optionality.",
+    "Additional commodity battery/lithium capacity: ESS deployment is strong but China manufacturing overcapacity remains a negative quality filter.",
+    "Broad high-duration software: earnings quality can be good, but the current relative-value hurdle versus physical scarcity and Treasury yields remains high.",
+    "Williams is kept in research queue until the NESE permit risk is resolved or sufficiently bounded."
+  ]
+}
