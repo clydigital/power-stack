@@ -1,0 +1,119 @@
+{
+  "asOf":"2026-09-10T03:35:00Z",
+  "type":"Power Stack dashboard factor sweep — transcript hypotheses independently verified",
+  "sourcePolicy":"StockedUp, FXEvolution and TradeBrigade are discovery inputs only. Dashboard promotion requires current market, official, company or high-quality reporting evidence. New diagnostic channels do not change stock macro-adjusted conviction until an explicit stock sensitivity is researched and added.",
+  "headlineRead":"The dashboard should stop treating the current regime as a single risk-on/risk-off signal. The useful split is physical scarcity and funded capex strength versus duration, breadth and financing fragility, with earnings revisions as the main counterweight.",
+  "factorMap":[
+    {
+      "id":"refining-spare-capacity",
+      "videoIdea":"Refining, not just crude supply, is the hidden inflation bottleneck.",
+      "verifiedRead":"EIA shows US operable refining capacity around 18.027m b/d and 98.0% utilization for the week ending Aug 28. Elevated gasoline/product crack spreads confirm little spare refining slack. The creator claim of the lowest capacity ever is not used.",
+      "lookUpContinuously":["US refinery utilization","operable capacity","distillate inventories","gasoline inventories","ULSD/heating-oil crack","gasoline crack","planned/unplanned refinery outages","product exports"],
+      "dashboardEffect":"Keep Refined Products at maximum stress, but add utilization/spare-capacity context so the dashboard can distinguish crude scarcity from refinery/product scarcity.",
+      "confirmation":"Utilization remains >95% while cracks stay elevated and distillate inventories remain abnormally tight.",
+      "invalidation":"Utilization normalizes with rebuilt product inventories and sustained crack compression.",
+      "cadence":"Weekly EIA + daily cracks"
+    },
+    {
+      "id":"duration-clearing-rate",
+      "videoIdea":"Treasury support is failing to stop the rise in long yields.",
+      "verifiedRead":"Treasury announced up to $6bn of 10-20Y buybacks for Sep 10; after the announcement the 10Y reached about 4.8528%. Treat the reaction as a clearing-rate/news-failure signal rather than proof that buybacks cannot work.",
+      "lookUpContinuously":["US 2Y/10Y/30Y","10Y real yield","2s10s and 10s30s","Treasury auction tails/bid-to-cover","buyback operation results","MOVE volatility","breakevens","term-premium proxies"],
+      "dashboardEffect":"Financial Conditions stays at maximum restrictive. Add a duration-clearing monitor to separate Fed/front-end repricing from long-end fiscal/term-premium stress.",
+      "confirmation":"Long yields remain high or rise despite buybacks and softer growth data.",
+      "invalidation":"Long yields and real yields compress durably while auction quality improves.",
+      "cadence":"Intraday/daily; auction-event driven"
+    },
+    {
+      "id":"equity-breadth-rate-sensitivity",
+      "videoIdea":"Headline indices hide a deteriorating market underneath, especially equal-weight and small caps.",
+      "verifiedRead":"Sep 9 had 383 S&P 500 decliners; NYSE decliners outnumbered advancers by nearly 3:1 and Nasdaq by more than 2.5:1. Russell 2000 fell about 1.1%-1.3% and is below its 50-day average while large caps remain closer to highs.",
+      "lookUpContinuously":["RSP/SPY relative trend","Russell 2000 vs SPX","percent above 20D/50D/200D","advance-decline line","new highs minus new lows","sector breadth","equal-weight sector performance"],
+      "dashboardEffect":"Add a first-class Equity Breadth diagnostic. It raises fragility/rate sensitivity but is not allowed to create a crash regime by itself.",
+      "confirmation":"Breadth keeps deteriorating while yields rise and headline indices remain concentrated.",
+      "invalidation":"RSP/IWM regain trend and breadth improves alongside the cap-weighted indices.",
+      "cadence":"Daily"
+    },
+    {
+      "id":"earnings-revision-counterweight",
+      "videoIdea":"Forward earnings are still improving even as the tape weakens.",
+      "verifiedRead":"FactSet reports Q3 bottom-up S&P 500 EPS estimates rose 1.2% from June 30 to Aug 31, versus normal declines of roughly 1.7%-2.1% over the first two months of a quarter.",
+      "lookUpContinuously":["S&P bottom-up EPS revisions","upward vs downward revision breadth","2026/2027 forward EPS","earnings yield vs 10Y","sector revision breadth","post-earnings price reactions"],
+      "dashboardEffect":"Add Earnings Support as an explicit green counter-signal so deteriorating breadth does not mechanically become a broad bearish call.",
+      "confirmation":"Forward estimates and revision breadth remain positive and beats are rewarded.",
+      "invalidation":"Estimate revisions roll over broadly and good earnings are consistently sold.",
+      "cadence":"Weekly/earnings cycle"
+    },
+    {
+      "id":"ai-financing-quality",
+      "videoIdea":"AI is increasingly competing with sovereigns and other borrowers for capital.",
+      "verifiedRead":"Hyperscalers have issued more than $200bn of debt in 2026. Amazon raised £4.25bn on Sep 9; ECB analysis shows hyperscaler euro spreads rising as issuance expectations increase and warns of potential crowding-out channels.",
+      "lookUpContinuously":["hyperscaler gross debt issuance","new-issue concessions","IG spreads/CDS for hyperscalers","capex-to-FCF","net debt/EBITDA","customer guarantees/prepayments","project finance spreads","lease/ppa commitments","bond cover ratios"],
+      "dashboardEffect":"Add AI Funding Quality as a separate diagnostic from Industrial/AI/Power Capex. Demand can remain +2 while funding quality deteriorates; that divergence is now central to stock selection.",
+      "confirmation":"Spreads/concessions rise, issuance accelerates and FCF conversion lags capex.",
+      "invalidation":"Funding costs fall while FCF and signed contracted demand improve.",
+      "cadence":"Deal/event driven + earnings cycle"
+    },
+    {
+      "id":"global-lng-availability",
+      "videoIdea":"The energy shock is spreading through LNG, European gas and electricity rather than crude alone.",
+      "verifiedRead":"Reuters reports European gas above €75/MWh with storage around 66%, Germany around 54% and the Netherlands around 48%; Middle Eastern LNG exports are down about 85% amid Hormuz disruption, forcing stronger competition for Atlantic LNG.",
+      "lookUpContinuously":["TTF","JKM","Europe storage %","Germany/Netherlands storage","US LNG feedgas","US LNG exports","Qatar/Middle East LNG flows","LNG freight","Asia heat/power demand","gas-to-power margins"],
+      "dashboardEffect":"Add Global LNG Availability separately from US Gas. Henry Hub can remain moderate while Europe/Asia gas is acutely tight; combining them hides the inflation transmission.",
+      "confirmation":"TTF/JKM stay high, storage refill lags and Atlantic cargo competition persists.",
+      "invalidation":"Middle East LNG flows normalize and storage rebuilds with collapsing regional spreads.",
+      "cadence":"Daily/weekly"
+    },
+    {
+      "id":"copper-scarcity-versus-growth",
+      "videoIdea":"Copper is confirming AI/grid demand but may not be confirming broad economic health.",
+      "verifiedRead":"Copper is at record levels amid mine-supply weakness, tariff uncertainty and grid/AI demand. Refined production can still be adequate and China private-credit transmission remains soft, so copper must be decomposed into scarcity versus broad-growth components.",
+      "lookUpContinuously":["LME/SHFE/COMEX inventories","cash-3M spreads","China physical premiums","mine disruptions/output","treatment charges","US import/tariff flows","China credit/property activity","grid order data"],
+      "dashboardEffect":"Keep Copper structurally positive but label the signal 'scarcity/grid' rather than generic global-growth confirmation.",
+      "confirmation":"Physical premiums/inventory draws and mine constraints persist alongside grid orders.",
+      "invalidation":"Inventories rebuild and physical premiums/orders weaken.",
+      "cadence":"Daily/weekly"
+    },
+    {
+      "id":"gold-reserve-diversification",
+      "videoIdea":"Gold is being supported by reserve diversification even with high yields.",
+      "verifiedRead":"World Gold Council reports August global gold ETF inflows of $18bn and 121t, taking holdings to a record 4,189t. July central-bank purchases included China +20t and Poland +8t.",
+      "lookUpContinuously":["global gold ETF flows","central-bank purchases","real 10Y","DXY","COMEX positioning","gold miners vs bullion"],
+      "dashboardEffect":"Gold remains a strategic positive channel, but real yields stay the tactical timing gate.",
+      "confirmation":"ETF/official demand remains strong despite high real yields.",
+      "invalidation":"ETF flows reverse while real yields/USD break higher and bullion loses trend support.",
+      "cadence":"Daily/weekly/monthly"
+    },
+    {
+      "id":"weak-end-credit-and-financials",
+      "videoIdea":"Regional banks, junk bonds and consumer-credit names may be early warning signals.",
+      "verifiedRead":"The existing dashboard already separates broad credit from weak-end credit; the useful expansion is to monitor whether higher yields spread from CCC/small caps into banks, consumer credit and otherwise healthy IG credit.",
+      "lookUpContinuously":["CCC/HY/IG OAS","regional-bank relative performance","bank CDS","HYG/LQD ratio","consumer delinquencies","auto/credit-card ABS spreads","mortgage applications","financial sector breadth"],
+      "dashboardEffect":"Do not create a new crisis channel yet. Strengthen the existing weak-end-credit monitor and promote only if stress broadens into quality credit/banks.",
+      "confirmation":"Spreads widen across quality tiers and bank/consumer-credit stress broadens.",
+      "invalidation":"Weak-end stress stays isolated while broad IG/banks stabilize.",
+      "cadence":"Daily/weekly/monthly"
+    },
+    {
+      "id":"event-risk-positioning",
+      "videoIdea":"CPI/PPI, options walls and volatility can dominate the immediate market reaction.",
+      "verifiedRead":"PPI Sep 10 and CPI Sep 11 are the immediate catalysts. Creator-specific SPX/QQQ option levels are useful tactical hypotheses but should remain in Positioning, not the macro regime layer, unless independently sourced.",
+      "lookUpContinuously":["PPI/CPI surprise","Fed pricing","VIX/MOVE","dealer gamma/put-call levels from licensed source","event implied move"],
+      "dashboardEffect":"Keep event/option mechanics out of Macro Pulse scoring. Surface them in Positioning and use post-data price reaction as confirmation/invalidation of the macro regime.",
+      "confirmation":"Hot data pushes yields higher and weak breadth/credit lower.",
+      "invalidation":"Hot data is absorbed with falling yields and improving breadth — a bullish news-failure signal.",
+      "cadence":"Event/intraday"
+    }
+  ],
+  "dashboardChanges":{
+    "promoteToVisibleDiagnostics":[
+      {"key":"equityBreadth","label":"Equity Breadth","score":-1.7,"polarity":"negative = deteriorating participation","automaticStockImpact":false},
+      {"key":"earningsSupport","label":"Earnings Support","score":1.45,"polarity":"positive = supportive revisions","automaticStockImpact":false},
+      {"key":"aiFundingQuality","label":"AI Funding Quality","score":-1.55,"polarity":"negative = funding quality deteriorating","automaticStockImpact":false},
+      {"key":"globalLngAvailability","label":"Global LNG Availability","score":-1.9,"polarity":"negative = tighter global LNG availability","automaticStockImpact":false}
+    ],
+    "strengthenExistingChannels":["financialConditions","creditAvailability","riskAppetite","productTightness","industrialCapex","copper","preciousMetals"],
+    "doNotPromoteToMacroScore":["creator option-wall levels","historical analogs such as 1978/1989","seasonality alone","single-stock chart patterns","the 'lowest refinery capacity ever' claim"],
+    "scoringGuardrail":"The four new diagnostics are display/research channels only. They remain absent from stock sensitivity fingerprints, so they contribute zero to macro-adjusted conviction until researched stock-level sensitivities are explicitly added."
+  }
+}
