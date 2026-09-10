@@ -1,0 +1,131 @@
+{
+  "asOf":"2026-09-10",
+  "capturedAt":"2026-09-10T03:19:00Z",
+  "type":"Transcript-led Power Stack discovery sweep with independent verification",
+  "sourcePolicy":"StockedUp, FXEvolution and TradeBrigade are zero-weight hypothesis generators. No creator claim is promoted unless independently supported by primary/official data or high-quality current reporting. Technical levels and historical analogues remain tactical context only.",
+  "creatorInputs":[
+    {"name":"StockedUp","input":"User-provided transcript","use":"Hypothesis generation only"},
+    {"name":"FXEvolution","input":"User-provided transcript","use":"Hypothesis generation only"},
+    {"name":"TradeBrigade","input":"User-provided transcript","use":"Hypothesis generation only"}
+  ],
+  "executiveRead":"The strongest transcript-derived insight is not generic risk-off. It is a four-way collision: refined-product and shipping inflation, a long-end bond market that is not responding to Treasury liquidity support, deteriorating equity breadth/rate-sensitive small caps, and an AI buildout that remains physically strong while becoming increasingly debt-intensive. The result is extreme dispersion between funded operating scarcity and financing-dependent duration. Strong earnings revisions and resilient mega-cap/semiconductor pockets prevent this from becoming a clean crash thesis.",
+  "verifiedThemeDeltas":[
+    {
+      "themeId":"hormuz-energy-products-shipping",
+      "decision":"STRENGTHEN",
+      "creatorIdea":"Diesel/crack spreads and limited refining capacity make the oil shock more persistent than crude alone.",
+      "verifiedRead":"Direction correct, wording corrected. EIA shows U.S. operable refinery capacity around 18.0m b/d, near the low end of the post-1990 range rather than an all-time historical low. The more important constraint is extremely high utilization: 98.0% in the week ending Aug 28, alongside elevated crack spreads. Reuters reports U.S. diesel at a record $5.94/gal as Brent holds above $100 amid renewed tanker attacks.",
+      "transmission":"Crude shock -> distillate/refining bottleneck -> freight/farm/food costs -> inflation expectations -> long yields/Fed constraint.",
+      "sources":[
+        {"publisher":"EIA","date":"2026-09-04","title":"Elevated crack spreads and crude oil prices contribute to higher prices at the pump","url":"https://www.eia.gov/todayinenergy/detail.php?id=68104"},
+        {"publisher":"EIA","date":"2026-09-02","title":"U.S. refinery utilization and capacity","url":"https://www.eia.gov/dnav/pet/pet_pnp_wiup_dcu_nus_w.htm"},
+        {"publisher":"Reuters","date":"2026-09-10","title":"Brent holds above $100 as tanker attacks deepen supply fear","url":"https://www.reuters.com/business/energy/brent-holds-above-100-tanker-attacks-deepen-supply-fear-2026-09-10/"}
+      ],
+      "nextChecks":["Sep 10 EIA weekly products/utilization","ULSD and jet cracks","distillate inventories","Hormuz vessel counts and war-risk insurance","Sep 10 PPI / Sep 11 CPI pass-through"]
+    },
+    {
+      "themeId":"global-duration-absorption",
+      "decision":"STRENGTHEN SHARPLY",
+      "creatorIdea":"Treasury buybacks failed to push yields down; the bond market is rejecting policy support while oil inflation rises.",
+      "verifiedRead":"Treasury had already announced at least a doubling of long-end liquidity-support buybacks from $2bn to $4bn per operation. On Sep 9 it scheduled up to $6bn of 10-20Y purchases for Sep 10. Reuters reports the 10Y still rose as high as 4.8528%, its highest since Nov 2023. This is best treated as a clearing-rate/news-failure signal, not proof that buybacks are ineffective in all conditions.",
+      "transmission":"Oil/inflation + sovereign supply + corporate AI borrowing -> higher term/real yields -> tighter equity and project hurdle rates -> small-cap/breadth weakness.",
+      "sources":[
+        {"publisher":"U.S. Treasury","date":"2026-08-19","title":"Treasury Announces Increased Sizes of Nominal Long-End Liquidity Support Buybacks Beginning September 9","url":"https://home.treasury.gov/news/press-releases/sb0607"},
+        {"publisher":"Reuters","date":"2026-09-09","title":"US Treasury to buy up to $6 billion in Sept 10 buyback operation","url":"https://www.reuters.com/world/us-treasury-buy-up-6-billion-sept-10-buyback-operation-2026-09-09/"},
+        {"publisher":"FRED / ICE BofA","date":"2026-09-04","title":"CCC & Lower US High Yield OAS","url":"https://fred.stlouisfed.org/graph/?graph_id=879632"}
+      ],
+      "nextChecks":["10Y/30Y reaction after Sep 10 operation","real10Y","Treasury auction tails/bid-to-cover","CCC OAS and AI IG new-issue concessions","PPI/CPI"]
+    },
+    {
+      "themeId":"equity-breadth-rate-sensitivity-overlay",
+      "decision":"ADD AS REGIME OVERLAY, NOT STANDALONE FUNDAMENTAL THEME",
+      "creatorIdea":"Index-level calm is hiding weak breadth; equal-weight and small caps are deteriorating.",
+      "verifiedRead":"Supported. On Sep 9, 383 S&P 500 constituents were declining and NYSE decliners outnumbered advancers by nearly 3:1. Only about 38% of S&P 500 stocks were above their 50-day moving averages, the weakest since April. Russell 2000 fell 1.3%, more than the large-cap indices. However, Russell 2000 remains strongly positive YTD and earnings revisions are still constructive, so breadth is a fragility signal rather than a crash trigger.",
+      "sources":[
+        {"publisher":"MarketWatch","date":"2026-09-09","title":"Stocks pare some losses, but breadth stays firmly negative","url":"https://www.marketwatch.com/livecoverage/stock-market-today-s-p-500-dow-nasdaq-brent-crude-100-barrel-apple-launch-event/card/stocks-pare-some-losses-but-breadth-stays-firmly-negative-1Qg7oh6LTRBaczmKZLst"},
+        {"publisher":"AP","date":"2026-09-09","title":"How major US stock indexes fared Wednesday 9/9/2026","url":"https://apnews.com/article/31c966aef214740b8fec71e399a051b8"}
+      ],
+      "nextChecks":["RSP/SPY","% S&P above 50D","NYSE/Nasdaq advance-decline","Russell 2000 vs 10Y","sector breadth after PPI/CPI"]
+    },
+    {
+      "themeId":"power-grid-cooling-record-demand",
+      "decision":"STRENGTHEN",
+      "creatorIdea":"Copper and power demand show that the AI physical buildout is still real despite equity/credit stress.",
+      "verifiedRead":"Strongly supported. EIA now forecasts record U.S. electricity generation in both 2026 and 2027, with sales at 4,135 BkWh in 2026 and 4,211 BkWh in 2027, explicitly driven by data centres and manufacturing. Google separately announced about $15bn of AI infrastructure investment in Finland plus a 22-year agreement to buy up to half the output of a nuclear plant.",
+      "sources":[
+        {"publisher":"EIA","date":"2026-09-09","title":"EIA expects record electricity generation in 2026 and 2027","url":"https://www.eia.gov/pressroom/releases/press592.php"},
+        {"publisher":"Reuters","date":"2026-09-09","title":"Google to invest $15 billion in AI infrastructure and buy nuclear power in Finland","url":"https://www.reuters.com/business/media-telecom/google-invest-15-billion-ai-infrastructure-finland-2026-09-09/"}
+      ],
+      "nextChecks":["Energised MW versus requested MW","signed PPAs","utility interconnection awards","transformer/switchgear/cooling backlog","supplier FCF conversion"]
+    },
+    {
+      "themeId":"ai-financing-cash-conversion",
+      "decision":"STRENGTHEN SHARPLY",
+      "creatorIdea":"AI is competing with sovereigns for capital and the debt side of the AI boom is becoming a macro variable.",
+      "verifiedRead":"This is now first-class evidence. Amazon raised £4.25bn in its first sterling bond sale on Sep 9; Reuters says hyperscalers have issued more than $200bn of debt in 2026, more than double 2025. The ECB says U.S. big tech is already close to 10% of gross new euro corporate issuance and warns the wave can crowd out other issuers and raise financing costs. Separate Reuters analysis estimates AI-related debt issuance near $500bn by early August and shows lenders tightening terms around permits, leases and guarantees.",
+      "sources":[
+        {"publisher":"ECB","date":"2026-08-31","title":"Big tech, big debt: when US tech giants tap the euro area bond market","url":"https://www.ecb.europa.eu/press/blog/date/2026/html/ecb.blog20260831~dac6a37e73.ga.html"},
+        {"publisher":"Reuters","date":"2026-09-09","title":"Amazon raises almost $6 billion in first sterling bond sale","url":"https://www.reuters.com/business/finance/amazon-starts-selling-first-sterling-bonds-lead-managers-say-2026-09-09/"},
+        {"publisher":"Reuters Breakingviews","date":"2026-09-08","title":"AI construction crunch widens credit fault lines","url":"https://www.reuters.com/commentary/breakingviews/ai-construction-crunch-widens-credit-fault-lines-2026-09-08/"}
+      ],
+      "nextChecks":["New-issue concessions and book coverage","AI IG/CDS spreads","project debt covenants","guarantees/prepayments","capex-to-OCF and FCF conversion","lease/permit readiness"]
+    },
+    {
+      "themeId":"copper-grid-inventory-distortion",
+      "decision":"STRENGTHEN BUT KEEP ENTRY-SENSITIVE",
+      "creatorIdea":"Copper breakout is confirming AI/grid scarcity, not necessarily a broad China reflation.",
+      "verifiedRead":"Supported. Copper recently reached a record around $14,700/t while mining supply/M&A scarcity remains visible. At the same time, Sinopec research expects China oil demand to fall 8.9% in 2026 and diesel demand 11.4%, reinforcing the existing Power Stack warning not to treat record copper as proof of broad Chinese private-demand reflation.",
+      "sources":[
+        {"publisher":"Reuters Breakingviews","date":"2026-09-09","title":"Anglo-Teck wait shows mining M&A's rising toll","url":"https://www.reuters.com/commentary/breakingviews/anglo-teck-wait-shows-mining-mas-rising-toll-2026-09-09/"},
+        {"publisher":"Reuters","date":"2026-09-09","title":"China oil demand to fall 8.9% in 2026, Sinopec research says","url":"https://www.reuters.com/business/energy/china-oil-demand-fall-89-2026-sinopec-research-says-2026-09-09/"}
+      ],
+      "nextChecks":["LME/SHFE inventories","China physical premiums","mine disruptions","grid/electrical orders","China private credit/property"]
+    },
+    {
+      "themeId":"energy-security-rerouting",
+      "decision":"PROMOTE WITHIN TOP TIER",
+      "creatorIdea":"The energy shock is broader than crude and should include LNG/global gas competition.",
+      "verifiedRead":"Strongly supported and now more urgent. U.S. LNG exports averaged 17.4 Bcf/d in H1 2026, up 23% y/y. Reuters reports European gas above €75/MWh with storage around 66%, Germany near 53-54% and the Netherlands near 48%, while Middle East LNG exports have fallen sharply because of Hormuz disruption. This raises the strategic value of U.S. LNG, storage, terminals and alternative corridors while tightening Europe/Asia competition for Atlantic cargoes.",
+      "sources":[
+        {"publisher":"EIA","date":"2026-09-01","title":"U.S. LNG exports rose 23% in the first half of 2026 because of higher capacity","url":"https://www.eia.gov/todayinenergy/detail.php?id=68064"},
+        {"publisher":"Reuters","date":"2026-09-08","title":"Europe's winter gas drama could leave deep scars","url":"https://www.reuters.com/commentary/reuters-open-interest/europes-winter-gas-drama-could-leave-deep-scars-2026-09-08/"}
+      ],
+      "nextChecks":["TTF/JKM spread","EU storage refill","Qatari/Middle East LNG loadings","U.S. LNG feedgas/utilization","Atlantic tonne-miles and contract activity"]
+    },
+    {
+      "themeId":"gold-real-yield-hedge",
+      "decision":"STRENGTHEN STRUCTURALLY, CORRECT CREATOR DATE LABEL",
+      "creatorIdea":"China and Poland central-bank buying plus high-yield/fiscal stress reinforce gold reserve diversification.",
+      "verifiedRead":"The direction is right but the transcript conflated months. World Gold Council data show China bought 20t and Poland 8t in July, not August; China reached a 21-month buying streak and Poland 640t total. Separately, global gold ETFs added $18bn and 121t in August to record holdings of 4,189t. Gold holding up despite elevated real/nominal yields therefore has both official-sector and market-flow support, while tactical timing remains sensitive to real yields and USD.",
+      "sources":[
+        {"publisher":"World Gold Council","date":"2026-09-03","title":"Central Bank Gold Statistics: Central banks make positive headlines on gold","url":"https://www.gold.org/goldhub/gold-focus/2026/09/central-bank-gold-statistics-central-banks-make-positive-headlines-gold"},
+        {"publisher":"World Gold Council","date":"2026-09-09","title":"Gold ETF Flows: August 2026","url":"https://www.gold.org/goldhub/research/gold-etfs-holdings-and-flows/2026/09"}
+      ],
+      "nextChecks":["real10Y","DXY","PPI/CPI","PBoC/central-bank reserve updates","ETF flows"]
+    }
+  ],
+  "counterEvidence":[
+    "FactSet reports Q3 S&P 500 bottom-up EPS estimates rose 1.2% from Jun 30 to Aug 31, versus a typical decline in the first two months of a quarter.",
+    "Barclays raised its 2026 S&P 500 year-end target to 7,950 and EPS forecast to $365 after a strong Q2 earnings season.",
+    "Russell 2000 is weakening tactically but still strongly positive YTD; semiconductors and selected mega-cap AI names remain resilient.",
+    "Therefore: breadth deterioration increases fragility and rate sensitivity, but does not by itself validate a broad recession/crash call."
+  ],
+  "lowWeightOrRejectedIdeas":[
+    "1978/1989 historical market analogues: pattern-matching only; no canonical weight.",
+    "Exact SPY/QQQ/IWM option walls and intraday VWAP levels: useful for tactical execution, not Power Stack theme scoring.",
+    "Creator claims that refinery capacity is the lowest in all history: corrected to low modern operable capacity plus very high utilization/little slack.",
+    "Creator claim that China added 20t gold in August: latest independently verified 20t purchase is July; do not propagate the month error.",
+    "Any claim that Treasury buybacks mechanically failed as policy: treat the Sep 9 yield response as a market-clearing signal, not a universal causal conclusion."
+  ],
+  "recommendedThemeOrder":[
+    "hormuz-energy-products-shipping",
+    "global-duration-absorption",
+    "power-grid-cooling-record-demand",
+    "ai-financing-cash-conversion",
+    "energy-security-rerouting",
+    "copper-grid-inventory-distortion",
+    "gold-real-yield-hedge",
+    "ag-weather-trade-rerouting",
+    "fertilizer-feedstock-divergence"
+  ]
+}
