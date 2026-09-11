@@ -1,88 +1,455 @@
 {
-  "version":16,
-  "generatedAt":"2026-09-10T03:35:00Z",
-  "packetStaleAfterHours":36,
-  "source":"Official Federal Reserve/EIA/ISM + FactSet/ECB/World Gold Council + current Reuters/MarketWatch verification",
-  "sourceUrl":"https://dailyinvestmentbrief.com/macroeconomic-dashboard/",
-  "supplementalSourceUrl":"https://en.macromicro.me/",
-  "sourceStatus":"Daily Investment Brief still exposes client-side placeholders ('Analyzing...' / '--') to automated retrieval and no values are inferred. MacroMicro was unavailable in the latest verification cycle, so prior verified spread readings remain dated references only. Fresh dashboard changes are controlled by EIA, Federal Reserve/Treasury, FactSet, ECB, World Gold Council and current Reuters/MarketWatch reporting.",
-  "regime":"The market is no longer well described by a simple risk-on/risk-off label. Physical scarcity and funded AI/power capex remain strong, but long-end yields, weak breadth and a heavier AI funding burden are increasing fragility. The main counterweight is still-positive earnings revision breadth. The investable distinction is funded cash-generative scarcity versus financing-dependent duration.",
-  "keyReadings":[
-    {"label":"Brent","value":"above $100/bbl Sep 9","observedAt":"2026-09-09","source":"Reuters","confidence":"high"},
-    {"label":"US 10Y after Treasury buyback announcement","value":"peaked about 4.8528%","observedAt":"2026-09-09","source":"Reuters","confidence":"high","note":"Treasury announced up to $6bn of 10-20Y buybacks for Sep 10. Treat the yield response as a clearing-rate signal, not proof that buybacks cannot work."},
-    {"label":"US 30Y","value":"around 5.25% prior official reading","observedAt":"2026-09-08","source":"Federal Reserve H.15","confidence":"high"},
-    {"label":"US 10Y real TIPS yield","value":"2.43%","observedAt":"2026-09-08","source":"Federal Reserve H.15","confidence":"high"},
-    {"label":"US refinery utilization","value":"98.0% week ending Aug 28","observedAt":"2026-08-28","source":"EIA Weekly Inputs & Utilization","confidence":"high"},
-    {"label":"US operable refining capacity","value":"18.027m b/d","observedAt":"2026-08-28","source":"EIA Weekly Inputs & Utilization","confidence":"high","note":"The dashboard uses limited spare refining slack, not the unsupported 'lowest capacity ever' claim."},
-    {"label":"EIA product bottleneck","value":"elevated crack spreads; distillate outlook below 100m bbl through much of 2027","observedAt":"2026-09-09","source":"EIA","confidence":"high"},
-    {"label":"S&P breadth Sep 9","value":"383 S&P 500 decliners; NYSE decliners nearly 3:1; Nasdaq decliners >2.5:1","observedAt":"2026-09-09","source":"MarketWatch","confidence":"high"},
-    {"label":"Russell 2000 rate sensitivity","value":"down about 1.1%-1.3% Sep 9 and below its 50-day average","observedAt":"2026-09-09","source":"MarketWatch/AP","confidence":"high"},
-    {"label":"Q3 S&P bottom-up EPS revisions","value":"+1.2% Jun 30 to Aug 31 to $89.69","observedAt":"2026-08-31","source":"FactSet","confidence":"high","note":"Typical first-two-month estimate change is negative, making this an important counterweight to weak breadth."},
-    {"label":"2026 hyperscaler debt issuance","value":"more than $200bn YTD","observedAt":"2026-09-09","source":"Reuters","confidence":"high"},
-    {"label":"Amazon sterling issuance","value":"£4.25bn; demand £10.65bn","observedAt":"2026-09-09","source":"Reuters","confidence":"high"},
-    {"label":"Hyperscaler euro credit","value":"spreads rising as capex/issuance expectations increase","observedAt":"2026-08-20","source":"ECB","confidence":"high","note":"ECB says direct crowding-out has been limited so far but identifies clear future spillover channels."},
-    {"label":"European gas","value":"above €75/MWh with storage around 66%","observedAt":"2026-09-08","source":"Reuters","confidence":"high"},
-    {"label":"Germany / Netherlands gas storage","value":"about 54% / 48%","observedAt":"2026-09-08","source":"Reuters","confidence":"high"},
-    {"label":"Middle East LNG exports","value":"about 85% below normal amid Hormuz disruption","observedAt":"2026-09-08","source":"Reuters","confidence":"high"},
-    {"label":"US electricity sales","value":"4,135 BkWh 2026; 4,211 BkWh 2027","observedAt":"2026-09-09","source":"EIA September STEO","confidence":"high"},
-    {"label":"Copper","value":"record price regime driven by mine weakness, tariffs and grid/AI demand","observedAt":"2026-09-09","source":"current market reporting","confidence":"high"},
-    {"label":"Gold ETF flows August","value":"+$18bn / +121t; holdings record 4,189t","observedAt":"2026-08-31","source":"World Gold Council","confidence":"high"},
-    {"label":"US IG corporate OAS","value":"0.81pp prior verified Sep 3 reading","observedAt":"2026-09-03","source":"MacroMicro / ICE BofA prior verified snapshot","confidence":"medium"},
-    {"label":"US HY OAS","value":"2.68pp prior verified Sep 7 reading","observedAt":"2026-09-07","source":"MacroMicro / ICE BofA prior verified snapshot","confidence":"medium"},
-    {"label":"US CCC-and-lower OAS","value":"10.55pp prior verified Sep 7 reading","observedAt":"2026-09-07","source":"MacroMicro / ICE BofA prior verified snapshot","confidence":"medium-high"},
-    {"label":"ISM Manufacturing","value":"54.6; Prices 71.1","observedAt":"2026-08","source":"ISM","confidence":"high"},
-    {"label":"ISM Services","value":"55.4; Prices 72.6; Employment 47.8","observedAt":"2026-08","source":"ISM","confidence":"high"}
+  "version": 17,
+  "generatedAt": "2026-09-11T01:00:00Z",
+  "packetStaleAfterHours": 36,
+  "source": "Daily Investment Brief Macroeconomic Dashboard + MacroMicro fallback + official/authoritative supplementation",
+  "sourceUrl": "https://dailyinvestmentbrief.com/macroeconomic-dashboard/",
+  "supplementalSourceUrl": "https://en.macromicro.me/",
+  "sourceStatus": "Daily Investment Brief remains the primary dashboard layer but automated retrieval exposed no trustworthy numeric dashboard payload in this run. MacroMicro direct retrieval returned an internal/access error. No placeholder or missing reading was inferred. BLS, ECB, FRED/ICE BofA, EIA/Reuters and current market reporting fill the material gaps. The retired legacy macro dashboard was not used.",
+  "regime": "Energy-led global re-tightening: Brent and WTI above $100, August US PPI +0.4% m/m and +5.4% y/y, ECB +25 bp to 2.50%, US 10Y near 4.94% and CCC yields above 15%; physical AI/power demand remains strong, but valuation, funding and input-cost discipline dominate.",
+  "keyReadings": [
+    {
+      "label": "US August PPI final demand",
+      "value": "+0.4% m/m; +5.4% y/y",
+      "observedAt": "2026-09-10",
+      "source": "U.S. Bureau of Labor Statistics",
+      "confidence": "high"
+    },
+    {
+      "label": "US August PPI goods / services",
+      "value": "+1.1% goods; +0.1% services",
+      "observedAt": "2026-09-10",
+      "source": "U.S. Bureau of Labor Statistics",
+      "confidence": "high"
+    },
+    {
+      "label": "US 10Y Treasury yield",
+      "value": "~4.943% close / near 5% intraday",
+      "observedAt": "2026-09-10",
+      "source": "Dow Jones Market Data / MarketWatch; Reuters",
+      "confidence": "high"
+    },
+    {
+      "label": "US CCC & lower HY yield to worst",
+      "value": "15.17%",
+      "observedAt": "2026-09-09",
+      "source": "ICE BofA via FRED",
+      "confidence": "high"
+    },
+    {
+      "label": "Brent",
+      "value": "$107.63/bbl settlement",
+      "observedAt": "2026-09-10",
+      "source": "Reuters",
+      "confidence": "high"
+    },
+    {
+      "label": "WTI",
+      "value": "$102.48/bbl settlement",
+      "observedAt": "2026-09-10",
+      "source": "Reuters",
+      "confidence": "high"
+    },
+    {
+      "label": "Hormuz vessel transits",
+      "value": "7 on Sep 9; no LNG tanker transit",
+      "observedAt": "2026-09-10 reporting",
+      "source": "Reuters ship-tracking report",
+      "confidence": "high"
+    },
+    {
+      "label": "ECB deposit rate",
+      "value": "2.50% after +25 bp hike",
+      "observedAt": "2026-09-10",
+      "source": "European Central Bank",
+      "confidence": "high"
+    },
+    {
+      "label": "ECB 2026 inflation forecast",
+      "value": "3.0% headline; 2.5% ex-energy/food",
+      "observedAt": "2026-09-10",
+      "source": "European Central Bank",
+      "confidence": "high"
+    },
+    {
+      "label": "S&P 500",
+      "value": "7,591.70; -0.58%",
+      "observedAt": "2026-09-10",
+      "source": "Reuters / MarketWatch",
+      "confidence": "high"
+    },
+    {
+      "label": "Nasdaq Composite",
+      "value": "26,081.72; -0.65%",
+      "observedAt": "2026-09-10",
+      "source": "Reuters / MarketWatch",
+      "confidence": "high"
+    },
+    {
+      "label": "Russell 2000",
+      "value": "2,890.95; -1.0%",
+      "observedAt": "2026-09-10",
+      "source": "AP",
+      "confidence": "medium-high"
+    },
+    {
+      "label": "Spot gold",
+      "value": "~$4,318-$4,356/oz during Sep 10 selloff",
+      "observedAt": "2026-09-10",
+      "source": "Reuters",
+      "confidence": "high"
+    },
+    {
+      "label": "Fed next-meeting hike probability",
+      "value": "~70-71%",
+      "observedAt": "2026-09-10",
+      "source": "CME FedWatch cited by Reuters/MarketWatch",
+      "confidence": "medium-high"
+    }
   ],
-  "channels":[
-    {"key":"growthDemand","label":"Growth / Demand","score":0.3,"confidence":0.97,"regime":"Nominal demand resilient, breadth uneven","observedAt":"2026-09-10T03:30:00Z","staleAfterHours":72,"interpretation":"Services, earnings and power demand remain resilient, but energy inflation and high borrowing costs are weakening rate-sensitive and lower-quality demand."},
-    {"key":"policyRelief","label":"Policy Relief","score":-1.9,"confidence":0.99,"regime":"Energy inflation leaves little room for relief","observedAt":"2026-09-10T03:30:00Z","staleAfterHours":48,"interpretation":"Oil/products and global gas pressure keep the near-term policy hurdle high ahead of PPI, CPI and the Fed."},
-    {"key":"financialConditions","label":"Financial Conditions","score":-2.0,"confidence":0.99,"regime":"Long-end clearing-rate stress","observedAt":"2026-09-10T03:30:00Z","staleAfterHours":48,"interpretation":"The 10Y rose to about 4.85% after Treasury announced larger long-end buybacks. Real yields remain restrictive and the long end is not behaving like a clean growth slowdown."},
-    {"key":"creditAvailability","label":"Broad Credit","score":-0.4,"confidence":0.82,"regime":"Open to quality, more expensive at the margin","observedAt":"2026-09-10T03:30:00Z","staleAfterHours":96,"interpretation":"High-quality markets remain open, but >$200bn of hyperscaler issuance and rising hyperscaler spreads increase the marginal cost of absorbing long-duration corporate supply."},
-    {"key":"tailCreditStress","label":"Weak-End Credit Stress","score":1.9,"confidence":0.88,"regime":"Weak borrowers remain the fault line","observedAt":"2026-09-07T00:00:00Z","staleAfterHours":120,"interpretation":"The prior verified CCC OAS remains elevated. The next escalation test is whether stress broadens into banks, consumer credit or otherwise healthy IG."},
-    {"key":"consumerStrength","label":"Consumer","score":-1.0,"confidence":0.96,"regime":"Fuel/food/financing squeeze","observedAt":"2026-09-10T03:30:00Z","staleAfterHours":72,"interpretation":"Record-near diesel, expensive gas in Europe and high borrowing costs reduce discretionary flexibility without yet proving a broad collapse."},
-    {"key":"housingStrength","label":"Housing","score":-1.8,"confidence":0.96,"regime":"Affordability constrained by long yields","observedAt":"2026-09-10T03:30:00Z","staleAfterHours":96,"interpretation":"High 10Y/30Y yields keep mortgage and development economics restrictive."},
-    {"key":"industrialCapex","label":"Industrial / AI / Power Capex","score":2.0,"confidence":0.99,"regime":"Physical demand record-strong, funding quality matters","observedAt":"2026-09-10T03:30:00Z","staleAfterHours":72,"interpretation":"EIA confirms record electricity demand from data centres and manufacturing. This channel stays strongly positive even while AI funding quality deteriorates."},
-    {"key":"inputCostPressure","label":"Input Costs","score":2.0,"confidence":0.99,"regime":"Energy, copper and logistics inflation overlap","observedAt":"2026-09-10T03:30:00Z","staleAfterHours":48,"interpretation":"Refined products, LNG, copper, freight and electrical inputs are all pressuring costs. Pricing power and pass-through remain decisive."},
-    {"key":"labourStrength","label":"Labour","score":0.25,"confidence":0.76,"regime":"Mixed rather than uniformly hot","observedAt":"2026-09-10T03:30:00Z","staleAfterHours":96,"interpretation":"Recent payroll resilience coexists with softer survey hiring."},
-    {"key":"riskAppetite","label":"Risk Appetite","score":-1.35,"confidence":0.98,"regime":"Headline resilience, weak participation","observedAt":"2026-09-10T03:30:00Z","staleAfterHours":48,"interpretation":"S&P/Nasdaq remain close to highs, but breadth, equal-weight and small caps are deteriorating under rising yields. Treat this as fragility, not a confirmed broad crash regime."},
-    {"key":"crudeTightness","label":"Crude","score":2.0,"confidence":0.99,"regime":"Acute Gulf supply/shipping shock","observedAt":"2026-09-10T03:30:00Z","staleAfterHours":36,"interpretation":"Brent above $100 confirms the geopolitical premium; alternative routes and eventual Gulf normalization remain the medium-term counterweight."},
-    {"key":"productTightness","label":"Refined Products","score":2.0,"confidence":0.99,"regime":"Highest-confidence inflation bottleneck","observedAt":"2026-09-10T03:30:00Z","staleAfterHours":36,"interpretation":"US refinery utilization reached 98% with elevated cracks and tight distillate inventories. The key signal is limited spare refining slack, not an all-history capacity low."},
-    {"key":"gasTightness","label":"US Gas","score":0.65,"confidence":0.93,"regime":"US balance moderate despite global LNG shock","observedAt":"2026-09-10T03:30:00Z","staleAfterHours":72,"interpretation":"Keep Henry Hub separate from global LNG. US gas is not as tight as Europe/Asia, so the existing stock-sensitivity channel should not inherit global LNG stress mechanically."},
-    {"key":"preciousMetals","label":"Gold / Monetary Hedge","score":1.2,"confidence":0.98,"regime":"Strategic flows strengthening despite high real yields","observedAt":"2026-09-10T03:30:00Z","staleAfterHours":72,"interpretation":"August gold ETF inflows reached $18bn/121t and central-bank buying persists. Real yields remain the tactical timing gate."},
-    {"key":"copper","label":"Copper / Industrial Metals","score":1.8,"confidence":0.98,"regime":"Scarcity/grid signal, not generic growth signal","observedAt":"2026-09-10T03:30:00Z","staleAfterHours":72,"interpretation":"Record copper validates grid/AI demand and mine scarcity, but soft China private-credit transmission means it should not be read as broad China reflation."},
-    {"key":"batteryStorage","label":"Battery Storage / Lithium","score":0.55,"confidence":0.94,"regime":"Strong deployment, manufacturing overcapacity","observedAt":"2026-09-10T03:30:00Z","staleAfterHours":96,"interpretation":"Peak-load and grid needs support deployment while excess manufacturing keeps commodity cell/lithium economics selective."},
-    {"key":"agricultureInputs","label":"Agriculture / Fertilizer Inputs","score":1.4,"confidence":0.95,"regime":"Energy + weather + trade-route inflation","observedAt":"2026-09-10T03:30:00Z","staleAfterHours":72,"interpretation":"Feedstock, freight and weather pressure support nitrogen/seed pricing but squeeze farm affordability."},
-    {"key":"equityBreadth","label":"Equity Breadth","score":-1.7,"confidence":0.98,"regime":"Participation deteriorating","observedAt":"2026-09-09T20:00:00Z","staleAfterHours":48,"interpretation":"383 S&P 500 names declined Sep 9; NYSE and Nasdaq breadth were strongly negative and the Russell 2000 is below its 50-day average. Diagnostic only: no automatic stock-score effect yet."},
-    {"key":"earningsSupport","label":"Earnings Support","score":1.45,"confidence":0.99,"regime":"Forward revisions remain constructive","observedAt":"2026-09-04T12:00:00Z","staleAfterHours":240,"interpretation":"FactSet shows Q3 bottom-up EPS estimates rose 1.2% through July-August instead of the normal early-quarter decline. This is the main counterweight to weak breadth. Diagnostic only."},
-    {"key":"aiFundingQuality","label":"AI Funding Quality","score":-1.55,"confidence":0.96,"regime":"Demand strong, funding burden rising","observedAt":"2026-09-09T20:00:00Z","staleAfterHours":96,"interpretation":"Hyperscaler debt issuance exceeds $200bn YTD and ECB evidence shows rising hyperscaler spreads. Keep this separate from the positive physical AI capex channel. Diagnostic only."},
-    {"key":"globalLngAvailability","label":"Global LNG Availability","score":-1.9,"confidence":0.98,"regime":"Europe/Asia competing for constrained cargoes","observedAt":"2026-09-08T12:00:00Z","staleAfterHours":96,"interpretation":"European gas is above €75/MWh with storage only around 66% and Middle Eastern LNG exports sharply reduced. This is a global inflation channel distinct from US Henry Hub. Diagnostic only."}
+  "channels": [
+    {
+      "key": "growthDemand",
+      "label": "Growth / Demand",
+      "score": 0.1,
+      "confidence": 0.82,
+      "regime": "Demand resilient but increasingly energy-taxed",
+      "observedAt": "2026-09-11T00:45:00Z",
+      "staleAfterHours": 72,
+      "interpretation": "August PPI and prior ISM show continued activity, but $100+ oil is a growing drag on real demand."
+    },
+    {
+      "key": "policyRelief",
+      "label": "Policy Relief",
+      "score": -1.85,
+      "confidence": 0.97,
+      "regime": "Global re-tightening / little relief",
+      "observedAt": "2026-09-11T00:45:00Z",
+      "staleAfterHours": 48,
+      "interpretation": "ECB hiked 25 bp and US Fed hike odds rose near 70% after PPI and the oil surge."
+    },
+    {
+      "key": "financialConditions",
+      "label": "Financial Conditions",
+      "score": -1.95,
+      "confidence": 0.99,
+      "regime": "Near-5% US 10Y / global bond stress",
+      "observedAt": "2026-09-11T00:45:00Z",
+      "staleAfterHours": 48,
+      "interpretation": "US 10Y closed around 4.94%, European yields rose after the ECB hike, and high real yields continue to compress duration."
+    },
+    {
+      "key": "creditAvailability",
+      "label": "Broad Credit",
+      "score": -0.55,
+      "confidence": 0.84,
+      "regime": "Quality credit open; marginal funding cost rising",
+      "observedAt": "2026-09-11T00:45:00Z",
+      "staleAfterHours": 96,
+      "interpretation": "Risk-free rates and AI/capex issuance raise funding hurdles even for strong issuers."
+    },
+    {
+      "key": "tailCreditStress",
+      "label": "Weak-End Credit Stress",
+      "score": 1.8,
+      "confidence": 0.96,
+      "regime": "CCC stress clearly elevated",
+      "observedAt": "2026-09-11T00:45:00Z",
+      "staleAfterHours": 120,
+      "interpretation": "ICE BofA CCC & lower yield to worst reached 15.17% on Sep 9."
+    },
+    {
+      "key": "consumerStrength",
+      "label": "Consumer",
+      "score": -1.1,
+      "confidence": 0.86,
+      "regime": "Energy tax and financing squeeze",
+      "observedAt": "2026-09-11T00:45:00Z",
+      "staleAfterHours": 72,
+      "interpretation": "$100+ crude, high diesel/gasoline costs and expensive borrowing pressure discretionary demand."
+    },
+    {
+      "key": "housingStrength",
+      "label": "Housing",
+      "score": -1.6,
+      "confidence": 0.93,
+      "regime": "Mortgage affordability under renewed pressure",
+      "observedAt": "2026-09-11T00:45:00Z",
+      "staleAfterHours": 96,
+      "interpretation": "Near-5% long Treasury yields keep housing financing restrictive."
+    },
+    {
+      "key": "industrialCapex",
+      "label": "Industrial / AI / Power Capex",
+      "score": 1.45,
+      "confidence": 0.95,
+      "regime": "Physical power/AI capex still strong but costlier",
+      "observedAt": "2026-09-11T00:45:00Z",
+      "staleAfterHours": 72,
+      "interpretation": "Fresh Nvidia Australia 2GW plan and existing EIA/ISM evidence confirm demand, while financing and permitting quality matter more."
+    },
+    {
+      "key": "inputCostPressure",
+      "label": "Input Costs",
+      "score": 2,
+      "confidence": 0.99,
+      "regime": "Energy/material inflation intensifying",
+      "observedAt": "2026-09-11T00:45:00Z",
+      "staleAfterHours": 48,
+      "interpretation": "PPI goods +1.1% m/m, oil above $100, and electrical/copper constraints keep input pressure extreme."
+    },
+    {
+      "key": "labourStrength",
+      "label": "Labour",
+      "score": 0.1,
+      "confidence": 0.66,
+      "regime": "Labour resilient but mixed beneath headline growth",
+      "observedAt": "2026-09-11T00:45:00Z",
+      "staleAfterHours": 96,
+      "interpretation": "Recent payrolls were firm, while ISM services employment remains contractionary."
+    },
+    {
+      "key": "riskAppetite",
+      "label": "Risk Appetite",
+      "score": -1.05,
+      "confidence": 0.94,
+      "regime": "Four-session selloff / small-cap underperformance",
+      "observedAt": "2026-09-11T00:45:00Z",
+      "staleAfterHours": 48,
+      "interpretation": "S&P, Nasdaq and Russell 2000 all fell Sep 10 as yields and oil rose; breadth remains fragile."
+    },
+    {
+      "key": "crudeTightness",
+      "label": "Crude",
+      "score": 2,
+      "confidence": 0.99,
+      "regime": "Acute shipping/supply-security premium",
+      "observedAt": "2026-09-11T00:45:00Z",
+      "staleAfterHours": 36,
+      "interpretation": "Brent $107.63 and WTI $102.48 with Hormuz transits at seven and repeated tanker attacks."
+    },
+    {
+      "key": "productTightness",
+      "label": "Refined Products",
+      "score": 2,
+      "confidence": 0.99,
+      "regime": "Refined-product/logistics scarcity",
+      "observedAt": "2026-09-11T00:45:00Z",
+      "staleAfterHours": 36,
+      "interpretation": "Shipping insurance and route disruption amplify already-tight product markets and freight costs."
+    },
+    {
+      "key": "gasTightness",
+      "label": "US Gas",
+      "score": 1.45,
+      "confidence": 0.91,
+      "regime": "Global LNG security premium / rerouting",
+      "observedAt": "2026-09-11T00:45:00Z",
+      "staleAfterHours": 72,
+      "interpretation": "No LNG tanker crossed Hormuz in the latest ship-tracking sample; US LNG and bypass routes gain strategic value."
+    },
+    {
+      "key": "preciousMetals",
+      "label": "Gold / Monetary Hedge",
+      "score": -0.2,
+      "confidence": 0.88,
+      "regime": "Structural hedge intact; tactical real-yield pressure",
+      "observedAt": "2026-09-11T00:45:00Z",
+      "staleAfterHours": 72,
+      "interpretation": "Gold fell sharply as Fed hike odds and Treasury yields rose despite geopolitical stress."
+    },
+    {
+      "key": "copper",
+      "label": "Copper / Industrial Metals",
+      "score": 1.8,
+      "confidence": 0.98,
+      "regime": "Scarcity/grid signal, not generic growth signal",
+      "observedAt": "2026-09-10T03:30:00Z",
+      "staleAfterHours": 72,
+      "interpretation": "Record copper validates grid/AI demand and mine scarcity, but soft China private-credit transmission means it should not be read as broad China reflation."
+    },
+    {
+      "key": "batteryStorage",
+      "label": "Battery Storage / Lithium",
+      "score": 0.55,
+      "confidence": 0.94,
+      "regime": "Strong deployment, manufacturing overcapacity",
+      "observedAt": "2026-09-10T03:30:00Z",
+      "staleAfterHours": 96,
+      "interpretation": "Peak-load and grid needs support deployment while excess manufacturing keeps commodity cell/lithium economics selective."
+    },
+    {
+      "key": "agricultureInputs",
+      "label": "Agriculture / Fertilizer Inputs",
+      "score": 1.4,
+      "confidence": 0.95,
+      "regime": "Energy + weather + trade-route inflation",
+      "observedAt": "2026-09-10T03:30:00Z",
+      "staleAfterHours": 72,
+      "interpretation": "Feedstock, freight and weather pressure support nitrogen/seed pricing but squeeze farm affordability."
+    },
+    {
+      "key": "equityBreadth",
+      "label": "Equity Breadth",
+      "score": -1.7,
+      "confidence": 0.98,
+      "regime": "Participation deteriorating",
+      "observedAt": "2026-09-09T20:00:00Z",
+      "staleAfterHours": 48,
+      "interpretation": "383 S&P 500 names declined Sep 9; NYSE and Nasdaq breadth were strongly negative and the Russell 2000 is below its 50-day average. Diagnostic only: no automatic stock-score effect yet."
+    },
+    {
+      "key": "earningsSupport",
+      "label": "Earnings Support",
+      "score": 1.45,
+      "confidence": 0.99,
+      "regime": "Forward revisions remain constructive",
+      "observedAt": "2026-09-04T12:00:00Z",
+      "staleAfterHours": 240,
+      "interpretation": "FactSet shows Q3 bottom-up EPS estimates rose 1.2% through July-August instead of the normal early-quarter decline. This is the main counterweight to weak breadth. Diagnostic only."
+    },
+    {
+      "key": "aiFundingQuality",
+      "label": "AI Funding Quality",
+      "score": -1.55,
+      "confidence": 0.96,
+      "regime": "Demand strong, funding burden rising",
+      "observedAt": "2026-09-09T20:00:00Z",
+      "staleAfterHours": 96,
+      "interpretation": "Hyperscaler debt issuance exceeds $200bn YTD and ECB evidence shows rising hyperscaler spreads. Keep this separate from the positive physical AI capex channel. Diagnostic only."
+    },
+    {
+      "key": "globalLngAvailability",
+      "label": "Global LNG Availability",
+      "score": -1.9,
+      "confidence": 0.98,
+      "regime": "Europe/Asia competing for constrained cargoes",
+      "observedAt": "2026-09-08T12:00:00Z",
+      "staleAfterHours": 96,
+      "interpretation": "European gas is above €75/MWh with storage only around 66% and Middle Eastern LNG exports sharply reduced. This is a global inflation channel distinct from US Henry Hub. Diagnostic only."
+    }
   ],
-  "crossMarketWatch":{
-    "duration":["US2Y/10Y/30Y","real10Y","2s10s and 10s30s","Treasury buyback results","auction tails/bid-to-cover","MOVE","breakevens/term-premium proxies"],
-    "energyProducts":["Brent/WTI","US refinery utilization","operable capacity","ULSD/gasoline cracks","distillate/gasoline inventories","refinery outages","Hormuz traffic/insurance"],
-    "globalGas":["TTF","JKM","Europe storage","Germany/Netherlands storage","US LNG feedgas/exports","Qatar/Middle East LNG flows","LNG freight"],
-    "breadth":["RSP/SPY","Russell 2000 vs SPX","% above 20D/50D/200D","advance-decline","new highs-lows","sector breadth"],
-    "aiFinancing":["hyperscaler gross issuance","IG spreads/CDS","new-issue concessions","bond cover ratios","capex/FCF","signed leases/PPAs/guarantees"],
-    "earnings":["S&P bottom-up EPS","revision breadth","2026/2027 EPS","earnings yield vs 10Y","post-earnings reactions"],
-    "copper":["LME/SHFE/COMEX inventories","cash-3M","China premiums","mine output","treatment charges","China credit/property","grid orders"],
-    "gold":["ETF flows","central-bank purchases","real10Y","DXY","COMEX positioning","miners vs bullion"],
-    "credit":["IG/HY/CCC OAS","regional banks","bank CDS","HYG/LQD","consumer delinquencies","ABS spreads"],
-    "eventRisk":["Sep 10 PPI","Sep 11 CPI","Sep 15-16 FOMC","Sep 17-18 BOJ","post-data yield/breadth reaction"]
+  "crossMarketWatch": {
+    "duration": [
+      "US2Y/10Y/30Y",
+      "real10Y",
+      "2s10s and 10s30s",
+      "Treasury buyback results",
+      "auction tails/bid-to-cover",
+      "MOVE",
+      "breakevens/term-premium proxies"
+    ],
+    "energyProducts": [
+      "Brent/WTI",
+      "US refinery utilization",
+      "operable capacity",
+      "ULSD/gasoline cracks",
+      "distillate/gasoline inventories",
+      "refinery outages",
+      "Hormuz traffic/insurance"
+    ],
+    "globalGas": [
+      "TTF",
+      "JKM",
+      "Europe storage",
+      "Germany/Netherlands storage",
+      "US LNG feedgas/exports",
+      "Qatar/Middle East LNG flows",
+      "LNG freight"
+    ],
+    "breadth": [
+      "RSP/SPY",
+      "Russell 2000 vs SPX",
+      "% above 20D/50D/200D",
+      "advance-decline",
+      "new highs-lows",
+      "sector breadth"
+    ],
+    "aiFinancing": [
+      "hyperscaler gross issuance",
+      "IG spreads/CDS",
+      "new-issue concessions",
+      "bond cover ratios",
+      "capex/FCF",
+      "signed leases/PPAs/guarantees"
+    ],
+    "earnings": [
+      "S&P bottom-up EPS",
+      "revision breadth",
+      "2026/2027 EPS",
+      "earnings yield vs 10Y",
+      "post-earnings reactions"
+    ],
+    "copper": [
+      "LME/SHFE/COMEX inventories",
+      "cash-3M",
+      "China premiums",
+      "mine output",
+      "treatment charges",
+      "China credit/property",
+      "grid orders"
+    ],
+    "gold": [
+      "ETF flows",
+      "central-bank purchases",
+      "real10Y",
+      "DXY",
+      "COMEX positioning",
+      "miners vs bullion"
+    ],
+    "credit": [
+      "IG/HY/CCC OAS",
+      "regional banks",
+      "bank CDS",
+      "HYG/LQD",
+      "consumer delinquencies",
+      "ABS spreads"
+    ],
+    "eventRisk": [
+      "Sep 10 PPI",
+      "Sep 11 CPI",
+      "Sep 15-16 FOMC",
+      "Sep 17-18 BOJ",
+      "post-data yield/breadth reaction"
+    ]
   },
-  "dashboardGuardrails":[
+  "dashboardGuardrails": [
     "Equity Breadth, Earnings Support, AI Funding Quality and Global LNG Availability are visible diagnostics only and have no stock macro-adjustment until explicit stock sensitivity factors are researched.",
     "Creator option-wall levels, historical analogs, seasonality and single-stock chart patterns belong in Positioning/Tactical context, not Macro Pulse scoring.",
     "Do not collapse US Gas and global LNG into one signal.",
     "Do not interpret record copper as generic global-growth confirmation without China/physical-premium evidence.",
     "Do not convert breadth deterioration into a crash regime without credit/earnings/price confirmation."
   ],
-  "sourceProvenance":[
-    {"source":"U.S. Energy Information Administration","status":"authoritative refining/product/power/LNG layer","url":"https://www.eia.gov/"},
-    {"source":"Federal Reserve H.15 / U.S. Treasury","status":"authoritative yield and Treasury-operation context","url":"https://www.federalreserve.gov/releases/h15/"},
-    {"source":"FactSet","status":"current S&P earnings revision evidence","url":"https://insight.factset.com/"},
-    {"source":"European Central Bank","status":"current hyperscaler bond-market/crowding-out analysis","url":"https://www.ecb.europa.eu/"},
-    {"source":"World Gold Council","status":"current gold ETF flow and reserve-demand evidence","url":"https://www.gold.org/"},
-    {"source":"Reuters / MarketWatch / AP","status":"current market, LNG, breadth and financing verification"},
-    {"source":"MacroMicro","status":"prior verified spread readings retained as dated references only","url":"https://en.macromicro.me/"}
+  "sourceProvenance": [
+    {
+      "source": "Daily Investment Brief",
+      "status": "Primary dashboard attempted; no trustworthy numeric payload retrieved, no placeholders inferred",
+      "url": "https://dailyinvestmentbrief.com/macroeconomic-dashboard/"
+    },
+    {
+      "source": "MacroMicro",
+      "status": "Supplemental direct retrieval unavailable/internal error; no values inferred",
+      "url": "https://en.macromicro.me/"
+    },
+    {
+      "source": "U.S. Bureau of Labor Statistics",
+      "status": "Official August 2026 PPI",
+      "url": "https://www.bls.gov/news.release/archives/ppi_09102026.htm"
+    },
+    {
+      "source": "European Central Bank",
+      "status": "Official Sep 10 monetary-policy decision",
+      "url": "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp260910~314e508016.en.html"
+    },
+    {
+      "source": "FRED / ICE BofA",
+      "status": "Officially hosted CCC yield series, latest verified Sep 9",
+      "url": "https://fred.stlouisfed.org/series/BAMLH0A3HYCSYTW"
+    },
+    {
+      "source": "Reuters",
+      "status": "Current oil, shipping, equities and company/sector reporting",
+      "url": "https://www.reuters.com/"
+    }
   ]
 }
