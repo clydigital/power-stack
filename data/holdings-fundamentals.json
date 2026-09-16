@@ -1,19 +1,298 @@
 {
-  "asOf": "2026-09-01",
-  "lastThemeRescan": "2026-09-01T17:02:00+08:00",
+  "asOf": "2026-09-16",
+  "capturedAt": "2026-09-16T15:45:00Z",
+  "lastThemeRescan": "2026-09-16T23:45:00+08:00",
   "title": "Current Holdings — Fundamental Scorecard",
   "methodology": {
-    "description": "Fundamentals-only score; the full Sep 1 dynamic-theme rescan rechecked every current holding but did not mechanically move these numeric ratings. Macro/theme significance changes the action/read in latest-market-review.json; this ledger moves only when stock-specific earnings, cash flow, balance sheet, business quality, growth or valuation evidence materially changes. Position and price data reflect the user's Rakuten snapshot on 1 Sep 2026.",
-    "weights": {"Earnings & cash generation":25,"Balance sheet":20,"Business quality":20,"Growth trajectory":15,"Valuation":20}
+    "description": "Fundamentals-only score; the Sep 16 expanded sweep refreshed market prices, position values, unrealised P/L and action levels without mechanically changing business-quality ratings. Quantities and average costs come from the user's Rakuten snapshot; prices are the latest verified Sep 15–16 observations. USD and MYR totals remain separate and 6742UW is unpriced until its exact terms are verified.",
+    "weights": {
+      "Earnings & cash generation": 25,
+      "Balance sheet": 20,
+      "Business quality": 20,
+      "Growth trajectory": 15,
+      "Valuation": 20
+    }
   },
   "holdings": [
-    {"ticker":"XOM","name":"ExxonMobil","market":"US","score":88,"grade":"A","confidence":"High","status":"Best fundamental anchor · hold, don't chase oil spike","components":{"Earnings & cash generation":24,"Balance sheet":17,"Business quality":19,"Growth trajectory":12,"Valuation":16},"metrics":["Rakuten: 1.6286 shares · snapshot $160.96 · transferred cost basis unavailable","Q2 operating cash flow: $23.6B","Watch: $156–159 support · $164–166 reclaim · ~$176.4 breakout"],"strength":"Strong integrated cash generation, advantaged upstream assets and refining exposure make XOM a higher-quality way to own the current energy scarcity regime.","weakness":"War-premium crude is self-limiting if demand destruction or de-escalation arrives; do not treat every oil spike as permanent.","verdict":"HOLD. Prefer $156–159 support or a clean $164–166 reclaim before adding; avoid chasing geopolitical strength.","sources":[{"label":"ExxonMobil investors","url":"https://corporate.exxonmobil.com/investors"},{"label":"Reuters energy markets","url":"https://www.reuters.com/business/energy/"}]},
-    {"ticker":"MISC","name":"MISC Berhad","market":"Malaysia","score":80,"grade":"B+","confidence":"High","status":"Strong operations; Yinson transaction risk now first-order","components":{"Earnings & cash generation":23,"Balance sheet":14,"Business quality":18,"Growth trajectory":13,"Valuation":12},"metrics":["Rakuten: 100 shares · avg RM8.30 · snapshot RM7.93","Q2 revenue ~RM4.79B (+76% YoY); attributable profit ~RM1.15B (+149%)","Watch: RM7.90–8.00 support · RM8.10–8.30 recovery · ~RM8.48 crucial reclaim"],"strength":"Tanker-rate strength and diversified maritime assets are converting current energy/logistics disruption into earnings and cash flow.","weakness":"Potential Yinson-related transaction funding, leverage and capital-allocation risk can overwhelm the otherwise strong operating tape.","verdict":"HOLD. Do not add until the Yinson structure/funding is clearer or price decisively reclaims ~RM8.48.","sources":[{"label":"MISC investor relations","url":"https://www.miscgroup.com/investors/"},{"label":"MISC corporate announcements","url":"https://www.miscgroup.com/media/"}]},
-    {"ticker":"HIBISCS","name":"Hibiscus Petroleum Berhad","market":"Malaysia","score":74,"grade":"B","confidence":"High","status":"Improving upstream fundamentals · preferred Malaysian oil add setup","components":{"Earnings & cash generation":20,"Balance sheet":14,"Business quality":15,"Growth trajectory":13,"Valuation":12},"metrics":["Rakuten: 1,000 shares · avg RM2.10 · snapshot RM2.19","FY26 net profit ~RM361M (+207%); record full-year dividend 10 sen/share","Watch: RM2.05–2.10 support · >RM2.20 confirmation · ~RM2.46 larger breakout"],"strength":"Production scale, sharply improved FY26 earnings and direct crude-price sensitivity provide real cash-flow leverage to the current oil regime.","weakness":"Field decline, decommissioning obligations, production interruptions and oil-price reversals keep this a higher-beta holding than XOM.","verdict":"HOLD / SELECTIVE ADD. Best setup is support at RM2.05–2.10 or a sustained break above RM2.20; do not chase a one-day oil headline.","sources":[{"label":"Hibiscus Petroleum investor relations","url":"https://www.hibiscuspetroleum.com/investor-relations/"},{"label":"Hibiscus Petroleum","url":"https://www.hibiscuspetroleum.com/"}]},
-    {"ticker":"YTLPOWR","name":"YTL Power International Berhad","market":"Malaysia","score":71,"grade":"B","confidence":"High","status":"Great assets; portfolio weight and funding discipline matter","components":{"Earnings & cash generation":16,"Balance sheet":10,"Business quality":19,"Growth trajectory":14,"Valuation":12},"metrics":["Rakuten: 1,000 shares · avg RM3.83 · snapshot RM5.71","Q4 revenue ~RM6.33B (+24% QoQ); PAT ~RM471M (+38% QoQ)","Watch: RM5.65–5.70 support · RM5.50–5.55 deeper · ~RM6.02 breakout · ~RM6.14 confirmation"],"strength":"Power, regulated water, telecom, data-centre and cloud assets provide unusually broad exposure to Malaysia's physical AI buildout.","weakness":"Heavy capex, leverage and concentration in the user's portfolio raise the hurdle for adding despite a strong structural theme.","verdict":"HOLD. Let RM5.65–5.70 support or a clean RM6.02/6.14 breakout prove the next leg; avoid adding simply because the AI-power theme remains strong.","sources":[{"label":"YTL Power investor relations","url":"https://www.ytlpowerinternational.com/investor-relations/"},{"label":"YTL Power","url":"https://www.ytlpowerinternational.com/"}]},
-    {"ticker":"6742UW","name":"YTL Power structured warrant / linked instrument","market":"Malaysia","score":71,"grade":"B","confidence":"Linked","status":"Track parent only · standalone valuation unavailable","components":{"Earnings & cash generation":16,"Balance sheet":10,"Business quality":19,"Growth trajectory":14,"Valuation":12},"metrics":["Rakuten: 200 units · no reliable displayed valuation","Fundamental score is inherited from parent YTLPOWR, not a standalone warrant valuation","Track parent levels: RM5.65–5.70 support · ~RM6.02 breakout · ~RM6.14 confirmation"],"strength":"Economic direction is primarily linked to YTLPOWR's underlying thesis and price.","weakness":"Warrant terms, expiry, strike, liquidity and time decay can dominate returns; a parent-company score is not a warrant valuation.","verdict":"TRACK PARENT / INSTRUMENT STATUS. Do not infer a standalone target until reliable warrant terms and market price are available.","sources":[{"label":"Bursa Malaysia","url":"https://www.bursamalaysia.com/"},{"label":"YTL Power","url":"https://www.ytlpowerinternational.com/"}]},
-    {"ticker":"TTWO","name":"Take-Two Interactive Software","market":"US","score":68,"grade":"C+","confidence":"High","status":"Elite franchise; catalyst-driven cash economics","components":{"Earnings & cash generation":12,"Balance sheet":13,"Business quality":20,"Growth trajectory":15,"Valuation":8},"metrics":["Rakuten: 1.7145 shares · avg $212.95 · snapshot $219.76","Q1 FY2027 net bookings: $1.39B; recurrent spend 84% of revenue","Watch: $216–217 support · reassess below ~$210 · $228–233 recovery · >$235 stronger reclaim"],"strength":"Exceptional IP and GTA VI scale potential can drive a large step-up in bookings and cash generation.","weakness":"Current profitability/cash flow remain weak relative to valuation, and higher real yields raise the hurdle for catalyst-duration assets.","verdict":"HOLD / SMALL ADD ONLY AFTER STABILISATION. $216–217 is the first useful test; sustained weakness below ~$210 triggers reassessment.","sources":[{"label":"Take-Two investor relations","url":"https://www.take2games.com/ir"},{"label":"Take-Two SEC filings","url":"https://www.sec.gov/edgar/browse/?CIK=946581"}]},
-    {"ticker":"TSLA","name":"Tesla","market":"US","score":61,"grade":"C","confidence":"High","status":"Balance sheet strong; valuation still outruns current earnings","components":{"Earnings & cash generation":11,"Balance sheet":20,"Business quality":17,"Growth trajectory":12,"Valuation":1},"metrics":["Rakuten: 1.1778 shares · avg $414.12 · snapshot $367.71","Storage remains the clearest current Power Stack earnings bridge","Watch: $353–355 support · $342–348 deeper · $375–383 resistance · ~$397 next confirmation"],"strength":"Exceptional balance sheet, energy storage growth and autonomy/robotics optionality create multiple paths to upside.","weakness":"Core auto economics and valuation leave little room for execution disappointment, especially with real yields elevated.","verdict":"HOLD / NO ADD YET. Require either support confirmation around $353–355 or a stronger reclaim through $375–383 before increasing exposure.","sources":[{"label":"Tesla investor relations","url":"https://ir.tesla.com/"},{"label":"Tesla SEC filings","url":"https://www.sec.gov/edgar/browse/?CIK=1318605"}]},
-    {"ticker":"DAYANG","name":"Dayang Enterprise Holdings Berhad","market":"Malaysia","score":57,"grade":"C","confidence":"High","status":"Oil tailwind cannot substitute for operating proof","components":{"Earnings & cash generation":9,"Balance sheet":15,"Business quality":14,"Growth trajectory":5,"Valuation":14},"metrics":["Rakuten: 400 shares · avg RM1.81 · snapshot RM1.45","Q2 revenue ~RM161M (-40% YoY); attributable profit ~RM32.8M (-57% YoY); order book ~RM4.72B","Watch: RM1.42 critical support · RM1.45 reclaim · RM1.50–1.52 recovery · ~RM1.57 breakout"],"strength":"Healthier balance sheet, sizeable order book and offshore maintenance/OSV exposure retain cyclical upside if utilisation and work orders recover.","weakness":"Latest revenue/profit contraction and weaker vessel utilisation show that high oil prices have not yet translated into operating momentum.","verdict":"HOLD / DO NOT AVERAGE DOWN. Require operational improvement and a price reclaim above RM1.50–1.52 before fresh capital.","sources":[{"label":"Dayang corporate site","url":"https://www.dayang.com.my/"},{"label":"Bursa Malaysia","url":"https://www.bursamalaysia.com/"}]}
+    {
+      "ticker": "XOM",
+      "name": "ExxonMobil",
+      "market": "US",
+      "score": 88,
+      "grade": "A",
+      "confidence": "High",
+      "status": "Best fundamental anchor · hold, don't chase oil spike",
+      "position": {"quantity": 1.6286, "averageCost": null, "currency": "USD", "latestPrice": 169.32, "priceAsOf": "2026-09-16", "estimatedValue": 275.75, "unrealisedPnl": null, "unrealisedPnlPct": null},
+      "components": {
+        "Earnings & cash generation": 24,
+        "Balance sheet": 17,
+        "Business quality": 19,
+        "Growth trajectory": 12,
+        "Valuation": 16
+      },
+      "metrics": [
+        "1.6286 shares · latest $169.32 · value $275.75 · transferred cost basis unavailable",
+        "Q2 operating cash flow: $23.6B",
+        "Watch: $164–166 now support · ~$176.4 breakout; no chase into geopolitical premium"
+      ],
+      "strength": "Strong integrated cash generation, advantaged upstream assets and refining exposure make XOM a higher-quality way to own the current energy scarcity regime.",
+      "weakness": "War-premium crude is self-limiting if demand destruction or de-escalation arrives; do not treat every oil spike as permanent.",
+      "verdict": "CORE HOLD / NO CHASE. The $164–166 reclaim has occurred; add only after post-Fed stability or a controlled retest, not into the oil shock.",
+      "sources": [
+        {
+          "label": "ExxonMobil investors",
+          "url": "https://corporate.exxonmobil.com/investors"
+        },
+        {
+          "label": "Reuters energy markets",
+          "url": "https://www.reuters.com/business/energy/"
+        }
+      ]
+    },
+    {
+      "ticker": "MISC",
+      "name": "MISC Berhad",
+      "market": "Malaysia",
+      "score": 80,
+      "grade": "B+",
+      "confidence": "High",
+      "status": "Strong operations; Yinson transaction risk now first-order",
+      "position": {"quantity": 100, "averageCost": 8.30, "currency": "MYR", "latestPrice": 7.95, "priceAsOf": "2026-09-16", "estimatedValue": 795, "unrealisedPnl": -35, "unrealisedPnlPct": -4.22},
+      "components": {
+        "Earnings & cash generation": 23,
+        "Balance sheet": 14,
+        "Business quality": 18,
+        "Growth trajectory": 13,
+        "Valuation": 12
+      },
+      "metrics": [
+        "100 shares · avg RM8.30 · latest RM7.95 · value RM795 · P/L -RM35 (-4.22%)",
+        "Q2 revenue ~RM4.79B (+76% YoY); attributable profit ~RM1.15B (+149%)",
+        "Watch: RM7.90–8.00 support · RM8.10–8.30 recovery · ~RM8.48 crucial reclaim"
+      ],
+      "strength": "Tanker-rate strength and diversified maritime assets are converting current energy/logistics disruption into earnings and cash flow.",
+      "weakness": "Potential Yinson-related transaction funding, leverage and capital-allocation risk can overwhelm the otherwise strong operating tape.",
+      "verdict": "HOLD. Do not add until the Yinson structure/funding is clearer or price decisively reclaims ~RM8.48.",
+      "sources": [
+        {
+          "label": "MISC investor relations",
+          "url": "https://www.miscgroup.com/investors/"
+        },
+        {
+          "label": "MISC corporate announcements",
+          "url": "https://www.miscgroup.com/media/"
+        }
+      ]
+    },
+    {
+      "ticker": "HIBISCS",
+      "name": "Hibiscus Petroleum Berhad",
+      "market": "Malaysia",
+      "score": 74,
+      "grade": "B",
+      "confidence": "High",
+      "status": "Improving upstream fundamentals · preferred Malaysian oil add setup",
+      "position": {"quantity": 1000, "averageCost": 2.10, "currency": "MYR", "latestPrice": 2.41, "priceAsOf": "2026-09-15", "estimatedValue": 2410, "unrealisedPnl": 310, "unrealisedPnlPct": 14.76},
+      "components": {
+        "Earnings & cash generation": 20,
+        "Balance sheet": 14,
+        "Business quality": 15,
+        "Growth trajectory": 13,
+        "Valuation": 12
+      },
+      "metrics": [
+        "1,000 shares · avg RM2.10 · latest RM2.41 · value RM2,410 · P/L +RM310 (+14.76%)",
+        "FY26 net profit ~RM361M (+207%); record full-year dividend 10 sen/share",
+        "Watch: RM2.05–2.10 support · >RM2.20 confirmation · ~RM2.46 larger breakout"
+      ],
+      "strength": "Production scale, sharply improved FY26 earnings and direct crude-price sensitivity provide real cash-flow leverage to the current oil regime.",
+      "weakness": "Field decline, decommissioning obligations, production interruptions and oil-price reversals keep this a higher-beta holding than XOM.",
+      "verdict": "HOLD / DO NOT CHASE. Price is near the RM2.46 larger breakout; add only on a controlled retest or a sustained break above RM2.46 with operating evidence.",
+      "sources": [
+        {
+          "label": "Hibiscus Petroleum investor relations",
+          "url": "https://www.hibiscuspetroleum.com/investor-relations/"
+        },
+        {
+          "label": "Hibiscus Petroleum",
+          "url": "https://www.hibiscuspetroleum.com/"
+        }
+      ]
+    },
+    {
+      "ticker": "YTLPOWR",
+      "name": "YTL Power International Berhad",
+      "market": "Malaysia",
+      "score": 71,
+      "grade": "B",
+      "confidence": "High",
+      "status": "Great assets; portfolio weight and funding discipline matter",
+      "position": {"quantity": 1000, "averageCost": 3.83, "currency": "MYR", "latestPrice": 5.51, "priceAsOf": "2026-09-15", "estimatedValue": 5510, "unrealisedPnl": 1680, "unrealisedPnlPct": 43.86},
+      "components": {
+        "Earnings & cash generation": 16,
+        "Balance sheet": 10,
+        "Business quality": 19,
+        "Growth trajectory": 14,
+        "Valuation": 12
+      },
+      "metrics": [
+        "1,000 shares · avg RM3.83 · latest RM5.51 · value RM5,510 · P/L +RM1,680 (+43.86%)",
+        "Q4 revenue ~RM6.33B (+24% QoQ); PAT ~RM471M (+38% QoQ)",
+        "Watch: RM5.65–5.70 support · RM5.50–5.55 deeper · ~RM6.02 breakout · ~RM6.14 confirmation"
+      ],
+      "strength": "Power, regulated water, telecom, data-centre and cloud assets provide unusually broad exposure to Malaysia's physical AI buildout.",
+      "weakness": "Heavy capex, leverage and concentration in the user's portfolio raise the hurdle for adding despite a strong structural theme.",
+      "verdict": "HOLD / NO ADD. Protect the large gain: RM5.50–5.55 must hold, RM5.65–5.70 must be reclaimed, and RM6.02 remains the next confirmation.",
+      "sources": [
+        {
+          "label": "YTL Power investor relations",
+          "url": "https://www.ytlpowerinternational.com/investor-relations/"
+        },
+        {
+          "label": "YTL Power",
+          "url": "https://www.ytlpowerinternational.com/"
+        }
+      ]
+    },
+    {
+      "ticker": "6742UW",
+      "name": "YTL Power structured warrant / linked instrument",
+      "market": "Malaysia",
+      "score": 71,
+      "grade": "B",
+      "confidence": "Linked",
+      "status": "Track parent only · standalone valuation unavailable",
+      "position": {"quantity": 200, "averageCost": null, "currency": "MYR", "latestPrice": null, "priceAsOf": null, "estimatedValue": null, "unrealisedPnl": null, "unrealisedPnlPct": null},
+      "components": {
+        "Earnings & cash generation": 16,
+        "Balance sheet": 10,
+        "Business quality": 19,
+        "Growth trajectory": 14,
+        "Valuation": 12
+      },
+      "metrics": [
+        "Rakuten: 200 units · no reliable displayed valuation",
+        "Fundamental score is inherited from parent YTLPOWR, not a standalone warrant valuation",
+        "Track parent levels: RM5.65–5.70 support · ~RM6.02 breakout · ~RM6.14 confirmation"
+      ],
+      "strength": "Economic direction is primarily linked to YTLPOWR's underlying thesis and price.",
+      "weakness": "Warrant terms, expiry, strike, liquidity and time decay can dominate returns; a parent-company score is not a warrant valuation.",
+      "verdict": "TRACK PARENT / INSTRUMENT STATUS. Do not infer a standalone target until reliable warrant terms and market price are available.",
+      "sources": [
+        {
+          "label": "Bursa Malaysia",
+          "url": "https://www.bursamalaysia.com/"
+        },
+        {
+          "label": "YTL Power",
+          "url": "https://www.ytlpowerinternational.com/"
+        }
+      ]
+    },
+    {
+      "ticker": "TTWO",
+      "name": "Take-Two Interactive Software",
+      "market": "US",
+      "score": 68,
+      "grade": "C+",
+      "confidence": "High",
+      "status": "Elite franchise; catalyst-driven cash economics",
+      "position": {"quantity": 1.7145, "averageCost": 212.95, "currency": "USD", "latestPrice": 211.91, "priceAsOf": "2026-09-16", "estimatedValue": 363.32, "unrealisedPnl": -1.78, "unrealisedPnlPct": -0.49},
+      "components": {
+        "Earnings & cash generation": 12,
+        "Balance sheet": 13,
+        "Business quality": 20,
+        "Growth trajectory": 15,
+        "Valuation": 8
+      },
+      "metrics": [
+        "1.7145 shares · avg $212.95 · latest $211.91 · value $363.32 · P/L -$1.78 (-0.49%)",
+        "Q1 FY2027 net bookings: $1.39B; recurrent spend 84% of revenue",
+        "Watch: $216–217 support · reassess below ~$210 · $228–233 recovery · >$235 stronger reclaim"
+      ],
+      "strength": "Exceptional IP and GTA VI scale potential can drive a large step-up in bookings and cash generation.",
+      "weakness": "Current profitability/cash flow remain weak relative to valuation, and higher real yields raise the hurdle for catalyst-duration assets.",
+      "verdict": "HOLD / NO ADD BEFORE FED. The $216–217 level failed; ~$210 is the reassessment line and $228–233 is the repair zone.",
+      "sources": [
+        {
+          "label": "Take-Two investor relations",
+          "url": "https://www.take2games.com/ir"
+        },
+        {
+          "label": "Take-Two SEC filings",
+          "url": "https://www.sec.gov/edgar/browse/?CIK=946581"
+        }
+      ]
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla",
+      "market": "US",
+      "score": 61,
+      "grade": "C",
+      "confidence": "High",
+      "status": "Balance sheet strong; valuation still outruns current earnings",
+      "position": {"quantity": 1.1778, "averageCost": 414.12, "currency": "USD", "latestPrice": 356.58, "priceAsOf": "2026-09-16", "estimatedValue": 419.98, "unrealisedPnl": -67.77, "unrealisedPnlPct": -13.89},
+      "components": {
+        "Earnings & cash generation": 11,
+        "Balance sheet": 20,
+        "Business quality": 17,
+        "Growth trajectory": 12,
+        "Valuation": 1
+      },
+      "metrics": [
+        "1.1778 shares · avg $414.12 · latest $356.58 · value $419.98 · P/L -$67.77 (-13.89%)",
+        "Storage remains the clearest current Power Stack earnings bridge",
+        "Watch: $353–355 support · $342–348 deeper · $375–383 resistance · ~$397 next confirmation"
+      ],
+      "strength": "Exceptional balance sheet, energy storage growth and autonomy/robotics optionality create multiple paths to upside.",
+      "weakness": "Core auto economics and valuation leave little room for execution disappointment, especially with real yields elevated.",
+      "verdict": "HOLD / DO NOT AVERAGE DOWN INTO FED. Price is testing $353–355; require support confirmation or a $375–383 reclaim before adding.",
+      "sources": [
+        {
+          "label": "Tesla investor relations",
+          "url": "https://ir.tesla.com/"
+        },
+        {
+          "label": "Tesla SEC filings",
+          "url": "https://www.sec.gov/edgar/browse/?CIK=1318605"
+        }
+      ]
+    },
+    {
+      "ticker": "DAYANG",
+      "name": "Dayang Enterprise Holdings Berhad",
+      "market": "Malaysia",
+      "score": 57,
+      "grade": "C",
+      "confidence": "High",
+      "status": "Oil tailwind cannot substitute for operating proof",
+      "position": {"quantity": 400, "averageCost": 1.81, "currency": "MYR", "latestPrice": 1.47, "priceAsOf": "2026-09-16", "estimatedValue": 588, "unrealisedPnl": -136, "unrealisedPnlPct": -18.78},
+      "components": {
+        "Earnings & cash generation": 9,
+        "Balance sheet": 15,
+        "Business quality": 14,
+        "Growth trajectory": 5,
+        "Valuation": 14
+      },
+      "metrics": [
+        "400 shares · avg RM1.81 · latest verified RM1.47 · value RM588 · P/L -RM136 (-18.78%)",
+        "Q2 revenue ~RM161M (-40% YoY); attributable profit ~RM32.8M (-57% YoY); order book ~RM4.72B",
+        "Watch: RM1.42 critical support · RM1.45 reclaim · RM1.50–1.52 recovery · ~RM1.57 breakout"
+      ],
+      "strength": "Healthier balance sheet, sizeable order book and offshore maintenance/OSV exposure retain cyclical upside if utilisation and work orders recover.",
+      "weakness": "Latest revenue/profit contraction and weaker vessel utilisation show that high oil prices have not yet translated into operating momentum.",
+      "verdict": "HOLD / DO NOT AVERAGE DOWN. Require operational improvement and a price reclaim above RM1.50–1.52 before fresh capital.",
+      "sources": [
+        {
+          "label": "Dayang corporate site",
+          "url": "https://www.dayang.com.my/"
+        },
+        {
+          "label": "Bursa Malaysia",
+          "url": "https://www.bursamalaysia.com/"
+        }
+      ]
+    }
   ]
 }
