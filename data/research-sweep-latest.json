@@ -1,19 +1,17 @@
 {
-  "asOf":"2026-09-16",
-  "config":"data/research-sweep-config.json",
-  "currentOverlay":"data/current-analysis-2026-09-16-expanded.json",
-  "componentOverlays":[
-    "data/daily-research-2026-09-16.json",
+  "asOf": "2026-09-21",
+  "config": "data/research-sweep-config.json",
+  "currentOverlay": "data/current-analysis-2026-09-21.json",
+  "componentOverlays": [
+    "data/current-analysis-2026-09-21.json",
+    "research/daily/2026-09-21-power-stack-refresh.md",
+    "data/current-analysis-2026-09-16-expanded.json",
     "data/capital-scarcity-2026-09-16.json",
-    "data/cranium-rates-sweep-2026-09-07.json",
     "data/transcript-theme-sweep-2026-09-10.json",
-    "data/dashboard-factor-sweep-2026-09-10.json",
-    "data/current-rerank-2026-09-10.json",
-    "data/developing-theme-rerank-overlay-2026-09-10.json",
     "data/stock-sweep-2026-09-10-stockedup-picks.json",
     "data/lng-fertilizer-stock-research-2026-09-10.json"
   ],
-  "requiredCanonicalInputs":[
+  "requiredCanonicalInputs": [
     "data/macro-context.json",
     "data/macro-sensitivities.json",
     "data/macro-sensitivity-supplement.json",
@@ -24,5 +22,5 @@
     "data/developing-themes.json",
     "data/live-rating-snapshot.json"
   ],
-  "note":"Sep 16 expanded sweep is canonical. It refreshes all eight holdings with quantities, latest verified prices, market values and unrealised P/L where cost basis is known; adds the Capital Scarcity view; promotes memory scarcity as a separate research branch; and separates physical AI demand from funding/valuation pressure. No action is based on a headline alone. USD and MYR remain separate, and 6742UW stays unpriced until its warrant terms are verified."
+  "note": "Sep 21 sweep is canonical. Structural capital scarcity remains in force, but oil/yield relief is producing a tactical risk-on phase. AI demand is treated as resilient but increasingly quality-dispersed: funded backlog, signed customers, utilization and cash conversion matter more than requested MW or narrative capex. Memory/HBM is restored as an active branch. Energy interpretation shifts from crude headline scarcity toward refined products, tanker economics and expensive rerouting. Creator transcripts are hypothesis inputs only and receive no direct score weight."
 }
