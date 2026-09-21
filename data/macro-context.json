@@ -147,6 +147,13 @@
       "observedAt": "2026-09-21",
       "source": "Reuters/LSEG",
       "confidence": "high"
+    },
+    {
+      "label": "AI memory / HBM",
+      "value": "Active scarcity branch; AI/chip demand remains strong while suppliers pursue capacity expansion",
+      "observedAt": "2026-09-21",
+      "source": "Reuters current chip-demand reporting + verified memory research",
+      "confidence": "high"
     }
   ],
   "channels": [
@@ -221,11 +228,19 @@
       "score": 1.4,
       "confidence": 0.96,
       "regime": "US-China talks explicitly include critical-mineral flows; ISM shortages include copper and tungsten"
+    },
+    {
+      "key": "memoryBandwidthTightness",
+      "label": "Memory / HBM tightness",
+      "score": 1.8,
+      "confidence": 0.96,
+      "regime": "AI-led memory demand remains tight; scarcity benefits memory suppliers but raises BOM/supply risk for systems vendors"
     }
   ],
   "notes": [
     "Structural state and tactical tape are now stored separately: capital scarcity remains structural; Sep 21 is a tactical risk-on relief session.",
     "AI slowdown is not the current base case. The active filter is contracted/funded demand versus speculative future capacity.",
+    "Memory/HBM now has an explicit macro scoring channel so supplier beneficiaries and systems-vendor input constraints can diverge through the existing formula.",
     "Memory/HBM is restored as an active scarcity branch; strong demand does not remove entry-price discipline.",
     "Energy monitoring shifts toward products, freight, tanker rates and route efficiency as crude availability improves.",
     "Creator transcripts generate mechanisms and investigation queues only; all score changes require independent evidence."
