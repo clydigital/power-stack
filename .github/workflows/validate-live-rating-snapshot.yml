@@ -5,12 +5,7 @@ on:
     paths:
       - "app.js"
       - "industry-risk.js"
-      - "data/live-rating-snapshot.json"
-      - "data/live-rating-export-config.json"
-      - "data/macro-context.json"
-      - "data/macro-methodology.json"
-      - "data/macro-sensitivity*.json"
-      - "data/market-extension*.json"
+      - "data/**"
       - "scripts/generate-live-rating-snapshot.mjs"
       - ".github/workflows/validate-live-rating-snapshot.yml"
   push:
@@ -18,13 +13,9 @@ on:
     paths:
       - "app.js"
       - "industry-risk.js"
-      - "data/live-rating-snapshot.json"
-      - "data/live-rating-export-config.json"
-      - "data/macro-context.json"
-      - "data/macro-methodology.json"
-      - "data/macro-sensitivity*.json"
-      - "data/market-extension*.json"
+      - "data/**"
       - "scripts/generate-live-rating-snapshot.mjs"
+      - ".github/workflows/validate-live-rating-snapshot.yml"
 
 permissions:
   contents: read
