@@ -1,248 +1,48 @@
 {
-  "version": 24,
-  "generatedAt": "2026-09-21T10:30:00Z",
+  "version": 25,
+  "generatedAt": "2026-09-22T00:57:00Z",
   "packetStaleAfterHours": 36,
   "source": "Daily Investment Brief + official/authoritative supplementation",
   "sourceUrl": "https://dailyinvestmentbrief.com/macroeconomic-dashboard/",
   "supplementalSourceUrl": "https://en.macromicro.me/",
-  "sourceStatus": "Sep 21 MYT evening refresh: Reuters current market/energy reporting + verified latest closes. Creator transcripts are used only to generate hypotheses, never as direct scoring evidence.",
-  "regime": "Capital scarcity remains structural, but Sep 21 oil and bond relief has opened a tactical risk-on phase. AI/semiconductor demand is reasserting itself, while the energy system is adapting through expensive shipping and transfer workarounds rather than fully normalizing. Prefer contracted/funded AI and physical scarcity with cash conversion; do not treat lower crude or a tech rebound as a completed regime reversal.",
+  "sourceStatus": "Sep 22 MYT morning: both dashboard retrievals failed; no placeholders inferred. Reuters/current market data and official ISM used as authoritative supplements.",
+  "regime": "Capital scarcity remains structural, but Sep 21 produced a meaningful tactical easing: US 10Y fell below 5%, crude eased and Nasdaq closed at a record. AI demand is resilient, but Texas' data-centre permit freeze makes grid access, self-supply, water and permitting first-order constraints. Refined-product stress remains stronger than crude scarcity.",
   "keyReadings": [
-    {
-      "label": "Fed funds target",
-      "value": "3.75%-4.00%",
-      "observedAt": "2026-09-16",
-      "source": "Federal Reserve/Reuters",
-      "confidence": "high"
-    },
-    {
-      "label": "US 10Y",
-      "value": "5.01%",
-      "observedAt": "2026-09-18 close",
-      "source": "US Treasury market data/current reporting",
-      "confidence": "high"
-    },
-    {
-      "label": "US 2Y",
-      "value": "4.76%",
-      "observedAt": "2026-09-18 close",
-      "source": "US Treasury market data/current reporting",
-      "confidence": "high"
-    },
-    {
-      "label": "US 30Y",
-      "value": "5.34%",
-      "observedAt": "2026-09-18 close",
-      "source": "US Treasury market data/current reporting",
-      "confidence": "high"
-    },
-    {
-      "label": "S&P 500",
-      "value": "7,650.50 (+0.17%)",
-      "observedAt": "2026-09-18 close",
-      "source": "AP",
-      "confidence": "high"
-    },
-    {
-      "label": "Nasdaq Composite",
-      "value": "26,522.55 (+0.40%)",
-      "observedAt": "2026-09-18 close",
-      "source": "AP",
-      "confidence": "high"
-    },
-    {
-      "label": "Russell 2000",
-      "value": "2,860.40 (-0.5%)",
-      "observedAt": "2026-09-18 close",
-      "source": "AP",
-      "confidence": "high"
-    },
-    {
-      "label": "Brent crude",
-      "value": "~$101.7/bbl (-2% in Sep 21 reporting)",
-      "observedAt": "2026-09-21",
-      "source": "Reuters",
-      "confidence": "high"
-    },
-    {
-      "label": "WTI crude",
-      "value": "~$100.02/bbl Asia morning",
-      "observedAt": "2026-09-21",
-      "source": "Reuters",
-      "confidence": "high"
-    },
-    {
-      "label": "Gold",
-      "value": "~$4,370/oz Asia morning",
-      "observedAt": "2026-09-21",
-      "source": "Reuters",
-      "confidence": "high"
-    },
-    {
-      "label": "China 1Y LPR",
-      "value": "3.00%",
-      "observedAt": "2026-09-21",
-      "source": "PBOC/Reuters",
-      "confidence": "high"
-    },
-    {
-      "label": "China 5Y LPR",
-      "value": "3.50%",
-      "observedAt": "2026-09-21",
-      "source": "PBOC/Reuters",
-      "confidence": "high"
-    },
-    {
-      "label": "ISM Manufacturing PMI",
-      "value": "54.6; Prices 71.1; New Orders 53.7",
-      "observedAt": "August 2026 report",
-      "source": "ISM",
-      "confidence": "high"
-    },
-    {
-      "label": "ISM Services PMI",
-      "value": "55.4; Prices 72.6; New Orders 60.9",
-      "observedAt": "August 2026 report",
-      "source": "ISM",
-      "confidence": "high"
-    },
-    {
-      "label": "CCC & lower OAS",
-      "value": "fresh reliable observation not retrieved in Sep 21 cut",
-      "observedAt": "2026-09-21 research cut",
-      "source": "retrieval gap",
-      "confidence": "low"
-    },
-    {
-      "label": "10Y real yield / breakeven / term premium",
-      "value": "fresh reliable observation not retrieved in Sep 21 cut",
-      "observedAt": "2026-09-21 research cut",
-      "source": "retrieval gap",
-      "confidence": "low"
-    },
-    {
-      "label": "Nasdaq futures",
-      "value": "~+1.1% premarket",
-      "observedAt": "2026-09-21",
-      "source": "Reuters",
-      "confidence": "high"
-    },
-    {
-      "label": "Saudi crude exports",
-      "value": ">4 mb/d so far in September vs 2.4 mb/d in August",
-      "observedAt": "2026-09-21",
-      "source": "Reuters/Kpler",
-      "confidence": "high"
-    },
-    {
-      "label": "Hormuz crude exports",
-      "value": "~6.5 mb/d so far in September",
-      "observedAt": "2026-09-21",
-      "source": "Reuters/Kpler",
-      "confidence": "high"
-    },
-    {
-      "label": "Gulf-China VLCC freight",
-      "value": "> $30/bbl benchmark rate",
-      "observedAt": "2026-09-21",
-      "source": "Reuters/LSEG",
-      "confidence": "high"
-    },
-    {
-      "label": "AI memory / HBM",
-      "value": "Active scarcity branch; AI/chip demand remains strong while suppliers pursue capacity expansion",
-      "observedAt": "2026-09-21",
-      "source": "Reuters current chip-demand reporting + verified memory research",
-      "confidence": "high"
-    }
+    {"label":"Fed funds target","value":"3.75%-4.00%","observedAt":"2026-09-16","source":"Federal Reserve/Reuters","confidence":"high"},
+    {"label":"US 10Y","value":"~4.96%-4.97%","observedAt":"2026-09-21","source":"Tradeweb/current market reporting","confidence":"high"},
+    {"label":"US 2Y","value":"~4.74%-4.75%","observedAt":"2026-09-21","source":"Tradeweb/current market reporting","confidence":"high"},
+    {"label":"US 30Y","value":"~5.30%","observedAt":"2026-09-21","source":"current market reporting","confidence":"medium-high"},
+    {"label":"S&P 500","value":"7,764.70 (+1.49%)","observedAt":"2026-09-21 close","source":"Reuters","confidence":"high"},
+    {"label":"Nasdaq","value":"record close; +2.26% session","observedAt":"2026-09-21 close","source":"Reuters/current market data","confidence":"high"},
+    {"label":"Brent crude","value":"near $100/bbl after further geopolitical-risk-premium easing","observedAt":"2026-09-21","source":"Reuters/current market reporting","confidence":"high"},
+    {"label":"US retail diesel","value":">$6.50/gal reported","observedAt":"2026-09-22 discovery cut","source":"TradingView-discovered market reporting; treat as product-stress input pending official EIA update","confidence":"medium"},
+    {"label":"Gold","value":"~$4,350/oz spot","observedAt":"2026-09-21","source":"Reuters","confidence":"high"},
+    {"label":"ISM Manufacturing PMI","value":"54.6; Prices 71.1; New Orders 53.7","observedAt":"August 2026 report","source":"ISM","confidence":"high"},
+    {"label":"ISM Services PMI","value":"55.4; Prices 72.6; New Orders 60.9","observedAt":"August 2026 report","source":"ISM","confidence":"high"},
+    {"label":"Texas data-centre queue","value":">470 GW of new data-centre/large-load projects in queue before audit/freeze","observedAt":"2026-09-21","source":"Reuters","confidence":"high"},
+    {"label":"CCC & lower OAS","value":"fresh reliable observation not retrieved in Sep 22 cut","observedAt":"2026-09-22","source":"retrieval gap","confidence":"low"},
+    {"label":"10Y real yield / breakeven / term premium","value":"fresh reliable observation not retrieved in Sep 22 cut","observedAt":"2026-09-22","source":"retrieval gap","confidence":"low"}
   ],
   "channels": [
-    {
-      "key": "policyRelief",
-      "score": -1.65,
-      "confidence": 0.99,
-      "regime": "Fed remains restrictive; tactical bond relief has not changed the policy path"
-    },
-    {
-      "key": "financialConditions",
-      "score": -1.6,
-      "confidence": 0.99,
-      "regime": "Long yields remain expensive despite Sep 21 relief"
-    },
-    {
-      "key": "tailCreditStress",
-      "score": 1.55,
-      "confidence": 0.75,
-      "regime": "Capital remains selective; weakest structures still face a high hurdle"
-    },
-    {
-      "key": "industrialCapex",
-      "score": 2,
-      "confidence": 0.99,
-      "regime": "AI/chip demand and hyperscaler power commitments remain resilient"
-    },
-    {
-      "key": "crudeTightness",
-      "score": 0.05,
-      "confidence": 0.99,
-      "regime": "Saudi export recovery and rerouting have sharply reduced immediate crude scarcity"
-    },
-    {
-      "key": "productTightness",
-      "score": 1.75,
-      "confidence": 0.96,
-      "regime": "Middle-distillate deficits and expensive logistics remain materially tighter than crude headlines"
-    },
-    {
-      "key": "globalLngAvailability",
-      "score": -1.75,
-      "confidence": 0.97,
-      "regime": "US LNG market-access catalyst remains live, though China demand is mixed"
-    },
-    {
-      "key": "riskAppetite",
-      "score": 0.45,
-      "confidence": 0.97,
-      "regime": "AI-led tactical rebound is real but narrow relative to the structural rate regime"
-    },
-    {
-      "key": "preciousMetals",
-      "score": 0.55,
-      "confidence": 0.95,
-      "regime": "Gold resilient but high yields cap tactical upside"
-    },
-    {
-      "key": "aiFundingQuality",
-      "score": -1.45,
-      "confidence": 0.99,
-      "regime": "Funding is available for high-quality contracted projects; speculative capacity faces a higher hurdle"
-    },
-    {
-      "key": "chinaDomesticDemand",
-      "score": -1.35,
-      "confidence": 0.96,
-      "regime": "LPR unchanged for 16th month; weak credit demand and rate-gap constraints limit broad easing"
-    },
-    {
-      "key": "criticalMineralsSecurity",
-      "score": 1.4,
-      "confidence": 0.96,
-      "regime": "US-China talks explicitly include critical-mineral flows; ISM shortages include copper and tungsten"
-    },
-    {
-      "key": "memoryBandwidthTightness",
-      "label": "Memory / HBM tightness",
-      "score": 1.8,
-      "confidence": 0.96,
-      "regime": "AI-led memory demand remains tight; scarcity benefits memory suppliers but raises BOM/supply risk for systems vendors"
-    }
+    {"key":"policyRelief","score":-1.6,"confidence":0.99,"regime":"Fed remains restrictive; one more hike remains plausible"},
+    {"key":"financialConditions","score":-1.35,"confidence":0.98,"regime":"10Y below 5% is tactical relief, not easy money"},
+    {"key":"tailCreditStress","score":1.45,"confidence":0.72,"regime":"Capital remains selective; fresh CCC reading unavailable"},
+    {"key":"industrialCapex","score":2.0,"confidence":0.99,"regime":"AI/chip demand strong, but grid/permitting now gates realizable MW"},
+    {"key":"crudeTightness","score":-0.25,"confidence":0.99,"regime":"crude risk premium continues to ease"},
+    {"key":"productTightness","score":1.9,"confidence":0.95,"regime":"diesel/crack stress remains high despite lower crude"},
+    {"key":"globalLngAvailability","score":-1.65,"confidence":0.95,"regime":"US LNG market-access/rerouting catalyst remains live"},
+    {"key":"riskAppetite","score":0.85,"confidence":0.98,"regime":"Nasdaq record and broad S&P gain confirm tactical risk-on"},
+    {"key":"preciousMetals","score":0.35,"confidence":0.95,"regime":"gold remains resilient but restrictive rates/dollar cap upside"},
+    {"key":"aiFundingQuality","score":-1.25,"confidence":0.99,"regime":"funded demand is strong; grid access/permitting can strand speculative capacity"},
+    {"key":"chinaDomesticDemand","score":-1.3,"confidence":0.95,"regime":"broad domestic-demand repair remains unconfirmed"},
+    {"key":"criticalMineralsSecurity","score":1.45,"confidence":0.96,"regime":"copper/tungsten security and physical shortages remain active"},
+    {"key":"memoryBandwidthTightness","score":1.75,"confidence":0.95,"regime":"AI memory demand remains strong; valuation discipline still required"},
+    {"key":"dataCentreGridAccess","score":-1.8,"confidence":0.99,"regime":"Texas permit freeze makes interconnection, self-supply, water and efficiency first-order constraints"}
   ],
   "notes": [
-    "Structural state and tactical tape are now stored separately: capital scarcity remains structural; Sep 21 is a tactical risk-on relief session.",
-    "AI slowdown is not the current base case. The active filter is contracted/funded demand versus speculative future capacity.",
-    "Memory/HBM now has an explicit macro scoring channel so supplier beneficiaries and systems-vendor input constraints can diverge through the existing formula.",
-    "Memory/HBM is restored as an active scarcity branch; strong demand does not remove entry-price discipline.",
-    "Energy monitoring shifts toward products, freight, tanker rates and route efficiency as crude availability improves.",
-    "Creator transcripts generate mechanisms and investigation queues only; all score changes require independent evidence."
+    "Texas permitting is a material change: announced MW must now be discounted for grid access, self-generation, water and permitting.",
+    "EU data-centre efficiency/water disclosure proposal strengthens cooling, metering and efficiency research but does not yet justify ticker upgrades without revenue proof.",
+    "Energy lens remains products/freight rather than crude alone.",
+    "Creator/social inputs remain zero-weight until independently verified."
   ]
 }
