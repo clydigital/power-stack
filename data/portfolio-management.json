@@ -1,0 +1,163 @@
+{
+  "asOf": "2026-09-23",
+  "capturedAt": "2026-09-23 19:17 MYT / evening deep-research delta",
+  "title": "Power Stack Portfolio Management Overlay",
+  "purpose": "Position-sizing, concentration, add/trim/recycle and risk-budget overlay. This does not change company fundamental scores.",
+  "dataQuality": {
+    "currentWeights": "Not calculated across the whole portfolio because holdings span MYR/USD and the YTL-linked warrant lacks a reliable standalone value. Avoid false precision until all positions and cash balances are normalized into one base currency.",
+    "scorePolicy": "Fundamental scores remain in holdings-fundamentals.json. Macro/theme research only changes sizing, action gates and research priority unless company-specific evidence changes."
+  },
+  "regime": {
+    "structural": "Capital scarcity / restrictive policy / AI project-finance discrimination",
+    "tactical": "Crude and long-yield relief / selective AI-led risk-on",
+    "portfolioRead": "Do not de-risk indiscriminately, but do not use the rally as permission to increase existing concentration. New capital should improve portfolio quality or diversification and must clear funding/valuation/technical gates."
+  },
+  "portfolioRules": [
+    {
+      "id": "single-name-concentration",
+      "rule": "No automatic add to an already large single-name exposure. Treat 20-25% of investable portfolio value as a review zone, not an automatic sell trigger.",
+      "reason": "The current portfolio already has visible concentration in YTLPOWR and linked exposure; new capital should not compound the same risk without a materially better asymmetry."
+    },
+    {
+      "id": "theme-concentration",
+      "rule": "Treat Malaysia power/data-centre exposure and energy/oil/shipping exposure as theme clusters, not independent positions. Review when one cluster approaches roughly one-third of portfolio risk.",
+      "reason": "Different tickers can still fail together when the same macro driver reverses."
+    },
+    {
+      "id": "no-average-down",
+      "rule": "No averaging down in positions whose technical or operating invalidation is active.",
+      "reason": "A lower price is not a new thesis. DAYANG, HIBISCS, TSLA and TTWO need repair/operating confirmation before fresh capital."
+    },
+    {
+      "id": "funding-quality",
+      "rule": "For AI/power additions, require funded/contracted demand, customer quality, financing visibility and cash conversion. Penalize pre-operating, single-tenant or guarantee-dependent capacity.",
+      "reason": "The Sep 23 research shows AI equity demand and financing quality can diverge sharply."
+    },
+    {
+      "id": "cash-reserve",
+      "rule": "Keep a deployable reserve rather than forcing full investment while bank/credit/breadth confirmation is incomplete.",
+      "reason": "The regime is tactically constructive but structurally still capital-scarce."
+    },
+    {
+      "id": "recycle-before-add",
+      "rule": "When adding a new correlated theme exposure, first ask what existing lower-quality exposure it replaces.",
+      "reason": "Portfolio improvement should come from capital recycling, not only gross exposure growth."
+    }
+  ],
+  "actions": [
+    {
+      "ticker": "YTLPOWR",
+      "role": "largest structural growth / Malaysia power concentration",
+      "action": "HOLD / NO ADD",
+      "sizingRead": "Concentration is the primary portfolio-management constraint even though the structural thesis remains strong.",
+      "addGate": "Only reconsider after portfolio weight is normalized, price clears ~RM6.02/~RM6.14 and contracted load, funding, grid/self-supply, permitting and FCF conversion improve.",
+      "trimOrRecycleGate": "Consider partial risk reduction only if concentration exceeds the chosen cap, financing/contracted-load evidence weakens, or a confirmed breakout fails materially; do not trim solely because the position is profitable."
+    },
+    {
+      "ticker": "6742UW",
+      "role": "leveraged/decaying YTL-linked exposure",
+      "action": "NO INCREASE / TRACK TERMS",
+      "sizingRead": "Treat as part of YTLPOWR concentration, not as diversification.",
+      "addGate": "None until strike, expiry, liquidity and standalone market value are verified.",
+      "trimOrRecycleGate": "Time decay/liquidity or parent-thesis deterioration can justify recycling before the parent equity."
+    },
+    {
+      "ticker": "XOM",
+      "role": "core quality energy",
+      "action": "CORE HOLD / NO CHASE",
+      "sizingRead": "Keep as the highest-quality energy anchor; do not add merely because refined-product stress persists.",
+      "addGate": "Controlled retest plus product/crack confirmation and stable company operations.",
+      "trimOrRecycleGate": "Reduce only if energy cluster concentration is excessive or integrated/refining economics deteriorate; crude de-escalation alone is not enough."
+    },
+    {
+      "ticker": "HIBISCS",
+      "role": "higher-beta upstream energy",
+      "action": "HOLD / NO ADD",
+      "sizingRead": "Lower WTI reduces macro support; this should not receive fresh capital before repair.",
+      "addGate": "Repair RM2.20-2.25 plus stable realized pricing/production.",
+      "trimOrRecycleGate": "Failure to repair with weakening operations makes it a candidate source of capital for higher-quality or less-correlated exposure."
+    },
+    {
+      "ticker": "MISC",
+      "role": "shipping / logistics energy hedge",
+      "action": "HOLD",
+      "sizingRead": "Useful diversification inside energy, but still tied to route/freight conditions and Yinson funding risk.",
+      "addGate": "Yinson structure/funding clarity plus resilient freight/tanker economics.",
+      "trimOrRecycleGate": "Route normalization plus weaker freight or adverse funding terms reduce the case."
+    },
+    {
+      "ticker": "TTWO",
+      "role": "idiosyncratic growth / catalyst duration",
+      "action": "HOLD / NO ADD",
+      "sizingRead": "Do not use lower long yields as a substitute for GTA VI execution/cash-flow proof.",
+      "addGate": "Sustained ~$210 then $216-217 reclaim plus catalyst execution.",
+      "trimOrRecycleGate": "Further technical deterioration or catalyst/cash-flow slippage."
+    },
+    {
+      "ticker": "TSLA",
+      "role": "high-duration optionality / storage bridge",
+      "action": "HOLD / DO NOT AVERAGE DOWN",
+      "sizingRead": "Tactical rate relief helps, but valuation and execution remain the dominant risk-budget constraints.",
+      "addGate": "Sustained >$383 then ~$397 plus stronger storage/autonomy cash-flow evidence.",
+      "trimOrRecycleGate": "Failure of repair, worsening auto economics or evidence that optionality is not converting into cash flow."
+    },
+    {
+      "ticker": "DAYANG",
+      "role": "lower-quality cyclical / operating recovery",
+      "action": "HOLD / DO NOT AVERAGE DOWN",
+      "sizingRead": "Highest-priority capital-recycling candidate if operating proof does not improve.",
+      "addGate": "Utilization/work-order improvement plus RM1.50-1.52 recovery.",
+      "trimOrRecycleGate": "Break of RM1.42 or continued weak utilization/work-order conversion."
+    }
+  ],
+  "newCapitalPriority": [
+    {
+      "priority": 1,
+      "bucket": "Diversification / reserve",
+      "instruction": "Do not force deployment. Preserve cash or equivalent dry powder while financials/credit/breadth remain unconfirmed."
+    },
+    {
+      "priority": 2,
+      "bucket": "Funded physical infrastructure",
+      "instruction": "If adding risk, prefer pullbacks in funded/backlogged grid/power/electrical names over pre-operating AI project-finance exposure. GEV/ETN/PWR remain research candidates, not automatic buys."
+    },
+    {
+      "priority": 3,
+      "bucket": "Strategic hedge",
+      "instruction": "Gold/miner exposure can diversify the existing power/energy/growth concentration, but timing still requires DXY/real-yield confirmation."
+    },
+    {
+      "priority": 4,
+      "bucket": "AI beneficiaries",
+      "instruction": "Use MU/ORCL/META only after the specific challenger questions are resolved; do not add broad AI beta simply because Nasdaq is strong."
+    }
+  ],
+  "riskDashboard": [
+    {
+      "signal": "YTLPOWR + 6742UW",
+      "status": "CONCENTRATION WATCH",
+      "nextCheck": "Normalize combined weight in base currency and verify warrant terms."
+    },
+    {
+      "signal": "Energy cluster XOM/HIBISCS/MISC/DAYANG",
+      "status": "OVERLAP WATCH",
+      "nextCheck": "Measure common sensitivity to crude, products, freight and upstream capex before adding more energy."
+    },
+    {
+      "signal": "TSLA + TTWO + YTLPOWR",
+      "status": "DURATION SENSITIVITY",
+      "nextCheck": "US02Y/US05Y/real yields and whether tactical long-end relief persists."
+    },
+    {
+      "signal": "Banks / credit / breadth",
+      "status": "RISK-ON CONFIRMATION INCOMPLETE",
+      "nextCheck": "XLF/KRE/IWM/RSP plus credit spreads."
+    },
+    {
+      "signal": "AI project finance",
+      "status": "FUNDING QUALITY DETERIORATING SELECTIVELY",
+      "nextCheck": "Project Jupiter/Hyperion marks, SB Energy/Nscale pricing, guarantees and new issuance."
+    }
+  ],
+  "nextPortfolioCheck": "After Sep 23 US flash PMI and the next verified US close: refresh USD holdings prices, normalize all positions and cash to one base currency, calculate single-name/theme weights, then decide whether any trim/recycle action is actually required."
+}
