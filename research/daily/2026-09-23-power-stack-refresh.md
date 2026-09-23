@@ -32,3 +32,29 @@ Crude tightness is downgraded materially. Financial conditions are less hostile 
 ## Quality rule
 
 Preserve: **expectation -> event -> price reaction -> divergence -> competing hypotheses -> evidence -> provisional conclusion -> later post-mortem.** Creator claims never bypass verification.
+
+
+## Evening deep-research delta — AI funding selectivity
+
+The later Sep 23 PDF/Cranium verification changes **how the Power Stack interprets AI**, not the base regime. The key split is now **AI equity/adoption momentum vs funding quality**.
+
+### New evidence hierarchy
+
+- **Project finance:** Project Jupiter loan stress and weaker Hyperion project debt show lenders are repricing execution, concentration and sponsor risk.
+- **Public funding:** SB Energy and Holtec delays show investors are demanding better terms for pre-operating infrastructure; Nscale remains an important counterexample, so the funding window is selective rather than closed.
+- **Guarantees:** large residual-value/credit support should be tracked as risk transfer, not treated as proof that the underlying project is low risk.
+- **Financials:** weak banks/wealth managers have at least two plausible mechanisms — flatter-curve economics and agentic disintermediation. The desk must test both.
+- **Breadth:** 52-week highs/lows, advance-decline, % above moving averages and sector relative strength can disagree; one breadth score is insufficient.
+- **Rates:** if oil falls while 2Y/5Y remain sticky, the constraint may be demand/real rates/issuance rather than energy inflation.
+
+### Power Stack action
+
+1. Promote **AI Credit + Project-Finance Dispersion** as the dominant thematic filter.
+2. Add **Agentic AI / Inference + Intermediary Disruption** as a separate developing theme.
+3. Add ORCL, META, SCHW and DLR to the research queue; do not auto-promote them into the action board.
+4. Keep company fundamental scores unchanged. The new research changes the macro/quality filter and research priority, not base company quality.
+5. Expand diagnostics to AI equity-vs-credit, agentic-vs-curve financial weakness, breadth decomposition and front/belly rate decomposition.
+
+### Quality rule
+
+Do not convert 'AI funding is repricing' into 'AI demand is collapsing.' The current evidence supports **capital selectivity and a higher cost of capital**, with continued access for some issuers and strong adoption/equity leadership elsewhere.
