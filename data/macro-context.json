@@ -1,46 +1,221 @@
 {
-  "version":26,
-  "generatedAt":"2026-09-23T00:57:00Z",
-  "packetStaleAfterHours":36,
-  "source":"Daily Investment Brief + official/authoritative supplementation",
-  "sourceUrl":"https://dailyinvestmentbrief.com/macroeconomic-dashboard/",
-  "supplementalSourceUrl":"https://en.macromicro.me/",
-  "sourceStatus":"Sep 23 MYT morning: Daily Investment Brief was reachable but client-side placeholders/partial values were not inferred. Current Reuters market reporting and official ISM used as authoritative supplements; MacroMicro not used for an unverified reading.",
-  "regime":"Capital scarcity remains structural while risk appetite is resilient. Nasdaq reached a record on AI optimism, but AI-linked corporate debt trades materially wider than the broader market. Oil de-escalated sharply below $100 Brent on possible Hormuz reopening, reducing the inflation impulse at the margin while Fed officials still describe inflation as broad-based.",
-  "keyReadings":[
-    {"label":"Fed funds target","value":"3.75%-4.00%","observedAt":"2026-09-16","source":"Federal Reserve/Reuters","confidence":"high"},
-    {"label":"Fed policy bias","value":"further tightening remains live; Barkin says inflation is broader than energy/tariffs","observedAt":"2026-09-22","source":"Reuters","confidence":"high"},
-    {"label":"Brent crude","value":"~$99.92/bbl","observedAt":"2026-09-22","source":"Reuters global markets wrap","confidence":"high"},
-    {"label":"WTI crude","value":"~$95.33/bbl","observedAt":"2026-09-22","source":"Reuters global markets wrap","confidence":"high"},
-    {"label":"Nasdaq Composite","value":"27,231.59 intraday record; +0.40% in Reuters cut","observedAt":"2026-09-22","source":"Reuters","confidence":"high"},
-    {"label":"Dollar index","value":"~100.48","observedAt":"2026-09-22","source":"Reuters","confidence":"high"},
-    {"label":"AI-linked corporate bond spread","value":"~115bp vs ~78bp broader market","observedAt":"2026-09-22","source":"Reuters","confidence":"high"},
-    {"label":"Projected hyperscaler debt issuance","value":"~$420B in 2027; +60% vs 2026","observedAt":"2026-09-22","source":"Reuters","confidence":"high"},
-    {"label":"ISM Manufacturing PMI","value":"54.6; Prices 71.1; New Orders 53.7","observedAt":"August 2026 report","source":"ISM","confidence":"high"},
-    {"label":"ISM Services PMI","value":"55.4; Prices 72.6; New Orders 60.9","observedAt":"August 2026 report","source":"ISM","confidence":"high"},
-    {"label":"CCC & lower OAS","value":"fresh reliable observation not retrieved in Sep 23 cut","observedAt":"2026-09-23","source":"retrieval gap","confidence":"low"},
-    {"label":"10Y nominal/real yield, breakeven, term premium","value":"directionally eased with oil in Sep 22 reporting; exact fresh authoritative readings not persisted without verification","observedAt":"2026-09-23","source":"retrieval gap/current reporting","confidence":"low"}
+  "version": 27,
+  "generatedAt": "2026-09-23T10:27:00Z",
+  "packetStaleAfterHours": 36,
+  "source": "Reuters + S&P Global + verified market data; creator inputs are zero-weight challenger evidence",
+  "sourceUrl": "https://dailyinvestmentbrief.com/macroeconomic-dashboard/",
+  "supplementalSourceUrl": "https://en.macromicro.me/",
+  "sourceStatus": "Sep 23 18:27 MYT / 06:27 ET: WTI is below $90 after the Saudi East-West bypass restarted at reduced flow; DXY is firm around 100.7 and the US 10Y is below 5% while the front end remains supported by a hawkish Fed. US September flash PMI is still ahead at 09:45 ET. Same-session ULSD/3-2-1 confirmation remains unresolved.",
+  "regime": "Structural capital scarcity remains in force, but the tactical overlay has shifted to disinflationary oil/rate relief plus selective AI-led risk-on. The key non-confirmations are a firm dollar/front end, weak banks/private-credit stress and unresolved refined-product tightness. This is not yet broad easy-money risk-on.",
+  "keyReadings": [
+    {
+      "label": "Fed funds target",
+      "value": "3.75%-4.00%",
+      "observedAt": "2026-09-16",
+      "source": "Federal Reserve/Reuters",
+      "confidence": "high"
+    },
+    {
+      "label": "Fed policy bias",
+      "value": "restrictive; further tightening remains live as officials flag broad inflation pressure",
+      "observedAt": "2026-09-22",
+      "source": "Reuters",
+      "confidence": "high"
+    },
+    {
+      "label": "WTI crude",
+      "value": "~$89.3/bbl; sixth session of declines",
+      "observedAt": "2026-09-23 pre-US session",
+      "source": "Reuters/market data",
+      "confidence": "high"
+    },
+    {
+      "label": "Brent crude",
+      "value": "~$98.5/bbl",
+      "observedAt": "2026-09-23 pre-US session",
+      "source": "Reuters/market data",
+      "confidence": "high"
+    },
+    {
+      "label": "Saudi East-West pipeline",
+      "value": "restarted at reduced flow; full 7m bpd capacity may take 6-8 weeks",
+      "observedAt": "2026-09-22",
+      "source": "Reuters",
+      "confidence": "high"
+    },
+    {
+      "label": "US 10Y Treasury",
+      "value": "~4.93%",
+      "observedAt": "2026-09-23 pre-US session",
+      "source": "market data",
+      "confidence": "high"
+    },
+    {
+      "label": "US 2Y Treasury",
+      "value": "~4.71% latest verified",
+      "observedAt": "2026-09-23 pre-US session",
+      "source": "market data",
+      "confidence": "medium-high"
+    },
+    {
+      "label": "Dollar index",
+      "value": "~100.7; firm despite oil/long-yield relief",
+      "observedAt": "2026-09-23 pre-US session",
+      "source": "market data",
+      "confidence": "high"
+    },
+    {
+      "label": "Nasdaq Composite",
+      "value": "27,212.68 intraday record Sep 22",
+      "observedAt": "2026-09-22",
+      "source": "Reuters",
+      "confidence": "high"
+    },
+    {
+      "label": "S&P 500 financials",
+      "value": "-2% Sep 22; JPM/WFC nearly -4% during session",
+      "observedAt": "2026-09-22",
+      "source": "Reuters",
+      "confidence": "high"
+    },
+    {
+      "label": "Morgan Stanley North Haven PIF redemptions",
+      "value": "11.4% requested vs 5% repurchase limit",
+      "observedAt": "2026-Q3 report / Sep 18 coverage",
+      "source": "Reuters",
+      "confidence": "high"
+    },
+    {
+      "label": "AI-linked corporate bond spread",
+      "value": "~115bp vs ~78bp broader market",
+      "observedAt": "2026-09-22",
+      "source": "Reuters",
+      "confidence": "high"
+    },
+    {
+      "label": "Projected hyperscaler debt issuance",
+      "value": "~$420B in 2027; +60% vs 2026",
+      "observedAt": "2026-09-22",
+      "source": "Reuters",
+      "confidence": "high"
+    },
+    {
+      "label": "August US flash composite PMI",
+      "value": "56.0; September flash due 09:45 ET",
+      "observedAt": "2026-08 / next Sep 23",
+      "source": "S&P Global",
+      "confidence": "high"
+    },
+    {
+      "label": "Same-session ULSD/3-2-1",
+      "value": "not independently verified in this cut; do not infer product normalization from WTI",
+      "observedAt": "2026-09-23",
+      "source": "verification gap",
+      "confidence": "low"
+    }
   ],
-  "channels":[
-    {"key":"policyRelief","score":-1.6,"confidence":0.99,"regime":"Fed remains restrictive; inflation concern is broadening"},
-    {"key":"financialConditions","score":-1.4,"confidence":0.98,"regime":"AI credit spreads show capital discrimination despite equity risk-on"},
-    {"key":"tailCreditStress","score":1.5,"confidence":0.82,"regime":"AI-linked debt widening is a live stress signal; fresh CCC reading unavailable"},
-    {"key":"industrialCapex","score":2.0,"confidence":0.99,"regime":"AI demand remains strong but financing/grid/permitting gate realizable capacity"},
-    {"key":"crudeTightness","score":-1.2,"confidence":0.99,"regime":"Hormuz reopening hopes pushed Brent below $100 and WTI near $95"},
-    {"key":"productTightness","score":1.1,"confidence":0.80,"regime":"must be re-verified via distillate inventories/cracks as crude/routes normalize"},
-    {"key":"globalLngAvailability","score":-1.0,"confidence":0.90,"regime":"structural US LNG diversification remains, but geopolitical urgency eased"},
-    {"key":"riskAppetite","score":1.2,"confidence":0.99,"regime":"Nasdaq record confirms strong selective risk appetite"},
-    {"key":"preciousMetals","score":0.25,"confidence":0.90,"regime":"structural hedge remains; firm dollar/restrictive policy cap tactical upside"},
-    {"key":"aiFundingQuality","score":-1.8,"confidence":0.99,"regime":"AI debt spread premium makes funding quality a first-order filter"},
-    {"key":"chinaDomesticDemand","score":-1.2,"confidence":0.92,"regime":"broad domestic-demand repair remains unconfirmed ahead of US-China talks"},
-    {"key":"criticalMineralsSecurity","score":1.6,"confidence":0.98,"regime":"physical shortages plus commercial recycling/offtake strengthen supply-security theme"},
-    {"key":"memoryBandwidthTightness","score":1.5,"confidence":0.90,"regime":"AI memory demand remains strong but no fresh catalyst outranks credit/security"},
-    {"key":"dataCentreGridAccess","score":-1.8,"confidence":0.99,"regime":"interconnection, self-supply, water and permitting remain first-order constraints"}
+  "channels": [
+    {
+      "key": "policyRelief",
+      "score": -1.1,
+      "confidence": 0.99,
+      "regime": "Oil disinflation reduces the immediate inflation impulse, but Fed policy remains restrictive and further tightening is live."
+    },
+    {
+      "key": "financialConditions",
+      "score": -0.8,
+      "confidence": 0.98,
+      "regime": "Long-end pressure eased below 5%, but the front end and dollar remain firm; conditions are less hostile, not easy."
+    },
+    {
+      "key": "tailCreditStress",
+      "score": 1.6,
+      "confidence": 0.9,
+      "regime": "Bank underperformance and elevated private-credit redemption queues keep weak-end transmission risk active."
+    },
+    {
+      "key": "industrialCapex",
+      "score": 2,
+      "confidence": 0.99,
+      "regime": "AI demand/semiconductor leadership remains strong; funded contracted capex still clears the quality filter."
+    },
+    {
+      "key": "crudeTightness",
+      "score": -1.8,
+      "confidence": 0.99,
+      "regime": "WTI below $90 and Saudi bypass restart show rapid crude-risk-premium unwind."
+    },
+    {
+      "key": "productTightness",
+      "score": 1.3,
+      "confidence": 0.95,
+      "regime": "Structural diesel/jet tightness remains credible; same-session crack confirmation is still required before calling normalization."
+    },
+    {
+      "key": "globalLngAvailability",
+      "score": -1.2,
+      "confidence": 0.95,
+      "regime": "Route normalization reduces acute scarcity urgency while structural US LNG diversification remains."
+    },
+    {
+      "key": "riskAppetite",
+      "score": 1.5,
+      "confidence": 0.99,
+      "regime": "Nasdaq record and semiconductor leadership confirm strong but selective risk appetite."
+    },
+    {
+      "key": "preciousMetals",
+      "score": 0,
+      "confidence": 0.9,
+      "regime": "Lower long yields help, but firm DXY/restrictive Fed offset the tactical metals case."
+    },
+    {
+      "key": "aiFundingQuality",
+      "score": -1.8,
+      "confidence": 0.99,
+      "regime": "AI debt spread premium keeps financing quality a first-order filter despite equity strength."
+    },
+    {
+      "key": "chinaDomesticDemand",
+      "score": -1,
+      "confidence": 0.92,
+      "regime": "Domestic repair remains incomplete; China matters mainly through US trade/AI and commodity transmission in this cut."
+    },
+    {
+      "key": "criticalMineralsSecurity",
+      "score": 1.5,
+      "confidence": 0.98,
+      "regime": "Structural supply-security theme remains strong, but a firmer dollar is a tactical headwind to metal beta."
+    },
+    {
+      "key": "memoryBandwidthTightness",
+      "score": 1.6,
+      "confidence": 0.92,
+      "regime": "AI semiconductor leadership reinforces the memory/HBM branch; creator short claims remain challenger evidence only."
+    },
+    {
+      "key": "dataCentreGridAccess",
+      "score": -1.8,
+      "confidence": 0.99,
+      "regime": "Interconnection, self-supply, water, permitting and financing remain first-order capacity gates."
+    }
   ],
-  "notes":[
-    "Do not read Nasdaq strength as easy financial conditions: AI-linked credit is widening relative to broad corporates.",
-    "Energy lens shifts down in priority as Hormuz reopening becomes plausible; verify residual product/freight stress rather than extrapolating crude scarcity.",
-    "PANW frontier-AI security launch is direct monetization evidence for the AI-security theme.",
+  "notes": [
+    "Forward-looking base case: firm/range-bound DXY and sticky front-end rates despite lower WTI/10Y; this is disinflationary relief, not broad monetary easing.",
+    "Do not read Nasdaq strength as easy financial conditions: AI-linked credit remains wider and banks are underperforming.",
+    "Energy lens is now physical-vs-financial: WTI is de-escalating faster than diesel/product scarcity has been proven to normalize.",
+    "Open a dedicated banks/private-credit transmission check; do not label it systemic stress without breadth, spread and funding confirmation.",
+    "US flash PMI at 09:45 ET is the immediate invalidation/confirmation event for the dollar-rates-duration view.",
     "Creator/social inputs remain zero-weight until independently verified."
-  ]
+  ],
+  "forwardView": {
+    "horizon": "1-5 trading days",
+    "baseCase": "DXY stays firm-to-sideways rather than collapsing; the 2Y remains sticky while lower oil caps the 10Y near/below 5%. NDX/AI can continue to outperform tactically, but broad risk-on needs banks, small caps and credit to confirm.",
+    "dollar": "Base case: firm/range-bound around the 100 area with upside pressure if PMI growth/prices beat. A durable dollar downside turn requires weaker activity/prices plus lower front-end/real yields, not crude relief alone.",
+    "rates": "Base case: curve remains relatively flat as oil relief caps the long end but Fed hawkishness keeps the front end elevated. A strong PMI/prices print can send the 10Y back toward/through 5%.",
+    "equities": "AI/semiconductors retain tactical leadership while 10Y stays contained. Treat Nasdaq strength as selective until XLF/KRE/IWM and credit participate.",
+    "energy": "Crude scarcity premium is unwinding quickly; refined products, freight and inventories now carry more information than WTI direction alone.",
+    "gold": "Mixed: lower long yields help, but a firm DXY and hawkish Fed cap tactical upside. Gold improves if real yields and DXY fall together.",
+    "nextCatalyst": "US September flash PMI, 09:45 ET Sep 23; then EIA product/inventory data."
+  }
 }

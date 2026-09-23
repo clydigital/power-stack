@@ -1,0 +1,134 @@
+{
+  "asOf": "2026-09-23",
+  "capturedAt": "2026-09-23 18:27 MYT / pre-US flash PMI",
+  "title": "Power Stack Forward Sweep — Oil Relief, Firm Dollar, Selective Risk-On",
+  "regime": {
+    "structural": "Capital scarcity / restrictive policy / AI funding discrimination",
+    "tactical": "Disinflationary oil + long-yield relief / selective AI-led risk-on",
+    "breadth": "Incomplete: banks/private credit/small caps are not yet full confirmation",
+    "keyContradiction": "WTI and 10Y are falling while DXY/front-end rates stay firm and Nasdaq/AI rallies; this is relief in the inflation/term-premium channel, not broad monetary easing."
+  },
+  "forwardMap": [
+    {
+      "asset": "DXY",
+      "baseCase": "Firm-to-sideways; avoid assuming a collapse from lower oil alone.",
+      "why": "Fed remains restrictive and front-end yields are sticky.",
+      "confirmation": "PMI growth/prices resilient, US02Y firm, DXY holds around/above 100.",
+      "invalidation": "PMI growth/prices soften materially, US02Y/real yields fall and broad FX confirms USD weakness."
+    },
+    {
+      "asset": "US02Y/US10Y",
+      "baseCase": "2Y sticky; 10Y capped near/below 5% while WTI stays sub-$90s.",
+      "why": "Fed path anchors front end; lower energy risk premium helps long end.",
+      "confirmation": "Curve remains flat while oil stays weak.",
+      "invalidation": "Strong PMI/prices or renewed oil shock sends 10Y back through 5%."
+    },
+    {
+      "asset": "NDX/AI",
+      "baseCase": "Tactical upside/relative leadership remains favored while 10Y is contained.",
+      "why": "AI earnings/capex demand plus market structure can overpower hawkish policy temporarily.",
+      "confirmation": "Semis/AI hold leadership without a renewed 10Y/DXY surge.",
+      "invalidation": "10Y >5% with DXY acceleration, semis fail breakout, or credit/bank stress broadens."
+    },
+    {
+      "asset": "SPX breadth / banks",
+      "baseCase": "Broad risk-on remains incomplete.",
+      "why": "Financials and major banks sold off while Nasdaq made a record; private-credit redemption pressure remains elevated.",
+      "confirmation": "XLF/KRE/IWM/RSP catch up and credit conditions stabilize.",
+      "invalidation": "Further bank relative weakness, wider spreads or deteriorating lending/funding."
+    },
+    {
+      "asset": "WTI/products",
+      "baseCase": "Crude risk premium remains biased lower while bypass/diplomacy progress persists; product tightness may outlast crude tightness.",
+      "why": "Saudi bypass restart directly changes route availability; diesel/jet/refining constraints are separate physical bottlenecks.",
+      "confirmation": "WTI stays below $90-92 while ULSD/cracks remain elevated.",
+      "invalidation": "Renewed route disruption/geopolitical escalation or product cracks collapse with crude."
+    },
+    {
+      "asset": "Gold",
+      "baseCase": "Mixed/neutral tactically.",
+      "why": "Lower nominal yields are supportive, but firm DXY/restrictive Fed are offsets.",
+      "confirmation": "DXY and real yields fall together, miners outperform bullion.",
+      "invalidation": "DXY/real yields rise and gold/miners lose support."
+    }
+  ],
+  "divergenceCards": [
+    {
+      "event": "WTI < $90 / Saudi bypass restart",
+      "expected": "Lower inflation impulse, lower long yields, better duration",
+      "actual": "10Y below 5% and tech strong, but DXY/front end firm",
+      "divergence": "Partial",
+      "leadingHypothesis": "Energy/term-premium relief is working while Fed relative-rate support remains",
+      "nextEvidence": "PMI prices/growth, US02Y, real yields, DXY"
+    },
+    {
+      "event": "Nasdaq/AI at record",
+      "expected": "Risk-on breadth improves",
+      "actual": "Financials/big banks weak; private-credit redemptions elevated",
+      "divergence": "High",
+      "leadingHypothesis": "Selective AI/duration rally, not broad credit-cycle improvement",
+      "nextEvidence": "XLF/KRE/IWM/RSP, credit spreads, lending/funding"
+    },
+    {
+      "event": "Crude risk premium collapses",
+      "expected": "Products/refiners/freight normalize",
+      "actual": "Same-session crack confirmation missing; structural diesel/jet tightness remains documented",
+      "divergence": "Unresolved",
+      "leadingHypothesis": "Financial crude scarcity is unwinding faster than physical product scarcity",
+      "nextEvidence": "ULSD/3-2-1, EIA distillates/gasoline, refinery utilization, tanker rates"
+    },
+    {
+      "event": "Hawkish Fed remains",
+      "expected": "Duration pressured",
+      "actual": "NDX/semis rally as 10Y eases",
+      "divergence": "High",
+      "leadingHypothesis": "Long-end oil relief + AI earnings/capex + positioning outweigh headline policy tactically",
+      "nextEvidence": "10Y, DXY, semis leadership, gamma/positioning"
+    }
+  ],
+  "portfolioActions": [
+    {
+      "ticker": "HIBISCS",
+      "action": "HOLD / NO ADD",
+      "reason": "RM2.20 support marginally broke as crude beta weakened; require repair and operating proof."
+    },
+    {
+      "ticker": "YTLPOWR",
+      "action": "HOLD / NO ADD",
+      "reason": "Structural thesis intact, but RM6.02 breakout and funded/contracted load proof remain gates."
+    },
+    {
+      "ticker": "XOM",
+      "action": "CORE HOLD / NO CHASE",
+      "reason": "Integrated quality cushions crude unwind; product/crack confirmation is the next differentiator."
+    },
+    {
+      "ticker": "TSLA",
+      "action": "HOLD / DO NOT AVERAGE DOWN",
+      "reason": "Inside repair band; lower 10Y helps tactically but valuation/execution still gate conviction."
+    },
+    {
+      "ticker": "MISC",
+      "action": "HOLD",
+      "reason": "Route normalization vs residual freight/product tightness; Yinson funding remains the add gate."
+    },
+    {
+      "ticker": "TTWO",
+      "action": "HOLD / NO ADD",
+      "reason": "Below first repair level; macro relief does not replace catalyst/cash-flow proof."
+    },
+    {
+      "ticker": "DAYANG",
+      "action": "HOLD / DO NOT AVERAGE DOWN",
+      "reason": "Lower WTI raises the burden on utilisation/work-order conversion."
+    }
+  ],
+  "nextChecks": [
+    "09:45 ET US flash PMI: growth and price components; map into DXY, US02Y, US10Y, NDX and gold.",
+    "10:30 ET EIA: distillates/gasoline/refinery utilization; compare with WTI and ULSD/cracks.",
+    "XLF/KRE vs SPY plus 2s10s: determine whether banks are temporary earnings/curve weakness or broader credit transmission.",
+    "MU: verify any disclosed bearish positioning independently; test HBM/DRAM pricing, capacity and cash conversion.",
+    "QQQ/VXN creator statistic: reproduce sample window/base rates before using it as evidence."
+  ],
+  "creatorPolicy": "FXEvolution and StockedUp can generate mechanisms, tickers and challenger questions only. No direct macro-channel or stock-score weight without independent verification."
+}
