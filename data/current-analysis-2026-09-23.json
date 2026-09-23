@@ -1,14 +1,21 @@
 {
   "asOf": "2026-09-23",
-  "capturedAt": "2026-09-23 18:27 MYT / pre-US flash PMI",
-  "title": "Power Stack Forward Sweep — Oil Relief, Firm Dollar, Selective Risk-On",
+  "capturedAt": "2026-09-23 19:17 MYT / evening deep-research delta / pre-US flash PMI",
+  "title": "Power Stack Evening Sweep — AI Funding Selectivity, Agentic Dispersion, Crude Relief",
   "regime": {
-    "structural": "Capital scarcity / restrictive policy / AI funding discrimination",
-    "tactical": "Disinflationary oil + long-yield relief / selective AI-led risk-on",
-    "breadth": "Incomplete: banks/private credit/small caps are not yet full confirmation",
-    "keyContradiction": "WTI and 10Y are falling while DXY/front-end rates stay firm and Nasdaq/AI rallies; this is relief in the inflation/term-premium channel, not broad monetary easing."
+    "structural": "Capital scarcity / restrictive policy / AI project-finance discrimination",
+    "tactical": "Disinflationary crude + long-yield relief / selective AI-led risk-on",
+    "breadth": "Mixed, not simply weak: semis/mega-cap leadership and same-session participation can improve while 52-week breadth and financial confirmation remain poor",
+    "keyContradiction": "AI equity/adoption momentum remains strong while project finance, AI-related credit and selected IPO funding reprice. Falling crude/long yields help duration, but sticky front/belly rates and weak financial confirmation prevent a broad easing call."
   },
   "forwardMap": [
+    {
+      "asset": "AI credit / project finance",
+      "baseCase": "Funding remains available but becomes more selective, with larger concessions for pre-operating, concentrated or execution-heavy projects.",
+      "why": "Project Jupiter/Hyperion repricing plus delayed SB Energy/Holtec offerings contrast with continued Nscale market access.",
+      "confirmation": "Project debt stays discounted/wider, new deals require sponsor support or lower valuations, while AI equities remain firm.",
+      "invalidation": "Debt normalizes, IPOs clear targeted valuations cleanly and funding concessions/guarantees shrink."
+    },
     {
       "asset": "DXY",
       "baseCase": "Firm-to-sideways; avoid assuming a collapse from lower oil alone.",
@@ -32,10 +39,10 @@
     },
     {
       "asset": "SPX breadth / banks",
-      "baseCase": "Broad risk-on remains incomplete.",
-      "why": "Financials and major banks sold off while Nasdaq made a record; private-credit redemption pressure remains elevated.",
-      "confirmation": "XLF/KRE/IWM/RSP catch up and credit conditions stabilize.",
-      "invalidation": "Further bank relative weakness, wider spreads or deteriorating lending/funding."
+      "baseCase": "Broad risk-on remains incomplete; financial weakness has both curve and agentic-disruption hypotheses.",
+      "why": "Banks/private credit lag while wealth/intermediary names face potential agentic competition; breadth metrics are internally mixed.",
+      "confirmation": "XLF/KRE/IWM/RSP improve and SCHW/AMP/RJF stop underperforming after controlling for the curve.",
+      "invalidation": "Further relative weakness in banks/wealth, wider spreads or deteriorating lending/funding despite stable rates."
     },
     {
       "asset": "WTI/products",
@@ -53,6 +60,14 @@
     }
   ],
   "divergenceCards": [
+    {
+      "event": "AI equities/adoption strong while AI project finance reprices",
+      "expected": "Strong AI demand should ease financing and support infrastructure valuations",
+      "actual": "Project loans/bonds weaken and selected IPOs are delayed even as AI equities remain strong",
+      "divergence": "High",
+      "leadingHypothesis": "Capital is still available, but investors are discriminating on execution, customer concentration, guarantees and return visibility",
+      "nextEvidence": "Project Jupiter/Hyperion marks, SB Energy/Nscale pricing, hyperscaler spreads, sponsor guarantees and equity-credit relative performance"
+    },
     {
       "event": "WTI < $90 / Saudi bypass restart",
       "expected": "Lower inflation impulse, lower long yields, better duration",
@@ -84,6 +99,22 @@
       "divergence": "High",
       "leadingHypothesis": "Long-end oil relief + AI earnings/capex + positioning outweigh headline policy tactically",
       "nextEvidence": "10Y, DXY, semis leadership, gamma/positioning"
+    },
+    {
+      "event": "Financials weak during AI-led rally",
+      "expected": "Broad risk-on should improve financial participation",
+      "actual": "Banks/wealth managers lag while tech leads",
+      "divergence": "High / mechanism unresolved",
+      "leadingHypothesis": "Double pressure from flatter-curve economics plus possible agentic disintermediation",
+      "nextEvidence": "SCHW/AMP/RJF vs JPM/BAC/C/KRE after controlling for 2s10s"
+    },
+    {
+      "event": "Breadth signals conflict",
+      "expected": "A healthy record-high tape should improve most participation measures",
+      "actual": "52-week highs/lows remain weak while same-session breadth and semis can improve",
+      "divergence": "Partial",
+      "leadingHypothesis": "Leadership is broadening tactically inside a still-narrow long-horizon market structure",
+      "nextEvidence": "A/D, new highs-lows, %>20DMA, %>50DMA, RSP/SPY, SMH/SPY, XLF/SPY"
     }
   ],
   "portfolioActions": [
@@ -124,11 +155,22 @@
     }
   ],
   "nextChecks": [
-    "09:45 ET US flash PMI: growth and price components; map into DXY, US02Y, US10Y, NDX and gold.",
-    "10:30 ET EIA: distillates/gasoline/refinery utilization; compare with WTI and ULSD/cracks.",
-    "XLF/KRE vs SPY plus 2s10s: determine whether banks are temporary earnings/curve weakness or broader credit transmission.",
-    "MU: verify any disclosed bearish positioning independently; test HBM/DRAM pricing, capacity and cash conversion.",
-    "QQQ/VXN creator statistic: reproduce sample window/base rates before using it as evidence."
+    "AI credit/project finance: Project Jupiter and Hyperion marks, AI-linked spreads, SB Energy/Nscale pricing and sponsor guarantees.",
+    "Financial decomposition: SCHW/AMP/RJF vs JPM/BAC/C/KRE against 2s10s; determine curve vs agentic-disruption contribution.",
+    "Breadth decomposition: A/D, new highs-lows, % above 20DMA/50DMA, RSP/SPY, SMH/SPY and XLF/KRE.",
+    "Rates decomposition: US02Y/05Y/10Y, breakevens and real yields if WTI continues lower.",
+    "Energy: WTI/Brent vs ULSD/cracks, distillate inventories, refinery utilization, freight and any diesel-export policy action.",
+    "Gold: test whether strength persists when DXY and real yields are firm; compare GDX/GLD.",
+    "MU: keep creator bearish positioning zero-weight until independently verified; focus on HBM/DRAM pricing, capacity and cash conversion."
   ],
-  "creatorPolicy": "FXEvolution and StockedUp can generate mechanisms, tickers and challenger questions only. No direct macro-channel or stock-score weight without independent verification."
+  "creatorPolicy": "FXEvolution and StockedUp can generate mechanisms, tickers and challenger questions only. No direct macro-channel or stock-score weight without independent verification.",
+  "deepResearchDelta": {
+    "status": "canonical research overlay; no fundamental-score changes",
+    "aiFunding": "Treat Project Jupiter/Hyperion/SB Energy/Holtec as evidence of capital selectivity and higher cost of capital, not proof that AI demand has collapsed. Nscale remains the key counterexample.",
+    "guarantees": "Track residual-value/credit guarantees and single-tenant concentration as explicit project-quality risks.",
+    "agentic": "Separate agent/inference beneficiaries from potentially disrupted wealth/insurance/subscription intermediaries; do not attribute bank weakness to AI without rate-controlled relative performance.",
+    "breadth": "Use multiple breadth horizons rather than one score: advance/decline, new highs-lows, % above 20/50DMA and sector relative strength.",
+    "rates": "Decompose rates into energy-inflation, demand/real-rate and issuance/supply channels.",
+    "energy": "Keep crude risk-premium relief separate from ULSD/cracks/freight/refinery-product stress."
+  }
 }
