@@ -94,8 +94,8 @@
     },
     {
       "label": "Brent / WTI direction",
-      "value": "Brent +~4%, WTI +~2% Sep 23 after five-session crude decline",
-      "observedAt": "2026-09-23",
+      "value": "Brent $102.13 (-0.9%) / WTI $91.56 (-0.7%) early Sep 24 after the prior session's ~4% crude rebound",
+      "observedAt": "2026-09-24 early Asia",
       "source": "Reuters",
       "confidence": "high"
     },
@@ -147,6 +147,13 @@
       "observedAt": "2026-09-24",
       "source": "Reuters",
       "confidence": "high"
+    },
+    {
+      "label": "Asia refined-product tightness",
+      "value": "Sep light/middle distillate imports ~5.84mbpd vs ~7.06mbpd pre-war; Singapore gasoil ~$173.84/bbl and gasoline ~$139.60 with Brent around $99 in the cited Asia session",
+      "observedAt": "2026-09-23 Asia",
+      "source": "Reuters/Kpler",
+      "confidence": "high"
     }
   ],
   "channels": [
@@ -182,9 +189,9 @@
     },
     {
       "key": "productTightness",
-      "score": 0.6,
-      "confidence": 0.9,
-      "regime": "Diesel futures fell to a two-week low, but policy distortion and expensive STS freight complicate the signal."
+      "score": 0.9,
+      "confidence": 0.99,
+      "regime": "Asian light/middle distillate imports remain >1mbpd below pre-war levels and regional diesel/gasoline premiums remain extreme versus crude; products are still materially tighter than crude."
     },
     {
       "key": "riskAppetite",
@@ -229,7 +236,8 @@
     "Japan's 10Y JGB reached about 3.075%. Japanese repatriation or reduced foreign-bond demand is a risk to monitor, not an observed flow unless holdings/flow data confirm it.",
     "Asia crude imports recovered to about 23.96mbpd but remain roughly 13% below the pre-war average, consistent with partial logistics repair rather than full normalisation.",
     "Real yields remain the cleanest cross-asset constraint for gold, long-duration equities and leveraged AI infrastructure.",
-    "Creator/social claims and unverified summit concessions remain zero-weight until independently verified."
+    "Creator/social claims and unverified summit concessions remain zero-weight until independently verified.",
+    "Same-contract US ULSD/RBOB crack calculations remain a research gap; the new verified evidence is Asian refined-product tightness, not a substitute for US crack data."
   ],
   "forwardView": {
     "horizon": "1-5 trading days",
