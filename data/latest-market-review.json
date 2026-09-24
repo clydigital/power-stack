@@ -1,17 +1,159 @@
 {
-  "asOf":"2026-09-24",
-  "capturedAt":"2026-09-24 09:02 MYT / Sep 23 US close + Sep 23 Malaysia close",
-  "source":"Canonical holdings ledger + Reuters/S&P Global/current verified market data",
-  "regime":"Capital scarcity re-accelerating: strong US PMI, 10Y ~5.10%, real 10Y ~2.78%, firm USD; AI funding open but selective",
-  "summary":"Sep 23's strong PMI invalidated the tactical below-5% yield relief. No holding fundamental score changes. TSLA produced the clearest positive technical change by closing above the old $375-383 repair band; XOM bounced from support but remains below $164-166 repair; TTWO remains damaged below $210. Malaysia holdings retain Sep 23 actions.",
-  "holdings":[
-    {"actionRank":3,"ticker":"XOM","reviewStatus":"changed technical","price":"~$161.23 Sep 23 close","action":"CORE HOLD / NO CHASE","class":"core","stockSpecificEvidence":"No filing changes 88/A fundamentals; price bounced after testing $155.85 on Sep 22.","relevantMacroThemeContext":"Crude rebounded but real yields/financial conditions tightened; integrated/refining quality remains preferable to pure war beta.","fundamentalScoreDecision":"88/A unchanged","technicalAction":"$156-159 held; $164-166 remains repair/reclaim; ~$176.4 major breakout.","watchLevels":{"support":"$156-159","deeper":"~$155","repair":"$164-166","breakout":"~$176.4"},"nextTest":"$164-166 reclaim plus WTI/product cracks/inventories."},
-    {"actionRank":2,"ticker":"YTLPOWR","reviewStatus":"unchanged","price":"RM5.90 Sep 23","action":"HOLD / NO ADD — BREAKOUT UNCONFIRMED","class":"hold","stockSpecificEvidence":"No new filing changes 71/B fundamentals.","relevantMacroThemeContext":"10Y/real-yield surge raises financing hurdle; grid/self-supply, permitting and FCF proof become more important.","fundamentalScoreDecision":"71/B unchanged","technicalAction":"RM5.65-5.70 support; ~RM6.02 breakout; ~RM6.14 confirmation.","watchLevels":{"support":"RM5.65-5.70","breakout":"~RM6.02","confirmation":"~RM6.14"},"nextTest":"~RM6.02 break plus contracted load, funding, grid/self-supply, permits and FCF."},
-    {"actionRank":1,"ticker":"HIBISCS","reviewStatus":"unchanged warning","price":"RM2.18 Sep 23","action":"HOLD / NO ADD — SUPPORT BREACH","class":"core","stockSpecificEvidence":"No new filing changes 74/B fundamentals.","relevantMacroThemeContext":"Crude rebound helps at the margin but does not repair the prior support break or prove realized pricing stability.","fundamentalScoreDecision":"74/B unchanged","technicalAction":"Require RM2.20-2.25 repair, then RM2.30-2.35; ~RM2.46 breakout.","watchLevels":{"repair1":"RM2.20-2.25","repair2":"RM2.30-2.35","breakout":"~RM2.46"},"nextTest":"WTI/realized pricing, operations and RM2.20-2.25 repair."},
-    {"actionRank":5,"ticker":"MISC","reviewStatus":"unchanged","price":"RM7.96 Sep 23","action":"HOLD / YINSON FUNDING STILL ADD GATE","class":"hold","stockSpecificEvidence":"No new filing resolves Yinson funding/structure.","relevantMacroThemeContext":"STS rerouting remains expensive even as crude routes adapt; freight/product signals matter more than crude alone.","fundamentalScoreDecision":"80/B+ unchanged","technicalAction":"RM7.90 support; RM8.10-8.30 recovery; ~RM8.48 confirmation.","watchLevels":{"support":"~RM7.90","recovery":"RM8.10-8.30","confirmation":"~RM8.48"},"nextTest":"Yinson funding/structure and tanker/product freight."},
-    {"actionRank":6,"ticker":"TTWO","reviewStatus":"changed technical","price":"~$206.3 Sep 23 close; $203.19 intraday low","action":"HOLD / NO ADD — REPAIR INCOMPLETE","class":"watch","stockSpecificEvidence":"No filing changes 68/C+ fundamentals; price remains below first repair.","relevantMacroThemeContext":"10Y/real-yield surge materially raises the hurdle for catalyst-duration assets.","fundamentalScoreDecision":"68/C+ unchanged","technicalAction":"~$210 first repair; $216-217 confirmation; $228-233 stronger recovery.","watchLevels":{"firstRepair":"~$210","confirmation":"$216-217","recovery":"$228-233"},"nextTest":"GTA VI milestones and sustained $210 then $216-217 reclaim."},
-    {"actionRank":4,"ticker":"TSLA","reviewStatus":"changed positive technical","price":"$384.78 Sep 23 close","action":"HOLD / DO NOT AVERAGE DOWN — REPAIR IMPROVED","class":"watch","stockSpecificEvidence":"No new company evidence changes 61/C; price closed above the prior $375-383 repair band.","relevantMacroThemeContext":"Higher real yields keep valuation hurdle severe; storage/cash flow remains the clearest Power Stack bridge.","fundamentalScoreDecision":"61/C unchanged","technicalAction":"$383 now needs to hold; ~$397 next confirmation; $375-383 becomes first repair/support band.","watchLevels":{"repairSupport":"$375-383","next":"~$397","deeperSupport":"$353-355"},"nextTest":"Hold >$383 then ~$397, storage growth and autonomy economics/regulation."},
-    {"actionRank":7,"ticker":"DAYANG","reviewStatus":"unchanged","price":"RM1.47 latest verified","action":"HOLD / DO NOT AVERAGE DOWN","class":"risk","stockSpecificEvidence":"No new operating evidence repairs utilisation/work-order conversion.","relevantMacroThemeContext":"Crude rebound is insufficient without company-specific execution proof.","fundamentalScoreDecision":"57/C unchanged","technicalAction":"RM1.42 critical; RM1.50-1.52 recovery; ~RM1.57 breakout.","watchLevels":{"critical":"RM1.42","recovery":"RM1.50-1.52","breakout":"~RM1.57"},"nextTest":"Utilisation, work orders, earnings conversion and crude stability."},
-    {"actionRank":8,"ticker":"6742UW","reviewStatus":"unchanged","price":null,"action":"TRACK PARENT / TERMS ONLY","class":"hold","stockSpecificEvidence":"No reliable standalone valuation or new terms verified.","relevantMacroThemeContext":"Track YTLPOWR plus instrument-specific time decay/liquidity.","fundamentalScoreDecision":"Linked 71/B unchanged; not standalone valuation","technicalAction":"Track parent and strike/expiry/liquidity/time decay.","watchLevels":{"parent":"RM5.65-5.70 / ~RM6.02 / ~RM6.14"},"nextTest":"Reliable instrument terms/status and parent follow-through."}
+  "asOf": "2026-09-24",
+  "capturedAt": "2026-09-24 15:05 MYT / Sep 23 US close + Sep 24 Asia macro",
+  "source": "Canonical holdings ledger + Reuters/S&P Global/current verified market data",
+  "regime": "Mixed: global duration stress dominates, but the US-China trade truce through 10 January 2027 removes the immediate tariff cliff",
+  "summary": "No holding fundamental-score changes. The key delta is cross-asset: US/Japan yields remain the dominant valuation constraint, while the verified US-China truce extension lowers immediate tariff/supply-chain tail risk. Treat summit terms as a catalyst overlay, not a blanket risk-on signal.",
+  "holdings": [
+    {
+      "actionRank": 3,
+      "ticker": "XOM",
+      "reviewStatus": "changed technical",
+      "price": "~$161.23 Sep 23 close",
+      "action": "CORE HOLD / NO CHASE",
+      "class": "core",
+      "stockSpecificEvidence": "No filing changes 88/A fundamentals; price bounced after testing $155.85 on Sep 22.",
+      "relevantMacroThemeContext": "Oil/geopolitical premium remains supportive, but Asia crude-flow recovery shows partial logistics repair; rates remain a secondary valuation constraint.",
+      "fundamentalScoreDecision": "88/A unchanged",
+      "technicalAction": "$156-159 held; $164-166 remains repair/reclaim; ~$176.4 major breakout.",
+      "watchLevels": {
+        "support": "$156-159",
+        "deeper": "~$155",
+        "repair": "$164-166",
+        "breakout": "~$176.4"
+      },
+      "nextTest": "$164-166 reclaim plus WTI/product cracks/inventories."
+    },
+    {
+      "actionRank": 2,
+      "ticker": "YTLPOWR",
+      "reviewStatus": "unchanged",
+      "price": "RM5.90 Sep 23",
+      "action": "HOLD / NO ADD — BREAKOUT UNCONFIRMED",
+      "class": "hold",
+      "stockSpecificEvidence": "No new filing changes 71/B fundamentals.",
+      "relevantMacroThemeContext": "US 10Y >5% and Japan 10Y >3% reinforce the financing hurdle; trade relief is not a direct company-fundamental upgrade.",
+      "fundamentalScoreDecision": "71/B unchanged",
+      "technicalAction": "RM5.65-5.70 support; ~RM6.02 breakout; ~RM6.14 confirmation.",
+      "watchLevels": {
+        "support": "RM5.65-5.70",
+        "breakout": "~RM6.02",
+        "confirmation": "~RM6.14"
+      },
+      "nextTest": "~RM6.02 break plus contracted load, funding, grid/self-supply, permits and FCF."
+    },
+    {
+      "actionRank": 1,
+      "ticker": "HIBISCS",
+      "reviewStatus": "unchanged warning",
+      "price": "RM2.18 Sep 23",
+      "action": "HOLD / NO ADD — SUPPORT BREACH",
+      "class": "core",
+      "stockSpecificEvidence": "No new filing changes 74/B fundamentals.",
+      "relevantMacroThemeContext": "Crude support helps, but partial Asian flow recovery and the prior support break mean company execution/realized pricing still matter more than the headline oil premium.",
+      "fundamentalScoreDecision": "74/B unchanged",
+      "technicalAction": "Require RM2.20-2.25 repair, then RM2.30-2.35; ~RM2.46 breakout.",
+      "watchLevels": {
+        "repair1": "RM2.20-2.25",
+        "repair2": "RM2.30-2.35",
+        "breakout": "~RM2.46"
+      },
+      "nextTest": "WTI/realized pricing, operations and RM2.20-2.25 repair."
+    },
+    {
+      "actionRank": 5,
+      "ticker": "MISC",
+      "reviewStatus": "unchanged",
+      "price": "RM7.96 Sep 23",
+      "action": "HOLD / YINSON FUNDING STILL ADD GATE",
+      "class": "hold",
+      "stockSpecificEvidence": "No new filing resolves Yinson funding/structure.",
+      "relevantMacroThemeContext": "Asia crude imports are recovering, but route adaptation does not prove tanker/product-freight normalisation; keep freight and rerouting as separate signals.",
+      "fundamentalScoreDecision": "80/B+ unchanged",
+      "technicalAction": "RM7.90 support; RM8.10-8.30 recovery; ~RM8.48 confirmation.",
+      "watchLevels": {
+        "support": "~RM7.90",
+        "recovery": "RM8.10-8.30",
+        "confirmation": "~RM8.48"
+      },
+      "nextTest": "Yinson funding/structure and tanker/product freight."
+    },
+    {
+      "actionRank": 6,
+      "ticker": "TTWO",
+      "reviewStatus": "changed technical",
+      "price": "~$206.3 Sep 23 close; $203.19 intraday low",
+      "action": "HOLD / NO ADD — REPAIR INCOMPLETE",
+      "class": "watch",
+      "stockSpecificEvidence": "No filing changes 68/C+ fundamentals; price remains below first repair.",
+      "relevantMacroThemeContext": "The renewed global duration shock materially raises the hurdle for catalyst-duration assets; US-China trade relief is low direct relevance.",
+      "fundamentalScoreDecision": "68/C+ unchanged",
+      "technicalAction": "~$210 first repair; $216-217 confirmation; $228-233 stronger recovery.",
+      "watchLevels": {
+        "firstRepair": "~$210",
+        "confirmation": "$216-217",
+        "recovery": "$228-233"
+      },
+      "nextTest": "GTA VI milestones and sustained $210 then $216-217 reclaim."
+    },
+    {
+      "actionRank": 4,
+      "ticker": "TSLA",
+      "reviewStatus": "changed positive technical",
+      "price": "$384.78 Sep 23 close",
+      "action": "HOLD / DO NOT AVERAGE DOWN — REPAIR IMPROVED",
+      "class": "watch",
+      "stockSpecificEvidence": "No new company evidence changes 61/C; price closed above the prior $375-383 repair band.",
+      "relevantMacroThemeContext": "The trade-truce extension is marginally constructive for China/supply-chain tail risk, but high real yields remain the larger valuation constraint and company execution remains unchanged.",
+      "fundamentalScoreDecision": "61/C unchanged",
+      "technicalAction": "$383 now needs to hold; ~$397 next confirmation; $375-383 becomes first repair/support band.",
+      "watchLevels": {
+        "repairSupport": "$375-383",
+        "next": "~$397",
+        "deeperSupport": "$353-355"
+      },
+      "nextTest": "Hold >$383 then ~$397, storage growth and autonomy economics/regulation."
+    },
+    {
+      "actionRank": 7,
+      "ticker": "DAYANG",
+      "reviewStatus": "unchanged",
+      "price": "RM1.47 latest verified",
+      "action": "HOLD / DO NOT AVERAGE DOWN",
+      "class": "risk",
+      "stockSpecificEvidence": "No new operating evidence repairs utilisation/work-order conversion.",
+      "relevantMacroThemeContext": "Crude rebound is insufficient without company-specific execution proof.",
+      "fundamentalScoreDecision": "57/C unchanged",
+      "technicalAction": "RM1.42 critical; RM1.50-1.52 recovery; ~RM1.57 breakout.",
+      "watchLevels": {
+        "critical": "RM1.42",
+        "recovery": "RM1.50-1.52",
+        "breakout": "~RM1.57"
+      },
+      "nextTest": "Utilisation, work orders, earnings conversion and crude stability."
+    },
+    {
+      "actionRank": 8,
+      "ticker": "6742UW",
+      "reviewStatus": "unchanged",
+      "price": null,
+      "action": "TRACK PARENT / TERMS ONLY",
+      "class": "hold",
+      "stockSpecificEvidence": "No reliable standalone valuation or new terms verified.",
+      "relevantMacroThemeContext": "Track YTLPOWR plus instrument-specific time decay/liquidity.",
+      "fundamentalScoreDecision": "Linked 71/B unchanged; not standalone valuation",
+      "technicalAction": "Track parent and strike/expiry/liquidity/time decay.",
+      "watchLevels": {
+        "parent": "RM5.65-5.70 / ~RM6.02 / ~RM6.14"
+      },
+      "nextTest": "Reliable instrument terms/status and parent follow-through."
+    }
+  ],
+  "monitorNext": [
+    "Trump-Xi summit exact terms: tariffs, purchases, rare earths and AI/advanced-tech controls",
+    "US 10Y around 5%+ and Japan 10Y JGB above 3%",
+    "jobless claims and new-home sales",
+    "ULSD/product cracks versus crude",
+    "gold response if DXY/real yields turn"
   ]
 }
