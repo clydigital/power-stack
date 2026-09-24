@@ -1,12 +1,12 @@
 {
-  "version": 28,
-  "generatedAt": "2026-09-24T01:02:00Z",
+  "version": 29,
+  "generatedAt": "2026-09-24T01:07:00Z",
   "packetStaleAfterHours": 36,
   "source": "Daily Investment Brief attempted + MacroMicro attempted + Reuters/S&P Global/verified market data",
   "sourceUrl": "https://dailyinvestmentbrief.com/macroeconomic-dashboard/",
   "supplementalSourceUrl": "https://en.macromicro.me/",
-  "sourceStatus": "Daily Investment Brief remained client-side/incomplete for reliable numeric extraction; MacroMicro returned an internal error. No placeholder was inferred. Official/authoritative market reporting filled material gaps.",
-  "regime": "Capital scarcity re-accelerated. September US flash activity surprised strongly, the Treasury curve repriced above 5% across nearly all maturities, real yields reached post-2008 highs and the dollar strengthened. AI demand remains strong but financing quality and sponsor leverage are increasingly decisive.",
+  "sourceStatus": "Daily Investment Brief remained client-side/incomplete for reliable numeric extraction; MacroMicro did not provide a reliable supplemental reading. No placeholder was inferred. Official/authoritative market reporting filled material gaps.",
+  "regime": "Capital scarcity re-accelerated and is now visibly global. Strong September US flash activity pushed US nominal and real yields higher; the spillover lifted Japan's 10Y JGB yield to a 30-year high. AI demand remains strong but financing quality, sponsor leverage and sovereign-rate sensitivity are increasingly decisive.",
   "keyReadings": [
     {"label":"Fed funds target","value":"3.75%-4.00%","observedAt":"2026-09-16","source":"Federal Reserve/Reuters","confidence":"high"},
     {"label":"September US flash Composite PMI","value":"58.4 vs 56.0 August; highest since July 2021","observedAt":"2026-09-23","source":"S&P Global/Reuters","confidence":"high"},
@@ -16,6 +16,8 @@
     {"label":"US 10Y real TIPS yield","value":"~2.78%; highest since 2008","observedAt":"2026-09-23","source":"Reuters","confidence":"high"},
     {"label":"US 2Y Treasury","value":"~5bp below 5% during Sep 23 session","observedAt":"2026-09-23","source":"Reuters","confidence":"high"},
     {"label":"US 5Y auction","value":"very weak demand; lowest demand since 2018 per Reuters market summary","observedAt":"2026-09-23","source":"Reuters","confidence":"high"},
+    {"label":"Japan 10Y JGB","value":"3.055%; highest since August 1996","observedAt":"2026-09-24 early Asia","source":"Reuters","confidence":"high"},
+    {"label":"Japan 30Y JGB","value":"4.125%","observedAt":"2026-09-24 early Asia","source":"Reuters","confidence":"high"},
     {"label":"Dollar index","value":"+~0.5% Sep 23 to nearly two-month high","observedAt":"2026-09-23","source":"Reuters","confidence":"high"},
     {"label":"US equities","value":"Dow -0.7%, S&P 500 -0.8%, Nasdaq -1.1% Sep 23","observedAt":"2026-09-23","source":"Reuters","confidence":"high"},
     {"label":"Brent / WTI direction","value":"Brent +~4%, WTI +~2% Sep 23 after five-session crude decline","observedAt":"2026-09-23","source":"Reuters","confidence":"high"},
@@ -28,33 +30,34 @@
   ],
   "channels": [
     {"key":"policyRelief","score":-2.0,"confidence":0.99,"regime":"Strong PMI/new orders and rising prices reinforce the Fed's hawkish stance."},
-    {"key":"financialConditions","score":-2.2,"confidence":0.99,"regime":"10Y ~5.10%, real 10Y ~2.78%, strong USD and weak Treasury auction materially tighten conditions."},
+    {"key":"financialConditions","score":-2.3,"confidence":0.99,"regime":"US 10Y ~5.10%, real 10Y ~2.78%, strong USD, weak Treasury auction and Japan 10Y at 3.055% show a global duration shock."},
     {"key":"tailCreditStress","score":1.7,"confidence":0.9,"regime":"AI/project-finance dispersion and private-credit concerns remain active; fresh CCC OAS is a gap."},
     {"key":"industrialCapex","score":2.0,"confidence":0.99,"regime":"Strong PMI and AI physical demand support funded capex, but financing/permitting filters tighten."},
     {"key":"crudeTightness","score":0.2,"confidence":0.98,"regime":"Crude rebounded after five declines; no return yet to peak war-premium regime."},
     {"key":"productTightness","score":0.6,"confidence":0.9,"regime":"Diesel futures fell to a two-week low, but policy distortion and expensive STS freight complicate the signal."},
-    {"key":"riskAppetite","score":-0.8,"confidence":0.99,"regime":"Broad equities fell on Sep 23 despite cybersecurity strength; AI rally breadth is narrowing."},
+    {"key":"riskAppetite","score":-0.8,"confidence":0.99,"regime":"Broad equities fell on Sep 23 and TradingView's Top Stories explicitly flags a narrowing AI rally."},
     {"key":"preciousMetals","score":-1.5,"confidence":0.99,"regime":"Gold is tactically pressured by stronger USD and sharply higher real yields."},
-    {"key":"aiFundingQuality","score":-2.0,"confidence":0.99,"regime":"SoftBank's huge bond deal proves funding access but also reinforces leverage/credit-market dependence."},
+    {"key":"aiFundingQuality","score":-2.0,"confidence":0.99,"regime":"SoftBank's US$11.1B bond deal proves funding access for a strong sponsor but reinforces leverage and credit-market dependence."},
     {"key":"chinaDomesticDemand","score":-0.7,"confidence":0.9,"regime":"Trade truce reduces tail risk but does not itself prove domestic-demand repair."},
     {"key":"criticalMineralsSecurity","score":1.8,"confidence":0.99,"regime":"Rare earths remain a central US-China negotiating and aerospace supply-security issue."},
     {"key":"dataCentreGridAccess","score":-1.8,"confidence":0.99,"regime":"Texas/EU constraints and self-supply requirements keep realizable MW below headline queues."}
   ],
   "notes": [
-    "The Sep 23 PMI release invalidated the prior tactical assumption that lower crude would keep the 10Y contained below 5%.",
-    "Real yields are now the cleanest cross-asset constraint: ~2.78% 10Y TIPS raises the hurdle for gold, long-duration equities and leveraged infrastructure.",
+    "The Sep 23 PMI release invalidated the prior tactical assumption that lower crude would keep the US 10Y contained below 5%.",
+    "The Sep 24 Japan move broadens the rates problem: 10Y JGB 3.055% and 30Y 4.125% raise the risk of global duration repricing and Japanese capital repatriation.",
+    "Real yields remain the cleanest cross-asset constraint: ~2.78% US 10Y TIPS raises the hurdle for gold, long-duration equities and leveraged infrastructure.",
     "Do not interpret SoftBank's successful bond sale as broad AI-credit normalization; it confirms capital availability for strong sponsors while leverage rises.",
     "Crude and diesel diverged on Sep 23; keep crude, product cracks and freight as separate signals.",
     "Creator/social claims remain zero-weight until independently verified."
   ],
   "forwardView": {
     "horizon":"1-5 trading days",
-    "baseCase":"Rates remain the dominant cross-asset constraint unless the 7Y auction/Fed communication reverses the Sep 23 move. AI can remain fundamentally strong while equity breadth and project finance weaken.",
-    "dollar":"Bias firm while US growth/prices and front-end yields remain strong.",
-    "rates":"5% is no longer merely a test; sustained 10Y/real-yield pressure is the key valuation regime variable.",
+    "baseCase":"Rates remain the dominant cross-asset constraint unless the 7Y auction/Fed communication reverses the Sep 23 move. Japan now reinforces rather than offsets the global duration shock. AI can remain fundamentally strong while equity breadth and project finance weaken.",
+    "dollar":"Bias firm while US growth/prices and front-end yields remain strong; weak yen adds imported-inflation pressure in Japan.",
+    "rates":"5% US 10Y is no longer merely a test; sustained US real-yield pressure plus Japan 10Y above 3% is the key valuation regime variable.",
     "equities":"Prefer funded cash-generative AI infrastructure and selective cybersecurity; require breadth/credit confirmation before broad risk-on.",
     "energy":"Separate crude rebound from diesel/product/freight normalization; policy headlines can distort product futures.",
     "gold":"Tactically weak until real yields and DXY roll over together.",
-    "nextCatalyst":"Trump-Xi summit, US $44B 7Y Treasury auction, and scheduled Fed speakers on Sep 24."
+    "nextCatalyst":"Trump-Xi summit, US $44B 7Y Treasury auction, Fed speakers and follow-through in JGB yields on Sep 24."
   }
 }
