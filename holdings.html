@@ -16,7 +16,8 @@
     .ranking-panel{padding:0;overflow:hidden;margin:12px 0}.ranking-head{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:15px 17px;border-bottom:1px solid var(--line)}.ranking-head h2{font-size:18px;margin:4px 0 0}.ranking-head span{font-size:9px;color:#78838c}.ranking-wrap{overflow:auto}.ranking{width:100%;border-collapse:collapse;min-width:760px}.ranking th,.ranking td{text-align:left;padding:11px 14px;border-bottom:1px solid #1c2227;font-size:10px}.ranking th{font-size:8px;color:#707a84;text-transform:uppercase;letter-spacing:.1em;background:#0b0f12}.ranking tr:last-child td{border-bottom:0}.ranking td:nth-child(1){width:42px;color:#68727b}.ranking td:nth-child(2) strong{display:block;font-size:12px;color:#eef0ed}.ranking td:nth-child(2) span{font-size:9px;color:#7b858e}.ranking-score{font-weight:900;font-size:14px;font-variant-numeric:tabular-nums}.grade-pill,.confidence-pill{display:inline-flex;border:1px solid #303840;border-radius:999px;padding:4px 7px;font-size:8px;font-weight:800;letter-spacing:.05em}.grade-a{color:var(--green);border-color:#2c4d3b;background:#0d1913}.grade-b{color:#c7d9e8;border-color:#314455;background:#0d141a}.grade-c{color:var(--amber);border-color:#50462c;background:#18150d}.grade-f{color:var(--red);border-color:#513033;background:#1a1011}.confidence-pill{color:#89939c;font-weight:600}.confidence-pill.provisional{color:var(--amber);border-color:#50462c;background:#18150d}
     .holdings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.holding-card{border:1px solid var(--line);background:linear-gradient(180deg,#101419,#0c1013);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:13px}.holding-card-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}.holding-title{display:flex;gap:10px;align-items:center}.holding-ticker{font-size:24px;font-weight:900;letter-spacing:-.045em}.holding-name{font-size:10px;color:#7f8992;margin-top:2px}.score-orb{width:58px;height:58px;flex:0 0 58px;border:1px solid #31403a;border-radius:50%;display:grid;place-items:center;background:#0a0f0d}.score-orb b{font-size:20px;letter-spacing:-.05em}.score-orb span{font-size:7px;color:#728078;text-transform:uppercase;letter-spacing:.08em;display:block;text-align:center;margin-top:-6px}.holding-status{font-size:10px;font-weight:700;color:#cbd1d5;margin-top:2px}.metric-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.metric{border:1px solid #20272d;background:#090d10;border-radius:8px;padding:8px 9px;font-size:9px;color:#9da7af;line-height:1.35}.component-grid{display:grid;gap:7px}.component-row{display:grid;grid-template-columns:125px minmax(0,1fr) 48px;gap:8px;align-items:center;font-size:8px;color:#77818a}.component-row b{font-size:9px;text-align:right;color:#c8cfd5;font-variant-numeric:tabular-nums}.component-track{height:4px;border-radius:10px;background:#20262c;overflow:hidden}.component-fill{height:100%;border-radius:inherit;background:var(--blue)}.card-section{border-top:1px solid #1b2126;padding-top:10px}.card-section h3{font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin:0 0 5px}.card-section p{margin:0;font-size:10px;line-height:1.55;color:#adb6be}.card-section.risk h3{color:var(--red)}.card-section.verdict h3{color:var(--blue)}.source-list{display:flex;gap:7px;flex-wrap:wrap;margin-top:auto;padding-top:2px}.source-list a{font-size:8px;color:#8fb8df;text-decoration:none;border:1px solid #253341;border-radius:999px;padding:5px 7px}.source-list a:hover{border-color:#45627a;color:#c6def2}.chart-link{display:inline-flex;align-items:center;gap:6px;width:max-content;max-width:100%;margin-top:8px;text-decoration:none;border:1px solid #3e365b;background:linear-gradient(100deg,#151126,#111924);color:#d8c8ff;border-radius:8px;padding:7px 9px;font-size:8px;font-weight:800;letter-spacing:.03em}.chart-link:hover{border-color:#795ec1;color:#fff;filter:brightness(1.08)}.error-state{padding:50px;text-align:center;color:var(--red);border:1px dashed #513033;border-radius:12px}.ghost-link.watch-link{color:#f5efff;background:linear-gradient(100deg,#5f47a7,#8e66d8);border-color:transparent;font-weight:850}
     .position-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.position-cell{border:1px solid #26362e;background:#0a110d;border-radius:8px;padding:8px}.position-cell b{display:block;color:#ecf3ee;font-size:11px}.position-cell span{display:block;color:#758078;font-size:7px;text-transform:uppercase;margin-top:3px}.pnl-up b{color:var(--green)}.pnl-down b{color:var(--red)}
-    @media(max-width:1100px){.holdings-grid{grid-template-columns:1fr}.method-grid{grid-template-columns:1fr}}
+    .live-overlay{padding:0;overflow:hidden;margin:0 0 14px}.live-overlay-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;padding:15px 17px;border-bottom:1px solid var(--line)}.live-overlay-head h2{font-size:19px;margin:4px 0 5px}.live-overlay-head p{font-size:10px;line-height:1.55;color:#aeb7bf;margin:0;max-width:780px}.live-meta{font-size:8px;color:#78838c;text-align:right;line-height:1.5}.live-body{padding:14px 16px;display:grid;gap:12px}.signal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.live-signal{border:1px solid #232b31;background:#090d10;border-radius:9px;padding:10px}.live-signal span{display:block;font-size:7px;color:#737f88;text-transform:uppercase;letter-spacing:.08em}.live-signal b{display:block;font-size:14px;margin:3px 0 5px}.live-signal p{margin:0;font-size:9px;color:#9faab2;line-height:1.45}.overlay-headwind{color:#e5a0a4}.overlay-tailwind{color:#8fd8ad}.overlay-mixed{color:#e6c77c}.overlay-neutral,.overlay-unresolved{color:#a5b1ba}.overlay-summary{display:flex;gap:7px;flex-wrap:wrap}.overlay-chip{display:inline-flex;border:1px solid #303840;border-radius:999px;padding:5px 7px;font-size:8px;font-weight:800;letter-spacing:.04em}.overlay-chip.high{border-color:#563136;color:#e5a0a4;background:#1a1011}.overlay-chip.mixed{border-color:#50462c;color:#e6c77c;background:#18150d}.overlay-chip.support{border-color:#28503a;color:#8fd8ad;background:#0d1913}.overlay-table-wrap{overflow:auto;border:1px solid #1f252a;border-radius:9px}.overlay-table{width:100%;border-collapse:collapse;min-width:900px}.overlay-table th,.overlay-table td{padding:9px 11px;border-bottom:1px solid #1c2227;text-align:left;font-size:9px;vertical-align:top}.overlay-table th{font-size:7px;text-transform:uppercase;letter-spacing:.09em;color:#707a84;background:#0b0f12}.overlay-table tr:last-child td{border-bottom:0}.overlay-table strong{font-size:10px}.effect-pill{display:inline-flex;border:1px solid #303840;border-radius:999px;padding:3px 6px;font-size:7px;font-weight:850}.effect-pill.HEADWIND{color:#e5a0a4;border-color:#563136}.effect-pill.TAILWIND{color:#8fd8ad;border-color:#28503a}.effect-pill.MIXED{color:#e6c77c;border-color:#50462c}.effect-pill.NEUTRAL,.effect-pill.UNRESOLVED{color:#a5b1ba}.cluster-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.cluster-card{border:1px solid #232b31;background:#0b0f12;border-radius:9px;padding:10px}.cluster-card b{font-size:10px}.cluster-card span{display:block;font-size:7px;text-transform:uppercase;color:#75808a;margin-top:3px}.cluster-card p{font-size:9px;line-height:1.45;color:#9faab2;margin:7px 0 0}.live-open-items{display:grid;grid-template-columns:1fr 1fr;gap:8px}.live-open-items div{border-top:1px solid #1d2429;padding-top:9px}.live-open-items h3{font-size:8px;text-transform:uppercase;letter-spacing:.08em;color:#8fb8df;margin:0 0 5px}.live-open-items ul{margin:0;padding-left:16px;color:#9faab2;font-size:9px;line-height:1.5}
+    @media(max-width:1100px){.holdings-grid{grid-template-columns:1fr}.method-grid{grid-template-columns:1fr}.signal-grid,.cluster-grid{grid-template-columns:1fr}.live-open-items{grid-template-columns:1fr}}
     @media(max-width:650px){.metric-grid{grid-template-columns:1fr}.component-row{grid-template-columns:110px minmax(0,1fr) 42px}.ranking-head{align-items:flex-start;flex-direction:column}.score-orb{width:52px;height:52px;flex-basis:52px}}
   </style>
 </head>
@@ -26,7 +27,7 @@
       <div class="brand-block">
         <div class="eyebrow">INVESTMENT RESEARCH VAULT</div>
         <div class="brand">POWER STACK</div>
-        <div class="brand-sub">CURRENT PORTFOLIO · FUNDAMENTALS ONLY</div>
+        <div class="brand-sub">CURRENT PORTFOLIO · FUNDAMENTALS + LIVE RISK</div>
       </div>
       <nav class="side-scroll">
         <section class="side-section">
@@ -41,7 +42,7 @@
         </section>
         <section class="side-section">
           <div class="side-heading">Rating discipline</div>
-          <div class="side-micro">Financial statements first. Theme excitement, crowding, technicals and Macro Pulse are intentionally excluded from this page.</div>
+          <div class="side-micro">Financial statements still own the score. Live monetary context is shown separately as a portfolio-risk and thesis-check overlay; it cannot alter the fundamental score.</div>
         </section>
       </nav>
       <div class="side-footer">
@@ -55,10 +56,10 @@
         <div>
           <div class="eyebrow">PORTFOLIO REALITY CHECK</div>
           <h1>Current Holdings</h1>
-          <p>One question only: how good are the businesses and financials at today's valuation?</p>
+          <p>First: how good are the businesses and financials? Then separately: what is the current Live macro state doing to the risks you already own?</p>
           <div class="rule-strip">
             <span class="rule-chip">Earnings</span><span class="rule-chip">Cash flow</span><span class="rule-chip">Balance sheet</span><span class="rule-chip">Business quality</span><span class="rule-chip">Growth</span><span class="rule-chip">Valuation</span>
-            <span class="rule-chip excluded">Macro</span><span class="rule-chip excluded">Crowding</span><span class="rule-chip excluded">Technicals</span>
+            <span class="rule-chip excluded">Macro from score</span><span class="rule-chip">Live overlay separate</span><span class="rule-chip excluded">Crowding from score</span><span class="rule-chip excluded">Technicals from score</span>
           </div>
         </div>
         <div class="top-actions">
@@ -70,6 +71,32 @@
 
       <main class="main-content">
         <section id="summaryStats" class="summary-grid"></section>
+
+        <section class="live-overlay panel">
+          <div class="live-overlay-head">
+            <div>
+              <div class="eyebrow">LIVE PORTFOLIO OVERLAY</div>
+              <h2>What the current macro state is doing to what you already own</h2>
+              <p>Uses Live Desk as the canonical monetary/market baseline, then maps it to Power Stack sensitivity profiles and existing action gates. This is an exposure check, not a second company score.</p>
+            </div>
+            <div id="liveOverlayMeta" class="live-meta">Loading Live portfolio overlay…</div>
+          </div>
+          <div class="live-body">
+            <div id="liveSignalGrid" class="signal-grid"></div>
+            <div id="liveReviewSummary" class="overlay-summary"></div>
+            <div class="overlay-table-wrap">
+              <table class="overlay-table">
+                <thead><tr><th>Holding</th><th>Macro read</th><th>Rates</th><th>Funding</th><th>Physical energy</th><th>Existing PS action gate</th></tr></thead>
+                <tbody id="liveOverlayBody"></tbody>
+              </table>
+            </div>
+            <div id="clusterGrid" class="cluster-grid"></div>
+            <div class="live-open-items">
+              <div><h3>Open divergences</h3><ul id="liveDivergences"></ul></div>
+              <div><h3>Research gaps</h3><ul id="liveGaps"></ul></div>
+            </div>
+          </div>
+        </section>
 
         <section class="context-panel panel">
           <div class="context-head">
@@ -100,7 +127,7 @@
         <section id="holdingsGrid" class="holdings-grid"></section>
       </main>
 
-      <footer class="footer">Power Stack · Current Holdings is a fundamentals-only research ledger. Scores should be refreshed after material earnings, balance-sheet or valuation changes.</footer>
+      <footer class="footer">Power Stack · Fundamental scores remain company-owned. The Live portfolio overlay is a separate exposure, concentration and investigation layer.</footer>
     </div>
   </div>
 
