@@ -1,5 +1,6 @@
 let ideas=[];
 let macroContext=null;
+let liveDeskContext=null;
 let macroSensitivityData=null;
 let macroProfileMap=new Map();
 const MACRO_PACKET_MAX_HOURS=168;
@@ -21,6 +22,7 @@ function packetFresh(){if(!macroContext)return false;const max=Number(macroConte
 function channelFresh(c){if(!c||!packetFresh()||c.fresh===false)return false;const max=Number(c.staleAfterHours||macroContext.packetStaleAfterHours||MACRO_PACKET_MAX_HOURS);return ageHours(c.observedAt||macroContext.generatedAt)<max}
 function channelFreshnessWeight(c){if(!channelFresh(c))return 0;const max=Number(c.staleAfterHours||macroContext.packetStaleAfterHours||MACRO_PACKET_MAX_HOURS);return clamp(1-.35*(ageHours(c.observedAt||macroContext.generatedAt)/max),.65,1)}
 function themeFresh(t){return !!t&&packetFresh()}
+function liveDeskFresh(){return !!liveDeskContext?.asOf&&ageHours(liveDeskContext.asOf)<=48}
 function scoreClass(v){return v>0.015?'pos':v<-0.015?'neg':'neutral'}
 function fmtSigned(v,d=1){const n=Number(v||0);return `${n>0?'+':''}${n.toFixed(d)}`}
 function pct(v,max){return `${clamp(Number(v||0)/max*100,0,100)}%`}
@@ -103,6 +105,14 @@ function renderSummary(rows){const avg=rows.length?rows.reduce((s,x)=>s+Number(x
 
 function renderSignalMini(t){const fresh=packetFresh(),impact=themeDelta(t.theme),drivers=themeTopDrivers(t.theme),top=drivers[0];return `<div class="theme-signal ${fresh?'':'stale-panel'}"><div class="signal-top"><span class="signal-name">${esc(t.theme)}</span><b class="signal-score ${fresh?scoreClass(impact):'neutral'}">${fresh?fmtSigned(impact,2):'STALE'}</b></div><div class="signal-track"><span class="signal-fill ${fresh?scoreClass(impact):'neutral'}" style="width:${fresh?clamp(Math.abs(impact)*50,0,50):0}%"></span></div><div class="signal-driver">${top?`${esc(prettyKind(top.kind))} ${fmtSigned(top.total,2)} avg`:`${esc(t.regime||'No stock-level driver')}`}</div><div class="signal-freshness">${fresh?'average stock macro adjustment · stock-specific':'no adjustment · stale snapshot'}</div></div>`}
 function renderBlockMini(c){const fresh=channelFresh(c),width=Math.abs(Number(c.score))/2*50,cls=fresh?scoreClass(c.score):'neutral';return `<div class="theme-signal ${fresh?'':'stale-panel'}"><div class="signal-top"><span class="signal-name">${esc(c.label||c.key)}</span><b class="signal-score ${cls}">${fresh?fmtSigned(c.score):'STALE'}</b></div><div class="signal-track"><span class="signal-fill ${cls}" style="width:${fresh?clamp(width,0,50):0}%"></span></div><div class="signal-driver">${esc(c.regime||'')} · ${esc(c.interpretation||'')}</div><div class="signal-freshness">${fresh?`${Math.round(Number(c.confidence||0)*100)}% confidence · ${timeLabel(c.observedAt||macroContext.generatedAt)}`:'stale channel · no influence'}</div></div>`}
+function renderLiveDeskCrossCheck(){
+  if(!liveDeskContext)return '<div class="macro-section"><div class="macro-section-title">LIVE DESK CANONICAL CROSS-CHECK</div><div class="context-copy">Live Desk snapshot unavailable. Power Stack continues from its own verified macro context and company research.</div></div>';
+  const fresh=liveDeskFresh(),regime=liveDeskContext.regime||{},lenses=liveDeskContext.lenses||[],radar=liveDeskContext.stockRadar||[],verify=liveDeskContext.verification||{};
+  const lensHtml=lenses.slice(0,6).map(l=>`<div class="theme-signal ${fresh?'':'stale-panel'}"><div class="signal-top"><span class="signal-name">${esc(l.label||l.key)}</span><b class="signal-score ${fresh?'neutral':'neutral'}">${l.observed?'OBSERVED':'OPEN'}</b></div><div class="signal-driver">${esc(l.interpretation||l.reaction||'')}</div><div class="signal-freshness">${l.unresolvedSignals?.length?`Open: ${esc(l.unresolvedSignals.join(' · '))}`:`Live evidence refs ${(l.evidenceRefs||[]).length}`}</div></div>`).join('');
+  const radarHtml=radar.length?`<div class="context-copy"><b>Live Stock Radar:</b> ${radar.map(x=>`<span class="tag">${esc(x.symbol)}</span>`).join(' ')}<br><span style="color:var(--muted)">Research-priority signal only. Power Stack ranking, financing quality, valuation and entry discipline still control.</span></div>`:'';
+  return `<div class="macro-section"><div class="macro-section-title">LIVE DESK CANONICAL CROSS-CHECK · ${fresh?'FRESH':'STALE'}</div><div class="single-context"><div class="context-copy"><b>${esc(regime.family||'UNRESOLVED')}</b> — ${esc(regime.headline||regime.answer||'No canonical regime headline.')}</div></div><div class="context-themes">${lensHtml}</div>${radarHtml}<div class="context-copy">Creator verification: ${Number(verify.verifiedCount||0)} verified · ${Number(verify.partialCount||0)} partial · ${Number(verify.creatorOnlyCount||0)} creator-only. Live is a cross-check input, not a score override.</div></div>`;
+}
+
 function renderContext(){
   const title=$('#contextTitle'),meta=$('#contextMeta'),body=$('#contextBody');
   if(!macroContext?.channels?.length){title.textContent='Macro pulse';meta.textContent='Macro snapshot unavailable · using base scores';body.innerHTML='<div class="context-copy">Power Stack remains usable without macro context. Macro adjustments stay at zero until data/macro-context.json is refreshed.</div>';return}
@@ -113,9 +123,10 @@ function renderContext(){
     body.innerHTML=`<div class="single-context"><div class="context-gauge"><strong class="${packetOk?scoreClass(impact):'neutral'}">${packetOk?fmtSigned(impact,2):'—'}</strong><span>${packetOk?`${esc(t?.regime||'stock-specific')} · ${t?.confidence||'—'}% theme confidence`:'Stale · adjustment disabled'}</span></div><div class="context-copy">${lis}</div></div>`;return;
   }
   title.textContent='Macro regime → stock fingerprints';
+  const live=renderLiveDeskCrossCheck();
   const blocks=`<div class="macro-section"><div class="macro-section-title">DIRECTIONAL MACRO CHANNELS</div><div class="context-themes">${macroContext.channels.map(renderBlockMini).join('')}</div></div>`;
   const themes=`<div class="macro-section"><div class="macro-section-title">AVERAGE STOCK IMPACT BY THEME</div><div class="context-themes">${(macroContext.themes||[]).map(renderSignalMini).join('')}</div></div>`;
-  body.innerHTML=blocks+themes;
+  body.innerHTML=live+blocks+themes;
 }
 
 function renderReasonRows(x){
@@ -141,6 +152,13 @@ function openDetail(x){
 async function loadMacroContext(){
   try{const r=await fetch('data/macro-context.json',{cache:'no-store'});if(!r.ok)throw new Error(`HTTP ${r.status}`);macroContext=await r.json();const fresh=packetFresh();$('#liveBadge').className=`live-badge ${fresh?'online':'stale'}`;$('#liveBadge').innerHTML=fresh?'<span></span> Macro snapshot active':'<span></span> Macro snapshot stale'}catch(err){macroContext=null;$('#liveBadge').className='live-badge offline';$('#liveBadge').innerHTML='<span></span> Macro snapshot unavailable'}
 }
+async function loadLiveDeskContext(){
+  try{
+    const r=await fetch('data/live-desk-canonical.json',{cache:'no-store'});
+    if(!r.ok)throw new Error(`HTTP ${r.status}`);
+    liveDeskContext=await r.json();
+  }catch(_){liveDeskContext=null}
+}
 async function loadMacroProfiles(){
   try{
     const r=await fetch('data/macro-sensitivities.json',{cache:'no-store'});if(!r.ok)throw new Error(`HTTP ${r.status}`);
@@ -152,5 +170,5 @@ async function loadMacroProfiles(){
   }catch(err){macroSensitivityData=null;macroProfileMap=new Map()}
 }
 
-async function init(){const [ideaRes]=await Promise.all([fetch('data/ideas.json',{cache:'no-store'}),loadMacroContext(),loadMacroProfiles()]);ideas=await ideaRes.json();renderSidebar();render();$('#search').oninput=e=>{state.q=e.target.value;render()};$('#sort').onchange=e=>{state.sort=e.target.value;state.sortDir=defaultSortDir(state.sort);render()};$('#cardViewBtn').onclick=()=>setView('card');$('#rowViewBtn').onclick=()=>setView('row');$('#clearFilters').onclick=()=>{state.theme='All';state.region='All';state.status='All';state.q='';$('#search').value='';renderSidebar();render()};$('#closeDialog').onclick=()=>$('#detailDialog').close();$('#detailDialog').addEventListener('click',e=>{if(e.target===$('#detailDialog'))$('#detailDialog').close()})}
+async function init(){const [ideaRes]=await Promise.all([fetch('data/ideas.json',{cache:'no-store'}),loadMacroContext(),loadLiveDeskContext(),loadMacroProfiles()]);ideas=await ideaRes.json();renderSidebar();render();$('#search').oninput=e=>{state.q=e.target.value;render()};$('#sort').onchange=e=>{state.sort=e.target.value;state.sortDir=defaultSortDir(state.sort);render()};$('#cardViewBtn').onclick=()=>setView('card');$('#rowViewBtn').onclick=()=>setView('row');$('#clearFilters').onclick=()=>{state.theme='All';state.region='All';state.status='All';state.q='';$('#search').value='';renderSidebar();render()};$('#closeDialog').onclick=()=>$('#detailDialog').close();$('#detailDialog').addEventListener('click',e=>{if(e.target===$('#detailDialog'))$('#detailDialog').close()})}
 init().catch(err=>{$('#grid').innerHTML=`<div class="empty">Failed to load Power Stack: ${esc(err.message)}</div>`});
