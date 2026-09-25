@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-09-25T10:35:07.791Z",
+  "generatedAt": "2026-09-25T17:10:03.952Z",
   "asOf": "2026-09-25T06:21:24.334+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -15,13 +15,13 @@
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-09-25T09:54:15.535Z",
+      "generatedAt": "2026-09-25T17:10:03.895Z",
       "status": "OK"
     },
     "holdingTape": {
       "contractVersion": "power-stack-holding-tape/1",
       "expectedContract": "power-stack-holding-tape/1",
-      "generatedAt": "2026-09-25T09:52:44.954Z",
+      "generatedAt": "2026-09-25T17:10:03.837Z",
       "unresolved": [
         "6742UW"
       ],
@@ -521,21 +521,26 @@
   "newCapitalPriority": [
     {
       "priority": 1,
+      "bucket": "10Y rate-resilience gate",
+      "instruction": "Fresh-US research order: ITRI > BDC > KLIC > AZZ > GNRC > AMKR. Require current FCF/backlog/balance-sheet evidence before deployment; this is a research/action overlay, not a fundamental-score rewrite."
+    },
+    {
+      "priority": 2,
       "bucket": "Diversification / reserve",
       "instruction": "Do not force deployment. Preserve cash or equivalent dry powder while financials/credit/breadth remain unconfirmed."
     },
     {
-      "priority": 2,
+      "priority": 3,
       "bucket": "Funded physical infrastructure",
       "instruction": "If adding risk, prefer pullbacks in funded/backlogged grid/power/electrical names over pre-operating AI project-finance exposure. GEV/ETN/PWR remain research candidates, not automatic buys."
     },
     {
-      "priority": 3,
+      "priority": 4,
       "bucket": "Strategic hedge",
       "instruction": "Gold/miner exposure can diversify the existing power/energy/growth concentration, but timing still requires DXY/real-yield confirmation."
     },
     {
-      "priority": 4,
+      "priority": 5,
       "bucket": "AI beneficiaries",
       "instruction": "Treat NVDA as the concentration/leadership barometer and NBIS as research-only despite the verified analyst catalyst. Do not add broad AI beta unless financing quality, cash conversion and price asymmetry clear the Power Stack gates."
     }
