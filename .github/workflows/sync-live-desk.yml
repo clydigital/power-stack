@@ -28,7 +28,7 @@ jobs:
 
       - name: Pull canonical Live Desk context
         env:
-          LIVE_DESK_DOSSIER_V2_URL: https://alchemy-live-market-desk.vercel.app/api/dossier-v2
+          LIVE_DESK_MARKET_INTELLIGENCE_URL: https://alchemy-live-market-desk.vercel.app/api/market-intelligence-snapshot
         run: node scripts/sync-live-desk.mjs
 
       - name: Commit changed snapshot

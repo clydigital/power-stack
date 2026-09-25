@@ -1,8 +1,8 @@
 {
-  "version": 2,
-  "verifiedAt": "2026-08-19T07:24:00Z",
-  "sourceUrl": "https://macro-indicators-a3d.pages.dev/",
-  "verificationStatus": "Deployed HTML/source directly fetched and parsed; independent browser automation failed, so implementation relies on the successfully inspected deployed source.",
+  "version": 3,
+  "verifiedAt": "2026-09-25T00:00:00Z",
+  "sourceUrl": "https://alchemy-live-market-desk.vercel.app/api/market-intelligence-snapshot",
+  "verificationStatus": "Live Desk is the canonical market/monetary state owner. Power Stack consumes its versioned snapshot and uses official/company sources for portfolio-specific verification. Scrape-heavy third-party macro dashboards are no longer primary or fallback machine sources.",
   "sourceSemantics": {
     "genericPercentChange": {
       "formula": "((current - comparison) / abs(comparison)) * 100",
@@ -40,14 +40,6 @@
       "rule": "Separate broad credit availability from tail-credit stress. Tight HY can coexist with stressed CCC, which should penalize financing-dependent/speculative names more than strong incumbents."
     }
   },
-  "stockScoring": {
-    "formula": "contribution_i = (channelScore_i / 2) * ((0.65 * fundamentalSensitivity_i + 0.35 * marketSensitivity_i) / 5) * factorWeight_i * factorConfidence_i * profileConfidence * channelConfidence * freshnessWeight_i",
-    "fundamentalWeight": 0.65,
-    "marketWeight": 0.35,
-    "macroAdjustmentCap": 1.0,
-    "freshness": "Fresh channels decay gently with age, then contribute zero at staleAfterHours. A stale packet contributes zero globally.",
-    "baseConviction": "Never overwritten. Current rating = Base Conviction + capped macro adjustment."
-  },
   "channelDirection": {
     "growthDemand": "Higher = stronger broad/industrial demand",
     "policyRelief": "Higher = more disinflation / more room for central-bank easing",
@@ -63,5 +55,32 @@
     "crudeTightness": "Higher = tighter/higher crude balance and prices",
     "productTightness": "Higher = tighter product balance / wider crack spreads",
     "gasTightness": "Higher = tighter/higher US natural-gas balance and prices"
+  },
+  "ownership": {
+    "canonicalMacroOwner": "Alchemy Live Market Desk",
+    "downstreamConsumer": "Power Stack",
+    "rule": "Power Stack may interpret canonical Live signals against holdings and candidates, but it must not manufacture a competing regime or send Live-derived macro confirmation back to Live."
+  },
+  "portfolioOverlay": {
+    "automaticBaseScoreMutation": false,
+    "allowedEffects": [
+      "research priority",
+      "portfolio risk flags",
+      "thesis confirmation/contradiction",
+      "required evidence",
+      "entry discipline",
+      "what-to-do-next queue"
+    ],
+    "companyScoreRule": "Base Conviction or a fundamentals score changes only on company-level evidence.",
+    "signalState": "Use CONFIRMING, CONTRADICTING or UNRESOLVED when mapping Live context to a holding."
+  },
+  "legacyStockScoring": {
+    "formula": "contribution_i = (channelScore_i / 2) * ((0.65 * fundamentalSensitivity_i + 0.35 * marketSensitivity_i) / 5) * factorWeight_i * factorConfidence_i * profileConfidence * channelConfidence * freshnessWeight_i",
+    "fundamentalWeight": 0.65,
+    "marketWeight": 0.35,
+    "macroAdjustmentCap": 1,
+    "freshness": "Fresh channels decay gently with age, then contribute zero at staleAfterHours. A stale packet contributes zero globally.",
+    "baseConviction": "Never overwritten. Current rating = Base Conviction + capped macro adjustment.",
+    "status": "LEGACY / NOT CANONICAL FOR LIVE EXCHANGE"
   }
 }

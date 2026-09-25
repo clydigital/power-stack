@@ -1,42 +1,50 @@
 {
-  "version": 1,
-  "updatedAt": "2026-09-07",
-  "purpose": "Machine-readable contract for the recurring Power Stack macro, holdings, watchlist and regional rate-sensitivity sweep.",
+  "version": 2,
+  "updatedAt": "2026-09-25",
+  "purpose": "Machine-readable contract for a Live-first Power Stack portfolio sweep: ingest canonical Live market intelligence, then map it to holdings, watchlist, thesis risk and capital-allocation questions.",
   "cranium": {
     "name": "Market Research Cranium",
     "tab": "26.09.07",
     "url": "https://docs.google.com/document/d/1OVahYQkXWNsFlR7vdgKeY41hqUYgV1IP6iocGlAoZ4s/edit?tab=t.ryp83pg0ofyg",
     "role": "Research seed, synthesis layer and source-URL registry. It is not direct canonical evidence or a scoring input until material claims are independently verified.",
-    "preserveLabels": ["[FACT]", "[SELL-SIDE VIEW]", "[CRANIUM SYNTHESIS]", "[WATCH]", "[INVALIDATION]"],
+    "preserveLabels": [
+      "[FACT]",
+      "[SELL-SIDE VIEW]",
+      "[CRANIUM SYNTHESIS]",
+      "[WATCH]",
+      "[INVALIDATION]"
+    ],
     "ingestRule": "Read the current Cranium tab before the daily macro sweep. Extract claims, source URLs, PDFs/images and disagreements. Verify material factual claims independently. Preserve sell-side opinions as attributed views rather than converting them into facts."
   },
   "requiredSweepOrder": [
-    "Read current Cranium tab and extract new claims, source URLs, charts/PDF leads and explicit disagreements.",
-    "Independently verify material facts using official, company, regulatory or high-quality market sources.",
-    "Refresh global macro regime, then separate US and China/Hong Kong rate regimes rather than using one generic rates label.",
-    "Review every canonical current holding against the refreshed macro/rates packet.",
-    "Review every canonical watchlist candidate against the refreshed macro/rates packet, including valuation/funding sensitivity and China-demand exposure where relevant.",
+    "Read current Cranium tab and extract new claims, source URLs, charts/PDF leads and explicit disagreements. Treat it as research seed/context, not canonical macro state.",
+    "Load data/live-desk-canonical.json first. Validate contract version, as-of time, source health, contradictions and unresolved gaps. If stale or unavailable, record the gap rather than rebuilding Live's regime from a scrape-heavy dashboard.",
+    "Use Live's canonical monetary/market state as the macro baseline. Independently verify only material company-specific claims or portfolio-specific gaps that Live does not cover.",
+    "Map Live signals to portfolio exposures: duration/real-yield sensitivity, funding quality, inflation/input costs, energy, credit, USD, China demand and other documented dependencies. Record CONFIRMING, CONTRADICTING or UNRESOLVED rather than forcing one narrative.",
+    "Review every canonical current holding against that exposure map. Keep the fundamentals score unchanged unless new company-level evidence warrants a revision.",
+    "Review every canonical watchlist candidate against the same exposure map, including valuation/funding sensitivity and China-demand exposure where relevant.",
     "Run a China focus adjunct across tracked HK/China ideas even when those names are not in the canonical action watchlist.",
-    "Update developing themes only when the mechanism, timing, beneficiaries, confirmation or invalidation materially changed.",
-    "Keep Base Conviction separate from macro/rates sensitivity. Only change fundamental scores on new company-level evidence.",
-    "If macro-context or sensitivity inputs changed, regenerate and validate the one-way Live rating snapshot."
+    "Identify hidden portfolio concentration where multiple holdings express the same macro dependency, then update portfolio-risk flags and what-to-do-next queues.",
+    "Update developing themes only when mechanism, timing, beneficiaries, confirmation or invalidation materially changed.",
+    "Regenerate data/live-fundamentals-snapshot.json only when independent company research changed. Never export a Live-derived macro adjustment back to Live."
   ],
   "usRateSweep": {
+    "ownership": "Live Desk owns the US monetary/rates regime. Power Stack consumes the canonical state and maps it to portfolio exposures rather than recomputing a competing regime.",
     "requiredFields": [
-      "Fed policy probability and reaction-function language",
-      "2Y Treasury yield",
-      "10Y Treasury yield",
-      "30Y Treasury yield",
+      "Fed policy / front-end pricing",
+      "2Y, 10Y and 30Y Treasury yields",
       "10Y real yield",
       "10Y breakeven inflation",
-      "2s10s and 10s30s curve direction where material",
-      "term-premium / long-end pressure where a verified source is available",
-      "MOVE and VIX when volatility pricing is part of the thesis",
-      "broad credit availability and CCC/weak-end credit stress",
-      "Treasury issuance and buyback operations",
-      "USD transmission"
+      "2s10s curve and other material curve shape",
+      "SOFR / TGCR / BGCR / EFFR funding conditions and volumes when available",
+      "Treasury-bill yields / front-end cash alternatives",
+      "HY and IG credit spreads",
+      "Treasury issuance / auction pressure",
+      "Primary-dealer balance-sheet positioning when available",
+      "USD transmission",
+      "source freshness, contradictions and unresolved gaps"
     ],
-    "interpretationRule": "Distinguish front-end policy expectations from long-end financial conditions. A Fed hold is not automatically easing if real yields, term premium or long-end yields remain restrictive."
+    "interpretationRule": "Do not collapse these fields into a second Power Stack macro score. Use the Live state to test each holding's assumptions, funding/valuation sensitivity and shared portfolio exposures."
   },
   "chinaRateSweep": {
     "requiredFields": [
@@ -52,7 +60,7 @@
     ],
     "interpretationRule": "Low Chinese yields are not automatically a bullish easing signal. Separate low discount rates from weak domestic demand, low bank margins, trapped domestic savings and poor credit transmission. Treat fiscal/recapitalisation support separately from a PBOC rate cut."
   },
-  "regionalSensitivityRule": "For each holding/watchlist name, record US-rate sensitivity and China-rate/demand sensitivity separately. Use low/moderate/high/very-high plus the causal mechanism; do not infer a buy/sell action from sensitivity alone.",
+  "regionalSensitivityRule": "For each holding/watchlist name, record US monetary sensitivity and China-rate/demand sensitivity separately. Use low/moderate/high/very-high plus the causal mechanism and whether Live evidence is confirming, contradicting or unresolved; do not infer a buy/sell action from sensitivity alone.",
   "sourceHierarchy": [
     "Official government/central-bank/regulator/company sources",
     "Primary filings and company investor relations",
