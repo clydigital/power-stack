@@ -429,12 +429,26 @@ function buildOverlay(existingGeneratedAt = null) {
   };
 }
 
+function canonical(value) {
+  if (Array.isArray(value)) return value.map(canonical);
+  if (value && typeof value === "object") {
+    return Object.fromEntries(
+      Object.keys(value).sort().map((key) => [key, canonical(value[key])]),
+    );
+  }
+  return value;
+}
+
+function sameJson(left, right) {
+  return JSON.stringify(canonical(left)) === JSON.stringify(canonical(right));
+}
+
 const args = parseArgs(process.argv.slice(2));
 const existing = fs.existsSync(OUTPUT) ? JSON.parse(fs.readFileSync(OUTPUT, "utf8")) : null;
 const overlay = buildOverlay(args.check ? existing?.generatedAt || null : null);
 
 if (args.check) {
-  if (!existing || JSON.stringify(existing) !== JSON.stringify(overlay)) {
+  if (!existing || !sameJson(existing, overlay)) {
     console.error("data/portfolio-live-overlay.json is stale. Regenerate it with:");
     console.error("node scripts/generate-portfolio-live-overlay.mjs");
     process.exitCode = 1;
