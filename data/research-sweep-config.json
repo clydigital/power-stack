@@ -1,7 +1,7 @@
 {
-  "version": 2,
+  "version": 3,
   "updatedAt": "2026-09-25",
-  "purpose": "Machine-readable contract for a Live-first Power Stack portfolio sweep: ingest canonical Live market intelligence, then map it to holdings, watchlist, thesis risk and capital-allocation questions.",
+  "purpose": "Machine-readable PowerSweep contract. Live Desk owns canonical macro/market state; PowerSweep consumes that state and spends a bounded research budget on portfolio translation, holding/watchlist evidence, divergences, hidden concentration and capital-allocation decisions.",
   "cranium": {
     "name": "Market Research Cranium",
     "tab": "26.09.07",
@@ -18,15 +18,15 @@
   },
   "requiredSweepOrder": [
     "Read current Cranium tab and extract new claims, source URLs, charts/PDF leads and explicit disagreements. Treat it as research seed/context, not canonical macro state.",
-    "Load data/live-desk-canonical.json first. Validate contract version, as-of time, source health, contradictions and unresolved gaps. If stale or unavailable, record the gap rather than rebuilding Live's regime from a scrape-heavy dashboard.",
-    "Use Live's canonical monetary/market state as the macro baseline. Independently verify only material company-specific claims or portfolio-specific gaps that Live does not cover.",
-    "Map Live signals to portfolio exposures: duration/real-yield sensitivity, funding quality, inflation/input costs, energy, credit, USD, China demand and other documented dependencies. Record CONFIRMING, CONTRADICTING or UNRESOLVED rather than forcing one narrative.",
-    "Review every canonical current holding against that exposure map. Keep the fundamentals score unchanged unless new company-level evidence warrants a revision.",
-    "Review every canonical watchlist candidate against the same exposure map, including valuation/funding sensitivity and China-demand exposure where relevant.",
-    "Run a China focus adjunct across tracked HK/China ideas even when those names are not in the canonical action watchlist.",
-    "Identify hidden portfolio concentration where multiple holdings express the same macro dependency, then update portfolio-risk flags and what-to-do-next queues.",
-    "Update developing themes only when mechanism, timing, beneficiaries, confirmation or invalidation materially changed.",
-    "Regenerate data/live-fundamentals-snapshot.json only when independent company research changed. Never export a Live-derived macro adjustment back to Live."
+    "Load data/live-desk-canonical.json, data/portfolio-live-overlay.json and data/holding-tape.json first. Validate contract versions, as-of times, source health, contradictions and unresolved gaps.",
+    "Use Live's canonical monetary/market state as the macro baseline. Do not perform a parallel broad macro sweep unless Live is stale/unavailable; record that condition as a blocking gap instead.",
+    "Triage current holdings using macro exposure, completed-session tape, action gates and hidden concentration. Promote only decision-relevant divergences/data gaps into the holding research budget.",
+    "Research at most the configured holdingDeepDives. Keep fundamental scores unchanged unless new company-level evidence warrants a revision.",
+    "Review the watchlist using price/action state, portfolio overlap/diversification and company-specific catalysts. Research at most the configured watchlistDeepDives.",
+    "Review developing themes only where deeper work could change a holding/watchlist/capital-allocation decision. Respect the configured themeDeepDives cap.",
+    "Run the China focus adjunct only for active documented China/HK exposures or tracked ideas, capped by chinaAdjunctNames.",
+    "Emit explicit CHANGE / NO_CHANGE / RESEARCH_GAP decisions and the evidence required for each unresolved item.",
+    "Regenerate Power Stack-owned snapshots only when their underlying inputs changed. Never export a Live-derived macro adjustment back to Live."
   ],
   "usRateSweep": {
     "ownership": "Live Desk owns the US monetary/rates regime. Power Stack consumes the canonical state and maps it to portfolio exposures rather than recomputing a competing regime.",
@@ -67,5 +67,54 @@
     "Reuters/FT/Bloomberg or equivalent high-quality market reporting",
     "Specialist research and attributed sell-side commentary",
     "Cranium/creator/social sources as research leads and synthesis only until corroborated"
-  ]
+  ],
+  "powerSweep": {
+    "contractVersion": "power-sweep-config/1",
+    "ownership": {
+      "liveDesk": "Canonical macro/market acquisition, monetary signals, source health, cross-asset confirmation, contradictions and market-level divergence reasoning.",
+      "powerSweep": "Portfolio translation, company-specific verification, holding/watchlist research, hidden concentration, action-gate maintenance, opportunity ranking and capital-allocation questions.",
+      "forbiddenFeedback": "No Live-derived macro score, overlay score or PowerSweep confirmation may be exported back to Live as independent evidence."
+    },
+    "runOrder": [
+      "INTAKE: validate data/live-desk-canonical.json, data/portfolio-live-overlay.json and data/holding-tape.json before any external research.",
+      "TRIAGE: rank portfolio divergences, unresolved holding data, high-review holdings and hidden concentration. Decide what actually merits research.",
+      "HOLDINGS: research only the capped set of holdings where new evidence could change an action gate, thesis risk, sizing read or fundamental score.",
+      "WATCHLIST: research the capped set of candidates where price asymmetry, diversification benefit or a fresh company catalyst could change priority.",
+      "THEMES: investigate only themes that materially affect current holdings/candidates or create a genuinely differentiated new opportunity.",
+      "CHINA ADJUNCT: run the separate China/HK transmission check only for documented exposures or active tracked ideas.",
+      "DECISION: emit explicit CHANGE / NO_CHANGE / RESEARCH_GAP outcomes for holdings, watchlist, themes and portfolio rules.",
+      "PUBLISH: update Power Stack-owned outputs only. Never rebuild Live macro state inside PowerSweep."
+    ],
+    "hardCaps": {
+      "totalExternalInvestigations": 12,
+      "holdingDeepDives": 3,
+      "watchlistDeepDives": 4,
+      "themeDeepDives": 3,
+      "chinaAdjunctNames": 3,
+      "liveRadarNames": 3,
+      "portfolioDivergences": 4,
+      "researchGaps": 6
+    },
+    "priorityRules": [
+      "A holding with directional macro overlay + opposite completed-session tape is PRIORITY_1 divergence research.",
+      "A holding with missing instrument/company data that blocks sizing or concentration measurement is PRIORITY_1 data-gap research.",
+      "A holding with MIXED overlay is not automatically researched; promote it only when the tape move is material, an action gate is near, or company evidence changed.",
+      "A holding whose tape CONFIRMS the macro overlay is normally monitoring-only unless a company catalyst or action gate needs verification.",
+      "Watchlist research should prefer high-quality names near actionable zones and names that diversify current hidden concentration.",
+      "Live Stock Radar is discovery/research-priority input only. It cannot mechanically rerank Power Stack candidates.",
+      "Do not research a theme merely because it is top-ranked if Live already supplies the relevant macro mechanism and no portfolio decision depends on deeper work.",
+      "UNKNOWN / UNRESOLVED is a valid outcome. Do not spend remaining budget to manufacture certainty."
+    ],
+    "requiredOutputs": [
+      "run health and canonical input freshness",
+      "portfolio divergences ranked by decision relevance",
+      "holding research queue with why-now, required evidence and possible decision impact",
+      "watchlist research queue with overlap/diversification note",
+      "theme/company research queue",
+      "explicit no-change set",
+      "research gaps",
+      "changes allowed to write back into Power Stack",
+      "changes forbidden from feeding back into Live"
+    ]
+  }
 }

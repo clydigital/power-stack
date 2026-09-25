@@ -28,15 +28,17 @@ jobs:
         run: node scripts/sync-holding-tape.mjs
       - name: Rebuild portfolio overlay
         run: node scripts/generate-portfolio-live-overlay.mjs
+      - name: Rebuild PowerSweep plan
+        run: node scripts/generate-power-sweep.mjs
       - name: Commit changed tape
         shell: bash
         run: |
-          if git diff --quiet -- data/holding-tape.json data/portfolio-live-overlay.json; then
-            echo "Holding tape unchanged."
+          if git diff --quiet -- data/holding-tape.json data/portfolio-live-overlay.json data/power-sweep-latest.json; then
+            echo "Holding tape and PowerSweep unchanged."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/holding-tape.json data/portfolio-live-overlay.json
-          git commit -m "chore: refresh holding tape [skip ci]"
+          git add data/holding-tape.json data/portfolio-live-overlay.json data/power-sweep-latest.json
+          git commit -m "chore: refresh holding tape + PowerSweep [skip ci]"
           git push origin HEAD:main

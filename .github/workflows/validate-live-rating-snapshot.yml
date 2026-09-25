@@ -15,10 +15,13 @@ on:
       - "data/market-extension*.json"
       - "data/live-desk-canonical.json"
       - "data/research-sweep-config.json"
+      - "data/research-sweep-latest.json"
+      - "data/power-sweep-latest.json"
       - "data/macro-methodology.json"
       - "scripts/generate-live-fundamentals-snapshot.mjs"
       - "scripts/sync-live-desk.mjs"
       - "scripts/generate-portfolio-live-overlay.mjs"
+      - "scripts/generate-power-sweep.mjs"
       - "scripts/sync-holding-tape.mjs"
       - "scripts/validate-static-html-js.mjs"
       - "data/portfolio-live-overlay.json"
@@ -28,6 +31,7 @@ on:
       - "data/macro-sensitivity-supplement.json"
       - "data/holdings-fundamentals.json"
       - ".github/workflows/sync-live-desk.yml"
+      - ".github/workflows/sync-holding-tape.yml"
       - ".github/workflows/validate-live-rating-snapshot.yml"
   push:
     branches: [main]
@@ -54,9 +58,11 @@ jobs:
       - run: node --check scripts/sync-live-desk.mjs
       - run: node --check scripts/generate-live-fundamentals-snapshot.mjs
       - run: node --check scripts/generate-portfolio-live-overlay.mjs
+      - run: node --check scripts/generate-power-sweep.mjs
       - run: node --check scripts/sync-holding-tape.mjs
       - run: node scripts/sync-holding-tape.mjs --check
       - run: node scripts/validate-static-html-js.mjs
-      - run: node -e "const fs=require('fs'); for (const f of ['data/live-desk-canonical.json','data/live-fundamentals-snapshot.json','data/portfolio-live-overlay.json','data/holding-tape.json','data/research-sweep-config.json','data/macro-methodology.json']) JSON.parse(fs.readFileSync(f,'utf8'));"
+      - run: node -e "const fs=require('fs'); for (const f of ['data/live-desk-canonical.json','data/live-fundamentals-snapshot.json','data/portfolio-live-overlay.json','data/holding-tape.json','data/research-sweep-config.json','data/research-sweep-latest.json','data/power-sweep-latest.json','data/macro-methodology.json']) JSON.parse(fs.readFileSync(f,'utf8'));"
       - run: node scripts/generate-live-fundamentals-snapshot.mjs --check
       - run: node scripts/generate-portfolio-live-overlay.mjs --check
+      - run: node scripts/generate-power-sweep.mjs --check
