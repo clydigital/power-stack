@@ -218,10 +218,19 @@
 
       document.getElementById('liveOverlayBody').innerHTML = (data.holdings || []).map(h=>{
         const r=h.sensitivities?.rates, f=h.sensitivities?.funding, e=h.sensitivities?.energy;
+        const tape=h.actualReaction || {};
+        const currency=tape.currency === 'USD' ? '$' : tape.currency === 'MYR' ? 'RM' : '';
+        const tapeMove=tape.close == null
+          ? '—'
+          : '<strong>' + currency + Number(tape.close).toLocaleString(undefined,{maximumFractionDigits:4}) + '</strong> ' +
+            '<span style="color:' + (Number(tape.changePct)>=0?'#8fd8ad':'#e5a0a4') + '">' +
+            (Number(tape.changePct)>0?'+':'') + Number(tape.changePct).toFixed(2) + '%</span>';
+        const tapeStatus='<span class="reaction-pill ' + (tape.status || 'UNRESOLVED') + '">' + (tape.status || 'UNRESOLVED') + '</span>';
         return '<tr>' +
           '<td><strong>' + h.ticker + '</strong><br><span style="color:#77818a">' + h.name + '</span></td>' +
           '<td><strong class="' + overlayClass(h.overlayState) + '">' + h.overlayState + '</strong><br><span style="color:#77818a">' + String(h.reviewPriority || 'MONITOR').replaceAll('_',' ') + '</span></td>' +
-          '<td>' + (h.actualReaction?.close == null ? '—' : '<strong>' + (h.actualReaction.currency==='USD'?'
+          '<td>' + tapeMove + '<br>' + tapeStatus + '<br><span style="color:#77818a">' + (tape.sessionDate || 'no completed tape') + '</span></td>' +
+          '<td>' + effectPill(h.effects?.rates) + '<br><span style="color:#77818a">' + intensityText(r?.intensity) + ' sensitivity</span></td>' +
           '<td>' + effectPill(h.effects?.funding) + '<br><span style="color:#77818a">' + intensityText(f?.intensity) + ' sensitivity</span></td>' +
           '<td>' + effectPill(h.effects?.energy) + '<br><span style="color:#77818a">' + intensityText(e?.intensity) + ' sensitivity</span></td>' +
           '<td><strong>' + (h.currentAction || '—') + '</strong><br><span style="color:#77818a">' + (h.addGate || h.sizingRead || 'No current gate stored.') + '</span></td>' +
