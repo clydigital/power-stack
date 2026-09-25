@@ -1,8 +1,9 @@
 {
   "asOf": "2026-09-25",
   "title": "Power Stack Daily Research Refresh",
-  "regime": "Global duration + energy-inflation collision. US 10Y ~5.19%, US 30Y ~5.48% and Japan 10Y ~3.115% raise the global cost of capital while Brent remains above $100 and distillate inventories are structurally tight.",
+  "regime": "Global duration + energy-inflation collision. The U.S. 10Y closed at 5.18% on Sep 24 and is now an explicit Power Stack research/action gate: prefer current cash generation, funded backlog and balance-sheet resilience over financing-dependent duration.",
   "whatIsNewNow": [
+    "10Y RATE-RESILIENCE RERANK: Power Stack fresh-US research order is now ITRI > BDC > KLIC > AZZ > GNRC > AMKR. This changes research priority and entry discipline, not company fundamental scores mechanically.",
     "Global duration stress intensified: US 10Y and 30Y reached multi-decade highs while Japan's 10Y JGB moved above 3.1%.",
     "Refined products moved up the hierarchy. US crude inventories rose, but distillate stocks fell to ~107.4M barrels and remain structurally tight; diesel/product inflation can keep freight, farm costs and Fed pressure elevated independently of crude.",
     "The Trump-Xi meeting extended the trade truce by two months but did not verify durable breakthroughs on tariffs, rare-earth access or advanced-tech/AI restrictions.",
@@ -12,6 +13,7 @@
     "Live Desk canonical cross-check now confirms global duration stress, narrow index concentration and the refined-product inflation channel; NBIS has re-entered the research radar on a verified catalyst, but Power Stack financing/dilution gates remain binding."
   ],
   "whatMattersMostNow": [
+    "Whether a candidate can beat a ~5.2% risk-free hurdle without multiple expansion",
     "US/Japan long-end yields and the cost of capital",
     "Diesel/refined-product inflation versus crude inventories",
     "Funded/contracted/energizable AI capacity rather than announced MW",
@@ -96,7 +98,7 @@
   "categorySweep": {
     "powerGrid": {
       "status": "ACTIVE / HIGH QUALITY / PRICE DISCIPLINE",
-      "conclusion": "Physical bottlenecks remain among the strongest secular themes. PWR/ETN/VRT/GEV quality remains high, but 5%+ yields demand better entry asymmetry; do not chase."
+      "conclusion": "Physical bottlenecks remain among the strongest secular themes, but the 5.18% 10Y raises the entry hurdle. GEV/PWR/ETN/VRT/POWL remain high-quality; do not chase. Fresh-US rate-resilience work moves ITRI/BDC/KLIC/AZZ ahead of GNRC/AMKR for new research priority."
     },
     "aiDataCentres": {
       "status": "ACTIVE / SELECTIVE",
@@ -223,7 +225,23 @@
     ],
     "ownedMonitorOnly": [
       "TTWO"
-    ]
+    ],
+    "rateResilienceFreshUS": [
+      "ITRI",
+      "BDC",
+      "KLIC",
+      "AZZ",
+      "GNRC",
+      "AMKR"
+    ],
+    "rateResilienceDecisions": {
+      "ITRI": "TOP RESEARCH / STAGED ADMISSION",
+      "BDC": "TOP RESEARCH / STAGED ADMISSION",
+      "KLIC": "STAGED / CONFIRM WORKING CAPITAL",
+      "AZZ": "WATCH-TO-ADD QUALITY",
+      "GNRC": "HIGH-QUALITY WATCH / STAGED ONLY",
+      "AMKR": "HIGHER-RISK SATELLITE / OPPORTUNISTIC"
+    }
   },
   "newResearch": [
     {
@@ -270,7 +288,7 @@
     }
   },
   "macroSnapshot": {
-    "us10Y": "~5.19%; intraday peak ~5.225%",
+    "us10Y": "5.18% official Treasury close Sep 24; 5.196% intraday reference",
     "us30Y": "~5.48%; intraday peak ~5.502%",
     "us2Y": "~4.90%",
     "japan10Y": "~3.115%",
@@ -323,6 +341,12 @@
       "NBIS",
       "VLO"
     ],
-    "scoreDecision": "No automatic portfolio or watchlist rerank from Live Desk alone."
+    "scoreDecision": "Live Desk alone does not mechanically rerank stocks. Power Stack has separately applied the verified 10Y state to existing company evidence via data/rate-resilience-overlay-2026-09-25.json, changing research priority and action gates while leaving fundamental scores company-evidence owned."
+  },
+  "rateResilienceOverlay": {
+    "source": "data/rate-resilience-overlay-2026-09-25.json",
+    "admissionQuestion": "Can this company beat a 5.2% risk-free hurdle without multiple expansion?",
+    "researchOrder": "ITRI > BDC > KLIC > AZZ > GNRC > AMKR",
+    "premiumInfrastructureRule": "GEV / ETN / PWR / VRT / POWL / BWXT remain fundamentally high quality but require stricter no-chase or staged-entry discipline until yields/valuation improve."
   }
 }
