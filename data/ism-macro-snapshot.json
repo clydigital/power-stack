@@ -1,29 +1,250 @@
 {
-  "lastUpdated":"2026-09-04",
-  "lastVerifiedAt":"2026-09-04T09:00:00+08:00",
-  "sourcePolicy":"Official ISM monthly reports and ISM's own report roundup are authoritative; aggregate diffusion data and ISM-selected public respondent comments only. No confidential/raw survey submissions are claimed or used.",
-  "releaseStatus":{"latestManufacturingReportMonth":"August 2026","latestServicesReportMonth":"August 2026","note":"Both August 2026 Manufacturing and Services reports are now published and incorporated.","releaseCalendarUrl":"https://www.ismworld.org/supply-management-news-and-reports/reports/rob-report-calendar/"},
-  "manufacturing":{
-    "reportMonth":"August 2026",
-    "sourceUrl":"https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/august/",
-    "headlinePMI":{"value":54.6,"prior":55.6,"change":-1.0},
-    "subindices":{"newOrders":{"value":53.7,"prior":56.7,"change":-3.0},"production":{"value":58.3,"prior":58.5,"change":-0.2},"employment":{"value":51.2,"prior":52.8,"change":-1.6},"supplierDeliveries":{"value":59.3,"prior":58.9,"change":0.4,"note":"Higher means slower deliveries."},"inventories":{"value":50.6,"prior":51.2,"change":-0.6},"customersInventories":{"value":42.8,"prior":40.7,"change":2.1,"note":"Still too low."},"prices":{"value":71.1,"prior":71.1,"change":0.0},"backlog":{"value":51.8,"prior":55.0,"change":-3.2},"newExportOrders":{"value":53.2,"prior":53.0,"change":0.2},"imports":{"value":52.5,"prior":55.7,"change":-3.2}},
-    "industries":{"expandingCount":15,"contracting":["Wood Products","Chemical Products"],"largeIndustryRead":"Five of the six largest industries expanded: Transportation Equipment, Petroleum & Coal Products, Computer & Electronic Products, Machinery, and Food/Beverage/Tobacco."},
-    "commodities":{"up":["Aluminum","Chemicals","Copper","Copper Products","Corrugated Products","Diesel Fuel","Electrical Components","Electronic Components","Freight","Fuel","Memory Components","Metal Products","Oil Based Products","Plastic Based Products","Printed Circuit Boards","Resin Based Products","Resins","Semiconductors","Steel","Steel - Cold Rolled","Steel - Hot Rolled","Steel - Stainless","Steel Products","Wire"],"down":[],"shortSupply":["Copper","Electrical Components","Electronic Components","Labor","Memory Components","Printed Circuit Boards","Steel","Tungsten"]},
-    "respondentCommentReview":{"scope":"ISM-selected public comments only.","themes":["AI infrastructure demand is contributing to severe electronics/component and material constraints.","Machinery respondents cited energy, steel and labor cost increases while photonics, high-speed connectors, semiconductors and government-related demand remained strong.","Chemical-product comments linked tariffs/Hormuz inflation to customer purchasing-power risk.","Pricing volatility, Iran conflict, lead times and tariffs were prominent negative-comment drivers."]},
-    "powerStackInterpretation":"Production remains strong and customers' inventories remain too low, but New Orders/Backlog/Employment slowed. Prices at 71.1, slower supplier deliveries and explicit copper/electrical/electronic/memory/wire scarcity support real physical bottlenecks. Prefer booked orders/pricing power over speculative capacity plans."
+  "lastUpdated": "2026-09-25",
+  "lastVerifiedAt": "2026-09-25T11:56:00+08:00",
+  "sourcePolicy": "Official ISM monthly reports and ISM's own report roundup are authoritative; aggregate diffusion data and ISM-selected public respondent comments only. No confidential/raw survey submissions are claimed or used.",
+  "releaseStatus": {
+    "latestManufacturingReportMonth": "August 2026",
+    "latestServicesReportMonth": "August 2026",
+    "note": "August 2026 remains the latest official Manufacturing and Services release as of Sep 25; values were reverified against ISM and no newer monthly report was substituted.",
+    "releaseCalendarUrl": "https://www.ismworld.org/supply-management-news-and-reports/reports/rob-report-calendar/"
   },
-  "services":{
-    "reportMonth":"August 2026",
-    "sourceUrl":"https://www.ismworld.org/supply-management-news-and-reports/news-publications/inside-supply-management-magazine/blog/2026/2026-09/ism-pmi-reports-roundup-august-2026-services/",
-    "headlinePMI":{"value":55.4,"prior":54.1,"change":1.3},
-    "subindices":{"businessActivity":{"value":61.7,"prior":59.1,"change":2.6},"newOrders":{"value":60.9,"prior":57.2,"change":3.7},"employment":{"value":47.8,"prior":47.4,"change":0.4,"note":"Contractionary."},"supplierDeliveries":{"value":51.3,"prior":52.8,"change":-1.5,"note":"Still slower deliveries, but improving."},"inventories":{"value":56.7,"prior":51.4,"change":5.3},"prices":{"value":72.6,"prior":70.3,"change":2.3,"note":"Highest since October 2022 / near four-year high."},"backlog":{"value":55.6,"prior":50.9,"change":4.7},"newExportOrders":{"value":56.3,"prior":52.0,"change":4.3},"imports":{"value":56.3,"prior":51.8,"change":4.5},"inventorySentiment":{"value":54.1,"prior":52.5,"change":1.6},"customersInventories":{"value":null,"note":"Services report does not publish a Customers' Inventories index; no value inferred."}},
-    "industries":{"expanding":["Mining","Real Estate, Rental & Leasing","Accommodation & Food Services","Wholesale Trade","Arts, Entertainment & Recreation","Educational Services","Retail Trade","Information","Professional, Scientific & Technical Services","Utilities","Transportation & Warehousing","Public Administration"],"contracting":["Agriculture, Forestry, Fishing & Hunting","Construction","Management of Companies & Support Services","Finance & Insurance","Health Care & Social Assistance"]},
-    "commodities":{"up":["Petroleum products","Diesel","Gasoline","Fuel and other reported inputs"],"shortSupply":["Graphics processing units (GPUs)","Steel","Memory components"],"note":"ISM reported fewer commodities with broad price changes than July, but petroleum products remained up and GPUs/steel joined the short-supply list; memory remained short for an eighth month."},
-    "respondentCommentReview":{"scope":"ISM-selected public comments / ISM roundup only.","themes":["Large capital investment in transmission and generation services is increasing business activity, head count, material purchasing and long-lead planning.","Suppliers are reallocating capacity from current-generation components toward upcoming next-generation AI silicon/platforms, which can lengthen lead times for legacy parts.","Companies are building inventories for long-lead items and 2027 projects.","Hiring remains restrained despite strong business activity; firms are leaving positions open longer and using fewer workers where service levels permit.","Tariffs and Middle East conflict remain important supply-chain and price concerns."]},
-    "powerStackInterpretation":"This is a materially stronger demand signal than July, but it is not benign growth. Orders/activity/backlogs accelerated while employment remained in contraction and Prices jumped to 72.6. For Power Stack, the highest-value evidence is explicit transmission/generation long-lead purchasing and AI component capacity reallocation. This supports ETN/PWR/GEV/VRT and scarce AI components, while high borrowing/input costs still penalize long-duration and unfunded projects."
+  "manufacturing": {
+    "reportMonth": "August 2026",
+    "sourceUrl": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/august/",
+    "headlinePMI": {
+      "value": 54.6,
+      "prior": 55.6,
+      "change": -1
+    },
+    "subindices": {
+      "newOrders": {
+        "value": 53.7,
+        "prior": 56.7,
+        "change": -3
+      },
+      "production": {
+        "value": 58.3,
+        "prior": 58.5,
+        "change": -0.2
+      },
+      "employment": {
+        "value": 51.2,
+        "prior": 52.8,
+        "change": -1.6
+      },
+      "supplierDeliveries": {
+        "value": 59.3,
+        "prior": 58.9,
+        "change": 0.4,
+        "note": "Higher means slower deliveries."
+      },
+      "inventories": {
+        "value": 50.6,
+        "prior": 51.2,
+        "change": -0.6
+      },
+      "customersInventories": {
+        "value": 42.8,
+        "prior": 40.7,
+        "change": 2.1,
+        "note": "Still too low."
+      },
+      "prices": {
+        "value": 71.1,
+        "prior": 71.1,
+        "change": 0
+      },
+      "backlog": {
+        "value": 51.8,
+        "prior": 55,
+        "change": -3.2
+      },
+      "newExportOrders": {
+        "value": 53.2,
+        "prior": 53,
+        "change": 0.2
+      },
+      "imports": {
+        "value": 52.5,
+        "prior": 55.7,
+        "change": -3.2
+      }
+    },
+    "industries": {
+      "expandingCount": 15,
+      "contracting": [
+        "Wood Products",
+        "Chemical Products"
+      ],
+      "largeIndustryRead": "Five of the six largest industries expanded: Transportation Equipment, Petroleum & Coal Products, Computer & Electronic Products, Machinery, and Food/Beverage/Tobacco."
+    },
+    "commodities": {
+      "up": [
+        "Aluminum",
+        "Chemicals",
+        "Copper",
+        "Copper Products",
+        "Corrugated Products",
+        "Diesel Fuel",
+        "Electrical Components",
+        "Electronic Components",
+        "Freight",
+        "Fuel",
+        "Memory Components",
+        "Metal Products",
+        "Oil Based Products",
+        "Plastic Based Products",
+        "Printed Circuit Boards",
+        "Resin Based Products",
+        "Resins",
+        "Semiconductors",
+        "Steel",
+        "Steel - Cold Rolled",
+        "Steel - Hot Rolled",
+        "Steel - Stainless",
+        "Steel Products",
+        "Wire"
+      ],
+      "down": [],
+      "shortSupply": [
+        "Copper",
+        "Electrical Components",
+        "Electronic Components",
+        "Labor",
+        "Memory Components",
+        "Printed Circuit Boards",
+        "Steel",
+        "Tungsten"
+      ]
+    },
+    "respondentCommentReview": {
+      "scope": "ISM-selected public comments only.",
+      "themes": [
+        "AI infrastructure demand is contributing to severe electronics/component and material constraints.",
+        "Machinery respondents cited energy, steel and labor cost increases while photonics, high-speed connectors, semiconductors and government-related demand remained strong.",
+        "Chemical-product comments linked tariffs/Hormuz inflation to customer purchasing-power risk.",
+        "Pricing volatility, Iran conflict, lead times and tariffs were prominent negative-comment drivers."
+      ]
+    },
+    "powerStackInterpretation": "Production remains strong and customers' inventories remain too low, but New Orders/Backlog/Employment slowed. Prices at 71.1, slower supplier deliveries and explicit copper/electrical/electronic/memory/wire scarcity support real physical bottlenecks. Prefer booked orders/pricing power over speculative capacity plans."
   },
-  "combinedRead":"August Manufacturing and Services now show a bifurcated stagflationary expansion: physical production/services demand remain solid, services orders reaccelerated sharply, and electrical/AI/transmission scarcity is real; at the same time, input-price pressure is extreme and hiring is weak. The correct Power Stack response is quality selection, pricing power, real backlog and funded demand, not blanket cyclical or AI beta.",
-  "historicalFallback":"https://github.com/HelloThereMatey/tedata",
-  "rawSubmissionNote":"ISM publishes selected comments and aggregate diffusion data, not the confidential individual survey submission database."
+  "services": {
+    "reportMonth": "August 2026",
+    "sourceUrl": "https://www.ismworld.org/supply-management-news-and-reports/news-publications/inside-supply-management-magazine/blog/2026/2026-09/ism-pmi-reports-roundup-august-2026-services/",
+    "headlinePMI": {
+      "value": 55.4,
+      "prior": 54.1,
+      "change": 1.3
+    },
+    "subindices": {
+      "businessActivity": {
+        "value": 61.7,
+        "prior": 59.1,
+        "change": 2.6
+      },
+      "newOrders": {
+        "value": 60.9,
+        "prior": 57.2,
+        "change": 3.7
+      },
+      "employment": {
+        "value": 47.8,
+        "prior": 47.4,
+        "change": 0.4,
+        "note": "Contractionary."
+      },
+      "supplierDeliveries": {
+        "value": 51.3,
+        "prior": 52.8,
+        "change": -1.5,
+        "note": "Still slower deliveries, but improving."
+      },
+      "inventories": {
+        "value": 56.7,
+        "prior": 51.4,
+        "change": 5.3
+      },
+      "prices": {
+        "value": 72.6,
+        "prior": 70.3,
+        "change": 2.3,
+        "note": "Highest since October 2022 / near four-year high."
+      },
+      "backlog": {
+        "value": 55.6,
+        "prior": 50.9,
+        "change": 4.7
+      },
+      "newExportOrders": {
+        "value": 56.3,
+        "prior": 52,
+        "change": 4.3
+      },
+      "imports": {
+        "value": 56.3,
+        "prior": 51.8,
+        "change": 4.5
+      },
+      "inventorySentiment": {
+        "value": 54.1,
+        "prior": 52.5,
+        "change": 1.6
+      },
+      "customersInventories": {
+        "value": null,
+        "note": "Services report does not publish a Customers' Inventories index; no value inferred."
+      }
+    },
+    "industries": {
+      "expanding": [
+        "Mining",
+        "Real Estate, Rental & Leasing",
+        "Accommodation & Food Services",
+        "Wholesale Trade",
+        "Arts, Entertainment & Recreation",
+        "Educational Services",
+        "Retail Trade",
+        "Information",
+        "Professional, Scientific & Technical Services",
+        "Utilities",
+        "Transportation & Warehousing",
+        "Public Administration"
+      ],
+      "contracting": [
+        "Agriculture, Forestry, Fishing & Hunting",
+        "Construction",
+        "Management of Companies & Support Services",
+        "Finance & Insurance",
+        "Health Care & Social Assistance"
+      ]
+    },
+    "commodities": {
+      "up": [
+        "Petroleum products",
+        "Diesel",
+        "Gasoline",
+        "Fuel and other reported inputs"
+      ],
+      "shortSupply": [
+        "Graphics processing units (GPUs)",
+        "Steel",
+        "Memory components"
+      ],
+      "note": "ISM reported fewer commodities with broad price changes than July, but petroleum products remained up and GPUs/steel joined the short-supply list; memory remained short for an eighth month."
+    },
+    "respondentCommentReview": {
+      "scope": "ISM-selected public comments / ISM roundup only.",
+      "themes": [
+        "Large capital investment in transmission and generation services is increasing business activity, head count, material purchasing and long-lead planning.",
+        "Suppliers are reallocating capacity from current-generation components toward upcoming next-generation AI silicon/platforms, which can lengthen lead times for legacy parts.",
+        "Companies are building inventories for long-lead items and 2027 projects.",
+        "Hiring remains restrained despite strong business activity; firms are leaving positions open longer and using fewer workers where service levels permit.",
+        "Tariffs and Middle East conflict remain important supply-chain and price concerns."
+      ]
+    },
+    "powerStackInterpretation": "This is a materially stronger demand signal than July, but it is not benign growth. Orders/activity/backlogs accelerated while employment remained in contraction and Prices jumped to 72.6. For Power Stack, the highest-value evidence is explicit transmission/generation long-lead purchasing and AI component capacity reallocation. This supports ETN/PWR/GEV/VRT and scarce AI components, while high borrowing/input costs still penalize long-duration and unfunded projects."
+  },
+  "combinedRead": "August Manufacturing 54.6 and Services 55.4 still describe a stagflationary expansion: physical/services demand is solid, services orders are strong, and electrical/AI/transmission scarcity is real, while Prices remain extreme (Manufacturing 71.1; Services 72.6). Sep 25 market conditions make this more consequential because refined-product inflation and multi-decade-high long yields are now reinforcing the same capital-scarcity regime. Prefer funded backlog, pricing power and cash conversion over speculative capacity.",
+  "historicalFallback": "https://github.com/HelloThereMatey/tedata",
+  "rawSubmissionNote": "ISM publishes selected comments and aggregate diffusion data, not the confidential individual survey submission database."
 }
