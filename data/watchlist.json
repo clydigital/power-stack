@@ -1,8 +1,8 @@
 {
   "asOf": "2026-09-25",
-  "capturedAt": "2026-09-25 11:56 MYT · Sep 24 completed-session prices + Sep 25 macro regime",
+  "capturedAt": "2026-09-25 · Sep 24 completed-session prices + 10Y rate-resilience overlay",
   "title": "Power Stack Watchlist",
-  "method": "Action-oriented queue combining business quality, current price asymmetry, funding/rate sensitivity, technical location, theme significance and portfolio overlap. Sep 25 explicitly penalizes theme-only exposure in a 5%+ long-rate regime and promotes names where quality and price both improve.",
+  "method": "Action-oriented queue combining business quality, current price asymmetry, funding/rate sensitivity, technical location, theme significance and portfolio overlap. Sep 25 adds a dedicated 10Y rate-resilience queue: research priority and entry gates can rerank without mechanically changing company fundamental scores.",
   "marketRegime": "Global duration + energy-inflation collision. Prefer cash-generative/contracted exposures and discounted quality; avoid chasing excellent themes at prices already above recent tape. Refined-product tightness and high sovereign yields simultaneously raise inflation and discount-rate risk.",
   "buckets": [
     {
@@ -624,7 +624,7 @@
     }
   ],
   "priceCoverageNote": "Fresh Sep 8-9 references are retained where already verified. New adjacent ideas require a fresh quote/valuation pass before action. Theme promotion never overrides entry discipline.",
-  "sweepNote": "Sep 23 evening delta: no base company scores changed. The main update is a stricter funding-quality filter for AI infrastructure, a new agentic-intermediary research branch, and decomposed breadth/rates diagnostics.",
+  "sweepNote": "Sep 25 10Y overlay: fresh-US rate-resilience order is ITRI > BDC > KLIC > AZZ > GNRC > AMKR. Existing premium infrastructure quality is not downgraded, but no-chase/staged-entry discipline is tighter at a 5.18% 10Y. Fundamental scores remain company-evidence owned.",
   "creatorPolicy": "Creator transcripts can generate mechanisms, tickers and verification questions but receive zero direct score weight.",
   "macroDiagnostics": [
     {
@@ -708,5 +708,87 @@
       "watch": "US 10Y ~5%+; Japan 10Y JGB >3%",
       "implication": "Raise valuation and financing hurdles for long-duration / leverage-dependent names."
     }
+  },
+  "rateResilienceOverlay": {
+    "asOf": "2026-09-25",
+    "gate": "Can this company beat a 5.2% risk-free hurdle without multiple expansion?",
+    "macroRead": "US10Y 5.18% official Sep 24 close; breadth 25.44% above 50DMA; weak Sep 23 5Y auction reinforces duration-demand stress. Prefer current FCF, funded backlog and balance-sheet resilience.",
+    "scorePolicy": "This is a research/action ranking, not a mechanical fundamental-score change.",
+    "ranking": [
+      {
+        "rank": 1,
+        "ticker": "ITRI",
+        "name": "Itron",
+        "action": "TOP RESEARCH / STAGED ADMISSION",
+        "reason": "Recurring/grid-intelligence economics, current FCF and backlog make it the cleanest rate-resilient fresh-US expression.",
+        "nextTest": "Cash conversion, acquisition/integration execution and convertible-note complexity."
+      },
+      {
+        "rank": 2,
+        "ticker": "BDC",
+        "name": "Belden",
+        "action": "TOP RESEARCH / STAGED ADMISSION",
+        "reason": "Record orders and strong book-to-bill remain compelling; cash conversion must clear the 5%+ Treasury hurdle.",
+        "nextTest": "FCF yield versus US10Y, RUCKUS integration and leverage."
+      },
+      {
+        "rank": 3,
+        "ticker": "KLIC",
+        "name": "Kulicke & Soffa",
+        "action": "STAGED / CONFIRM WORKING CAPITAL",
+        "reason": "Advanced-packaging bottleneck plus substantial liquidity and positive FCF improve relative resilience.",
+        "nextTest": "Receivables/inventory build and working-capital normalisation."
+      },
+      {
+        "rank": 4,
+        "ticker": "AZZ",
+        "name": "AZZ Inc.",
+        "action": "WATCH-TO-ADD QUALITY",
+        "reason": "Current earnings, lower leverage and existing industrial capacity gain relative value when financing is expensive.",
+        "nextTest": "Cash conversion, leverage and valuation versus the Treasury hurdle."
+      },
+      {
+        "rank": 5,
+        "ticker": "GNRC",
+        "name": "Generac",
+        "action": "HIGH-QUALITY WATCH / STAGED ONLY",
+        "reason": "Data-centre backlog validates power reliability, but valuation, leverage and residential cyclicality increase rate sensitivity.",
+        "nextTest": "Backlog conversion, leverage, residential cycle and entry valuation."
+      },
+      {
+        "rank": 6,
+        "ticker": "AMKR",
+        "name": "Amkor Technology",
+        "action": "HIGHER-RISK SATELLITE / OPPORTUNISTIC",
+        "reason": "Strategically strong advanced-packaging exposure, but heavy capacity investment and weaker current FCF are penalised by the 5%+ hurdle.",
+        "nextTest": "Capex funding, customer prepayments, utilisation and FCF conversion."
+      }
+    ],
+    "premiumNames": [
+      {
+        "ticker": "GEV",
+        "action": "WATCH / DO NOT CHASE"
+      },
+      {
+        "ticker": "ETN",
+        "action": "WAIT FOR DEEPER PULLBACK"
+      },
+      {
+        "ticker": "PWR",
+        "action": "WATCH / DO NOT CHASE"
+      },
+      {
+        "ticker": "VRT",
+        "action": "HIGH-BETA WATCH"
+      },
+      {
+        "ticker": "POWL",
+        "action": "WATCH / ENTRY DISCIPLINE"
+      },
+      {
+        "ticker": "BWXT",
+        "action": "STAGED ONLY"
+      }
+    ]
   }
 }
