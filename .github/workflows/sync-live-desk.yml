@@ -31,15 +31,18 @@ jobs:
           LIVE_DESK_MARKET_INTELLIGENCE_URL: https://alchemy-live-market-desk.vercel.app/api/market-intelligence-snapshot
         run: node scripts/sync-live-desk.mjs
 
-      - name: Commit changed snapshot
+      - name: Rebuild portfolio exposure overlay
+        run: node scripts/generate-portfolio-live-overlay.mjs
+
+      - name: Commit changed snapshots
         shell: bash
         run: |
-          if git diff --quiet -- data/live-desk-canonical.json; then
-            echo "Live Desk snapshot unchanged."
+          if git diff --quiet -- data/live-desk-canonical.json data/portfolio-live-overlay.json; then
+            echo "Live Desk and portfolio overlay unchanged."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/live-desk-canonical.json
-          git commit -m "chore: sync Live Desk canonical context [skip ci]"
+          git add data/live-desk-canonical.json data/portfolio-live-overlay.json
+          git commit -m "chore: sync Live Desk + portfolio overlay [skip ci]"
           git push origin HEAD:main
