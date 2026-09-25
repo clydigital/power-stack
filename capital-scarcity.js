@@ -2,11 +2,24 @@ const fmtMove = value => value == null ? '—' : (value > 0 ? '+' : '') + Number
 
 Promise.all([
   fetch('data/portfolio-live-overlay.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('overlay HTTP ' + r.status);return r.json();}),
-  fetch('data/portfolio-management.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('portfolio HTTP ' + r.status);return r.json();})
-]).then(([overlay,portfolio])=>{
+  fetch('data/portfolio-management.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('portfolio HTTP ' + r.status);return r.json();}),
+  fetch('data/rate-resilience-overlay-2026-09-25.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('rate overlay HTTP ' + r.status);return r.json();})
+]).then(([overlay,portfolio,rateOverlay])=>{
   const regime = overlay.regime || {};
   document.querySelector('#regime').textContent = (regime.family || portfolio.regime?.structural || 'UNRESOLVED') + ' · Live ' + (overlay.liveAsOf ? new Date(overlay.liveAsOf).toLocaleString('en-GB',{dateStyle:'medium',timeStyle:'short'}) : '—');
   document.querySelector('#summary').textContent = portfolio.regime?.portfolioRead || regime.implication || regime.answer || 'No current portfolio summary.';
+
+  document.querySelector('#rateGate').innerHTML =
+    '<strong>' + rateOverlay.macroGate.admissionQuestion + '</strong><br>' +
+    'US10Y ' + rateOverlay.macroGate.us10yOfficialClosePct.toFixed(2) + '% official ' + rateOverlay.macroGate.us10yCloseDate +
+    ' close · breadth ' + rateOverlay.macroGate.sp500Above50dmaPct.toFixed(2) + '% above 50DMA · 5Y auction tail +' +
+    rateOverlay.macroGate.fiveYearAuction.tailBp.toFixed(1) + 'bp. ' + rateOverlay.macroGate.coreRead;
+  document.querySelector('#rateRanking').innerHTML=(rateOverlay.ranking || []).map(x=>
+    '<article class="card rank-card"><div class="rank-no">#' + x.rank + '</div><div><div class="rank-ticker">' + x.ticker + '</div><div class="meta">' + x.company + '</div></div><div><div class="rank-decision">' + x.decision + '</div><div class="rank-copy">' + x.reason + '<br><strong>Watch:</strong> ' + x.watch + '</div></div></article>'
+  ).join('');
+  document.querySelector('#premiumNames').innerHTML=(rateOverlay.existingPremiumNames || []).map(x=>
+    '<article class="card"><div class="rank-ticker">' + x.ticker + '</div><div class="rank-decision">' + x.decision + '</div><div class="premium">' + x.rule + '</div></article>'
+  ).join('');
 
   const rates=overlay.currentSignals?.rates || {};
   const funding=overlay.currentSignals?.funding || {};
@@ -63,7 +76,7 @@ Promise.all([
   const divs=overlay.reviewQueue?.tapeDivergences || [];
   const confirms=overlay.reviewQueue?.tapeConfirmations || [];
   document.querySelector('#provenance').textContent =
-    'Live Desk is the canonical macro baseline. Power Stack owns sizing, company fundamentals and action gates. Completed-session tape is secondary delayed quote data and never changes the fundamental score. Current tape divergences: ' +
+    'Live Desk is the canonical macro baseline. The 10Y rate-resilience overlay owns the current fresh-US research order and entry hurdle; Power Stack still owns company fundamentals and action gates. Completed-session tape is secondary delayed quote data and never changes the fundamental score. Current tape divergences: ' +
     (divs.length ? divs.join(', ') : 'none') + '. Confirmations: ' + (confirms.length ? confirms.join(', ') : 'none') + '. USD and MYR are not aggregated until portfolio weights are normalized.';
 }).catch(e=>{
   document.querySelector('#summary').textContent='Data unavailable: ' + e.message;
