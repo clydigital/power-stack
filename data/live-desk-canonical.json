@@ -1,0 +1,230 @@
+{
+  "contractVersion": "power-stack-live-desk-canonical/1",
+  "sourceUrl": "https://alchemy-live-market-desk.vercel.app/api/dossier-v2",
+  "sourceStatus": "current",
+  "dossierId": "10d9e1ed-1549-4e05-8775-4cb96459ab29",
+  "asOf": "2026-09-25T06:21:24.334Z",
+  "regime": {
+    "family": "RATES_LED_TIGHTENING",
+    "headline": "Markets trading a rates-led tightening regime: long-end yields and global sovereigns driving selective risk dislocations while credit and equity breadth remain mixed.",
+    "answer": "Evidence shows a pronounced long-end Treasury and global sovereign yield move coinciding with a firm dollar and weaker gold, while credit spreads remain comparatively tight and AI/semiconductor breadth outperforms. This is rates-led tightening with selective sector resilience rather than broad risk-off.",
+    "implication": "Treat duration and real-yield risk as the dominant macro impulse. Cross-asset transmission to credit and broad equities is incomplete, so sector and breadth dispersion can persist until credit, breadth or volatility confirm broader risk repricing.",
+    "whatWouldChangeMind": "Sustained HY/IG widening with rising equity volatility and deteriorating breadth, or a decisive fall in long real yields, would change the rates-led interpretation."
+  },
+  "rateRegime": null,
+  "lenses": [
+    {
+      "key": "US_RATES",
+      "label": "US rates / real yields",
+      "observed": true,
+      "reaction": "Nominal long yields rose to multi-year highs and real 10Y yields increased.",
+      "interpretation": "Long-end pressure is being driven by real-yield and term-premium components; long yields are the dominant story.",
+      "unresolvedSignals": [
+        "Fed effective-rate cross-check remains open in the Dossier lens."
+      ],
+      "evidenceRefs": [
+        "market-monitor:us10y:2026-09-24",
+        "verified-macro:us30y-high-sep24-2026",
+        "market-monitor:us10y-real:2026-09-23",
+        "verified-macro:stockedup-rates-2026-09-24"
+      ]
+    },
+    {
+      "key": "BONDS",
+      "label": "Global sovereign bonds",
+      "observed": true,
+      "reaction": "A global sovereign-yield gauge approached 4%, indicating broad duration pressure beyond the US.",
+      "interpretation": "Evidence supports a global long-end tightening component rather than an isolated US move.",
+      "unresolvedSignals": [],
+      "evidenceRefs": [
+        "verified-macro:stockedup-global-bond-yields-2026-09-24",
+        "verified-macro:bund-long-end-sep24-2026"
+      ]
+    },
+    {
+      "key": "BREADTH",
+      "label": "Equity breadth",
+      "observed": true,
+      "reaction": "Large-cap participation is weaker while AI/semiconductor breadth remains strong and concentrated.",
+      "interpretation": "Index performance is being supported by narrow leadership; broad confirmation of either risk-on or risk-off is absent.",
+      "unresolvedSignals": [],
+      "evidenceRefs": [
+        "market-breadth:large-cap:2026-09-24",
+        "market-breadth:ai-basket:2026-09-24",
+        "verified-macro:stockedup-spx-concentration-2026-09-24"
+      ]
+    },
+    {
+      "key": "TECH_AI",
+      "label": "Tech / AI / Semiconductors",
+      "observed": true,
+      "reaction": "SMH and AI-basket breadth remain strong and company-specific catalysts persist.",
+      "interpretation": "Tech/AI remains the main source of selective risk-taking, but its concentration can mask weak broader participation.",
+      "unresolvedSignals": [],
+      "evidenceRefs": [
+        "market-monitor:smh:2026-09-24",
+        "market-breadth:ai-basket:2026-09-24",
+        "verified-macro:stockedup-nbis-upgrade-2026-09-24"
+      ]
+    },
+    {
+      "key": "OIL_WAR_INFLATION",
+      "label": "Energy / product tightness",
+      "observed": true,
+      "reaction": "Regional distillate production and stocks fell and product cracks stayed elevated despite mixed crude direction.",
+      "interpretation": "Refined-product constraints remain an inflationary channel that can keep long yields elevated even when crude itself is volatile.",
+      "unresolvedSignals": [
+        "US distillate export series remains a Dossier research gap."
+      ],
+      "evidenceRefs": [
+        "verified-macro:eia-padd2-distillate-production-2026-09-18",
+        "verified-macro:eia-padd2-distillate-stocks-2026-09-18",
+        "market-monitor:crack-distillate:2026-09-22",
+        "verified-macro:stockedup-houthi-saudi-2026-09-24"
+      ]
+    },
+    {
+      "key": "GOLD",
+      "label": "Gold / safe haven",
+      "observed": true,
+      "reaction": "Gold weakened modestly as yields and the dollar rose.",
+      "interpretation": "Real yields and dollar strength are currently dominating safe-haven demand.",
+      "unresolvedSignals": [],
+      "evidenceRefs": [
+        "verified-macro:gold-spot-2026-09-24-0155z",
+        "market-monitor:gold:2026-09-24"
+      ]
+    }
+  ],
+  "assetState": {
+    "contractVersion": null,
+    "asOf": null,
+    "assets": []
+  },
+  "stockRadar": [
+    {
+      "symbol": "NVDA",
+      "companyName": "NVIDIA Corporation",
+      "whyRelevant": "Primary index-concentration and AI-leadership barometer.",
+      "researchQuestion": "Can NVDA-led leadership persist if long yields remain elevated and breadth stays weak?",
+      "confirmingSignal": "AI-basket breadth remains strong.",
+      "invalidatingSignal": "Broad breadth deterioration becomes more severe.",
+      "linkedStoryId": "mt-2026-09-25-01",
+      "evidenceRefs": [
+        "market-breadth:ai-basket:2026-09-24",
+        "verified-macro:stockedup-spx-concentration-2026-09-24"
+      ]
+    },
+    {
+      "symbol": "NBIS",
+      "companyName": "Nebius Group",
+      "whyRelevant": "Verified analyst-upgrade catalyst within AI infrastructure, but financing quality remains a separate Power Stack gate.",
+      "researchQuestion": "Is the upgrade producing durable flows or only a short-lived rerating?",
+      "confirmingSignal": "Upgrade catalyst plus durable relative strength and improving cash-conversion evidence.",
+      "invalidatingSignal": "Breadth weakens and financing/capex dilution risk dominates.",
+      "linkedStoryId": "story-ai-narrow-lead",
+      "evidenceRefs": [
+        "verified-macro:stockedup-nbis-upgrade-2026-09-24"
+      ]
+    },
+    {
+      "symbol": "VLO",
+      "companyName": "Valero Energy Corporation",
+      "whyRelevant": "Direct operating expression of refined-product tightness.",
+      "researchQuestion": "Do utilization, cracks and inventories continue to support refiner margins?",
+      "confirmingSignal": "Persistent product cracks and tight distillate balances.",
+      "invalidatingSignal": "Rapid crack and inventory normalization.",
+      "linkedStoryId": "story-distillate-tightness",
+      "evidenceRefs": [
+        "verified-macro:eia-padd2-distillate-production-2026-09-18",
+        "verified-macro:eia-padd2-refinery-utilization-2026-09-18"
+      ]
+    }
+  ],
+  "verification": {
+    "contractVersion": "stockedup-evidence-brief/1",
+    "reportLabel": "StockedUp verification · 24 Sep 2026",
+    "verifiedCount": 12,
+    "partialCount": 2,
+    "creatorOnlyCount": 5,
+    "verified": [],
+    "open": [
+      {
+        "id": "stockedup-partial-us-iran-terms",
+        "status": "PARTIAL",
+        "title": "Exact Hormuz-for-sanctions deal terms",
+        "detail": "Active diplomacy is verified; the transcript's exact settlement mechanics are not.",
+        "affectedAssets": [
+          "CL1!",
+          "BZ1!",
+          "SPX",
+          "XAUUSD"
+        ]
+      },
+      {
+        "id": "stockedup-partial-seasonality",
+        "status": "PARTIAL",
+        "title": "Exact Week 39 statistic",
+        "detail": "Late-September/midterm weakness is supported as context, but the exact creator statistic has not been reproduced from a primary series.",
+        "affectedAssets": [
+          "SPX",
+          "SPY"
+        ]
+      },
+      {
+        "id": "stockedup-creator-spy-levels",
+        "status": "CREATOR_ONLY",
+        "title": "SPY tactical levels",
+        "detail": "Creator technical map remains research-only.",
+        "affectedAssets": [
+          "SPY",
+          "SPX"
+        ]
+      },
+      {
+        "id": "stockedup-creator-ad-line",
+        "status": "CREATOR_ONLY",
+        "title": "Advance-decline line below 200DMA",
+        "detail": "Exact series/threshold not independently reproduced yet.",
+        "affectedAssets": [
+          "SPX",
+          "RSP"
+        ]
+      },
+      {
+        "id": "stockedup-creator-30y-streak",
+        "status": "CREATOR_ONLY",
+        "title": "30Y above 5% for 79 sessions",
+        "detail": "Yield level is verified; exact streak count is not.",
+        "affectedAssets": [
+          "US30Y"
+        ]
+      },
+      {
+        "id": "stockedup-creator-dell-short",
+        "status": "CREATOR_ONLY",
+        "title": "DELL downside setup",
+        "detail": "Creator technical/valuation interpretation only.",
+        "affectedAssets": [
+          "DELL"
+        ]
+      },
+      {
+        "id": "stockedup-creator-ccc-flow",
+        "status": "CREATOR_ONLY",
+        "title": "CCC unusual-options flow",
+        "detail": "Options-flow claim not independently verified.",
+        "affectedAssets": [
+          "CCC"
+        ]
+      }
+    ]
+  },
+  "guardrails": [
+    "Live Desk supplies canonical market reasoning and verified research context.",
+    "Power Stack retains ownership of portfolio construction, company fundamental scores, ranking and entry discipline.",
+    "Creator-only claims never alter Power Stack scores without independent verification.",
+    "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank."
+  ],
+  "syncedAt": "2026-09-25T06:30:00.000Z"
+}
