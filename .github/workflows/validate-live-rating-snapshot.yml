@@ -1,36 +1,27 @@
-name: Validate Live rating snapshot
+name: Validate Live fundamentals boundary
 
 on:
   pull_request:
     paths:
       - "app.js"
-      - "industry-risk.js"
-      - "data/live-rating-snapshot.json"
-      - "data/live-rating-export-config.json"
-      - "data/macro-context.json"
-      - "data/macro-methodology.json"
-      - "data/macro-sensitivity*.json"
+      - "data/live-fundamentals-snapshot.json"
+      - "data/live-fundamentals-export-config.json"
       - "data/market-extension*.json"
-      - "scripts/generate-live-rating-snapshot.mjs"
-      - "scripts/sync-live-desk.mjs"
       - "data/live-desk-canonical.json"
-      - ".github/workflows/sync-live-desk.yml"
+      - "data/research-sweep-config.json"
+      - "data/macro-methodology.json"
+      - "scripts/generate-live-fundamentals-snapshot.mjs"
       - "scripts/sync-live-desk.mjs"
-      - "data/live-desk-canonical.json"
       - ".github/workflows/sync-live-desk.yml"
       - ".github/workflows/validate-live-rating-snapshot.yml"
   push:
     branches: [main]
     paths:
-      - "app.js"
-      - "industry-risk.js"
-      - "data/live-rating-snapshot.json"
-      - "data/live-rating-export-config.json"
-      - "data/macro-context.json"
-      - "data/macro-methodology.json"
-      - "data/macro-sensitivity*.json"
+      - "data/live-fundamentals-snapshot.json"
+      - "data/live-fundamentals-export-config.json"
       - "data/market-extension*.json"
-      - "scripts/generate-live-rating-snapshot.mjs"
+      - "data/research-sweep-config.json"
+      - "scripts/generate-live-fundamentals-snapshot.mjs"
 
 permissions:
   contents: read
@@ -45,5 +36,6 @@ jobs:
           node-version: 22
       - run: node --check app.js
       - run: node --check scripts/sync-live-desk.mjs
-      - run: node -e "const fs=require('fs'); for (const f of ['data/live-desk-canonical.json','data/macro-context.json','data/portfolio-management.json','data/daily-research-2026-09-25.json','data/research-sweep-latest.json']) JSON.parse(fs.readFileSync(f,'utf8'));"
-      - run: node scripts/generate-live-rating-snapshot.mjs --check
+      - run: node --check scripts/generate-live-fundamentals-snapshot.mjs
+      - run: node -e "const fs=require('fs'); for (const f of ['data/live-desk-canonical.json','data/live-fundamentals-snapshot.json','data/research-sweep-config.json','data/macro-methodology.json']) JSON.parse(fs.readFileSync(f,'utf8'));"
+      - run: node scripts/generate-live-fundamentals-snapshot.mjs --check
