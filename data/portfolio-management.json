@@ -1,12 +1,13 @@
 {
   "asOf": "2026-09-25",
-  "capturedAt": "2026-09-25 14:45 MYT / Live Desk canonical cross-check",
+  "capturedAt": "2026-09-25 · Live Desk canonical + 10Y rate-resilience cross-check",
   "title": "Power Stack Portfolio Management Overlay",
   "purpose": "Position-sizing, concentration, add/trim/recycle and risk-budget overlay. This does not change company fundamental scores.",
   "dataQuality": {
     "currentWeights": "Not calculated across the whole portfolio because holdings span MYR/USD and the YTL-linked warrant lacks a reliable standalone value. Avoid false precision until all positions and cash balances are normalized into one base currency.",
     "scorePolicy": "Fundamental scores remain in holdings-fundamentals.json. Macro/theme research only changes sizing, action gates and research priority unless company-specific evidence changes.",
-    "liveDeskPolicy": "Live Desk canonical reasoning is a cross-check and research-priority input. It may tighten or loosen Power Stack action gates, but it does not overwrite company fundamental scores or automatically rerank a stock."
+    "liveDeskPolicy": "Live Desk canonical reasoning is a cross-check and research-priority input. It may tighten or loosen Power Stack action gates, but it does not overwrite company fundamental scores or automatically rerank a stock.",
+    "rateResiliencePolicy": "The 10Y overlay may rerank research priority and tighten/loosen entry gates using already-verified company evidence. It does not mechanically change fundamental scores."
   },
   "regime": {
     "structural": "Global duration + energy-inflation collision / capital scarcity",
@@ -28,6 +29,11 @@
       "id": "no-average-down",
       "rule": "No averaging down in positions whose technical or operating invalidation is active.",
       "reason": "A lower price is not a new thesis. DAYANG, HIBISCS, TSLA and TTWO need repair/operating confirmation before fresh capital."
+    },
+    {
+      "id": "rate-resilience-gate",
+      "rule": "For fresh Power Stack additions, ask whether current earnings/FCF/backlog can beat a ~5.2% risk-free hurdle without relying on multiple expansion or cheaper refinancing.",
+      "reason": "The 24 Sep U.S. 10Y official close at 5.18%, weak breadth and weak 5Y auction materially raise the opportunity cost of capital."
     },
     {
       "id": "funding-quality",
@@ -114,21 +120,26 @@
   "newCapitalPriority": [
     {
       "priority": 1,
+      "bucket": "10Y rate-resilience gate",
+      "instruction": "Fresh-US research order: ITRI > BDC > KLIC > AZZ > GNRC > AMKR. Require current FCF/backlog/balance-sheet evidence before deployment; this is a research/action overlay, not a fundamental-score rewrite."
+    },
+    {
+      "priority": 2,
       "bucket": "Diversification / reserve",
       "instruction": "Do not force deployment. Preserve cash or equivalent dry powder while financials/credit/breadth remain unconfirmed."
     },
     {
-      "priority": 2,
+      "priority": 3,
       "bucket": "Funded physical infrastructure",
       "instruction": "If adding risk, prefer pullbacks in funded/backlogged grid/power/electrical names over pre-operating AI project-finance exposure. GEV/ETN/PWR remain research candidates, not automatic buys."
     },
     {
-      "priority": 3,
+      "priority": 4,
       "bucket": "Strategic hedge",
       "instruction": "Gold/miner exposure can diversify the existing power/energy/growth concentration, but timing still requires DXY/real-yield confirmation."
     },
     {
-      "priority": 4,
+      "priority": 5,
       "bucket": "AI beneficiaries",
       "instruction": "Treat NVDA as the concentration/leadership barometer and NBIS as research-only despite the verified analyst catalyst. Do not add broad AI beta unless financing quality, cash conversion and price asymmetry clear the Power Stack gates."
     }
@@ -165,7 +176,7 @@
       "nextCheck": "NVDA breadth leadership, NBIS cash-conversion/financing quality and VLO product cracks/inventories before any Power Stack score or entry change."
     }
   ],
-  "nextPortfolioCheck": "After the next verified US close: refresh USD holdings prices, normalize all positions and cash to one base currency, then re-check whether high yields are transmitting into credit/breadth or remaining a rates-first shock.",
+  "nextPortfolioCheck": "After the next verified US close: refresh the 10Y, MOVE, credit and breadth first; then test whether ITRI/BDC/KLIC/AZZ/GNRC/AMKR still clear the rate-resilience gate and whether premium grid/power no-chase rules can loosen.",
   "liveDeskCrossCheck": {
     "source": "data/live-desk-canonical.json",
     "regime": "RATES_LED_TIGHTENING",
@@ -194,5 +205,39 @@
       }
     ],
     "scoreDecision": "No current-holding fundamental score changes and no mechanical watchlist rerank from Live Desk alone."
+  },
+  "rateResilienceOverlay": {
+    "source": "data/rate-resilience-overlay-2026-09-25.json",
+    "admissionQuestion": "Can this company beat a 5.2% risk-free hurdle without multiple expansion?",
+    "researchOrder": [
+      "ITRI",
+      "BDC",
+      "KLIC",
+      "AZZ",
+      "GNRC",
+      "AMKR"
+    ],
+    "decisions": {
+      "ITRI": "TOP RESEARCH / STAGED ADMISSION",
+      "BDC": "TOP RESEARCH / STAGED ADMISSION",
+      "KLIC": "STAGED / CONFIRM WORKING CAPITAL",
+      "AZZ": "WATCH-TO-ADD QUALITY",
+      "GNRC": "HIGH-QUALITY WATCH / STAGED ONLY",
+      "AMKR": "HIGHER-RISK SATELLITE / OPPORTUNISTIC"
+    },
+    "premiumNames": {
+      "GEV": "WATCH / DO NOT CHASE",
+      "ETN": "WAIT FOR DEEPER PULLBACK",
+      "PWR": "WATCH / DO NOT CHASE",
+      "VRT": "HIGH-BETA WATCH",
+      "POWL": "WATCH / ENTRY DISCIPLINE",
+      "BWXT": "STAGED ONLY"
+    },
+    "regimeRules": {
+      "relief": "10Y <5% + breadth improves → broaden toward GNRC and premium grid/power, still subject to valuation/earnings.",
+      "narrowResilience": "10Y 5.0–5.25% + semis lead → prioritise current cash generation and funded backlog; stage entries.",
+      "disorderlyRepricing": "10Y >5.25% + MOVE/credit widen → raise hurdle; financing-heavy/premium/distant-cash-flow names move toward WAIT/WATCH.",
+      "growthCreditScare": "10Y falls + breadth/credit deteriorate → do not read lower yields mechanically as bullish; prefer balance-sheet resilience."
+    }
   }
 }
