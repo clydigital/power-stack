@@ -6,7 +6,7 @@
   "sourceUrl": "https://dailyinvestmentbrief.com/macroeconomic-dashboard/",
   "supplementalSourceUrl": "https://en.macromicro.me/",
   "sourceStatus": "Daily Investment Brief remained client-side/incomplete for reliable numeric extraction; MacroMicro did not provide a reliable supplemental reading. No placeholder was inferred. Official/authoritative market reporting filled material gaps.",
-  "regime": "Mixed regime: global duration stress remains the dominant constraint, but the verified US-China trade-truce extension through 10 January 2027 removes the immediate tariff cliff. Strong US activity, >5% Treasury yields and Japan's 10Y JGB above 3% keep financial conditions restrictive while trade tail risk is marginally less hostile to equities and goods inflation.",
+  "regime": "Global duration + energy-inflation collision: US 10Y/30Y and Japan 10Y yields are at multi-decade highs while crude and refined-product scarcity remain inflationary. The result is a higher discount-rate/funding hurdle for duration and capex-heavy assets even where physical AI/grid demand remains strong.",
   "keyReadings": [
     {
       "label": "Fed funds target",
@@ -38,8 +38,8 @@
     },
     {
       "label": "US 10Y Treasury",
-      "value": "~5.10%; highest since 2007-08",
-      "observedAt": "2026-09-23 close",
+      "value": "~5.19%; intraday peak ~5.225%, highest in roughly 19 years",
+      "observedAt": "2026-09-25 Asia",
       "source": "Reuters",
       "confidence": "high"
     },
@@ -52,8 +52,8 @@
     },
     {
       "label": "US 2Y Treasury",
-      "value": "~5bp below 5% during Sep 23 session",
-      "observedAt": "2026-09-23",
+      "value": "~4.90%",
+      "observedAt": "2026-09-25 Asia",
       "source": "Reuters",
       "confidence": "high"
     },
@@ -66,8 +66,8 @@
     },
     {
       "label": "Japan 10Y JGB",
-      "value": "intraday high ~3.075%; highest since August 1996",
-      "observedAt": "2026-09-24 Asia session",
+      "value": "~3.115%; highest since 1996",
+      "observedAt": "2026-09-25 Asia",
       "source": "Reuters",
       "confidence": "high"
     },
@@ -80,8 +80,8 @@
     },
     {
       "label": "Dollar index",
-      "value": "+~0.5% Sep 23 to nearly two-month high",
-      "observedAt": "2026-09-23",
+      "value": "~101.25; about +1% on the week",
+      "observedAt": "2026-09-25 Asia",
       "source": "Reuters",
       "confidence": "high"
     },
@@ -94,8 +94,8 @@
     },
     {
       "label": "Brent / WTI direction",
-      "value": "Brent $102.13 (-0.9%) / WTI $91.56 (-0.7%) early Sep 24 after the prior session's ~4% crude rebound",
-      "observedAt": "2026-09-24 early Asia",
+      "value": "Brent ~US$105.75; WTI ~US$93.12 in the Sep 25 Asia market panel",
+      "observedAt": "2026-09-25 Asia",
       "source": "Reuters",
       "confidence": "high"
     },
@@ -108,8 +108,8 @@
     },
     {
       "label": "Gold",
-      "value": "spot ~US$4,282 early Sep 24; tactically pressured by elevated yields and firm USD",
-      "observedAt": "2026-09-24 early Asia",
+      "value": "spot ~US$4,288; down about 2% on the week as USD/yields rose",
+      "observedAt": "2026-09-25 Asia",
       "source": "Reuters",
       "confidence": "high"
     },
@@ -137,7 +137,7 @@
     {
       "label": "CCC stress",
       "value": "fresh authoritative CCC OAS not independently verified in this cut",
-      "observedAt": "2026-09-24",
+      "observedAt": "2026-09-25",
       "source": "verification gap",
       "confidence": "low"
     },
@@ -154,99 +154,142 @@
       "observedAt": "2026-09-23 Asia",
       "source": "Reuters/Kpler",
       "confidence": "high"
+    },
+    {
+      "label": "US 30Y Treasury",
+      "value": "~5.48%; intraday peak ~5.502%, highest since 2004",
+      "observedAt": "2026-09-25 Asia",
+      "source": "Reuters",
+      "confidence": "high"
+    },
+    {
+      "label": "Fed next-meeting pricing",
+      "value": "fed-funds futures imply ~71% chance of another hike next month; >90bp tightening priced through the cycle",
+      "observedAt": "2026-09-25 Asia",
+      "source": "Reuters",
+      "confidence": "medium-high"
+    },
+    {
+      "label": "US commercial crude stocks",
+      "value": "426.398M bbl, +2.969M WoW",
+      "observedAt": "week ended 2026-09-18",
+      "source": "EIA",
+      "confidence": "high"
+    },
+    {
+      "label": "US distillate stocks",
+      "value": "107.431M bbl, -0.428M WoW; structurally low for season",
+      "observedAt": "week ended 2026-09-18",
+      "source": "EIA/Reuters",
+      "confidence": "high"
+    },
+    {
+      "label": "US-China summit/truce",
+      "value": "two-month truce extension; no durable breakthrough verified on tariffs, rare-earth access or advanced-tech/AI restrictions",
+      "observedAt": "2026-09-24",
+      "source": "Reuters",
+      "confidence": "high"
     }
   ],
   "channels": [
     {
       "key": "policyRelief",
-      "score": -2,
-      "confidence": 0.99,
-      "regime": "Strong PMI/new orders and rising prices reinforce the Fed's hawkish stance."
+      "score": -2.3,
+      "confidence": 0.98,
+      "regime": "Strong ISM demand/prices, oil/product inflation and market pricing for further Fed tightening keep policy relief limited."
     },
     {
       "key": "financialConditions",
-      "score": -2.3,
+      "score": -2.8,
       "confidence": 0.99,
-      "regime": "US 10Y remains around the 5%+ danger zone, real yields are elevated and Japan's 10Y JGB printed ~3.075%, reinforcing a global duration shock."
+      "regime": "US 10Y ~5.19%, 30Y ~5.48% and Japan 10Y ~3.115% make global duration/capital scarcity the dominant valuation constraint."
     },
     {
       "key": "tailCreditStress",
-      "score": 1.7,
+      "score": 1.9,
       "confidence": 0.9,
-      "regime": "AI/project-finance dispersion and private-credit concerns remain active; fresh CCC OAS is a gap."
+      "regime": "AI/project-finance dispersion remains active; fresh CCC OAS is still a verification gap."
     },
     {
       "key": "industrialCapex",
-      "score": 2,
-      "confidence": 0.99,
-      "regime": "Strong PMI and AI physical demand support funded capex, but financing/permitting filters tighten."
+      "score": 1.7,
+      "confidence": 0.98,
+      "regime": "Physical AI/grid demand remains strong, but funding, interconnection, permitting and cost of capital are stricter filters."
     },
     {
       "key": "crudeTightness",
-      "score": 0.3,
+      "score": 1.2,
       "confidence": 0.98,
-      "regime": "Asian crude imports have recovered to a post-war high, but remain about 13% below the pre-war average; logistics are improving without full normalisation."
+      "regime": "Crude is again elevated above the prior relief zone, but inventories and partial rerouting argue against treating every spike as permanent scarcity."
     },
     {
       "key": "productTightness",
-      "score": 0.9,
+      "score": 2.4,
       "confidence": 0.99,
-      "regime": "Asian light/middle distillate imports remain >1mbpd below pre-war levels and regional diesel/gasoline premiums remain extreme versus crude; products are still materially tighter than crude."
+      "regime": "Distillate stocks remain structurally low and diesel tightness is expected to persist; refined products are a stronger inflation signal than crude alone."
     },
     {
       "key": "riskAppetite",
-      "score": -0.6,
-      "confidence": 0.99,
-      "regime": "The Jan 10 trade-truce extension removes an immediate tariff cliff, but high US/Japan yields and narrow equity participation keep broad risk appetite constrained."
+      "score": -1.2,
+      "confidence": 0.98,
+      "regime": "High global yields and energy inflation constrain broad risk appetite despite selective AI/equity resilience."
     },
     {
       "key": "preciousMetals",
-      "score": -1.5,
-      "confidence": 0.99,
-      "regime": "Gold remains tactically rate-dominated: elevated real yields and a firm dollar continue to outweigh geopolitical hedging at the margin."
+      "score": -1.8,
+      "confidence": 0.98,
+      "regime": "Gold is tactically pressured by higher real/nominal yields and a firmer dollar despite structural fiscal/geopolitical support."
     },
     {
       "key": "aiFundingQuality",
-      "score": -2,
+      "score": -2.4,
       "confidence": 0.99,
-      "regime": "SoftBank's US$11.1B bond deal proves funding access for a strong sponsor but reinforces leverage and credit-market dependence."
+      "regime": "5%+ long yields materially increase financing and hurdle rates; prefer contracted, cash-generative or strongly sponsored AI infrastructure."
     },
     {
       "key": "chinaDomesticDemand",
-      "score": -0.6,
+      "score": -0.7,
       "confidence": 0.9,
-      "regime": "Trade-tail risk eased, but the external truce is not evidence of a repair in Chinese household credit, private demand or domestic transmission."
+      "regime": "Trade-truce extension reduced one tail risk but does not demonstrate a repair in household/private credit or domestic demand transmission."
     },
     {
       "key": "criticalMineralsSecurity",
-      "score": 1.9,
-      "confidence": 0.99,
-      "regime": "Rare-earth and critical-mineral access remains a central Trump-Xi negotiation channel with direct aerospace, semiconductor and strategic-supply implications."
+      "score": 2.2,
+      "confidence": 0.98,
+      "regime": "Rare-earth/yttrium bottlenecks remain unresolved after the summit and directly affect aerospace, power and semiconductor supply chains."
     },
     {
       "key": "dataCentreGridAccess",
-      "score": -1.8,
+      "score": -2,
       "confidence": 0.99,
-      "regime": "Texas/EU constraints and self-supply requirements keep realizable MW below headline queues."
+      "regime": "Realizable MW remains constrained by interconnection, generation, transmission, cooling/water and now a higher financing cost."
     }
   ],
   "notes": [
-    "The US-China truce extension through 10 January 2027 reduces the immediate tariff/goods-inflation tail risk, but it is not a comprehensive trade settlement.",
-    "The Trump-Xi summit is now an event-risk transmission channel for rare earths, advanced-chip controls, Chinese purchases and China-exposed US companies; exact deal text matters more than headline tone.",
-    "Japan's 10Y JGB reached about 3.075%. Japanese repatriation or reduced foreign-bond demand is a risk to monitor, not an observed flow unless holdings/flow data confirm it.",
-    "Asia crude imports recovered to about 23.96mbpd but remain roughly 13% below the pre-war average, consistent with partial logistics repair rather than full normalisation.",
-    "Real yields remain the cleanest cross-asset constraint for gold, long-duration equities and leveraged AI infrastructure.",
-    "Creator/social claims and unverified summit concessions remain zero-weight until independently verified.",
-    "Same-contract US ULSD/RBOB crack calculations remain a research gap; the new verified evidence is Asian refined-product tightness, not a substitute for US crack data."
+    "Daily Investment Brief did not expose reliable numeric dashboard values in this run; no placeholder was inferred. MacroMicro also did not provide a reliable supplemental reading.",
+    "Official August ISM remains the latest monthly release: Manufacturing 54.6 and Services 55.4. Manufacturing Prices 71.1; Services Prices 72.6.",
+    "The key regime change is the combination of multi-decade-high sovereign yields and renewed energy/product inflation, not rates or oil in isolation.",
+    "US distillate inventories remain structurally tight even as crude inventories rose; continue to separate crude, refined products, LNG and freight.",
+    "The US-China summit extended the truce but did not verify a durable resolution of rare-earth, tariff or advanced-technology restrictions.",
+    "Creator/social claims remain zero-weight until independently verified; the claimed 'largest QQQ transaction ever' remains unverified.",
+    "Fresh authoritative CCC OAS, same-contract US crack spreads and standalone 6742UW terms remain research gaps."
   ],
   "forwardView": {
     "horizon": "1-5 trading days",
-    "baseCase": "Rates remain the dominant cross-asset constraint, but the verified US-China truce extension removes one near-term inflation and supply-chain tail risk. A durable risk-on broadening still requires US/Japan yields to stabilise and summit headlines to convert into specific, verifiable concessions.",
-    "dollar": "Bias remains firm while US growth/prices and front-end yields stay strong; trade de-escalation alone is insufficient to reverse the rates advantage.",
-    "rates": "US 10Y above 5% and Japan 10Y above 3% are the key global-duration tripwires. Treat Japanese capital repatriation as a monitored hypothesis until flow data confirm it.",
-    "equities": "Trade relief is a marginal positive, especially for China-exposed cyclicals and semis, but prefer funded/cash-generative AI and grid exposures until breadth, credit and yields improve.",
-    "energy": "Separate partial crude-flow recovery from refined-product, LNG and freight tightness. Falling geopolitical premium in one barrel does not prove product normalisation.",
-    "gold": "Tactically weak until US real yields and DXY roll over together; reclaiming the low-$4,300s would be more meaningful if rates confirm.",
-    "nextCatalyst": "Trump-Xi summit; US jobless claims and new-home sales; Treasury auction/Fed follow-through; Japan 10Y JGB persistence above 3%; exact rare-earth and advanced-chip language."
+    "baseCase": "Global duration and energy inflation remain the two dominant cross-asset constraints. Selective physical AI/grid and cash-generative energy exposures can outperform, but broad duration risk needs yields and oil/product inflation to stabilize together.",
+    "dollar": "Bias remains firm while US growth/prices, oil inflation and front-end/long-end yields stay elevated.",
+    "rates": "US 10Y ~5.19%, 30Y ~5.48% and JGB 10Y ~3.115% are the tripwires. A durable risk-on broadening needs long yields to retreat, not merely equities to tolerate them for a session.",
+    "equities": "Prefer funded/cash-generative AI infrastructure, power/grid and selective security over unprofitable duration. Do not chase strong themes at stretched prices.",
+    "energy": "Treat crude, diesel/products, LNG and shipping separately. Product tightness is currently the cleaner inflation signal.",
+    "gold": "Structural case remains, but tactical confirmation requires real/nominal yields and DXY to roll over together.",
+    "nextCatalyst": "US inflation/labour data, Treasury supply/auction follow-through, Middle East supply developments, product inventories/cracks and company-specific AI/grid funding evidence."
+  },
+  "asOf": "2026-09-25",
+  "capturedAt": "2026-09-25T11:56:00+08:00",
+  "sourceHealth": {
+    "primaryDashboard": "Daily Investment Brief page reachable but no reliable numeric dashboard extraction; no placeholders inferred.",
+    "supplementalDashboard": "MacroMicro did not return a reliable reading in this run.",
+    "fallback": "Official ISM/EIA plus Reuters/current authoritative market reporting used for material gaps.",
+    "policy": "Dashboard placeholders such as 'Analyzing…' or '--' are never treated as data."
   }
 }
