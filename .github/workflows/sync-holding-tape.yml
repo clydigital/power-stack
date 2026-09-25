@@ -1,0 +1,42 @@
+name: Sync holding tape
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 */6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-holding-tape
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --check scripts/sync-holding-tape.mjs
+      - run: node scripts/sync-holding-tape.mjs --check
+      - name: Refresh completed-session tape
+        run: node scripts/sync-holding-tape.mjs
+      - name: Rebuild portfolio overlay
+        run: node scripts/generate-portfolio-live-overlay.mjs
+      - name: Commit changed tape
+        shell: bash
+        run: |
+          if git diff --quiet -- data/holding-tape.json data/portfolio-live-overlay.json; then
+            echo "Holding tape unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/holding-tape.json data/portfolio-live-overlay.json
+          git commit -m "chore: refresh holding tape [skip ci]"
+          git push origin HEAD:main
