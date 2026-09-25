@@ -67,7 +67,7 @@
           <div class="panel watch-hero-copy">
             <div id="actionMapDate" class="eyebrow">LATEST ACTION MAP</div>
             <h2>Separate “interesting” from “buyable now”.</h2>
-            <p>The candidate score combines thesis quality with current price location, trend confirmation and the active macro regime. It remains separate from the fundamentals-only score used on the Current Holdings page.</p>
+            <p>The stored candidate score reflects the latest Power Stack action map. The active Live regime is shown separately below and does not mechanically rerank a candidate.</p>
           </div>
           <div id="watchStats" class="panel watch-hero-meta"></div>
         </section>
@@ -93,7 +93,7 @@
         </section>
       </main>
 
-      <footer class="footer">Power Stack Watchlist is an action queue, not an automated trading system. Entry levels are research checkpoints and should move when price structure, fundamentals or the macro regime materially change.</footer>
+      <footer class="footer">Power Stack Watchlist is an action queue, not an automated trading system. Live Desk supplies the canonical market baseline; Power Stack still owns entries, valuation, thesis quality and reranking.</footer>
     </div>
   </div>
 
@@ -178,21 +178,24 @@
     }
 
     Promise.all([
-      fetch('data/watchlist.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`watchlist HTTP ${r.status}`);return r.json();}),
-      fetch('data/holdings-fundamentals.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`holdings HTTP ${r.status}`);return r.json();}),
-      fetch('data/latest-market-review.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`market review HTTP ${r.status}`);return r.json();})
-    ]).then(([watch,holdingData,market])=>{
+      fetch('data/watchlist.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('watchlist HTTP ' + r.status);return r.json();}),
+      fetch('data/holdings-fundamentals.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('holdings HTTP ' + r.status);return r.json();}),
+      fetch('data/latest-market-review.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('market review HTTP ' + r.status);return r.json();}),
+      fetch('data/live-desk-canonical.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('Live Desk HTTP ' + r.status);return r.json();})
+    ]).then(([watch,holdingData,market,live])=>{
       const date = prettyDate(watch.asOf);
-      document.getElementById('sideAsOf').textContent = `Reviewed ${date}`;
-      document.getElementById('actionMapDate').textContent = `${date.toUpperCase()} ACTION MAP`;
-      document.getElementById('regimeTitle').textContent = market.regime || 'Current market regime';
-      document.getElementById('regimeSummary').textContent = market.summary || watch.marketRegime || '—';
-      document.getElementById('regimeDate').textContent = market.capturedAt || '';
+      const regime = live.regime || {};
+      const liveDate = live.asOf ? prettyDate(String(live.asOf).slice(0,10)) : 'latest';
+      document.getElementById('sideAsOf').textContent = 'Action map ' + date + ' · Live ' + liveDate;
+      document.getElementById('actionMapDate').textContent = date.toUpperCase() + ' ACTION MAP';
+      document.getElementById('regimeTitle').textContent = regime.family || market.regime || 'Current market regime';
+      document.getElementById('regimeSummary').textContent = regime.implication || regime.answer || market.summary || watch.marketRegime || '—';
+      document.getElementById('regimeDate').textContent = 'Live canonical · rates ' + (live.rateRegime?.state || 'UNRESOLVED') + ' · Treasury bills ' + (live.sourceHealth?.treasuryBills || 'unknown') + ' · NY Fed funding ' + (live.sourceHealth?.nyFedReferenceRates || 'unknown');
       renderStats(watch, holdingData.holdings);
       renderBuckets(watch);
       renderHoldings(holdingData.holdings, market);
     }).catch(err=>{
-      document.getElementById('bucketRoot').innerHTML = `<div class="error-state">Could not load watchlist: ${err.message}</div>`;
+      document.getElementById('bucketRoot').innerHTML = '<div class="error-state">Could not load watchlist: ' + err.message + '</div>';
       document.getElementById('sideAsOf').textContent = 'Data unavailable';
       document.getElementById('regimeTitle').textContent = 'Data unavailable';
       document.getElementById('regimeSummary').textContent = err.message;
