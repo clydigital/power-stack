@@ -2,7 +2,7 @@
   "version": 30,
   "generatedAt": "2026-09-24T07:05:25.592Z",
   "packetStaleAfterHours": 36,
-  "source": "Daily Investment Brief attempted + MacroMicro attempted + Reuters/S&P Global/verified market data",
+  "source": "Power Stack verified macro context + Live Desk canonical cross-check",
   "sourceUrl": "https://dailyinvestmentbrief.com/macroeconomic-dashboard/",
   "supplementalSourceUrl": "https://en.macromicro.me/",
   "sourceStatus": "Daily Investment Brief remained client-side/incomplete for reliable numeric extraction; MacroMicro did not provide a reliable supplemental reading. No placeholder was inferred. Official/authoritative market reporting filled material gaps.",
@@ -189,6 +189,27 @@
       "observedAt": "2026-09-24",
       "source": "Reuters",
       "confidence": "high"
+    },
+    {
+      "label": "Global sovereign yields",
+      "value": "global sovereign-bond yield gauge near 4%, highest since 2007",
+      "observedAt": "2026-09-24",
+      "source": "Live Desk canonical verification / Bloomberg market reporting",
+      "confidence": "medium-high"
+    },
+    {
+      "label": "S&P 500 concentration",
+      "value": "NVDA + AAPL >15% of index weight; narrow leadership remains a market-structure risk",
+      "observedAt": "2026-09-24",
+      "source": "Live Desk canonical verification",
+      "confidence": "medium-high"
+    },
+    {
+      "label": "US natural-gas storage",
+      "value": "3,351 Bcf; +53 Bcf weekly injection; 95 Bcf above five-year average",
+      "observedAt": "week ended 2026-09-18 / released 2026-09-24",
+      "source": "EIA via Live Desk canonical verification",
+      "confidence": "high"
     }
   ],
   "channels": [
@@ -272,7 +293,8 @@
     "US distillate inventories remain structurally tight even as crude inventories rose; continue to separate crude, refined products, LNG and freight.",
     "The US-China summit extended the truce but did not verify a durable resolution of rare-earth, tariff or advanced-technology restrictions.",
     "Creator/social claims remain zero-weight until independently verified; the claimed 'largest QQQ transaction ever' remains unverified.",
-    "Fresh authoritative CCC OAS, same-contract US crack spreads and standalone 6742UW terms remain research gaps."
+    "Fresh authoritative CCC OAS, same-contract US crack spreads and standalone 6742UW terms remain research gaps.",
+    "Live Desk canonical cross-check confirms rates-led tightening with incomplete credit transmission, weak broad participation versus stronger AI/semis, and refined-product inflation risk. These diagnostics do not directly change stock scores without an explicit Power Stack sensitivity."
   ],
   "forwardView": {
     "horizon": "1-5 trading days",
@@ -291,5 +313,22 @@
     "supplementalDashboard": "MacroMicro did not return a reliable reading in this run.",
     "fallback": "Official ISM/EIA plus Reuters/current authoritative market reporting used for material gaps.",
     "policy": "Dashboard placeholders such as 'Analyzing…' or '--' are never treated as data."
+  },
+  "liveDeskCrossCheck": {
+    "sourceFile": "data/live-desk-canonical.json",
+    "regime": "RATES_LED_TIGHTENING",
+    "role": "display/research cross-check; not a direct scoring channel",
+    "confirms": [
+      "global duration stress",
+      "narrow equity breadth/concentration",
+      "selective AI leadership",
+      "refined-product inflation channel"
+    ],
+    "stockRadar": [
+      "NVDA",
+      "NBIS",
+      "VLO"
+    ],
+    "guardrail": "Power Stack retains score/ranking ownership. Live Desk does not overwrite company fundamentals or entry discipline."
   }
 }
