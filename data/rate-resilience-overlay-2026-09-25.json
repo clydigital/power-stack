@@ -1,0 +1,145 @@
+{
+  "asOf": "2026-09-25",
+  "title": "Power Stack 10Y Rate-Resilience Overlay",
+  "purpose": "Research-priority and action-gate overlay for the 5%+ U.S. 10-year regime. Does not mechanically overwrite company fundamental scores.",
+  "macroGate": {
+    "us10yOfficialClosePct": 5.18,
+    "us10yCloseDate": "2026-09-24",
+    "us10yIntradayPct": 5.196,
+    "sp500Above50dmaPct": 25.44,
+    "fiveYearAuction": {
+      "date": "2026-09-23",
+      "highYieldPct": 5.033,
+      "whenIssuedPct": 5.002,
+      "tailBp": 3.1,
+      "bidToCover": 2.21,
+      "indirectPct": 54.3,
+      "directPct": 29.9,
+      "dealerPct": 15.8
+    },
+    "coreRead": "The 10Y is the gating variable. Breadth, valuation and financing are already taking damage while concentrated AI/semiconductor earnings keep the cap-weighted index resilient.",
+    "admissionQuestion": "Can this company beat a 5.2% risk-free hurdle without multiple expansion?"
+  },
+  "ranking": [
+    {
+      "rank": 1,
+      "ticker": "ITRI",
+      "company": "Itron",
+      "decision": "TOP RESEARCH / STAGED ADMISSION",
+      "reason": "Recurring/grid-intelligence economics, current FCF and a large backlog make it the cleanest rate-resilient fresh-US expression.",
+      "watch": "Cash conversion, acquisition/integration execution and convertible-note complexity."
+    },
+    {
+      "rank": 2,
+      "ticker": "BDC",
+      "company": "Belden",
+      "decision": "TOP RESEARCH / STAGED ADMISSION",
+      "reason": "Record orders and strong book-to-bill keep the operating thesis strong; current cash conversion matters more than headline forward P/E at a 5%+ Treasury hurdle.",
+      "watch": "FCF yield versus US10Y, RUCKUS integration and leverage."
+    },
+    {
+      "rank": 3,
+      "ticker": "KLIC",
+      "company": "Kulicke & Soffa",
+      "decision": "STAGED / CONFIRM WORKING CAPITAL",
+      "reason": "Advanced-packaging bottleneck plus substantial liquidity and positive FCF improve relative resilience.",
+      "watch": "Receivables/inventory build and working-capital normalisation."
+    },
+    {
+      "rank": 4,
+      "ticker": "AZZ",
+      "company": "AZZ Inc.",
+      "decision": "WATCH-TO-ADD QUALITY",
+      "reason": "Current earnings, lower leverage and existing North American industrial capacity gain relative value when financing is expensive.",
+      "watch": "Cash conversion, leverage and valuation versus the Treasury hurdle."
+    },
+    {
+      "rank": 5,
+      "ticker": "GNRC",
+      "company": "Generac",
+      "decision": "HIGH-QUALITY WATCH / STAGED ONLY",
+      "reason": "Data-centre backlog validates the power-reliability thesis, but valuation, leverage and residential cyclicality make the equity more rate-sensitive than the names above.",
+      "watch": "Backlog conversion, leverage, residential cycle and entry valuation."
+    },
+    {
+      "rank": 6,
+      "ticker": "AMKR",
+      "company": "Amkor Technology",
+      "decision": "HIGHER-RISK SATELLITE / OPPORTUNISTIC",
+      "reason": "Advanced-packaging exposure is strategically strong, but heavy capacity investment and weaker current FCF characteristics are penalised by the 5%+ hurdle.",
+      "watch": "Capex funding, customer prepayments, utilisation and FCF conversion."
+    }
+  ],
+  "existingPremiumNames": [
+    {
+      "ticker": "GEV",
+      "decision": "WATCH / DO NOT CHASE",
+      "rule": "Require valuation compression, earnings catch-up or confirmed 10Y relief before increasing exposure."
+    },
+    {
+      "ticker": "ETN",
+      "decision": "WAIT FOR DEEPER PULLBACK",
+      "rule": "Business quality remains high; entry hurdle rises with the risk-free rate."
+    },
+    {
+      "ticker": "PWR",
+      "decision": "WATCH / DO NOT CHASE",
+      "rule": "Excellent thesis; premium multiple remains the constraint."
+    },
+    {
+      "ticker": "VRT",
+      "decision": "HIGH-BETA WATCH",
+      "rule": "Require valuation and 10Y confirmation; do not use theme strength to waive the rate hurdle."
+    },
+    {
+      "ticker": "POWL",
+      "decision": "WATCH / ENTRY DISCIPLINE",
+      "rule": "Strong business signal; do not capitalise years of bottleneck economics at any price."
+    },
+    {
+      "ticker": "BWXT",
+      "decision": "STAGED ONLY",
+      "rule": "Structural quality remains high; preserve staged-entry discipline."
+    }
+  ],
+  "candidateTest": [
+    "Current FCF yield versus US10Y",
+    "Net debt and refinancing exposure",
+    "Share of growth capex funded internally",
+    "Backlog/order visibility and cash conversion",
+    "Ability to grow EPS/FCF with the 10Y flat at 5%+",
+    "Dependence on multiple expansion"
+  ],
+  "regimes": [
+    {
+      "name": "RELIEF",
+      "condition": "10Y <5% + breadth improves",
+      "decision": "Broaden the queue toward GNRC and premium grid/power names, subject to valuation and earnings confirmation."
+    },
+    {
+      "name": "NARROW RESILIENCE",
+      "condition": "10Y 5.0–5.25% + semis/AI lead",
+      "decision": "Concentrate research/new-capital priority in the strongest cash generators; stage entries; reject mediocre thematic exposure."
+    },
+    {
+      "name": "DISORDERLY REPRICING",
+      "condition": "10Y >5.25% + MOVE/credit widen",
+      "decision": "Raise the admission hurdle again; financing-heavy, premium-multiple and distant-cash-flow names move toward WAIT/WATCH."
+    },
+    {
+      "name": "GROWTH / CREDIT SCARE",
+      "condition": "10Y falls + breadth/credit deteriorate",
+      "decision": "Do not interpret lower yields mechanically as bullish; prefer balance-sheet resilience and current cash generation."
+    }
+  ],
+  "implementation": {
+    "researchOrder": "ITRI > BDC > KLIC > AZZ > GNRC > AMKR",
+    "scorePolicy": "This overlay changes research priority and entry/action gates. Fundamental conviction scores require company-specific evidence and are not mechanically changed by the macro overlay.",
+    "executionRule": "Do not average down merely because a Power Stack name has corrected. Add only when the operating thesis remains intact and the rate-resilience test is passed."
+  },
+  "sourceRefs": [
+    "data/live-desk-canonical.json",
+    "data/portfolio-management.json",
+    "AlchemyMarkets Hybrid Desk dossier — The 10-Year Is the Market — 25 Sep 2026"
+  ]
+}
