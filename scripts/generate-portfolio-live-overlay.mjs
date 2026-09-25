@@ -201,6 +201,106 @@ function effectReason(channel, effect, exposure, signal) {
   return `${channel}: ${effect.toLowerCase()} with ${intensityLabel} sensitivity while the Live channel is ${signal.toLowerCase()}.`;
 }
 
+
+function findLens(live, key) {
+  return (live.lenses || []).find((item) => item.key === key) || null;
+}
+
+function findAsset(live, key) {
+  return live.assetState?.assets?.find((item) => item.key === key) || null;
+}
+
+function buildPortfolioDivergences(live, rates, funding) {
+  const divergences = [];
+  const tech = findLens(live, "TECH_AI");
+  const breadth = findLens(live, "BREADTH");
+  const credit = findLens(live, "CREDIT");
+  const energy = findLens(live, "OIL_WAR_INFLATION");
+  const nasdaq = findAsset(live, "NASDAQ");
+  const crude = findAsset(live, "CRUDE");
+
+  if (rates.state === "TIGHTER" && tech?.observed) {
+    divergences.push({
+      id: "rates-vs-tech-resilience",
+      importance: "HIGH",
+      divergence: "PARTIAL",
+      expected: "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
+      actual: tech.reaction || "Tech/AI remained selectively resilient despite tighter rates.",
+      affectedHoldings: ["TSLA", "TTWO", "YTLPOWR", "6742UW"],
+      candidateExplanations: [
+        "Narrow AI/semiconductor leadership is offsetting broad duration pressure at index level.",
+        "Company-specific catalysts and funded/backlogged AI infrastructure demand are overpowering the discount-rate headwind in selected names.",
+        "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly.",
+      ],
+      evidenceFor: [
+        tech.interpretation || "",
+        breadth?.interpretation || "",
+        nasdaq ? "Nasdaq daily move " + (nasdaq.dailyChange ?? "n/a") + " with bias " + (nasdaq.bias || "UNRESOLVED") + "." : "",
+      ].filter(Boolean),
+      evidenceAgainst: [
+        findLens(live, "US_RATES")?.interpretation || "",
+      ].filter(Boolean),
+      leadingHypothesis: "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
+      confidence: "HIGH",
+      invalidation: "If breadth broadens materially while credit remains benign and real yields stay high, the rate headwind is less dominant than assumed. If AI/semiconductor leadership rolls over, the divergence resolves in the bearish direction.",
+    });
+  }
+
+  if (rates.state === "TIGHTER" && credit?.observed && funding.state !== "TIGHTER") {
+    divergences.push({
+      id: "rates-vs-credit-transmission",
+      importance: "HIGH",
+      divergence: "YES",
+      expected: "A persistent long-end tightening shock should eventually raise financing stress and widen credit spreads.",
+      actual: credit.reaction || "Credit spreads remain comparatively tight despite the rates shock.",
+      affectedHoldings: ["TSLA", "TTWO", "YTLPOWR", "6742UW", "MISC"],
+      candidateExplanations: [
+        "The current move is still primarily a rates/term-premium shock rather than a broad solvency or funding shock.",
+        "Strong nominal growth and healthy corporate balance sheets may be delaying credit transmission.",
+        "Credit may simply be lagging rates and could become the next confirmation leg.",
+      ],
+      evidenceFor: [
+        credit.interpretation || "",
+        "Funding/credit composite is currently " + funding.state + ".",
+      ].filter(Boolean),
+      evidenceAgainst: [
+        live.regime?.implication || "",
+      ].filter(Boolean),
+      leadingHypothesis: "The shock is rates-led, not yet systemic; keep dry powder because credit remains the key confirmation risk.",
+      confidence: "HIGH",
+      invalidation: "Sustained HY/IG widening with weaker breadth and higher volatility would confirm transmission and require a stricter portfolio-risk posture.",
+    });
+  }
+
+  if (energy?.observed && crude) {
+    divergences.push({
+      id: "crude-vs-product-tightness",
+      importance: "HIGH",
+      divergence: "YES",
+      expected: "Softer crude would normally reduce immediate energy-inflation pressure and weaken the case for broad energy outperformance.",
+      actual: energy.reaction || "Refined-product tightness persisted despite softer crude.",
+      affectedHoldings: ["XOM", "HIBISCS", "MISC", "DAYANG"],
+      candidateExplanations: [
+        "Physical product scarcity and regional inventory/refinery constraints are stronger than the headline crude move suggests.",
+        "Shipping/logistics constraints may be keeping product markets tight even as crude futures soften.",
+        "Geopolitical premium and physical-product stress are moving on different timelines.",
+      ],
+      evidenceFor: [
+        energy.interpretation || "",
+        "Crude daily move " + (crude.dailyChange ?? "n/a") + " with bias " + (crude.bias || "UNRESOLVED") + ".",
+      ].filter(Boolean),
+      evidenceAgainst: [
+        crude.contradictingSignal || "",
+      ].filter(Boolean),
+      leadingHypothesis: "Product-market tightness is currently more informative for the portfolio's energy sleeve than the crude headline alone.",
+      confidence: "HIGH",
+      invalidation: "Falling crack spreads, rebuilding product inventories and improving refinery utilization would weaken the physical-tightness explanation.",
+    });
+  }
+
+  return divergences;
+}
+
 function buildOverlay(existingGeneratedAt = null) {
   const live = read("data/live-desk-canonical.json");
   if (live.contractVersion !== "power-stack-live-desk-canonical/2") {
@@ -302,6 +402,7 @@ function buildOverlay(existingGeneratedAt = null) {
     },
     holdings,
     hiddenConcentration,
+    portfolioDivergences: buildPortfolioDivergences(live, rates, funding),
     reviewQueue: {
       highReview,
       mixed: holdings.filter((item) => item.overlayState === "MIXED").map((item) => item.ticker),
@@ -315,6 +416,7 @@ function buildOverlay(existingGeneratedAt = null) {
       "HEADWIND / TAILWIND describes current macro exposure, not a buy or sell recommendation.",
       "Power Stack action gates remain company- and portfolio-owned.",
       "Live contradictions remain open investigations until independently resolved.",
+      "Portfolio divergence hypotheses are deterministic prompts for investigation, not causal proof.",
       "Missing profiles remain RESEARCH_GAP rather than zero sensitivity.",
     ],
     sourceFiles: [
@@ -327,12 +429,26 @@ function buildOverlay(existingGeneratedAt = null) {
   };
 }
 
+function canonical(value) {
+  if (Array.isArray(value)) return value.map(canonical);
+  if (value && typeof value === "object") {
+    return Object.fromEntries(
+      Object.keys(value).sort().map((key) => [key, canonical(value[key])]),
+    );
+  }
+  return value;
+}
+
+function sameJson(left, right) {
+  return JSON.stringify(canonical(left)) === JSON.stringify(canonical(right));
+}
+
 const args = parseArgs(process.argv.slice(2));
 const existing = fs.existsSync(OUTPUT) ? JSON.parse(fs.readFileSync(OUTPUT, "utf8")) : null;
 const overlay = buildOverlay(args.check ? existing?.generatedAt || null : null);
 
 if (args.check) {
-  if (!existing || JSON.stringify(existing) !== JSON.stringify(overlay)) {
+  if (!existing || !sameJson(existing, overlay)) {
     console.error("data/portfolio-live-overlay.json is stale. Regenerate it with:");
     console.error("node scripts/generate-portfolio-live-overlay.mjs");
     process.exitCode = 1;

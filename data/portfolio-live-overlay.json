@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-09-25T09:13:19.276Z",
+  "generatedAt": "2026-09-25T09:20:48.434Z",
   "liveAsOf": "2026-09-25T06:21:24.334+00:00",
   "liveSyncedAt": "2026-09-25T09:09:07.135Z",
   "sourceHealth": {
@@ -1103,6 +1103,7 @@
     "HEADWIND / TAILWIND describes current macro exposure, not a buy or sell recommendation.",
     "Power Stack action gates remain company- and portfolio-owned.",
     "Live contradictions remain open investigations until independently resolved.",
+    "Portfolio divergence hypotheses are deterministic prompts for investigation, not causal proof.",
     "Missing profiles remain RESEARCH_GAP rather than zero sensitivity."
   ],
   "sourceFiles": [
@@ -1111,5 +1112,93 @@
     "data/macro-sensitivities.json",
     "data/macro-sensitivity-supplement.json",
     "data/portfolio-management.json"
+  ],
+  "portfolioDivergences": [
+    {
+      "id": "rates-vs-tech-resilience",
+      "importance": "HIGH",
+      "divergence": "PARTIAL",
+      "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
+      "actual": "SMH and AI-basket breadth remain strong and company upgrades/catalysts persist, signaling concentrated sector leadership.",
+      "affectedHoldings": [
+        "TSLA",
+        "TTWO",
+        "YTLPOWR",
+        "6742UW"
+      ],
+      "candidateExplanations": [
+        "Narrow AI/semiconductor leadership is offsetting broad duration pressure at index level.",
+        "Company-specific catalysts and funded/backlogged AI infrastructure demand are overpowering the discount-rate headwind in selected names.",
+        "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
+      ],
+      "evidenceFor": [
+        "Tech/AI is a primary source of index concentration and selective risk-taking; this acts as a counterweight to broad market weakness and masks participation issues.",
+        "Index performance is being supported by narrow leadership; broad confirmation of either risk-on or risk-off is absent.",
+        "Nasdaq daily move -0.01 with bias MIXED."
+      ],
+      "evidenceAgainst": [
+        "Long-end pressure is driven by real-yield and term-premium components linked to stronger activity and energy costs; policy expectations tightened at the front end but long yields are the dominant story."
+      ],
+      "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
+      "confidence": "HIGH",
+      "invalidation": "If breadth broadens materially while credit remains benign and real yields stay high, the rate headwind is less dominant than assumed. If AI/semiconductor leadership rolls over, the divergence resolves in the bearish direction."
+    },
+    {
+      "id": "rates-vs-credit-transmission",
+      "importance": "HIGH",
+      "divergence": "YES",
+      "expected": "A persistent long-end tightening shock should eventually raise financing stress and widen credit spreads.",
+      "actual": "HY and IG OAS remain near recent tight levels rather than signaling a broad credit repricing.",
+      "affectedHoldings": [
+        "TSLA",
+        "TTWO",
+        "YTLPOWR",
+        "6742UW",
+        "MISC"
+      ],
+      "candidateExplanations": [
+        "The current move is still primarily a rates/term-premium shock rather than a broad solvency or funding shock.",
+        "Strong nominal growth and healthy corporate balance sheets may be delaying credit transmission.",
+        "Credit may simply be lagging rates and could become the next confirmation leg."
+      ],
+      "evidenceFor": [
+        "Credit markets have not yet transmitted the long-end stress; this limits the case for a full market-wide risk-off.",
+        "Funding/credit composite is currently NEUTRAL."
+      ],
+      "evidenceAgainst": [
+        "Position and hedging should treat duration and real-yield risk as the dominant macro impulse; cross-asset transmission to credit and broad equities is incomplete, so sector/market breadth dispersion is likely to persist until credit, breadth or volatility confirm broader risk repricing."
+      ],
+      "leadingHypothesis": "The shock is rates-led, not yet systemic; keep dry powder because credit remains the key confirmation risk.",
+      "confidence": "HIGH",
+      "invalidation": "Sustained HY/IG widening with weaker breadth and higher volatility would confirm transmission and require a stricter portfolio-risk posture."
+    },
+    {
+      "id": "crude-vs-product-tightness",
+      "importance": "HIGH",
+      "divergence": "YES",
+      "expected": "Softer crude would normally reduce immediate energy-inflation pressure and weaken the case for broad energy outperformance.",
+      "actual": "Regional distillate production and stocks fell and distillate crack remained elevated even as WTI showed short-term softness.",
+      "affectedHoldings": [
+        "XOM",
+        "HIBISCS",
+        "MISC",
+        "DAYANG"
+      ],
+      "candidateExplanations": [
+        "Physical product scarcity and regional inventory/refinery constraints are stronger than the headline crude move suggests.",
+        "Shipping/logistics constraints may be keeping product markets tight even as crude futures soften.",
+        "Geopolitical premium and physical-product stress are moving on different timelines."
+      ],
+      "evidenceFor": [
+        "Refined product/regional constraints are an inflationary readthrough that can sustain long-end pressure even if crude moves are volatile; geopolitical incidents add an upside risk to crude.",
+        "Crude daily move -0.58 with bias MIXED."
+      ],
+      "evidenceAgainst": [
+        "verified-macro:eia-us-distillate-exports-2026-09-18"
+      ],
+      "leadingHypothesis": "Product-market tightness is currently more informative for the portfolio's energy sleeve than the crude headline alone.",
+      "confidence": "HIGH",
+      "invalidation": "Falling crack spreads, rebuilding product inventories and improving refinery utilization would weaken the physical-tightness explanation."
+    }
   ]
 }
