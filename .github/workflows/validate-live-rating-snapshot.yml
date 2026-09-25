@@ -8,6 +8,8 @@ on:
       - "holdings.html"
       - "watchlist.html"
       - "themes.html"
+      - "capital-scarcity.html"
+      - "capital-scarcity.js"
       - "data/live-fundamentals-snapshot.json"
       - "data/live-fundamentals-export-config.json"
       - "data/market-extension*.json"
@@ -48,6 +50,7 @@ jobs:
         with:
           node-version: 22
       - run: node --check app.js
+      - run: node --check capital-scarcity.js
       - run: node --check scripts/sync-live-desk.mjs
       - run: node --check scripts/generate-live-fundamentals-snapshot.mjs
       - run: node --check scripts/generate-portfolio-live-overlay.mjs
