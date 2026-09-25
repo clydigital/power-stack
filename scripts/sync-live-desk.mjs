@@ -5,11 +5,11 @@ import process from "node:process";
 const ROOT = process.cwd();
 const OUTPUT = path.join(ROOT, "data", "live-desk-canonical.json");
 const SOURCE =
-  process.env.LIVE_DESK_DOSSIER_V2_URL ||
-  "https://alchemy-live-market-desk.vercel.app/api/dossier-v2";
+  process.env.LIVE_DESK_MARKET_INTELLIGENCE_URL ||
+  "https://alchemy-live-market-desk.vercel.app/api/market-intelligence-snapshot";
 
-function pickLens(presentation, key) {
-  const lens = (presentation?.regimeStrip || []).find((item) => item?.key === key);
+function pickLens(snapshot, key) {
+  const lens = (snapshot?.marketState?.lenses || []).find((item) => item?.key === key);
   if (!lens) return null;
   return {
     key: lens.key,
@@ -53,77 +53,88 @@ function normaliseAssets(state) {
   }));
 }
 
-function stableJson(value) {
-  return JSON.stringify(value, Object.keys(value).sort());
+function normaliseVerification(verification) {
+  if (!verification) return null;
+  return {
+    contractVersion: verification.contractVersion || null,
+    reportLabel: verification.reportLabel || "Creator verification",
+    verifiedCount: verification.verified?.length || 0,
+    partialCount: verification.partial?.length || 0,
+    creatorOnlyCount: verification.creatorOnly?.length || 0,
+    verified: (verification.verified || []).map((item) => ({
+      id: item.id,
+      title: item.title,
+      detail: item.detail,
+      affectedAssets: item.affectedAssets || [],
+      confidence: item.confidence ?? null,
+    })),
+    open: [...(verification.partial || []), ...(verification.creatorOnly || [])].map((item) => ({
+      id: item.id,
+      status: item.status,
+      title: item.title,
+      detail: item.detail,
+      affectedAssets: item.affectedAssets || [],
+    })),
+  };
 }
 
 async function main() {
   const response = await fetch(SOURCE, {
-    headers: { accept: "application/json", "user-agent": "power-stack-live-bridge/1" },
+    headers: { accept: "application/json", "user-agent": "power-stack-live-bridge/2" },
   });
   if (!response.ok) throw new Error(`Live Desk HTTP ${response.status}`);
 
-  const selection = await response.json();
-  const presentation = selection?.presentation;
-  if (!presentation || presentation.contractVersion !== "dossier-presentation/1") {
-    throw new Error("Live Desk did not return dossier-presentation/1");
+  const live = await response.json();
+  if (live?.contractVersion !== "market-intelligence-snapshot/v1") {
+    throw new Error("Live Desk did not return market-intelligence-snapshot/v1");
   }
 
-  const verification = selection?.stockedUpEvidenceBrief || null;
+  const assetState = live.marketState?.dailyAssetState || null;
   const snapshot = {
-    contractVersion: "power-stack-live-desk-canonical/1",
+    contractVersion: "power-stack-live-desk-canonical/2",
     sourceUrl: SOURCE,
-    sourceStatus: selection.status || "unknown",
-    dossierId: selection.selectedDossierId || null,
-    asOf: presentation.asOf || selection.selectedAsOf || null,
+    liveContractVersion: live.contractVersion,
+    sourceStatus: live.dossier?.status || "unknown",
+    dossierId: live.dossier?.dossierId || null,
+    asOf: live.dossier?.asOf || null,
     regime: {
-      family: presentation.header?.regimeFamily || "UNRESOLVED",
-      headline: presentation.header?.headline || "",
-      answer: presentation.header?.answer || "",
-      implication: presentation.header?.regimeImplication || "",
-      whatWouldChangeMind: presentation.header?.whatWouldChangeMind || "",
+      family: live.regime?.regimeFamily || "UNRESOLVED",
+      headline: live.regime?.headline || "",
+      answer: live.regime?.answer || "",
+      implication: live.regime?.regimeImplication || "",
+      whatWouldChangeMind: live.regime?.whatWouldChangeMind || "",
     },
-    rateRegime: presentation.rateRegime || null,
+    rateRegime: live.regime?.rateRegime || null,
+    monetarySignals: live.monetarySignals || null,
+    sourceHealth: live.sourceHealth || null,
+    contradictions: Array.isArray(live.contradictions) ? live.contradictions : [],
+    researchGaps: Array.isArray(live.researchGaps) ? live.researchGaps : [],
+    marketRows: Array.isArray(live.marketState?.selectedRows) ? live.marketState.selectedRows : [],
     lenses: [
       "US_RATES",
       "BONDS",
+      "USD",
+      "CREDIT",
       "BREADTH",
       "TECH_AI",
       "OIL_WAR_INFLATION",
       "GOLD",
-    ].map((key) => pickLens(presentation, key)).filter(Boolean),
+    ].map((key) => pickLens(live, key)).filter(Boolean),
     assetState: {
-      contractVersion: selection.dailyAssetState?.contractVersion || null,
-      asOf: selection.dailyAssetState?.asOf || null,
-      assets: normaliseAssets(selection.dailyAssetState),
+      contractVersion: assetState?.contractVersion || null,
+      asOf: assetState?.asOf || null,
+      assets: normaliseAssets(assetState),
     },
-    stockRadar: normaliseRadar(presentation.stockRadar),
-    verification: verification
-      ? {
-          contractVersion: verification.contractVersion || null,
-          reportLabel: verification.reportLabel || "Creator verification",
-          verifiedCount: verification.verified?.length || 0,
-          partialCount: verification.partial?.length || 0,
-          creatorOnlyCount: verification.creatorOnly?.length || 0,
-          verified: (verification.verified || []).map((item) => ({
-            id: item.id,
-            title: item.title,
-            detail: item.detail,
-            affectedAssets: item.affectedAssets || [],
-            confidence: item.confidence ?? null,
-          })),
-          open: [...(verification.partial || []), ...(verification.creatorOnly || [])].map((item) => ({
-            id: item.id,
-            status: item.status,
-            title: item.title,
-            detail: item.detail,
-            affectedAssets: item.affectedAssets || [],
-          })),
-        }
-      : null,
+    stories: Array.isArray(live.stories) ? live.stories : [],
+    investigations: Array.isArray(live.investigations) ? live.investigations : [],
+    stockRadar: normaliseRadar(live.stockRadar),
+    verification: normaliseVerification(live.creatorVerification),
+    upstreamGuardrails: Array.isArray(live.guardrails) ? live.guardrails : [],
     guardrails: [
-      "Live Desk supplies canonical market reasoning and verified research context.",
-      "Power Stack retains ownership of portfolio construction, company fundamental scores, ranking and entry discipline.",
+      "Live Desk supplies canonical monetary/market reasoning, contradictions and source health.",
+      "Power Stack consumes Live context read-only and maps it to portfolio exposures.",
+      "Power Stack retains ownership of company fundamentals, valuation, portfolio construction, ranking and entry discipline.",
+      "No Live-derived macro score or confirmation may be exported back to Live.",
       "Creator-only claims never alter Power Stack scores without independent verification.",
       "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
     ],
