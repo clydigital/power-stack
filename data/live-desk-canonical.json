@@ -3,24 +3,127 @@
   "sourceUrl": "https://alchemy-live-market-desk.vercel.app/api/dossier-v2",
   "sourceStatus": "current",
   "dossierId": "10d9e1ed-1549-4e05-8775-4cb96459ab29",
-  "asOf": "2026-09-25T06:21:24.334Z",
+  "asOf": "2026-09-25T06:21:24.334+00:00",
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "Markets trading a rates-led tightening regime: long-end yields and global sovereigns driving selective risk dislocations while credit and equity breadth remain mixed.",
-    "answer": "Evidence shows a pronounced long-end Treasury and global sovereign yield move coinciding with a firm dollar and weaker gold, while credit spreads remain comparatively tight and AI/semiconductor breadth outperforms. This is rates-led tightening with selective sector resilience rather than broad risk-off.",
-    "implication": "Treat duration and real-yield risk as the dominant macro impulse. Cross-asset transmission to credit and broad equities is incomplete, so sector and breadth dispersion can persist until credit, breadth or volatility confirm broader risk repricing.",
-    "whatWouldChangeMind": "Sustained HY/IG widening with rising equity volatility and deteriorating breadth, or a decisive fall in long real yields, would change the rates-led interpretation."
+    "headline": "Markets trading a rates‑led tightening regime: long-end yields and global sovereigns driving selective risk dislocations while credit and equity breadth remain mixed.",
+    "answer": "Evidence shows a pronounced long-end Treasury and global sovereign yield move (10Y/30Y highs, US real yields up, MOVE elevated) coinciding with a firm dollar and weaker gold, while credit spreads remain comparatively tight and AI/semiconductor breadth outperforms; together this pattern is consistent with a RATES_LED_TIGHTENING regime with selective sector resilience rather than broad risk-off.",
+    "implication": "Position and hedging should treat duration and real-yield risk as the dominant macro impulse; cross-asset transmission to credit and broad equities is incomplete, so sector/market breadth dispersion is likely to persist until credit, breadth or volatility confirm broader risk repricing.",
+    "whatWouldChangeMind": "Sustained widening in HY and IG OAS accompanied by rising equity volatility and deteriorating breadth (new_lows >> new_highs) or a decisive fall in long real yields would move the regime away from rates‑led tightening."
   },
-  "rateRegime": null,
+  "rateRegime": {
+    "asOf": "2026-09-25T06:21:24.334Z",
+    "gaps": [],
+    "curve": {
+      "state": "POSITIVE",
+      "detail": "10Y minus 2Y is +26.0 bp (positive).",
+      "spreadBps": 26,
+      "evidenceRefs": [
+        "market-monitor:us2y:2026-09-23",
+        "market-monitor:us10y-fred:2026-09-23"
+      ]
+    },
+    "score": 40,
+    "state": "HAWKISH",
+    "drivers": [
+      "Front-end pricing: hawkish (US 2Y 4.85%; 5D +11.0 bp; vs effective fed funds +97.0 bp.)",
+      "10Y real yield: hawkish (10Y real yield 2.76%; 5D +8.0 bp.)",
+      "Long-end nominal yields: hawkish (US 10Y 5.11%; 5D +10.0 bp; verified US 30Y 5.45%.)",
+      "Next-meeting policy pricing: dovish (66% — Fed funds futures priced about 66% odds of a Fed hike at the next meeting in October as longer-dated yields remained elevated.)"
+    ],
+    "signals": [
+      {
+        "key": "POLICY",
+        "label": "Next-meeting policy pricing",
+        "score": -1,
+        "state": "DOVISH",
+        "detail": "66% — Fed funds futures priced about 66% odds of a Fed hike at the next meeting in October as longer-dated yields remained elevated.",
+        "evidenceRefs": [
+          "verified-macro:fedfunds-oct28-hike-odds-2026-09-24"
+        ]
+      },
+      {
+        "key": "FRONT_END",
+        "label": "Front-end pricing",
+        "score": 2,
+        "state": "HAWKISH",
+        "detail": "US 2Y 4.85%; 5D +11.0 bp; vs effective fed funds +97.0 bp.",
+        "evidenceRefs": [
+          "market-monitor:us2y:2026-09-23",
+          "market-monitor:fed-funds-effective:2026-09-23"
+        ]
+      },
+      {
+        "key": "REAL_YIELDS",
+        "label": "10Y real yield",
+        "score": 2,
+        "state": "HAWKISH",
+        "detail": "10Y real yield 2.76%; 5D +8.0 bp.",
+        "evidenceRefs": [
+          "market-monitor:us10y-real:2026-09-23"
+        ]
+      },
+      {
+        "key": "BREAKEVENS",
+        "label": "10Y inflation breakeven",
+        "score": 0,
+        "state": "NEUTRAL",
+        "detail": "10Y breakeven 2.33%; 5D +0.0 bp.",
+        "evidenceRefs": [
+          "market-monitor:us10y-breakeven:2026-09-24"
+        ]
+      },
+      {
+        "key": "LONG_END",
+        "label": "Long-end nominal yields",
+        "score": 1,
+        "state": "HAWKISH",
+        "detail": "US 10Y 5.11%; 5D +10.0 bp; verified US 30Y 5.45%.",
+        "evidenceRefs": [
+          "market-monitor:us10y-fred:2026-09-23",
+          "verified-macro:us30y-high-sep24-2026"
+        ]
+      }
+    ],
+    "summary": "Rates conditions are leaning hawkish/restrictive. Front-end pricing: hawkish (US 2Y 4.85%; 5D +11.0 bp; vs effective fed funds +97.0 bp.) 10Y real yield: hawkish (10Y real yield 2.76%; 5D +8.0 bp.)",
+    "trigger": null,
+    "coverage": {
+      "total": 5,
+      "missing": [],
+      "present": 5
+    },
+    "confidence": "HIGH",
+    "fredBacked": true,
+    "evidenceRefs": [
+      "verified-macro:fedfunds-oct28-hike-odds-2026-09-24",
+      "market-monitor:us2y:2026-09-23",
+      "market-monitor:fed-funds-effective:2026-09-23",
+      "market-monitor:us10y-real:2026-09-23",
+      "market-monitor:us10y-breakeven:2026-09-24",
+      "market-monitor:us10y-fred:2026-09-23",
+      "verified-macro:us30y-high-sep24-2026"
+    ],
+    "contradictions": [
+      "Hawkish signals: Front-end pricing, 10Y real yield, Long-end nominal yields.",
+      "Dovish signals: Next-meeting policy pricing."
+    ],
+    "contractVersion": "rate-regime/1",
+    "usRatesReaction": "US 2Y 5D +11.0 bp",
+    "observedRatePricing": "66% — Fed funds futures priced about 66% odds of a Fed hike at the next meeting in October as longer-dated yields remained elevated.",
+    "observedConfirmation": null,
+    "usRatesInterpretation": "US 2Y 4.85%; 5D +11.0 bp; vs effective fed funds +97.0 bp. 10Y real yield 2.76%; 5D +8.0 bp.",
+    "nextMeetingRateOutlook": "MORE_DOVISH",
+    "fedWatchExpectedDirection": "HIKE_ODDS_DOWN"
+  },
   "lenses": [
     {
       "key": "US_RATES",
       "label": "US rates / real yields",
       "observed": true,
-      "reaction": "Nominal long yields rose to multi-year highs and real 10Y yields increased.",
-      "interpretation": "Long-end pressure is being driven by real-yield and term-premium components; long yields are the dominant story.",
+      "reaction": "Nominal long yields rose to multi-year highs and real 10Y yields increased, consistent with higher real yields/term premium driving the move.",
+      "interpretation": "Long-end pressure is driven by real-yield and term-premium components linked to stronger activity and energy costs; policy expectations tightened at the front end but long yields are the dominant story.",
       "unresolvedSignals": [
-        "Fed effective-rate cross-check remains open in the Dossier lens."
+        "market-monitor:fed-funds-effective:2026-09-23"
       ],
       "evidenceRefs": [
         "market-monitor:us10y:2026-09-24",
@@ -33,7 +136,7 @@
       "key": "BONDS",
       "label": "Global sovereign bonds",
       "observed": true,
-      "reaction": "A global sovereign-yield gauge approached 4%, indicating broad duration pressure beyond the US.",
+      "reaction": "A Bloomberg global sovereign gauge approached 4%, indicating broad sovereign duration pressure beyond the US.",
       "interpretation": "Evidence supports a global long-end tightening component rather than an isolated US move.",
       "unresolvedSignals": [],
       "evidenceRefs": [
@@ -45,7 +148,7 @@
       "key": "BREADTH",
       "label": "Equity breadth",
       "observed": true,
-      "reaction": "Large-cap participation is weaker while AI/semiconductor breadth remains strong and concentrated.",
+      "reaction": "Large-cap breadth measures show weaker participation while AI/semiconductor breadth is strong and concentrated.",
       "interpretation": "Index performance is being supported by narrow leadership; broad confirmation of either risk-on or risk-off is absent.",
       "unresolvedSignals": [],
       "evidenceRefs": [
@@ -58,8 +161,8 @@
       "key": "TECH_AI",
       "label": "Tech / AI / Semiconductors",
       "observed": true,
-      "reaction": "SMH and AI-basket breadth remain strong and company-specific catalysts persist.",
-      "interpretation": "Tech/AI remains the main source of selective risk-taking, but its concentration can mask weak broader participation.",
+      "reaction": "SMH and AI-basket breadth remain strong and company upgrades/catalysts persist, signaling concentrated sector leadership.",
+      "interpretation": "Tech/AI is a primary source of index concentration and selective risk-taking; this acts as a counterweight to broad market weakness and masks participation issues.",
       "unresolvedSignals": [],
       "evidenceRefs": [
         "market-monitor:smh:2026-09-24",
@@ -71,15 +174,16 @@
       "key": "OIL_WAR_INFLATION",
       "label": "Energy / product tightness",
       "observed": true,
-      "reaction": "Regional distillate production and stocks fell and product cracks stayed elevated despite mixed crude direction.",
-      "interpretation": "Refined-product constraints remain an inflationary channel that can keep long yields elevated even when crude itself is volatile.",
+      "reaction": "Regional distillate production and stocks fell and distillate crack remained elevated even as WTI showed short-term softness.",
+      "interpretation": "Refined product/regional constraints are an inflationary readthrough that can sustain long-end pressure even if crude moves are volatile; geopolitical incidents add an upside risk to crude.",
       "unresolvedSignals": [
-        "US distillate export series remains a Dossier research gap."
+        "verified-macro:eia-us-distillate-exports-2026-09-18"
       ],
       "evidenceRefs": [
         "verified-macro:eia-padd2-distillate-production-2026-09-18",
         "verified-macro:eia-padd2-distillate-stocks-2026-09-18",
         "market-monitor:crack-distillate:2026-09-22",
+        "market-monitor:wti:2026-09-22",
         "verified-macro:stockedup-houthi-saudi-2026-09-24"
       ]
     },
@@ -87,8 +191,8 @@
       "key": "GOLD",
       "label": "Gold / safe haven",
       "observed": true,
-      "reaction": "Gold weakened modestly as yields and the dollar rose.",
-      "interpretation": "Real yields and dollar strength are currently dominating safe-haven demand.",
+      "reaction": "Spot and proxy gold weakened modestly as yields and the dollar rose.",
+      "interpretation": "Real yields and dollar strength are currently dominating safe-haven flows over geopolitical or risk-off bids.",
       "unresolvedSignals": [],
       "evidenceRefs": [
         "verified-macro:gold-spot-2026-09-24-0155z",
@@ -97,18 +201,109 @@
     }
   ],
   "assetState": {
-    "contractVersion": null,
-    "asOf": null,
-    "assets": []
+    "contractVersion": "daily-asset-state/1",
+    "asOf": "2026-09-25T06:21:45.807Z",
+    "assets": [
+      {
+        "key": "SPX",
+        "label": "S&P 500",
+        "symbol": "^GSPC",
+        "last": 767.18,
+        "dailyChange": -0.08,
+        "dailyChangeUnit": "percent",
+        "bias": "MIXED",
+        "conviction": "HIGH",
+        "primaryDriver": "Position and hedging should treat duration and real-yield risk as the dominant macro impulse; cross-asset transmission to credit and broad equities is incomplete, so sector/market breadth dispersion is likely to persist until credit, breadth or volatility confirm broader risk repricing.",
+        "confirmingSignal": "Large-cap breadth measures show weaker participation while AI/semiconductor breadth is strong and concentrated.",
+        "contradictingSignal": null,
+        "invalidation": "Sustained widening in HY and IG OAS accompanied by rising equity volatility and deteriorating breadth (new_lows >> new_highs) or a decisive fall in long real yields would move the regime away from rates‑led tightening.",
+        "asOf": "2026-09-24"
+      },
+      {
+        "key": "NASDAQ",
+        "label": "Nasdaq",
+        "symbol": "QQQ",
+        "last": 741.1,
+        "dailyChange": -0.01,
+        "dailyChangeUnit": "percent",
+        "bias": "MIXED",
+        "conviction": "HIGH",
+        "primaryDriver": "Tech/AI is a primary source of index concentration and selective risk-taking; this acts as a counterweight to broad market weakness and masks participation issues.",
+        "confirmingSignal": "SMH and AI-basket breadth remain strong and company upgrades/catalysts persist, signaling concentrated sector leadership.",
+        "contradictingSignal": null,
+        "invalidation": "Sustained widening in HY and IG OAS accompanied by rising equity volatility and deteriorating breadth (new_lows >> new_highs) or a decisive fall in long real yields would move the regime away from rates‑led tightening.",
+        "asOf": "2026-09-24"
+      },
+      {
+        "key": "CRUDE",
+        "label": "Crude oil",
+        "symbol": "CL=F",
+        "last": 96.41,
+        "dailyChange": -0.58,
+        "dailyChangeUnit": "percent",
+        "bias": "MIXED",
+        "conviction": "MEDIUM",
+        "primaryDriver": "Refined product/regional constraints are an inflationary readthrough that can sustain long-end pressure even if crude moves are volatile; geopolitical incidents add an upside risk to crude.",
+        "confirmingSignal": "Regional distillate production and stocks fell and distillate crack remained elevated even as WTI showed short-term softness.",
+        "contradictingSignal": "verified-macro:eia-us-distillate-exports-2026-09-18",
+        "invalidation": "Sustained widening in HY and IG OAS accompanied by rising equity volatility and deteriorating breadth (new_lows >> new_highs) or a decisive fall in long real yields would move the regime away from rates‑led tightening.",
+        "asOf": "2026-09-22"
+      },
+      {
+        "key": "US_RATES",
+        "label": "US 10Y",
+        "symbol": "DGS10",
+        "last": 5.11,
+        "dailyChange": 15,
+        "dailyChangeUnit": "bps",
+        "bias": "HAWKISH",
+        "conviction": "HIGH",
+        "primaryDriver": "Rates conditions are leaning hawkish/restrictive. Front-end pricing: hawkish (US 2Y 4.85%; 5D +11.0 bp; vs effective fed funds +97.0 bp.) 10Y real yield: hawkish (10Y real yield 2.76%; 5D +8.0 bp.)",
+        "confirmingSignal": "Nominal long yields rose to multi-year highs and real 10Y yields increased, consistent with higher real yields/term premium driving the move.",
+        "contradictingSignal": "market-monitor:fed-funds-effective:2026-09-23",
+        "invalidation": "Sustained widening in HY and IG OAS accompanied by rising equity volatility and deteriorating breadth (new_lows >> new_highs) or a decisive fall in long real yields would move the regime away from rates‑led tightening.",
+        "asOf": "2026-09-23"
+      },
+      {
+        "key": "GOLD",
+        "label": "Gold",
+        "symbol": "GLD",
+        "last": 391.69,
+        "dailyChange": -0.3,
+        "dailyChangeUnit": "percent",
+        "bias": "MIXED",
+        "conviction": "HIGH",
+        "primaryDriver": "Real yields and dollar strength are currently dominating safe-haven flows over geopolitical or risk-off bids.",
+        "confirmingSignal": "Spot and proxy gold weakened modestly as yields and the dollar rose.",
+        "contradictingSignal": null,
+        "invalidation": "Sustained widening in HY and IG OAS accompanied by rising equity volatility and deteriorating breadth (new_lows >> new_highs) or a decisive fall in long real yields would move the regime away from rates‑led tightening.",
+        "asOf": "2026-09-24"
+      },
+      {
+        "key": "BITCOIN",
+        "label": "Bitcoin",
+        "symbol": "IBIT",
+        "last": 47.81,
+        "dailyChange": -0.15,
+        "dailyChangeUnit": "percent",
+        "bias": "UNRESOLVED",
+        "conviction": "UNRESOLVED",
+        "primaryDriver": "No canonical Bitcoin-specific thesis is published in the current Dossier; price is observation only.",
+        "confirmingSignal": null,
+        "contradictingSignal": null,
+        "invalidation": null,
+        "asOf": "2026-09-24"
+      }
+    ]
   },
   "stockRadar": [
     {
       "symbol": "NVDA",
       "companyName": "NVIDIA Corporation",
-      "whyRelevant": "Primary index-concentration and AI-leadership barometer.",
-      "researchQuestion": "Can NVDA-led leadership persist if long yields remain elevated and breadth stays weak?",
-      "confirmingSignal": "AI-basket breadth remains strong.",
-      "invalidatingSignal": "Broad breadth deterioration becomes more severe.",
+      "whyRelevant": "Largest single contributors to index concentration and primary driver of AI/semiconductor leadership.",
+      "researchQuestion": "Will NVDA-led leadership sustain index performance if long yields remain elevated and breadth is weak?",
+      "confirmingSignal": "market-breadth:ai-basket:2026-09-24",
+      "invalidatingSignal": "market-breadth:large-cap:2026-09-24",
       "linkedStoryId": "mt-2026-09-25-01",
       "evidenceRefs": [
         "market-breadth:ai-basket:2026-09-24",
@@ -118,10 +313,10 @@
     {
       "symbol": "NBIS",
       "companyName": "Nebius Group",
-      "whyRelevant": "Verified analyst-upgrade catalyst within AI infrastructure, but financing quality remains a separate Power Stack gate.",
-      "researchQuestion": "Is the upgrade producing durable flows or only a short-lived rerating?",
-      "confirmingSignal": "Upgrade catalyst plus durable relative strength and improving cash-conversion evidence.",
-      "invalidatingSignal": "Breadth weakens and financing/capex dilution risk dominates.",
+      "whyRelevant": "Recent analyst upgrade cited as a catalyst in market flow for AI/infra names.",
+      "researchQuestion": "Is NBIS upgrade driving durable sector flows or a short-lived re-rating?",
+      "confirmingSignal": "verified-macro:stockedup-nbis-upgrade-2026-09-24",
+      "invalidatingSignal": "market-breadth:large-cap:2026-09-24",
       "linkedStoryId": "story-ai-narrow-lead",
       "evidenceRefs": [
         "verified-macro:stockedup-nbis-upgrade-2026-09-24"
@@ -130,10 +325,10 @@
     {
       "symbol": "VLO",
       "companyName": "Valero Energy Corporation",
-      "whyRelevant": "Direct operating expression of refined-product tightness.",
-      "researchQuestion": "Do utilization, cracks and inventories continue to support refiner margins?",
-      "confirmingSignal": "Persistent product cracks and tight distillate balances.",
-      "invalidatingSignal": "Rapid crack and inventory normalization.",
+      "whyRelevant": "Refiner exposure to regional distillate margins and refinery utilization changes.",
+      "researchQuestion": "Do PADD-2 utilization and production declines materially support US refiner margins and stocks?",
+      "confirmingSignal": "verified-macro:eia-padd2-distillate-production-2026-09-18",
+      "invalidatingSignal": "market-monitor:wti:2026-09-22",
       "linkedStoryId": "story-distillate-tightness",
       "evidenceRefs": [
         "verified-macro:eia-padd2-distillate-production-2026-09-18",
@@ -147,13 +342,155 @@
     "verifiedCount": 12,
     "partialCount": 2,
     "creatorOnlyCount": 5,
-    "verified": [],
+    "verified": [
+      {
+        "id": "verified-macro:stockedup-rates-2026-09-24",
+        "title": "Long-end Treasury stress",
+        "detail": "On 24 September 2026, the U.S. Treasury par yield curve closed with the 10-year yield at 5.18% and the 30-year yield at 5.47%, confirming severe long-duration rate pressure.",
+        "affectedAssets": [
+          "SPX",
+          "NDX",
+          "QQQ",
+          "US10Y",
+          "US30Y",
+          "XAUUSD",
+          "BTC"
+        ],
+        "confidence": 98
+      },
+      {
+        "id": "verified-macro:stockedup-spx-concentration-2026-09-24",
+        "title": "S&P concentration remains extreme",
+        "detail": "Nvidia and Apple together accounted for more than 15% of the S&P 500, reinforcing the concentration risk behind an index that can remain firm even when participation is weaker.",
+        "affectedAssets": [
+          "SPX",
+          "RSP",
+          "NVDA",
+          "AAPL",
+          "NDX"
+        ],
+        "confidence": 86
+      },
+      {
+        "id": "verified-macro:stockedup-houthi-saudi-2026-09-24",
+        "title": "Saudi/Houthi energy risk persists",
+        "detail": "Saudi-led coalition forces said six Houthi ballistic missiles were intercepted on 24 September, with Yanbu among the targeted areas; the report also described claimed attacks on Saudi Aramco facilities in Yanbu.",
+        "affectedAssets": [
+          "CL1!",
+          "BZ1!",
+          "XLE",
+          "SPX"
+        ],
+        "confidence": 90
+      },
+      {
+        "id": "verified-macro:stockedup-global-bond-yields-2026-09-24",
+        "title": "Duration stress is global",
+        "detail": "A Bloomberg global sovereign-bond yield gauge approached 4%, the highest level since 2007, supporting the view that duration pressure is global rather than solely a U.S. Treasury story.",
+        "affectedAssets": [
+          "US10Y",
+          "US30Y",
+          "SPX",
+          "NDX",
+          "DXY"
+        ],
+        "confidence": 88
+      },
+      {
+        "id": "verified-macro:stockedup-natgas-storage-2026-09-24",
+        "title": "Natural-gas storage tightened",
+        "detail": "EIA reported Lower-48 working gas at 3,351 Bcf for the week ended 18 September 2026, a 53 Bcf weekly injection and 95 Bcf above the five-year average.",
+        "affectedAssets": [
+          "NG1!",
+          "UNG",
+          "XLE",
+          "SPX"
+        ],
+        "confidence": 99
+      },
+      {
+        "id": "verified-macro:stockedup-nbis-upgrade-2026-09-24",
+        "title": "NBIS analyst catalyst verified",
+        "detail": "BNP Paribas upgraded Nebius Group from Neutral to Outperform and raised its price target from $260 to $399 on 24 September 2026, independently confirming a catalyst cited in the StockedUp transcript.",
+        "affectedAssets": [
+          "NBIS"
+        ],
+        "confidence": 84
+      },
+      {
+        "id": "verified-macro:stockedup-us-china-truce-2026-09-24",
+        "title": "US–China tariff cliff pushed out",
+        "detail": "U.S. Treasury Secretary Scott Bessent said the U.S. and China agreed to extend their trade truce through 10 January 2027, reducing the immediate tariff-cliff risk while broader negotiations continue.",
+        "affectedAssets": [
+          "SPX",
+          "NDX",
+          "QQQ",
+          "AAPL",
+          "NVDA",
+          "DXY"
+        ],
+        "confidence": 95
+      },
+      {
+        "id": "verified-macro:stockedup-us-iran-talks-2026-09-22",
+        "title": "US–Iran diplomacy is active",
+        "detail": "President Trump said U.S.-Iran talks were continuing during the UN General Assembly and that he believed a settlement would be reached; this verifies active diplomacy but not the transcript's specific Hormuz-for-sanctions terms.",
+        "affectedAssets": [
+          "CL1!",
+          "BZ1!",
+          "SPX",
+          "XAUUSD"
+        ],
+        "confidence": 93
+      },
+      {
+        "id": "verified-macro:stockedup-diesel-export-policy-2026-09-22",
+        "title": "Diesel export-policy risk",
+        "detail": "The U.S. Chamber warned that restricting U.S. diesel or fuel exports could squeeze refiners and risk reducing supplies of diesel, gasoline and jet fuel, potentially worsening consumer costs.",
+        "affectedAssets": [
+          "HO1!",
+          "CRAK",
+          "XLE",
+          "SPX"
+        ],
+        "confidence": 94
+      },
+      {
+        "id": "verified-macro:stockedup-midterm-seasonality-2026-09-16",
+        "title": "Late-September midterm seasonality",
+        "detail": "Citadel Securities' historical midterm-year path shows equities tending to weaken into around September 30 before a stronger average year-end phase; this supports late-September seasonality as context, not a forecast.",
+        "affectedAssets": [
+          "SPX",
+          "SPY",
+          "NDX"
+        ],
+        "confidence": 88
+      },
+      {
+        "id": "verified-macro:stockedup-meta-muse-2026-09-08",
+        "title": "META Muse catalyst verified",
+        "detail": "Meta launched its Muse personal AI agent and said it planned integration with smart glasses, independently confirming the product catalyst behind the creator's META discussion.",
+        "affectedAssets": [
+          "META"
+        ],
+        "confidence": 95
+      },
+      {
+        "id": "verified-macro:stockedup-rklb-nitestar-2026-08-18",
+        "title": "RKLB defence-space catalyst verified",
+        "detail": "Rocket Lab said it was selected for the U.S. Space Force NITE-STAR IDIQ program, which has a ceiling of up to $981 million across participating vendors, confirming the defence-space catalyst cited by StockedUp.",
+        "affectedAssets": [
+          "RKLB"
+        ],
+        "confidence": 97
+      }
+    ],
     "open": [
       {
         "id": "stockedup-partial-us-iran-terms",
         "status": "PARTIAL",
         "title": "Exact Hormuz-for-sanctions deal terms",
-        "detail": "Active diplomacy is verified; the transcript's exact settlement mechanics are not.",
+        "detail": "Active US–Iran diplomacy is verified, but the transcript's specific exchange — reopening Hormuz for lifting the economic blockade plus frozen-asset access — is not independently confirmed.",
         "affectedAssets": [
           "CL1!",
           "BZ1!",
@@ -164,8 +501,8 @@
       {
         "id": "stockedup-partial-seasonality",
         "status": "PARTIAL",
-        "title": "Exact Week 39 statistic",
-        "detail": "Late-September/midterm weakness is supported as context, but the exact creator statistic has not been reproduced from a primary series.",
+        "title": "Week 39 as the exact worst S&P week",
+        "detail": "Independent work supports late-September weakness in midterm years, but the exact 'week 39 is worst since 1950, -0.5% average, positive under 50%' statistic has not been reproduced from a primary historical series.",
         "affectedAssets": [
           "SPX",
           "SPY"
@@ -174,8 +511,8 @@
       {
         "id": "stockedup-creator-spy-levels",
         "status": "CREATOR_ONLY",
-        "title": "SPY tactical levels",
-        "detail": "Creator technical map remains research-only.",
+        "title": "SPY tactical map",
+        "detail": "Creator levels remain 762 / 763.5 support, 766.5 resistance and 769 breakout, with 770 → 772 → 775 as upside extensions. They are displayed as creator technicals only and do not become canonical key levels automatically.",
         "affectedAssets": [
           "SPY",
           "SPX"
@@ -184,8 +521,8 @@
       {
         "id": "stockedup-creator-ad-line",
         "status": "CREATOR_ONLY",
-        "title": "Advance-decline line below 200DMA",
-        "detail": "Exact series/threshold not independently reproduced yet.",
+        "title": "Advance–decline line below 200DMA",
+        "detail": "The transcript says the S&P 500 advance–decline line fell below its 200-day average for the first time since November 2023. The desk has not independently reproduced that exact series/threshold yet.",
         "affectedAssets": [
           "SPX",
           "RSP"
@@ -194,17 +531,19 @@
       {
         "id": "stockedup-creator-30y-streak",
         "status": "CREATOR_ONLY",
-        "title": "30Y above 5% for 79 sessions",
-        "detail": "Yield level is verified; exact streak count is not.",
+        "title": "30Y above 5% for 79 straight days",
+        "detail": "The 30Y 5.47% level is verified; the exact 79-session streak count remains unverified and is excluded from canonical reasoning.",
         "affectedAssets": [
-          "US30Y"
+          "US30Y",
+          "SPX",
+          "NDX"
         ]
       },
       {
         "id": "stockedup-creator-dell-short",
         "status": "CREATOR_ONLY",
         "title": "DELL downside setup",
-        "detail": "Creator technical/valuation interpretation only.",
+        "detail": "The bearish DELL call is a creator technical/valuation interpretation. It stays a watch item unless independent evidence and current tape support the setup.",
         "affectedAssets": [
           "DELL"
         ]
@@ -213,7 +552,7 @@
         "id": "stockedup-creator-ccc-flow",
         "status": "CREATOR_ONLY",
         "title": "CCC unusual-options flow",
-        "detail": "Options-flow claim not independently verified.",
+        "detail": "The claimed roughly $614k December 2026 $7.50 call trade has not been independently verified, so it is not promoted into Stock Radar as observed institutional flow.",
         "affectedAssets": [
           "CCC"
         ]
@@ -226,5 +565,5 @@
     "Creator-only claims never alter Power Stack scores without independent verification.",
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank."
   ],
-  "syncedAt": "2026-09-25T06:30:00.000Z"
+  "syncedAt": "2026-09-25T06:59:16.996Z"
 }
