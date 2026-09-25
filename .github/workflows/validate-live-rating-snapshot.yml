@@ -4,6 +4,10 @@ on:
   pull_request:
     paths:
       - "app.js"
+      - "index.html"
+      - "holdings.html"
+      - "watchlist.html"
+      - "themes.html"
       - "data/live-fundamentals-snapshot.json"
       - "data/live-fundamentals-export-config.json"
       - "data/market-extension*.json"
@@ -13,6 +17,7 @@ on:
       - "scripts/generate-live-fundamentals-snapshot.mjs"
       - "scripts/sync-live-desk.mjs"
       - "scripts/generate-portfolio-live-overlay.mjs"
+      - "scripts/validate-static-html-js.mjs"
       - "data/portfolio-live-overlay.json"
       - "data/portfolio-management.json"
       - "data/macro-sensitivities.json"
@@ -44,6 +49,7 @@ jobs:
       - run: node --check scripts/sync-live-desk.mjs
       - run: node --check scripts/generate-live-fundamentals-snapshot.mjs
       - run: node --check scripts/generate-portfolio-live-overlay.mjs
+      - run: node scripts/validate-static-html-js.mjs
       - run: node -e "const fs=require('fs'); for (const f of ['data/live-desk-canonical.json','data/live-fundamentals-snapshot.json','data/portfolio-live-overlay.json','data/research-sweep-config.json','data/macro-methodology.json']) JSON.parse(fs.readFileSync(f,'utf8'));"
       - run: node scripts/generate-live-fundamentals-snapshot.mjs --check
       - run: node scripts/generate-portfolio-live-overlay.mjs --check
