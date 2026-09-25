@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const targets = process.argv.slice(2).length
   ? process.argv.slice(2)
-  : ["index.html", "holdings.html", "watchlist.html", "themes.html"];
+  : ["index.html", "holdings.html", "watchlist.html", "themes.html", "capital-scarcity.html"];
 
 let failures = 0;
 for (const relative of targets) {

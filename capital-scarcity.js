@@ -1,7 +1,71 @@
-fetch('data/capital-scarcity-2026-09-16.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{
-  document.querySelector('#regime').textContent=`${d.regime} · ${d.asOf}`;
-  document.querySelector('#summary').textContent=d.summary;
-  document.querySelector('#signals').innerHTML=d.signals.map(x=>`<article class="card signal ${x.status}"><div class="meta">${x.category} · ${x.status}</div><h3>${x.signal}</h3><div>${x.implication}</div></article>`).join('');
-  document.querySelector('#actions').innerHTML=d.portfolioActions.map(x=>`<article class="card action"><b>${x.ticker}</b><span>${x.price}</span><span><strong>${x.action}</strong><br>${x.trigger}</span></article>`).join('');
-  document.querySelector('#steps').innerHTML=d.todaySequence.map(x=>`<li>${x}</li>`).join('');
-}).catch(e=>document.querySelector('#summary').textContent=`Data unavailable: ${e.message}`);
+const fmtMove = value => value == null ? '—' : (value > 0 ? '+' : '') + Number(value).toFixed(2) + '%';
+
+Promise.all([
+  fetch('data/portfolio-live-overlay.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('overlay HTTP ' + r.status);return r.json();}),
+  fetch('data/portfolio-management.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('portfolio HTTP ' + r.status);return r.json();})
+]).then(([overlay,portfolio])=>{
+  const regime = overlay.regime || {};
+  document.querySelector('#regime').textContent = (regime.family || portfolio.regime?.structural || 'UNRESOLVED') + ' · Live ' + (overlay.liveAsOf ? new Date(overlay.liveAsOf).toLocaleString('en-GB',{dateStyle:'medium',timeStyle:'short'}) : '—');
+  document.querySelector('#summary').textContent = portfolio.regime?.portfolioRead || regime.implication || regime.answer || 'No current portfolio summary.';
+
+  const rates=overlay.currentSignals?.rates || {};
+  const funding=overlay.currentSignals?.funding || {};
+  const energy=overlay.currentSignals?.physicalEnergy || {};
+  const signalCards=[
+    {
+      category:'RATES / DURATION',
+      status:rates.state === 'TIGHTER' ? 'RED' : rates.state === 'EASIER' ? 'GREEN' : '',
+      signal:rates.state || 'UNRESOLVED',
+      implication:(rates.tighter || 0) + ' tighter · ' + (rates.easier || 0) + ' easier · ' + (rates.unresolved || 0) + ' unresolved layers.'
+    },
+    {
+      category:'FUNDING / CREDIT',
+      status:funding.state === 'TIGHTER' ? 'RED' : funding.state === 'EASIER' ? 'GREEN' : '',
+      signal:funding.state || 'UNRESOLVED',
+      implication:(funding.tighter || 0) + ' tighter · ' + (funding.easier || 0) + ' easier · ' + (funding.neutral || 0) + ' neutral layers.'
+    },
+    {
+      category:'PHYSICAL ENERGY',
+      status:energy.status === 'ACTIVE' ? 'GREEN' : '',
+      signal:energy.status || 'UNRESOLVED',
+      implication:energy.detail || 'No current physical-energy read.'
+    }
+  ];
+  document.querySelector('#signals').innerHTML = signalCards.map(x=>
+    '<article class="card signal ' + x.status + '"><div class="meta">' + x.category + ' · ' + (x.status || 'WATCH') + '</div><h3>' + x.signal + '</h3><div>' + x.implication + '</div></article>'
+  ).join('');
+
+  const actionsByTicker=new Map((portfolio.actions || []).map(x=>[x.ticker,x]));
+  document.querySelector('#actions').innerHTML=(overlay.holdings || []).map(h=>{
+    const action=actionsByTicker.get(h.ticker) || {};
+    const tape=h.actualReaction || {};
+    const currency=tape.currency === 'USD' ? '$' : tape.currency === 'MYR' ? 'RM' : '';
+    const price=tape.close == null ? 'No completed tape' : currency + Number(tape.close).toLocaleString(undefined,{maximumFractionDigits:4}) + ' · ' + fmtMove(tape.changePct);
+    return '<article class="card action">' +
+      '<b>' + h.ticker + '</b>' +
+      '<span>' + price + '</span>' +
+      '<span><strong>' + (action.action || h.reviewPriority || 'MONITOR') + '</strong><br>' +
+      (action.addGate || action.sizingRead || 'No current add gate.') +
+      '<br><span class="reaction ' + (tape.status || 'UNRESOLVED') + '">' + (tape.status || 'UNRESOLVED') + ' vs macro · ' + h.overlayState + '</span></span>' +
+    '</article>';
+  }).join('');
+
+  document.querySelector('#clusters').innerHTML=(overlay.hiddenConcentration || []).map(x=>
+    '<article class="card cluster ' + (x.status || '') + '"><div class="meta">' + String(x.status || 'WATCH').replaceAll('_',' ') + '</div><h3>' + x.label + '</h3><div>' +
+    (x.members || []).join(' · ') + '<br>' + x.dependency + (x.nextCheck ? '<br><strong>Next:</strong> ' + x.nextCheck : '') +
+    '</div></article>'
+  ).join('');
+
+  document.querySelector('#steps').innerHTML=(portfolio.newCapitalPriority || []).map(x=>
+    '<li><strong>' + x.bucket + ':</strong> ' + x.instruction + '</li>'
+  ).join('');
+
+  const divs=overlay.reviewQueue?.tapeDivergences || [];
+  const confirms=overlay.reviewQueue?.tapeConfirmations || [];
+  document.querySelector('#provenance').textContent =
+    'Live Desk is the canonical macro baseline. Power Stack owns sizing, company fundamentals and action gates. Completed-session tape is secondary delayed quote data and never changes the fundamental score. Current tape divergences: ' +
+    (divs.length ? divs.join(', ') : 'none') + '. Confirmations: ' + (confirms.length ? confirms.join(', ') : 'none') + '. USD and MYR are not aggregated until portfolio weights are normalized.';
+}).catch(e=>{
+  document.querySelector('#summary').textContent='Data unavailable: ' + e.message;
+  document.querySelector('#provenance').textContent='Live portfolio data failed to load.';
+});
