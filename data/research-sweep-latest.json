@@ -1,35 +1,29 @@
 {
   "asOf": "2026-09-25",
   "config": "data/research-sweep-config.json",
-  "currentOverlay": "data/daily-research-2026-09-25.json",
+  "currentOverlay": "data/power-sweep-latest.json",
   "componentOverlays": [
-    "data/daily-research-2026-09-25.json",
+    "data/power-sweep-latest.json",
     "data/live-desk-canonical.json",
+    "data/portfolio-live-overlay.json",
+    "data/holding-tape.json",
+    "data/daily-research-2026-09-25.json",
     "data/developing-themes.json",
-    "data/latest-market-review.json",
-    "data/macro-context.json",
-    "data/current-analysis-2026-09-23.json",
-    "research/daily/2026-09-23-power-stack-refresh.md",
-    "data/current-analysis-2026-09-21.json",
-    "research/daily/2026-09-21-power-stack-refresh.md",
-    "data/current-analysis-2026-09-16-expanded.json",
-    "data/capital-scarcity-2026-09-16.json",
-    "data/transcript-theme-sweep-2026-09-10.json",
-    "data/stock-sweep-2026-09-10-stockedup-picks.json",
-    "data/lng-fertilizer-stock-research-2026-09-10.json"
+    "data/portfolio-management.json"
   ],
   "requiredCanonicalInputs": [
-    "data/macro-context.json",
     "data/live-desk-canonical.json",
+    "data/portfolio-live-overlay.json",
+    "data/holding-tape.json",
+    "data/research-sweep-config.json",
     "data/macro-sensitivities.json",
     "data/macro-sensitivity-supplement.json",
     "data/holdings-fundamentals.json",
-    "data/latest-market-review.json",
     "data/watchlist.json",
     "data/ideas.json",
     "data/developing-themes.json",
-    "data/live-rating-snapshot.json",
     "data/portfolio-management.json"
   ],
-  "note": "Sep 25 sweep remains canonical. Power Stack now also consumes a read-only Live Desk canonical cross-check: rates-led tightening, global duration stress, narrow breadth/concentration, selective AI leadership and refined-product inflation are aligned with the existing Power Stack regime. Live Stock Radar (NVDA/NBIS/VLO) is a research-priority input only; Power Stack retains fundamental-score, ranking, portfolio and entry ownership."
+  "note": "PowerSweep is now the canonical recurring Power Stack research plan. It consumes Live Desk macro/market state, portfolio exposure, holding tape, watchlist and portfolio-management inputs; it does not rebuild a competing macro regime. The current run is capped at 12 external investigations and preserves explicit NO_CHANGE / RESEARCH_GAP outcomes.",
+  "powerSweep": "data/power-sweep-latest.json"
 }
