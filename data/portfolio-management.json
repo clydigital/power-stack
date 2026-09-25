@@ -1,16 +1,17 @@
 {
-  "asOf": "2026-09-23",
-  "capturedAt": "2026-09-23 19:17 MYT / evening deep-research delta",
+  "asOf": "2026-09-25",
+  "capturedAt": "2026-09-25 14:45 MYT / Live Desk canonical cross-check",
   "title": "Power Stack Portfolio Management Overlay",
   "purpose": "Position-sizing, concentration, add/trim/recycle and risk-budget overlay. This does not change company fundamental scores.",
   "dataQuality": {
     "currentWeights": "Not calculated across the whole portfolio because holdings span MYR/USD and the YTL-linked warrant lacks a reliable standalone value. Avoid false precision until all positions and cash balances are normalized into one base currency.",
-    "scorePolicy": "Fundamental scores remain in holdings-fundamentals.json. Macro/theme research only changes sizing, action gates and research priority unless company-specific evidence changes."
+    "scorePolicy": "Fundamental scores remain in holdings-fundamentals.json. Macro/theme research only changes sizing, action gates and research priority unless company-specific evidence changes.",
+    "liveDeskPolicy": "Live Desk canonical reasoning is a cross-check and research-priority input. It may tighten or loosen Power Stack action gates, but it does not overwrite company fundamental scores or automatically rerank a stock."
   },
   "regime": {
-    "structural": "Capital scarcity / restrictive policy / AI project-finance discrimination",
-    "tactical": "Crude and long-yield relief / selective AI-led risk-on",
-    "portfolioRead": "Do not de-risk indiscriminately, but do not use the rally as permission to increase existing concentration. New capital should improve portfolio quality or diversification and must clear funding/valuation/technical gates."
+    "structural": "Global duration + energy-inflation collision / capital scarcity",
+    "tactical": "Selective AI/semiconductor resilience inside a rates-led tightening regime; credit has not yet confirmed a broad systemic risk-off.",
+    "portfolioRead": "Do not de-risk indiscriminately, but raise the hurdle for new duration and crowded AI beta. Prefer cash-generative, contracted or physically scarce exposures; use weaker breadth and concentration as a diversification warning rather than a standalone sell signal."
   },
   "portfolioRules": [
     {
@@ -31,12 +32,12 @@
     {
       "id": "funding-quality",
       "rule": "For AI/power additions, require funded/contracted demand, customer quality, financing visibility and cash conversion. Penalize pre-operating, single-tenant or guarantee-dependent capacity.",
-      "reason": "The Sep 23 research shows AI equity demand and financing quality can diverge sharply."
+      "reason": "Live Desk now confirms selective AI leadership alongside 5%+ long yields. Demand can remain strong while financing, dilution and valuation become more punitive."
     },
     {
       "id": "cash-reserve",
       "rule": "Keep a deployable reserve rather than forcing full investment while bank/credit/breadth confirmation is incomplete.",
-      "reason": "The regime is tactically constructive but structurally still capital-scarce."
+      "reason": "Live Desk confirms that long-end stress is real while credit and broad breadth transmission remain incomplete. Dry powder preserves optionality if that divergence resolves negatively."
     },
     {
       "id": "recycle-before-add",
@@ -129,7 +130,7 @@
     {
       "priority": 4,
       "bucket": "AI beneficiaries",
-      "instruction": "Use MU/ORCL/META only after the specific challenger questions are resolved; do not add broad AI beta simply because Nasdaq is strong."
+      "instruction": "Treat NVDA as the concentration/leadership barometer and NBIS as research-only despite the verified analyst catalyst. Do not add broad AI beta unless financing quality, cash conversion and price asymmetry clear the Power Stack gates."
     }
   ],
   "riskDashboard": [
@@ -157,7 +158,41 @@
       "signal": "AI project finance",
       "status": "FUNDING QUALITY DETERIORATING SELECTIVELY",
       "nextCheck": "Project Jupiter/Hyperion marks, SB Energy/Nscale pricing, guarantees and new issuance."
+    },
+    {
+      "signal": "Live Desk Radar",
+      "status": "NVDA / NBIS / VLO — RESEARCH PRIORITY ONLY",
+      "nextCheck": "NVDA breadth leadership, NBIS cash-conversion/financing quality and VLO product cracks/inventories before any Power Stack score or entry change."
     }
   ],
-  "nextPortfolioCheck": "After Sep 23 US flash PMI and the next verified US close: refresh USD holdings prices, normalize all positions and cash to one base currency, calculate single-name/theme weights, then decide whether any trim/recycle action is actually required."
+  "nextPortfolioCheck": "After the next verified US close: refresh USD holdings prices, normalize all positions and cash to one base currency, then re-check whether high yields are transmitting into credit/breadth or remaining a rates-first shock.",
+  "liveDeskCrossCheck": {
+    "source": "data/live-desk-canonical.json",
+    "regime": "RATES_LED_TIGHTENING",
+    "alignment": "Confirms the Sep 25 Power Stack view that global duration and refined-product inflation are the dominant constraints while AI leadership remains selective rather than broad risk-on.",
+    "portfolioImplications": [
+      "High global sovereign yields reinforce no-chase rules for duration-heavy AI, software and project-finance exposure.",
+      "Narrow breadth and S&P concentration increase the value of diversification and make headline index resilience a weaker risk-on signal.",
+      "Refined-product tightness validates continued preference for cash-generative integrated/refining/logistics exposure over generic crude beta.",
+      "Selective AI strength supports funded/backlogged infrastructure, but does not relax financing, dilution or valuation screens."
+    ],
+    "stockRadar": [
+      {
+        "ticker": "NVDA",
+        "powerStackRead": "Leadership/concentration barometer, not a diversification priority.",
+        "action": "MONITOR"
+      },
+      {
+        "ticker": "NBIS",
+        "powerStackRead": "Verified analyst catalyst improves near-term research priority, but convertibles, capex intensity and dilution keep the Power Stack quality gate restrictive.",
+        "action": "RESEARCH ONLY / NO AUTOMATIC RERANK"
+      },
+      {
+        "ticker": "VLO",
+        "powerStackRead": "Direct expression of product tightness already represented in the Power Stack watchlist; thesis support rises but entry discipline remains no-chase.",
+        "action": "SELECTIVE / WAIT FOR RETEST"
+      }
+    ],
+    "scoreDecision": "No current-holding fundamental score changes and no mechanical watchlist rerank from Live Desk alone."
+  }
 }
