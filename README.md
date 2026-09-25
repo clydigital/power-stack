@@ -9,7 +9,9 @@ A searchable, versioned investment-research vault for nuclear, AI infrastructure
 - `data/ism-macro-snapshot.json` stores the deeper official-ISM analytical snapshot used as one input to macro interpretation.
 - `data/holdings-fundamentals.json` is the canonical current-holdings fundamentals ledger.
 - `data/watchlist.json` is the live price/action queue.
-- `data/research-sweep-config.json` is the recurring research-process contract. It requires the current Market Research Cranium to be read first as a research seed/source registry, followed by independent verification, a global macro sweep, separate US and China/Hong Kong rate sweeps, every current holding, the full canonical watchlist and a China-focused tracked-idea adjunct.
+- `data/research-sweep-config.json` is the PowerSweep process contract. Live Desk is loaded first as canonical macro/market state; PowerSweep then spends a bounded research budget only on portfolio divergences, company-specific evidence, actionable watchlist names, portfolio-relevant themes and a capped China/HK adjunct.
+- `data/power-sweep-latest.json` is the deterministic current PowerSweep queue. It records input health, capped holding/watchlist/theme/China investigations, monitor-only holdings, hidden concentration, research gaps and explicit no-change rules.
+- `data/research-sweep-latest.json` is the compatibility/index pointer to the current PowerSweep plan and its canonical inputs.
 - Dated `data/cranium-rates-sweep-YYYY-MM-DD.json` files are research overlays that preserve Cranium-driven hypotheses, regional rate regimes and stock-level rate sensitivities without overwriting Base Conviction or company fundamentals.
 - Category and intraday research files add specialised research without replacing the long-term database.
 - `data/live-desk-canonical.json` is the active read-only Live Desk cross-check: canonical regime, lenses, six-asset state when available, Stock Radar and creator-verification status.
@@ -21,6 +23,22 @@ The Market Research Cranium is a **research seed, synthesis layer and source-URL
 
 The rate sweep is explicitly jurisdictional. US sensitivity separates Fed expectations from 2Y/10Y/30Y yields, real yields, breakevens, long-end/term-premium pressure, volatility, credit and Treasury operations. China/Hong Kong sensitivity separately tracks LPRs, China government yields, PBOC/liquidity conditions, CNY/CNH, credit demand, bank margins, recapitalisation/fiscal support and whether liquidity actually transmits into private-sector capex and consumption. Low China yields are not automatically treated as bullish easing when they coexist with weak credit demand.
 
+## PowerSweep
+
+PowerSweep is the recurring **portfolio research and decision engine**. It is not a second macro brain.
+
+Its order is:
+
+1. validate Live canonical state, portfolio exposure and completed-session holding tape;
+2. promote only decision-relevant divergences or data gaps;
+3. research a capped number of holdings and watchlist candidates;
+4. investigate only portfolio-relevant themes and China/HK names;
+5. emit explicit CHANGE, NO_CHANGE or RESEARCH_GAP outcomes;
+6. write back only Power Stack-owned company, portfolio, watchlist and theme conclusions.
+
+The default hard cap is **12 external investigations per sweep**: up to 3 holding deep-dives, 4 watchlist deep-dives, 3 theme deep-dives and a capped China/HK adjunct. Confirming tape is normally monitor-only. UNKNOWN / UNRESOLVED remains a valid result.
+
+PowerSweep must never send a Live-derived macro overlay back to Live as independent confirmation.
 ## Live-owned macro context
 
 Power Stack no longer runs a competing dashboard-first macro brain. Its canonical market/regime context comes from the read-only Live Desk snapshot in `data/live-desk-canonical.json`.
