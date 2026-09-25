@@ -8,7 +8,7 @@ A searchable, versioned investment-research vault for nuclear, AI infrastructure
 - `data/macro-context.json` is the active Power Stack Pulse snapshot.
 - `data/ism-macro-snapshot.json` stores the deeper official-ISM analytical snapshot used as one input to macro interpretation.
 - `data/holdings-fundamentals.json` is the canonical current-holdings fundamentals ledger.
-- `data/watchlist.json` is the live price/action queue.
+- `data/watchlist.json` is the live price/action queue.\n- `data/rate-resilience-overlay-2026-09-25.json` is the current 10Y hurdle-rate overlay. It owns the fresh-US research/action ranking and regime-specific entry gates while leaving company fundamental scores company-evidence owned.
 - `data/research-sweep-config.json` is the PowerSweep process contract. Live Desk is loaded first as canonical macro/market state; PowerSweep then spends a bounded research budget only on portfolio divergences, company-specific evidence, actionable watchlist names, portfolio-relevant themes and a capped China/HK adjunct.
 - `data/power-sweep-latest.json` is the deterministic current PowerSweep queue. It records input health, capped holding/watchlist/theme/China investigations, monitor-only holdings, hidden concentration, research gaps and explicit no-change rules.
 - `data/research-sweep-latest.json` is the compatibility/index pointer to the current PowerSweep plan and its canonical inputs.
@@ -56,7 +56,7 @@ Power Stack consumes Live context to answer portfolio-specific questions:
 - where several holdings express the same hidden macro exposure;
 - which thesis, valuation, funding or entry conditions require review.
 
-The monetary overlay is **separate from Base Conviction**. It may change research priority, portfolio-risk flags, required evidence and action queues, but it does not mechanically add or subtract from the fundamentals score. Company scores change only on company-level evidence.
+The monetary overlay is **separate from Base Conviction**. It may change research priority, portfolio-risk flags, required evidence and action queues, but it does not mechanically add or subtract from the fundamentals score. Company scores change only on company-level evidence.\n\nThe Sep 25 rate-resilience layer makes the U.S. 10Y an explicit admission gate for fresh capital. The current research question is: **can the company beat a ~5.2% risk-free hurdle without multiple expansion?** The overlay is surfaced on Watchlist and Capital Scarcity and is stored separately so a macro rerank cannot silently rewrite the fundamental ledger.
 
 `data/macro-context.json` and the older sensitivity files remain historical/internal analytical inputs during migration. They are not a second canonical macro state and are not exported back to Live as confirmation.
 
