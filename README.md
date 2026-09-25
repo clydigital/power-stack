@@ -12,7 +12,8 @@ A searchable, versioned investment-research vault for nuclear, AI infrastructure
 - `data/research-sweep-config.json` is the recurring research-process contract. It requires the current Market Research Cranium to be read first as a research seed/source registry, followed by independent verification, a global macro sweep, separate US and China/Hong Kong rate sweeps, every current holding, the full canonical watchlist and a China-focused tracked-idea adjunct.
 - Dated `data/cranium-rates-sweep-YYYY-MM-DD.json` files are research overlays that preserve Cranium-driven hypotheses, regional rate regimes and stock-level rate sensitivities without overwriting Base Conviction or company fundamentals.
 - Category and intraday research files add specialised research without replacing the long-term database.
-- `data/live-desk-canonical.json` is the active read-only Live Desk cross-check: canonical regime, lenses, six-asset state when available, Stock Radar and creator-verification status.\n- `data/live-context.json` is retained only as historical integration data and is not used for current scoring.
+- `data/live-desk-canonical.json` is the active read-only Live Desk cross-check: canonical regime, lenses, six-asset state when available, Stock Radar and creator-verification status.
+- `data/live-context.json` is retained only as historical integration data and is not used for current scoring.
 
 ### Cranium ingestion guardrail
 
@@ -20,74 +21,58 @@ The Market Research Cranium is a **research seed, synthesis layer and source-URL
 
 The rate sweep is explicitly jurisdictional. US sensitivity separates Fed expectations from 2Y/10Y/30Y yields, real yields, breakevens, long-end/term-premium pressure, volatility, credit and Treasury operations. China/Hong Kong sensitivity separately tracks LPRs, China government yields, PBOC/liquidity conditions, CNY/CNH, credit demand, bank margins, recapitalisation/fiscal support and whether liquidity actually transmits into private-sector capex and consumption. Low China yields are not automatically treated as bullish easing when they coexist with weak credit demand.
 
-## Macro Pulse v4
+## Live-owned macro context
 
-The active Pulse now uses the **Daily Investment Brief Macroeconomic Dashboard** as its primary dashboard layer:
+Power Stack no longer runs a competing dashboard-first macro brain. Its canonical market/regime context comes from the read-only Live Desk snapshot in `data/live-desk-canonical.json`.
 
-`https://dailyinvestmentbrief.com/macroeconomic-dashboard/`
+Live owns acquisition, source health, monetary signals, cross-asset confirmation/contradiction and regime interpretation. The intended canonical upstream stack is official or verified data such as FRED, New York Fed, Treasury and Live's existing verified adapters. Daily Investment Brief and MacroMicro are not primary or fallback machine sources for Power Stack; at most they may be opened manually as non-canonical reading.
 
-Missing or inaccessible readings are supplemented with **MacroMicro**:
+If the Live snapshot is unavailable or stale, Power Stack records the gap. It must not silently recreate the regime by scraping a third-party dashboard.
 
-`https://en.macromicro.me/`
+### Portfolio overlay
 
-Official releases, company filings and authoritative market data remain the verification layer. The Daily Investment Brief dashboard currently renders some live readings client-side; when an automated research pass receives placeholders such as `Analyzing...` or `--`, Power Stack does **not** infer a value. It falls back to MacroMicro and authoritative sources instead.
+Power Stack consumes Live context to answer portfolio-specific questions:
 
-The source dashboards are treated as data/visualisation layers, not investment signals. Creator videos, social posts, block-trade claims and technical commentary are also hypothesis generators only. They receive zero direct score weight until independently verified.
+- which holdings depend on low rates, strong growth, persistent inflation, easy funding, China demand or high energy prices;
+- whether those assumptions are confirmed, contradicted or unresolved;
+- where several holdings express the same hidden macro exposure;
+- which thesis, valuation, funding or entry conditions require review.
 
-Active data files:
+The monetary overlay is **separate from Base Conviction**. It may change research priority, portfolio-risk flags, required evidence and action queues, but it does not mechanically add or subtract from the fundamentals score. Company scores change only on company-level evidence.
 
-- `data/macro-context.json` — current directional macro channels, evidence, confidence and freshness.
-- `data/macro-sensitivities.json` — slow-moving stock fingerprints with fundamental and market sensitivity, weights and confidence.
-- `data/macro-methodology.json` — verified source semantics and interpretation guardrails.
-- `data/research-sweep-config.json` — required daily research order and US/China jurisdictional rates checklist.
-- `data/cranium-rates-sweep-2026-09-07.json` — current Cranium-informed macro/holdings/watchlist rate overlay.
-- `data/creator-view-overlay-2026-09-01.json` — current audit of user-supplied creator views and their verification status.
-- `data/intraday-research-2026-09-01.json` — current intraday research state and implementation record.
+`data/macro-context.json` and the older sensitivity files remain historical/internal analytical inputs during migration. They are not a second canonical macro state and are not exported back to Live as confirmation.
 
-The engine separates, among other things:
+## Live Desk exchange contracts
 
-- nominal yields, real yields, breakeven inflation and term-premium pressure;
-- US discount-rate/financing stress from China low-yield/weak-credit-transmission conditions;
-- broad credit availability from CCC/weak-end credit stress;
-- crude tightness from refined-product tightness/crack spreads and US gas/global LNG conditions;
-- end-food demand from farmer input elasticity;
-- AI demand from financing quality, dilution and cash conversion;
-- social/creator/Cranium observations from independently verified macro/fundamental evidence.
+### Live → Power Stack
 
-### Stock scoring
+`data/live-desk-canonical.json` is the read-only downstream snapshot. It is refreshed from Live and may include the Dossier regime, deterministic monetary/rates state, contradictions, source health, research gaps, asset state and research-priority signals.
 
-For factor `i`:
+Power Stack interprets that state against holdings, candidates and portfolio concentration. It does not rewrite Live's market conclusion.
 
-`contribution_i = (channelScore_i / 2) × ((0.65 × fundamentalSensitivity_i + 0.35 × marketSensitivity_i) / 5) × factorWeight_i × factorConfidence_i × profileConfidence × channelConfidence × freshnessWeight_i`
+### Power Stack → Live
 
-The stock's Macro adjustment is the sum of fresh contributions and is capped at **±1.00**. Base Conviction is never overwritten. If a stock has no researched fingerprint, or the macro packet is stale, its macro adjustment is zero.
+`data/live-fundamentals-snapshot.json` uses contract `power-stack-fundamentals/v1`.
 
-Theme bars are summaries of the **average stock-level macro adjustment inside the theme**, not a theme score copied into every stock.
+It contains **independent Power Stack company research only**: Base Conviction, thesis, catalysts, risks, status and slow-moving quality characteristics. It deliberately excludes:
 
-## Live Desk rating export
+- Live-derived monetary or regime signals;
+- macro adjustments;
+- adjusted scores;
+- industry macro-risk scores.
 
-`data/live-rating-snapshot.json` is the versioned, one-way exchange contract used by the Alchemy Live Market Desk. It contains Power Stack's base research score, the current macro adjustment, the resulting adjusted score and the pure-macro industry-risk reading where the current industry model has a valid bucket.
-
-The export is generated from committed Power Stack research inputs. It does not read from the Live Desk and does not reactivate the retired Live Desk → Power Stack pulse. The Live Desk may import this file **once at publication time** and freeze the packet into its immutable edition; Hybrid should render only that persisted Live-edition packet and must not fetch or recalculate Power Stack scores itself.
-
-The input mapping lives in `data/live-rating-export-config.json`. Regenerate after updating the referenced idea, macro-context or sensitivity files:
+Regenerate and validate it after changing the referenced company-research source:
 
 ```bash
-node scripts/generate-live-rating-snapshot.mjs
+node scripts/generate-live-fundamentals-snapshot.mjs
+node scripts/generate-live-fundamentals-snapshot.mjs --check
 ```
 
-For a reproducible historical rebuild or review:
-
-```bash
-node scripts/generate-live-rating-snapshot.mjs --as-of=2026-09-03T09:48:00Z
-node scripts/generate-live-rating-snapshot.mjs --check
-```
-
-`--check` evaluates the committed snapshot at its own `snapshotAt` timestamp, so freshness decay is tested against the same publication moment rather than the current clock. A missing industry bucket remains `null`; the export must not substitute a proxy score.
+The older `data/live-rating-snapshot.json` / `power-stack-rating-snapshot/v1` path is legacy migration material only. Live must not use it once the fundamentals contract is deployed because its macro adjustment would create a Live → PS → Live feedback loop.
 
 ## Live Desk status
 
-The former Live Desk → Power Stack pulse is **deactivated**. The historical `data/live-context.json` file and disabled workflow stub are retained so the integration can be restored later without rebuilding it, but Live Desk data currently has zero influence on rankings, cards, detail views or macro-adjusted conviction.
+Live Desk is the canonical macro/market-state owner and Power Stack is an active downstream consumer. Power Stack retains ownership of company fundamentals, portfolio construction, ranking discipline and entry decisions.
 
 ## Hosting
 
