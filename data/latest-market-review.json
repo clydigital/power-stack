@@ -1,38 +1,38 @@
 {
-  "asOf": "2026-09-24",
-  "capturedAt": "2026-09-24 15:05 MYT / Sep 23 US close + Sep 24 Asia macro",
-  "source": "Canonical holdings ledger + Reuters/S&P Global/current verified market data",
-  "regime": "Mixed: global duration stress dominates, but the US-China trade truce through 10 January 2027 removes the immediate tariff cliff",
-  "summary": "No holding fundamental-score changes. The key delta is cross-asset: US/Japan yields remain the dominant valuation constraint, while the verified US-China truce extension lowers immediate tariff/supply-chain tail risk. Treat summit terms as a catalyst overlay, not a blanket risk-on signal.",
+  "asOf": "2026-09-25",
+  "capturedAt": "2026-09-25 11:56 MYT / Sep 24 completed US+Malaysia sessions + Sep 25 Asia macro",
+  "source": "Canonical holdings ledger + Reuters/EIA/ISM/company disclosures + current verified market data",
+  "regime": "Global duration + energy-inflation collision: US 10Y/30Y and Japan 10Y are at multi-decade highs while crude/refined-product tightness keeps inflation pressure alive.",
+  "summary": "No holding fundamental-score changes. The important shift is a higher cost-of-capital hurdle across duration and capex-heavy exposures while refined-product tightness improves the relative case for cash-generative integrated energy. Physical AI/power demand remains strong, but funded/contracted/energizable capacity matters more than headline MW.",
   "holdings": [
     {
-      "actionRank": 3,
-      "ticker": "XOM",
-      "reviewStatus": "changed technical",
-      "price": "~$161.23 Sep 23 close",
-      "action": "CORE HOLD / NO CHASE",
-      "class": "core",
-      "stockSpecificEvidence": "No filing changes 88/A fundamentals; price bounced after testing $155.85 on Sep 22.",
-      "relevantMacroThemeContext": "Oil/geopolitical premium remains supportive, but Asia crude-flow recovery shows partial logistics repair; rates remain a secondary valuation constraint.",
-      "fundamentalScoreDecision": "88/A unchanged",
-      "technicalAction": "$156-159 held; $164-166 remains repair/reclaim; ~$176.4 major breakout.",
+      "actionRank": 1,
+      "ticker": "TTWO",
+      "reviewStatus": "changed negative technical",
+      "price": "$202.98 Sep 24 close",
+      "action": "HOLD BECAUSE OWNED / STOP NEW-MONEY RESEARCH FOR NOW",
+      "class": "risk",
+      "stockSpecificEvidence": "Fresh 15-session low; no new filing changes the 68/C+ fundamental score.",
+      "relevantMacroThemeContext": "5%+ US long yields materially raise the hurdle for catalyst-duration assets; GTA VI execution remains the primary company-specific offset.",
+      "fundamentalScoreDecision": "68/C+ unchanged",
+      "technicalAction": "~$210 first repair; $216-217 meaningful confirmation; $228-233 stronger recovery.",
       "watchLevels": {
-        "support": "$156-159",
-        "deeper": "~$155",
-        "repair": "$164-166",
-        "breakout": "~$176.4"
+        "currentFloor": "~$202-203",
+        "firstRepair": "~$210",
+        "confirmation": "$216-217",
+        "recovery": "$228-233"
       },
-      "nextTest": "$164-166 reclaim plus WTI/product cracks/inventories."
+      "nextTest": "GTA VI milestones/cash-flow evidence and sustained ~$210 then $216-217 reclaim."
     },
     {
       "actionRank": 2,
       "ticker": "YTLPOWR",
-      "reviewStatus": "unchanged",
-      "price": "RM5.90 Sep 23",
-      "action": "HOLD / NO ADD — BREAKOUT UNCONFIRMED",
+      "reviewStatus": "structural thesis stronger / financing hurdle higher",
+      "price": "RM5.80 Sep 24 close; Sep 25 delayed trade rebounded toward high-RM5.80s",
+      "action": "HOLD / NO ADD — BREAKOUT AND FUNDING PROOF REQUIRED",
       "class": "hold",
-      "stockSpecificEvidence": "No new filing changes 71/B fundamentals.",
-      "relevantMacroThemeContext": "US 10Y >5% and Japan 10Y >3% reinforce the financing hurdle; trade relief is not a direct company-fundamental upgrade.",
+      "stockSpecificEvidence": "Seven reserved Siemens SGT-9000HL turbines imply >5.25GW potential generation capacity, strengthening the physical-power option set without proving funded/energized demand.",
+      "relevantMacroThemeContext": "Global long yields above 5% raise funding and return hurdles for data-centre/power capex.",
       "fundamentalScoreDecision": "71/B unchanged",
       "technicalAction": "RM5.65-5.70 support; ~RM6.02 breakout; ~RM6.14 confirmation.",
       "watchLevels": {
@@ -40,89 +40,91 @@
         "breakout": "~RM6.02",
         "confirmation": "~RM6.14"
       },
-      "nextTest": "~RM6.02 break plus contracted load, funding, grid/self-supply, permits and FCF."
+      "nextTest": "Break ~RM6.02/6.14 plus contracted load, financing, grid/self-supply, permits and FCF conversion."
     },
     {
-      "actionRank": 1,
+      "actionRank": 3,
       "ticker": "HIBISCS",
-      "reviewStatus": "unchanged warning",
-      "price": "RM2.18 Sep 23",
-      "action": "HOLD / NO ADD — SUPPORT BREACH",
-      "class": "core",
-      "stockSpecificEvidence": "No new filing changes 74/B fundamentals.",
-      "relevantMacroThemeContext": "Crude support helps, but partial Asian flow recovery and the prior support break mean company execution/realized pricing still matter more than the headline oil premium.",
+      "reviewStatus": "support repaired / still oil-beta",
+      "price": "RM2.30 Sep 24 close; Sep 24 ex-dividend 2 sen",
+      "action": "HOLD / NO CHASE",
+      "class": "hold",
+      "stockSpecificEvidence": "RM2.20 area repaired; FY26 earnings/dividend remain supportive, but no new company evidence justifies a score change.",
+      "relevantMacroThemeContext": "Crude above $100 is supportive, but the same oil shock can hurt demand and keep rates higher.",
       "fundamentalScoreDecision": "74/B unchanged",
-      "technicalAction": "Require RM2.20-2.25 repair, then RM2.30-2.35; ~RM2.46 breakout.",
+      "technicalAction": "RM2.20 support; require RM2.30-2.35 to hold; ~RM2.46 breakout.",
       "watchLevels": {
-        "repair1": "RM2.20-2.25",
-        "repair2": "RM2.30-2.35",
+        "support": "~RM2.20",
+        "repairHold": "RM2.30-2.35",
         "breakout": "~RM2.46"
       },
-      "nextTest": "WTI/realized pricing, operations and RM2.20-2.25 repair."
+      "nextTest": "Realized pricing/production and sustained RM2.30-2.35 after ex-dividend effects."
+    },
+    {
+      "actionRank": 4,
+      "ticker": "XOM",
+      "reviewStatus": "improved relative macro fit",
+      "price": "$162.14 Sep 24 close",
+      "action": "CORE HOLD / NO CHASE",
+      "class": "core",
+      "stockSpecificEvidence": "No filing changes 88/A fundamentals; $156-159 support held.",
+      "relevantMacroThemeContext": "Integrated upstream/refining exposure is relatively resilient when crude and diesel/product inflation are both elevated, but geopolitical premium is not permanent.",
+      "fundamentalScoreDecision": "88/A unchanged",
+      "technicalAction": "$156-159 support held; $164-166 repair/reclaim; ~$176.4 major breakout.",
+      "watchLevels": {
+        "support": "$156-159",
+        "deeper": "~$155",
+        "repair": "$164-166",
+        "breakout": "~$176.4"
+      },
+      "nextTest": "$164-166 reclaim plus product cracks/inventories and evidence oil demand is not breaking."
     },
     {
       "actionRank": 5,
       "ticker": "MISC",
-      "reviewStatus": "unchanged",
-      "price": "RM7.96 Sep 23",
-      "action": "HOLD / YINSON FUNDING STILL ADD GATE",
+      "reviewStatus": "operating backdrop supportive / transaction risk unresolved",
+      "price": "RM7.92 Sep 24 close",
+      "action": "HOLD / NO ADD — YINSON FUNDING STILL GATE",
       "class": "hold",
       "stockSpecificEvidence": "No new filing resolves Yinson funding/structure.",
-      "relevantMacroThemeContext": "Asia crude imports are recovering, but route adaptation does not prove tanker/product-freight normalisation; keep freight and rerouting as separate signals.",
+      "relevantMacroThemeContext": "Refined-product/shipping tightness is supportive, but route adaptation can reduce scarcity freight premia.",
       "fundamentalScoreDecision": "80/B+ unchanged",
-      "technicalAction": "RM7.90 support; RM8.10-8.30 recovery; ~RM8.48 confirmation.",
+      "technicalAction": "RM7.75-7.90 support; RM8.00-8.10 first repair; RM8.30 then ~RM8.48 confirmation.",
       "watchLevels": {
-        "support": "~RM7.90",
-        "recovery": "RM8.10-8.30",
+        "support": "RM7.75-7.90",
+        "repair": "RM8.00-8.10",
+        "recovery": "~RM8.30",
         "confirmation": "~RM8.48"
       },
-      "nextTest": "Yinson funding/structure and tanker/product freight."
+      "nextTest": "Yinson structure/funding plus tanker/product-freight data."
     },
     {
       "actionRank": 6,
-      "ticker": "TTWO",
-      "reviewStatus": "changed technical",
-      "price": "~$206.3 Sep 23 close; $203.19 intraday low",
-      "action": "HOLD / NO ADD — REPAIR INCOMPLETE",
-      "class": "watch",
-      "stockSpecificEvidence": "No filing changes 68/C+ fundamentals; price remains below first repair.",
-      "relevantMacroThemeContext": "The renewed global duration shock materially raises the hurdle for catalyst-duration assets; US-China trade relief is low direct relevance.",
-      "fundamentalScoreDecision": "68/C+ unchanged",
-      "technicalAction": "~$210 first repair; $216-217 confirmation; $228-233 stronger recovery.",
-      "watchLevels": {
-        "firstRepair": "~$210",
-        "confirmation": "$216-217",
-        "recovery": "$228-233"
-      },
-      "nextTest": "GTA VI milestones and sustained $210 then $216-217 reclaim."
-    },
-    {
-      "actionRank": 4,
       "ticker": "TSLA",
-      "reviewStatus": "changed positive technical",
-      "price": "$384.78 Sep 23 close",
-      "action": "HOLD / DO NOT AVERAGE DOWN — REPAIR IMPROVED",
+      "reviewStatus": "new operational proof / valuation unchanged",
+      "price": "$377.94 Sep 24 close",
+      "action": "HOLD / NO ADD",
       "class": "watch",
-      "stockSpecificEvidence": "No new company evidence changes 61/C; price closed above the prior $375-383 repair band.",
-      "relevantMacroThemeContext": "The trade-truce extension is marginally constructive for China/supply-chain tail risk, but high real yields remain the larger valuation constraint and company execution remains unchanged.",
+      "stockSpecificEvidence": "Tesla has begun Semi customer deliveries; disclosed pricing, production volumes and unit economics remain insufficient for a fundamental-score change.",
+      "relevantMacroThemeContext": "5%+ long yields remain a major valuation constraint despite energy-storage and Semi optionality.",
       "fundamentalScoreDecision": "61/C unchanged",
-      "technicalAction": "$383 now needs to hold; ~$397 next confirmation; $375-383 becomes first repair/support band.",
+      "technicalAction": "$375-383 repair/hold zone; sustained >$383 then ~$397 confirmation; $353-355 deeper support.",
       "watchLevels": {
         "repairSupport": "$375-383",
         "next": "~$397",
         "deeperSupport": "$353-355"
       },
-      "nextTest": "Hold >$383 then ~$397, storage growth and autonomy economics/regulation."
+      "nextTest": "Hold >$383 then ~$397; Semi production/economics, storage growth and autonomy economics."
     },
     {
       "actionRank": 7,
       "ticker": "DAYANG",
-      "reviewStatus": "unchanged",
-      "price": "RM1.47 latest verified",
-      "action": "HOLD / DO NOT AVERAGE DOWN",
+      "reviewStatus": "unchanged weak operating proof",
+      "price": "RM1.47 Sep 24 close",
+      "action": "HOLD / DO NOT AVERAGE DOWN / REMOVE FROM NEW-MONEY SCREEN",
       "class": "risk",
-      "stockSpecificEvidence": "No new operating evidence repairs utilisation/work-order conversion.",
-      "relevantMacroThemeContext": "Crude rebound is insufficient without company-specific execution proof.",
+      "stockSpecificEvidence": "No new operating evidence repairs utilization/work-order conversion after weak Q2.",
+      "relevantMacroThemeContext": "Higher crude cannot substitute for company-specific operating conversion.",
       "fundamentalScoreDecision": "57/C unchanged",
       "technicalAction": "RM1.42 critical; RM1.50-1.52 recovery; ~RM1.57 breakout.",
       "watchLevels": {
@@ -130,7 +132,7 @@
         "recovery": "RM1.50-1.52",
         "breakout": "~RM1.57"
       },
-      "nextTest": "Utilisation, work orders, earnings conversion and crude stability."
+      "nextTest": "Utilization, work orders, earnings conversion and RM1.50-1.52 recovery."
     },
     {
       "actionRank": 8,
@@ -139,10 +141,10 @@
       "price": null,
       "action": "TRACK PARENT / TERMS ONLY",
       "class": "hold",
-      "stockSpecificEvidence": "No reliable standalone valuation or new terms verified.",
-      "relevantMacroThemeContext": "Track YTLPOWR plus instrument-specific time decay/liquidity.",
-      "fundamentalScoreDecision": "Linked 71/B unchanged; not standalone valuation",
-      "technicalAction": "Track parent and strike/expiry/liquidity/time decay.",
+      "stockSpecificEvidence": "No reliable standalone valuation/terms verified.",
+      "relevantMacroThemeContext": "Track YTLPOWR plus instrument-specific strike, expiry, liquidity and time decay.",
+      "fundamentalScoreDecision": "Linked 71/B unchanged; not a standalone valuation",
+      "technicalAction": "Track parent RM5.65-5.70 / ~RM6.02 / ~RM6.14 and verify warrant terms separately.",
       "watchLevels": {
         "parent": "RM5.65-5.70 / ~RM6.02 / ~RM6.14"
       },
@@ -150,10 +152,12 @@
     }
   ],
   "monitorNext": [
-    "Trump-Xi summit exact terms: tariffs, purchases, rare earths and AI/advanced-tech controls",
-    "US 10Y around 5%+ and Japan 10Y JGB above 3%",
-    "jobless claims and new-home sales",
-    "ULSD/product cracks versus crude",
-    "gold response if DXY/real yields turn"
+    "US 10Y/30Y persistence above 5% and Japan 10Y above 3%",
+    "EIA distillate inventories and same-contract ULSD/RBOB cracks versus crude",
+    "Middle East supply/route developments and whether oil inflation feeds Fed pricing",
+    "YTLPOWR contracted/funded load, generation/grid access and FCF conversion",
+    "TTWO ~$210 then $216-217 repair",
+    "TSLA Semi disclosed production/pricing economics and $383/$397 price confirmation",
+    "fresh authoritative CCC OAS / weak-end credit stress"
   ]
 }
