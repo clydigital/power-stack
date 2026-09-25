@@ -176,6 +176,61 @@
         </tr>`).join('');
     }
 
+    const overlayClass = value => value === 'HEADWIND' ? 'overlay-headwind' : value === 'TAILWIND' ? 'overlay-tailwind' : value === 'MIXED' ? 'overlay-mixed' : value === 'NEUTRAL' ? 'overlay-neutral' : 'overlay-unresolved';
+    const effectPill = value => '<span class="effect-pill ' + (value || 'UNRESOLVED') + '">' + (value || 'UNRESOLVED') + '</span>';
+    const intensityText = value => value ? String(value).replaceAll('_',' ').toLowerCase() : 'unmapped';
+
+    function renderLiveOverlay(data){
+      const signals = data.currentSignals || {};
+      const rates = signals.rates || {};
+      const funding = signals.funding || {};
+      const energy = signals.physicalEnergy || {};
+      const when = data.liveAsOf ? new Date(data.liveAsOf).toLocaleString('en-GB',{dateStyle:'medium',timeStyle:'short'}) : '—';
+      document.getElementById('liveOverlayMeta').innerHTML = 'Live ' + when + '<br>' + (data.regime?.family || 'UNRESOLVED') + ' · bills ' + (data.sourceHealth?.treasuryBills || 'unknown') + ' · funding ' + (data.sourceHealth?.nyFedReferenceRates || 'unknown');
+
+      const signalRows = [
+        ['Rates / duration', rates.state || 'UNRESOLVED', (rates.tighter || 0) + ' tighter · ' + (rates.easier || 0) + ' easier · ' + (rates.unresolved || 0) + ' unresolved'],
+        ['Funding / credit', funding.state || 'UNRESOLVED', (funding.tighter || 0) + ' tighter · ' + (funding.easier || 0) + ' easier · ' + (funding.neutral || 0) + ' neutral'],
+        ['Physical energy', energy.status || 'UNRESOLVED', energy.detail || 'No current physical-energy read.']
+      ];
+      document.getElementById('liveSignalGrid').innerHTML = signalRows.map(row=>{
+        const state=row[1];
+        const visual = state==='TIGHTER' ? 'HEADWIND' : state==='EASIER' ? 'TAILWIND' : state==='ACTIVE' ? 'MIXED' : 'NEUTRAL';
+        return '<div class="live-signal"><span>' + row[0] + '</span><b class="' + overlayClass(visual) + '">' + state + '</b><p>' + row[2] + '</p></div>';
+      }).join('');
+
+      const q = data.reviewQueue || {};
+      const chips = [
+        [q.highReview?.length || 0, 'High review', 'high'],
+        [q.mixed?.length || 0, 'Mixed macro read', 'mixed'],
+        [q.supported?.length || 0, 'Supported', 'support'],
+        [q.researchGaps?.length || 0, 'Profile gaps', '']
+      ];
+      document.getElementById('liveReviewSummary').innerHTML = chips.map(item=>'<span class="overlay-chip ' + item[2] + '">' + item[0] + ' · ' + item[1] + '</span>').join('');
+
+      document.getElementById('liveOverlayBody').innerHTML = (data.holdings || []).map(h=>{
+        const r=h.sensitivities?.rates, f=h.sensitivities?.funding, e=h.sensitivities?.energy;
+        return '<tr>' +
+          '<td><strong>' + h.ticker + '</strong><br><span style="color:#77818a">' + h.name + '</span></td>' +
+          '<td><strong class="' + overlayClass(h.overlayState) + '">' + h.overlayState + '</strong><br><span style="color:#77818a">' + String(h.reviewPriority || 'MONITOR').replaceAll('_',' ') + '</span></td>' +
+          '<td>' + effectPill(h.effects?.rates) + '<br><span style="color:#77818a">' + intensityText(r?.intensity) + ' sensitivity</span></td>' +
+          '<td>' + effectPill(h.effects?.funding) + '<br><span style="color:#77818a">' + intensityText(f?.intensity) + ' sensitivity</span></td>' +
+          '<td>' + effectPill(h.effects?.energy) + '<br><span style="color:#77818a">' + intensityText(e?.intensity) + ' sensitivity</span></td>' +
+          '<td><strong>' + (h.currentAction || '—') + '</strong><br><span style="color:#77818a">' + (h.addGate || h.sizingRead || 'No current gate stored.') + '</span></td>' +
+        '</tr>';
+      }).join('');
+
+      document.getElementById('clusterGrid').innerHTML = (data.hiddenConcentration || []).map(x=>
+        '<div class="cluster-card"><b>' + x.label + '</b><span>' + String(x.status || 'LOW').replaceAll('_',' ') + ' · ' + x.memberCount + ' positions</span><p>' +
+        x.members.join(' · ') + '<br>' + x.dependency + (x.nextCheck ? '<br><strong>Next:</strong> ' + x.nextCheck : '') + '</p></div>'
+      ).join('');
+
+      const divergences=(data.divergences || []).slice(0,4);
+      const gaps=[...(data.liveResearchGaps || []), ...(data.reviewQueue?.researchGaps || [])].slice(0,5);
+      document.getElementById('liveDivergences').innerHTML = divergences.length ? divergences.map(x=>'<li><strong>' + (x.title || 'Open divergence') + ':</strong> ' + (x.detail || '') + '</li>').join('') : '<li>No open canonical divergence supplied.</li>';
+      document.getElementById('liveGaps').innerHTML = gaps.length ? gaps.map(x=>'<li>' + x + '</li>').join('') : '<li>No current portfolio-overlay data gaps.</li>';
+    }
+
     function renderCards(holdings){
       const sorted = [...holdings].sort((a,b)=>b.score-a.score);
       document.getElementById('holdingsGrid').innerHTML = sorted.map(h=>{
@@ -210,19 +265,21 @@
       }).join('');
     }
 
-    fetch('data/holdings-fundamentals.json', {cache:'no-store'})
-      .then(r=>{if(!r.ok) throw new Error(`HTTP ${r.status}`); return r.json();})
-      .then(data=>{
-        document.getElementById('asOf').textContent = `Research snapshot · ${data.asOf}`;
-        renderSummary(data.holdings);
-        renderWeights(data.methodology.weights);
-        renderRanking(data.holdings);
-        renderCards(data.holdings);
-      })
-      .catch(err=>{
-        document.getElementById('holdingsGrid').innerHTML = `<div class="error-state">Could not load holdings data: ${err.message}</div>`;
-        document.getElementById('asOf').textContent = 'Holdings data unavailable';
-      });
+    Promise.all([
+      fetch('data/holdings-fundamentals.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('holdings HTTP ' + r.status);return r.json();}),
+      fetch('data/portfolio-live-overlay.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('overlay HTTP ' + r.status);return r.json();})
+    ]).then(([data,overlay])=>{
+      document.getElementById('asOf').textContent = 'Research snapshot · ' + data.asOf;
+      renderSummary(data.holdings);
+      renderWeights(data.methodology.weights);
+      renderRanking(data.holdings);
+      renderCards(data.holdings);
+      renderLiveOverlay(overlay);
+    }).catch(err=>{
+      document.getElementById('holdingsGrid').innerHTML = '<div class="error-state">Could not load holdings data: ' + err.message + '</div>';
+      document.getElementById('asOf').textContent = 'Holdings data unavailable';
+      document.getElementById('liveOverlayMeta').textContent = 'Live portfolio overlay unavailable';
+    });
   </script>
 </body>
 </html>
