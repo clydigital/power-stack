@@ -1,0 +1,1115 @@
+{
+  "contractVersion": "power-stack-portfolio-live-overlay/1",
+  "generatedAt": "2026-09-25T09:13:19.276Z",
+  "liveAsOf": "2026-09-25T06:21:24.334+00:00",
+  "liveSyncedAt": "2026-09-25T09:09:07.135Z",
+  "sourceHealth": {
+    "dossier": "OK",
+    "marketMonitor": "PARTIAL",
+    "fredRates": "OK",
+    "nyFedReferenceRates": "OK",
+    "nyFedPrimaryDealers": "OK",
+    "treasuryBills": "OK",
+    "treasurySupply": "UNRESOLVED"
+  },
+  "regime": {
+    "family": "RATES_LED_TIGHTENING",
+    "headline": "Markets trading a rates‑led tightening regime: long-end yields and global sovereigns driving selective risk dislocations while credit and equity breadth remain mixed.",
+    "answer": "Evidence shows a pronounced long-end Treasury and global sovereign yield move (10Y/30Y highs, US real yields up, MOVE elevated) coinciding with a firm dollar and weaker gold, while credit spreads remain comparatively tight and AI/semiconductor breadth outperforms; together this pattern is consistent with a RATES_LED_TIGHTENING regime with selective sector resilience rather than broad risk-off.",
+    "implication": "Position and hedging should treat duration and real-yield risk as the dominant macro impulse; cross-asset transmission to credit and broad equities is incomplete, so sector/market breadth dispersion is likely to persist until credit, breadth or volatility confirm broader risk repricing.",
+    "whatWouldChangeMind": "Sustained widening in HY and IG OAS accompanied by rising equity volatility and deteriorating breadth (new_lows >> new_highs) or a decisive fall in long real yields would move the regime away from rates‑led tightening."
+  },
+  "currentSignals": {
+    "rates": {
+      "state": "TIGHTER",
+      "tighter": 4,
+      "easier": 1,
+      "neutral": 1,
+      "unresolved": 0,
+      "keys": [
+        "RATES_POLICY",
+        "RATES_FRONT_END",
+        "RATES_REAL_YIELDS",
+        "RATES_BREAKEVENS",
+        "RATES_LONG_END",
+        "BILLS"
+      ],
+      "details": [
+        {
+          "key": "RATES_POLICY",
+          "label": "Next-meeting policy pricing",
+          "direction": "EASIER",
+          "confirmation": "CONTRADICTING",
+          "detail": "66% — Fed funds futures priced about 66% odds of a Fed hike at the next meeting in October as longer-dated yields remained elevated.",
+          "asOf": "2026-09-25T06:21:24.334Z"
+        },
+        {
+          "key": "RATES_FRONT_END",
+          "label": "Front-end pricing",
+          "direction": "TIGHTER",
+          "confirmation": "CONFIRMING",
+          "detail": "US 2Y 4.85%; 5D +11.0 bp; vs effective fed funds +97.0 bp.",
+          "asOf": "2026-09-25T06:21:24.334Z"
+        },
+        {
+          "key": "RATES_REAL_YIELDS",
+          "label": "10Y real yield",
+          "direction": "TIGHTER",
+          "confirmation": "CONFIRMING",
+          "detail": "10Y real yield 2.76%; 5D +8.0 bp.",
+          "asOf": "2026-09-25T06:21:24.334Z"
+        },
+        {
+          "key": "RATES_BREAKEVENS",
+          "label": "10Y inflation breakeven",
+          "direction": "NEUTRAL",
+          "confirmation": "UNRESOLVED",
+          "detail": "10Y breakeven 2.33%; 5D +0.0 bp.",
+          "asOf": "2026-09-25T06:21:24.334Z"
+        },
+        {
+          "key": "RATES_LONG_END",
+          "label": "Long-end nominal yields",
+          "direction": "TIGHTER",
+          "confirmation": "CONFIRMING",
+          "detail": "US 10Y 5.11%; 5D +10.0 bp; verified US 30Y 5.45%.",
+          "asOf": "2026-09-25T06:21:24.334Z"
+        },
+        {
+          "key": "BILLS",
+          "label": "Treasury bills / front-end cash",
+          "direction": "TIGHTER",
+          "confirmation": "CONFIRMING",
+          "detail": "3M 4.24%; 6M 4.34%; average vs EFFR +41.0 bp.",
+          "asOf": "2026-09-24"
+        }
+      ]
+    },
+    "funding": {
+      "state": "NEUTRAL",
+      "tighter": 0,
+      "easier": 0,
+      "neutral": 2,
+      "unresolved": 0,
+      "keys": [
+        "FUNDING",
+        "CREDIT"
+      ],
+      "details": [
+        {
+          "key": "FUNDING",
+          "label": "Secured funding / collateral",
+          "direction": "NEUTRAL",
+          "confirmation": "UNRESOLVED",
+          "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR -2.3 bp. Volumes: SOFR $2946bn, TGCR $1188bn, BGCR $1227bn.",
+          "asOf": "2026-09-23"
+        },
+        {
+          "key": "CREDIT",
+          "label": "Credit spreads",
+          "direction": "NEUTRAL",
+          "confirmation": "UNRESOLVED",
+          "detail": "HY OAS 2.73 (5D +3.0 bp); IG OAS 0.77 (5D -1.0 bp).",
+          "asOf": "2026-09-23"
+        }
+      ]
+    },
+    "physicalEnergy": {
+      "status": "ACTIVE",
+      "observed": true,
+      "detail": "Refined product/regional constraints are an inflationary readthrough that can sustain long-end pressure even if crude moves are volatile; geopolitical incidents add an upside risk to crude.",
+      "evidenceRefs": [
+        "verified-macro:eia-padd2-distillate-production-2026-09-18",
+        "verified-macro:eia-padd2-distillate-stocks-2026-09-18",
+        "market-monitor:crack-distillate:2026-09-22",
+        "market-monitor:wti:2026-09-22",
+        "verified-macro:stockedup-houthi-saudi-2026-09-24"
+      ]
+    }
+  },
+  "holdings": [
+    {
+      "ticker": "XOM",
+      "name": "ExxonMobil",
+      "fundamentalScore": 88,
+      "fundamentalGrade": "A",
+      "profileStatus": "MAPPED",
+      "inheritedFrom": null,
+      "profileConfidence": 0.78,
+      "overlayState": "MIXED",
+      "reviewPriority": "REVIEW",
+      "effects": {
+        "rates": "HEADWIND",
+        "funding": "NEUTRAL",
+        "energy": "TAILWIND"
+      },
+      "sensitivities": {
+        "rates": {
+          "value": 1.48,
+          "intensity": "MODERATE",
+          "contributors": [
+            {
+              "factor": "financialConditions",
+              "alignedMarketSensitivity": 2,
+              "weight": 0.0708,
+              "confidence": 0.75,
+              "rationale": "Lower yields ease financing for capex.",
+              "contribution": 0.106
+            },
+            {
+              "factor": "policyRelief",
+              "alignedMarketSensitivity": 1.5,
+              "weight": 0.0389,
+              "confidence": 0.8,
+              "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move.",
+              "contribution": 0.047
+            },
+            {
+              "factor": "riskAppetite",
+              "alignedMarketSensitivity": 0.5,
+              "weight": 0.0353,
+              "confidence": 0.8,
+              "rationale": "Higher risk appetite supports valuation more as speculation rises.",
+              "contribution": 0.014
+            }
+          ]
+        },
+        "funding": {
+          "value": 1.61,
+          "intensity": "MODERATE",
+          "contributors": [
+            {
+              "factor": "financialConditions",
+              "alignedMarketSensitivity": 2,
+              "weight": 0.0708,
+              "confidence": 0.75,
+              "rationale": "Lower yields ease financing for capex.",
+              "contribution": 0.106
+            },
+            {
+              "factor": "creditAvailability",
+              "alignedMarketSensitivity": 1.5,
+              "weight": 0.0532,
+              "confidence": 0.7,
+              "rationale": "Easier credit aids project funding.",
+              "contribution": 0.056
+            },
+            {
+              "factor": "tailCreditStress",
+              "alignedMarketSensitivity": 0.25,
+              "weight": 0.0133,
+              "confidence": 0.9,
+              "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities.",
+              "contribution": 0.003
+            }
+          ]
+        },
+        "energy": {
+          "value": 2.87,
+          "intensity": "HIGH",
+          "contributors": [
+            {
+              "factor": "crudeTightness",
+              "alignedMarketSensitivity": 4.5,
+              "weight": 0.2125,
+              "confidence": 0.95,
+              "rationale": "Upstream cash flow is highly sensitive to crude-price and balance strength.",
+              "contribution": 0.908
+            },
+            {
+              "factor": "inputCostPressure",
+              "alignedMarketSensitivity": -2,
+              "weight": 0.0708,
+              "confidence": 0.7,
+              "rationale": "Rising input costs compress margins.",
+              "contribution": -0.099
+            },
+            {
+              "factor": "productTightness",
+              "alignedMarketSensitivity": 1.5,
+              "weight": 0.0443,
+              "confidence": 0.75,
+              "rationale": "Refining exposure adds some benefit from tight product markets.",
+              "contribution": 0.05
+            },
+            {
+              "factor": "gasTightness",
+              "alignedMarketSensitivity": 1,
+              "weight": 0.0354,
+              "confidence": 0.65,
+              "rationale": "Natural-gas balance sensitivity.",
+              "contribution": 0.023
+            }
+          ]
+        }
+      },
+      "currentAction": "CORE HOLD / NO CHASE",
+      "sizingRead": "Keep as the highest-quality energy anchor; do not add merely because refined-product stress persists.",
+      "addGate": "Controlled retest plus product/crack confirmation and stable company operations.",
+      "trimOrRecycleGate": "Reduce only if energy cluster concentration is excessive or integrated/refining economics deteriorate; crude de-escalation alone is not enough.",
+      "rationale": [
+        "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
+        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
+        "Physical energy: tailwind while Live marks the product/energy lens observed."
+      ]
+    },
+    {
+      "ticker": "MISC",
+      "name": "MISC Berhad",
+      "fundamentalScore": 80,
+      "fundamentalGrade": "B+",
+      "profileStatus": "MAPPED",
+      "inheritedFrom": null,
+      "profileConfidence": 0.87,
+      "overlayState": "MIXED",
+      "reviewPriority": "REVIEW",
+      "effects": {
+        "rates": "HEADWIND",
+        "funding": "NEUTRAL",
+        "energy": "TAILWIND"
+      },
+      "sensitivities": {
+        "rates": {
+          "value": 1.61,
+          "intensity": "MODERATE",
+          "contributors": [
+            {
+              "factor": "financialConditions",
+              "alignedMarketSensitivity": 2,
+              "weight": 0.12,
+              "confidence": 0.8,
+              "rationale": "Capital-intensive fleet/project funding is sensitive to yields.",
+              "contribution": 0.192
+            },
+            {
+              "factor": "riskAppetite",
+              "alignedMarketSensitivity": 1,
+              "weight": 0.05,
+              "confidence": 0.65,
+              "rationale": "Cyclical shipping valuation moves modestly with risk appetite.",
+              "contribution": 0.033
+            },
+            {
+              "factor": "policyRelief",
+              "alignedMarketSensitivity": 1,
+              "weight": 0.05,
+              "confidence": 0.6,
+              "rationale": "Lower rates marginally improve funding economics.",
+              "contribution": 0.03
+            }
+          ]
+        },
+        "funding": {
+          "value": 1.86,
+          "intensity": "HIGH",
+          "contributors": [
+            {
+              "factor": "financialConditions",
+              "alignedMarketSensitivity": 2,
+              "weight": 0.12,
+              "confidence": 0.8,
+              "rationale": "Capital-intensive fleet/project funding is sensitive to yields.",
+              "contribution": 0.192
+            },
+            {
+              "factor": "tailCreditStress",
+              "alignedMarketSensitivity": 1.5,
+              "weight": 0.05,
+              "confidence": 0.75,
+              "rationale": "Funding stress matters to capital-intensive transactions/projects.",
+              "contribution": 0.056
+            }
+          ]
+        },
+        "energy": {
+          "value": 2.29,
+          "intensity": "HIGH",
+          "contributors": [
+            {
+              "factor": "crudeTightness",
+              "alignedMarketSensitivity": 3,
+              "weight": 0.2,
+              "confidence": 0.8,
+              "rationale": "Oil rerouting and seaborne flows can tighten tanker utilisation/rates.",
+              "contribution": 0.48
+            },
+            {
+              "factor": "gasTightness",
+              "alignedMarketSensitivity": 2.5,
+              "weight": 0.2,
+              "confidence": 0.8,
+              "rationale": "LNG security demand supports shipping/related infrastructure.",
+              "contribution": 0.4
+            },
+            {
+              "factor": "productTightness",
+              "alignedMarketSensitivity": 2.5,
+              "weight": 0.15,
+              "confidence": 0.75,
+              "rationale": "Energy-logistics disruption can raise tonne-mile demand, though MISC is not a pure product-tanker play.",
+              "contribution": 0.281
+            },
+            {
+              "factor": "inputCostPressure",
+              "alignedMarketSensitivity": -1,
+              "weight": 0.08,
+              "confidence": 0.65,
+              "rationale": "Operating, maintenance and financing costs can pressure returns.",
+              "contribution": -0.052
+            }
+          ]
+        }
+      },
+      "currentAction": "HOLD",
+      "sizingRead": "Useful diversification inside energy, but still tied to route/freight conditions and Yinson funding risk.",
+      "addGate": "Yinson structure/funding clarity plus resilient freight/tanker economics.",
+      "trimOrRecycleGate": "Route normalization plus weaker freight or adverse funding terms reduce the case.",
+      "rationale": [
+        "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
+        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
+        "Physical energy: tailwind while Live marks the product/energy lens observed."
+      ]
+    },
+    {
+      "ticker": "HIBISCS",
+      "name": "Hibiscus Petroleum Berhad",
+      "fundamentalScore": 74,
+      "fundamentalGrade": "B",
+      "profileStatus": "MAPPED",
+      "inheritedFrom": null,
+      "profileConfidence": 0.9,
+      "overlayState": "MIXED",
+      "reviewPriority": "REVIEW",
+      "effects": {
+        "rates": "HEADWIND",
+        "funding": "NEUTRAL",
+        "energy": "TAILWIND"
+      },
+      "sensitivities": {
+        "rates": {
+          "value": 1.49,
+          "intensity": "MODERATE",
+          "contributors": [
+            {
+              "factor": "riskAppetite",
+              "alignedMarketSensitivity": 2,
+              "weight": 0.07,
+              "confidence": 0.75,
+              "rationale": "Small-cap upstream valuation responds to energy risk appetite.",
+              "contribution": 0.105
+            },
+            {
+              "factor": "financialConditions",
+              "alignedMarketSensitivity": 1.5,
+              "weight": 0.08,
+              "confidence": 0.7,
+              "rationale": "Rates affect project economics and valuation.",
+              "contribution": 0.084
+            },
+            {
+              "factor": "policyRelief",
+              "alignedMarketSensitivity": 0.5,
+              "weight": 0.05,
+              "confidence": 0.55,
+              "rationale": "Monetary policy is secondary to oil and execution.",
+              "contribution": 0.014
+            }
+          ]
+        },
+        "funding": {
+          "value": 1.3,
+          "intensity": "MODERATE",
+          "contributors": [
+            {
+              "factor": "financialConditions",
+              "alignedMarketSensitivity": 1.5,
+              "weight": 0.08,
+              "confidence": 0.7,
+              "rationale": "Rates affect project economics and valuation.",
+              "contribution": 0.084
+            },
+            {
+              "factor": "tailCreditStress",
+              "alignedMarketSensitivity": 1,
+              "weight": 0.05,
+              "confidence": 0.75,
+              "rationale": "Funding stress can compress small-cap cyclicals.",
+              "contribution": 0.038
+            }
+          ]
+        },
+        "energy": {
+          "value": 3.68,
+          "intensity": "VERY_HIGH",
+          "contributors": [
+            {
+              "factor": "crudeTightness",
+              "alignedMarketSensitivity": 4.5,
+              "weight": 0.42,
+              "confidence": 0.97,
+              "rationale": "Realised oil price is the dominant cash-flow channel.",
+              "contribution": 1.833
+            },
+            {
+              "factor": "inputCostPressure",
+              "alignedMarketSensitivity": -1,
+              "weight": 0.08,
+              "confidence": 0.7,
+              "rationale": "Offshore service and operating-cost inflation can offset oil-price gains.",
+              "contribution": -0.056
+            },
+            {
+              "factor": "productTightness",
+              "alignedMarketSensitivity": 1,
+              "weight": 0.05,
+              "confidence": 0.55,
+              "rationale": "Refined-product scarcity supports crude demand at the margin but is not direct refinery exposure.",
+              "contribution": 0.028
+            }
+          ]
+        }
+      },
+      "currentAction": "HOLD / NO ADD",
+      "sizingRead": "Lower WTI reduces macro support; this should not receive fresh capital before repair.",
+      "addGate": "Repair RM2.20-2.25 plus stable realized pricing/production.",
+      "trimOrRecycleGate": "Failure to repair with weakening operations makes it a candidate source of capital for higher-quality or less-correlated exposure.",
+      "rationale": [
+        "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
+        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
+        "Physical energy: tailwind while Live marks the product/energy lens observed."
+      ]
+    },
+    {
+      "ticker": "YTLPOWR",
+      "name": "YTL Power International Berhad",
+      "fundamentalScore": 71,
+      "fundamentalGrade": "B",
+      "profileStatus": "MAPPED",
+      "inheritedFrom": null,
+      "profileConfidence": 0.78,
+      "overlayState": "HEADWIND",
+      "reviewPriority": "HIGH_REVIEW",
+      "effects": {
+        "rates": "HEADWIND",
+        "funding": "NEUTRAL",
+        "energy": "NEUTRAL"
+      },
+      "sensitivities": {
+        "rates": {
+          "value": 1.08,
+          "intensity": "MODERATE",
+          "contributors": [
+            {
+              "factor": "financialConditions",
+              "alignedMarketSensitivity": 1,
+              "weight": 0.0924,
+              "confidence": 0.7,
+              "rationale": "Easier financing supports capex and expansion",
+              "contribution": 0.065
+            },
+            {
+              "factor": "riskAppetite",
+              "alignedMarketSensitivity": 1.5,
+              "weight": 0.0537,
+              "confidence": 0.8,
+              "rationale": "Higher risk appetite supports valuation more as speculation rises.",
+              "contribution": 0.064
+            },
+            {
+              "factor": "policyRelief",
+              "alignedMarketSensitivity": 0.75,
+              "weight": 0.0509,
+              "confidence": 0.8,
+              "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move.",
+              "contribution": 0.031
+            }
+          ]
+        },
+        "funding": {
+          "value": 0.65,
+          "intensity": "LOW",
+          "contributors": [
+            {
+              "factor": "financialConditions",
+              "alignedMarketSensitivity": 1,
+              "weight": 0.0924,
+              "confidence": 0.7,
+              "rationale": "Easier financing supports capex and expansion",
+              "contribution": 0.065
+            },
+            {
+              "factor": "tailCreditStress",
+              "alignedMarketSensitivity": 0.5,
+              "weight": 0.0289,
+              "confidence": 0.9,
+              "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities.",
+              "contribution": 0.013
+            },
+            {
+              "factor": "creditAvailability",
+              "alignedMarketSensitivity": 0,
+              "weight": 0.0578,
+              "confidence": 0.5,
+              "rationale": "Credit spreads modestly affect project funding",
+              "contribution": 0
+            }
+          ]
+        },
+        "energy": {
+          "value": 0.37,
+          "intensity": "LOW",
+          "contributors": [
+            {
+              "factor": "energyTightness",
+              "alignedMarketSensitivity": 2,
+              "weight": 0.1387,
+              "confidence": 0.85,
+              "rationale": "Higher energy prices improve generation margins",
+              "contribution": 0.236
+            },
+            {
+              "factor": "inputCostPressure",
+              "alignedMarketSensitivity": -2,
+              "weight": 0.1155,
+              "confidence": 0.7,
+              "rationale": "Rising fuel costs compress profit margins",
+              "contribution": -0.162
+            }
+          ]
+        }
+      },
+      "currentAction": "HOLD / NO ADD",
+      "sizingRead": "Concentration is the primary portfolio-management constraint even though the structural thesis remains strong.",
+      "addGate": "Only reconsider after portfolio weight is normalized, price clears ~RM6.02/~RM6.14 and contracted load, funding, grid/self-supply, permitting and FCF conversion improve.",
+      "trimOrRecycleGate": "Consider partial risk reduction only if concentration exceeds the chosen cap, financing/contracted-load evidence weakens, or a confirmed breakout fails materially; do not trim solely because the position is profitable.",
+      "rationale": [
+        "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
+        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
+        "Physical energy: neutral while Live marks the product/energy lens observed."
+      ]
+    },
+    {
+      "ticker": "6742UW",
+      "name": "YTL Power structured warrant / linked instrument",
+      "fundamentalScore": 71,
+      "fundamentalGrade": "B",
+      "profileStatus": "INHERITED",
+      "inheritedFrom": "YTLPOWR",
+      "profileConfidence": 0.78,
+      "overlayState": "HEADWIND",
+      "reviewPriority": "HIGH_REVIEW",
+      "effects": {
+        "rates": "HEADWIND",
+        "funding": "NEUTRAL",
+        "energy": "NEUTRAL"
+      },
+      "sensitivities": {
+        "rates": {
+          "value": 1.08,
+          "intensity": "MODERATE",
+          "contributors": [
+            {
+              "factor": "financialConditions",
+              "alignedMarketSensitivity": 1,
+              "weight": 0.0924,
+              "confidence": 0.7,
+              "rationale": "Easier financing supports capex and expansion",
+              "contribution": 0.065
+            },
+            {
+              "factor": "riskAppetite",
+              "alignedMarketSensitivity": 1.5,
+              "weight": 0.0537,
+              "confidence": 0.8,
+              "rationale": "Higher risk appetite supports valuation more as speculation rises.",
+              "contribution": 0.064
+            },
+            {
+              "factor": "policyRelief",
+              "alignedMarketSensitivity": 0.75,
+              "weight": 0.0509,
+              "confidence": 0.8,
+              "rationale": "Expected disinflation/easing can improve discount rates before actual financial conditions move.",
+              "contribution": 0.031
+            }
+          ]
+        },
+        "funding": {
+          "value": 0.65,
+          "intensity": "LOW",
+          "contributors": [
+            {
+              "factor": "financialConditions",
+              "alignedMarketSensitivity": 1,
+              "weight": 0.0924,
+              "confidence": 0.7,
+              "rationale": "Easier financing supports capex and expansion",
+              "contribution": 0.065
+            },
+            {
+              "factor": "tailCreditStress",
+              "alignedMarketSensitivity": 0.5,
+              "weight": 0.0289,
+              "confidence": 0.9,
+              "rationale": "Weak-end credit stress matters most for financing-dependent and speculative equities.",
+              "contribution": 0.013
+            },
+            {
+              "factor": "creditAvailability",
+              "alignedMarketSensitivity": 0,
+              "weight": 0.0578,
+              "confidence": 0.5,
+              "rationale": "Credit spreads modestly affect project funding",
+              "contribution": 0
+            }
+          ]
+        },
+        "energy": {
+          "value": 0.37,
+          "intensity": "LOW",
+          "contributors": [
+            {
+              "factor": "energyTightness",
+              "alignedMarketSensitivity": 2,
+              "weight": 0.1387,
+              "confidence": 0.85,
+              "rationale": "Higher energy prices improve generation margins",
+              "contribution": 0.236
+            },
+            {
+              "factor": "inputCostPressure",
+              "alignedMarketSensitivity": -2,
+              "weight": 0.1155,
+              "confidence": 0.7,
+              "rationale": "Rising fuel costs compress profit margins",
+              "contribution": -0.162
+            }
+          ]
+        }
+      },
+      "currentAction": "NO INCREASE / TRACK TERMS",
+      "sizingRead": "Treat as part of YTLPOWR concentration, not as diversification.",
+      "addGate": "None until strike, expiry, liquidity and standalone market value are verified.",
+      "trimOrRecycleGate": "Time decay/liquidity or parent-thesis deterioration can justify recycling before the parent equity.",
+      "rationale": [
+        "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
+        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
+        "Physical energy: neutral while Live marks the product/energy lens observed."
+      ]
+    },
+    {
+      "ticker": "TTWO",
+      "name": "Take-Two Interactive Software",
+      "fundamentalScore": 68,
+      "fundamentalGrade": "C+",
+      "profileStatus": "MAPPED",
+      "inheritedFrom": null,
+      "profileConfidence": 0.82,
+      "overlayState": "HEADWIND",
+      "reviewPriority": "HIGH_REVIEW",
+      "effects": {
+        "rates": "HEADWIND",
+        "funding": "NEUTRAL",
+        "energy": "NEUTRAL"
+      },
+      "sensitivities": {
+        "rates": {
+          "value": 3.27,
+          "intensity": "VERY_HIGH",
+          "contributors": [
+            {
+              "factor": "financialConditions",
+              "alignedMarketSensitivity": 4,
+              "weight": 0.2,
+              "confidence": 0.85,
+              "rationale": "Large future-title cash flows make valuation moderately duration sensitive.",
+              "contribution": 0.68
+            },
+            {
+              "factor": "riskAppetite",
+              "alignedMarketSensitivity": 3,
+              "weight": 0.15,
+              "confidence": 0.8,
+              "rationale": "Catalyst-heavy growth valuation responds to equity appetite.",
+              "contribution": 0.36
+            },
+            {
+              "factor": "policyRelief",
+              "alignedMarketSensitivity": 1.5,
+              "weight": 0.08,
+              "confidence": 0.65,
+              "rationale": "Lower expected rates help valuation more than operations.",
+              "contribution": 0.078
+            }
+          ]
+        },
+        "funding": {
+          "value": 3.57,
+          "intensity": "VERY_HIGH",
+          "contributors": [
+            {
+              "factor": "financialConditions",
+              "alignedMarketSensitivity": 4,
+              "weight": 0.2,
+              "confidence": 0.85,
+              "rationale": "Large future-title cash flows make valuation moderately duration sensitive.",
+              "contribution": 0.68
+            },
+            {
+              "factor": "tailCreditStress",
+              "alignedMarketSensitivity": 1.5,
+              "weight": 0.05,
+              "confidence": 0.7,
+              "rationale": "Credit stress mainly transmits via consumer spending and valuation.",
+              "contribution": 0.052
+            }
+          ]
+        },
+        "energy": {
+          "value": -0.5,
+          "intensity": "LOW",
+          "contributors": [
+            {
+              "factor": "inputCostPressure",
+              "alignedMarketSensitivity": -0.5,
+              "weight": 0.05,
+              "confidence": 0.55,
+              "rationale": "Labour/development costs matter but are mostly company-specific.",
+              "contribution": -0.014
+            }
+          ]
+        }
+      },
+      "currentAction": "HOLD / NO ADD",
+      "sizingRead": "Do not use lower long yields as a substitute for GTA VI execution/cash-flow proof.",
+      "addGate": "Sustained ~$210 then $216-217 reclaim plus catalyst execution.",
+      "trimOrRecycleGate": "Further technical deterioration or catalyst/cash-flow slippage.",
+      "rationale": [
+        "Rates/duration: headwind with very high sensitivity while the Live channel is tighter.",
+        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
+        "Physical energy: neutral while Live marks the product/energy lens observed."
+      ]
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla",
+      "fundamentalScore": 61,
+      "fundamentalGrade": "C",
+      "profileStatus": "MAPPED",
+      "inheritedFrom": null,
+      "profileConfidence": 0.84,
+      "overlayState": "HEADWIND",
+      "reviewPriority": "HIGH_REVIEW",
+      "effects": {
+        "rates": "HEADWIND",
+        "funding": "NEUTRAL",
+        "energy": "HEADWIND"
+      },
+      "sensitivities": {
+        "rates": {
+          "value": 4.7,
+          "intensity": "VERY_HIGH",
+          "contributors": [
+            {
+              "factor": "financialConditions",
+              "alignedMarketSensitivity": 5,
+              "weight": 0.2,
+              "confidence": 0.95,
+              "rationale": "Long-duration autonomy/robotics expectations make the equity highly sensitive to real yields and discount rates.",
+              "contribution": 0.95
+            },
+            {
+              "factor": "riskAppetite",
+              "alignedMarketSensitivity": 5,
+              "weight": 0.18,
+              "confidence": 0.95,
+              "rationale": "Narrative optionality and a premium multiple amplify changes in speculative appetite.",
+              "contribution": 0.855
+            },
+            {
+              "factor": "policyRelief",
+              "alignedMarketSensitivity": 3,
+              "weight": 0.08,
+              "confidence": 0.8,
+              "rationale": "Lower expected rates improve auto affordability and duration valuation.",
+              "contribution": 0.192
+            }
+          ]
+        },
+        "funding": {
+          "value": 4.63,
+          "intensity": "VERY_HIGH",
+          "contributors": [
+            {
+              "factor": "financialConditions",
+              "alignedMarketSensitivity": 5,
+              "weight": 0.2,
+              "confidence": 0.95,
+              "rationale": "Long-duration autonomy/robotics expectations make the equity highly sensitive to real yields and discount rates.",
+              "contribution": 0.95
+            },
+            {
+              "factor": "tailCreditStress",
+              "alignedMarketSensitivity": 3,
+              "weight": 0.05,
+              "confidence": 0.85,
+              "rationale": "Tesla's balance sheet is strong, but weak-end credit stress usually compresses premium-growth multiples and auto financing demand.",
+              "contribution": 0.128
+            }
+          ]
+        },
+        "energy": {
+          "value": -2,
+          "intensity": "HIGH",
+          "contributors": [
+            {
+              "factor": "inputCostPressure",
+              "alignedMarketSensitivity": -2,
+              "weight": 0.1,
+              "confidence": 0.8,
+              "rationale": "Battery metals, electronics and logistics inflation can pressure vehicle and storage margins.",
+              "contribution": -0.16
+            }
+          ]
+        }
+      },
+      "currentAction": "HOLD / DO NOT AVERAGE DOWN",
+      "sizingRead": "Tactical rate relief helps, but valuation and execution remain the dominant risk-budget constraints.",
+      "addGate": "Sustained >$383 then ~$397 plus stronger storage/autonomy cash-flow evidence.",
+      "trimOrRecycleGate": "Failure of repair, worsening auto economics or evidence that optionality is not converting into cash flow.",
+      "rationale": [
+        "Rates/duration: headwind with very high sensitivity while the Live channel is tighter.",
+        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
+        "Physical energy: headwind while Live marks the product/energy lens observed."
+      ]
+    },
+    {
+      "ticker": "DAYANG",
+      "name": "Dayang Enterprise Holdings Berhad",
+      "fundamentalScore": 57,
+      "fundamentalGrade": "C",
+      "profileStatus": "MAPPED",
+      "inheritedFrom": null,
+      "profileConfidence": 0.83,
+      "overlayState": "MIXED",
+      "reviewPriority": "REVIEW",
+      "effects": {
+        "rates": "HEADWIND",
+        "funding": "NEUTRAL",
+        "energy": "TAILWIND"
+      },
+      "sensitivities": {
+        "rates": {
+          "value": 1.52,
+          "intensity": "MODERATE",
+          "contributors": [
+            {
+              "factor": "riskAppetite",
+              "alignedMarketSensitivity": 2,
+              "weight": 0.08,
+              "confidence": 0.75,
+              "rationale": "Small-cap oil-services sentiment is cyclical.",
+              "contribution": 0.12
+            },
+            {
+              "factor": "financialConditions",
+              "alignedMarketSensitivity": 1.5,
+              "weight": 0.07,
+              "confidence": 0.7,
+              "rationale": "Fleet/project financing matters, though balance sheet has improved.",
+              "contribution": 0.074
+            },
+            {
+              "factor": "policyRelief",
+              "alignedMarketSensitivity": 0.5,
+              "weight": 0.05,
+              "confidence": 0.55,
+              "rationale": "Rates are secondary to utilisation and upstream spending.",
+              "contribution": 0.014
+            }
+          ]
+        },
+        "funding": {
+          "value": 1.5,
+          "intensity": "MODERATE",
+          "contributors": [
+            {
+              "factor": "financialConditions",
+              "alignedMarketSensitivity": 1.5,
+              "weight": 0.07,
+              "confidence": 0.7,
+              "rationale": "Fleet/project financing matters, though balance sheet has improved.",
+              "contribution": 0.074
+            },
+            {
+              "factor": "tailCreditStress",
+              "alignedMarketSensitivity": 1.5,
+              "weight": 0.05,
+              "confidence": 0.75,
+              "rationale": "Weak project/customer credit can delay offshore activity.",
+              "contribution": 0.056
+            }
+          ]
+        },
+        "energy": {
+          "value": 2.3,
+          "intensity": "HIGH",
+          "contributors": [
+            {
+              "factor": "crudeTightness",
+              "alignedMarketSensitivity": 3.5,
+              "weight": 0.3,
+              "confidence": 0.9,
+              "rationale": "Sustained oil strength supports Malaysian upstream maintenance and offshore activity.",
+              "contribution": 0.945
+            },
+            {
+              "factor": "inputCostPressure",
+              "alignedMarketSensitivity": -1.5,
+              "weight": 0.1,
+              "confidence": 0.75,
+              "rationale": "Marine labour, fuel and maintenance inflation pressure margins.",
+              "contribution": -0.113
+            },
+            {
+              "factor": "productTightness",
+              "alignedMarketSensitivity": 1,
+              "weight": 0.05,
+              "confidence": 0.6,
+              "rationale": "Product tightness supports broader energy economics only indirectly.",
+              "contribution": 0.03
+            }
+          ]
+        }
+      },
+      "currentAction": "HOLD / DO NOT AVERAGE DOWN",
+      "sizingRead": "Highest-priority capital-recycling candidate if operating proof does not improve.",
+      "addGate": "Utilization/work-order improvement plus RM1.50-1.52 recovery.",
+      "trimOrRecycleGate": "Break of RM1.42 or continued weak utilization/work-order conversion.",
+      "rationale": [
+        "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
+        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
+        "Physical energy: tailwind while Live marks the product/energy lens observed."
+      ]
+    }
+  ],
+  "hiddenConcentration": [
+    {
+      "id": "ytl-linked",
+      "label": "YTL-linked concentration",
+      "tickers": [
+        "YTLPOWR",
+        "6742UW"
+      ],
+      "dependency": "single-name / linked-instrument concentration",
+      "members": [
+        "YTLPOWR",
+        "6742UW"
+      ],
+      "memberCount": 2,
+      "status": "CONCENTRATION_WATCH",
+      "nextCheck": "Normalize combined weight in base currency and verify warrant terms."
+    },
+    {
+      "id": "energy-complex",
+      "label": "Energy / shipping overlap",
+      "tickers": [
+        "XOM",
+        "HIBISCS",
+        "MISC",
+        "DAYANG"
+      ],
+      "dependency": "crude, products, freight and upstream capex",
+      "members": [
+        "XOM",
+        "HIBISCS",
+        "MISC",
+        "DAYANG"
+      ],
+      "memberCount": 4,
+      "status": "HIGH_OVERLAP",
+      "nextCheck": "Measure common sensitivity to crude, products, freight and upstream capex before adding more energy."
+    },
+    {
+      "id": "duration-sensitive",
+      "label": "Duration-sensitive growth",
+      "tickers": [
+        "TSLA",
+        "TTWO",
+        "YTLPOWR",
+        "6742UW"
+      ],
+      "dependency": "real yields, long-end rates, financial conditions and risk appetite",
+      "members": [
+        "TSLA",
+        "TTWO",
+        "YTLPOWR",
+        "6742UW"
+      ],
+      "memberCount": 4,
+      "status": "HIGH_OVERLAP",
+      "nextCheck": "Normalize combined weight in base currency and verify warrant terms."
+    }
+  ],
+  "reviewQueue": {
+    "highReview": [
+      "YTLPOWR",
+      "6742UW",
+      "TTWO",
+      "TSLA"
+    ],
+    "mixed": [
+      "XOM",
+      "MISC",
+      "HIBISCS",
+      "DAYANG"
+    ],
+    "supported": [],
+    "researchGaps": []
+  },
+  "divergences": [
+    {
+      "id": "spx-rsp",
+      "title": "Headline index and equal weight are separating",
+      "detail": "SPX proxy 0.6% over 5D vs RSP -1.4%.",
+      "assets": [
+        "spx",
+        "rsp"
+      ]
+    },
+    {
+      "id": "copper-china",
+      "title": "Copper is decoupling from China equities",
+      "detail": "Copper proxy 2.5% vs China A-shares -0.7%.",
+      "assets": [
+        "copper",
+        "csi300"
+      ]
+    },
+    {
+      "id": "monetary:rates_policy",
+      "title": "Next-meeting policy pricing contradicts the current rate baseline",
+      "detail": "66% — Fed funds futures priced about 66% odds of a Fed hike at the next meeting in October as longer-dated yields remained elevated.",
+      "assets": [
+        "RATES_POLICY"
+      ]
+    }
+  ],
+  "liveResearchGaps": [
+    "Treasury supply/auction state is not yet normalized into market-intelligence-snapshot/v1."
+  ],
+  "guardrails": [
+    "This overlay does not change company fundamental scores.",
+    "HEADWIND / TAILWIND describes current macro exposure, not a buy or sell recommendation.",
+    "Power Stack action gates remain company- and portfolio-owned.",
+    "Live contradictions remain open investigations until independently resolved.",
+    "Missing profiles remain RESEARCH_GAP rather than zero sensitivity."
+  ],
+  "sourceFiles": [
+    "data/live-desk-canonical.json",
+    "data/holdings-fundamentals.json",
+    "data/macro-sensitivities.json",
+    "data/macro-sensitivity-supplement.json",
+    "data/portfolio-management.json"
+  ]
+}
