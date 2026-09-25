@@ -201,6 +201,36 @@ function effectReason(channel, effect, exposure, signal) {
   return `${channel}: ${effect.toLowerCase()} with ${intensityLabel} sensitivity while the Live channel is ${signal.toLowerCase()}.`;
 }
 
+function tapeAlignment(overlayState, row) {
+  if (!row || row.status !== "CLOSED" || !Number.isFinite(Number(row.changePct))) {
+    return { status: "UNRESOLVED", reason: "No completed-session holding tape is available." };
+  }
+  const move = Number(row.changePct);
+  const threshold = 0.25;
+  if (overlayState === "MIXED" || overlayState === "NEUTRAL" || overlayState === "UNRESOLVED") {
+    return {
+      status: "INCONCLUSIVE",
+      reason: "The macro overlay is not directional enough to judge one-session confirmation.",
+    };
+  }
+  if (Math.abs(move) < threshold) {
+    return {
+      status: "FLAT",
+      reason: "The completed-session move is too small to count as confirmation or divergence.",
+    };
+  }
+  const expectedSign = overlayState === "HEADWIND" ? -1 : 1;
+  const actualSign = move > 0 ? 1 : -1;
+  return {
+    status: expectedSign === actualSign ? "CONFIRMS" : "DIVERGES",
+    reason:
+      expectedSign === actualSign
+        ? "Completed-session tape moved in the direction implied by the current macro overlay."
+        : "Completed-session tape moved against the direction implied by the current macro overlay.",
+  };
+}
+
+
 
 function findLens(live, key) {
   return (live.lenses || []).find((item) => item.key === key) || null;
@@ -308,9 +338,11 @@ function buildOverlay(existingGeneratedAt = null) {
   }
   const holdingsData = read("data/holdings-fundamentals.json");
   const portfolio = read("data/portfolio-management.json");
+  const holdingTape = read("data/holding-tape.json");
   const baseProfiles = read("data/macro-sensitivities.json");
   const supplement = read("data/macro-sensitivity-supplement.json");
   const profiles = mergeProfiles(baseProfiles, supplement);
+  const tapeByTicker = new Map((holdingTape.holdings || []).map((item) => [String(item.ticker).toUpperCase(), item]));
   const actions = new Map((portfolio.actions || []).map((item) => [String(item.ticker).toUpperCase(), item]));
   const signals = live.monetarySignals?.signals || [];
   const rates = signalState(signals, RATE_KEYS);
@@ -331,6 +363,8 @@ function buildOverlay(existingGeneratedAt = null) {
       energy: energyEffect(energyActive, energyExposure),
     };
     const overlayState = combineEffects(effects);
+    const tape = tapeByTicker.get(ticker) || null;
+    const reaction = tapeAlignment(overlayState, tape);
     return {
       ticker,
       name: holding.name,
@@ -345,6 +379,19 @@ function buildOverlay(existingGeneratedAt = null) {
         rateExposure,
         action: manual?.action,
       }),
+      actualReaction: {
+        status: reaction.status,
+        reason: reaction.reason,
+        sessionDate: tape?.sessionDate || null,
+        close: tape?.close ?? null,
+        previousClose: tape?.previousClose ?? null,
+        change: tape?.change ?? null,
+        changePct: tape?.changePct ?? null,
+        currency: tape?.currency || null,
+        sourceName: tape?.sourceName || null,
+        sourceUrl: tape?.sourceUrl || null,
+        closeNotice: tape?.closeNotice || null,
+      },
       effects,
       sensitivities: {
         rates: rateExposure,
@@ -381,6 +428,8 @@ function buildOverlay(existingGeneratedAt = null) {
   });
 
   const highReview = holdings.filter((item) => item.reviewPriority === "HIGH_REVIEW").map((item) => item.ticker);
+  const tapeDivergences = holdings.filter((item) => item.actualReaction?.status === "DIVERGES").map((item) => item.ticker);
+  const tapeConfirmations = holdings.filter((item) => item.actualReaction?.status === "CONFIRMS").map((item) => item.ticker);
   const researchGaps = holdings.filter((item) => item.profileStatus === "MISSING").map((item) => `Missing macro-sensitivity profile: ${item.ticker}`);
 
   return {
@@ -407,6 +456,8 @@ function buildOverlay(existingGeneratedAt = null) {
       highReview,
       mixed: holdings.filter((item) => item.overlayState === "MIXED").map((item) => item.ticker),
       supported: holdings.filter((item) => item.overlayState === "TAILWIND").map((item) => item.ticker),
+      tapeDivergences,
+      tapeConfirmations,
       researchGaps,
     },
     divergences: (live.contradictions || []).slice(0, 6),
@@ -417,6 +468,7 @@ function buildOverlay(existingGeneratedAt = null) {
       "Power Stack action gates remain company- and portfolio-owned.",
       "Live contradictions remain open investigations until independently resolved.",
       "Portfolio divergence hypotheses are deterministic prompts for investigation, not causal proof.",
+      "Holding-tape confirmation uses completed regular sessions only; MIXED overlays are never forced into directional confirmation.",
       "Missing profiles remain RESEARCH_GAP rather than zero sensitivity.",
     ],
     sourceFiles: [
@@ -425,6 +477,7 @@ function buildOverlay(existingGeneratedAt = null) {
       "data/macro-sensitivities.json",
       "data/macro-sensitivity-supplement.json",
       "data/portfolio-management.json",
+      "data/holding-tape.json",
     ],
   };
 }
