@@ -26,12 +26,6 @@ function sameJson(a, b) {
   return JSON.stringify(canonical(a)) === JSON.stringify(canonical(b));
 }
 
-function ageHours(value, now = new Date()) {
-  if (!value) return Infinity;
-  const parsed = Date.parse(value);
-  return Number.isFinite(parsed) ? Math.max(0, (now.getTime() - parsed) / 3600000) : Infinity;
-}
-
 function importanceScore(holding) {
   let score = 0;
   if (holding.actualReaction?.status === "DIVERGES") score += 100;
@@ -134,22 +128,18 @@ function build(existingGeneratedAt = null) {
 
   const caps = config.powerSweep?.hardCaps || {};
   const maxTotal = Number(caps.totalExternalInvestigations || 12);
-  const now = new Date();
-
   const inputHealth = {
     liveDesk: {
       contractVersion: live.contractVersion,
       expectedContract: "power-stack-live-desk-canonical/2",
       asOf: live.asOf || null,
       syncedAt: live.syncedAt || null,
-      ageHours: Number(ageHours(live.syncedAt || live.asOf, now).toFixed(1)),
       status: live.contractVersion === "power-stack-live-desk-canonical/2" ? "OK" : "BLOCKING",
     },
     portfolioOverlay: {
       contractVersion: overlay.contractVersion,
       expectedContract: "power-stack-portfolio-live-overlay/1",
       generatedAt: overlay.generatedAt || null,
-      ageHours: Number(ageHours(overlay.generatedAt, now).toFixed(1)),
       status: overlay.contractVersion === "power-stack-portfolio-live-overlay/1" ? "OK" : "BLOCKING",
     },
     holdingTape: {
