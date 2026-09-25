@@ -12,7 +12,7 @@ A searchable, versioned investment-research vault for nuclear, AI infrastructure
 - `data/research-sweep-config.json` is the recurring research-process contract. It requires the current Market Research Cranium to be read first as a research seed/source registry, followed by independent verification, a global macro sweep, separate US and China/Hong Kong rate sweeps, every current holding, the full canonical watchlist and a China-focused tracked-idea adjunct.
 - Dated `data/cranium-rates-sweep-YYYY-MM-DD.json` files are research overlays that preserve Cranium-driven hypotheses, regional rate regimes and stock-level rate sensitivities without overwriting Base Conviction or company fundamentals.
 - Category and intraday research files add specialised research without replacing the long-term database.
-- `data/live-context.json` is retained only as historical/dormant integration data and is not read by the Power Stack frontend.
+- `data/live-desk-canonical.json` is the active read-only Live Desk cross-check: canonical regime, lenses, six-asset state when available, Stock Radar and creator-verification status.\n- `data/live-context.json` is retained only as historical integration data and is not used for current scoring.
 
 ### Cranium ingestion guardrail
 
