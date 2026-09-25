@@ -1,6 +1,7 @@
 {
-  "contractVersion": "power-stack-live-desk-canonical/1",
-  "sourceUrl": "https://alchemy-live-market-desk.vercel.app/api/dossier-v2",
+  "contractVersion": "power-stack-live-desk-canonical/2",
+  "sourceUrl": "https://alchemy-live-market-desk.vercel.app/api/market-intelligence-snapshot",
+  "liveContractVersion": "market-intelligence-snapshot/v1",
   "sourceStatus": "current",
   "dossierId": "10d9e1ed-1549-4e05-8775-4cb96459ab29",
   "asOf": "2026-09-25T06:21:24.334+00:00",
@@ -115,6 +116,352 @@
     "nextMeetingRateOutlook": "MORE_DOVISH",
     "fedWatchExpectedDirection": "HIKE_ODDS_DOWN"
   },
+  "monetarySignals": {
+    "baseline": "HAWKISH",
+    "signals": [
+      {
+        "key": "RATES_POLICY",
+        "label": "Next-meeting policy pricing",
+        "direction": "EASIER",
+        "confirmation": "CONTRADICTING",
+        "detail": "66% — Fed funds futures priced about 66% odds of a Fed hike at the next meeting in October as longer-dated yields remained elevated.",
+        "asOf": "2026-09-25T06:21:24.334Z",
+        "sourceName": "Live deterministic rate regime",
+        "sourceUrl": null,
+        "evidenceRefs": [
+          "verified-macro:fedfunds-oct28-hike-odds-2026-09-24"
+        ],
+        "metrics": {
+          "score": -1
+        }
+      },
+      {
+        "key": "RATES_FRONT_END",
+        "label": "Front-end pricing",
+        "direction": "TIGHTER",
+        "confirmation": "CONFIRMING",
+        "detail": "US 2Y 4.85%; 5D +11.0 bp; vs effective fed funds +97.0 bp.",
+        "asOf": "2026-09-25T06:21:24.334Z",
+        "sourceName": "Live deterministic rate regime",
+        "sourceUrl": null,
+        "evidenceRefs": [
+          "market-monitor:us2y:2026-09-23",
+          "market-monitor:fed-funds-effective:2026-09-23"
+        ],
+        "metrics": {
+          "score": 2
+        }
+      },
+      {
+        "key": "RATES_REAL_YIELDS",
+        "label": "10Y real yield",
+        "direction": "TIGHTER",
+        "confirmation": "CONFIRMING",
+        "detail": "10Y real yield 2.76%; 5D +8.0 bp.",
+        "asOf": "2026-09-25T06:21:24.334Z",
+        "sourceName": "Live deterministic rate regime",
+        "sourceUrl": null,
+        "evidenceRefs": [
+          "market-monitor:us10y-real:2026-09-23"
+        ],
+        "metrics": {
+          "score": 2
+        }
+      },
+      {
+        "key": "RATES_BREAKEVENS",
+        "label": "10Y inflation breakeven",
+        "direction": "NEUTRAL",
+        "confirmation": "UNRESOLVED",
+        "detail": "10Y breakeven 2.33%; 5D +0.0 bp.",
+        "asOf": "2026-09-25T06:21:24.334Z",
+        "sourceName": "Live deterministic rate regime",
+        "sourceUrl": null,
+        "evidenceRefs": [
+          "market-monitor:us10y-breakeven:2026-09-24"
+        ],
+        "metrics": {
+          "score": 0
+        }
+      },
+      {
+        "key": "RATES_LONG_END",
+        "label": "Long-end nominal yields",
+        "direction": "TIGHTER",
+        "confirmation": "CONFIRMING",
+        "detail": "US 10Y 5.11%; 5D +10.0 bp; verified US 30Y 5.45%.",
+        "asOf": "2026-09-25T06:21:24.334Z",
+        "sourceName": "Live deterministic rate regime",
+        "sourceUrl": null,
+        "evidenceRefs": [
+          "market-monitor:us10y-fred:2026-09-23",
+          "verified-macro:us30y-high-sep24-2026"
+        ],
+        "metrics": {
+          "score": 1
+        }
+      },
+      {
+        "key": "FUNDING",
+        "label": "Secured funding / collateral",
+        "direction": "NEUTRAL",
+        "confirmation": "UNRESOLVED",
+        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR -2.3 bp. Volumes: SOFR $2946bn, TGCR $1188bn, BGCR $1227bn.",
+        "asOf": "2026-09-23",
+        "sourceName": "Federal Reserve Bank of New York",
+        "sourceUrl": "https://markets.newyorkfed.org/api/rates/all/latest.json",
+        "evidenceRefs": [],
+        "metrics": {
+          "effr": 3.88,
+          "sofr": 3.87,
+          "tgcr": 3.85,
+          "bgcr": 3.85,
+          "securedVsEffrBps": -2.3,
+          "sofrVolumeBillions": 2946,
+          "tgcrVolumeBillions": 1188,
+          "bgcrVolumeBillions": 1227
+        }
+      },
+      {
+        "key": "BILLS",
+        "label": "Treasury bills / front-end cash",
+        "direction": "TIGHTER",
+        "confirmation": "CONFIRMING",
+        "detail": "3M 4.24%; 6M 4.34%; average vs EFFR +41.0 bp.",
+        "asOf": "2026-09-24",
+        "sourceName": "U.S. Department of the Treasury",
+        "sourceUrl": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026",
+        "evidenceRefs": [],
+        "metrics": {
+          "bill3m": 4.24,
+          "bill6m": 4.34,
+          "effectiveFedFunds": 3.88,
+          "billsVsEffrBps": 41
+        }
+      },
+      {
+        "key": "CREDIT",
+        "label": "Credit spreads",
+        "direction": "NEUTRAL",
+        "confirmation": "UNRESOLVED",
+        "detail": "HY OAS 2.73 (5D +3.0 bp); IG OAS 0.77 (5D -1.0 bp).",
+        "asOf": "2026-09-23",
+        "sourceName": "Federal Reserve Economic Data",
+        "sourceUrl": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
+        "evidenceRefs": [],
+        "metrics": {
+          "hyOas": 2.73,
+          "hyOas5dBps": 3,
+          "igOas": 0.77,
+          "igOas5dBps": -1
+        }
+      },
+      {
+        "key": "USD",
+        "label": "US dollar transmission",
+        "direction": "TIGHTER",
+        "confirmation": "CONFIRMING",
+        "detail": "US Dollar · UUP proxy 5D +1.09%.",
+        "asOf": "2026-09-24",
+        "sourceName": "Nasdaq official etf history",
+        "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical",
+        "evidenceRefs": [],
+        "metrics": {
+          "proxyLevel": 28.69,
+          "change5dPct": 1.09
+        }
+      },
+      {
+        "key": "DEALER_POSITIONING",
+        "label": "Primary-dealer balance sheet",
+        "direction": "UNRESOLVED",
+        "confirmation": "UNRESOLVED",
+        "detail": "Treasury dealer net position ex-TIPS $454,557m; weekly change $-5,892m. Fails to deliver 161712m; fails to receive 158653m. Direction is not forced without a validated balance-sheet interpretation.",
+        "asOf": "2026-09-16",
+        "sourceName": "Federal Reserve Bank of New York",
+        "sourceUrl": "https://markets.newyorkfed.org/api/pd/get/PDPOSGST-TOT_PDFTD-USTET_PDFTR-USTET.json",
+        "evidenceRefs": [],
+        "metrics": {
+          "treasuryNetPositionMillions": 454557,
+          "treasuryNetPositionWeeklyChangeMillions": -5892,
+          "failsToDeliverMillions": 161712,
+          "failsToReceiveMillions": 158653
+        }
+      },
+      {
+        "key": "TREASURY_SUPPLY",
+        "label": "Treasury supply / auctions",
+        "direction": "UNRESOLVED",
+        "confirmation": "UNRESOLVED",
+        "detail": "Live has Treasury auction/supply research logic, but market-intelligence-snapshot/v1 does not yet normalize a current machine-readable supply impulse. Keep this unresolved rather than infer from yields.",
+        "asOf": "2026-09-25T06:21:24.334+00:00",
+        "sourceName": "Live Desk research state",
+        "sourceUrl": null,
+        "evidenceRefs": [],
+        "metrics": {}
+      }
+    ],
+    "confirming": [
+      "RATES_FRONT_END",
+      "RATES_REAL_YIELDS",
+      "RATES_LONG_END",
+      "BILLS",
+      "USD"
+    ],
+    "contradicting": [
+      "RATES_POLICY"
+    ],
+    "unresolved": [
+      "RATES_BREAKEVENS",
+      "FUNDING",
+      "CREDIT",
+      "DEALER_POSITIONING",
+      "TREASURY_SUPPLY"
+    ],
+    "summary": "Rate baseline HAWKISH; 5 confirming, 1 contradicting, 5 unresolved/neutral monetary-market layers."
+  },
+  "sourceHealth": {
+    "dossier": "OK",
+    "marketMonitor": "PARTIAL",
+    "fredRates": "OK",
+    "nyFedReferenceRates": "OK",
+    "nyFedPrimaryDealers": "OK",
+    "treasuryBills": "OK",
+    "treasurySupply": "UNRESOLVED"
+  },
+  "contradictions": [
+    {
+      "id": "spx-rsp",
+      "title": "Headline index and equal weight are separating",
+      "detail": "SPX proxy 0.6% over 5D vs RSP -1.4%.",
+      "assets": [
+        "spx",
+        "rsp"
+      ]
+    },
+    {
+      "id": "copper-china",
+      "title": "Copper is decoupling from China equities",
+      "detail": "Copper proxy 2.5% vs China A-shares -0.7%.",
+      "assets": [
+        "copper",
+        "csi300"
+      ]
+    },
+    {
+      "id": "monetary:rates_policy",
+      "title": "Next-meeting policy pricing contradicts the current rate baseline",
+      "detail": "66% — Fed funds futures priced about 66% odds of a Fed hike at the next meeting in October as longer-dated yields remained elevated.",
+      "assets": [
+        "RATES_POLICY"
+      ]
+    }
+  ],
+  "researchGaps": [
+    "Treasury supply/auction state is not yet normalized into market-intelligence-snapshot/v1."
+  ],
+  "marketRows": [
+    {
+      "id": "dxy",
+      "symbol": "UUP",
+      "label": "US Dollar · UUP proxy",
+      "last": 28.69,
+      "change5d": 1.09,
+      "asOf": "2026-09-24",
+      "sourceName": "Nasdaq official etf history",
+      "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical"
+    },
+    {
+      "id": "us3m-bill",
+      "symbol": "DGS3MO",
+      "label": "US 3M Treasury Bill Yield",
+      "last": 4.19,
+      "change5d": 1.21,
+      "asOf": "2026-09-23",
+      "sourceName": "Federal Reserve Economic Data",
+      "sourceUrl": "https://fred.stlouisfed.org/series/DGS3MO"
+    },
+    {
+      "id": "us6m-bill",
+      "symbol": "DGS6MO",
+      "label": "US 6M Treasury Bill Yield",
+      "last": 4.31,
+      "change5d": 2.13,
+      "asOf": "2026-09-23",
+      "sourceName": "Federal Reserve Economic Data",
+      "sourceUrl": "https://fred.stlouisfed.org/series/DGS6MO"
+    },
+    {
+      "id": "us2y",
+      "symbol": "DGS2",
+      "label": "US 2Y Yield",
+      "last": 4.85,
+      "change5d": 2.32,
+      "asOf": "2026-09-23",
+      "sourceName": "Federal Reserve Economic Data",
+      "sourceUrl": "https://fred.stlouisfed.org/series/DGS2"
+    },
+    {
+      "id": "us10y-fred",
+      "symbol": "DGS10",
+      "label": "US 10Y Yield · FRED",
+      "last": 5.11,
+      "change5d": 2,
+      "asOf": "2026-09-23",
+      "sourceName": "Federal Reserve Economic Data",
+      "sourceUrl": "https://fred.stlouisfed.org/series/DGS10"
+    },
+    {
+      "id": "us10y-real",
+      "symbol": "DFII10",
+      "label": "US 10Y Real Yield",
+      "last": 2.76,
+      "change5d": 2.99,
+      "asOf": "2026-09-23",
+      "sourceName": "Federal Reserve Economic Data",
+      "sourceUrl": "https://fred.stlouisfed.org/series/DFII10"
+    },
+    {
+      "id": "us10y-breakeven",
+      "symbol": "T10YIE",
+      "label": "US 10Y Breakeven Inflation",
+      "last": 2.33,
+      "change5d": 0,
+      "asOf": "2026-09-24",
+      "sourceName": "Federal Reserve Economic Data",
+      "sourceUrl": "https://fred.stlouisfed.org/series/T10YIE"
+    },
+    {
+      "id": "fed-funds-effective",
+      "symbol": "DFF",
+      "label": "Effective Federal Funds Rate",
+      "last": 3.88,
+      "change5d": 0,
+      "asOf": "2026-09-23",
+      "sourceName": "Federal Reserve Economic Data",
+      "sourceUrl": "https://fred.stlouisfed.org/series/DFF"
+    },
+    {
+      "id": "hy-oas",
+      "symbol": "BAMLH0A0HYM2",
+      "label": "US High Yield OAS",
+      "last": 2.73,
+      "change5d": 1.11,
+      "asOf": "2026-09-23",
+      "sourceName": "Federal Reserve Economic Data",
+      "sourceUrl": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
+    },
+    {
+      "id": "ig-oas",
+      "symbol": "BAMLC0A0CM",
+      "label": "US Investment Grade OAS",
+      "last": 0.77,
+      "change5d": -1.28,
+      "asOf": "2026-09-23",
+      "sourceName": "Federal Reserve Economic Data",
+      "sourceUrl": "https://fred.stlouisfed.org/series/BAMLC0A0CM"
+    }
+  ],
   "lenses": [
     {
       "key": "US_RATES",
@@ -142,6 +489,31 @@
       "evidenceRefs": [
         "verified-macro:stockedup-global-bond-yields-2026-09-24",
         "verified-macro:bund-long-end-sep24-2026"
+      ]
+    },
+    {
+      "key": "USD",
+      "label": "US dollar",
+      "observed": true,
+      "reaction": "Dollar proxies firmed modestly alongside higher yields.",
+      "interpretation": "Stronger yields and safe-haven/real-yield demand are supporting the dollar, which in turn weighs on gold.",
+      "unresolvedSignals": [],
+      "evidenceRefs": [
+        "market-monitor:dxy:2026-09-24",
+        "market-monitor:usdjpy:2026-09-24"
+      ]
+    },
+    {
+      "key": "CREDIT",
+      "label": "Credit spreads",
+      "observed": true,
+      "reaction": "HY and IG OAS remain near recent tight levels rather than signaling a broad credit repricing.",
+      "interpretation": "Credit markets have not yet transmitted the long-end stress; this limits the case for a full market-wide risk-off.",
+      "unresolvedSignals": [],
+      "evidenceRefs": [
+        "market-monitor:hy-oas:2026-09-23",
+        "market-monitor:ig-oas:2026-09-23",
+        "verified-macro:hy-oas-sep22-2026"
       ]
     },
     {
@@ -202,7 +574,7 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-09-25T06:21:45.807Z",
+    "asOf": "2026-09-25T09:08:29.913Z",
     "assets": [
       {
         "key": "SPX",
@@ -296,6 +668,148 @@
       }
     ]
   },
+  "stories": [
+    {
+      "id": "story-duration-broadening",
+      "title": "Long-end duration stress has broadened and appears global.",
+      "whatChanged": "10Y and 30Y Treasury yields reached multi-year highs while a Bloomberg global sovereign gauge approached 4%, and real yields rose materially.",
+      "whyItMatters": "Broad long-end pressure increases the economy’s sensitivity to financing costs and can propagate via duration and funding channels into broader risk assets if credit or volatility follow.",
+      "mechanism": "Stronger activity data and energy cost pressure push expected policy persistence and real yields higher, lifting long yields and term premia across sovereigns; higher long yields elevate discount rates and raise financing costs for duration-sensitive sectors.",
+      "conclusion": "Observed evidence supports a US-led but increasingly global long-end duration tightening; transmission into credit and broad equities is not yet confirmed.",
+      "whatWouldChangeMind": "If HY and IG spreads begin a persistent widening alongside rising VIX and falling breadth, this would indicate transmission into broader risk-off.",
+      "epistemicLabel": "OBSERVED",
+      "evidenceRefs": [
+        "market-monitor:us10y:2026-09-24",
+        "verified-macro:us30y-high-sep24-2026",
+        "verified-macro:stockedup-global-bond-yields-2026-09-24",
+        "market-monitor:us10y-real:2026-09-23",
+        "market-monitor:hy-oas:2026-09-23"
+      ],
+      "investigationIds": [
+        "inv-duration-transmission"
+      ],
+      "chartIds": [
+        "chart-us-yield-decomp"
+      ]
+    },
+    {
+      "id": "story-distillate-tightness",
+      "title": "Midwest distillate (ULSD/heating oil) shows physical tightness despite mixed crude direction.",
+      "whatChanged": "PADD 2 distillate production, specific low-sulfur ULSD output and regional stocks declined week-on-week while distillate crack remained elevated in recent snapshots.",
+      "whyItMatters": "Physical product stress (distillate) can sustain inflationary impulses even if WTI moves are volatile, supporting higher long yields via inflation and supply-risk channels.",
+      "mechanism": "Reduced PADD-2 production and utilization with falling regional stocks tightens physical diesel/heating markets, which can raise local price spreads and feed into CPI-sensitive components.",
+      "conclusion": "Regional distillate metrics show tangible tightness that can act as an inflationary support even as WTI has softened recently; this supports the rates impulse.",
+      "whatWouldChangeMind": "Regional distillate stocks and production reversing higher, or crack spreads collapsing alongside sustained crude weakness, would weaken the inflation readthrough.",
+      "epistemicLabel": "SUPPORTED",
+      "evidenceRefs": [
+        "verified-macro:eia-padd2-distillate-production-2026-09-18",
+        "verified-macro:eia-padd2-distillate-stocks-2026-09-18",
+        "verified-macro:eia-padd2-ulsd-production-2026-09-18",
+        "verified-macro:eia-padd2-refinery-utilization-2026-09-18",
+        "market-monitor:crack-distillate:2026-09-22"
+      ],
+      "investigationIds": [
+        "inv-energy-product-structure"
+      ],
+      "chartIds": [
+        "chart-wti-ulsd-crack"
+      ]
+    },
+    {
+      "id": "story-ai-narrow-lead",
+      "title": "AI/semiconductor leadership remains narrow and concentrated amid weaker broad participation.",
+      "whatChanged": "SMH outperformance and AI-basket breadth remain strong while S&P large-cap breadth shows more constituents at short-term lows than highs and index concentration is elevated.",
+      "whyItMatters": "Narrow leadership can keep headline indices afloat while underlying breadth and participation are weak, raising dispersion and sector-level risk exposures.",
+      "mechanism": "Strong demand for AI/semiconductor exposures and company-specific catalysts concentrate returns in a small number of mega-caps, masking weaker breadth that would otherwise signal broader risk repricing.",
+      "conclusion": "AI/semiconductor leadership is intact and confirmed by breadth inside the sector, but overall market participation is weaker and concentrated in a few mega-caps.",
+      "whatWouldChangeMind": "Breadth improvement across sectors, meaningful gains in small caps or a fall in index concentration would invalidate the narrow-lead characterization.",
+      "epistemicLabel": "SUPPORTED",
+      "evidenceRefs": [
+        "market-monitor:smh:2026-09-24",
+        "market-breadth:ai-basket:2026-09-24",
+        "verified-macro:stockedup-nbis-upgrade-2026-09-24",
+        "verified-macro:stockedup-spx-concentration-2026-09-24",
+        "market-breadth:large-cap:2026-09-24"
+      ],
+      "investigationIds": [],
+      "chartIds": []
+    }
+  ],
+  "investigations": [
+    {
+      "id": "inv-duration-transmission",
+      "status": "open",
+      "question": "Is the long-end duration shock broadening into a generalized risk-off that impacts credit, breadth and equities?",
+      "whyItMatters": "Determines whether duration moves require cross-asset de-risking or targeted duration/real-yield hedges only.",
+      "currentExplanation": "Observed long-end moves and higher real yields point to rates-led tightening, but credit spreads remain tight and equity volatility is contained, leaving transmission unresolved.",
+      "competingExplanations": [
+        "Duration move is driven by real-yield/term premium due to growth and energy (limited credit transmission).",
+        "Duration move presages broader risk repricing that credit and volatility have lagged in reflecting."
+      ],
+      "researchNext": "Run chart-us-yield-decomp and chart-credit-breadth-vol; gather intraday flow and options skew; request foreign sovereign long-end yield series. Confirm global duration with Bund, gilt and JGB long ends; cross-check gold versus real yields and USD; compare HY/IG, breadth and MOVE/VIX",
+      "confirmationCondition": "Sustained HY/IG widening with rising VIX and worsening breadth over several sessions.",
+      "invalidationCondition": "Credit spreads remain tight with VIX contained and breadth stabilizes despite persistent high long yields.",
+      "evidenceRefs": [
+        "market-monitor:us10y:2026-09-24",
+        "verified-macro:us30y-high-sep24-2026",
+        "market-monitor:us10y-real:2026-09-23",
+        "verified-macro:move-vix-divergence-sep23-2026",
+        "market-monitor:hy-oas:2026-09-23",
+        "market-breadth:ai-basket:2026-09-24",
+        "market-breadth:large-cap:2026-09-24"
+      ],
+      "missingEvidence": [
+        "High-frequency intraday flow/blocks and dealer positioning (options skew, flow) to test immediate transmission",
+        "Foreign sovereign 10Y+ confirmations (detailed JGB/Bund/gilt term-premium decomposition)",
+        "Longer-run credit cohort breakdown (sector-level IG/HY moves)",
+        "Bund, gilt and JGB long-end confirmation for any global-duration label",
+        "gold versus real-yield and USD cross-check",
+        "HY/IG credit, breadth and MOVE/VIX transmission confirmation"
+      ],
+      "chartIds": [
+        "chart-us-yield-decomp",
+        "chart-credit-breadth-vol"
+      ],
+      "storyIds": [
+        "story-duration-broadening"
+      ]
+    },
+    {
+      "id": "inv-energy-product-structure",
+      "status": "open",
+      "question": "Will regional distillate/product tightness sustain inflationary pressure and therefore support higher long yields?",
+      "whyItMatters": "Physical product tightness is an independent inflation channel that can keep long yields elevated even if crude softens.",
+      "currentExplanation": "PADD-2 production, ULSD output and regional stocks declined while distillate crack remains elevated — this supports an inflationary product channel but crude direction is mixed.",
+      "competingExplanations": [
+        "Physical product dynamics are local and temporary; broader crude declines will relieve pressure.",
+        "Regional refinery disruptions/export shifts could sustain spreads regardless of global crude direction."
+      ],
+      "researchNext": "Pull product curve term structure, full EIA PADD-level time series, and refinery outage reports; run chart-wti-ulsd-crack. Check the crude curve, backwardation and refined-product cracks; verify Trump–Xi outcomes and implementation before using them as facts",
+      "confirmationCondition": "Sustained ULSD and crack strength with falling PADD-2 stocks and lower refinery utilization over multiple weekly releases.",
+      "invalidationCondition": "Inventories rebuild, refinery utilization recovers, and cracks fall sustainably.",
+      "evidenceRefs": [
+        "verified-macro:eia-padd2-distillate-production-2026-09-18",
+        "verified-macro:eia-padd2-distillate-stocks-2026-09-18",
+        "verified-macro:eia-padd2-ulsd-production-2026-09-18",
+        "verified-macro:eia-padd2-refinery-utilization-2026-09-18",
+        "market-monitor:crack-distillate:2026-09-22",
+        "market-monitor:wti:2026-09-22"
+      ],
+      "missingEvidence": [
+        "Product curve/backwardation term structure and cross-PADD stock maps",
+        "Refinery outage and maintenance schedules, freight/exports detail",
+        "Longer time-series of distillate cracks vs crude to assess persistence",
+        "crude curve, backwardation and refined-product cracks",
+        "verified Trump–Xi outcome and implementation evidence before any political claim"
+      ],
+      "chartIds": [
+        "chart-wti-ulsd-crack"
+      ],
+      "storyIds": [
+        "story-distillate-tightness"
+      ]
+    }
+  ],
   "stockRadar": [
     {
       "symbol": "NVDA",
@@ -559,11 +1073,19 @@
       }
     ]
   },
+  "upstreamGuardrails": [
+    "This snapshot is a read-only Live canonical market-intelligence view for downstream consumers.",
+    "Power Stack may map these signals to portfolio exposures but must not recompute or send Live-derived macro confirmation back to Live.",
+    "UNRESOLVED is a valid state. Missing, stale or ambiguous data must not be coerced into a directional signal.",
+    "Company fundamentals, valuation, portfolio construction and entry discipline remain Power Stack-owned."
+  ],
   "guardrails": [
-    "Live Desk supplies canonical market reasoning and verified research context.",
-    "Power Stack retains ownership of portfolio construction, company fundamental scores, ranking and entry discipline.",
+    "Live Desk supplies canonical monetary/market reasoning, contradictions and source health.",
+    "Power Stack consumes Live context read-only and maps it to portfolio exposures.",
+    "Power Stack retains ownership of company fundamentals, valuation, portfolio construction, ranking and entry discipline.",
+    "No Live-derived macro score or confirmation may be exported back to Live.",
     "Creator-only claims never alter Power Stack scores without independent verification.",
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank."
   ],
-  "syncedAt": "2026-09-25T06:59:16.996Z"
+  "syncedAt": "2026-09-25T09:09:07.135Z"
 }
