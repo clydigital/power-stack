@@ -180,7 +180,7 @@ function build(existingGeneratedAt = null) {
     .filter((item) =>
       item.actualReaction?.status === "DIVERGES"
       || item.actualReaction?.status === "UNRESOLVED"
-      || item.reviewPriority === "HIGH_REVIEW"
+      || (item.reviewPriority === "HIGH_REVIEW" && item.actualReaction?.status !== "CONFIRMS")
       || (item.overlayState === "MIXED" && Math.abs(Number(item.actualReaction?.changePct || 0)) >= 2)
     )
     .sort((a,b) => b.priorityScore - a.priorityScore);
