@@ -259,16 +259,16 @@
       {
         "key": "USD",
         "label": "US dollar transmission",
-        "direction": "TIGHTER",
-        "confirmation": "CONFIRMING",
-        "detail": "US Dollar · UUP proxy 5D +1.09%.",
-        "asOf": "2026-09-24",
+        "direction": "NEUTRAL",
+        "confirmation": "UNRESOLVED",
+        "detail": "US Dollar · UUP proxy 5D +0.81%.",
+        "asOf": "2026-09-25",
         "sourceName": "Nasdaq official etf history",
         "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical",
         "evidenceRefs": [],
         "metrics": {
-          "proxyLevel": 28.69,
-          "change5dPct": 1.09
+          "proxyLevel": 28.62,
+          "change5dPct": 0.81
         }
       },
       {
@@ -305,8 +305,7 @@
       "RATES_FRONT_END",
       "RATES_REAL_YIELDS",
       "RATES_LONG_END",
-      "BILLS",
-      "USD"
+      "BILLS"
     ],
     "contradicting": [
       "RATES_POLICY"
@@ -315,10 +314,11 @@
       "RATES_BREAKEVENS",
       "FUNDING",
       "CREDIT",
+      "USD",
       "DEALER_POSITIONING",
       "TREASURY_SUPPLY"
     ],
-    "summary": "Rate baseline HAWKISH; 5 confirming, 1 contradicting, 5 unresolved/neutral monetary-market layers."
+    "summary": "Rate baseline HAWKISH; 4 confirming, 1 contradicting, 6 unresolved/neutral monetary-market layers."
   },
   "sourceHealth": {
     "dossier": "OK",
@@ -333,19 +333,10 @@
     {
       "id": "spx-rsp",
       "title": "Headline index and equal weight are separating",
-      "detail": "SPX cash 0.9% over 5D vs RSP -1.4%.",
+      "detail": "SPX cash 1.2% over 5D vs RSP -0.6%.",
       "assets": [
         "spx",
         "rsp"
-      ]
-    },
-    {
-      "id": "copper-china",
-      "title": "Copper is decoupling from China equities",
-      "detail": "Copper proxy 2.5% vs China A-shares -0.7%.",
-      "assets": [
-        "copper",
-        "csi300"
       ]
     },
     {
@@ -366,9 +357,9 @@
       "id": "dxy",
       "symbol": "UUP",
       "label": "US Dollar · UUP proxy",
-      "last": 28.69,
-      "change5d": 1.09,
-      "asOf": "2026-09-24",
+      "last": 28.62,
+      "change5d": 0.81,
+      "asOf": "2026-09-25",
       "sourceName": "Nasdaq official etf history",
       "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical"
     },
@@ -572,14 +563,14 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-09-25T21:38:44.898Z",
+    "asOf": "2026-09-26T05:05:08.970Z",
     "assets": [
       {
         "key": "SPX",
         "label": "S&P 500",
         "symbol": "SP500",
-        "last": 7704.13,
-        "dailyChange": -0.02,
+        "last": 7743.41,
+        "dailyChange": 0.51,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "HIGH",
@@ -587,14 +578,14 @@
         "confirmingSignal": "Index participation is narrow: AI/mag7 leadership strong while broader large‑cap participation shows weak new highs and many 20‑day lows.",
         "contradictingSignal": null,
         "invalidation": "Evidence that would weaken the rates‑led conclusion: (1) durable widening in HY/credit spreads and visible IG stress; (2) a sustained broadening of equity participation (breadth improvement outside mega/AI names); or (3) a coordinated retreat in long real yields with rising breakevens and a weaker USD. Relevant series to watch are HY/IG spreads, breadth metrics, gold/USD and long real yields.",
-        "asOf": "2026-09-24"
+        "asOf": "2026-09-25"
       },
       {
         "key": "NASDAQ",
         "label": "Nasdaq Composite",
         "symbol": "^IXIC",
-        "last": 26939.37,
-        "dailyChange": 0.01,
+        "last": 27068.72,
+        "dailyChange": 0.48,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "HIGH",
@@ -602,7 +593,7 @@
         "confirmingSignal": "Semiconductor and AI baskets show strong recent breadth and outperformance; stock upgrades confirm idiosyncratic catalysts.",
         "contradictingSignal": null,
         "invalidation": "Evidence that would weaken the rates‑led conclusion: (1) durable widening in HY/credit spreads and visible IG stress; (2) a sustained broadening of equity participation (breadth improvement outside mega/AI names); or (3) a coordinated retreat in long real yields with rising breakevens and a weaker USD. Relevant series to watch are HY/IG spreads, breadth metrics, gold/USD and long real yields.",
-        "asOf": "2026-09-24"
+        "asOf": "2026-09-25"
       },
       {
         "key": "CRUDE",
@@ -639,7 +630,7 @@
         "label": "Gold spot",
         "symbol": "XAUUSD",
         "last": 4286.200195,
-        "dailyChange": -0.27,
+        "dailyChange": -0.79,
         "dailyChangeUnit": "percent",
         "bias": "BEARISH",
         "conviction": "HIGH",
@@ -647,14 +638,14 @@
         "confirmingSignal": "Gold has weakened on the session/window despite geopolitical risk.",
         "contradictingSignal": null,
         "invalidation": "Evidence that would weaken the rates‑led conclusion: (1) durable widening in HY/credit spreads and visible IG stress; (2) a sustained broadening of equity participation (breadth improvement outside mega/AI names); or (3) a coordinated retreat in long real yields with rising breakevens and a weaker USD. Relevant series to watch are HY/IG spreads, breadth metrics, gold/USD and long real yields.",
-        "asOf": "2026-09-25"
+        "asOf": "2026-09-26"
       },
       {
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 83712.06,
-        "dailyChange": -0.8,
+        "last": 83982.73,
+        "dailyChange": -0.13,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -662,7 +653,7 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": null,
-        "asOf": "2026-09-25"
+        "asOf": "2026-09-26"
       }
     ]
   },
@@ -1091,5 +1082,5 @@
     "Creator-only claims never alter Power Stack scores without independent verification.",
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank."
   ],
-  "syncedAt": "2026-09-25T21:38:44.961Z"
+  "syncedAt": "2026-09-26T05:05:09.117Z"
 }
