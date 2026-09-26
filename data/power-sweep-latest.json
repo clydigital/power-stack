@@ -1,21 +1,21 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-09-26T11:23:44.560Z",
-  "asOf": "2026-09-25T13:05:18.055+00:00",
+  "generatedAt": "2026-09-26T11:30:04.143Z",
+  "asOf": "2026-09-26T10:22:27.316+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
   "inputHealth": {
     "liveDesk": {
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
-      "asOf": "2026-09-25T13:05:18.055+00:00",
-      "syncedAt": "2026-09-26T05:05:09.117Z",
+      "asOf": "2026-09-26T10:22:27.316+00:00",
+      "syncedAt": "2026-09-26T11:30:03.959Z",
       "status": "OK"
     },
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-09-26T11:23:44.508Z",
+      "generatedAt": "2026-09-26T11:30:04.083Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -30,9 +30,9 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "Markets are trading a rates‑led tightening: long-end yields and USD strength dominate while credit remains contained and AI/semiconductor leadership narrows equity participation.",
-    "implication": "Prioritise duration and inflation/term‑premium decomposition; monitor credit, breadth and oil‑product metrics for signs of transmission.",
-    "monetarySummary": "Rate baseline HAWKISH; 4 confirming, 1 contradicting, 6 unresolved/neutral monetary-market layers."
+    "headline": "Markets trading a US-led rates tightening; duration and real yields are the dominant reprice drivers while transmission to credit and broad equities remains incomplete.",
+    "implication": "Policy‑and‑duration pressure dominates near-term market sensitivity; a persistent broadening into credit and small‑cap weakness would shift this to full risk‑off.",
+    "monetarySummary": "Rate baseline HAWKISH; 4 confirming, 0 contradicting, 7 unresolved/neutral monetary-market layers."
   },
   "queueCounts": {
     "holdings": 3,
@@ -126,7 +126,7 @@
         "importance": "HIGH",
         "divergence": "PARTIAL",
         "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-        "actual": "Semiconductor and AI baskets show strong recent breadth and outperformance; stock upgrades confirm idiosyncratic catalysts.",
+        "actual": "AI basket, Magnificent Seven and SMH show strong breadth and recent gains, supporting headline indices.",
         "affectedHoldings": [
           "TSLA",
           "TTWO",
@@ -139,12 +139,12 @@
           "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
         ],
         "evidenceFor": [
-          "Concentrated tech leadership is sustaining indices even with weak participation elsewhere.",
-          "Concentration risk increases fragility; headline indices can mask underlying participation weakness.",
+          "Concentrated sector strength is propping indices despite limited broad participation.",
+          "Narrow leadership reduces the probability that indices reflect broad cyclical strength.",
           "Nasdaq daily move 0.48 with bias MIXED."
         ],
         "evidenceAgainst": [
-          "Rates‑led tightening is the dominant market impulse; front‑end is hawkish and long‑end shows additional real/term‑premium pressure."
+          "Policy path and higher real yields are the dominant immediate forces lifting discount rates."
         ],
         "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
         "confidence": "HIGH",
@@ -155,7 +155,7 @@
         "importance": "HIGH",
         "divergence": "YES",
         "expected": "A persistent long-end tightening shock should eventually raise financing stress and widen credit spreads.",
-        "actual": "HY and IG spreads remain near recent tight levels, not signalling broad stress.",
+        "actual": "HY and IG spreads remain relatively contained (HY OAS 2.8%; IG OAS 0.79%).",
         "affectedHoldings": [
           "TSLA",
           "TTWO",
@@ -169,11 +169,11 @@
           "Credit may simply be lagging rates and could become the next confirmation leg."
         ],
         "evidenceFor": [
-          "Contained credit spreads imply incomplete transmission from rates to credit so far.",
+          "Credit has not yet confirmed a broad risk‑off; spreads are mildly firmer but not disrupted.",
           "Funding/credit composite is currently NEUTRAL."
         ],
         "evidenceAgainst": [
-          "Prioritise duration and inflation/term‑premium decomposition; monitor credit, breadth and oil‑product metrics for signs of transmission."
+          "Policy‑and‑duration pressure dominates near-term market sensitivity; a persistent broadening into credit and small‑cap weakness would shift this to full risk‑off."
         ],
         "leadingHypothesis": "The shock is rates-led, not yet systemic; keep dry powder because credit remains the key confirmation risk.",
         "confidence": "HIGH",
@@ -184,7 +184,7 @@
         "importance": "HIGH",
         "divergence": "YES",
         "expected": "Softer crude would normally reduce immediate energy-inflation pressure and weaken the case for broad energy outperformance.",
-        "actual": "Geopolitical attacks and elevated product crack/distillate metrics coexist with softer WTI futures.",
+        "actual": "Distillate cracks and heating oil remain elevated while WTI has softened.",
         "affectedHoldings": [
           "XOM",
           "HIBISCS",
@@ -197,10 +197,12 @@
           "Geopolitical premium and physical-product stress are moving on different timelines."
         ],
         "evidenceFor": [
-          "Product stress and geopolitics keep an inflation channel plausible, but crude weakness tempers confidence in persistence.",
+          "Product stress sustains an inflationary read that can keep breakevens and real yields supported even if crude slips.",
           "Crude daily move -0.58 with bias BEARISH."
         ],
-        "evidenceAgainst": [],
+        "evidenceAgainst": [
+          "Inventories and refinery utilisation needed to judge persistence"
+        ],
         "leadingHypothesis": "Product-market tightness is currently more informative for the portfolio's energy sleeve than the crude headline alone.",
         "confidence": "HIGH",
         "invalidation": "Falling crack spreads, rebuilding product inventories and improving refinery utilization would weaken the physical-tightness explanation."
@@ -455,26 +457,10 @@
   ],
   "liveRadar": [
     {
-      "ticker": "NBIS",
-      "companyName": "Nebius Group",
-      "whyRelevant": "Broker upgrade and higher price target confirmed as a catalyst in AI/semiconductor leadership evidence.",
-      "researchQuestion": "Is NBIS's upgrade driving further sector flows, and does it coincide with durable breadth in AI infrastructure?",
-      "status": "DISCOVERY_ONLY",
-      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
-    },
-    {
-      "ticker": "NVDA",
-      "companyName": "Nvidia",
-      "whyRelevant": "Part of S&P concentration risk and a driver of narrow index leadership.",
-      "researchQuestion": "Will NVDA leadership hold if long yields force broader risk repricing?",
-      "status": "DISCOVERY_ONLY",
-      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
-    },
-    {
-      "ticker": "XLE",
-      "companyName": "Energy Select Sector SPDR Fund (XLE)",
-      "whyRelevant": "Energy sector exposure to geopolitical risk and product/crack dynamics.",
-      "researchQuestion": "Does XLE price action reflect product‑led inflation risk or crude softness?",
+      "ticker": "SMH",
+      "companyName": "Semiconductor ETF (SMH)",
+      "whyRelevant": "Represents the AI/semiconductor leadership propping indices.",
+      "researchQuestion": "Is SMH leadership durable if yields and breadth worsen?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     }
@@ -544,7 +530,6 @@
     }
   ],
   "researchGaps": [
-    "DATA: Missing intraday MOVE/VIX slices and cross‑currency basis / FX‑swap measures that are required to determine whether the observed long‑end sell‑off is transmitting via volatility and offshore dollar funding; this blocks a decisive transmission conclusion.",
     "Treasury supply/auction state is not yet normalized into market-intelligence-snapshot/v1.",
     "Holding tape unresolved: 6742UW"
   ],
