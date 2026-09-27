@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-09-25T03:56:00Z",
+  "lastUpdated": "2026-09-27T21:18:00Z",
   "purpose": "Live Power Stack thematic radar; dynamically ranked by freshness/materiality and current market significance. Theme rank changes research priority, not company fundamental scores.",
   "environment": {
-    "label": "Global duration + energy-inflation collision",
-    "summary": "US and Japanese long yields are at multi-decade highs while crude and especially refined-product tightness remain inflationary. Physical AI/grid demand is still strong, but the cost of capital has become an operating variable: the best themes must now clear financing, valuation and execution hurdles as well as demand.",
-    "asOf": "2026-09-25"
+    "label": "Global duration + energy inflation + AI compute sovereignty",
+    "summary": "US and Japanese long yields remain elevated while refined-product tightness keeps inflation risk alive. Physical AI/grid demand is still strong, but a second AI axis is now first-class: Chinese model price compression is accelerating inference adoption while export controls and policy support push China to localise memory, accelerators, interconnect and semiconductor equipment. The best AI exposures must clear both financing/valuation hurdles and bottleneck/sovereignty tests.",
+    "asOf": "2026-09-28"
   },
   "topQuestions": {
     "whatIsNewNow": [
@@ -12,6 +12,7 @@
       "Oil/product inflation has re-entered the rates story. Distillate inventories remain structurally tight even as crude stocks rose, making refined products a cleaner inflation signal than crude alone.",
       "The Trump-Xi meeting extended the trade truce but did not verify durable breakthroughs on rare-earth access, tariffs or advanced-technology/AI restrictions.",
       "AI physical demand remains real, but 5%+ long rates make funded/contracted capacity and sponsor quality more important than announced MW.",
+      "China's AI price war is becoming a hardware-sovereignty story: cheaper/open models can expand inference demand while HBM/memory, interconnect, optical networking, foundry capacity and domestic semiconductor equipment remain scarce or strategic.",
       "Tesla Semi deliveries add genuine commercialization evidence, but not enough disclosed production/pricing economics to change the TSLA fundamental score.",
       "China/HK AI infrastructure is broadening into optical interconnect and silicon-photonics equipment; treat new listings as differentiated research, not chase candidates.",
       "Robotics commercialization remains strongest in fixed/warehouse automation and cobots; humanoid capital-market enthusiasm is being disciplined by regulators and weak installed-volume evidence."
@@ -20,6 +21,7 @@
       "Global long-end yields and real financing costs",
       "Refined-product/diesel inflation and Middle East supply risk",
       "AI financing quality and realizable funded MW",
+      "US–China AI price war, inference growth and compute/memory sovereignty",
       "Power/grid/electrical/cooling/interconnection bottlenecks",
       "Rare-earth and critical-mineral supply security",
       "AI security monetization",
@@ -109,7 +111,7 @@
       "freshnessScore": 97,
       "directionOfTravel": "strengthening selectively",
       "lastMaterialChange": "2026-09-25",
-      "whyNow": "Grid access, generation, switchgear, wire/cable, cooling and optical connectivity remain physical bottlenecks. China/HK listings are widening the opportunity set into optical transceivers and silicon-photonics equipment, but valuations require discipline.",
+      "whyNow": "Grid access, generation, switchgear, wire/cable, cooling and optical connectivity remain physical bottlenecks. China/HK AI infrastructure is now broadening from power into optical transceivers, CXL/memory interconnect and domestic compute capacity; valuations still require discipline.",
       "marketTransmission": "generation, transmission, switchgear, cooling, fiber/optical networking, water, permitting, data-centre commissioning",
       "keyAssetsTickers": [
         "PWR",
@@ -117,15 +119,41 @@
         "VRT",
         "GEV",
         "GNRC",
-        "YTLPOWR"
+        "YTLPOWR",
+        "3308.HK",
+        "6809.HK"
       ],
       "confirmation": "funded backlog, signed customers, interconnection/self-supply and FCF conversion",
       "invalidation": "cancellations, utilization shortfalls or rapid shortage normalization",
-      "nextTest": "supplier backlog/pricing, energised MW, grid interconnections and economics of new HK optical/automation listings",
+      "nextTest": "supplier backlog/pricing, energised MW, grid interconnections, Chinese CSP capex and economics of HK optical/interconnect names",
       "watchlistHoldingAction": "PWR/ETN remain high-quality but price-sensitive; research Ligent/RoboTechnik branches without chasing"
     },
     {
       "priorityRank": 5,
+      "name": "US–China AI War / AI Abundance + Compute Sovereignty",
+      "lifecycleState": "PHASING IN / HIGH SIGNIFICANCE",
+      "significanceScore": 94,
+      "freshnessScore": 100,
+      "directionOfTravel": "strengthening",
+      "lastMaterialChange": "2026-09-28",
+      "whyNow": "Chinese labs are competing aggressively on model price and openness while Alibaba is expanding a full-stack AI platform and China is pushing domestic semiconductor self-sufficiency. CXMT's fifth-generation DRAM platform has entered mass production; Montage is commercialising CXL/PCIe memory interconnect; optical-network demand is supporting Innolight; and China-semiconductor baskets now hold CXMT, Cambricon, AMEC, NAURA, SMIC and Montage together.",
+      "marketTransmission": "model/API price compression -> more inference and token consumption -> memory bandwidth, accelerators, CXL/PCIe, optical networking, cloud and power demand; simultaneously model margins and hyperscaler AI ROIC face pressure while Chinese domestic-substitution spending rises",
+      "keyAssetsTickers": [
+        "9988.HK",
+        "688825",
+        "6809.HK",
+        "3308.HK",
+        "3191.HK",
+        "MU",
+        "NVDA"
+      ],
+      "confirmation": "Chinese AI/cloud usage and CSP capex keep rising while memory/interconnect demand remains strong and domestic semiconductor qualification/localisation advances",
+      "invalidation": "inference growth fails to offset falling model prices, Chinese CSP capex rolls over, or memory/interconnect supply normalises faster than workload growth",
+      "nextTest": "Alibaba AI-cloud growth versus capex; CXMT HBM/customer qualification; Montage CXL adoption; Innolight optical orders; Chinese CSP capex and semiconductor-equipment localisation",
+      "watchlistHoldingAction": "Prefer Alibaba/3191 for active broad research; treat CXMT as higher-upside but memory-cycle/HBM-execution sensitive; keep Montage and Innolight high-quality no-chase watches after recent rerating"
+    },
+    {
+      "priorityRank": 6,
       "name": "Critical Minerals / Rare Earth / Copper Supply Security",
       "lifecycleState": "PHASING IN / STRENGTHENING",
       "significanceScore": 91,
@@ -145,7 +173,7 @@
       "watchlistHoldingAction": "FCX remains active at disciplined prices; avoid conflating strategic scarcity with automatic miner upside"
     },
     {
-      "priorityRank": 6,
+      "priorityRank": 7,
       "name": "AI Security / Governance",
       "lifecycleState": "PHASING IN / STRENGTHENING",
       "significanceScore": 87,
@@ -165,7 +193,7 @@
       "watchlistHoldingAction": "keep PANW/CRWD high quality; wait for price rather than chase"
     },
     {
-      "priorityRank": 7,
+      "priorityRank": 8,
       "name": "US LNG Diversification / Energy Security",
       "lifecycleState": "MATURE / STILL RELEVANT",
       "significanceScore": 80,
@@ -183,7 +211,7 @@
       "watchlistHoldingAction": "LNG remains a high-quality entry candidate; no urgency chase"
     },
     {
-      "priorityRank": 8,
+      "priorityRank": 9,
       "name": "Agriculture / Fertilizer / Food Affordability",
       "lifecycleState": "PHASING IN",
       "significanceScore": 78,
@@ -206,7 +234,7 @@
       "watchlistHoldingAction": "CTVA/NTR active-price research; CF wait for a base; BG/VMI background; AGCO second-stage only"
     },
     {
-      "priorityRank": 9,
+      "priorityRank": 10,
       "name": "Uranium / Nuclear Fuel",
       "lifecycleState": "MATURE / STILL RELEVANT",
       "significanceScore": 76,
@@ -224,7 +252,7 @@
       "watchlistHoldingAction": "CCJ stays quality nuclear exposure but wait for a base/reclaim before increasing priority"
     },
     {
-      "priorityRank": 10,
+      "priorityRank": 11,
       "name": "Robotics / Automation",
       "lifecycleState": "MATURE / SELECTIVE",
       "significanceScore": 70,
@@ -245,7 +273,7 @@
       "watchlistHoldingAction": "favor profitable fixed/warehouse automation; RoboTechnik/humanoids research-only until pricing and economics prove out"
     },
     {
-      "priorityRank": 11,
+      "priorityRank": 12,
       "name": "Precious Metals",
       "lifecycleState": "MATURE / STILL RELEVANT",
       "significanceScore": 73,
@@ -264,7 +292,7 @@
       "watchlistHoldingAction": "no chase; wait for rate confirmation"
     },
     {
-      "priorityRank": 12,
+      "priorityRank": 13,
       "name": "Grid ESS vs Lithium Overcapacity",
       "lifecycleState": "MATURE / SELECTIVE",
       "significanceScore": 68,
