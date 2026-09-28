@@ -1,21 +1,21 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-09-28T23:15:38.764Z",
-  "asOf": "2026-09-28T13:49:07.764+00:00",
+  "generatedAt": "2026-09-28T23:19:56.624Z",
+  "asOf": "2026-09-28T19:20:02.541+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
   "inputHealth": {
     "liveDesk": {
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
-      "asOf": "2026-09-28T13:49:07.764+00:00",
-      "syncedAt": "2026-09-28T14:03:05.883Z",
+      "asOf": "2026-09-28T19:20:02.541+00:00",
+      "syncedAt": "2026-09-28T23:19:56.499Z",
       "status": "OK"
     },
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-09-28T23:15:38.706Z",
+      "generatedAt": "2026-09-28T23:19:56.561Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -30,9 +30,9 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "Markets trading a rates‑led tightening regime: rising front‑end and real yields dominate while AI/semiconductor leadership keeps equity breadth internally strong but narrow.",
-    "implication": "Expect risk impulses to be dominated by rates/real‑yield moves; cross‑asset transmission to credit and small‑cap breadth remains the key follow-up risk.",
-    "monetarySummary": "Rate baseline HAWKISH; 4 confirming, 0 contradicting, 7 unresolved/neutral monetary-market layers."
+    "headline": "Markets trading a rates‑led tightening regime with incomplete transmission to credit and breadth.",
+    "implication": "If durable, the regime implies ongoing upward pressure on real yields and selective equity weakness unless credit spreads, VIX and breadth visibly deteriorate.",
+    "monetarySummary": "Rate baseline HAWKISH; 5 confirming, 0 contradicting, 6 unresolved/neutral monetary-market layers."
   },
   "queueCounts": {
     "holdings": 3,
@@ -126,7 +126,7 @@
         "importance": "HIGH",
         "divergence": "PARTIAL",
         "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-        "actual": "Strong narrow leadership: SMH up and AI basket breadth elevated; ARM strong.",
+        "actual": "AI basket, Mag‑7 breadth and SMH are strong and outperforming broader indices.",
         "affectedHoldings": [
           "TSLA",
           "TTWO",
@@ -139,52 +139,23 @@
           "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
         ],
         "evidenceFor": [
-          "Concentrated tech/AI gains are propping indices and represent a counter‑force to rates‑led weakness.",
-          "Breadth is strong in large caps and concentrated tech groups, indicating narrow risk‑on rather than market‑wide optimism.",
+          "Concentrated tech leadership is acting as a relief valve that mutes headline equity weakness.",
+          "Breadth is narrow and concentrated, acting as a counter‑force to yield pressure.",
           "Nasdaq daily move 0.48 with bias MIXED."
         ],
         "evidenceAgainst": [
-          "Policy‑leaning hawkish pricing and higher real yields are the primary tightening force."
+          "Policy‑path plus real‑yield repricing is the primary upward pressure on rates today."
         ],
         "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
         "confidence": "HIGH",
         "invalidation": "If breadth broadens materially while credit remains benign and real yields stay high, the rate headwind is less dominant than assumed. If AI/semiconductor leadership rolls over, the divergence resolves in the bearish direction."
       },
       {
-        "id": "rates-vs-credit-transmission",
-        "importance": "HIGH",
-        "divergence": "YES",
-        "expected": "A persistent long-end tightening shock should eventually raise financing stress and widen credit spreads.",
-        "actual": "HY OAS at 2.8% and IG OAS ~0.79% with small short‑run widening.",
-        "affectedHoldings": [
-          "TSLA",
-          "TTWO",
-          "YTLPOWR",
-          "6742UW",
-          "MISC"
-        ],
-        "candidateExplanations": [
-          "The current move is still primarily a rates/term-premium shock rather than a broad solvency or funding shock.",
-          "Strong nominal growth and healthy corporate balance sheets may be delaying credit transmission.",
-          "Credit may simply be lagging rates and could become the next confirmation leg."
-        ],
-        "evidenceFor": [
-          "Credit shows modest tightening/tension but not a broad stress breakout; transmission appears incomplete.",
-          "Funding/credit composite is currently NEUTRAL."
-        ],
-        "evidenceAgainst": [
-          "Expect risk impulses to be dominated by rates/real‑yield moves; cross‑asset transmission to credit and small‑cap breadth remains the key follow-up risk."
-        ],
-        "leadingHypothesis": "The shock is rates-led, not yet systemic; keep dry powder because credit remains the key confirmation risk.",
-        "confidence": "HIGH",
-        "invalidation": "Sustained HY/IG widening with weaker breadth and higher volatility would confirm transmission and require a stricter portfolio-risk posture."
-      },
-      {
         "id": "crude-vs-product-tightness",
         "importance": "HIGH",
         "divergence": "YES",
         "expected": "Softer crude would normally reduce immediate energy-inflation pressure and weaken the case for broad energy outperformance.",
-        "actual": "WTI lower on week but distillate cracks and heating oil stay elevated.",
+        "actual": "WTI softened while distillate cracks and heating oil remain elevated and 10Y breakevens show limited relief.",
         "affectedHoldings": [
           "XOM",
           "HIBISCS",
@@ -197,12 +168,10 @@
           "Geopolitical premium and physical-product stress are moving on different timelines."
         ],
         "evidenceFor": [
-          "Product stress sustains inflationary risk even if crude softens, supporting breakevens and yields.",
-          "Crude daily move -0.58 with bias BEARISH."
+          "Product‑level stress is plausibly sustaining inflation compensation and long yields despite softer crude.",
+          "Crude daily move -0.58 with bias MIXED."
         ],
-        "evidenceAgainst": [
-          "Refinery utilization and inventory data"
-        ],
+        "evidenceAgainst": [],
         "leadingHypothesis": "Product-market tightness is currently more informative for the portfolio's energy sleeve than the crude headline alone.",
         "confidence": "HIGH",
         "invalidation": "Falling crack spreads, rebuilding product inventories and improving refinery utilization would weaken the physical-tightness explanation."
@@ -464,26 +433,18 @@
   ],
   "liveRadar": [
     {
-      "ticker": "ARM",
-      "companyName": "Arm Holdings",
-      "whyRelevant": "Representative of AI infrastructure leadership and strong short‑term performance.",
-      "researchQuestion": "Is Arm’s move broadening into cyclicals or remaining idiosyncratic tech strength?",
-      "status": "DISCOVERY_ONLY",
-      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
-    },
-    {
-      "ticker": "NVDA",
-      "companyName": "NVIDIA",
-      "whyRelevant": "Centerpiece of AI hardware demand and potential conduit between China news and global tech flows.",
-      "researchQuestion": "Would policy or trade news around China/Nvidia meaningfully alter tech leadership breadth?",
-      "status": "DISCOVERY_ONLY",
-      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
-    },
-    {
       "ticker": "SMH",
-      "companyName": "VanEck Semiconductor ETF (SMH)",
-      "whyRelevant": "Semiconductor ETF as a proxy for AI hardware strength and sector breadth.",
-      "researchQuestion": "Does SMH leadership persist if yields remain elevated?",
+      "companyName": "Semiconductor ETF (SMH)",
+      "whyRelevant": "Semiconductor strength underpins the narrow tech relief valve and shows sector breadth resilience.",
+      "researchQuestion": "Can semiconductors sustain leadership if rates and real yields remain elevated?",
+      "status": "DISCOVERY_ONLY",
+      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
+    },
+    {
+      "ticker": "HYG",
+      "companyName": "High Yield ETF (HYG)",
+      "whyRelevant": "HY is the quickest channel to demonstrate transmission from yields to credit and risk assets.",
+      "researchQuestion": "Will HY spreads widen materially and cause HY ETFs to underperform broad equities?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     }

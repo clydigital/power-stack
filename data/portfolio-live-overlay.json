@@ -1,8 +1,8 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-09-28T23:15:38.706Z",
-  "liveAsOf": "2026-09-28T13:49:07.764+00:00",
-  "liveSyncedAt": "2026-09-28T14:03:05.883Z",
+  "generatedAt": "2026-09-28T23:19:56.561Z",
+  "liveAsOf": "2026-09-28T19:20:02.541+00:00",
+  "liveSyncedAt": "2026-09-28T23:19:56.499Z",
   "sourceHealth": {
     "dossier": "OK",
     "marketMonitor": "PARTIAL",
@@ -14,10 +14,10 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "Markets trading a rates‑led tightening regime: rising front‑end and real yields dominate while AI/semiconductor leadership keeps equity breadth internally strong but narrow.",
-    "answer": "Evidence shows hawkish front-end and higher 10Y real yields alongside only partial transmission into credit and broad risk; tech/AI breadth is strong and energy product stress persists, so markets are in a rates‑led tightening regime with selective equity leadership.",
-    "implication": "Expect risk impulses to be dominated by rates/real‑yield moves; cross‑asset transmission to credit and small‑cap breadth remains the key follow-up risk.",
-    "whatWouldChangeMind": "Evidence that credit spreads, small‑cap breadth and volatility all materially widen in line with Treasury moves, or foreign sovereigns show matched long‑end pressure."
+    "headline": "Markets trading a rates‑led tightening regime with incomplete transmission to credit and breadth.",
+    "answer": "Front‑end and 10Y real yields have repriced higher while HY/IG spreads and broad breadth show only partial response; narrow AI/Mag‑7 and semiconductor leadership plus elevated product cracks are sustaining equities and breakevens for now.",
+    "implication": "If durable, the regime implies ongoing upward pressure on real yields and selective equity weakness unless credit spreads, VIX and breadth visibly deteriorate.",
+    "whatWouldChangeMind": "Sustained, material HY/IG spread widening with rising VIX and clear breadth deterioration, or confirmed long‑end pressure in Bunds/JGBs, would shift the regime away from a US‑led rates‑only tightening."
   },
   "currentSignals": {
     "rates": {
@@ -41,7 +41,7 @@
           "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
           "detail": "No current deterministic policy impulse or directional next-meeting repricing is present in the bounded rate context.",
-          "asOf": "2026-09-28T13:49:07.764Z"
+          "asOf": "2026-09-28T19:20:02.541Z"
         },
         {
           "key": "RATES_FRONT_END",
@@ -49,7 +49,7 @@
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
           "detail": "US 2Y 4.87%; 5D +20.0 bp; vs effective fed funds +99.0 bp.",
-          "asOf": "2026-09-28T13:49:07.764Z"
+          "asOf": "2026-09-28T19:20:02.541Z"
         },
         {
           "key": "RATES_REAL_YIELDS",
@@ -57,7 +57,7 @@
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
           "detail": "10Y real yield 2.85%; 5D +24.0 bp.",
-          "asOf": "2026-09-28T13:49:07.764Z"
+          "asOf": "2026-09-28T19:20:02.541Z"
         },
         {
           "key": "RATES_BREAKEVENS",
@@ -65,7 +65,7 @@
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
           "detail": "10Y breakeven 2.34%; 5D +1.0 bp.",
-          "asOf": "2026-09-28T13:49:07.764Z"
+          "asOf": "2026-09-28T19:20:02.541Z"
         },
         {
           "key": "RATES_LONG_END",
@@ -73,23 +73,23 @@
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
           "detail": "US 10Y 5.17%; 5D +16.0 bp.",
-          "asOf": "2026-09-28T13:49:07.764Z"
+          "asOf": "2026-09-28T19:20:02.541Z"
         },
         {
           "key": "BILLS",
           "label": "Treasury bills / front-end cash",
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
-          "detail": "3M 4.24%; 6M 4.33%; average vs EFFR +40.5 bp.",
-          "asOf": "2026-09-25"
+          "detail": "3M 4.28%; 6M 4.41%; average vs EFFR +46.5 bp.",
+          "asOf": "2026-09-28"
         }
       ]
     },
     "funding": {
-      "state": "NEUTRAL",
-      "tighter": 0,
+      "state": "TIGHTER",
+      "tighter": 1,
       "easier": 0,
-      "neutral": 2,
+      "neutral": 1,
       "unresolved": 0,
       "keys": [
         "FUNDING",
@@ -107,21 +107,22 @@
         {
           "key": "CREDIT",
           "label": "Credit spreads",
-          "direction": "NEUTRAL",
-          "confirmation": "UNRESOLVED",
-          "detail": "HY OAS 2.8 (5D +10.0 bp); IG OAS 0.79 (5D +1.0 bp).",
-          "asOf": "2026-09-24"
+          "direction": "TIGHTER",
+          "confirmation": "CONFIRMING",
+          "detail": "HY OAS 2.93 (5D +25.0 bp); IG OAS 0.81 (5D +4.0 bp).",
+          "asOf": "2026-09-25"
         }
       ]
     },
     "physicalEnergy": {
       "status": "ACTIVE",
       "observed": true,
-      "detail": "Product stress sustains inflationary risk even if crude softens, supporting breakevens and yields.",
+      "detail": "Product‑level stress is plausibly sustaining inflation compensation and long yields despite softer crude.",
       "evidenceRefs": [
         "market-monitor:wti:2026-09-22",
         "market-monitor:crack-distillate:2026-09-22",
-        "market-monitor:distillate:2026-09-22"
+        "market-monitor:distillate:2026-09-22",
+        "market-monitor:us10y-breakeven:2026-09-25"
       ]
     }
   },
@@ -151,7 +152,7 @@
       },
       "effects": {
         "rates": "HEADWIND",
-        "funding": "NEUTRAL",
+        "funding": "HEADWIND",
         "energy": "TAILWIND"
       },
       "sensitivities": {
@@ -260,7 +261,7 @@
       "trimOrRecycleGate": "Reduce only if energy cluster concentration is excessive or integrated/refining economics deteriorate; crude de-escalation alone is not enough.",
       "rationale": [
         "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
-        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
+        "Funding/credit: headwind with moderate sensitivity while the Live channel is tighter.",
         "Physical energy: tailwind while Live marks the product/energy lens observed."
       ]
     },
@@ -289,7 +290,7 @@
       },
       "effects": {
         "rates": "HEADWIND",
-        "funding": "NEUTRAL",
+        "funding": "HEADWIND",
         "energy": "TAILWIND"
       },
       "sensitivities": {
@@ -390,7 +391,7 @@
       "trimOrRecycleGate": "Route normalization plus weaker freight or adverse funding terms reduce the case.",
       "rationale": [
         "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
-        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
+        "Funding/credit: headwind with high sensitivity while the Live channel is tighter.",
         "Physical energy: tailwind while Live marks the product/energy lens observed."
       ]
     },
@@ -419,7 +420,7 @@
       },
       "effects": {
         "rates": "HEADWIND",
-        "funding": "NEUTRAL",
+        "funding": "HEADWIND",
         "energy": "TAILWIND"
       },
       "sensitivities": {
@@ -512,7 +513,7 @@
       "trimOrRecycleGate": "Failure to repair with weakening operations makes it a candidate source of capital for higher-quality or less-correlated exposure.",
       "rationale": [
         "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
-        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
+        "Funding/credit: headwind with moderate sensitivity while the Live channel is tighter.",
         "Physical energy: tailwind while Live marks the product/energy lens observed."
       ]
     },
@@ -785,7 +786,7 @@
       },
       "effects": {
         "rates": "HEADWIND",
-        "funding": "NEUTRAL",
+        "funding": "HEADWIND",
         "energy": "NEUTRAL"
       },
       "sensitivities": {
@@ -862,7 +863,7 @@
       "trimOrRecycleGate": "Further technical deterioration or catalyst/cash-flow slippage.",
       "rationale": [
         "Rates/duration: headwind with very high sensitivity while the Live channel is tighter.",
-        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
+        "Funding/credit: headwind with very high sensitivity while the Live channel is tighter.",
         "Physical energy: neutral while Live marks the product/energy lens observed."
       ]
     },
@@ -891,7 +892,7 @@
       },
       "effects": {
         "rates": "HEADWIND",
-        "funding": "NEUTRAL",
+        "funding": "HEADWIND",
         "energy": "HEADWIND"
       },
       "sensitivities": {
@@ -968,7 +969,7 @@
       "trimOrRecycleGate": "Failure of repair, worsening auto economics or evidence that optionality is not converting into cash flow.",
       "rationale": [
         "Rates/duration: headwind with very high sensitivity while the Live channel is tighter.",
-        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
+        "Funding/credit: headwind with very high sensitivity while the Live channel is tighter.",
         "Physical energy: headwind while Live marks the product/energy lens observed."
       ]
     },
@@ -997,7 +998,7 @@
       },
       "effects": {
         "rates": "HEADWIND",
-        "funding": "NEUTRAL",
+        "funding": "HEADWIND",
         "energy": "TAILWIND"
       },
       "sensitivities": {
@@ -1090,7 +1091,7 @@
       "trimOrRecycleGate": "Break of RM1.42 or continued weak utilization/work-order conversion.",
       "rationale": [
         "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
-        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
+        "Funding/credit: headwind with moderate sensitivity while the Live channel is tighter.",
         "Physical energy: tailwind while Live marks the product/energy lens observed."
       ]
     }
@@ -1159,7 +1160,7 @@
       "importance": "HIGH",
       "divergence": "PARTIAL",
       "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-      "actual": "Strong narrow leadership: SMH up and AI basket breadth elevated; ARM strong.",
+      "actual": "AI basket, Mag‑7 breadth and SMH are strong and outperforming broader indices.",
       "affectedHoldings": [
         "TSLA",
         "TTWO",
@@ -1172,52 +1173,23 @@
         "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
       ],
       "evidenceFor": [
-        "Concentrated tech/AI gains are propping indices and represent a counter‑force to rates‑led weakness.",
-        "Breadth is strong in large caps and concentrated tech groups, indicating narrow risk‑on rather than market‑wide optimism.",
+        "Concentrated tech leadership is acting as a relief valve that mutes headline equity weakness.",
+        "Breadth is narrow and concentrated, acting as a counter‑force to yield pressure.",
         "Nasdaq daily move 0.48 with bias MIXED."
       ],
       "evidenceAgainst": [
-        "Policy‑leaning hawkish pricing and higher real yields are the primary tightening force."
+        "Policy‑path plus real‑yield repricing is the primary upward pressure on rates today."
       ],
       "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
       "confidence": "HIGH",
       "invalidation": "If breadth broadens materially while credit remains benign and real yields stay high, the rate headwind is less dominant than assumed. If AI/semiconductor leadership rolls over, the divergence resolves in the bearish direction."
     },
     {
-      "id": "rates-vs-credit-transmission",
-      "importance": "HIGH",
-      "divergence": "YES",
-      "expected": "A persistent long-end tightening shock should eventually raise financing stress and widen credit spreads.",
-      "actual": "HY OAS at 2.8% and IG OAS ~0.79% with small short‑run widening.",
-      "affectedHoldings": [
-        "TSLA",
-        "TTWO",
-        "YTLPOWR",
-        "6742UW",
-        "MISC"
-      ],
-      "candidateExplanations": [
-        "The current move is still primarily a rates/term-premium shock rather than a broad solvency or funding shock.",
-        "Strong nominal growth and healthy corporate balance sheets may be delaying credit transmission.",
-        "Credit may simply be lagging rates and could become the next confirmation leg."
-      ],
-      "evidenceFor": [
-        "Credit shows modest tightening/tension but not a broad stress breakout; transmission appears incomplete.",
-        "Funding/credit composite is currently NEUTRAL."
-      ],
-      "evidenceAgainst": [
-        "Expect risk impulses to be dominated by rates/real‑yield moves; cross‑asset transmission to credit and small‑cap breadth remains the key follow-up risk."
-      ],
-      "leadingHypothesis": "The shock is rates-led, not yet systemic; keep dry powder because credit remains the key confirmation risk.",
-      "confidence": "HIGH",
-      "invalidation": "Sustained HY/IG widening with weaker breadth and higher volatility would confirm transmission and require a stricter portfolio-risk posture."
-    },
-    {
       "id": "crude-vs-product-tightness",
       "importance": "HIGH",
       "divergence": "YES",
       "expected": "Softer crude would normally reduce immediate energy-inflation pressure and weaken the case for broad energy outperformance.",
-      "actual": "WTI lower on week but distillate cracks and heating oil stay elevated.",
+      "actual": "WTI softened while distillate cracks and heating oil remain elevated and 10Y breakevens show limited relief.",
       "affectedHoldings": [
         "XOM",
         "HIBISCS",
@@ -1230,12 +1202,10 @@
         "Geopolitical premium and physical-product stress are moving on different timelines."
       ],
       "evidenceFor": [
-        "Product stress sustains inflationary risk even if crude softens, supporting breakevens and yields.",
-        "Crude daily move -0.58 with bias BEARISH."
+        "Product‑level stress is plausibly sustaining inflation compensation and long yields despite softer crude.",
+        "Crude daily move -0.58 with bias MIXED."
       ],
-      "evidenceAgainst": [
-        "Refinery utilization and inventory data"
-      ],
+      "evidenceAgainst": [],
       "leadingHypothesis": "Product-market tightness is currently more informative for the portfolio's energy sleeve than the crude headline alone.",
       "confidence": "HIGH",
       "invalidation": "Falling crack spreads, rebuilding product inventories and improving refinery utilization would weaken the physical-tightness explanation."
