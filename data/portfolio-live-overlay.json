@@ -1,8 +1,8 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-09-29T22:14:34.102Z",
+  "generatedAt": "2026-09-29T22:20:15.373Z",
   "liveAsOf": "2026-09-29T09:42:55.284+00:00",
-  "liveSyncedAt": "2026-09-29T12:59:19.176Z",
+  "liveSyncedAt": "2026-09-29T22:20:15.266Z",
   "sourceHealth": {
     "dossier": "OK",
     "marketMonitor": "PARTIAL",
@@ -80,8 +80,8 @@
           "label": "Treasury bills / front-end cash",
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
-          "detail": "3M 4.28%; 6M 4.41%; average vs EFFR +46.5 bp.",
-          "asOf": "2026-09-28"
+          "detail": "3M 4.25%; 6M 4.36%; average vs EFFR +42.5 bp.",
+          "asOf": "2026-09-29"
         }
       ]
     },
@@ -89,8 +89,8 @@
       "state": "TIGHTER",
       "tighter": 1,
       "easier": 0,
-      "neutral": 0,
-      "unresolved": 1,
+      "neutral": 1,
+      "unresolved": 0,
       "keys": [
         "FUNDING",
         "CREDIT"
@@ -99,9 +99,9 @@
         {
           "key": "FUNDING",
           "label": "Secured funding / collateral",
-          "direction": "UNRESOLVED",
+          "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
-          "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR n/a. Volumes: SOFR $2964bn, TGCR $1172bn, BGCR $1220bn.",
+          "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR +1.3 bp. Volumes: SOFR $2964bn, TGCR $1172bn, BGCR $1220bn.",
           "asOf": "2026-09-28"
         },
         {
@@ -109,8 +109,8 @@
           "label": "Credit spreads",
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
-          "detail": "HY OAS 2.93 (5D +25.0 bp); IG OAS 0.81 (5D +4.0 bp).",
-          "asOf": "2026-09-25"
+          "detail": "HY OAS 3.02 (5D +36.0 bp); IG OAS 0.83 (5D +6.0 bp).",
+          "asOf": "2026-09-28"
         }
       ]
     },
