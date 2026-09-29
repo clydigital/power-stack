@@ -3,33 +3,33 @@
   "sourceUrl": "https://alchemy-live-market-desk.vercel.app/api/market-intelligence-snapshot",
   "liveContractVersion": "market-intelligence-snapshot/v1",
   "sourceStatus": "current",
-  "dossierId": "04e96194-a141-4559-af87-2d876d91f9fc",
-  "asOf": "2026-09-28T19:20:02.541+00:00",
+  "dossierId": "a4cd7341-edc7-4ccb-b324-5c8454835cb1",
+  "asOf": "2026-09-29T09:42:55.284+00:00",
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "Markets trading a rates‑led tightening regime with incomplete transmission to credit and breadth.",
-    "answer": "Front‑end and 10Y real yields have repriced higher while HY/IG spreads and broad breadth show only partial response; narrow AI/Mag‑7 and semiconductor leadership plus elevated product cracks are sustaining equities and breakevens for now.",
-    "implication": "If durable, the regime implies ongoing upward pressure on real yields and selective equity weakness unless credit spreads, VIX and breadth visibly deteriorate.",
-    "whatWouldChangeMind": "Sustained, material HY/IG spread widening with rising VIX and clear breadth deterioration, or confirmed long‑end pressure in Bunds/JGBs, would shift the regime away from a US‑led rates‑only tightening."
+    "headline": "Markets trading a rates‑led tightening regime: long and real yields have repriced higher while credit and breadth show only partial transmission.",
+    "answer": "Evidence shows US 10Y and 10Y real yields have risen materially with front‑end price tightness and slightly tightening dollar liquidity, but HY/IG spreads and broad‑market breadth have not fully followed; narrow AI/Mag‑7 and semiconductors remain a relief valve.",
+    "implication": "Policy/real‑yield‑driven duration pressure is the dominant market force now; transmission into credit and broad equity weakness is incomplete and therefore market risk is mixed rather than a clean risk‑off.",
+    "whatWouldChangeMind": "Sustained narrowing of HY/IG spreads, broad small‑cap/breadth deterioration and a persistent MOVE/VIX pickup, or clear global long‑end confirmation (Bund/JGB 10Y/30Y moving similarly), would move the regime toward broader risk‑off."
   },
   "rateRegime": {
-    "asOf": "2026-09-28T19:20:02.541Z",
+    "asOf": "2026-09-29T09:42:55.284Z",
     "gaps": [],
     "curve": {
       "state": "POSITIVE",
-      "detail": "10Y minus 2Y is +30.0 bp (positive).",
-      "spreadBps": 30,
+      "detail": "10Y minus 2Y is +43.0 bp (positive).",
+      "spreadBps": 43,
       "evidenceRefs": [
-        "market-monitor:us2y:2026-09-24",
-        "market-monitor:us10y:2026-09-25"
+        "market-monitor:us2y:2026-09-25",
+        "market-monitor:us10y:2026-09-28"
       ]
     },
-    "score": 50,
+    "score": 40,
     "state": "HAWKISH",
     "drivers": [
-      "Front-end pricing: hawkish (US 2Y 4.87%; 5D +20.0 bp; vs effective fed funds +99.0 bp.)",
-      "10Y real yield: hawkish (10Y real yield 2.85%; 5D +24.0 bp.)",
-      "Long-end nominal yields: hawkish (US 10Y 5.17%; 5D +16.0 bp.)"
+      "10Y real yield: hawkish (10Y real yield 2.83%; 5D +15.0 bp.)",
+      "Front-end pricing: hawkish (US 2Y 4.81%; 5D +5.0 bp; vs effective fed funds +93.0 bp.)",
+      "Long-end nominal yields: hawkish (US 10Y 5.24%; 5D +28.0 bp.)"
     ],
     "signals": [
       {
@@ -43,12 +43,12 @@
       {
         "key": "FRONT_END",
         "label": "Front-end pricing",
-        "score": 2,
+        "score": 1,
         "state": "HAWKISH",
-        "detail": "US 2Y 4.87%; 5D +20.0 bp; vs effective fed funds +99.0 bp.",
+        "detail": "US 2Y 4.81%; 5D +5.0 bp; vs effective fed funds +93.0 bp.",
         "evidenceRefs": [
-          "market-monitor:us2y:2026-09-24",
-          "market-monitor:fed-funds-effective:2026-09-24"
+          "market-monitor:us2y:2026-09-25",
+          "market-monitor:fed-funds-effective:2026-09-25"
         ]
       },
       {
@@ -56,9 +56,9 @@
         "label": "10Y real yield",
         "score": 2,
         "state": "HAWKISH",
-        "detail": "10Y real yield 2.85%; 5D +24.0 bp.",
+        "detail": "10Y real yield 2.83%; 5D +15.0 bp.",
         "evidenceRefs": [
-          "market-monitor:us10y-real:2026-09-24"
+          "market-monitor:us10y-real:2026-09-25"
         ]
       },
       {
@@ -66,9 +66,9 @@
         "label": "10Y inflation breakeven",
         "score": 0,
         "state": "NEUTRAL",
-        "detail": "10Y breakeven 2.34%; 5D +1.0 bp.",
+        "detail": "10Y breakeven 2.34%; 5D +0.0 bp.",
         "evidenceRefs": [
-          "market-monitor:us10y-breakeven:2026-09-25"
+          "market-monitor:us10y-breakeven:2026-09-28"
         ]
       },
       {
@@ -76,9 +76,9 @@
         "label": "Long-end nominal yields",
         "score": 1,
         "state": "HAWKISH",
-        "detail": "US 10Y 5.17%; 5D +16.0 bp.",
+        "detail": "US 10Y 5.24%; 5D +28.0 bp.",
         "evidenceRefs": [
-          "market-monitor:us10y:2026-09-25"
+          "market-monitor:us10y:2026-09-28"
         ]
       },
       {
@@ -88,11 +88,11 @@
         "state": "UNRESOLVED",
         "detail": "No current verified Treasury buyback/supply observation is present in the bounded rate context.",
         "evidenceRefs": [
-          "market-monitor:us10y:2026-09-25"
+          "market-monitor:us10y:2026-09-28"
         ]
       }
     ],
-    "summary": "Rates conditions are leaning hawkish/restrictive. Front-end pricing: hawkish (US 2Y 4.87%; 5D +20.0 bp; vs effective fed funds +99.0 bp.) 10Y real yield: hawkish (10Y real yield 2.85%; 5D +24.0 bp.)",
+    "summary": "Rates conditions are leaning hawkish/restrictive. 10Y real yield: hawkish (10Y real yield 2.83%; 5D +15.0 bp.) Front-end pricing: hawkish (US 2Y 4.81%; 5D +5.0 bp; vs effective fed funds +93.0 bp.)",
     "trigger": null,
     "coverage": {
       "total": 5,
@@ -102,18 +102,18 @@
     "confidence": "HIGH",
     "fredBacked": true,
     "evidenceRefs": [
-      "market-monitor:us2y:2026-09-24",
-      "market-monitor:fed-funds-effective:2026-09-24",
-      "market-monitor:us10y-real:2026-09-24",
-      "market-monitor:us10y-breakeven:2026-09-25",
-      "market-monitor:us10y:2026-09-25"
+      "market-monitor:us2y:2026-09-25",
+      "market-monitor:fed-funds-effective:2026-09-25",
+      "market-monitor:us10y-real:2026-09-25",
+      "market-monitor:us10y-breakeven:2026-09-28",
+      "market-monitor:us10y:2026-09-28"
     ],
     "contradictions": [],
     "contractVersion": "rate-regime/1",
-    "usRatesReaction": "US 2Y 5D +20.0 bp",
+    "usRatesReaction": "US 2Y 5D +5.0 bp",
     "observedRatePricing": null,
     "observedConfirmation": null,
-    "usRatesInterpretation": "US 2Y 4.87%; 5D +20.0 bp; vs effective fed funds +99.0 bp. 10Y real yield 2.85%; 5D +24.0 bp.",
+    "usRatesInterpretation": "US 2Y 4.81%; 5D +5.0 bp; vs effective fed funds +93.0 bp. 10Y real yield 2.83%; 5D +15.0 bp.",
     "nextMeetingRateOutlook": null,
     "fedWatchExpectedDirection": null
   },
@@ -126,7 +126,7 @@
         "direction": "UNRESOLVED",
         "confirmation": "UNRESOLVED",
         "detail": "No current deterministic policy impulse or directional next-meeting repricing is present in the bounded rate context.",
-        "asOf": "2026-09-28T19:20:02.541Z",
+        "asOf": "2026-09-29T09:42:55.284Z",
         "sourceName": "Live deterministic rate regime",
         "sourceUrl": null,
         "evidenceRefs": [],
@@ -139,16 +139,16 @@
         "label": "Front-end pricing",
         "direction": "TIGHTER",
         "confirmation": "CONFIRMING",
-        "detail": "US 2Y 4.87%; 5D +20.0 bp; vs effective fed funds +99.0 bp.",
-        "asOf": "2026-09-28T19:20:02.541Z",
+        "detail": "US 2Y 4.81%; 5D +5.0 bp; vs effective fed funds +93.0 bp.",
+        "asOf": "2026-09-29T09:42:55.284Z",
         "sourceName": "Live deterministic rate regime",
         "sourceUrl": null,
         "evidenceRefs": [
-          "market-monitor:us2y:2026-09-24",
-          "market-monitor:fed-funds-effective:2026-09-24"
+          "market-monitor:us2y:2026-09-25",
+          "market-monitor:fed-funds-effective:2026-09-25"
         ],
         "metrics": {
-          "score": 2
+          "score": 1
         }
       },
       {
@@ -156,12 +156,12 @@
         "label": "10Y real yield",
         "direction": "TIGHTER",
         "confirmation": "CONFIRMING",
-        "detail": "10Y real yield 2.85%; 5D +24.0 bp.",
-        "asOf": "2026-09-28T19:20:02.541Z",
+        "detail": "10Y real yield 2.83%; 5D +15.0 bp.",
+        "asOf": "2026-09-29T09:42:55.284Z",
         "sourceName": "Live deterministic rate regime",
         "sourceUrl": null,
         "evidenceRefs": [
-          "market-monitor:us10y-real:2026-09-24"
+          "market-monitor:us10y-real:2026-09-25"
         ],
         "metrics": {
           "score": 2
@@ -172,12 +172,12 @@
         "label": "10Y inflation breakeven",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "10Y breakeven 2.34%; 5D +1.0 bp.",
-        "asOf": "2026-09-28T19:20:02.541Z",
+        "detail": "10Y breakeven 2.34%; 5D +0.0 bp.",
+        "asOf": "2026-09-29T09:42:55.284Z",
         "sourceName": "Live deterministic rate regime",
         "sourceUrl": null,
         "evidenceRefs": [
-          "market-monitor:us10y-breakeven:2026-09-25"
+          "market-monitor:us10y-breakeven:2026-09-28"
         ],
         "metrics": {
           "score": 0
@@ -188,12 +188,12 @@
         "label": "Long-end nominal yields",
         "direction": "TIGHTER",
         "confirmation": "CONFIRMING",
-        "detail": "US 10Y 5.17%; 5D +16.0 bp.",
-        "asOf": "2026-09-28T19:20:02.541Z",
+        "detail": "US 10Y 5.24%; 5D +28.0 bp.",
+        "asOf": "2026-09-29T09:42:55.284Z",
         "sourceName": "Live deterministic rate regime",
         "sourceUrl": null,
         "evidenceRefs": [
-          "market-monitor:us10y:2026-09-25"
+          "market-monitor:us10y:2026-09-28"
         ],
         "metrics": {
           "score": 1
@@ -205,11 +205,11 @@
         "direction": "UNRESOLVED",
         "confirmation": "UNRESOLVED",
         "detail": "No current verified Treasury buyback/supply observation is present in the bounded rate context.",
-        "asOf": "2026-09-28T19:20:02.541Z",
+        "asOf": "2026-09-29T09:42:55.284Z",
         "sourceName": "Live deterministic rate regime",
         "sourceUrl": null,
         "evidenceRefs": [
-          "market-monitor:us10y:2026-09-25"
+          "market-monitor:us10y:2026-09-28"
         ],
         "metrics": {
           "score": 0
@@ -218,10 +218,10 @@
       {
         "key": "FUNDING",
         "label": "Secured funding / collateral",
-        "direction": "NEUTRAL",
+        "direction": "UNRESOLVED",
         "confirmation": "UNRESOLVED",
-        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR +1.3 bp. Volumes: SOFR $2914bn, TGCR $1191bn, BGCR $1231bn.",
-        "asOf": "2026-09-25",
+        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR n/a. Volumes: SOFR $2964bn, TGCR $1172bn, BGCR $1220bn.",
+        "asOf": "2026-09-28",
         "sourceName": "Federal Reserve Bank of New York",
         "sourceUrl": "https://markets.newyorkfed.org/api/rates/all/latest.json",
         "evidenceRefs": [],
@@ -230,10 +230,10 @@
           "sofr": 3.9,
           "tgcr": 3.89,
           "bgcr": 3.89,
-          "securedVsEffrBps": 1.3,
-          "sofrVolumeBillions": 2914,
-          "tgcrVolumeBillions": 1191,
-          "bgcrVolumeBillions": 1231
+          "securedVsEffrBps": null,
+          "sofrVolumeBillions": 2964,
+          "tgcrVolumeBillions": 1172,
+          "bgcrVolumeBillions": 1220
         }
       },
       {
@@ -439,47 +439,55 @@
   "lenses": [
     {
       "key": "US_RATES",
-      "label": "US Rates",
+      "label": "US rates",
       "observed": true,
-      "reaction": "Long nominal and real yields higher with a hawkish 2Y repricing.",
-      "interpretation": "Policy‑path plus real‑yield repricing is the primary upward pressure on rates today.",
-      "unresolvedSignals": [],
+      "reaction": "Nominal and real 10Y yields higher, front‑end shows bill/two‑year tightening.",
+      "interpretation": "Rates are the dominant driver; real‑yield and front‑end repricing are sustaining nominal long yields.",
+      "unresolvedSignals": [
+        "Bund/JGB long‑end confirmation missing"
+      ],
       "evidenceRefs": [
-        "market-monitor:us2y:2026-09-24",
-        "market-monitor:us10y:2026-09-25",
-        "market-monitor:us10y-real:2026-09-24"
+        "market-monitor:us10y:2026-09-28",
+        "market-monitor:us10y-real:2026-09-25",
+        "market-monitor:us2y:2026-09-25",
+        "system1-dollar:treasury-bills:2026-09-28"
       ]
     },
     {
       "key": "BONDS",
-      "label": "Treasury Bonds",
+      "label": "Bonds / duration",
       "observed": true,
-      "reaction": "10Y elevated and moved higher over the week; term structure is positive (10Y > 2Y).",
-      "interpretation": "Duration pressure is present but has not yet uniformly transmitted to credit-risk repricing.",
-      "unresolvedSignals": [],
+      "reaction": "Long‑end has repriced higher and real yields are up materially.",
+      "interpretation": "Duration pressure is broad within US treasuries; decomposition between real yields, breakevens and term‑premium needs further evidence.",
+      "unresolvedSignals": [
+        "term‑premium vs real‑yield decomposition"
+      ],
       "evidenceRefs": [
-        "market-monitor:us10y:2026-09-25",
-        "market-monitor:us2y:2026-09-24"
+        "market-monitor:us10y:2026-09-28",
+        "market-monitor:us10y-real:2026-09-25"
       ]
     },
     {
       "key": "USD",
-      "label": "US Dollar",
+      "label": "USD / FX",
       "observed": true,
-      "reaction": "Dollar proxy modestly higher over 5D; intraday moves mixed.",
-      "interpretation": "Dollar movement is not the dominant transmission channel today, but front‑end tightening contributes to liquidity tension.",
+      "reaction": "Dollar proxy slightly stronger on 5D basis; USDJPY modestly softer over 5D.",
+      "interpretation": "Dollar is not the dominant clean driver; slight tightening supports funding pressure but is not extreme.",
       "unresolvedSignals": [],
       "evidenceRefs": [
-        "market-monitor:dxy:2026-09-25"
+        "market-monitor:dxy:2026-09-28",
+        "market-monitor:usdjpy:2026-09-28"
       ]
     },
     {
       "key": "CREDIT",
-      "label": "Credit",
+      "label": "Credit spreads",
       "observed": true,
-      "reaction": "HY and IG spreads widened modestly week‑to‑date but remain contained.",
-      "interpretation": "Credit shows early signs of pressure but not the broad, sustained widening that would confirm full transmission.",
-      "unresolvedSignals": [],
+      "reaction": "HY and IG spreads modestly wider but not sharply dislocated.",
+      "interpretation": "Credit shows some tightening transmission but remains only modestly responsive, indicating incomplete stress transmission.",
+      "unresolvedSignals": [
+        "whether spreads will re‑accelerate if yields persist"
+      ],
       "evidenceRefs": [
         "market-monitor:hy-oas:2026-09-25",
         "market-monitor:ig-oas:2026-09-25"
@@ -489,57 +497,62 @@
       "key": "BREADTH",
       "label": "Breadth",
       "observed": true,
-      "reaction": "Large‑cap breadth modestly above averages while AI/Mag‑7 breadth is materially stronger.",
-      "interpretation": "Breadth is narrow and concentrated, acting as a counter‑force to yield pressure.",
-      "unresolvedSignals": [],
+      "reaction": "Large‑cap long‑run breadth metrics are above averages while headline SPX is down modestly; AI/Mag‑7 breadth is notably strong.",
+      "interpretation": "Breadth is mixed: concentration in tech/semis props indices even as broader participation is uneven.",
+      "unresolvedSignals": [
+        "small‑cap/breadth confirmation at intraday resolution"
+      ],
       "evidenceRefs": [
-        "market-breadth:large-cap:2026-09-25",
-        "market-breadth:ai-basket:2026-09-25",
-        "market-breadth:mag7:2026-09-25"
+        "market-breadth:large-cap:2026-09-28",
+        "market-breadth:ai-basket:2026-09-28",
+        "market-breadth:mag7:2026-09-28"
       ]
     },
     {
       "key": "TECH_AI",
       "label": "Tech / AI / Semiconductors",
       "observed": true,
-      "reaction": "AI basket, Mag‑7 breadth and SMH are strong and outperforming broader indices.",
-      "interpretation": "Concentrated tech leadership is acting as a relief valve that mutes headline equity weakness.",
-      "unresolvedSignals": [],
+      "reaction": "AI/Mag‑7 breadth and SMH remain strong and are outperforming many cyclicals.",
+      "interpretation": "Concentrated leadership is a relief valve that supports indices despite yield stress.",
+      "unresolvedSignals": [
+        "durability of concentrated flows if credit/volatility worsens"
+      ],
       "evidenceRefs": [
-        "market-breadth:ai-basket:2026-09-25",
-        "market-breadth:mag7:2026-09-25",
-        "market-monitor:smh:2026-09-25"
+        "market-breadth:ai-basket:2026-09-28",
+        "market-breadth:mag7:2026-09-28",
+        "market-monitor:smh:2026-09-28"
       ]
     },
     {
       "key": "OIL_WAR_INFLATION",
-      "label": "Oil / Product Inflation",
+      "label": "Oil / energy inflation",
       "observed": true,
-      "reaction": "WTI softened while distillate cracks and heating oil remain elevated and 10Y breakevens show limited relief.",
-      "interpretation": "Product‑level stress is plausibly sustaining inflation compensation and long yields despite softer crude.",
-      "unresolvedSignals": [],
+      "reaction": "WTI softer while distillate cracks and heating oil remain elevated.",
+      "interpretation": "Product stress is plausibly supporting breakevens and long yields even as crude weakens.",
+      "unresolvedSignals": [
+        "regional inventories and hub cracks"
+      ],
       "evidenceRefs": [
         "market-monitor:wti:2026-09-22",
         "market-monitor:crack-distillate:2026-09-22",
-        "market-monitor:distillate:2026-09-22",
-        "market-monitor:us10y-breakeven:2026-09-25"
+        "market-monitor:distillate:2026-09-22"
       ]
     },
     {
       "key": "GOLD",
       "label": "Gold",
       "observed": true,
-      "reaction": "Gold is weaker intraweek, consistent with rates/USD dominance over safe‑haven bids.",
-      "interpretation": "Weak gold alongside rising real yields suggests rates and USD are crowding out geopolitical safe‑haven flows.",
+      "reaction": "Gold weaker over 5D and intraday, consistent with rates/USD strength dominating safe‑haven flows.",
+      "interpretation": "Rates/USD dominance is crowding out typical geopolitical safe‑haven demand for gold in this window.",
       "unresolvedSignals": [],
       "evidenceRefs": [
-        "market-monitor:gold:2026-09-28"
+        "market-monitor:gold:2026-09-29"
       ]
     }
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-09-29T05:43:19.264Z",
+    "asOf": "2026-09-29T12:59:19.029Z",
     "assets": [
       {
         "key": "SPX",
@@ -549,27 +562,27 @@
         "dailyChange": -0.77,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
-        "conviction": "HIGH",
-        "primaryDriver": "If durable, the regime implies ongoing upward pressure on real yields and selective equity weakness unless credit spreads, VIX and breadth visibly deteriorate.",
-        "confirmingSignal": "Large‑cap breadth modestly above averages while AI/Mag‑7 breadth is materially stronger.",
-        "contradictingSignal": null,
-        "invalidation": "Sustained, material HY/IG spread widening with rising VIX and clear breadth deterioration, or confirmed long‑end pressure in Bunds/JGBs, would shift the regime away from a US‑led rates‑only tightening.",
+        "conviction": "MEDIUM",
+        "primaryDriver": "Policy/real‑yield‑driven duration pressure is the dominant market force now; transmission into credit and broad equity weakness is incomplete and therefore market risk is mixed rather than a clean risk‑off.",
+        "confirmingSignal": "Large‑cap long‑run breadth metrics are above averages while headline SPX is down modestly; AI/Mag‑7 breadth is notably strong.",
+        "contradictingSignal": "small‑cap/breadth confirmation at intraday resolution",
+        "invalidation": "Sustained narrowing of HY/IG spreads, broad small‑cap/breadth deterioration and a persistent MOVE/VIX pickup, or clear global long‑end confirmation (Bund/JGB 10Y/30Y moving similarly), would move the regime toward broader risk‑off.",
         "asOf": "2026-09-28"
       },
       {
         "key": "NASDAQ",
         "label": "Nasdaq Composite",
         "symbol": "^IXIC",
-        "last": 27068.72,
-        "dailyChange": 0.48,
+        "last": 26820.38,
+        "dailyChange": -0.92,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
-        "conviction": "HIGH",
-        "primaryDriver": "Concentrated tech leadership is acting as a relief valve that mutes headline equity weakness.",
-        "confirmingSignal": "AI basket, Mag‑7 breadth and SMH are strong and outperforming broader indices.",
-        "contradictingSignal": null,
-        "invalidation": "Sustained, material HY/IG spread widening with rising VIX and clear breadth deterioration, or confirmed long‑end pressure in Bunds/JGBs, would shift the regime away from a US‑led rates‑only tightening.",
-        "asOf": "2026-09-25"
+        "conviction": "MEDIUM",
+        "primaryDriver": "Concentrated leadership is a relief valve that supports indices despite yield stress.",
+        "confirmingSignal": "AI/Mag‑7 breadth and SMH remain strong and are outperforming many cyclicals.",
+        "contradictingSignal": "durability of concentrated flows if credit/volatility worsens",
+        "invalidation": "Sustained narrowing of HY/IG spreads, broad small‑cap/breadth deterioration and a persistent MOVE/VIX pickup, or clear global long‑end confirmation (Bund/JGB 10Y/30Y moving similarly), would move the regime toward broader risk‑off.",
+        "asOf": "2026-09-28"
       },
       {
         "key": "CRUDE",
@@ -578,12 +591,12 @@
         "last": 96.41,
         "dailyChange": -0.58,
         "dailyChangeUnit": "percent",
-        "bias": "MIXED",
-        "conviction": "HIGH",
-        "primaryDriver": "Product‑level stress is plausibly sustaining inflation compensation and long yields despite softer crude.",
-        "confirmingSignal": "WTI softened while distillate cracks and heating oil remain elevated and 10Y breakevens show limited relief.",
-        "contradictingSignal": null,
-        "invalidation": "Sustained, material HY/IG spread widening with rising VIX and clear breadth deterioration, or confirmed long‑end pressure in Bunds/JGBs, would shift the regime away from a US‑led rates‑only tightening.",
+        "bias": "BEARISH",
+        "conviction": "MEDIUM",
+        "primaryDriver": "Product stress is plausibly supporting breakevens and long yields even as crude weakens.",
+        "confirmingSignal": "WTI softer while distillate cracks and heating oil remain elevated.",
+        "contradictingSignal": "regional inventories and hub cracks",
+        "invalidation": "Sustained narrowing of HY/IG spreads, broad small‑cap/breadth deterioration and a persistent MOVE/VIX pickup, or clear global long‑end confirmation (Bund/JGB 10Y/30Y moving similarly), would move the regime toward broader risk‑off.",
         "asOf": "2026-09-22"
       },
       {
@@ -595,33 +608,33 @@
         "dailyChangeUnit": "bps",
         "bias": "HAWKISH",
         "conviction": "HIGH",
-        "primaryDriver": "Rates conditions are leaning hawkish/restrictive. Front-end pricing: hawkish (US 2Y 4.87%; 5D +20.0 bp; vs effective fed funds +99.0 bp.) 10Y real yield: hawkish (10Y real yield 2.85%; 5D +24.0 bp.)",
-        "confirmingSignal": "Long nominal and real yields higher with a hawkish 2Y repricing.",
-        "contradictingSignal": null,
-        "invalidation": "Sustained, material HY/IG spread widening with rising VIX and clear breadth deterioration, or confirmed long‑end pressure in Bunds/JGBs, would shift the regime away from a US‑led rates‑only tightening.",
+        "primaryDriver": "Rates conditions are leaning hawkish/restrictive. 10Y real yield: hawkish (10Y real yield 2.83%; 5D +15.0 bp.) Front-end pricing: hawkish (US 2Y 4.81%; 5D +5.0 bp; vs effective fed funds +93.0 bp.)",
+        "confirmingSignal": "Nominal and real 10Y yields higher, front‑end shows bill/two‑year tightening.",
+        "contradictingSignal": "Bund/JGB long‑end confirmation missing",
+        "invalidation": "Sustained narrowing of HY/IG spreads, broad small‑cap/breadth deterioration and a persistent MOVE/VIX pickup, or clear global long‑end confirmation (Bund/JGB 10Y/30Y moving similarly), would move the regime toward broader risk‑off.",
         "asOf": "2026-09-28"
       },
       {
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4136,
-        "dailyChange": -0.56,
+        "last": 4151.5,
+        "dailyChange": -0.41,
         "dailyChangeUnit": "percent",
-        "bias": "BEARISH",
+        "bias": "MIXED",
         "conviction": "MEDIUM",
-        "primaryDriver": "Weak gold alongside rising real yields suggests rates and USD are crowding out geopolitical safe‑haven flows.",
-        "confirmingSignal": "Gold is weaker intraweek, consistent with rates/USD dominance over safe‑haven bids.",
+        "primaryDriver": "Rates/USD dominance is crowding out typical geopolitical safe‑haven demand for gold in this window.",
+        "confirmingSignal": "Gold weaker over 5D and intraday, consistent with rates/USD strength dominating safe‑haven flows.",
         "contradictingSignal": null,
-        "invalidation": "Sustained, material HY/IG spread widening with rising VIX and clear breadth deterioration, or confirmed long‑end pressure in Bunds/JGBs, would shift the regime away from a US‑led rates‑only tightening.",
+        "invalidation": "Sustained narrowing of HY/IG spreads, broad small‑cap/breadth deterioration and a persistent MOVE/VIX pickup, or clear global long‑end confirmation (Bund/JGB 10Y/30Y moving similarly), would move the regime toward broader risk‑off.",
         "asOf": "2026-09-29"
       },
       {
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 83151.03,
-        "dailyChange": -0.37,
+        "last": 84297.18,
+        "dailyChange": 1.01,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -636,68 +649,72 @@
   "stories": [
     {
       "id": "story:rates-duration-stress",
-      "title": "Duration/real‑yield pressure is dominant but transmission to credit and breadth is incomplete.",
-      "whatChanged": "10Y nominal and 10Y real yields have moved materially higher and the 2Y is repricing hawkishly while HY/IG spreads and broad breadth show only modest weakening.",
-      "whyItMatters": "Whether this yield repricing spreads into credit and equity breadth determines if markets move from selective stress to broad risk‑off.",
-      "mechanism": "Policy‑path and real‑yield repricing raise discount rates and funding costs, which should widen credit spreads and pressure cyclicals if the move transmits.",
-      "conclusion": "Duration stress is the dominant force today, but transmission into credit and broad equity weakness remains incomplete.",
-      "whatWouldChangeMind": "Persistent HY/IG widening with concurrent breadth deterioration and VIX uplift would confirm transmission.",
+      "title": "Duration repricing is the primary driver; front‑end and 10Y real yields have lifted nominal long yields",
+      "whatChanged": "US 10Y and 10Y real yields have moved materially higher over the past week alongside front‑end tightening and bill yields above EFFR.",
+      "whyItMatters": "Higher real and nominal yields steepen the funding/policy impulse that can widen credit spreads and pressure cyclicals if transmission continues.",
+      "mechanism": "Higher real yields increase discount rates and raise financing costs; front‑end/bill tightness compresses collateral and raises funding costs, pushing credit compensation wider if not absorbed.",
+      "conclusion": "Duration/real‑yield pressure is clearly present and dominant today, but credit and volatility transmission remain incomplete.",
+      "whatWouldChangeMind": "Evidence of persistent HY and IG spread widening paired with a sustained VIX/MOVE pickup and breadth deterioration would confirm full transmission.",
       "epistemicLabel": "SUPPORTED",
       "evidenceRefs": [
-        "market-monitor:us2y:2026-09-24",
-        "market-monitor:us10y:2026-09-25",
-        "market-monitor:us10y-real:2026-09-24",
+        "market-monitor:us10y:2026-09-28",
+        "market-monitor:us10y-real:2026-09-25",
+        "market-monitor:us2y:2026-09-25",
+        "system1-dollar:treasury-bills:2026-09-28",
+        "system1-dollar:nyfed-rates:2026-09-25",
         "market-monitor:hy-oas:2026-09-25",
-        "market-breadth:ai-basket:2026-09-25",
-        "market-breadth:mag7:2026-09-25"
+        "market-monitor:ig-oas:2026-09-25",
+        "market-monitor:spx:2026-09-28"
       ],
       "investigationIds": [
         "inv:duration-transmission"
       ],
       "chartIds": [
-        "chart:rates-term-decomp"
+        "chart:us10y-vs-breakeven",
+        "chart:credit-breadth-spread"
       ]
     },
     {
       "id": "story:energy-product-stress",
-      "title": "Refined‑product stress is sustaining breakevens even as crude softens.",
-      "whatChanged": "WTI has softened while distillate cracks and heating oil remain elevated and 10Y breakevens show limited relief.",
-      "whyItMatters": "Product‑level tightness can keep inflation compensation and long yields elevated independent of crude’s direction.",
-      "mechanism": "Physical product tightness (refinery/logistics) supports regional prices and cracks, which feed into domestic inflation expectations and breakevens.",
-      "conclusion": "Product stress is plausibly supporting breakevens and long yields today despite softer crude.",
-      "whatWouldChangeMind": "Regional refinery utilisation and inventory data showing normalised product balances would weaken this story.",
+      "title": "Refined‑product cracks remain elevated and are supporting breakevens and long yields despite softer crude",
+      "whatChanged": "Distillate crack and heating‑oil proxies remain high while WTI has softened over the same window.",
+      "whyItMatters": "Sustained product tightness can keep inflation compensation and long yields elevated even if crude weakens, complicating relief from falling crude prices.",
+      "mechanism": "Regional/refinery or logistics constraints keep product spreads rich, propping local inflation expectations and supporting nominal/real long yields.",
+      "conclusion": "Product cracks provide a plausible sustaining force for breakevens and long yields; crude weakness has not yet undone that channel.",
+      "whatWouldChangeMind": "Prompt evidence of easing product cracks/backwardation or regional inventory rebuilds would undercut this story.",
       "epistemicLabel": "SUPPORTED",
       "evidenceRefs": [
-        "market-monitor:distillate:2026-09-22",
         "market-monitor:crack-distillate:2026-09-22",
-        "market-monitor:us10y-breakeven:2026-09-25",
-        "market-monitor:wti:2026-09-22"
+        "market-monitor:distillate:2026-09-22",
+        "market-monitor:wti:2026-09-22",
+        "market-monitor:us10y-breakeven:2026-09-28"
       ],
       "investigationIds": [
         "inv:energy-inflation-transmission"
       ],
       "chartIds": [
-        "chart:energy-cracks-curve"
+        "chart:distillate-vs-wti"
       ]
     },
     {
-      "id": "story:tech-narrow-riskon",
-      "title": "Narrow AI/Mag‑7 and semiconductor leadership is acting as a relief valve for indices.",
-      "whatChanged": "AI/semiconductor breadth and SMH performance are strong even as yields rise, keeping headline indices afloat.",
-      "whyItMatters": "Concentrated leadership can mask underlying transmission; whether it holds determines index durability.",
-      "mechanism": "Investor preference for high‑conviction AI and semiconductor exposures sustains flows and valuation support despite broader funding stress.",
-      "conclusion": "Tech/semiconductor concentration is a credible relief valve but does not yet indicate a broad, credit‑confirmed risk‑on.",
-      "whatWouldChangeMind": "Widespread participation beyond Mag‑7/AI (improving small‑cap breadth and credit tightening) would indicate true broad risk‑on.",
+      "id": "story:tech-narrow-relief",
+      "title": "Concentrated AI/Mag‑7 and semiconductor leadership is acting as a relief valve for indices",
+      "whatChanged": "AI basket and Mag‑7 breadth metrics are substantially above multi‑week averages while SMH shows positive 5‑day performance relative to the broad index.",
+      "whyItMatters": "Concentrated leadership can mask weakness beneath the surface and delay broad risk‑off outcomes.",
+      "mechanism": "Strong capital inflows and positive sentiment into AI/semiconductor names sustain index levels even as rates rise and other sectors lag.",
+      "conclusion": "Tech/semiconductor concentration is providing index support but does not yet constitute broad risk‑on.",
+      "whatWouldChangeMind": "Sustained deterioration in AI/Mag‑7 and SMH breadth/performance would remove this relief valve and expose broader market weakness.",
       "epistemicLabel": "OBSERVED",
       "evidenceRefs": [
-        "market-breadth:ai-basket:2026-09-25",
-        "market-breadth:mag7:2026-09-25",
-        "market-monitor:smh:2026-09-25",
-        "market-breadth:large-cap:2026-09-25"
+        "market-breadth:ai-basket:2026-09-28",
+        "market-breadth:mag7:2026-09-28",
+        "market-monitor:smh:2026-09-28",
+        "market-breadth:large-cap:2026-09-28",
+        "market-monitor:spx:2026-09-28"
       ],
       "investigationIds": [],
       "chartIds": [
-        "chart:tech-breadth"
+        "chart:smh-breadth"
       ]
     }
   ],
@@ -705,25 +722,25 @@
     {
       "id": "inv:duration-transmission",
       "status": "open",
-      "question": "Is the front‑end and 10Y real‑yield move transmitting into credit spreads, MOVE/VIX and broad equity weakness?",
-      "whyItMatters": "Transmission into credit/breadth would convert a rates shock into broad market stress and change positioning.",
-      "currentExplanation": "10Y nominal and real yields and the 2Y have repriced higher, but HY/IG spreads widened only modestly and AI/Mag‑7 breadth plus SMH remain resilient, indicating incomplete transmission so far.",
+      "question": "Is the front‑end and 10Y real‑yield repricing transmitting into credit spreads, MOVE/VIX and broad equity weakness?",
+      "whyItMatters": "Determines whether current yield moves will force broad risk repricing or remain a duration shock absorbed by concentrated leadership and liquidity dynamics.",
+      "currentExplanation": "Observed evidence shows materially higher nominal and real 10Y yields and front‑end/bill tightness while HY/IG spreads widened only modestly and AI/Mag‑7/SMH breadth remains strong, indicating incomplete transmission so far.",
       "expectedReaction": "Conventional: rising real yields/front end should widen credit spreads, lift VIX and weaken broad breadth/small caps.",
-      "observedReaction": "Higher 2Y and 10Y nominal/real yields alongside modest HY/IG widening and strong AI/Mag‑7 and SMH breadth.",
+      "observedReaction": "10Y nominal and real yields up materially; HY OAS and IG OAS modestly wider; large‑cap breadth positive on longer averages while SPX is modestly down.",
       "divergence": "UNRESOLVED",
       "competingExplanations": [
         "Concentrated tech/AI leadership is propping indices and masking transmission.",
-        "Credit widening lags yield moves and may follow if yields persist.",
-        "Dealer/liquidity frictions or collateral dynamics are absorbing flows and delaying spread moves."
+        "Credit widening lags yields and may follow if yields persist.",
+        "Dealer/liquidity/collateral dynamics are absorbing flows and delaying spread moves."
       ],
       "candidateExplanations": [
         {
           "rank": 1,
-          "explanation": "10Y nominal and real yields and the 2Y have repriced higher, but HY/IG spreads widened only modestly and AI/Mag‑7 breadth plus SMH remain resilient, indicating incomplete transmission so far.",
+          "explanation": "Observed evidence shows materially higher nominal and real 10Y yields and front‑end/bill tightness while HY/IG spreads widened only modestly and AI/Mag‑7/SMH breadth remains strong, indicating incomplete transmission so far.",
           "evidenceForRefs": [],
           "evidenceAgainstRefs": [],
           "confidence": "UNRESOLVED",
-          "discriminatingTest": "Pull intraday Treasury flow and options‑skew timestamps, intraday MOVE/VIX, Bund/JGB 10Y/30Y series and updated dealer fails to discriminate US‑only front‑end pressure versus global duration broadening. Confirm global duration with Bund, gilt and JGB long ends; cross-check gold versus real yields and USD; compare HY/IG, breadth and MOVE/VIX"
+          "discriminatingTest": "Pull intraday MOVE/VIX and timestamped Treasury flow, Bund/JGB 10Y/30Y series, dealer fails and cross‑currency basis to discriminate US‑only front‑end pressure vs global duration shock. Confirm global duration with Bund, gilt and JGB long ends; cross-check gold versus real yields and USD; compare HY/IG, breadth and MOVE/VIX"
         },
         {
           "rank": 2,
@@ -731,49 +748,51 @@
           "evidenceForRefs": [],
           "evidenceAgainstRefs": [],
           "confidence": "UNRESOLVED",
-          "discriminatingTest": "Pull intraday Treasury flow and options‑skew timestamps, intraday MOVE/VIX, Bund/JGB 10Y/30Y series and updated dealer fails to discriminate US‑only front‑end pressure versus global duration broadening. Confirm global duration with Bund, gilt and JGB long ends; cross-check gold versus real yields and USD; compare HY/IG, breadth and MOVE/VIX"
+          "discriminatingTest": "Pull intraday MOVE/VIX and timestamped Treasury flow, Bund/JGB 10Y/30Y series, dealer fails and cross‑currency basis to discriminate US‑only front‑end pressure vs global duration shock. Confirm global duration with Bund, gilt and JGB long ends; cross-check gold versus real yields and USD; compare HY/IG, breadth and MOVE/VIX"
         },
         {
           "rank": 3,
-          "explanation": "Credit widening lags yield moves and may follow if yields persist.",
+          "explanation": "Credit widening lags yields and may follow if yields persist.",
           "evidenceForRefs": [],
           "evidenceAgainstRefs": [],
           "confidence": "UNRESOLVED",
-          "discriminatingTest": "Pull intraday Treasury flow and options‑skew timestamps, intraday MOVE/VIX, Bund/JGB 10Y/30Y series and updated dealer fails to discriminate US‑only front‑end pressure versus global duration broadening. Confirm global duration with Bund, gilt and JGB long ends; cross-check gold versus real yields and USD; compare HY/IG, breadth and MOVE/VIX"
+          "discriminatingTest": "Pull intraday MOVE/VIX and timestamped Treasury flow, Bund/JGB 10Y/30Y series, dealer fails and cross‑currency basis to discriminate US‑only front‑end pressure vs global duration shock. Confirm global duration with Bund, gilt and JGB long ends; cross-check gold versus real yields and USD; compare HY/IG, breadth and MOVE/VIX"
         },
         {
           "rank": 4,
-          "explanation": "Dealer/liquidity frictions or collateral dynamics are absorbing flows and delaying spread moves.",
+          "explanation": "Dealer/liquidity/collateral dynamics are absorbing flows and delaying spread moves.",
           "evidenceForRefs": [],
           "evidenceAgainstRefs": [],
           "confidence": "UNRESOLVED",
-          "discriminatingTest": "Pull intraday Treasury flow and options‑skew timestamps, intraday MOVE/VIX, Bund/JGB 10Y/30Y series and updated dealer fails to discriminate US‑only front‑end pressure versus global duration broadening. Confirm global duration with Bund, gilt and JGB long ends; cross-check gold versus real yields and USD; compare HY/IG, breadth and MOVE/VIX"
+          "discriminatingTest": "Pull intraday MOVE/VIX and timestamped Treasury flow, Bund/JGB 10Y/30Y series, dealer fails and cross‑currency basis to discriminate US‑only front‑end pressure vs global duration shock. Confirm global duration with Bund, gilt and JGB long ends; cross-check gold versus real yields and USD; compare HY/IG, breadth and MOVE/VIX"
         }
       ],
-      "researchNext": "Pull intraday Treasury flow and options‑skew timestamps, intraday MOVE/VIX, Bund/JGB 10Y/30Y series and updated dealer fails to discriminate US‑only front‑end pressure versus global duration broadening. Confirm global duration with Bund, gilt and JGB long ends; cross-check gold versus real yields and USD; compare HY/IG, breadth and MOVE/VIX",
-      "confirmationCondition": "Sustained, correlated widening in HY+IG with breadth deterioration and VIX lift accompanying persistent higher real yields.",
-      "invalidationCondition": "Credit spreads and breadth remain stable while yields revert or real yields fall.",
+      "researchNext": "Pull intraday MOVE/VIX and timestamped Treasury flow, Bund/JGB 10Y/30Y series, dealer fails and cross‑currency basis to discriminate US‑only front‑end pressure vs global duration shock. Confirm global duration with Bund, gilt and JGB long ends; cross-check gold versus real yields and USD; compare HY/IG, breadth and MOVE/VIX",
+      "confirmationCondition": "Sustained widening in HY/IG accompanied by breadth deterioration and a persistent MOVE/VIX pickup.",
+      "invalidationCondition": "Spreads remain contained while breadth and concentrated leadership persist despite continued yield strength.",
       "evidenceRefs": [
-        "market-monitor:us2y:2026-09-24",
-        "market-monitor:us10y:2026-09-25",
-        "market-monitor:us10y-real:2026-09-24",
+        "market-monitor:us10y:2026-09-28",
+        "market-monitor:us10y-real:2026-09-25",
+        "market-monitor:us2y:2026-09-25",
+        "system1-dollar:treasury-bills:2026-09-28",
+        "system1-dollar:nyfed-rates:2026-09-25",
         "market-monitor:hy-oas:2026-09-25",
         "market-monitor:ig-oas:2026-09-25",
-        "market-breadth:ai-basket:2026-09-25",
-        "market-breadth:mag7:2026-09-25",
-        "market-monitor:smh:2026-09-25"
+        "market-breadth:large-cap:2026-09-28",
+        "market-breadth:ai-basket:2026-09-28",
+        "market-monitor:spx:2026-09-28"
       ],
       "missingEvidence": [
-        "Intraday Treasury flow and timestamped options‑skew/MOVE decomposition",
-        "Updated dealer fail/net positions with validated stress rule",
-        "Bund and JGB 10Y/30Y long‑end series for global confirmation",
+        "Intraday Treasury flow and timestamped options‑skew/MOVE/VIX series for reaction timing.",
+        "Bund and JGB 10Y/30Y intraday series to confirm global duration broadening.",
+        "Updated dealer fails and prime brokerage/secured funding flow to test collateral absorption.",
         "Bund, gilt and JGB long-end confirmation for any global-duration label",
         "gold versus real-yield and USD cross-check",
         "HY/IG credit, breadth and MOVE/VIX transmission confirmation"
       ],
       "chartIds": [
-        "chart:rates-term-decomp",
-        "chart:credit-breadth-vol"
+        "chart:us10y-vs-breakeven",
+        "chart:credit-breadth-spread"
       ],
       "storyIds": [
         "story:rates-duration-stress"
@@ -805,74 +824,74 @@
         "previousExpectedReaction": "Conventional: rising real yields/front end should widen credit spreads, lift VIX and weaken broad breadth/small caps.",
         "currentExpectedReaction": "Conventional: rising real yields/front end should widen credit spreads, lift VIX and weaken broad breadth/small caps.",
         "expectationChanged": false,
-        "question": "Is the front‑end and 10Y real‑yield move transmitting into credit spreads, MOVE/VIX and broad equity weakness?"
+        "question": "Is the front‑end and 10Y real‑yield repricing transmitting into credit spreads, MOVE/VIX and broad equity weakness?"
       }
     },
     {
       "id": "inv:energy-inflation-transmission",
       "status": "open",
-      "question": "Is refined‑product stress strong enough to sustain breakevens and long yields even as crude falls?",
-      "whyItMatters": "If product tightness sustains breakevens, long yields and inflation compensation may remain elevated despite crude weakness.",
-      "currentExplanation": "WTI fell while distillate cracks and heating oil remain elevated and 10Y breakeven shows limited decline, suggesting product stress is helping sustain inflation expectations.",
+      "question": "Are refined‑product cracks and regional product tightness strong enough to sustain breakevens and long yields even as crude softens?",
+      "whyItMatters": "If product tightness persists it can maintain inflation compensation and long yields even without crude support, prolonging the rates impulse.",
+      "currentExplanation": "Distillate crack and heating oil remain elevated while WTI is softer and 10Y breakeven shows limited relief, suggesting product stress is supporting inflation expectations.",
       "expectedReaction": "Conventional: falling crude would relieve inflationary impulse and press breakevens/yields lower.",
-      "observedReaction": "WTI lower while distillate cracks and heating oil remain elevated and breakevens show limited relief.",
+      "observedReaction": "WTI down while distillate cracks and NYH heating oil remain elevated and breakeven shows limited decline.",
       "divergence": "UNRESOLVED",
       "competingExplanations": [
-        "Regional refinery or logistics issues are keeping product cracks high.",
-        "Seasonal or temporary outages are distorting product prices.",
-        "Crude demand weakness exceeds product tightness, making cracks temporary."
+        "Regional refinery outages or logistics are keeping product cracks rich.",
+        "Seasonal/temporary factors explain product strength and will reverse.",
+        "Crude demand weakness will eventually force cracks lower, removing the support."
       ],
       "candidateExplanations": [
         {
           "rank": 1,
-          "explanation": "WTI fell while distillate cracks and heating oil remain elevated and 10Y breakeven shows limited decline, suggesting product stress is helping sustain inflation expectations.",
+          "explanation": "Distillate crack and heating oil remain elevated while WTI is softer and 10Y breakeven shows limited relief, suggesting product stress is supporting inflation expectations.",
           "evidenceForRefs": [],
           "evidenceAgainstRefs": [],
           "confidence": "UNRESOLVED",
-          "discriminatingTest": "Pull regional refinery utilisation, product inventories, hub futures cracks/backwardation and prompt spreads to discriminate supply vs demand drivers within 48h. Check the crude curve, backwardation and refined-product cracks; verify Trump–Xi outcomes and implementation before using them as facts"
+          "discriminatingTest": "Pull regional refinery utilisation, prompt hub cracks/backwardation, inventories and PADD flows to separate physical product stress from temporary market dislocations. Check the crude curve, backwardation and refined-product cracks; verify Trump–Xi outcomes and implementation before using them as facts"
         },
         {
           "rank": 2,
-          "explanation": "Regional refinery or logistics issues are keeping product cracks high.",
+          "explanation": "Regional refinery outages or logistics are keeping product cracks rich.",
           "evidenceForRefs": [],
           "evidenceAgainstRefs": [],
           "confidence": "UNRESOLVED",
-          "discriminatingTest": "Pull regional refinery utilisation, product inventories, hub futures cracks/backwardation and prompt spreads to discriminate supply vs demand drivers within 48h. Check the crude curve, backwardation and refined-product cracks; verify Trump–Xi outcomes and implementation before using them as facts"
+          "discriminatingTest": "Pull regional refinery utilisation, prompt hub cracks/backwardation, inventories and PADD flows to separate physical product stress from temporary market dislocations. Check the crude curve, backwardation and refined-product cracks; verify Trump–Xi outcomes and implementation before using them as facts"
         },
         {
           "rank": 3,
-          "explanation": "Seasonal or temporary outages are distorting product prices.",
+          "explanation": "Seasonal/temporary factors explain product strength and will reverse.",
           "evidenceForRefs": [],
           "evidenceAgainstRefs": [],
           "confidence": "UNRESOLVED",
-          "discriminatingTest": "Pull regional refinery utilisation, product inventories, hub futures cracks/backwardation and prompt spreads to discriminate supply vs demand drivers within 48h. Check the crude curve, backwardation and refined-product cracks; verify Trump–Xi outcomes and implementation before using them as facts"
+          "discriminatingTest": "Pull regional refinery utilisation, prompt hub cracks/backwardation, inventories and PADD flows to separate physical product stress from temporary market dislocations. Check the crude curve, backwardation and refined-product cracks; verify Trump–Xi outcomes and implementation before using them as facts"
         },
         {
           "rank": 4,
-          "explanation": "Crude demand weakness exceeds product tightness, making cracks temporary.",
+          "explanation": "Crude demand weakness will eventually force cracks lower, removing the support.",
           "evidenceForRefs": [],
           "evidenceAgainstRefs": [],
           "confidence": "UNRESOLVED",
-          "discriminatingTest": "Pull regional refinery utilisation, product inventories, hub futures cracks/backwardation and prompt spreads to discriminate supply vs demand drivers within 48h. Check the crude curve, backwardation and refined-product cracks; verify Trump–Xi outcomes and implementation before using them as facts"
+          "discriminatingTest": "Pull regional refinery utilisation, prompt hub cracks/backwardation, inventories and PADD flows to separate physical product stress from temporary market dislocations. Check the crude curve, backwardation and refined-product cracks; verify Trump–Xi outcomes and implementation before using them as facts"
         }
       ],
-      "researchNext": "Pull regional refinery utilisation, product inventories, hub futures cracks/backwardation and prompt spreads to discriminate supply vs demand drivers within 48h. Check the crude curve, backwardation and refined-product cracks; verify Trump–Xi outcomes and implementation before using them as facts",
-      "confirmationCondition": "Product cracks and forward curves remain elevated/backwardated while crude curve does not fully disinflate.",
-      "invalidationCondition": "Product cracks and forward curves normalize in line with crude decline.",
+      "researchNext": "Pull regional refinery utilisation, prompt hub cracks/backwardation, inventories and PADD flows to separate physical product stress from temporary market dislocations. Check the crude curve, backwardation and refined-product cracks; verify Trump–Xi outcomes and implementation before using them as facts",
+      "confirmationCondition": "Persistent backwardation/elevated prompt cracks and inventory draws with no rapid refining recovery.",
+      "invalidationCondition": "Prompt cracks and heating oil normalise with inventory build or refinery restarts.",
       "evidenceRefs": [
-        "market-monitor:wti:2026-09-22",
         "market-monitor:crack-distillate:2026-09-22",
         "market-monitor:distillate:2026-09-22",
-        "market-monitor:us10y-breakeven:2026-09-25"
+        "market-monitor:wti:2026-09-22",
+        "market-monitor:us10y-breakeven:2026-09-28"
       ],
       "missingEvidence": [
-        "Regional refinery utilisation and product inventory time series",
-        "Hub futures‑curve cracks/backwardation and prompt spreads",
+        "Regional refinery utilisation, PADD inventories and hub futures/backwardation for prompt cracks.",
+        "Freight/flow or pipeline outage notices that would explain regional product tightness.",
         "crude curve, backwardation and refined-product cracks",
         "verified Trump–Xi outcome and implementation evidence before any political claim"
       ],
       "chartIds": [
-        "chart:energy-cracks-curve"
+        "chart:distillate-vs-wti"
       ],
       "storyIds": [
         "story:energy-product-stress"
@@ -904,34 +923,33 @@
         "previousExpectedReaction": "Conventional: falling crude would relieve inflationary impulse and press breakevens/yields lower.",
         "currentExpectedReaction": "Conventional: falling crude would relieve inflationary impulse and press breakevens/yields lower.",
         "expectationChanged": false,
-        "question": "Is refined‑product stress strong enough to sustain breakevens and long yields even as crude falls?"
+        "question": "Are refined‑product cracks and regional product tightness strong enough to sustain breakevens and long yields even as crude softens?"
       }
     }
   ],
   "stockRadar": [
     {
       "symbol": "SMH",
-      "companyName": "Semiconductor ETF (SMH)",
-      "whyRelevant": "Semiconductor strength underpins the narrow tech relief valve and shows sector breadth resilience.",
-      "researchQuestion": "Can semiconductors sustain leadership if rates and real yields remain elevated?",
-      "confirmingSignal": "SMH price and breadth remain strong vs broad indices.",
-      "invalidatingSignal": "SMH underperforms broad market while HY spreads widen.",
-      "linkedStoryId": "story:tech-narrow-riskon",
+      "companyName": "VanEck Semiconductor ETF (SMH)",
+      "whyRelevant": "Semiconductors are a relief valve and a concentrated source of index leadership.",
+      "researchQuestion": "Will SMH/semiconductor breadth hold if duration and credit transmission continues?",
+      "confirmingSignal": "market-monitor:smh:2026-09-28",
+      "invalidatingSignal": "broad semis breadth deterioration or SMH sustained underperformance",
+      "linkedStoryId": "main:rates-led-tightening-2026-09-29",
       "evidenceRefs": [
-        "market-monitor:smh:2026-09-25",
-        "market-breadth:ai-basket:2026-09-25"
+        "market-monitor:smh:2026-09-28"
       ]
     },
     {
-      "symbol": "HYG",
-      "companyName": "High Yield ETF (HYG)",
-      "whyRelevant": "HY is the quickest channel to demonstrate transmission from yields to credit and risk assets.",
-      "researchQuestion": "Will HY spreads widen materially and cause HY ETFs to underperform broad equities?",
-      "confirmingSignal": "HYG underperformance accompanied by rising HY OAS and VIX.",
-      "invalidatingSignal": "HYG holds up while yields remain elevated.",
-      "linkedStoryId": "story:rates-duration-stress",
+      "symbol": "MAG7",
+      "companyName": "Magnificent Seven concentration (basket)",
+      "whyRelevant": "Mag‑7 breadth is sustaining headline indices despite mixed breadth elsewhere.",
+      "researchQuestion": "Is Mag‑7 outperformance durable if credit spreads and volatility rise?",
+      "confirmingSignal": "market-breadth:mag7:2026-09-28",
+      "invalidatingSignal": "Mag‑7 constituents roll over and breadth falls",
+      "linkedStoryId": "main:rates-led-tightening-2026-09-29",
       "evidenceRefs": [
-        "market-monitor:hy-oas:2026-09-25"
+        "market-breadth:mag7:2026-09-28"
       ]
     }
   ],
@@ -1172,5 +1190,5 @@
     "Creator-only claims never alter Power Stack scores without independent verification.",
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank."
   ],
-  "syncedAt": "2026-09-29T05:48:42.490Z"
+  "syncedAt": "2026-09-29T12:59:19.176Z"
 }

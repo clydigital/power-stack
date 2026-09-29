@@ -1,21 +1,21 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-09-29T12:51:11.960Z",
-  "asOf": "2026-09-28T19:20:02.541+00:00",
+  "generatedAt": "2026-09-29T12:59:19.294Z",
+  "asOf": "2026-09-29T09:42:55.284+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
   "inputHealth": {
     "liveDesk": {
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
-      "asOf": "2026-09-28T19:20:02.541+00:00",
-      "syncedAt": "2026-09-29T05:48:42.490Z",
+      "asOf": "2026-09-29T09:42:55.284+00:00",
+      "syncedAt": "2026-09-29T12:59:19.176Z",
       "status": "OK"
     },
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-09-29T12:51:11.899Z",
+      "generatedAt": "2026-09-29T12:59:19.240Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -30,8 +30,8 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "Markets trading a rates‑led tightening regime with incomplete transmission to credit and breadth.",
-    "implication": "If durable, the regime implies ongoing upward pressure on real yields and selective equity weakness unless credit spreads, VIX and breadth visibly deteriorate.",
+    "headline": "Markets trading a rates‑led tightening regime: long and real yields have repriced higher while credit and breadth show only partial transmission.",
+    "implication": "Policy/real‑yield‑driven duration pressure is the dominant market force now; transmission into credit and broad equity weakness is incomplete and therefore market risk is mixed rather than a clean risk‑off.",
     "monetarySummary": "Rate baseline HAWKISH; 5 confirming, 0 contradicting, 6 unresolved/neutral monetary-market layers."
   },
   "queueCounts": {
@@ -126,7 +126,7 @@
         "importance": "HIGH",
         "divergence": "PARTIAL",
         "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-        "actual": "AI basket, Mag‑7 breadth and SMH are strong and outperforming broader indices.",
+        "actual": "AI/Mag‑7 breadth and SMH remain strong and are outperforming many cyclicals.",
         "affectedHoldings": [
           "TSLA",
           "TTWO",
@@ -139,12 +139,12 @@
           "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
         ],
         "evidenceFor": [
-          "Concentrated tech leadership is acting as a relief valve that mutes headline equity weakness.",
-          "Breadth is narrow and concentrated, acting as a counter‑force to yield pressure.",
-          "Nasdaq daily move 0.48 with bias MIXED."
+          "Concentrated leadership is a relief valve that supports indices despite yield stress.",
+          "Breadth is mixed: concentration in tech/semis props indices even as broader participation is uneven.",
+          "Nasdaq daily move -0.92 with bias MIXED."
         ],
         "evidenceAgainst": [
-          "Policy‑path plus real‑yield repricing is the primary upward pressure on rates today."
+          "Rates are the dominant driver; real‑yield and front‑end repricing are sustaining nominal long yields."
         ],
         "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
         "confidence": "HIGH",
@@ -155,7 +155,7 @@
         "importance": "HIGH",
         "divergence": "YES",
         "expected": "Softer crude would normally reduce immediate energy-inflation pressure and weaken the case for broad energy outperformance.",
-        "actual": "WTI softened while distillate cracks and heating oil remain elevated and 10Y breakevens show limited relief.",
+        "actual": "WTI softer while distillate cracks and heating oil remain elevated.",
         "affectedHoldings": [
           "XOM",
           "HIBISCS",
@@ -168,10 +168,12 @@
           "Geopolitical premium and physical-product stress are moving on different timelines."
         ],
         "evidenceFor": [
-          "Product‑level stress is plausibly sustaining inflation compensation and long yields despite softer crude.",
-          "Crude daily move -0.58 with bias MIXED."
+          "Product stress is plausibly supporting breakevens and long yields even as crude weakens.",
+          "Crude daily move -0.58 with bias BEARISH."
         ],
-        "evidenceAgainst": [],
+        "evidenceAgainst": [
+          "regional inventories and hub cracks"
+        ],
         "leadingHypothesis": "Product-market tightness is currently more informative for the portfolio's energy sleeve than the crude headline alone.",
         "confidence": "HIGH",
         "invalidation": "Falling crack spreads, rebuilding product inventories and improving refinery utilization would weaken the physical-tightness explanation."
@@ -434,17 +436,17 @@
   "liveRadar": [
     {
       "ticker": "SMH",
-      "companyName": "Semiconductor ETF (SMH)",
-      "whyRelevant": "Semiconductor strength underpins the narrow tech relief valve and shows sector breadth resilience.",
-      "researchQuestion": "Can semiconductors sustain leadership if rates and real yields remain elevated?",
+      "companyName": "VanEck Semiconductor ETF (SMH)",
+      "whyRelevant": "Semiconductors are a relief valve and a concentrated source of index leadership.",
+      "researchQuestion": "Will SMH/semiconductor breadth hold if duration and credit transmission continues?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     },
     {
-      "ticker": "HYG",
-      "companyName": "High Yield ETF (HYG)",
-      "whyRelevant": "HY is the quickest channel to demonstrate transmission from yields to credit and risk assets.",
-      "researchQuestion": "Will HY spreads widen materially and cause HY ETFs to underperform broad equities?",
+      "ticker": "MAG7",
+      "companyName": "Magnificent Seven concentration (basket)",
+      "whyRelevant": "Mag‑7 breadth is sustaining headline indices despite mixed breadth elsewhere.",
+      "researchQuestion": "Is Mag‑7 outperformance durable if credit spreads and volatility rise?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     }
