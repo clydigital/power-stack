@@ -370,7 +370,7 @@ function build(existingGeneratedAt = null) {
       "Do not mechanically rerank the watchlist from Live Stock Radar.",
       "Do not convert MIXED exposure into a directional trade signal.",
       "Do not rebuild a competing Power Stack macro regime when Live canonical inputs are healthy.",
-      "Do not change company fundamentals, conviction, ranking or sizing from promoted Live Market Motion without independent company-level evidence.",
+      ...(live.marketMotion ? ["Do not change company fundamentals, conviction, ranking or sizing from promoted Live Market Motion without independent company-level evidence."] : []),
     ],
     writeBackPolicy: {
       allowed: [
