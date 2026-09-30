@@ -8,101 +8,15 @@
     "sourceRule": "Yahoo Finance/Reuters may be used for discovery and current reporting. Material claims that could alter a score or capital-allocation gate require company/official/primary confirmation.",
     "scoreRule": "A motion item cannot change Base Conviction or a fundamental score by itself.",
     "expiryRule": "Promote only fresh items. Items older than the freshness window remain archive/context unless a new development refreshes them.",
-    "politicalRule": "Political and geopolitical items remain factual/attributed and are used only for market transmission, not political judgement."
+    "politicalRule": "Political and geopolitical items remain factual/attributed and are used only for market transmission, not political judgement.",
+    "focusRule": "Routine view keeps only three promoted motion hooks. Broader items stay secondary until a deeper sweep is requested."
   },
   "primary": [
-    {
-      "id": "meta-enterprise-platform-2026-09-28",
-      "category": "COMPANY",
-      "motionType": "NEW_BUSINESS_MODEL",
-      "priority": 1,
-      "tickers": [
-        "META",
-        "MDB",
-        "MSFT",
-        "CRM",
-        "NOW",
-        "ORCL"
-      ],
-      "headline": "Meta pushes into enterprise AI and hires MongoDB CEO to lead it",
-      "eventDate": "2026-09-28",
-      "whatHappened": "Meta launched Meta Enterprise Platform around Muse, business agents, APIs and coding tools, and appointed MongoDB CEO Chirantan Desai to run the new unit.",
-      "whyInteresting": "This turns Meta's AI buildout into a direct monetisation test against established enterprise-software vendors rather than only a consumer-advertising or infrastructure story.",
-      "bigPictureBridge": "AI capex → enterprise monetisation → cash return on infrastructure spending → software competitive pressure.",
-      "powerStackUse": "Use as a motion hook inside AI financing/ROIC and enterprise-software research. Do not treat competitor share-price moves as proof of durable market-share loss.",
-      "hybridAngle": "Meta spent heavily to build the stack; now the question is whether it can turn that infrastructure into a new recurring enterprise revenue stream.",
-      "linkedTheme": "AI Credit / Financing Dispersion + Realizable MW",
-      "linkedAssets": [
-        "META",
-        "MDB",
-        "CRM",
-        "NOW",
-        "ORCL"
-      ],
-      "status": "PROMOTED",
-      "verification": "CURRENT_REPORTING",
-      "source": {
-        "publisher": "Yahoo Finance",
-        "url": "https://finance.yahoo.com/technology/ai/articles/meta-carves-enterprise-offerings-brings-201231842.html"
-      }
-    },
-    {
-      "id": "nvda-buyback-2026-09-28",
-      "category": "COMPANY",
-      "motionType": "CAPITAL_RETURN",
-      "priority": 2,
-      "tickers": [
-        "NVDA"
-      ],
-      "headline": "Nvidia adds $150B to its buyback authorisation",
-      "eventDate": "2026-09-28",
-      "whatHappened": "Nvidia authorised an additional $150 billion of share repurchases, taking remaining authorisation to $235 billion through fiscal 2028. The company also announced an open platform aimed at AI-agent safety.",
-      "whyInteresting": "It creates a sharp contrast inside the AI theme: Nvidia can fund expansion while returning extraordinary amounts of capital, while parts of the wider AI buildout are increasingly judged on financing quality and cash conversion.",
-      "bigPictureBridge": "AI infrastructure demand → cash generation → capital return versus AI project financing stress elsewhere.",
-      "powerStackUse": "Use NVDA as the cash-generation benchmark when comparing AI infrastructure names, sponsors and project-finance risk.",
-      "hybridAngle": "The AI boom is not one financing story: Nvidia is returning capital at record scale while weaker projects still face a much higher hurdle rate.",
-      "linkedTheme": "AI Credit / Financing Dispersion + Realizable MW",
-      "linkedAssets": [
-        "NVDA"
-      ],
-      "status": "PROMOTED",
-      "verification": "CURRENT_REPORTING",
-      "source": {
-        "publisher": "Yahoo Finance",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-announces-record-150-billion-122620134.html"
-      }
-    },
-    {
-      "id": "tsla-cybercab-regulatory-deadline-2026-09-30",
-      "category": "COMPANY",
-      "motionType": "REGULATORY_CATALYST",
-      "priority": 3,
-      "tickers": [
-        "TSLA"
-      ],
-      "headline": "Tesla Cybercab faces a federal certification deadline",
-      "eventDate": "2026-09-30",
-      "whatHappened": "NHTSA asked Tesla to explain by September 30 how Cybercab was self-certified under federal safety standards despite lacking conventional driver controls. The inquiry itself has not established a violation.",
-      "whyInteresting": "Tesla's autonomy thesis now has a concrete regulatory scale gate, while its core vehicle-delivery outlook is also under scrutiny.",
-      "bigPictureBridge": "Physical AI narrative → legal/regulatory deployment gate → fleet scaling → future revenue dependence.",
-      "powerStackUse": "Keep TSLA's autonomy upside separate from verified vehicle/storage economics. Treat the regulatory response as a catalyst, not a score change until there is a material business consequence.",
-      "hybridAngle": "For Tesla, the next autonomy question is not just whether Cybercab works; it is whether the product can clear the regulatory path needed to scale.",
-      "linkedTheme": "Robotics / Automation",
-      "linkedAssets": [
-        "TSLA"
-      ],
-      "status": "PROMOTED",
-      "verification": "CURRENT_REPORTING",
-      "source": {
-        "publisher": "Yahoo Finance",
-        "url": "https://finance.yahoo.com/markets/stocks/articles/dear-tesla-stock-fans-mark-140003840.html"
-      }
-    },
     {
       "id": "mu-earnings-memory-test-2026-09-30",
       "category": "EARNINGS",
       "motionType": "THESIS_TEST",
-      "priority": 4,
+      "priority": 1,
       "tickers": [
         "MU",
         "NVDA"
@@ -130,7 +44,7 @@
       "id": "iran-us-feedback-hormuz-2026-09-30",
       "category": "GEOPOLITICS",
       "motionType": "NEGOTIATION_CATALYST",
-      "priority": 5,
+      "priority": 2,
       "tickers": [
         "XOM",
         "MISC",
@@ -161,9 +75,96 @@
         "publisher": "Reuters",
         "url": "https://www.reuters.com/world/middle-east/iran-receives-us-feedback-seven-day-trust-building-plan-2026-09-30/"
       }
+    },
+    {
+      "id": "meta-enterprise-platform-2026-09-28",
+      "category": "COMPANY",
+      "motionType": "NEW_BUSINESS_MODEL",
+      "priority": 3,
+      "tickers": [
+        "META",
+        "MDB",
+        "MSFT",
+        "CRM",
+        "NOW",
+        "ORCL"
+      ],
+      "headline": "Meta pushes into enterprise AI and hires MongoDB CEO to lead it",
+      "eventDate": "2026-09-28",
+      "whatHappened": "Meta launched Meta Enterprise Platform around Muse, business agents, APIs and coding tools, and appointed MongoDB CEO Chirantan Desai to run the new unit.",
+      "whyInteresting": "This turns Meta's AI buildout into a direct monetisation test against established enterprise-software vendors rather than only a consumer-advertising or infrastructure story.",
+      "bigPictureBridge": "AI capex → enterprise monetisation → cash return on infrastructure spending → software competitive pressure.",
+      "powerStackUse": "Use as a motion hook inside AI financing/ROIC and enterprise-software research. Do not treat competitor share-price moves as proof of durable market-share loss.",
+      "hybridAngle": "Meta spent heavily to build the stack; now the question is whether it can turn that infrastructure into a new recurring enterprise revenue stream.",
+      "linkedTheme": "AI Credit / Financing Dispersion + Realizable MW",
+      "linkedAssets": [
+        "META",
+        "MDB",
+        "CRM",
+        "NOW",
+        "ORCL"
+      ],
+      "status": "PROMOTED",
+      "verification": "CURRENT_REPORTING",
+      "source": {
+        "publisher": "Yahoo Finance",
+        "url": "https://finance.yahoo.com/technology/ai/articles/meta-carves-enterprise-offerings-brings-201231842.html"
+      }
     }
   ],
   "secondary": [
+    {
+      "id": "nvda-buyback-2026-09-28",
+      "category": "COMPANY",
+      "motionType": "CAPITAL_RETURN",
+      "priority": 4,
+      "tickers": [
+        "NVDA"
+      ],
+      "headline": "Nvidia adds $150B to its buyback authorisation",
+      "eventDate": "2026-09-28",
+      "whatHappened": "Nvidia authorised an additional $150 billion of share repurchases, taking remaining authorisation to $235 billion through fiscal 2028. The company also announced an open platform aimed at AI-agent safety.",
+      "whyInteresting": "It creates a sharp contrast inside the AI theme: Nvidia can fund expansion while returning extraordinary amounts of capital, while parts of the wider AI buildout are increasingly judged on financing quality and cash conversion.",
+      "bigPictureBridge": "AI infrastructure demand → cash generation → capital return versus AI project financing stress elsewhere.",
+      "powerStackUse": "Use NVDA as the cash-generation benchmark when comparing AI infrastructure names, sponsors and project-finance risk.",
+      "hybridAngle": "The AI boom is not one financing story: Nvidia is returning capital at record scale while weaker projects still face a much higher hurdle rate.",
+      "linkedTheme": "AI Credit / Financing Dispersion + Realizable MW",
+      "linkedAssets": [
+        "NVDA"
+      ],
+      "status": "WATCH",
+      "verification": "CURRENT_REPORTING",
+      "source": {
+        "publisher": "Yahoo Finance",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-announces-record-150-billion-122620134.html"
+      }
+    },
+    {
+      "id": "tsla-cybercab-regulatory-deadline-2026-09-30",
+      "category": "COMPANY",
+      "motionType": "REGULATORY_CATALYST",
+      "priority": 5,
+      "tickers": [
+        "TSLA"
+      ],
+      "headline": "Tesla Cybercab faces a federal certification deadline",
+      "eventDate": "2026-09-30",
+      "whatHappened": "NHTSA asked Tesla to explain by September 30 how Cybercab was self-certified under federal safety standards despite lacking conventional driver controls. The inquiry itself has not established a violation.",
+      "whyInteresting": "Tesla's autonomy thesis now has a concrete regulatory scale gate, while its core vehicle-delivery outlook is also under scrutiny.",
+      "bigPictureBridge": "Physical AI narrative → legal/regulatory deployment gate → fleet scaling → future revenue dependence.",
+      "powerStackUse": "Keep TSLA's autonomy upside separate from verified vehicle/storage economics. Treat the regulatory response as a catalyst, not a score change until there is a material business consequence.",
+      "hybridAngle": "For Tesla, the next autonomy question is not just whether Cybercab works; it is whether the product can clear the regulatory path needed to scale.",
+      "linkedTheme": "Robotics / Automation",
+      "linkedAssets": [
+        "TSLA"
+      ],
+      "status": "WATCH",
+      "verification": "CURRENT_REPORTING",
+      "source": {
+        "publisher": "Yahoo Finance",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/dear-tesla-stock-fans-mark-140003840.html"
+      }
+    },
     {
       "id": "hood-agentic-trading-2026-09-29",
       "category": "MARKET_STRUCTURE",
