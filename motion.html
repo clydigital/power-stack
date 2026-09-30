@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Power Stack Market Motion — fresh stock-specific, sector and geopolitical hooks linked back to the portfolio's larger themes." />
+  <title>Market Motion · Power Stack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .motion-shell{max-width:1480px;margin:0 auto}
+    .motion-top{padding:30px clamp(18px,4vw,58px) 24px;border-bottom:1px solid var(--line);background:radial-gradient(circle at 80% -70%,rgba(142,102,216,.18),transparent 42%),#0b0e11}
+    .motion-top-row{display:flex;justify-content:space-between;align-items:flex-end;gap:22px;flex-wrap:wrap}
+    .motion-top h1{font-size:clamp(38px,6vw,74px);letter-spacing:-.065em;line-height:.9;margin:8px 0}
+    .motion-top p{margin:0;max-width:920px;color:var(--muted);font-size:13px;line-height:1.55}
+    .motion-actions{display:flex;gap:8px;flex-wrap:wrap}
+    .motion-main{padding:20px clamp(18px,4vw,58px) 42px}
+    .motion-hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:12px;margin-bottom:16px}
+    .motion-hero-copy,.motion-stats{padding:17px}
+    .motion-hero-copy h2{margin:5px 0 7px;font-size:24px;letter-spacing:-.04em}
+    .motion-hero-copy p{margin:0;color:#aeb7bf;font-size:10px;line-height:1.6}
+    .motion-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+    .motion-stat{padding:11px;border:1px solid #242b31;border-radius:9px;background:#090d10}
+    .motion-stat b{display:block;font-size:22px;letter-spacing:-.04em}
+    .motion-stat span{display:block;margin-top:3px;color:#78838c;font-size:8px;letter-spacing:.08em;text-transform:uppercase}
+    .motion-rule{margin:0 0 14px;padding:13px 15px;border:1px solid #3f3657;border-radius:11px;background:linear-gradient(110deg,#151126,#101318 58%);color:#bbb4c8;font-size:10px;line-height:1.55}
+    .motion-rule strong{color:#e3d8ff}
+    .motion-toolbar{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:0 0 13px;flex-wrap:wrap}
+    .filter-row{display:flex;gap:6px;flex-wrap:wrap}
+    .filter-row button{border:1px solid #293138;background:#0d1114;color:#8f9aa3;padding:7px 9px;border-radius:999px;font-size:8px;font-weight:850;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}
+    .filter-row button.active{border-color:#6d55a2;color:#f5efff;background:#171126}
+    .motion-meta{font-size:9px;color:#76818a}
+    .motion-section{margin-top:16px}
+    .motion-section-head{display:flex;justify-content:space-between;gap:16px;align-items:end;margin-bottom:8px}
+    .motion-section-head h2{margin:3px 0 0;font-size:18px}
+    .motion-section-head p{margin:0;color:#77818a;font-size:9px}
+    .motion-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .motion-card{display:grid;gap:11px;padding:15px;border:1px solid #232a31;border-radius:12px;background:linear-gradient(180deg,#101419,#0b0f12)}
+    .motion-card.promoted{border-color:#3f365b;background:linear-gradient(150deg,#131021,#0b1014 68%)}
+    .motion-card-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .motion-kicker{display:flex;gap:6px;flex-wrap:wrap}
+    .motion-pill{display:inline-flex;padding:4px 7px;border:1px solid #2b343c;border-radius:999px;color:#9aa6ae;font-size:7px;font-weight:850;letter-spacing:.06em;text-transform:uppercase}
+    .motion-pill.primary{color:#d8c8ff;border-color:#5c4788;background:#171126}
+    .motion-pill.company{color:#9fc4e2;border-color:#30485a;background:#0d151b}
+    .motion-pill.geopolitics{color:#efcf83;border-color:#50462c;background:#18150d}
+    .motion-pill.earnings{color:#8fe0b0;border-color:#28503a;background:#0d1913}
+    .motion-date{font-size:8px;color:#717d86;white-space:nowrap}
+    .motion-card h3{margin:0;font-size:18px;letter-spacing:-.03em;line-height:1.25;color:#f0edf7}
+    .ticker-row{display:flex;gap:5px;flex-wrap:wrap}
+    .ticker-chip{display:inline-flex;padding:4px 6px;border:1px solid #29323a;border-radius:6px;color:#cbd3d8;background:#0d1216;font-size:8px;font-weight:800}
+    .motion-copy{display:grid;gap:8px}
+    .motion-block{padding-top:8px;border-top:1px solid #1d2328}
+    .motion-block:first-child{border-top:0;padding-top:0}
+    .motion-block span{display:block;margin-bottom:4px;color:#77818a;font-size:7px;font-weight:850;letter-spacing:.08em;text-transform:uppercase}
+    .motion-block p{margin:0;color:#aeb7bf;font-size:10px;line-height:1.55}
+    .motion-bridge{color:#d7dde1!important;font-weight:650}
+    .motion-footer{display:flex;justify-content:space-between;gap:12px;align-items:end;padding-top:9px;border-top:1px solid #1d2328}
+    .motion-footer small{display:block;color:#6f7982;font-size:8px;line-height:1.4}
+    .motion-source{color:#c49aff;text-decoration:none;font-size:8px;font-weight:850}
+    .motion-source:hover{color:#fff}
+    .stale{opacity:.58}
+    .hidden-motion{display:none!important}
+    .empty-motion{padding:40px;border:1px dashed #343c43;border-radius:12px;text-align:center;color:#7f8991}
+    .ghost-link.motion-link{color:#f5efff;background:linear-gradient(100deg,#5f47a7,#8e66d8);border-color:transparent;font-weight:850}
+    @media(max-width:900px){.motion-hero,.motion-grid{grid-template-columns:1fr}}
+    @media(max-width:650px){.motion-top-row,.motion-section-head,.motion-footer{align-items:flex-start;flex-direction:column}.motion-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  </style>
+</head>
+<body>
+  <div class="motion-shell">
+    <header class="motion-top">
+      <div class="motion-top-row">
+        <div>
+          <div class="eyebrow">POWER STACK · FRESH COMPANY + MARKET HOOKS</div>
+          <h1>Market Motion</h1>
+          <p>Small stories create motion before they become big themes. This layer captures fresh stock-specific, sector and geopolitical developments, then forces each one back through the existing Power Stack regime, theme and portfolio map.</p>
+        </div>
+        <div class="motion-actions">
+          <a class="ghost-link" href="index.html">← All Ideas</a>
+          <a class="ghost-link" href="themes.html">Developing Themes</a>
+          <a class="ghost-link" href="watchlist.html">Watchlist</a>
+          <a class="ghost-link" href="holdings.html">Holdings</a>
+          <a class="ghost-link" href="capital-scarcity.html">Capital Scarcity</a>
+          <a class="ghost-link motion-link" href="motion.html">Market Motion</a>
+          <a class="ghost-link" href="https://alchemy-live-market-desk.vercel.app/" target="_blank" rel="noopener">Live Macro ↗</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="motion-main">
+      <section class="motion-hero">
+        <div class="panel motion-hero-copy">
+          <div class="eyebrow">WHY THIS EXISTS</div>
+          <h2>Give the research a story without letting headlines own the thesis.</h2>
+          <p>Yahoo Finance and Reuters are useful discovery surfaces for the things people are actually talking about: a Meta product launch, Nvidia capital return, a Tesla regulatory deadline, Micron earnings, or a new Hormuz negotiation headline. Power Stack keeps the hook, then asks what it changes in the bigger picture.</p>
+        </div>
+        <div id="motionStats" class="panel motion-stats"></div>
+      </section>
+
+      <div class="motion-rule"><strong>Guardrail:</strong> Market Motion is a narrative/discovery layer. A fresh headline can raise research priority, create a Hybrid hook or tighten an action gate, but it cannot change a company fundamental score until primary/company evidence supports that change.</div>
+
+      <div class="motion-toolbar">
+        <div class="filter-row" id="motionFilters">
+          <button class="active" data-filter="ALL">All</button>
+          <button data-filter="COMPANY">Company</button>
+          <button data-filter="EARNINGS">Earnings</button>
+          <button data-filter="GEOPOLITICS">Geopolitics</button>
+          <button data-filter="ENERGY">Energy</button>
+          <button data-filter="MARKET_STRUCTURE">Market structure</button>
+        </div>
+        <div id="motionAsOf" class="motion-meta">Loading motion feed…</div>
+      </div>
+
+      <section class="motion-section">
+        <div class="motion-section-head">
+          <div><div class="eyebrow">PRIMARY MOTION</div><h2>Use these as today's opening hooks</h2></div>
+          <p>High relevance + clean big-picture bridge.</p>
+        </div>
+        <div id="primaryMotion" class="motion-grid"></div>
+      </section>
+
+      <section class="motion-section">
+        <div class="motion-section-head">
+          <div><div class="eyebrow">SECONDARY MOTION</div><h2>Useful colour, watch items and side branches</h2></div>
+          <p>Interesting, but not allowed to crowd out the main portfolio questions.</p>
+        </div>
+        <div id="secondaryMotion" class="motion-grid"></div>
+      </section>
+    </main>
+
+    <footer class="footer">Market Motion is intentionally fast and disposable. Fresh stories should either connect to a durable Power Stack theme, create a testable research question, or expire.</footer>
+  </div>
+
+  <script>
+    const state = { filter: 'ALL', data: null };
+
+    const prettyDate = value => {
+      if (!value) return '—';
+      const parsed = new Date(value);
+      if (!Number.isFinite(parsed.getTime())) return value;
+      return new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'}).format(parsed);
+    };
+
+    const categoryClass = category => {
+      const key = String(category || '').toLowerCase();
+      return ['company','geopolitics','earnings'].includes(key) ? key : '';
+    };
+
+    const ageHours = date => {
+      const parsed = new Date(date);
+      return Number.isFinite(parsed.getTime()) ? (Date.now() - parsed.getTime()) / 36e5 : 0;
+    };
+
+    function renderCard(item, promoted) {
+      const stale = ageHours(item.eventDate + 'T23:59:59Z') > Number(state.data?.freshnessWindowHours || 72);
+      const matches = state.filter === 'ALL' || item.category === state.filter;
+      const tickerHtml = (item.tickers || []).map(t=>`<span class="ticker-chip">${t}</span>`).join('');
+      return `
+        <article class="motion-card ${promoted ? 'promoted' : ''} ${stale ? 'stale' : ''} ${matches ? '' : 'hidden-motion'}" data-category="${item.category}">
+          <div class="motion-card-top">
+            <div class="motion-kicker">
+              <span class="motion-pill ${promoted ? 'primary' : ''}">${promoted ? 'PROMOTED' : item.status}</span>
+              <span class="motion-pill ${categoryClass(item.category)}">${item.category.replaceAll('_',' ')}</span>
+              <span class="motion-pill">${item.motionType.replaceAll('_',' ')}</span>
+            </div>
+            <span class="motion-date">${item.eventDate}</span>
+          </div>
+          <div>
+            <h3>${item.headline}</h3>
+            <div class="ticker-row">${tickerHtml}</div>
+          </div>
+          <div class="motion-copy">
+            <div class="motion-block"><span>What happened</span><p>${item.whatHappened}</p></div>
+            <div class="motion-block"><span>Why it is interesting</span><p>${item.whyInteresting}</p></div>
+            <div class="motion-block"><span>Big-picture bridge</span><p class="motion-bridge">${item.bigPictureBridge}</p></div>
+            <div class="motion-block"><span>Hybrid / writing angle</span><p>${item.hybridAngle}</p></div>
+            <div class="motion-block"><span>Power Stack use</span><p>${item.powerStackUse}</p></div>
+          </div>
+          <div class="motion-footer">
+            <small>${item.linkedTheme || 'No linked theme'} · ${item.verification}</small>
+            <a class="motion-source" href="${item.source.url}" target="_blank" rel="noopener">${item.source.publisher} source ↗</a>
+          </div>
+        </article>
+      `;
+    }
+
+    function render() {
+      const data = state.data;
+      const primary = data.primary || [];
+      const secondary = data.secondary || [];
+      document.getElementById('motionAsOf').textContent = 'As of ' + prettyDate(data.asOf) + ' · freshness window ' + data.freshnessWindowHours + 'h';
+      document.getElementById('motionStats').innerHTML = [
+        ['Fresh hooks', primary.length + secondary.length],
+        ['Primary', primary.length],
+        ['Company-linked', [...primary,...secondary].filter(x=>x.category==='COMPANY'||x.category==='EARNINGS').length],
+        ['Macro / policy', [...primary,...secondary].filter(x=>['GEOPOLITICS','ENERGY'].includes(x.category)).length]
+      ].map(([label,value])=>`<div class="motion-stat"><b>${value}</b><span>${label}</span></div>`).join('');
+      document.getElementById('primaryMotion').innerHTML = primary.map(x=>renderCard(x,true)).join('') || '<div class="empty-motion">No primary motion items.</div>';
+      document.getElementById('secondaryMotion').innerHTML = secondary.map(x=>renderCard(x,false)).join('') || '<div class="empty-motion">No secondary motion items.</div>';
+    }
+
+    document.getElementById('motionFilters').addEventListener('click', event => {
+      const button = event.target.closest('button[data-filter]');
+      if (!button) return;
+      state.filter = button.dataset.filter;
+      document.querySelectorAll('#motionFilters button').forEach(x=>x.classList.toggle('active',x===button));
+      render();
+    });
+
+    fetch('data/market-motion.json',{cache:'no-store'})
+      .then(r=>r.ok?r.json():Promise.reject(new Error('market motion HTTP '+r.status)))
+      .then(data=>{state.data=data;render();})
+      .catch(err=>{
+        document.getElementById('motionAsOf').textContent='Market Motion unavailable';
+        document.getElementById('primaryMotion').innerHTML='<div class="empty-motion">'+err.message+'</div>';
+      });
+  </script>
+</body>
+</html>
