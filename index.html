@@ -38,7 +38,7 @@
         <section class="control-row panel"><div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Search ticker, company, thesis, catalyst, risk…" autocomplete="off" /></div><select id="sort" aria-label="Sort ideas"><option value="conviction">Current research score</option><option value="aiRisk">AI crash risk</option><option value="themeDependency">Theme dependency</option><option value="cyclicality">Cyclicality</option><option value="speculation">Speculation</option><option value="ticker">Ticker / company</option></select><div class="view-toggle" role="group" aria-label="Idea presentation"><button id="cardViewBtn" class="view-button active" type="button" aria-pressed="true" title="Card View"><span aria-hidden="true">▦</span> Card</button><button id="rowViewBtn" class="view-button" type="button" aria-pressed="false" title="Row View"><span aria-hidden="true">☷</span> Row</button></div></section>
         <section class="result-bar"><div><strong id="count">0</strong> ideas shown</div><button id="clearFilters" class="text-button">Clear filters</button></section><section id="grid" class="idea-grid"></section>
       </main>
-      <footer class="footer">Power Stack is a research memory and capital-allocation aid, not an automated recommendation engine. Current Research Scores move on company-level evidence; Live monetary context remains a separate portfolio and thesis overlay.</footer>
+      <footer class="footer">Power Stack is a research memory and capital-allocation aid, not an automated recommendation engine. Current Research Scores move on company-level evidence; Live rates and market context remain a separate portfolio and thesis overlay.</footer>
     </div>
   </div>
   <dialog id="detailDialog"><div class="dialog-head"><div><div id="dialogMarket" class="eyebrow"></div><h2 id="dialogTitle"></h2></div><button id="closeDialog" class="icon-btn" aria-label="Close">×</button></div><div id="dialogBody" class="dialog-body"></div></dialog>
@@ -150,6 +150,6 @@
       })
       .catch(()=>{document.getElementById('marketMotionHome').style.display='none';});
   </script>
-  <script src="app.js"></script><script src="industry-risk.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
