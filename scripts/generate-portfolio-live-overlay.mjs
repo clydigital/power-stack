@@ -240,6 +240,31 @@ function findAsset(live, key) {
   return live.assetState?.assets?.find((item) => item.key === key) || null;
 }
 
+function motionForTicker(live, ticker) {
+  const symbol = String(ticker || "").toUpperCase();
+  return (live.marketMotion?.items || [])
+    .filter((item) => (item.tickers || []).some((candidate) => String(candidate).toUpperCase() === symbol))
+    .slice(0, 3)
+    .map((item) => ({
+      id: item.id,
+      headline: item.headline,
+      category: item.category,
+      verificationState: item.verificationState,
+      occurredAt: item.occurredAt,
+      whyInteresting: item.whyInteresting,
+      bigPictureBridge: item.bigPictureBridge,
+      nextTest: item.nextTest,
+      storyId: item.storyId,
+      storyTitle: item.storyTitle,
+      regimeSlug: item.regimeSlug,
+      regimeLabel: item.regimeLabel,
+      sourceName: item.sourceName,
+      sourceUrl: item.sourceUrl,
+      materiality: item.materiality,
+      relevance: item.relevance,
+    }));
+}
+
 function buildPortfolioDivergences(live, rates, funding) {
   const divergences = [];
   const tech = findLens(live, "TECH_AI");
@@ -352,6 +377,7 @@ function buildOverlay(existingGeneratedAt = null) {
 
   const holdings = (holdingsData.holdings || []).map((holding) => {
     const ticker = String(holding.ticker).toUpperCase();
+    const motionContext = motionForTicker(live, ticker);
     const profile = profiles.get(ticker) || null;
     const manual = actions.get(ticker) || null;
     const rateExposure = exposure(profile, FACTORS.rates);
@@ -370,6 +396,7 @@ function buildOverlay(existingGeneratedAt = null) {
       name: holding.name,
       fundamentalScore: holding.score,
       fundamentalGrade: holding.grade,
+      ...(motionContext.length ? { motionContext } : {}),
       profileStatus: profile ? (profile.inheritedFrom ? "INHERITED" : "MAPPED") : "MISSING",
       inheritedFrom: profile?.inheritedFrom || null,
       profileConfidence: profile?.profileConfidence ?? null,
@@ -430,6 +457,7 @@ function buildOverlay(existingGeneratedAt = null) {
   const highReview = holdings.filter((item) => item.reviewPriority === "HIGH_REVIEW").map((item) => item.ticker);
   const tapeDivergences = holdings.filter((item) => item.actualReaction?.status === "DIVERGES").map((item) => item.ticker);
   const tapeConfirmations = holdings.filter((item) => item.actualReaction?.status === "CONFIRMS").map((item) => item.ticker);
+  const motionLinked = holdings.filter((item) => item.motionContext?.length).map((item) => item.ticker);
   const researchGaps = holdings.filter((item) => item.profileStatus === "MISSING").map((item) => `Missing macro-sensitivity profile: ${item.ticker}`);
 
   return {
@@ -439,6 +467,15 @@ function buildOverlay(existingGeneratedAt = null) {
     liveSyncedAt: live.syncedAt || null,
     sourceHealth: live.sourceHealth || null,
     regime: live.regime || null,
+    ...(live.marketMotion ? {
+      liveMarketMotion: {
+        contractVersion: live.marketMotion.contractVersion,
+        editionId: live.marketMotion.editionId || null,
+        capturedAt: live.marketMotion.capturedAt || null,
+        itemCount: (live.marketMotion.items || []).length,
+        linkedHoldingCount: motionLinked.length,
+      },
+    } : {}),
     currentSignals: {
       rates,
       funding,
@@ -458,6 +495,7 @@ function buildOverlay(existingGeneratedAt = null) {
       supported: holdings.filter((item) => item.overlayState === "TAILWIND").map((item) => item.ticker),
       tapeDivergences,
       tapeConfirmations,
+      ...(motionLinked.length ? { motionLinked } : {}),
       researchGaps,
     },
     divergences: (live.contradictions || []).slice(0, 6),
@@ -470,6 +508,7 @@ function buildOverlay(existingGeneratedAt = null) {
       "Portfolio divergence hypotheses are deterministic prompts for investigation, not causal proof.",
       "Holding-tape confirmation uses completed regular sessions only; MIXED overlays are never forced into directional confirmation.",
       "Missing profiles remain RESEARCH_GAP rather than zero sensitivity.",
+      ...(live.marketMotion ? ["Live promoted Market Motion raises research priority only; it does not alter overlay state or fundamental score."] : []),
     ],
     sourceFiles: [
       "data/live-desk-canonical.json",

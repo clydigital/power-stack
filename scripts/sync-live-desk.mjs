@@ -78,6 +78,48 @@ function normaliseVerification(verification) {
   };
 }
 
+function normaliseMarketMotion(motion) {
+  if (
+    !motion
+    || motion.contractVersion !== "market-motion-edition/v1"
+    || !motion.editionId
+    || !Array.isArray(motion.items)
+  ) return null;
+
+  return {
+    contractVersion: motion.contractVersion,
+    editionId: motion.editionId,
+    capturedAt: motion.capturedAt || null,
+    researchRunId: motion.researchRunId || null,
+    items: motion.items.slice(0, 6).map((item) => ({
+      id: item.id,
+      motionKey: item.motionKey,
+      versionNumber: item.versionNumber ?? null,
+      headline: item.headline || "",
+      category: item.category || "OTHER",
+      verificationState: item.verificationState || "UNRESOLVED",
+      lifecycleState: item.lifecycleState || "PROMOTED",
+      whatHappened: item.whatHappened || "",
+      marketReaction: item.marketReaction || null,
+      whyInteresting: item.whyInteresting || "",
+      bigPictureBridge: item.bigPictureBridge || "",
+      nextTest: item.nextTest || null,
+      tickers: Array.isArray(item.tickers) ? [...new Set(item.tickers.map((ticker) => String(ticker).toUpperCase()))] : [],
+      sourceName: item.sourceName || "Alchemy Live Desk",
+      sourceUrl: item.sourceUrl || null,
+      materiality: Number(item.materiality || 0),
+      relevance: Number(item.relevance || 0),
+      novelty: Number(item.novelty || 0),
+      occurredAt: item.occurredAt || null,
+      storyId: item.storyId || null,
+      storySlug: item.storySlug || null,
+      storyTitle: item.storyTitle || null,
+      regimeSlug: item.regimeSlug || null,
+      regimeLabel: item.regimeLabel || null,
+    })),
+  };
+}
+
 async function main() {
   const response = await fetch(SOURCE, {
     headers: { accept: "application/json", "user-agent": "power-stack-live-bridge/2" },
@@ -90,6 +132,7 @@ async function main() {
   }
 
   const assetState = live.marketState?.dailyAssetState || null;
+  const marketMotion = normaliseMarketMotion(live.marketMotion);
   const snapshot = {
     contractVersion: "power-stack-live-desk-canonical/2",
     sourceUrl: SOURCE,
@@ -129,6 +172,7 @@ async function main() {
     investigations: Array.isArray(live.investigations) ? live.investigations : [],
     stockRadar: normaliseRadar(live.stockRadar),
     verification: normaliseVerification(live.creatorVerification),
+    ...(marketMotion ? { marketMotion } : {}),
     upstreamGuardrails: Array.isArray(live.guardrails) ? live.guardrails : [],
     guardrails: [
       "Live Desk supplies canonical monetary/market reasoning, contradictions and source health.",
@@ -137,6 +181,7 @@ async function main() {
       "No Live-derived macro score or confirmation may be exported back to Live.",
       "Creator-only claims never alter Power Stack scores without independent verification.",
       "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
+      "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself.",
     ],
   };
 
