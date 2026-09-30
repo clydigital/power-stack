@@ -275,14 +275,14 @@
         "label": "US dollar transmission",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "US Dollar · UUP proxy 5D +0.77%.",
-        "asOf": "2026-09-28",
+        "detail": "US Dollar · UUP proxy 5D +0.95%.",
+        "asOf": "2026-09-29",
         "sourceName": "Nasdaq official etf history",
         "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical",
         "evidenceRefs": [],
         "metrics": {
-          "proxyLevel": 28.7,
-          "change5dPct": 0.77
+          "proxyLevel": 28.75,
+          "change5dPct": 0.95
         }
       },
       {
@@ -326,12 +326,13 @@
     "marketMonitor": "PARTIAL",
     "fredRates": "OK",
     "nyFedReferenceRates": "OK",
-    "nyFedPrimaryDealers": "OK",
+    "nyFedPrimaryDealers": "STALE",
     "treasuryBills": "OK",
     "treasurySupply": "UNRESOLVED"
   },
   "contradictions": [],
   "researchGaps": [
+    "Latest primary-dealer report date 2026-09-16 is more than fourteen calendar days old.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],
   "marketRows": [
@@ -339,9 +340,9 @@
       "id": "dxy",
       "symbol": "UUP",
       "label": "US Dollar · UUP proxy",
-      "last": 28.7,
-      "change5d": 0.77,
-      "asOf": "2026-09-28",
+      "last": 28.75,
+      "change5d": 0.95,
+      "asOf": "2026-09-29",
       "sourceName": "Nasdaq official etf history",
       "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical"
     },
@@ -552,14 +553,14 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-09-29T22:20:15.098Z",
+    "asOf": "2026-09-30T05:38:08.948Z",
     "assets": [
       {
         "key": "SPX",
         "label": "S&P 500",
         "symbol": "SP500",
-        "last": 7683.69,
-        "dailyChange": -0.77,
+        "last": 7670.84,
+        "dailyChange": -0.17,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "MEDIUM",
@@ -567,14 +568,14 @@
         "confirmingSignal": "Large‑cap long‑run breadth metrics are above averages while headline SPX is down modestly; AI/Mag‑7 breadth is notably strong.",
         "contradictingSignal": "small‑cap/breadth confirmation at intraday resolution",
         "invalidation": "Sustained narrowing of HY/IG spreads, broad small‑cap/breadth deterioration and a persistent MOVE/VIX pickup, or clear global long‑end confirmation (Bund/JGB 10Y/30Y moving similarly), would move the regime toward broader risk‑off.",
-        "asOf": "2026-09-28"
+        "asOf": "2026-09-29"
       },
       {
         "key": "NASDAQ",
         "label": "Nasdaq Composite",
         "symbol": "^IXIC",
-        "last": 26820.38,
-        "dailyChange": -0.92,
+        "last": 26797.54,
+        "dailyChange": -0.09,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "MEDIUM",
@@ -582,7 +583,7 @@
         "confirmingSignal": "AI/Mag‑7 breadth and SMH remain strong and are outperforming many cyclicals.",
         "contradictingSignal": "durability of concentrated flows if credit/volatility worsens",
         "invalidation": "Sustained narrowing of HY/IG spreads, broad small‑cap/breadth deterioration and a persistent MOVE/VIX pickup, or clear global long‑end confirmation (Bund/JGB 10Y/30Y moving similarly), would move the regime toward broader risk‑off.",
-        "asOf": "2026-09-28"
+        "asOf": "2026-09-29"
       },
       {
         "key": "CRUDE",
@@ -618,8 +619,8 @@
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4182.399902,
-        "dailyChange": 0.34,
+        "last": 4178.299805,
+        "dailyChange": -0.03,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "MEDIUM",
@@ -627,14 +628,14 @@
         "confirmingSignal": "Gold weaker over 5D and intraday, consistent with rates/USD strength dominating safe‑haven flows.",
         "contradictingSignal": null,
         "invalidation": "Sustained narrowing of HY/IG spreads, broad small‑cap/breadth deterioration and a persistent MOVE/VIX pickup, or clear global long‑end confirmation (Bund/JGB 10Y/30Y moving similarly), would move the regime toward broader risk‑off.",
-        "asOf": "2026-09-29"
+        "asOf": "2026-09-30"
       },
       {
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 83624.13,
-        "dailyChange": 0.2,
+        "last": 83393.8,
+        "dailyChange": -0.29,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -642,7 +643,7 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": null,
-        "asOf": "2026-09-29"
+        "asOf": "2026-09-30"
       }
     ]
   },
@@ -1190,5 +1191,5 @@
     "Creator-only claims never alter Power Stack scores without independent verification.",
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank."
   ],
-  "syncedAt": "2026-09-29T22:20:15.266Z"
+  "syncedAt": "2026-09-30T05:38:09.008Z"
 }
