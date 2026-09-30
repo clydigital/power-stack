@@ -31,6 +31,8 @@ Market Motion is the fast story layer between raw news and durable Power Stack r
 
 The feed lives in `data/market-motion.json` and renders at `motion.html`. Yahoo Finance/Reuters can be used for discovery/current reporting, but any item that could change a fundamental score or capital-allocation gate still needs company/official/primary confirmation. Motion items expire quickly unless refreshed; they should create writing/research hooks, not become permanent themes by default.
 
+Promoted Live Market Motion is a separate upstream input. When Live has already promoted and frozen a hook inside its immutable edition, `data/live-desk-canonical.json` carries that exact context into Power Stack first. Power Stack should deduplicate its broader `data/market-motion.json` discovery scan against those Live hooks rather than rediscovering them. Exact ticker-linked Live Motion may raise bounded research priority, but it cannot change Base Conviction, a fundamental score, ranking, sizing or an action gate without independent company-level evidence.
+
 ## PowerSweep
 
 PowerSweep is the recurring **portfolio research and decision engine**. It is not a second macro brain.
@@ -72,9 +74,9 @@ The monetary overlay is **separate from Base Conviction**. It may change researc
 
 ### Live → Power Stack
 
-`data/live-desk-canonical.json` is the read-only downstream snapshot. It is refreshed from Live and may include the Dossier regime, deterministic monetary/rates state, contradictions, source health, research gaps, asset state and research-priority signals.
+`data/live-desk-canonical.json` is the read-only downstream snapshot. It is refreshed from Live and may include the Dossier regime, deterministic monetary/rates state, contradictions, source health, research gaps, asset state, research-priority signals and the bounded promoted Market Motion frozen into the current immutable Live edition.
 
-Power Stack interprets that state against holdings, candidates and portfolio concentration. It does not rewrite Live's market conclusion.
+Power Stack interprets that state against holdings, candidates and portfolio concentration. Exact ticker-linked promoted Motion can move a name into the existing capped research queue, but it cannot itself alter fundamentals, ranking, sizing or conviction. Power Stack does not rewrite Live's market conclusion.
 
 ### Power Stack → Live
 
