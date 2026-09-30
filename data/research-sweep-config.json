@@ -154,6 +154,27 @@
       ],
       "scoreRule": "No Market Motion item changes Base Conviction or company fundamentals by itself.",
       "freshnessHours": 72
+    },
+    "monitoringPolicy": {
+      "mode": "FOCUSED_ROUTINE",
+      "routinePrinciple": "Keep the everyday monitor deliberately small. Do not make every available signal, ticker or headline a standing watch item.",
+      "coreLiveSignals": [
+        "RATES_FRONT_END",
+        "RATES_REAL_YIELDS",
+        "RATES_BREAKEVENS",
+        "RATES_LONG_END",
+        "CREDIT"
+      ],
+      "sidebarSignals": [
+        "RATES_FRONT_END",
+        "RATES_REAL_YIELDS",
+        "RATES_LONG_END",
+        "CREDIT"
+      ],
+      "motionPrimaryMax": 3,
+      "bondMainMetricsMax": 5,
+      "deepSweepRule": "Use the broader Live fields, dealer/funding plumbing, wider stock universe and full theme list only during an explicit deeper sweep or when a core signal creates a new decision-relevant divergence.",
+      "bondRule": "Treat bonds as a first-class capital-allocation comparison: cash/short Treasury, intermediate duration, long duration and TIPS. The routine screen stays compact; 20Y/30Y, term premium, auctions/supply and UST-vs-JGB/Bund are deep-sweep items."
     }
   }
 }

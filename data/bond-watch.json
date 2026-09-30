@@ -1,0 +1,83 @@
+{
+  "contractVersion": "power-stack-bond-watch/1",
+  "asOf": "2026-09-30",
+  "purpose": "Small bond/duration watchlist for capital-allocation research. Live Desk owns the rate state; Power Stack uses it to compare duration, inflation protection and cash alternatives.",
+  "monitorPolicy": {
+    "mainScreenMax": 5,
+    "rule": "Keep the main Power Stack bond monitor small. Use a deeper rates sweep only when one of the core bond questions changes materially.",
+    "noSignalRule": "This is not an automatic buy/sell engine. It is a research and capital-allocation comparison layer."
+  },
+  "buckets": [
+    {
+      "key": "cash-short",
+      "label": "Cash / Short Treasury",
+      "instruments": [
+        "SGOV",
+        "BIL",
+        "SHY"
+      ],
+      "question": "Is the short end paying enough to justify patience versus adding equity risk?",
+      "whatMatters": "3M/6M bills, 2Y yield and expected Fed path.",
+      "triggerForDeeperResearch": "Front-end yields fall materially, Fed path changes, or equity risk premium improves enough to reduce the cash hurdle."
+    },
+    {
+      "key": "intermediate",
+      "label": "Intermediate Duration",
+      "instruments": [
+        "IEF"
+      ],
+      "question": "Is 7–10Y duration becoming attractive before the long end fully stabilises?",
+      "whatMatters": "10Y nominal yield, 10Y real yield, breakevens and growth data.",
+      "triggerForDeeperResearch": "10Y yield/real yield peaks or begins a sustained decline while inflation expectations remain contained."
+    },
+    {
+      "key": "long-duration",
+      "label": "Long Duration",
+      "instruments": [
+        "TLT"
+      ],
+      "question": "Has the term-premium/inflation/supply shock gone far enough to make long-duration convexity interesting?",
+      "whatMatters": "20Y/30Y yields, auction/supply conditions, term premium, real yields and credit/risk transmission.",
+      "triggerForDeeperResearch": "Long yields stop making new highs, auction/liquidity stress improves, or growth risk starts dominating inflation risk."
+    },
+    {
+      "key": "inflation-protected",
+      "label": "Inflation Protected",
+      "instruments": [
+        "TIP"
+      ],
+      "question": "Is the inflation problem mostly real-yield pressure or a renewed inflation-expectations problem?",
+      "whatMatters": "10Y real yield versus 10Y breakeven inflation.",
+      "triggerForDeeperResearch": "Breakevens rise materially without equivalent nominal-yield adjustment, or real yields reverse while inflation risk stays sticky."
+    }
+  ],
+  "coreMetrics": [
+    {
+      "id": "us2y",
+      "label": "US 2Y",
+      "marketRowId": "us2y"
+    },
+    {
+      "id": "us10y",
+      "label": "US 10Y",
+      "marketRowId": "us10y-fred"
+    },
+    {
+      "id": "us30y",
+      "label": "US 30Y",
+      "marketRowId": "us30y"
+    },
+    {
+      "id": "real10y",
+      "label": "10Y Real",
+      "marketRowId": "us10y-real"
+    }
+  ],
+  "nextDeepSweep": [
+    "Add verified US 20Y and 30Y yields to the canonical monitor if missing.",
+    "Decompose long-end moves into real yield, breakeven inflation and term premium.",
+    "Check Treasury auctions/supply and liquidity rather than using yield level alone.",
+    "Compare USTs with JGBs/Bunds and USDJPY before calling the move US-specific.",
+    "Compare SGOV/BIL/SHY, IEF, TLT and TIP on yield/duration/convexity rather than treating 'bonds' as one trade."
+  ]
+}

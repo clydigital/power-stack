@@ -23,6 +23,9 @@ function channelFresh(c){if(!c||!packetFresh()||c.fresh===false)return false;con
 function channelFreshnessWeight(c){if(!channelFresh(c))return 0;const max=Number(c.staleAfterHours||macroContext.packetStaleAfterHours||MACRO_PACKET_MAX_HOURS);return clamp(1-.35*(ageHours(c.observedAt||macroContext.generatedAt)/max),.65,1)}
 function themeFresh(t){return !!t&&packetFresh()}
 function liveDeskFresh(){return !!liveDeskContext?.asOf&&ageHours(liveDeskContext.asOf)<=48}
+const CORE_LIVE_SIGNAL_KEYS=['RATES_FRONT_END','RATES_REAL_YIELDS','RATES_BREAKEVENS','RATES_LONG_END','CREDIT'];
+const SIDEBAR_LIVE_SIGNAL_KEYS=['RATES_FRONT_END','RATES_REAL_YIELDS','RATES_LONG_END','CREDIT'];
+function selectedLiveSignals(signals,keys){const map=new Map((signals||[]).map(s=>[s.key,s]));return keys.map(k=>map.get(k)).filter(Boolean)}
 function scoreClass(v){return v>0.015?'pos':v<-0.015?'neg':'neutral'}
 function fmtSigned(v,d=1){const n=Number(v||0);return `${n>0?'+':''}${n.toFixed(d)}`}
 function pct(v,max){return `${clamp(Number(v||0)/max*100,0,100)}%`}
@@ -72,21 +75,23 @@ function renderSidebar(){
 function renderMacroPulse(){
   const box=$('#livePulse'),dot=$('#sidebarLiveDot');
   if(!liveDeskContext){
-    box.innerHTML='<div class="side-micro">Live monetary snapshot unavailable. Base research scores remain unchanged.</div>';
+    box.innerHTML='<div class="side-micro">Live rates snapshot unavailable. Base research scores remain unchanged.</div>';
     dot.className='live-dot';
     $('#liveTimestamp').textContent='Waiting for Live Desk snapshot…';
     return;
   }
   const fresh=liveDeskFresh();
   dot.className=`live-dot ${fresh?'online':'stale'}`;
-  const signals=liveDeskContext?.monetarySignals?.signals||[];
+  const signals=selectedLiveSignals(liveDeskContext?.monetarySignals?.signals||[],SIDEBAR_LIVE_SIGNAL_KEYS);
   if(signals.length){
-    box.innerHTML=signals.slice(0,6).map(s=>`<div class="pulse-row ${fresh?'':'stale'}"><div class="pulse-label"><span>${esc(s.label||s.key)}</span><b class="${s.confirmation==='CONFIRMING'?'pos':s.confirmation==='CONTRADICTING'?'neg':'neutral'}">${esc(s.confirmation||'UNRESOLVED')}</b></div><div class="pulse-regime">${esc(s.direction||'UNRESOLVED')}</div></div>`).join('');
+    box.innerHTML=signals.map(s=>`<div class="pulse-row ${fresh?'':'stale'}"><div class="pulse-label"><span>${esc(s.label||s.key)}</span><b class="${s.confirmation==='CONFIRMING'?'pos':s.confirmation==='CONTRADICTING'?'neg':'neutral'}">${esc(s.confirmation||'UNRESOLVED')}</b></div><div class="pulse-regime">${esc(s.direction||'UNRESOLVED')}</div></div>`).join('');
   }else{
     const rates=liveDeskContext?.rateRegime?.signals||[];
-    box.innerHTML=rates.length
-      ? rates.slice(0,6).map(s=>`<div class="pulse-row ${fresh?'':'stale'}"><div class="pulse-label"><span>${esc(s.label||s.key)}</span><b class="neutral">${esc(s.state||'UNRESOLVED')}</b></div><div class="pulse-regime">${esc(s.detail||'')}</div></div>`).join('')
-      : '<div class="side-micro">Live snapshot is present; monetary-signal v2 fields are pending the next sync.</div>';
+    const keep=new Set(['FRONT_END','REAL_YIELDS','LONG_END']);
+    const compact=rates.filter(s=>keep.has(s.key)).slice(0,3);
+    box.innerHTML=compact.length
+      ? compact.map(s=>`<div class="pulse-row ${fresh?'':'stale'}"><div class="pulse-label"><span>${esc(s.label||s.key)}</span><b class="neutral">${esc(s.state||'UNRESOLVED')}</b></div><div class="pulse-regime">${esc(s.detail||'')}</div></div>`).join('')
+      : '<div class="side-micro">Live snapshot is present; core rates fields are pending the next sync.</div>';
   }
   $('#liveTimestamp').textContent=`${fresh?'Live snapshot':'Live snapshot stale'} · ${timeLabel(liveDeskContext.asOf)}`;
 }
@@ -120,30 +125,33 @@ function renderSummary(rows){const avg=rows.length?rows.reduce((s,x)=>s+Number(x
 function renderSignalMini(t){const fresh=packetFresh(),impact=themeDelta(t.theme),drivers=themeTopDrivers(t.theme),top=drivers[0];return `<div class="theme-signal ${fresh?'':'stale-panel'}"><div class="signal-top"><span class="signal-name">${esc(t.theme)}</span><b class="signal-score ${fresh?scoreClass(impact):'neutral'}">${fresh?fmtSigned(impact,2):'STALE'}</b></div><div class="signal-track"><span class="signal-fill ${fresh?scoreClass(impact):'neutral'}" style="width:${fresh?clamp(Math.abs(impact)*50,0,50):0}%"></span></div><div class="signal-driver">${top?`${esc(prettyKind(top.kind))} ${fmtSigned(top.total,2)} avg`:`${esc(t.regime||'No stock-level driver')}`}</div><div class="signal-freshness">${fresh?'average stock macro adjustment · stock-specific':'no adjustment · stale snapshot'}</div></div>`}
 function renderBlockMini(c){const fresh=channelFresh(c),width=Math.abs(Number(c.score))/2*50,cls=fresh?scoreClass(c.score):'neutral';return `<div class="theme-signal ${fresh?'':'stale-panel'}"><div class="signal-top"><span class="signal-name">${esc(c.label||c.key)}</span><b class="signal-score ${cls}">${fresh?fmtSigned(c.score):'STALE'}</b></div><div class="signal-track"><span class="signal-fill ${cls}" style="width:${fresh?clamp(width,0,50):0}%"></span></div><div class="signal-driver">${esc(c.regime||'')} · ${esc(c.interpretation||'')}</div><div class="signal-freshness">${fresh?`${Math.round(Number(c.confidence||0)*100)}% confidence · ${timeLabel(c.observedAt||macroContext.generatedAt)}`:'stale channel · no influence'}</div></div>`}
 function renderLiveDeskCrossCheck(){
-  if(!liveDeskContext)return '<div class="macro-section"><div class="macro-section-title">LIVE DESK CANONICAL BASELINE</div><div class="context-copy">Live Desk snapshot unavailable. Power Stack keeps Base Conviction unchanged and records the macro-context gap rather than rebuilding a competing regime.</div></div>';
-  const fresh=liveDeskFresh(),regime=liveDeskContext.regime||{},signals=liveDeskContext?.monetarySignals?.signals||[],lenses=liveDeskContext.lenses||[],radar=liveDeskContext.stockRadar||[],verify=liveDeskContext.verification||{};
-  const signalHtml=signals.length
-    ? signals.slice(0,10).map(s=>`<div class="theme-signal ${fresh?'':'stale-panel'}"><div class="signal-top"><span class="signal-name">${esc(s.label||s.key)}</span><b class="signal-score ${s.confirmation==='CONFIRMING'?'pos':s.confirmation==='CONTRADICTING'?'neg':'neutral'}">${esc(s.confirmation||'UNRESOLVED')}</b></div><div class="signal-driver">${esc(s.detail||'')}</div><div class="signal-freshness">${esc(s.direction||'UNRESOLVED')} · ${esc(s.asOf||'no timestamp')}</div></div>`).join('')
-    : lenses.slice(0,6).map(l=>`<div class="theme-signal ${fresh?'':'stale-panel'}"><div class="signal-top"><span class="signal-name">${esc(l.label||l.key)}</span><b class="signal-score neutral">${l.observed?'OBSERVED':'OPEN'}</b></div><div class="signal-driver">${esc(l.interpretation||l.reaction||'')}</div><div class="signal-freshness">${l.unresolvedSignals?.length?`Open: ${esc(l.unresolvedSignals.join(' · '))}`:`Live evidence refs ${(l.evidenceRefs||[]).length}`}</div></div>`).join('');
+  if(!liveDeskContext)return '<div class="macro-section"><div class="macro-section-title">LIVE DESK CANONICAL BASELINE</div><div class="context-copy">Live Desk snapshot unavailable. Power Stack keeps Base Conviction unchanged and records the market-context gap rather than rebuilding a competing regime.</div></div>';
+  const fresh=liveDeskFresh(),regime=liveDeskContext.regime||{},allSignals=liveDeskContext?.monetarySignals?.signals||[],lenses=liveDeskContext.lenses||[];
+  const coreSignals=selectedLiveSignals(allSignals,CORE_LIVE_SIGNAL_KEYS);
+  const fallbackKeys=new Set(['US_RATES','BONDS','CREDIT']);
+  const fallback=lenses.filter(l=>fallbackKeys.has(l.key)).slice(0,3);
+  const signalHtml=coreSignals.length
+    ? coreSignals.map(s=>`<div class="theme-signal ${fresh?'':'stale-panel'}"><div class="signal-top"><span class="signal-name">${esc(s.label||s.key)}</span><b class="signal-score ${s.confirmation==='CONFIRMING'?'pos':s.confirmation==='CONTRADICTING'?'neg':'neutral'}">${esc(s.confirmation||'UNRESOLVED')}</b></div><div class="signal-driver">${esc(s.detail||'')}</div><div class="signal-freshness">${esc(s.direction||'UNRESOLVED')} · ${esc(s.asOf||'no timestamp')}</div></div>`).join('')
+    : fallback.map(l=>`<div class="theme-signal ${fresh?'':'stale-panel'}"><div class="signal-top"><span class="signal-name">${esc(l.label||l.key)}</span><b class="signal-score neutral">${l.observed?'OBSERVED':'OPEN'}</b></div><div class="signal-driver">${esc(l.interpretation||l.reaction||'')}</div><div class="signal-freshness">${l.unresolvedSignals?.length?`Open: ${esc(l.unresolvedSignals.join(' · '))}`:`Live evidence refs ${(l.evidenceRefs||[]).length}`}</div></div>`).join('');
+  const contradictions=(liveDeskContext.contradictions||[]).slice(0,1);
+  const gaps=(liveDeskContext.researchGaps||[]).slice(0,2);
+  const openHtml=(contradictions.length||gaps.length)?`<div class="context-copy"><b>Keep open:</b><ul>${contradictions.map(x=>`<li>${esc(x.title||x.detail||'Contradiction')}</li>`).join('')}${gaps.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`:'';
   const health=liveDeskContext.sourceHealth||{};
-  const healthText=Object.keys(health).length?Object.entries(health).map(([k,v])=>`${k}: ${v}`).join(' · '):'Source-health details pending v2 sync';
-  const contradictions=(liveDeskContext.contradictions||[]).slice(0,3);
-  const gaps=(liveDeskContext.researchGaps||[]).slice(0,3);
-  const openHtml=(contradictions.length||gaps.length)?`<div class="context-copy"><b>Open contradictions / gaps:</b><ul>${contradictions.map(x=>`<li>${esc(x.title||x.detail||'Contradiction')}</li>`).join('')}${gaps.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`:'';
-  const radarHtml=radar.length?`<div class="context-copy"><b>Live Stock Radar:</b> ${radar.map(x=>`<span class="tag">${esc(x.symbol)}</span>`).join(' ')}<br><span style="color:var(--muted)">Research priority only. Power Stack fundamentals, valuation and entry discipline remain independent.</span></div>`:'';
-  return `<div class="macro-section"><div class="macro-section-title">LIVE DESK CANONICAL BASELINE · ${fresh?'FRESH':'STALE'}</div><div class="single-context"><div class="context-copy"><b>${esc(regime.family||'UNRESOLVED')}</b> — ${esc(regime.headline||regime.answer||'No canonical regime headline.')}</div></div><div class="context-copy"><b>Source health:</b> ${esc(healthText)}</div><div class="context-themes">${signalHtml}</div>${openHtml}${radarHtml}<div class="context-copy">Creator verification: ${Number(verify.verifiedCount||0)} verified · ${Number(verify.partialCount||0)} partial · ${Number(verify.creatorOnlyCount||0)} creator-only. None of these fields mechanically changes Base Conviction.</div></div>`;
+  const healthIssues=Object.entries(health).filter(([,v])=>!['OK','CURRENT'].includes(String(v).toUpperCase()));
+  const healthHtml=healthIssues.length?`<div class="context-copy"><b>Data quality:</b> ${healthIssues.length} non-clean source layer${healthIssues.length===1?'':'s'} remain. Keep them in the next deep sweep rather than crowding the main monitor.</div>`:'';
+  return `<div class="macro-section"><div class="macro-section-title">LIVE RATES + MARKET BASELINE · ${fresh?'FRESH':'STALE'}</div><div class="single-context"><div class="context-copy"><b>${esc(regime.family||'UNRESOLVED')}</b> — ${esc(regime.headline||regime.answer||'No canonical regime headline.')}</div></div><div class="context-copy"><b>Portfolio read:</b> ${esc(regime.implication||'Use Live as the market baseline; Power Stack owns the company decision.')}</div><div class="context-themes">${signalHtml}</div>${openHtml}${healthHtml}<div class="context-copy" style="color:var(--muted)">Main monitor intentionally limited to front-end rates, real yields, breakevens, long-end yields and credit. Funding, bills, dealer positioning, Treasury-supply plumbing and Stock Radar stay off the home view unless a deeper sweep needs them.</div></div>`;
 }
 
 function renderContext(){
   const title=$('#contextTitle'),meta=$('#contextMeta'),body=$('#contextBody');
   if(!liveDeskContext){
-    title.textContent='Live monetary state → Power Stack';
+    title.textContent='Live rates & market state → Power Stack';
     meta.textContent='Live snapshot unavailable · Base Conviction unchanged';
     body.innerHTML=renderLiveDeskCrossCheck();
     return;
   }
   const fresh=liveDeskFresh();
-  title.textContent=state.theme!=='All'?`${state.theme} · Live portfolio overlay`:'Live monetary state → Power Stack';
+  title.textContent=state.theme!=='All'?`${state.theme} · Live portfolio overlay`:'Live rates & market state → Power Stack';
   meta.textContent=`Alchemy Live Desk · ${fresh?'fresh snapshot':'stale snapshot'} · ${timeLabel(liveDeskContext.asOf)}`;
   const profiled=state.theme!=='All'?ideas.filter(x=>x.themeGroup===state.theme&&stockProfile(x)).length:null;
   const profileNote=profiled===null?'':`<div class="context-copy"><b>Power Stack exposure map:</b> ${profiled} names in this theme have documented macro-sensitivity profiles. These profiles guide investigation and risk checks; they do not alter the numeric company score.</div>`;
