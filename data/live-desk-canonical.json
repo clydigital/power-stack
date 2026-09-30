@@ -218,9 +218,9 @@
       {
         "key": "FUNDING",
         "label": "Secured funding / collateral",
-        "direction": "UNRESOLVED",
+        "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR n/a. Volumes: SOFR $2967bn, TGCR $1161bn, BGCR $1205bn.",
+        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR -0.7 bp. Volumes: SOFR $2967bn, TGCR $1161bn, BGCR $1205bn.",
         "asOf": "2026-09-29",
         "sourceName": "Federal Reserve Bank of New York",
         "sourceUrl": "https://markets.newyorkfed.org/api/rates/all/latest.json",
@@ -230,7 +230,7 @@
           "sofr": 3.88,
           "tgcr": 3.87,
           "bgcr": 3.87,
-          "securedVsEffrBps": null,
+          "securedVsEffrBps": -0.7,
           "sofrVolumeBillions": 2967,
           "tgcrVolumeBillions": 1161,
           "bgcrVolumeBillions": 1205
@@ -241,16 +241,16 @@
         "label": "Treasury bills / front-end cash",
         "direction": "TIGHTER",
         "confirmation": "CONFIRMING",
-        "detail": "3M 4.25%; 6M 4.36%; average vs EFFR +42.5 bp.",
-        "asOf": "2026-09-29",
+        "detail": "3M 4.20%; 6M 4.33%; average vs EFFR +38.5 bp.",
+        "asOf": "2026-09-30",
         "sourceName": "U.S. Department of the Treasury",
         "sourceUrl": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026",
         "evidenceRefs": [],
         "metrics": {
-          "bill3m": 4.25,
-          "bill6m": 4.36,
+          "bill3m": 4.2,
+          "bill6m": 4.33,
           "effectiveFedFunds": 3.88,
-          "billsVsEffrBps": 42.5
+          "billsVsEffrBps": 38.5
         }
       },
       {
@@ -258,16 +258,16 @@
         "label": "Credit spreads",
         "direction": "TIGHTER",
         "confirmation": "CONFIRMING",
-        "detail": "HY OAS 3.02 (5D +36.0 bp); IG OAS 0.83 (5D +6.0 bp).",
-        "asOf": "2026-09-28",
+        "detail": "HY OAS 3.08 (5D +40.0 bp); IG OAS 0.84 (5D +7.0 bp).",
+        "asOf": "2026-09-29",
         "sourceName": "Federal Reserve Economic Data",
         "sourceUrl": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
         "evidenceRefs": [],
         "metrics": {
-          "hyOas": 3.02,
-          "hyOas5dBps": 36,
-          "igOas": 0.83,
-          "igOas5dBps": 6
+          "hyOas": 3.08,
+          "hyOas5dBps": 40,
+          "igOas": 0.84,
+          "igOas5dBps": 7
         }
       },
       {
@@ -350,9 +350,9 @@
       "id": "us3m-bill",
       "symbol": "DGS3MO",
       "label": "US 3M Treasury Bill Yield",
-      "last": 4.28,
-      "change5d": 2.64,
-      "asOf": "2026-09-28",
+      "last": 4.25,
+      "change5d": 2.16,
+      "asOf": "2026-09-29",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/DGS3MO"
     },
@@ -360,9 +360,9 @@
       "id": "us6m-bill",
       "symbol": "DGS6MO",
       "label": "US 6M Treasury Bill Yield",
-      "last": 4.41,
-      "change5d": 3.28,
-      "asOf": "2026-09-28",
+      "last": 4.36,
+      "change5d": 2.35,
+      "asOf": "2026-09-29",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/DGS6MO"
     },
@@ -370,9 +370,9 @@
       "id": "us2y",
       "symbol": "DGS2",
       "label": "US 2Y Yield",
-      "last": 4.92,
-      "change5d": 3.36,
-      "asOf": "2026-09-28",
+      "last": 4.89,
+      "change5d": 3.82,
+      "asOf": "2026-09-29",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/DGS2"
     },
@@ -380,9 +380,9 @@
       "id": "us10y-fred",
       "symbol": "DGS10",
       "label": "US 10Y Yield · FRED",
-      "last": 5.24,
-      "change5d": 5.65,
-      "asOf": "2026-09-28",
+      "last": 5.26,
+      "change5d": 6.05,
+      "asOf": "2026-09-29",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/DGS10"
     },
@@ -390,9 +390,9 @@
       "id": "us10y-real",
       "symbol": "DFII10",
       "label": "US 10Y Real Yield",
-      "last": 2.9,
-      "change5d": 10.69,
-      "asOf": "2026-09-28",
+      "last": 2.91,
+      "change5d": 10.65,
+      "asOf": "2026-09-29",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/DFII10"
     },
@@ -400,9 +400,9 @@
       "id": "us10y-breakeven",
       "symbol": "T10YIE",
       "label": "US 10Y Breakeven Inflation",
-      "last": 2.35,
-      "change5d": 0.86,
-      "asOf": "2026-09-29",
+      "last": 2.36,
+      "change5d": 0.43,
+      "asOf": "2026-09-30",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/T10YIE"
     },
@@ -412,7 +412,7 @@
       "label": "Effective Federal Funds Rate",
       "last": 3.88,
       "change5d": 0,
-      "asOf": "2026-09-28",
+      "asOf": "2026-09-29",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/DFF"
     },
@@ -420,9 +420,9 @@
       "id": "hy-oas",
       "symbol": "BAMLH0A0HYM2",
       "label": "US High Yield OAS",
-      "last": 3.02,
-      "change5d": 13.53,
-      "asOf": "2026-09-28",
+      "last": 3.08,
+      "change5d": 14.93,
+      "asOf": "2026-09-29",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
     },
@@ -430,9 +430,9 @@
       "id": "ig-oas",
       "symbol": "BAMLC0A0CM",
       "label": "US Investment Grade OAS",
-      "last": 0.83,
-      "change5d": 7.79,
-      "asOf": "2026-09-28",
+      "last": 0.84,
+      "change5d": 9.09,
+      "asOf": "2026-09-29",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/BAMLC0A0CM"
     }
@@ -554,7 +554,7 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-09-30T12:13:12.204Z",
+    "asOf": "2026-09-30T22:20:24.180Z",
     "assets": [
       {
         "key": "SPX",
@@ -590,8 +590,8 @@
         "key": "CRUDE",
         "label": "WTI spot",
         "symbol": "CL=F",
-        "last": 96.41,
-        "dailyChange": -0.58,
+        "last": 96.16,
+        "dailyChange": -3.23,
         "dailyChangeUnit": "percent",
         "bias": "BEARISH",
         "conviction": "MEDIUM",
@@ -599,14 +599,14 @@
         "confirmingSignal": "Distillate cracks and heating oil remain elevated while WTI softened.",
         "contradictingSignal": "Regional inventories and utilisation data",
         "invalidation": "If HY and IG OAS widen materially and breadth/ MOVE/VIX confirm broad risk‑off (credit + volatility transmission), reclassify away from rates‑led tightening.",
-        "asOf": "2026-09-22"
+        "asOf": "2026-09-29"
       },
       {
         "key": "US_RATES",
         "label": "US 10Y",
         "symbol": "^TNX",
-        "last": 5.26,
-        "dailyChange": 2,
+        "last": 5.29,
+        "dailyChange": 3,
         "dailyChangeUnit": "bps",
         "bias": "HAWKISH",
         "conviction": "HIGH",
@@ -614,14 +614,14 @@
         "confirmingSignal": "Long nominal and real yields up materially; front‑end tightness persists.",
         "contradictingSignal": "Need Bund/JGB confirmation to label as global duration shock",
         "invalidation": "If HY and IG OAS widen materially and breadth/ MOVE/VIX confirm broad risk‑off (credit + volatility transmission), reclassify away from rates‑led tightening.",
-        "asOf": "2026-09-29"
+        "asOf": "2026-09-30"
       },
       {
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4191.200195,
-        "dailyChange": 0.28,
+        "last": 4156.100098,
+        "dailyChange": -0.56,
         "dailyChangeUnit": "percent",
         "bias": "BEARISH",
         "conviction": "MEDIUM",
@@ -635,8 +635,8 @@
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 83800.53,
-        "dailyChange": 0.19,
+        "last": 83684.63,
+        "dailyChange": 0.06,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -1183,7 +1183,8 @@
     "This snapshot is a read-only Live canonical market-intelligence view for downstream consumers.",
     "Power Stack may map these signals to portfolio exposures but must not recompute or send Live-derived macro confirmation back to Live.",
     "UNRESOLVED is a valid state. Missing, stale or ambiguous data must not be coerced into a directional signal.",
-    "Company fundamentals, valuation, portfolio construction and entry discipline remain Power Stack-owned."
+    "Company fundamentals, valuation, portfolio construction and entry discipline remain Power Stack-owned.",
+    "Promoted Market Motion is short-horizon context only: it may raise portfolio research priority but cannot change company fundamentals or conviction by itself."
   ],
   "guardrails": [
     "Live Desk supplies canonical monetary/market reasoning, contradictions and source health.",
@@ -1191,7 +1192,8 @@
     "Power Stack retains ownership of company fundamentals, valuation, portfolio construction, ranking and entry discipline.",
     "No Live-derived macro score or confirmation may be exported back to Live.",
     "Creator-only claims never alter Power Stack scores without independent verification.",
-    "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank."
+    "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
+    "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-09-30T12:41:24.450Z"
+  "syncedAt": "2026-09-30T22:20:24.246Z"
 }
