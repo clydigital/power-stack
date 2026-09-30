@@ -37,7 +37,7 @@ requireMatch("Portfolio overlay", overlay, /does not alter overlay state or fund
 requireMatch("PowerSweep", sweep, /holding\.motionContext\?\.length/);
 requireMatch("PowerSweep", sweep, /function liveMotionForTicker/);
 requireMatch("PowerSweep", sweep, /liveMotion\.length \? 20 : 0/);
-requireMatch("PowerSweep", sweep, /existing research caps/);
+requireMatch("PowerSweep", sweep, /item\.motionContext\?\.length/);
 
 requireMatch("PowerSweep config", config, /Consume immutable promoted Live Market Motion/);
 requireMatch("PowerSweep config", config, /cannot change company fundamentals, Base Conviction, ranking, sizing or an action gate/);
