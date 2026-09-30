@@ -1,0 +1,308 @@
+{
+  "contractVersion": "power-stack-market-motion/1",
+  "asOf": "2026-09-30T23:05:00+08:00",
+  "freshnessWindowHours": 72,
+  "purpose": "Fast-moving company, sector and geopolitical hooks that create narrative motion for Power Stack without changing company scores by themselves.",
+  "policy": {
+    "role": "Discovery and narrative-motion layer. Every item must connect to an existing holding, watchlist name, theme or market mechanism.",
+    "sourceRule": "Yahoo Finance/Reuters may be used for discovery and current reporting. Material claims that could alter a score or capital-allocation gate require company/official/primary confirmation.",
+    "scoreRule": "A motion item cannot change Base Conviction or a fundamental score by itself.",
+    "expiryRule": "Promote only fresh items. Items older than the freshness window remain archive/context unless a new development refreshes them.",
+    "politicalRule": "Political and geopolitical items remain factual/attributed and are used only for market transmission, not political judgement."
+  },
+  "primary": [
+    {
+      "id": "meta-enterprise-platform-2026-09-28",
+      "category": "COMPANY",
+      "motionType": "NEW_BUSINESS_MODEL",
+      "priority": 1,
+      "tickers": [
+        "META",
+        "MDB",
+        "MSFT",
+        "CRM",
+        "NOW",
+        "ORCL"
+      ],
+      "headline": "Meta pushes into enterprise AI and hires MongoDB CEO to lead it",
+      "eventDate": "2026-09-28",
+      "whatHappened": "Meta launched Meta Enterprise Platform around Muse, business agents, APIs and coding tools, and appointed MongoDB CEO Chirantan Desai to run the new unit.",
+      "whyInteresting": "This turns Meta's AI buildout into a direct monetisation test against established enterprise-software vendors rather than only a consumer-advertising or infrastructure story.",
+      "bigPictureBridge": "AI capex → enterprise monetisation → cash return on infrastructure spending → software competitive pressure.",
+      "powerStackUse": "Use as a motion hook inside AI financing/ROIC and enterprise-software research. Do not treat competitor share-price moves as proof of durable market-share loss.",
+      "hybridAngle": "Meta spent heavily to build the stack; now the question is whether it can turn that infrastructure into a new recurring enterprise revenue stream.",
+      "linkedTheme": "AI Credit / Financing Dispersion + Realizable MW",
+      "linkedAssets": [
+        "META",
+        "MDB",
+        "CRM",
+        "NOW",
+        "ORCL"
+      ],
+      "status": "PROMOTED",
+      "verification": "CURRENT_REPORTING",
+      "source": {
+        "publisher": "Yahoo Finance",
+        "url": "https://finance.yahoo.com/technology/ai/articles/meta-carves-enterprise-offerings-brings-201231842.html"
+      }
+    },
+    {
+      "id": "nvda-buyback-2026-09-28",
+      "category": "COMPANY",
+      "motionType": "CAPITAL_RETURN",
+      "priority": 2,
+      "tickers": [
+        "NVDA"
+      ],
+      "headline": "Nvidia adds $150B to its buyback authorisation",
+      "eventDate": "2026-09-28",
+      "whatHappened": "Nvidia authorised an additional $150 billion of share repurchases, taking remaining authorisation to $235 billion through fiscal 2028. The company also announced an open platform aimed at AI-agent safety.",
+      "whyInteresting": "It creates a sharp contrast inside the AI theme: Nvidia can fund expansion while returning extraordinary amounts of capital, while parts of the wider AI buildout are increasingly judged on financing quality and cash conversion.",
+      "bigPictureBridge": "AI infrastructure demand → cash generation → capital return versus AI project financing stress elsewhere.",
+      "powerStackUse": "Use NVDA as the cash-generation benchmark when comparing AI infrastructure names, sponsors and project-finance risk.",
+      "hybridAngle": "The AI boom is not one financing story: Nvidia is returning capital at record scale while weaker projects still face a much higher hurdle rate.",
+      "linkedTheme": "AI Credit / Financing Dispersion + Realizable MW",
+      "linkedAssets": [
+        "NVDA"
+      ],
+      "status": "PROMOTED",
+      "verification": "CURRENT_REPORTING",
+      "source": {
+        "publisher": "Yahoo Finance",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/nvidia-announces-record-150-billion-122620134.html"
+      }
+    },
+    {
+      "id": "tsla-cybercab-regulatory-deadline-2026-09-30",
+      "category": "COMPANY",
+      "motionType": "REGULATORY_CATALYST",
+      "priority": 3,
+      "tickers": [
+        "TSLA"
+      ],
+      "headline": "Tesla Cybercab faces a federal certification deadline",
+      "eventDate": "2026-09-30",
+      "whatHappened": "NHTSA asked Tesla to explain by September 30 how Cybercab was self-certified under federal safety standards despite lacking conventional driver controls. The inquiry itself has not established a violation.",
+      "whyInteresting": "Tesla's autonomy thesis now has a concrete regulatory scale gate, while its core vehicle-delivery outlook is also under scrutiny.",
+      "bigPictureBridge": "Physical AI narrative → legal/regulatory deployment gate → fleet scaling → future revenue dependence.",
+      "powerStackUse": "Keep TSLA's autonomy upside separate from verified vehicle/storage economics. Treat the regulatory response as a catalyst, not a score change until there is a material business consequence.",
+      "hybridAngle": "For Tesla, the next autonomy question is not just whether Cybercab works; it is whether the product can clear the regulatory path needed to scale.",
+      "linkedTheme": "Robotics / Automation",
+      "linkedAssets": [
+        "TSLA"
+      ],
+      "status": "PROMOTED",
+      "verification": "CURRENT_REPORTING",
+      "source": {
+        "publisher": "Yahoo Finance",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/dear-tesla-stock-fans-mark-140003840.html"
+      }
+    },
+    {
+      "id": "mu-earnings-memory-test-2026-09-30",
+      "category": "EARNINGS",
+      "motionType": "THESIS_TEST",
+      "priority": 4,
+      "tickers": [
+        "MU",
+        "NVDA"
+      ],
+      "headline": "Micron earnings become the cleanest live test of the memory-scarcity thesis",
+      "eventDate": "2026-09-30",
+      "whatHappened": "Micron is scheduled to report fiscal fourth-quarter results after the September 30 close, with the market focused on DRAM, HBM pricing, supply growth and AI-driven demand.",
+      "whyInteresting": "Expectations are already very high, so the stock reaction can be more informative than the headline numbers. Strong operating evidence with a weak tape would create a useful expectation-versus-reaction divergence.",
+      "bigPictureBridge": "AI workloads → HBM/DRAM demand → memory pricing/supply → earnings and guidance → semiconductor breadth.",
+      "powerStackUse": "Use the result to update memory/AI hardware research only after the actual release. Compare guidance with the stock reaction instead of treating an earnings beat as automatic confirmation.",
+      "hybridAngle": "If memory scarcity is genuinely as tight as the thesis says, Micron should be able to show it in pricing, margins and forward commentary; the market's reaction tells us whether that was already priced.",
+      "linkedTheme": "US–China AI War / AI Abundance + Compute Sovereignty",
+      "linkedAssets": [
+        "MU",
+        "NVDA"
+      ],
+      "status": "PROMOTED",
+      "verification": "SCHEDULED_CATALYST",
+      "source": {
+        "publisher": "Yahoo Finance",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/know-ahead-micron-earnings-release-085748164.html"
+      }
+    },
+    {
+      "id": "iran-us-feedback-hormuz-2026-09-30",
+      "category": "GEOPOLITICS",
+      "motionType": "NEGOTIATION_CATALYST",
+      "priority": 5,
+      "tickers": [
+        "XOM",
+        "MISC",
+        "HIBISCS",
+        "VLO",
+        "MPC",
+        "LNG"
+      ],
+      "headline": "Iran says it received a U.S. response to its trust-building proposal",
+      "eventDate": "2026-09-30",
+      "whatHappened": "Iranian officials said they received U.S. feedback through Qatari mediators on a seven-day trust-building proposal. Reuters reported that current disagreement centres on sequencing, including steps tied to reopening the Strait of Hormuz.",
+      "whyInteresting": "This is a fast-moving sentence-level catalyst for the energy complex because the negotiation path changes the probability of freer Hormuz traffic before inventories or company earnings change.",
+      "bigPictureBridge": "U.S.–Iran diplomacy → Hormuz shipping probability → crude/products/freight → inflation expectations → yields/USD → portfolio energy exposure.",
+      "powerStackUse": "Use as a macro-to-portfolio bridge for energy holdings and refiners. Do not infer a deal or supply normalisation until physical-flow evidence changes.",
+      "hybridAngle": "The oil story can change on diplomacy before barrels move; the key test is whether tanker flows, product cracks and freight actually follow.",
+      "linkedTheme": "Refined Products / Diesel Inflation + Middle East Supply Risk",
+      "linkedAssets": [
+        "XOM",
+        "MISC",
+        "HIBISCS",
+        "VLO",
+        "MPC",
+        "LNG"
+      ],
+      "status": "PROMOTED",
+      "verification": "REUTERS_VERIFIED",
+      "source": {
+        "publisher": "Reuters",
+        "url": "https://www.reuters.com/world/middle-east/iran-receives-us-feedback-seven-day-trust-building-plan-2026-09-30/"
+      }
+    }
+  ],
+  "secondary": [
+    {
+      "id": "hood-agentic-trading-2026-09-29",
+      "category": "MARKET_STRUCTURE",
+      "motionType": "PRODUCT_LAUNCH",
+      "priority": 6,
+      "tickers": [
+        "HOOD"
+      ],
+      "headline": "Robinhood is rolling out agentic AI trading accounts",
+      "eventDate": "2026-09-29",
+      "whatHappened": "Robinhood said it will begin rolling out AI-agent-led trading accounts, alongside plans for weekend equity trading and other active-trader products.",
+      "whyInteresting": "This is a practical market-structure story: AI is moving from research assistance toward autonomous retail execution.",
+      "bigPictureBridge": "AI agents → retail trading behaviour → brokerage engagement → market microstructure and platform economics.",
+      "powerStackUse": "Track as a fintech/market-structure theme seed. No score effect without evidence on adoption, economics and risk controls.",
+      "hybridAngle": "AI is moving from helping people choose trades to placing them, which could change both brokerage economics and retail behaviour.",
+      "linkedTheme": "AI Security / Governance",
+      "linkedAssets": [
+        "HOOD"
+      ],
+      "status": "WATCH",
+      "verification": "CURRENT_REPORTING",
+      "source": {
+        "publisher": "Yahoo Finance",
+        "url": "https://ca.finance.yahoo.com/news/robinhood-is-rolling-out-agentic-ai-trading-accounts-for-the-masses-230517174.html/"
+      }
+    },
+    {
+      "id": "ba-faxx-2026-09-29",
+      "category": "COMPANY",
+      "motionType": "CONTRACT_WIN",
+      "priority": 7,
+      "tickers": [
+        "BA"
+      ],
+      "headline": "Boeing wins the U.S. Navy's next-generation fighter development contract",
+      "eventDate": "2026-09-29",
+      "whatHappened": "The Pentagon awarded Boeing a roughly $20 billion contract to develop the Navy's F/A-XX next-generation fighter.",
+      "whyInteresting": "It gives Boeing another major defence growth vector separate from the commercial-aircraft recovery and links directly to strategic aerospace spending.",
+      "bigPictureBridge": "Strategic competition → defence procurement → aerospace backlog/capacity → company execution.",
+      "powerStackUse": "Treat as a defence/aerospace catalyst and research lead. Future production economics and execution still determine company-level impact.",
+      "hybridAngle": "Boeing's story is no longer only commercial-aircraft repair; defence backlog is becoming a second operating narrative.",
+      "linkedTheme": "Critical Minerals / Rare Earth / Copper Supply Security",
+      "linkedAssets": [
+        "BA"
+      ],
+      "status": "WATCH",
+      "verification": "REUTERS_VERIFIED",
+      "source": {
+        "publisher": "Reuters",
+        "url": "https://www.reuters.com/business/autos-transportation/boeing-wins-us-navys-next-generation-fighter-contract-sources-say-2026-09-29/"
+      }
+    },
+    {
+      "id": "fico-vantagescore-2026-09-29",
+      "category": "COMPANY",
+      "motionType": "POLICY_MOAT_SHOCK",
+      "priority": 8,
+      "tickers": [
+        "FICO"
+      ],
+      "headline": "Mortgage-score pricing parity hits FICO's moat",
+      "eventDate": "2026-09-29",
+      "whatHappened": "FHFA changes put VantageScore on the same mortgage pricing framework as Classic FICO for Fannie Mae and Freddie Mac, and FICO shares fell sharply.",
+      "whyInteresting": "It is a clean example of policy plumbing becoming company-specific moat risk in a single announcement.",
+      "bigPictureBridge": "Housing policy/infrastructure → lender workflow → scoring competition → pricing power and company moat.",
+      "powerStackUse": "Use as a special-situations research example and as a reminder that regulation can change competitive economics without a macro regime shift.",
+      "hybridAngle": "The interesting part is not simply the share-price drop; it is how a rule change can rapidly reprice a business model that looked structurally entrenched.",
+      "linkedTheme": "Global Duration / Capital Scarcity + Energy-Inflation Feedback",
+      "linkedAssets": [
+        "FICO"
+      ],
+      "status": "WATCH",
+      "verification": "CURRENT_REPORTING",
+      "source": {
+        "publisher": "Yahoo Finance",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/fair-isaac-drops-26-vantagescore-145000563.html"
+      }
+    },
+    {
+      "id": "opec-november-targets-2026-09-30",
+      "category": "ENERGY",
+      "motionType": "SUPPLY_POLICY",
+      "priority": 9,
+      "tickers": [
+        "XOM",
+        "VLO",
+        "MPC",
+        "MISC",
+        "HIBISCS"
+      ],
+      "headline": "OPEC+ is expected to keep November output targets steady",
+      "eventDate": "2026-09-30",
+      "whatHappened": "Reuters reported that key OPEC+ producers are expected to maintain current November production targets at Sunday's meeting.",
+      "whyInteresting": "It provides a useful counterweight to the diplomacy narrative: geopolitical de-escalation would not automatically imply a large new OPEC supply response.",
+      "bigPictureBridge": "Producer policy + Gulf export recovery → crude balance → products/freight → inflation and energy-equity margins.",
+      "powerStackUse": "Use alongside physical export, refinery and product-market evidence rather than as a standalone directional oil signal.",
+      "hybridAngle": "Even if diplomacy improves, supply policy and product tightness can keep the energy story from normalising immediately.",
+      "linkedTheme": "Refined Products / Diesel Inflation + Middle East Supply Risk",
+      "linkedAssets": [
+        "XOM",
+        "VLO",
+        "MPC",
+        "MISC",
+        "HIBISCS"
+      ],
+      "status": "WATCH",
+      "verification": "REUTERS_VERIFIED",
+      "source": {
+        "publisher": "Reuters",
+        "url": "https://www.reuters.com/business/energy/opec-oil-producers-set-keep-output-targets-steady-sunday-meeting-sources-say-2026-09-30/"
+      }
+    },
+    {
+      "id": "smmt-azn-2026-09-29",
+      "category": "COMPANY",
+      "motionType": "STRATEGIC_VALIDATION",
+      "priority": 10,
+      "tickers": [
+        "SMMT",
+        "AZN"
+      ],
+      "headline": "AstraZeneca commits $2B to Summit Therapeutics",
+      "eventDate": "2026-09-29",
+      "whatHappened": "AstraZeneca agreed to invest $2 billion in Summit Therapeutics and collaborate on cancer-drug combinations involving ivonescimab.",
+      "whyInteresting": "It is a clean strategic-validation event with a cross-border biotech angle rather than another AI or energy story.",
+      "bigPictureBridge": "External validation + balance-sheet capital → clinical-development optionality → biotech competitive landscape.",
+      "powerStackUse": "Keep as special-situations discovery unless healthcare becomes a higher-priority Power Stack branch.",
+      "hybridAngle": "Sometimes the most useful signal is another industry's willingness to write a very large cheque for access to a differentiated asset.",
+      "linkedTheme": "Special Situations",
+      "linkedAssets": [
+        "SMMT",
+        "AZN"
+      ],
+      "status": "WATCH",
+      "verification": "CURRENT_REPORTING",
+      "source": {
+        "publisher": "Yahoo Finance",
+        "url": "https://finance.yahoo.com/healthcare/articles/summit-soars-2-billion-investment-101352389.html"
+      }
+    }
+  ]
+}
