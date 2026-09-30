@@ -24,6 +24,8 @@ const sync = source("scripts/sync-live-desk.mjs");
 const overlay = source("scripts/generate-portfolio-live-overlay.mjs");
 const sweep = source("scripts/generate-power-sweep.mjs");
 const config = source("data/research-sweep-config.json");
+const motionSurface = source("motion.html");
+const homeSurface = source("index.html");
 
 requireMatch("Live sync", sync, /market-motion-edition\/v1/);
 requireMatch("Live sync", sync, /normaliseMarketMotion/);
@@ -41,6 +43,14 @@ requireMatch("PowerSweep", sweep, /item\.motionContext\?\.length/);
 
 requireMatch("PowerSweep config", config, /Consume immutable promoted Live Market Motion/);
 requireMatch("PowerSweep config", config, /cannot change company fundamentals, Base Conviction, ranking, sizing or an action gate/);
+
+requireMatch("Motion surface", motionSurface, /LIVE PROMOTED MOTION/);
+requireMatch("Motion surface", motionSurface, /POWER STACK DISCOVERY/);
+requireMatch("Motion surface", motionSurface, /isCoveredByLive/);
+requireMatch("Motion surface", motionSurface, /liveKeys/);
+requireMatch("Home surface", homeSurface, /LIVE PROMOTED/);
+requireMatch("Home surface", homeSurface, /liveUrls/);
+requireMatch("Home surface", homeSurface, /liveHeadlines/);
 
 forbidMatch("Portfolio overlay", overlay, /fundamentalScore\s*[:=]\s*[^,\n]*motion/i);
 forbidMatch("Portfolio overlay", overlay, /fundamentalGrade\s*[:=]\s*[^,\n]*motion/i);
