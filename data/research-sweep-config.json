@@ -1,6 +1,6 @@
 {
   "version": 4,
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-10-01",
   "purpose": "Machine-readable PowerSweep contract. Live Desk owns canonical macro/market state; PowerSweep consumes that state, runs a bounded Market Motion scan for fresh company/sector/geopolitical hooks, then spends a bounded research budget on portfolio translation, holding/watchlist evidence, divergences, hidden concentration and capital-allocation decisions.",
   "cranium": {
     "name": "Market Research Cranium",
@@ -20,7 +20,7 @@
     "Read current Cranium tab and extract new claims, source URLs, charts/PDF leads and explicit disagreements. Treat it as research seed/context, not canonical macro state.",
     "Load data/live-desk-canonical.json, data/portfolio-live-overlay.json and data/holding-tape.json first. Validate contract versions, as-of times, source health, contradictions and unresolved gaps.",
     "Use Live's canonical monetary/market state as the macro baseline. Do not perform a parallel broad macro sweep unless Live is stale/unavailable; record that condition as a blocking gap instead.",
-    "Run a bounded Market Motion scan across Yahoo Finance/Reuters and other high-quality current reporting for fresh stock-specific, sector and geopolitical hooks. Promote only items that connect to an existing holding, watchlist name, theme or market mechanism. A motion item raises research/writing priority but cannot change a fundamental score by itself.",
+    "Consume immutable promoted Live Market Motion from data/live-desk-canonical.json first and map exact ticker links into portfolio research priority. Then run a bounded Power Stack Market Motion scan only for additional portfolio-specific hooks not already covered upstream. Neither source may change a fundamental score by itself.",
     "Triage current holdings using macro exposure, completed-session tape, action gates and hidden concentration. Promote only decision-relevant divergences/data gaps into the holding research budget.",
     "Research at most the configured holdingDeepDives. Keep fundamental scores unchanged unless new company-level evidence warrants a revision.",
     "Review the watchlist using price/action state, portfolio overlap/diversification and company-specific catalysts. Research at most the configured watchlistDeepDives.",
@@ -79,7 +79,7 @@
     "runOrder": [
       "INTAKE: validate data/live-desk-canonical.json, data/portfolio-live-overlay.json and data/holding-tape.json before any external research.",
       "TRIAGE: rank portfolio divergences, unresolved holding data, high-review holdings and hidden concentration. Decide what actually merits research.",
-      "MOTION: scan fresh company, sector and geopolitical news for narrative hooks. Link each promoted item to an existing Power Stack theme/asset and record what happened, why it matters, the big-picture bridge and the next test. Discovery alone does not change scores.",
+      "MOTION: consume promoted Live Market Motion first as canonical short-horizon context, dedupe it against the separate Power Stack discovery feed, and use exact ticker links only to raise bounded holding/watchlist research priority. Scan externally only for additional portfolio-specific hooks not already covered. Motion never changes scores by itself.",
       "HOLDINGS: research only the capped set of holdings where new evidence could change an action gate, thesis risk, sizing read or fundamental score.",
       "WATCHLIST: research the capped set of candidates where price asymmetry, diversification benefit or a fresh company catalyst could change priority.",
       "THEMES: investigate only themes that materially affect current holdings/candidates or create a genuinely differentiated new opportunity.",
@@ -113,7 +113,9 @@
       "Market Motion must favour stock-specific or event-specific developments that create a clear narrative bridge to an existing portfolio/theme question.",
       "Yahoo Finance/Reuters may be used as current discovery/reporting surfaces, but a motion headline cannot change a company fundamental score without company/official/primary confirmation.",
       "Political/geopolitical motion must remain factual and attributed; use it only for market-transmission analysis.",
-      "If a Market Motion item requires a company deep-dive to change an action gate or score, that verification must consume the existing holding/watchlist/theme research budget rather than creating an unlimited side channel."
+      "If a Market Motion item requires a company deep-dive to change an action gate or score, that verification must consume the existing holding/watchlist/theme research budget rather than creating an unlimited side channel.",
+      "Exact ticker-linked promoted Live Market Motion may raise a holding or watchlist name inside the existing research caps, but it cannot change company fundamentals, Base Conviction, ranking, sizing or an action gate without independent company-level evidence.",
+      "Do not spend external discovery budget recreating a hook already supplied by immutable promoted Live Market Motion; investigate only the unresolved company-specific implication or a genuinely new portfolio-relevant development."
     ],
     "requiredOutputs": [
       "run health and canonical input freshness",
@@ -153,7 +155,8 @@
         "EXPIRE_OR_REFRESH"
       ],
       "scoreRule": "No Market Motion item changes Base Conviction or company fundamentals by itself.",
-      "freshnessHours": 72
+      "freshnessHours": 72,
+      "liveUpstreamRule": "Immutable promoted Live Market Motion is canonical short-horizon context and should be consumed before Power Stack's broader discovery feed. The Power Stack feed remains a separate discovery layer and must dedupe overlapping hooks."
     },
     "monitoringPolicy": {
       "mode": "FOCUSED_ROUTINE",
