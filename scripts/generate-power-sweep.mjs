@@ -32,6 +32,7 @@ function importanceScore(holding) {
   if (holding.actualReaction?.status === "UNRESOLVED") score += 85;
   if (holding.profileStatus === "MISSING") score += 80;
   if (holding.reviewPriority === "HIGH_REVIEW") score += 45;
+  if (holding.motionContext?.length) score += 35;
   if (holding.overlayState === "HEADWIND") score += 25;
   if (holding.overlayState === "MIXED") score += 10;
   const move = Math.abs(Number(holding.actualReaction?.changePct || 0));
@@ -48,6 +49,7 @@ function holdingReason(holding) {
   if (holding.actualReaction?.status === "UNRESOLVED") reasons.push("completed-session tape/instrument data is unresolved");
   if (holding.profileStatus === "MISSING") reasons.push("macro-sensitivity profile is missing");
   if (holding.reviewPriority === "HIGH_REVIEW") reasons.push("portfolio overlay marks the holding HIGH_REVIEW");
+  if (holding.motionContext?.length) reasons.push("fresh promoted Live Market Motion is linked to the holding");
   const move = Math.abs(Number(holding.actualReaction?.changePct || 0));
   if (holding.overlayState === "MIXED" && move >= 2) reasons.push("mixed macro exposure coincided with a material one-session move");
   if (!reasons.length) reasons.push("monitoring only; no decision-relevant divergence");
@@ -63,6 +65,7 @@ function holdingEvidence(holding) {
   if (holding.actualReaction?.status === "UNRESOLVED") out.push("verified instrument symbol/terms and completed-session market data");
   if (holding.overlayState === "HEADWIND") out.push("funding, valuation, cash-flow or operating evidence that could offset or reinforce the macro headwind");
   if (holding.overlayState === "MIXED") out.push("which channel dominated the tape: company fundamentals, crude/products, freight, rates or positioning");
+  if (holding.motionContext?.length) out.push("independent company/official evidence testing whether the promoted Live Motion changes the action gate, thesis risk, cash flow or funding case");
   return [...new Set(out)];
 }
 
@@ -107,6 +110,31 @@ function candidatePriority(candidate) {
   if (div.label === "OVERLAP") score -= 12;
   if (/PRIORITY/.test(String(candidate.action || "").toUpperCase())) score += 12;
   return score;
+}
+
+function liveMotionForTicker(live, ticker) {
+  const symbol = String(ticker || "").toUpperCase();
+  return (live.marketMotion?.items || [])
+    .filter((item) => (item.tickers || []).some((candidate) => String(candidate).toUpperCase() === symbol))
+    .slice(0, 3)
+    .map((item) => ({
+      id: item.id,
+      headline: item.headline,
+      category: item.category,
+      verificationState: item.verificationState,
+      occurredAt: item.occurredAt,
+      whyInteresting: item.whyInteresting,
+      bigPictureBridge: item.bigPictureBridge,
+      nextTest: item.nextTest,
+      storyId: item.storyId,
+      storyTitle: item.storyTitle,
+      regimeSlug: item.regimeSlug,
+      regimeLabel: item.regimeLabel,
+      sourceName: item.sourceName,
+      sourceUrl: item.sourceUrl,
+      materiality: item.materiality,
+      relevance: item.relevance,
+    }));
 }
 
 function themeIntersections(theme, holdings, watchlist) {
@@ -162,6 +190,7 @@ function build(existingGeneratedAt = null) {
       reviewPriority: holding.reviewPriority,
       actualReaction: holding.actualReaction,
       currentAction: holding.currentAction,
+      ...(holding.motionContext?.length ? { motionContext: holding.motionContext } : {}),
       reasons: holdingReason(holding),
       researchQuestion: researchQuestionForHolding(holding),
       requiredEvidence: holdingEvidence(holding),
@@ -172,6 +201,7 @@ function build(existingGeneratedAt = null) {
       || item.actualReaction?.status === "UNRESOLVED"
       || (item.reviewPriority === "HIGH_REVIEW" && item.actualReaction?.status !== "CONFIRMS")
       || (item.overlayState === "MIXED" && Math.abs(Number(item.actualReaction?.changePct || 0)) >= 2)
+      || item.motionContext?.length
     )
     .sort((a,b) => b.priorityScore - a.priorityScore);
 
@@ -182,6 +212,7 @@ function build(existingGeneratedAt = null) {
     .filter((item) => ["buy","selective","wait"].includes(item.bucket))
     .map((item) => {
       const diversification = watchlistDiversification(item);
+      const liveMotion = liveMotionForTicker(live, item.ticker);
       return {
         ticker: item.ticker,
         name: item.name,
@@ -193,11 +224,14 @@ function build(existingGeneratedAt = null) {
         confirmation: item.confirmation,
         invalidation: item.invalidation,
         theme: item.theme,
-        priorityScore: candidatePriority(item),
+        priorityScore: candidatePriority(item) + (liveMotion.length ? 20 : 0),
+        ...(liveMotion.length ? { liveMotion } : {}),
         diversification,
-        researchQuestion: diversification.label === "OVERLAP"
-          ? "Is " + item.ticker + " sufficiently better than the portfolio's existing overlapping exposures to justify new capital?"
-          : "Does " + item.ticker + " still offer enough quality + price asymmetry to justify priority research under the current Live regime?",
+        researchQuestion: liveMotion.length
+          ? "Does the promoted Live Motion change " + item.ticker + "'s company-specific evidence, action gate or thesis risk after independent verification?"
+          : diversification.label === "OVERLAP"
+            ? "Is " + item.ticker + " sufficiently better than the portfolio's existing overlapping exposures to justify new capital?"
+            : "Does " + item.ticker + " still offer enough quality + price asymmetry to justify priority research under the current Live regime?",
       };
     })
     .sort((a,b)=>b.priorityScore-a.priorityScore);
@@ -267,11 +301,13 @@ function build(existingGeneratedAt = null) {
       overlayState:item.overlayState,
       reaction:item.actualReaction?.status || "UNRESOLVED",
       action:item.currentAction,
-      reason:item.actualReaction?.status === "CONFIRMS"
-        ? "Tape currently confirms the macro overlay; no extra research budget unless company evidence changes."
-        : item.overlayState === "MIXED"
-          ? "Mixed exposure is monitored without forcing a directional conclusion."
-          : "No current decision-relevant divergence promoted into the capped queue.",
+      reason:item.motionContext?.length
+        ? "Fresh promoted Live Motion is linked, but this holding remains outside the capped deep-dive queue unless budget or priority changes."
+        : item.actualReaction?.status === "CONFIRMS"
+          ? "Tape currently confirms the macro overlay; no extra research budget unless company evidence changes."
+          : item.overlayState === "MIXED"
+            ? "Mixed exposure is monitored without forcing a directional conclusion."
+            : "No current decision-relevant divergence promoted into the capped queue.",
     }));
 
   const researchGaps = [
@@ -303,11 +339,21 @@ function build(existingGeneratedAt = null) {
       monetarySummary: live.monetarySignals?.summary || null,
     },
     queueCounts,
+    ...(live.marketMotion ? {
+      liveMarketMotion: {
+        contractVersion: live.marketMotion.contractVersion,
+        editionId: live.marketMotion.editionId || null,
+        capturedAt: live.marketMotion.capturedAt || null,
+        itemCount: (live.marketMotion.items || []).length,
+        items: (live.marketMotion.items || []).slice(0, Number(caps.motionPromotedItems || 5)),
+      },
+    } : {}),
     portfolioTriage: {
       tapeDivergences: overlay.reviewQueue?.tapeDivergences || [],
       tapeConfirmations: overlay.reviewQueue?.tapeConfirmations || [],
       highReview: overlay.reviewQueue?.highReview || [],
       mixed: overlay.reviewQueue?.mixed || [],
+      ...(overlay.reviewQueue?.motionLinked?.length ? { liveMotionLinkedHoldings: overlay.reviewQueue.motionLinked } : {}),
       hiddenConcentration: overlay.hiddenConcentration || [],
       portfolioDivergences: (overlay.portfolioDivergences || []).slice(0, Number(caps.portfolioDivergences || 4)),
     },
@@ -324,6 +370,7 @@ function build(existingGeneratedAt = null) {
       "Do not mechanically rerank the watchlist from Live Stock Radar.",
       "Do not convert MIXED exposure into a directional trade signal.",
       "Do not rebuild a competing Power Stack macro regime when Live canonical inputs are healthy.",
+      "Do not change company fundamentals, conviction, ranking or sizing from promoted Live Market Motion without independent company-level evidence.",
     ],
     writeBackPolicy: {
       allowed: [
