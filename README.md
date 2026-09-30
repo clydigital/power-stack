@@ -8,7 +8,7 @@ A searchable, versioned investment-research vault for nuclear, AI infrastructure
 - `data/macro-context.json` is the active Power Stack Pulse snapshot.
 - `data/ism-macro-snapshot.json` stores the deeper official-ISM analytical snapshot used as one input to macro interpretation.
 - `data/holdings-fundamentals.json` is the canonical current-holdings fundamentals ledger.
-- `data/watchlist.json` is the live price/action queue.\n- `data/rate-resilience-overlay-2026-09-25.json` is the current 10Y hurdle-rate overlay. It owns the fresh-US research/action ranking and regime-specific entry gates while leaving company fundamental scores company-evidence owned.
+- `data/watchlist.json` is the live price/action queue.\n- `data/market-motion.json` is the fast narrative/discovery feed for fresh company, sector and geopolitical hooks. It powers `motion.html`, links each headline back to a durable Power Stack theme or portfolio question, and cannot change company scores by itself.\n- `data/rate-resilience-overlay-2026-09-25.json` is the current 10Y hurdle-rate overlay. It owns the fresh-US research/action ranking and regime-specific entry gates while leaving company fundamental scores company-evidence owned.
 - `data/research-sweep-config.json` is the PowerSweep process contract. Live Desk is loaded first as canonical macro/market state; PowerSweep then spends a bounded research budget only on portfolio divergences, company-specific evidence, actionable watchlist names, portfolio-relevant themes and a capped China/HK adjunct.
 - `data/power-sweep-latest.json` is the deterministic current PowerSweep queue. It records input health, capped holding/watchlist/theme/China investigations, monitor-only holdings, hidden concentration, research gaps and explicit no-change rules.
 - `data/research-sweep-latest.json` is the compatibility/index pointer to the current PowerSweep plan and its canonical inputs.
@@ -22,6 +22,14 @@ A searchable, versioned investment-research vault for nuclear, AI infrastructure
 The Market Research Cranium is a **research seed, synthesis layer and source-URL registry**, not direct canonical evidence. Daily research should preserve its `[FACT]`, `[SELL-SIDE VIEW]`, `[CRANIUM SYNTHESIS]`, `[WATCH]` and `[INVALIDATION]` distinctions. Material factual claims must be independently verified before they can alter `macro-context.json`, a fundamental score or a Live rating export. Sell-side disagreements should remain attributed disagreements rather than being averaged into a false consensus.
 
 The rate sweep is explicitly jurisdictional. US sensitivity separates Fed expectations from 2Y/10Y/30Y yields, real yields, breakevens, long-end/term-premium pressure, volatility, credit and Treasury operations. China/Hong Kong sensitivity separately tracks LPRs, China government yields, PBOC/liquidity conditions, CNY/CNH, credit demand, bank margins, recapitalisation/fiscal support and whether liquidity actually transmits into private-sector capex and consumption. Low China yields are not automatically treated as bullish easing when they coexist with weak credit demand.
+
+## Market Motion
+
+Market Motion is the fast story layer between raw news and durable Power Stack research. It scans fresh stock-specific, sector and geopolitical developments, then forces each item into a simple chain:
+
+`headline → why it is interesting → big-picture bridge → portfolio/theme link → next test`
+
+The feed lives in `data/market-motion.json` and renders at `motion.html`. Yahoo Finance/Reuters can be used for discovery/current reporting, but any item that could change a fundamental score or capital-allocation gate still needs company/official/primary confirmation. Motion items expire quickly unless refreshed; they should create writing/research hooks, not become permanent themes by default.
 
 ## PowerSweep
 
