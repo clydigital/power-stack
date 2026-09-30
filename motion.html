@@ -76,9 +76,9 @@
     <header class="motion-top">
       <div class="motion-top-row">
         <div>
-          <div class="eyebrow">POWER STACK · FRESH COMPANY + MARKET HOOKS</div>
+          <div class="eyebrow">LIVE PROMOTED MOTION → POWER STACK DISCOVERY</div>
           <h1>Market Motion</h1>
-          <p>Small stories create motion before they become big themes. This layer captures fresh stock-specific, sector and geopolitical developments, then forces each one back through the existing Power Stack regime, theme and portfolio map.</p>
+          <p>Live owns promoted market motion. Power Stack consumes those canonical hooks first, then adds only uncovered portfolio-specific discovery and asks whether any company-level research is actually needed.</p>
         </div>
         <div class="motion-actions">
           <a class="ghost-link" href="index.html">← All Ideas</a>
@@ -96,8 +96,8 @@
       <section class="motion-hero">
         <div class="panel motion-hero-copy">
           <div class="eyebrow">WHY THIS EXISTS</div>
-          <h2>Give the research a story without letting headlines own the thesis.</h2>
-          <p>Yahoo Finance and Reuters are useful discovery surfaces for the things people are actually talking about: a Meta product launch, Nvidia capital return, a Tesla regulatory deadline, Micron earnings, or a new Hormuz negotiation headline. Power Stack keeps the hook, then asks what it changes in the bigger picture.</p>
+          <h2>Start with Live. Add only what the portfolio still needs.</h2>
+          <p>The first layer is promoted Motion frozen by Live. The second layer is Power Stack discovery for uncovered company, sector or geopolitical hooks. Duplicate headlines are removed before they reach the portfolio research queue.</p>
         </div>
         <div id="motionStats" class="panel motion-stats"></div>
       </section>
@@ -212,31 +212,31 @@
     function renderCard(item, promoted) {
       const stale = ageHours(item.eventDate + 'T23:59:59Z') > Number(state.data?.freshnessWindowHours || 72);
       const matches = state.filter === 'ALL' || item.category === state.filter;
-      const tickerHtml = (item.tickers || []).map(t=>`<span class="ticker-chip">${t}</span>`).join('');
+      const tickerHtml = (item.tickers || []).map(t=>`<span class="ticker-chip">${escapeHtml(t)}</span>`).join('');
       return `
-        <article class="motion-card ${promoted ? 'promoted' : ''} ${stale ? 'stale' : ''} ${matches ? '' : 'hidden-motion'}" data-category="${item.category}">
+        <article class="motion-card ${promoted ? 'promoted' : ''} ${stale ? 'stale' : ''} ${matches ? '' : 'hidden-motion'}" data-category="${escapeHtml(item.category)}">
           <div class="motion-card-top">
             <div class="motion-kicker">
-              <span class="motion-pill ${promoted ? 'primary' : ''}">${promoted ? 'PROMOTED' : item.status}</span>
-              <span class="motion-pill ${categoryClass(item.category)}">${item.category.replaceAll('_',' ')}</span>
-              <span class="motion-pill">${item.motionType.replaceAll('_',' ')}</span>
+              <span class="motion-pill ${promoted ? 'primary' : ''}">${escapeHtml(promoted ? 'PROMOTED' : item.status)}</span>
+              <span class="motion-pill ${categoryClass(item.category)}">${escapeHtml(String(item.category || 'OTHER').replaceAll('_',' '))}</span>
+              <span class="motion-pill">${escapeHtml(String(item.motionType || 'WATCH').replaceAll('_',' '))}</span>
             </div>
-            <span class="motion-date">${item.eventDate}</span>
+            <span class="motion-date">${escapeHtml(item.eventDate)}</span>
           </div>
           <div>
-            <h3>${item.headline}</h3>
+            <h3>${escapeHtml(item.headline)}</h3>
             <div class="ticker-row">${tickerHtml}</div>
           </div>
           <div class="motion-copy">
-            <div class="motion-block"><span>What happened</span><p>${item.whatHappened}</p></div>
-            <div class="motion-block"><span>Why it is interesting</span><p>${item.whyInteresting}</p></div>
-            <div class="motion-block"><span>Big-picture bridge</span><p class="motion-bridge">${item.bigPictureBridge}</p></div>
-            <div class="motion-block"><span>Hybrid / writing angle</span><p>${item.hybridAngle}</p></div>
-            <div class="motion-block"><span>Power Stack use</span><p>${item.powerStackUse}</p></div>
+            <div class="motion-block"><span>What happened</span><p>${escapeHtml(item.whatHappened)}</p></div>
+            <div class="motion-block"><span>Why it is interesting</span><p>${escapeHtml(item.whyInteresting)}</p></div>
+            <div class="motion-block"><span>Big-picture bridge</span><p class="motion-bridge">${escapeHtml(item.bigPictureBridge)}</p></div>
+            <div class="motion-block"><span>Hybrid / writing angle</span><p>${escapeHtml(item.hybridAngle)}</p></div>
+            <div class="motion-block"><span>Power Stack use</span><p>${escapeHtml(item.powerStackUse)}</p></div>
           </div>
           <div class="motion-footer">
-            <small>${item.linkedTheme || 'No linked theme'} · ${item.verification}</small>
-            <a class="motion-source" href="${item.source.url}" target="_blank" rel="noopener">${item.source.publisher} source ↗</a>
+            <small>${escapeHtml(item.linkedTheme || 'No linked theme')} · ${escapeHtml(item.verification)}</small>
+            <a class="motion-source" href="${escapeHtml(item.source?.url || '#')}" target="_blank" rel="noopener">${escapeHtml(item.source?.publisher || 'Source')} source ↗</a>
           </div>
         </article>
       `;
