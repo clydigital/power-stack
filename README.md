@@ -29,9 +29,11 @@ Market Motion is the fast story layer between raw news and durable Power Stack r
 
 `headline → why it is interesting → big-picture bridge → portfolio/theme link → next test`
 
-The feed lives in `data/market-motion.json` and renders at `motion.html`. Yahoo Finance/Reuters can be used for discovery/current reporting, but any item that could change a fundamental score or capital-allocation gate still needs company/official/primary confirmation. Motion items expire quickly unless refreshed; they should create writing/research hooks, not become permanent themes by default.
+The local feed lives in `data/market-motion.json` and renders at `motion.html` only as **portfolio-specific shadow discovery** after canonical Live Motion. Yahoo Finance/Reuters can be used for discovery/current reporting, but any item that could change a fundamental score or capital-allocation gate still needs company/official/primary confirmation. Local items use the same **48-hour** freshness horizon as Live; legacy `primary` / `secondary` arrays are compatibility storage only and are flattened before presentation.
 
-Promoted Live Market Motion is a separate upstream input. When Live has already promoted and frozen a hook inside its immutable edition, `data/live-desk-canonical.json` carries that exact context into Power Stack first. Power Stack should deduplicate its broader `data/market-motion.json` discovery scan against those Live hooks rather than rediscovering them. Exact ticker-linked Live Motion may raise bounded research priority, but it cannot change Base Conviction, a fundamental score, ranking, sizing or an action gate without independent company-level evidence.
+Promoted Live Market Motion is the upstream owner. When Live has promoted and frozen hooks inside its immutable edition, `data/live-desk-canonical.json` carries the complete bounded set downstream (up to Live's 18-item safety ceiling). Power Stack deduplicates its local discovery against those hooks and may only add uncovered portfolio-specific context. Exact ticker-linked Live Motion may raise bounded research priority, but it cannot change Base Conviction, a fundamental score, ranking, sizing or an action gate without independent company-level evidence.
+
+`data/motion-migration-shadow.json` is the deterministic ownership-migration report. It compares fresh legacy Power Stack coverage against canonical Live Motion, records overlaps/uncovered portfolio discovery, and keeps independent local generation in `SHADOW` mode until parity can actually be observed. A missing/empty Live Motion edition is reported as `NO_LIVE_MOTION`; it is not treated as proof that legacy ownership can be retired.
 
 ## PowerSweep
 
