@@ -220,20 +220,20 @@
         "label": "Secured funding / collateral",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR -0.7 bp. Volumes: SOFR $2967bn, TGCR $1161bn, BGCR $1205bn.",
-        "asOf": "2026-09-29",
+        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR +0.7 bp. Volumes: SOFR $3230bn, TGCR $1154bn, BGCR $1210bn.",
+        "asOf": "2026-09-30",
         "sourceName": "Federal Reserve Bank of New York",
         "sourceUrl": "https://markets.newyorkfed.org/api/rates/all/latest.json",
         "evidenceRefs": [],
         "metrics": {
           "effr": 3.88,
-          "sofr": 3.88,
-          "tgcr": 3.87,
-          "bgcr": 3.87,
-          "securedVsEffrBps": -0.7,
-          "sofrVolumeBillions": 2967,
-          "tgcrVolumeBillions": 1161,
-          "bgcrVolumeBillions": 1205
+          "sofr": 3.9,
+          "tgcr": 3.88,
+          "bgcr": 3.88,
+          "securedVsEffrBps": 0.7,
+          "sofrVolumeBillions": 3230,
+          "tgcrVolumeBillions": 1154,
+          "bgcrVolumeBillions": 1210
         }
       },
       {
@@ -554,7 +554,7 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-01T06:02:13.298Z",
+    "asOf": "2026-10-01T13:25:55.074Z",
     "assets": [
       {
         "key": "SPX",
@@ -575,8 +575,8 @@
         "key": "NASDAQ",
         "label": "Nasdaq Composite",
         "symbol": "^IXIC",
-        "last": 26797.54,
-        "dailyChange": -0.09,
+        "last": 26861.06,
+        "dailyChange": 0.24,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "MEDIUM",
@@ -584,7 +584,7 @@
         "confirmingSignal": "Concentrated breadth in AI/semis and SMH outperformance amid broader weakness.",
         "contradictingSignal": "Durability of AI enterprise revenue growth (news signals exist but need company filings)",
         "invalidation": "If HY and IG OAS widen materially and breadth/ MOVE/VIX confirm broad risk‑off (credit + volatility transmission), reclassify away from rates‑led tightening.",
-        "asOf": "2026-09-29"
+        "asOf": "2026-09-30"
       },
       {
         "key": "CRUDE",
@@ -620,8 +620,8 @@
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4191.100098,
-        "dailyChange": 0.11,
+        "last": 4172.200195,
+        "dailyChange": -0.35,
         "dailyChangeUnit": "percent",
         "bias": "BEARISH",
         "conviction": "MEDIUM",
@@ -635,8 +635,8 @@
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 84193.39,
-        "dailyChange": 0.76,
+        "last": 83488.02,
+        "dailyChange": -0.08,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -1181,9 +1181,9 @@
   },
   "marketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "ac81079d-6a65-4624-b38c-8f3a9f79b09c",
-    "capturedAt": "2026-10-01T02:47:25.355Z",
-    "researchRunId": "045c3807-0f59-4ba9-894a-77984bfc0bd4",
+    "editionId": "02333137-a982-4e10-8c4d-981a8a24703d",
+    "capturedAt": "2026-10-01T12:11:57.774Z",
+    "researchRunId": "e8077348-6e24-496a-83e9-42843a0511c4",
     "items": []
   },
   "upstreamGuardrails": [
@@ -1202,5 +1202,5 @@
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-01T06:02:13.374Z"
+  "syncedAt": "2026-10-01T13:25:55.143Z"
 }
