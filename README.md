@@ -8,7 +8,9 @@ A searchable, versioned investment-research vault for nuclear, AI infrastructure
 - `data/macro-context.json` is the active Power Stack Pulse snapshot.
 - `data/ism-macro-snapshot.json` stores the deeper official-ISM analytical snapshot used as one input to macro interpretation.
 - `data/holdings-fundamentals.json` is the canonical current-holdings fundamentals ledger.
-- `data/watchlist.json` is the live price/action queue.\n- `data/market-motion.json` is the legacy Power Stack narrative/discovery feed. During the PR8 migration it is SHADOW_ONLY: it is compared with Live Motion for coverage but does not enter active portfolio research priority.\n- `data/rate-resilience-overlay-2026-09-25.json` is the current 10Y hurdle-rate overlay. It owns the fresh-US research/action ranking and regime-specific entry gates while leaving company fundamental scores company-evidence owned.
+- `data/watchlist.json` is the live price/action queue.
+- `data/market-motion.json` is a legacy Power Stack discovery snapshot retained only for internal audit comparison against Live Motion. It is not rendered and never enters active portfolio research priority.
+- `data/rate-resilience-overlay-2026-09-25.json` is the current 10Y hurdle-rate overlay. It owns the fresh-US research/action ranking and regime-specific entry gates while leaving company fundamental scores company-evidence owned.
 - `data/research-sweep-config.json` is the PowerSweep process contract. Live Desk is loaded first as canonical macro/market state; PowerSweep then spends a bounded research budget only on portfolio divergences, company-specific evidence, actionable watchlist names, portfolio-relevant themes and a capped China/HK adjunct.
 - `data/power-sweep-latest.json` is the deterministic current PowerSweep queue. It records input health, capped holding/watchlist/theme/China investigations, monitor-only holdings, hidden concentration, research gaps and explicit no-change rules.
 - `data/research-sweep-latest.json` is the compatibility/index pointer to the current PowerSweep plan and its canonical inputs.
@@ -31,7 +33,7 @@ Market Motion is the fast story layer between raw news and durable Power Stack r
 
 Active Market Motion now comes from Live's immutable edition in `data/live-desk-canonical.json`, using the same 48-hour contract and an 18-item pathological-feed ceiling. Exact ticker-linked Live Motion may raise bounded research priority, but it cannot change Base Conviction, a fundamental score, ranking, sizing or an action gate without independent company-level evidence.
 
-`data/market-motion.json` is retained only as a shadow discovery source during migration. `scripts/generate-motion-shadow.mjs` writes `data/motion-shadow.json`, which measures exact-source/headline overlap, Live-only coverage and Power-Stack-only residuals. Shadow-only items are visible for validation but cannot enter the active queue until a later explicit migration decision.
+`data/market-motion.json` is retained only as an internal audit comparator. `scripts/generate-motion-shadow.mjs` writes `data/motion-shadow.json`, which measures exact-source/headline overlap, Live-only coverage and Power-Stack-only residuals. Neither file is rendered on the normal Market Motion surface, and neither may substitute for missing or stale Live Motion.
 
 ## PowerSweep
 
@@ -76,7 +78,7 @@ The monetary overlay is **separate from Base Conviction**. It may change researc
 
 `data/live-desk-canonical.json` is the read-only downstream snapshot. It is refreshed from Live and may include the Dossier regime, deterministic monetary/rates state, contradictions, source health, research gaps, asset state, research-priority signals and the bounded promoted Market Motion frozen into the current immutable Live edition.
 
-Power Stack interprets that state against holdings, candidates and portfolio concentration. Exact ticker-linked promoted Motion can move a name into the existing capped research queue, but it cannot itself alter fundamentals, ranking, sizing or conviction. Legacy Power Stack Motion discovery is shadow-only and is evaluated through `data/motion-shadow.json`; it cannot substitute for missing Live Motion. Power Stack does not rewrite Live's market conclusion.
+Power Stack interprets that state against holdings, candidates and portfolio concentration. Exact ticker-linked promoted Motion can move a name into the existing capped research queue, but it cannot itself alter fundamentals, ranking, sizing or conviction. Legacy Power Stack Motion is audit-only and evaluated through `data/motion-shadow.json`; it is not rendered and cannot substitute for missing or stale Live Motion. Power Stack does not rewrite Live's market conclusion.
 
 ### Power Stack → Live
 

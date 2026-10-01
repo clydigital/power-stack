@@ -15,6 +15,7 @@ on:
       - "data/live-fundamentals-export-config.json"
       - "data/market-extension*.json"
       - "data/live-desk-canonical.json"
+      - "data/market-motion.json"
       - "data/motion-shadow.json"
       - "data/research-sweep-config.json"
       - "data/research-sweep-latest.json"
@@ -40,11 +41,22 @@ on:
   push:
     branches: [main]
     paths:
+      - "motion.html"
+      - "index.html"
+      - "data/live-desk-canonical.json"
+      - "data/market-motion.json"
+      - "data/motion-shadow.json"
       - "data/live-fundamentals-snapshot.json"
       - "data/live-fundamentals-export-config.json"
       - "data/market-extension*.json"
       - "data/research-sweep-config.json"
       - "scripts/generate-live-fundamentals-snapshot.mjs"
+      - "scripts/sync-live-desk.mjs"
+      - "scripts/generate-motion-shadow.mjs"
+      - "scripts/generate-portfolio-live-overlay.mjs"
+      - "scripts/generate-power-sweep.mjs"
+      - "scripts/validate-live-motion-boundary.mjs"
+      - ".github/workflows/validate-live-rating-snapshot.yml"
 
 permissions:
   contents: read

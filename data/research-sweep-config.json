@@ -1,7 +1,7 @@
 {
   "version": 5,
   "updatedAt": "2026-10-01",
-  "purpose": "Machine-readable PowerSweep contract. Live Desk owns canonical macro/market state and immutable Market Motion. PowerSweep consumes that state, keeps its legacy Market Motion discovery in SHADOW_ONLY validation mode, then spends a bounded research budget on portfolio translation, company evidence, divergences, hidden concentration and capital-allocation decisions.",
+  "purpose": "Machine-readable PowerSweep contract. Live Desk owns canonical macro/market state and immutable Market Motion. PowerSweep consumes that state, keeps its legacy Market Motion discovery only as an internal AUDIT_ONLY comparator, then spends a bounded research budget on portfolio translation, company evidence, divergences, hidden concentration and capital-allocation decisions.",
   "cranium": {
     "name": "Market Research Cranium",
     "tab": "26.09.07",
@@ -79,7 +79,7 @@
     "runOrder": [
       "INTAKE: validate data/live-desk-canonical.json, data/portfolio-live-overlay.json and data/holding-tape.json before any external research.",
       "TRIAGE: rank portfolio divergences, unresolved holding data, high-review holdings and hidden concentration. Decide what actually merits research.",
-      "MOTION: consume promoted Live Market Motion first as canonical short-horizon context, dedupe it against the separate Power Stack discovery feed, and use exact ticker links only to raise bounded holding/watchlist research priority. Scan externally only for additional portfolio-specific hooks not already covered. Motion never changes scores by itself.",
+      "MOTION: consume promoted Live Market Motion as the only active short-horizon Motion source and use exact ticker links only to raise bounded holding/watchlist research priority. There is no local Motion fallback. Any additional company-specific research must use the existing holding/watchlist/theme budgets and is stored as Power Stack research, not as active Market Motion.",
       "HOLDINGS: research only the capped set of holdings where new evidence could change an action gate, thesis risk, sizing read or fundamental score.",
       "WATCHLIST: research the capped set of candidates where price asymmetry, diversification benefit or a fresh company catalyst could change priority.",
       "THEMES: investigate only themes that materially affect current holdings/candidates or create a genuinely differentiated new opportunity.",
@@ -99,7 +99,7 @@
       "motionDiscoveryItems": 18,
       "motionPromotedItems": 18,
       "motionFreshnessHours": 48,
-      "motionDiscoveryMode": "SHADOW_ONLY"
+      "motionDiscoveryMode": "AUDIT_ONLY"
     },
     "priorityRules": [
       "A holding with directional macro overlay + opposite completed-session tape is PRIORITY_1 divergence research.",
@@ -110,9 +110,8 @@
       "Live Stock Radar is discovery/research-priority input only. It cannot mechanically rerank Power Stack candidates.",
       "Do not research a theme merely because it is top-ranked if Live already supplies the relevant macro mechanism and no portfolio decision depends on deeper work.",
       "UNKNOWN / UNRESOLVED is a valid outcome. Do not spend remaining budget to manufacture certainty.",
-      "Market Motion discovery is allowed to be broad but shallow: up to 10 fresh items, with at most 5 promoted as primary hooks.",
-      "Market Motion must favour stock-specific or event-specific developments that create a clear narrative bridge to an existing portfolio/theme question.",
-      "Yahoo Finance/Reuters may be used as current discovery/reporting surfaces, but a motion headline cannot change a company fundamental score without company/official/primary confirmation.",
+      "Routine Market Motion discovery is Live-owned. Power Stack must not create a parallel active Motion feed or substitute local discovery when Live Motion is missing or stale.",
+      "Portfolio-specific external research remains allowed only inside the existing holding/watchlist/theme investigation budgets. Those findings are Power Stack research evidence, not a fallback Market Motion feed.",
       "Political/geopolitical motion must remain factual and attributed; use it only for market-transmission analysis.",
       "If a Market Motion item requires a company deep-dive to change an action gate or score, that verification must consume the existing holding/watchlist/theme research budget rather than creating an unlimited side channel.",
       "Exact ticker-linked promoted Live Market Motion may raise a holding or watchlist name inside the existing research caps, but it cannot change company fundamentals, Base Conviction, ranking, sizing or an action gate without independent company-level evidence.",
@@ -133,8 +132,8 @@
     "marketMotion": {
       "contractVersion": "power-stack-market-motion/1",
       "output": "data/market-motion.json",
-      "surface": "motion.html",
-      "role": "Legacy Power Stack discovery retained only as SHADOW_ONLY validation against Live immutable Market Motion during migration.",
+      "surface": "internal audit only; not rendered on motion.html",
+      "role": "Retired from active/UI consumption. Retained only as an AUDIT_ONLY comparator input against immutable Live Market Motion.",
       "requiredFields": [
         "headline",
         "event date",
@@ -149,17 +148,18 @@
         "source URL"
       ],
       "lifecycle": [
-        "DISCOVER",
-        "PROMOTE",
-        "VERIFY_IF_DECISION_RELEVANT",
-        "LINK_TO_DURABLE_THEME",
-        "EXPIRE_OR_REFRESH"
+        "AUDIT_COMPARE",
+        "MEASURE_OVERLAP",
+        "REVIEW_RESIDUALS",
+        "EXPIRE"
       ],
       "scoreRule": "No Market Motion item changes Base Conviction or company fundamentals by itself.",
-      "freshnessHours": 72,
-      "liveUpstreamRule": "Immutable promoted Live Market Motion is the only active short-horizon Motion source. The Power Stack feed is shadow-only and may not affect active research priority until a later explicit migration decision.",
+      "freshnessHours": 48,
+      "liveUpstreamRule": "Immutable promoted Live Market Motion is the only active short-horizon Motion source. The legacy Power Stack feed is internal audit only and may never substitute for missing or stale Live Motion.",
       "shadowOutput": "data/motion-shadow.json",
-      "shadowContractVersion": "power-stack-motion-shadow/1"
+      "shadowContractVersion": "power-stack-motion-shadow/1",
+      "uiMode": "LIVE_ONLY",
+      "fallbackPolicy": "NONE"
     },
     "monitoringPolicy": {
       "mode": "FOCUSED_ROUTINE",
