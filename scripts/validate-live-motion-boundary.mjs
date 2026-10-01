@@ -44,18 +44,21 @@ requireMatch("PowerSweep", sweep, /function liveMotionForTicker/);
 requireMatch("PowerSweep", sweep, /liveMotion\.length \? 20 : 0/);
 requireMatch("PowerSweep", sweep, /item\.motionContext\?\.length/);
 
-requireMatch("PowerSweep config", config, /Consume immutable promoted Live Market Motion/);
-requireMatch("PowerSweep config", config, /SHADOW_ONLY/);
+requireMatch("PowerSweep config", config, /only active short-horizon Motion source|Consume immutable promoted Live Market Motion/);
+requireMatch("PowerSweep config", config, /AUDIT_ONLY/);
 requireMatch("PowerSweep config", config, /motionFreshnessHours"\s*:\s*48/);
-requireMatch("PowerSweep config", config, /cannot change company fundamentals, Base Conviction, ranking, sizing or an action gate|Shadow-only discovery/);
+requireMatch("PowerSweep config", config, /"freshnessHours"\s*:\s*48/);
+requireMatch("PowerSweep config", config, /"uiMode"\s*:\s*"LIVE_ONLY"/);
+requireMatch("PowerSweep config", config, /"fallbackPolicy"\s*:\s*"NONE"/);
+requireMatch("PowerSweep config", config, /cannot change company fundamentals, Base Conviction, ranking, sizing or an action gate|No Market Motion item changes Base Conviction/);
 
 requireMatch("Motion surface", motionSurface, /LIVE PROMOTED MOTION/);
-requireMatch("Motion surface", motionSurface, /POWER STACK DISCOVERY/);
-requireMatch("Motion surface", motionSurface, /isCoveredByLive/);
-requireMatch("Motion surface", motionSurface, /liveKeys/);
+requireMatch("Motion surface", motionSurface, /There is no local Motion fallback/);
+requireMatch("Motion surface", motionSurface, /data\/live-desk-canonical\.json/);
+forbidMatch("Motion surface", motionSurface, /data\/market-motion\.json|data\/motion-shadow\.json/);
+forbidMatch("Motion surface", motionSurface, /POWER STACK SHADOW|SECONDARY SHADOW|function renderCard|isCoveredByLive|liveKeys/);
 requireMatch("Home surface", homeSurface, /LIVE PROMOTED/);
-requireMatch("Home surface", homeSurface, /LIVE PROMOTED/);
-forbidMatch("Home surface", homeSurface, /localItems|data\/market-motion\.json/);
+forbidMatch("Home surface", homeSurface, /localItems|data\/market-motion\.json|data\/motion-shadow\.json/);
 
 requireMatch("Motion shadow", shadow, /power-stack-motion-shadow\/1/);
 requireMatch("Motion shadow", shadow, /SHADOW_ONLY/);
@@ -63,9 +66,12 @@ requireMatch("Motion shadow", shadow, /SHADOW_HOURS = 48/);
 requireMatch("Motion shadow", shadow, /SAFETY_LIMIT = 18/);
 requireMatch("Motion shadow", shadow, /Shadow-only Power Stack discovery cannot enter active portfolio research priority/);
 
+forbidMatch("Portfolio overlay", overlay, /data\/market-motion\.json|data\/motion-shadow\.json/);
+forbidMatch("PowerSweep", sweep, /data\/market-motion\.json|data\/motion-shadow\.json/);
+
 forbidMatch("Portfolio overlay", overlay, /fundamentalScore\s*[:=]\s*[^,\n]*motion/i);
 forbidMatch("Portfolio overlay", overlay, /fundamentalGrade\s*[:=]\s*[^,\n]*motion/i);
 forbidMatch("PowerSweep", sweep, /(?:score|fundamentalScore|conviction|sizing)\s*[+\-*\/]=\s*[^;\n]*motion/i);
 forbidMatch("PowerSweep", sweep, /(?:score|fundamentalScore|conviction|sizing)\s*=\s*[^;\n]*motion/i);
 
-console.log("Live Market Motion boundary is intact: research priority only, no score/conviction/sizing feedback.");
+console.log("Live Market Motion boundary is intact: Live-only UI, no local fallback, audit-only legacy comparison, no score/conviction/sizing feedback.");
