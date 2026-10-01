@@ -7,6 +7,7 @@ const OUTPUT = path.join(ROOT, "data", "live-desk-canonical.json");
 const SOURCE =
   process.env.LIVE_DESK_MARKET_INTELLIGENCE_URL ||
   "https://alchemy-live-market-desk.vercel.app/api/market-intelligence-snapshot";
+const LIVE_MOTION_SAFETY_LIMIT = 18;
 
 function pickLens(snapshot, key) {
   const lens = (snapshot?.marketState?.lenses || []).find((item) => item?.key === key);
@@ -91,7 +92,7 @@ function normaliseMarketMotion(motion) {
     editionId: motion.editionId,
     capturedAt: motion.capturedAt || null,
     researchRunId: motion.researchRunId || null,
-    items: motion.items.slice(0, 6).map((item) => ({
+    items: motion.items.slice(0, LIVE_MOTION_SAFETY_LIMIT).map((item) => ({
       id: item.id,
       motionKey: item.motionKey,
       versionNumber: item.versionNumber ?? null,
