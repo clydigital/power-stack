@@ -116,7 +116,6 @@ function liveMotionForTicker(live, ticker) {
   const symbol = String(ticker || "").toUpperCase();
   return (live.marketMotion?.items || [])
     .filter((item) => (item.tickers || []).some((candidate) => String(candidate).toUpperCase() === symbol))
-    .slice(0, 3)
     .map((item) => ({
       id: item.id,
       headline: item.headline,
@@ -345,7 +344,7 @@ function build(existingGeneratedAt = null) {
         editionId: live.marketMotion.editionId || null,
         capturedAt: live.marketMotion.capturedAt || null,
         itemCount: (live.marketMotion.items || []).length,
-        items: (live.marketMotion.items || []).slice(0, Number(caps.motionPromotedItems || 5)),
+        items: (live.marketMotion.items || []).slice(0, Number(caps.motionLiveSafetyItems || 18)),
       },
     } : {}),
     portfolioTriage: {
