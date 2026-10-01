@@ -1,8 +1,8 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-01T05:51:41.908Z",
+  "generatedAt": "2026-10-01T06:02:13.468Z",
   "liveAsOf": "2026-09-30T10:37:31.129+00:00",
-  "liveSyncedAt": "2026-09-30T22:20:24.246Z",
+  "liveSyncedAt": "2026-10-01T06:02:13.374Z",
   "sourceHealth": {
     "dossier": "OK",
     "marketMonitor": "PARTIAL",
@@ -18,6 +18,13 @@
     "answer": "Markets are in a rates‑led tightening regime: real and nominal long yields have jumped alongside front‑end tightness while credit spreads and broad-market breadth have not fully transmitted, and narrow AI/semiconductor leadership is acting as a relief valve.",
     "implication": "Rates/real‑yield pressure is the dominant market force; transmission to credit, volatility and broad breadth remains partial.",
     "whatWouldChangeMind": "If HY and IG OAS widen materially and breadth/ MOVE/VIX confirm broad risk‑off (credit + volatility transmission), reclassify away from rates‑led tightening."
+  },
+  "liveMarketMotion": {
+    "contractVersion": "market-motion-edition/v1",
+    "editionId": "ac81079d-6a65-4624-b38c-8f3a9f79b09c",
+    "capturedAt": "2026-10-01T02:47:25.355Z",
+    "itemCount": 0,
+    "linkedHoldingCount": 0
   },
   "currentSignals": {
     "rates": {
@@ -1247,7 +1254,8 @@
     "Live contradictions remain open investigations until independently resolved.",
     "Portfolio divergence hypotheses are deterministic prompts for investigation, not causal proof.",
     "Holding-tape confirmation uses completed regular sessions only; MIXED overlays are never forced into directional confirmation.",
-    "Missing profiles remain RESEARCH_GAP rather than zero sensitivity."
+    "Missing profiles remain RESEARCH_GAP rather than zero sensitivity.",
+    "Live promoted Market Motion raises research priority only; it does not alter overlay state or fundamental score."
   ],
   "sourceFiles": [
     "data/live-desk-canonical.json",

@@ -275,14 +275,14 @@
         "label": "US dollar transmission",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "US Dollar · UUP proxy 5D +0.95%.",
-        "asOf": "2026-09-29",
+        "detail": "US Dollar · UUP proxy 5D +0.42%.",
+        "asOf": "2026-09-30",
         "sourceName": "Nasdaq official etf history",
         "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical",
         "evidenceRefs": [],
         "metrics": {
-          "proxyLevel": 28.75,
-          "change5dPct": 0.95
+          "proxyLevel": 28.77,
+          "change5dPct": 0.42
         }
       },
       {
@@ -340,9 +340,9 @@
       "id": "dxy",
       "symbol": "UUP",
       "label": "US Dollar · UUP proxy",
-      "last": 28.75,
-      "change5d": 0.95,
-      "asOf": "2026-09-29",
+      "last": 28.77,
+      "change5d": 0.42,
+      "asOf": "2026-09-30",
       "sourceName": "Nasdaq official etf history",
       "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical"
     },
@@ -554,14 +554,14 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-09-30T22:20:24.180Z",
+    "asOf": "2026-10-01T06:02:13.298Z",
     "assets": [
       {
         "key": "SPX",
         "label": "S&P 500",
         "symbol": "SP500",
-        "last": 7670.84,
-        "dailyChange": -0.17,
+        "last": 7651.54,
+        "dailyChange": -0.25,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "MEDIUM",
@@ -569,7 +569,7 @@
         "confirmingSignal": "Large‑cap breadth remains above recent averages while SPX is modestly down.",
         "contradictingSignal": "Small‑cap breadth and intraday breadth flow",
         "invalidation": "If HY and IG OAS widen materially and breadth/ MOVE/VIX confirm broad risk‑off (credit + volatility transmission), reclassify away from rates‑led tightening.",
-        "asOf": "2026-09-29"
+        "asOf": "2026-09-30"
       },
       {
         "key": "NASDAQ",
@@ -620,8 +620,8 @@
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4156.100098,
-        "dailyChange": -0.56,
+        "last": 4191.100098,
+        "dailyChange": 0.11,
         "dailyChangeUnit": "percent",
         "bias": "BEARISH",
         "conviction": "MEDIUM",
@@ -629,14 +629,14 @@
         "confirmingSignal": "Gold lower on 5‑day view despite recent small uptick.",
         "contradictingSignal": null,
         "invalidation": "If HY and IG OAS widen materially and breadth/ MOVE/VIX confirm broad risk‑off (credit + volatility transmission), reclassify away from rates‑led tightening.",
-        "asOf": "2026-09-30"
+        "asOf": "2026-10-01"
       },
       {
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 83684.63,
-        "dailyChange": 0.06,
+        "last": 84193.39,
+        "dailyChange": 0.76,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -644,7 +644,7 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": null,
-        "asOf": "2026-09-30"
+        "asOf": "2026-10-01"
       }
     ]
   },
@@ -1179,6 +1179,13 @@
       }
     ]
   },
+  "marketMotion": {
+    "contractVersion": "market-motion-edition/v1",
+    "editionId": "ac81079d-6a65-4624-b38c-8f3a9f79b09c",
+    "capturedAt": "2026-10-01T02:47:25.355Z",
+    "researchRunId": "045c3807-0f59-4ba9-894a-77984bfc0bd4",
+    "items": []
+  },
   "upstreamGuardrails": [
     "This snapshot is a read-only Live canonical market-intelligence view for downstream consumers.",
     "Power Stack may map these signals to portfolio exposures but must not recompute or send Live-derived macro confirmation back to Live.",
@@ -1195,5 +1202,5 @@
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-09-30T22:20:24.246Z"
+  "syncedAt": "2026-10-01T06:02:13.374Z"
 }
