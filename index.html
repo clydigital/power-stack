@@ -147,7 +147,7 @@
     ])
       .then(([mm,live])=>{
         const escape=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'","&#039;");
-        const liveItems=(live?.marketMotion?.items||[]).slice(0,3).map(item=>({
+        const liveItems=(live?.marketMotion?.items||[]).map(item=>({
           source:'LIVE PROMOTED',
           category:item.category||'OTHER',
           tickers:item.tickers||[],
@@ -157,13 +157,15 @@
         }));
         const liveUrls=new Set((live?.marketMotion?.items||[]).map(item=>item.sourceUrl).filter(Boolean));
         const liveHeadlines=new Set((live?.marketMotion?.items||[]).map(item=>String(item.headline||'').trim().toLowerCase()).filter(Boolean));
-        const localItems=(mm.primary||[])
+        const localItems=[...(mm.primary||[]),...(mm.secondary||[])]
           .filter(item=>!liveUrls.has(item.source?.url||item.sourceUrl) && !liveHeadlines.has(String(item.headline||'').trim().toLowerCase()))
-          .map(item=>({...item,source:'POWER STACK'}));
-        const items=[...liveItems,...localItems].slice(0,3);
+          .sort((a,b)=>Number(a.priority||999)-Number(b.priority||999))
+          .map(item=>({...item,source:'PS DISCOVERY'}));
+        const homePreviewMax=Number(mm?.policy?.homePreviewMax||6);
+        const items=[...liveItems,...localItems].slice(0,homePreviewMax);
         document.getElementById('motionHomeRead').textContent=liveItems.length
-          ? 'Live-promoted hooks lead; Power Stack fills only uncovered discovery. Motion can raise research priority, never company scores by itself.'
-          : 'Fresh company/geopolitical hooks linked back to existing themes. Headlines raise research priority; they do not change scores by themselves.';
+          ? 'Live-promoted hooks lead. Power Stack adds only uncovered 48-hour portfolio discovery; the home cards are a preview, not a three-item primary ranking.'
+          : 'Power Stack is showing uncovered portfolio discovery only. Local Motion is shadow context and cannot become canonical evidence or a company score by itself.';
         document.getElementById('motionHomeGrid').innerHTML=items.map(item=>'<a class="motion-home-card" href="motion.html"><span>'+escape(item.source)+' · '+escape(String(item.category||'OTHER').replaceAll('_',' '))+' · '+escape((item.tickers||[]).slice(0,3).join(' / '))+'</span><strong>'+escape(item.headline)+'</strong><small>'+escape(item.bigPictureBridge)+'</small></a>').join('');
       })
       .catch(()=>{document.getElementById('marketMotionHome').style.display='none';});
