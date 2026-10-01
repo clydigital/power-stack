@@ -76,9 +76,9 @@
     <header class="motion-top">
       <div class="motion-top-row">
         <div>
-          <div class="eyebrow">LIVE PROMOTED MOTION → POWER STACK DISCOVERY</div>
+          <div class="eyebrow">LIVE PROMOTED MOTION → POWER STACK</div>
           <h1>Market Motion</h1>
-          <p>Live owns active Market Motion. Power Stack consumes those immutable hooks; its legacy discovery feed now runs in shadow mode only to measure what Live covered or missed.</p>
+          <p>Live owns active Market Motion. Power Stack consumes those immutable hooks as its only short-horizon Motion source. There is no local Motion fallback.</p>
         </div>
         <div class="motion-actions">
           <a class="ghost-link" href="index.html">← All Ideas</a>
@@ -96,8 +96,8 @@
       <section class="motion-hero">
         <div class="panel motion-hero-copy">
           <div class="eyebrow">WHY THIS EXISTS</div>
-          <h2>Live is active. Power Stack discovery is shadow validation.</h2>
-          <p>Promoted Motion frozen by Live is the only active short-horizon Motion input. Power Stack discovery is retained below as a coverage test; shadow-only headlines do not enter portfolio research priority.</p>
+          <h2>Live is the only active Market Motion source.</h2>
+          <p>Promoted Motion frozen by Live can raise bounded research priority, but Power Stack does not render or substitute its legacy discovery feed. Legacy Motion is retained only for internal audit comparison.</p>
         </div>
         <div id="motionStats" class="panel motion-stats"></div>
       </section>
@@ -125,28 +125,13 @@
         <div id="liveMotionGrid" class="motion-grid"></div>
       </section>
 
-      <section class="motion-section">
-        <div class="motion-section-head">
-          <div><div class="eyebrow">POWER STACK SHADOW</div><h2>Residual discovery not already covered by Live</h2></div>
-          <p>Validation only · excluded from active research priority.</p>
-        </div>
-        <div id="primaryMotion" class="motion-grid"></div>
-      </section>
-
-      <section class="motion-section">
-        <div class="motion-section-head">
-          <div><div class="eyebrow">SECONDARY SHADOW</div><h2>Lower-priority residuals for coverage review</h2></div>
-          <p>Shadow-only until a later migration decision explicitly admits residual discovery.</p>
-        </div>
-        <div id="secondaryMotion" class="motion-grid"></div>
-      </section>
     </main>
 
     <footer class="footer">Market Motion is intentionally fast and disposable. Fresh stories should either connect to a durable Power Stack theme, create a testable research question, or expire.</footer>
   </div>
 
   <script>
-    const state = { filter: 'ALL', data: null, live: null, shadow: null };
+    const state = { filter: 'ALL', live: null };
 
     const prettyDate = value => {
       if (!value) return '—';
@@ -160,10 +145,6 @@
       return ['company','geopolitics','earnings'].includes(key) ? key : '';
     };
 
-    const ageHours = date => {
-      const parsed = new Date(date);
-      return Number.isFinite(parsed.getTime()) ? (Date.now() - parsed.getTime()) / 36e5 : 0;
-    };
 
     const escapeHtml = value => String(value ?? '')
       .replaceAll('&','&amp;')
@@ -209,66 +190,31 @@
       `;
     }
 
-    function renderCard(item, promoted) {
-      const stale = ageHours(item.eventDate + 'T23:59:59Z') > Number(state.data?.freshnessWindowHours || 72);
-      const matches = state.filter === 'ALL' || item.category === state.filter;
-      const tickerHtml = (item.tickers || []).map(t=>`<span class="ticker-chip">${escapeHtml(t)}</span>`).join('');
-      return `
-        <article class="motion-card ${promoted ? 'promoted' : ''} ${stale ? 'stale' : ''} ${matches ? '' : 'hidden-motion'}" data-category="${escapeHtml(item.category)}">
-          <div class="motion-card-top">
-            <div class="motion-kicker">
-              <span class="motion-pill ${promoted ? 'primary' : ''}">${escapeHtml(promoted ? 'PROMOTED' : item.status)}</span>
-              <span class="motion-pill ${categoryClass(item.category)}">${escapeHtml(String(item.category || 'OTHER').replaceAll('_',' '))}</span>
-              <span class="motion-pill">${escapeHtml(String(item.motionType || 'WATCH').replaceAll('_',' '))}</span>
-            </div>
-            <span class="motion-date">${escapeHtml(item.eventDate)}</span>
-          </div>
-          <div>
-            <h3>${escapeHtml(item.headline)}</h3>
-            <div class="ticker-row">${tickerHtml}</div>
-          </div>
-          <div class="motion-copy">
-            <div class="motion-block"><span>What happened</span><p>${escapeHtml(item.whatHappened)}</p></div>
-            <div class="motion-block"><span>Why it is interesting</span><p>${escapeHtml(item.whyInteresting)}</p></div>
-            <div class="motion-block"><span>Big-picture bridge</span><p class="motion-bridge">${escapeHtml(item.bigPictureBridge)}</p></div>
-            <div class="motion-block"><span>Hybrid / writing angle</span><p>${escapeHtml(item.hybridAngle)}</p></div>
-            <div class="motion-block"><span>Power Stack use</span><p>${escapeHtml(item.powerStackUse)}</p></div>
-          </div>
-          <div class="motion-footer">
-            <small>${escapeHtml(item.linkedTheme || 'No linked theme')} · ${escapeHtml(item.verification)}</small>
-            <a class="motion-source" href="${escapeHtml(item.source?.url || '#')}" target="_blank" rel="noopener">${escapeHtml(item.source?.publisher || 'Source')} source ↗</a>
-          </div>
-        </article>
-      `;
-    }
-
     function render() {
-      const data = state.data || { primary: [], secondary: [], freshnessWindowHours: 72 };
       const liveItems = state.live?.marketMotion?.items || [];
-      const liveKeys = new Set(liveItems.flatMap(item => [
-        item.sourceUrl ? 'url:' + item.sourceUrl : '',
-        item.headline ? 'headline:' + String(item.headline).trim().toLowerCase() : '',
-      ]).filter(Boolean));
-      const isCoveredByLive = item => {
-        const sourceUrl = item.source?.url || item.sourceUrl || null;
-        const headline = String(item.headline || '').trim().toLowerCase();
-        return (sourceUrl && liveKeys.has('url:' + sourceUrl)) || (headline && liveKeys.has('headline:' + headline));
-      };
-      const primary = (data.primary || []).filter(item => !isCoveredByLive(item));
-      const secondary = (data.secondary || []).filter(item => !isCoveredByLive(item));
       const liveEdition = state.live?.marketMotion?.editionId || null;
-      document.getElementById('motionAsOf').textContent = 'As of ' + prettyDate(data.asOf) + ' · freshness window ' + data.freshnessWindowHours + 'h' + (liveEdition ? ' · Live edition ' + liveEdition.slice(0,8) : '');
+      const asOf = state.live?.marketMotion?.generatedAt || state.live?.generatedAt || state.live?.asOf || null;
+      const verified = liveItems.filter(item => String(item.verificationState || '').toUpperCase() === 'VERIFIED').length;
+      const tickerCount = new Set(liveItems.flatMap(item => item.tickers || [])).size;
+      const storyCount = new Set(liveItems.map(item => item.storySlug || item.storyTitle || '').filter(Boolean)).size;
+
+      document.getElementById('motionAsOf').textContent =
+        'Live-only' +
+        (asOf ? ' · as of ' + prettyDate(asOf) : '') +
+        (liveEdition ? ' · edition ' + liveEdition.slice(0,8) : '');
+
       const liveSection = document.getElementById('liveMotionSection');
-      liveSection.hidden = !liveItems.length;
-      document.getElementById('liveMotionGrid').innerHTML = liveItems.map(renderLiveCard).join('');
+      liveSection.hidden = false;
+      document.getElementById('liveMotionGrid').innerHTML =
+        liveItems.map(renderLiveCard).join('') ||
+        '<div class="empty-motion">No promoted Live Market Motion items in the current immutable edition.</div>';
+
       document.getElementById('motionStats').innerHTML = [
         ['Active Live', liveItems.length],
-        ['Shadow fresh', state.shadow?.summary?.localFreshCandidateCount ?? (primary.length + secondary.length)],
-        ['Shadow overlap', state.shadow?.summary?.overlapCount ?? 0],
-        ['Shadow residual', state.shadow?.summary?.localOnlyCount ?? (primary.length + secondary.length)]
+        ['Verified', verified],
+        ['Linked tickers', tickerCount],
+        ['Linked stories', storyCount]
       ].map(([label,value])=>`<div class="motion-stat"><b>${value}</b><span>${label}</span></div>`).join('');
-      document.getElementById('primaryMotion').innerHTML = primary.map(x=>renderCard(x,true)).join('') || '<div class="empty-motion">No primary motion items.</div>';
-      document.getElementById('secondaryMotion').innerHTML = secondary.map(x=>renderCard(x,false)).join('') || '<div class="empty-motion">No secondary motion items.</div>';
     }
 
     document.getElementById('motionFilters').addEventListener('click', event => {
@@ -279,20 +225,16 @@
       render();
     });
 
-    Promise.all([
-      fetch('data/market-motion.json',{cache:'no-store'})
-        .then(r=>r.ok?r.json():Promise.reject(new Error('market motion HTTP '+r.status))),
-      fetch('data/live-desk-canonical.json',{cache:'no-store'})
-        .then(r=>r.ok?r.json():null)
-        .catch(()=>null),
-      fetch('data/motion-shadow.json',{cache:'no-store'})
-        .then(r=>r.ok?r.json():null)
-        .catch(()=>null)
-    ])
-      .then(([data,live,shadow])=>{state.data=data;state.live=live;state.shadow=shadow;render();})
+    fetch('data/live-desk-canonical.json',{cache:'no-store'})
+      .then(r=>r.ok?r.json():Promise.reject(new Error('Live Desk HTTP '+r.status)))
+      .then(live=>{state.live=live;render();})
       .catch(err=>{
-        document.getElementById('motionAsOf').textContent='Market Motion unavailable';
-        document.getElementById('primaryMotion').innerHTML='<div class="empty-motion">'+escapeHtml(err.message)+'</div>';
+        document.getElementById('motionAsOf').textContent='Live Market Motion unavailable';
+        document.getElementById('liveMotionSection').hidden=false;
+        document.getElementById('liveMotionGrid').innerHTML='<div class="empty-motion">'+escapeHtml(err.message)+'</div>';
+        document.getElementById('motionStats').innerHTML=[
+          ['Active Live',0],['Verified',0],['Linked tickers',0],['Linked stories',0]
+        ].map(([label,value])=>`<div class="motion-stat"><b>${value}</b><span>${label}</span></div>`).join('');
       });
   </script>
 </body>
