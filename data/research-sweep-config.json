@@ -1,7 +1,7 @@
 {
-  "version": 4,
+  "version": 5,
   "updatedAt": "2026-10-01",
-  "purpose": "Machine-readable PowerSweep contract. Live Desk owns canonical macro/market state; PowerSweep consumes that state, runs a bounded Market Motion scan for fresh company/sector/geopolitical hooks, then spends a bounded research budget on portfolio translation, holding/watchlist evidence, divergences, hidden concentration and capital-allocation decisions.",
+  "purpose": "Machine-readable PowerSweep contract. Live Desk owns canonical macro/market state and canonical Market Motion; PowerSweep consumes that state first, keeps independent Market Motion generation in a portfolio-specific shadow/discovery role, then spends a bounded research budget on portfolio translation, holding/watchlist evidence, divergences, hidden concentration and capital-allocation decisions.",
   "cranium": {
     "name": "Market Research Cranium",
     "tab": "26.09.07",
@@ -97,8 +97,8 @@
       "portfolioDivergences": 4,
       "researchGaps": 6,
       "motionDiscoveryItems": 10,
-      "motionPromotedItems": 5,
-      "motionFreshnessHours": 72
+      "motionFreshnessHours": 48,
+      "motionLiveSafetyItems": 18
     },
     "priorityRules": [
       "A holding with directional macro overlay + opposite completed-session tape is PRIORITY_1 divergence research.",
@@ -109,7 +109,7 @@
       "Live Stock Radar is discovery/research-priority input only. It cannot mechanically rerank Power Stack candidates.",
       "Do not research a theme merely because it is top-ranked if Live already supplies the relevant macro mechanism and no portfolio decision depends on deeper work.",
       "UNKNOWN / UNRESOLVED is a valid outcome. Do not spend remaining budget to manufacture certainty.",
-      "Market Motion discovery is allowed to be broad but shallow: up to 10 fresh items, with at most 5 promoted as primary hooks.",
+      "Power Stack Market Motion discovery is portfolio-specific shadow coverage only: keep at most 10 fresh local candidates, with no fixed local primary quota. Canonical Live attention owns upstream editorial priority.",
       "Market Motion must favour stock-specific or event-specific developments that create a clear narrative bridge to an existing portfolio/theme question.",
       "Yahoo Finance/Reuters may be used as current discovery/reporting surfaces, but a motion headline cannot change a company fundamental score without company/official/primary confirmation.",
       "Political/geopolitical motion must remain factual and attributed; use it only for market-transmission analysis.",
@@ -133,7 +133,7 @@
       "contractVersion": "power-stack-market-motion/1",
       "output": "data/market-motion.json",
       "surface": "motion.html",
-      "role": "Fast narrative/discovery layer for stock-specific, sector and geopolitical developments.",
+      "role": "Portfolio-specific shadow/discovery layer for stock-specific, sector and geopolitical developments not already covered by canonical Live Market Motion.",
       "requiredFields": [
         "headline",
         "event date",
@@ -155,8 +155,8 @@
         "EXPIRE_OR_REFRESH"
       ],
       "scoreRule": "No Market Motion item changes Base Conviction or company fundamentals by itself.",
-      "freshnessHours": 72,
-      "liveUpstreamRule": "Immutable promoted Live Market Motion is canonical short-horizon context and should be consumed before Power Stack's broader discovery feed. The Power Stack feed remains a separate discovery layer and must dedupe overlapping hooks."
+      "freshnessHours": 48,
+      "liveUpstreamRule": "Immutable promoted Live Market Motion is canonical short-horizon context and is consumed first up to Live's 18-item safety ceiling. Power Stack independent discovery remains shadow/portfolio-specific, must dedupe overlaps, and cannot invent a competing primary ranking."
     },
     "monitoringPolicy": {
       "mode": "FOCUSED_ROUTINE",
@@ -174,10 +174,11 @@
         "RATES_LONG_END",
         "CREDIT"
       ],
-      "motionPrimaryMax": 3,
       "bondMainMetricsMax": 5,
       "deepSweepRule": "Use the broader Live fields, dealer/funding plumbing, wider stock universe and full theme list only during an explicit deeper sweep or when a core signal creates a new decision-relevant divergence.",
-      "bondRule": "Treat bonds as a first-class capital-allocation comparison: cash/short Treasury, intermediate duration, long duration and TIPS. The routine screen stays compact; 20Y/30Y, term premium, auctions/supply and UST-vs-JGB/Bund are deep-sweep items."
+      "bondRule": "Treat bonds as a first-class capital-allocation comparison: cash/short Treasury, intermediate duration, long duration and TIPS. The routine screen stays compact; 20Y/30Y, term premium, auctions/supply and UST-vs-JGB/Bund are deep-sweep items.",
+      "motionHomePreviewMax": 6,
+      "motionRule": "The home page preview is a UI-only window, not an editorial primary quota. The full Market Motion page preserves the complete bounded Live set before uncovered Power Stack discovery."
     }
   }
 }
