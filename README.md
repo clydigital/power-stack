@@ -5,7 +5,7 @@ A searchable, versioned investment-research vault for nuclear, AI infrastructure
 ## Data model
 
 - `data/ideas.json` is the canonical long-term research database.
-- `data/macro-context.json` is the active Power Stack Pulse snapshot.
+- `data/macro-context.json` is retained as historical/internal research material only. Active macro/regime state comes from `data/live-desk-canonical.json`.
 - `data/ism-macro-snapshot.json` stores the deeper official-ISM analytical snapshot used as one input to macro interpretation.
 - `data/holdings-fundamentals.json` is the canonical current-holdings fundamentals ledger.
 - `data/watchlist.json` is the live price/action queue.
@@ -17,11 +17,12 @@ A searchable, versioned investment-research vault for nuclear, AI infrastructure
 - Dated `data/cranium-rates-sweep-YYYY-MM-DD.json` files are research overlays that preserve Cranium-driven hypotheses, regional rate regimes and stock-level rate sensitivities without overwriting Base Conviction or company fundamentals.
 - Category and intraday research files add specialised research without replacing the long-term database.
 - `data/live-desk-canonical.json` is the active read-only Live Desk cross-check: canonical regime, lenses, asset state, Stock Radar, creator-verification status and up to 18 immutable promoted Market Motion items.
-- `data/live-context.json` is retained only as historical integration data and is not used for current scoring.
+- `data/macro-sensitivities.json` plus its supplement are active **exposure maps** for holdings/candidates. They describe causal sensitivity but never add to or subtract from Base Conviction.
+- `data/live-context.json` is retained only as historical integration data and is not used by the active decision path.
 
 ### Cranium ingestion guardrail
 
-The Market Research Cranium is a **research seed, synthesis layer and source-URL registry**, not direct canonical evidence. Daily research should preserve its `[FACT]`, `[SELL-SIDE VIEW]`, `[CRANIUM SYNTHESIS]`, `[WATCH]` and `[INVALIDATION]` distinctions. Material factual claims must be independently verified before they can alter `macro-context.json`, a fundamental score or a Live rating export. Sell-side disagreements should remain attributed disagreements rather than being averaged into a false consensus.
+The Market Research Cranium is a **research seed, synthesis layer and source-URL registry**, not direct canonical evidence. Daily research should preserve its `[FACT]`, `[SELL-SIDE VIEW]`, `[CRANIUM SYNTHESIS]`, `[WATCH]` and `[INVALIDATION]` distinctions. Material factual claims must be independently verified before they can alter a Power Stack fundamental score, action gate or portfolio conclusion. Cranium synthesis must not rewrite Live's canonical macro/regime state. Sell-side disagreements should remain attributed disagreements rather than being averaged into a false consensus.
 
 The rate sweep is explicitly jurisdictional. US sensitivity separates Fed expectations from 2Y/10Y/30Y yields, real yields, breakevens, long-end/term-premium pressure, volatility, credit and Treasury operations. China/Hong Kong sensitivity separately tracks LPRs, China government yields, PBOC/liquidity conditions, CNY/CNH, credit demand, bank margins, recapitalisation/fiscal support and whether liquidity actually transmits into private-sector capex and consumption. Low China yields are not automatically treated as bullish easing when they coexist with weak credit demand.
 
@@ -68,9 +69,11 @@ Power Stack consumes Live context to answer portfolio-specific questions:
 - where several holdings express the same hidden macro exposure;
 - which thesis, valuation, funding or entry conditions require review.
 
-The monetary overlay is **separate from Base Conviction**. It may change research priority, portfolio-risk flags, required evidence and action queues, but it does not mechanically add or subtract from the fundamentals score. Company scores change only on company-level evidence.\n\nThe Sep 25 rate-resilience layer makes the U.S. 10Y an explicit admission gate for fresh capital. The current research question is: **can the company beat a ~5.2% risk-free hurdle without multiple expansion?** The overlay is surfaced on Watchlist and Capital Scarcity and is stored separately so a macro rerank cannot silently rewrite the fundamental ledger.
+The monetary overlay is **separate from Base Conviction**. It may change research priority, portfolio-risk flags, required evidence and action queues, but it does not mechanically add or subtract from the fundamentals score. Company scores change only on company-level evidence.
 
-`data/macro-context.json` and the older sensitivity files remain historical/internal analytical inputs during migration. They are not a second canonical macro state and are not exported back to Live as confirmation.
+The Sep 25 rate-resilience layer makes the U.S. 10Y an explicit admission gate for fresh capital. The current research question is: **can the company beat a ~5.2% risk-free hurdle without multiple expansion?** The overlay is surfaced on Watchlist and Capital Scarcity and is stored separately so a macro rerank cannot silently rewrite the fundamental ledger.
+
+`data/macro-context.json` remains historical/internal analytical material. The sensitivity-profile files remain active only as exposure maps. Neither constitutes a second canonical macro state, and no Live-derived macro adjustment is exported back to Live as confirmation.
 
 ## Live Desk exchange contracts
 
@@ -98,7 +101,7 @@ node scripts/generate-live-fundamentals-snapshot.mjs
 node scripts/generate-live-fundamentals-snapshot.mjs --check
 ```
 
-The older `data/live-rating-snapshot.json` / `power-stack-rating-snapshot/v1` path is legacy migration material only. Live must not use it once the fundamentals contract is deployed because its macro adjustment would create a Live → PS → Live feedback loop.
+The legacy macro-adjusted rating export has been retired. `power-stack-fundamentals/v1` is the only supported Power Stack → Live company-research contract, preventing a Live → Power Stack → Live macro feedback loop.
 
 ## Live Desk status
 
