@@ -1,9 +1,7 @@
 let ideas=[];
-let macroContext=null;
 let liveDeskContext=null;
 let macroSensitivityData=null;
 let macroProfileMap=new Map();
-const MACRO_PACKET_MAX_HOURS=168;
 const savedView=localStorage.getItem('powerStackView');
 const state={theme:'All',region:'All',status:'All',q:'',sort:'conviction',sortDir:'desc',view:savedView==='row'?'row':'card'};
 const $=s=>document.querySelector(s);
@@ -13,50 +11,19 @@ const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
 
 function regionBucket(x){const r=(x.region||'').toLowerCase();if(r.includes('malaysia'))return'Malaysia';if(r.includes('hong kong')||r.includes('china')||r.includes('kazakhstan'))return'HK / China';if(r==='us'||r.includes('united states'))return'US';return'Global'}
 function statusBucket(x){const s=(x.status||'').toLowerCase();if(s.includes('priority'))return'Priority';if(s.includes('core'))return'Core';if(s.includes('speculative')||s.includes('high-beta'))return'Speculative';if(s.includes('queue')||s.includes('low-priority'))return'Research Queue';return'Watchlist'}
-function themeContext(x){return macroContext?.themes?.find(t=>t.theme===x.themeGroup)||null}
 function stockProfile(x){return macroProfileMap.get(x?.ticker)||null}
-function channelContext(key){return macroContext?.channels?.find(c=>c.key===key)||null}
 function parseMs(v){const ms=Date.parse(v||'');return Number.isFinite(ms)?ms:null}
 function ageHours(v){const ms=parseMs(v);return ms===null?Infinity:(Date.now()-ms)/36e5}
-function packetFresh(){if(!macroContext)return false;const max=Number(macroContext.packetStaleAfterHours||MACRO_PACKET_MAX_HOURS);return ageHours(macroContext.generatedAt)<=max}
-function channelFresh(c){if(!c||!packetFresh()||c.fresh===false)return false;const max=Number(c.staleAfterHours||macroContext.packetStaleAfterHours||MACRO_PACKET_MAX_HOURS);return ageHours(c.observedAt||macroContext.generatedAt)<max}
-function channelFreshnessWeight(c){if(!channelFresh(c))return 0;const max=Number(c.staleAfterHours||macroContext.packetStaleAfterHours||MACRO_PACKET_MAX_HOURS);return clamp(1-.35*(ageHours(c.observedAt||macroContext.generatedAt)/max),.65,1)}
-function themeFresh(t){return !!t&&packetFresh()}
 function liveDeskFresh(){return !!liveDeskContext?.asOf&&ageHours(liveDeskContext.asOf)<=48}
 const CORE_LIVE_SIGNAL_KEYS=['RATES_FRONT_END','RATES_REAL_YIELDS','RATES_BREAKEVENS','RATES_LONG_END','CREDIT'];
 const SIDEBAR_LIVE_SIGNAL_KEYS=['RATES_FRONT_END','RATES_REAL_YIELDS','RATES_LONG_END','CREDIT'];
 function selectedLiveSignals(signals,keys){const map=new Map((signals||[]).map(s=>[s.key,s]));return keys.map(k=>map.get(k)).filter(Boolean)}
-function scoreClass(v){return v>0.015?'pos':v<-0.015?'neg':'neutral'}
 function fmtSigned(v,d=1){const n=Number(v||0);return `${n>0?'+':''}${n.toFixed(d)}`}
 function pct(v,max){return `${clamp(Number(v||0)/max*100,0,100)}%`}
 function counts(items,getter){const out={};items.forEach(x=>{const k=getter(x);out[k]=(out[k]||0)+1});return out}
-function prettyKind(kind){const c=channelContext(kind);return c?.label||({growthDemand:'Growth / Demand',policyRelief:'Policy Relief',financialConditions:'Financial Conditions',creditAvailability:'Broad Credit',tailCreditStress:'Weak-End Credit Stress',consumerStrength:'Consumer',housingStrength:'Housing',industrialCapex:'Industrial / Power Capex',inputCostPressure:'Input Costs',labourStrength:'Labour',riskAppetite:'Risk Appetite',crudeTightness:'Crude',productTightness:'Refined Products',gasTightness:'US Gas'})[kind]||'Macro signal'}
+function prettyKind(kind){return ({growthDemand:'Growth / Demand',policyRelief:'Policy Relief',financialConditions:'Financial Conditions',creditAvailability:'Broad Credit',tailCreditStress:'Weak-End Credit Stress',consumerStrength:'Consumer',housingStrength:'Housing',industrialCapex:'Industrial / Power Capex',inputCostPressure:'Input Costs',labourStrength:'Labour',riskAppetite:'Risk Appetite',crudeTightness:'Crude',productTightness:'Refined Products',gasTightness:'US Gas'})[kind]||'Macro exposure'}
 function safeUrl(url){return /^https?:\/\//i.test(String(url||''))?String(url):null}
 function timeLabel(v){if(!v)return'No timestamp';const d=new Date(v);return Number.isNaN(d.getTime())?'No timestamp':d.toLocaleString()}
-function contextSignalContributions(x){
-  const p=stockProfile(x);if(!p||!packetFresh())return[];
-  const fw=Number(p.fundamentalWeight??macroSensitivityData?.fundamentalWeight??.65),mw=Number(p.marketWeight??macroSensitivityData?.marketWeight??.35),pc=clamp(Number(p.profileConfidence??.5),0,1);
-  let rows=[];
-  Object.entries(p.factors||{}).forEach(([key,f])=>{
-    const c=channelContext(key);if(!c||!channelFresh(c)||Number(f.weight||0)<=0)return;
-    const fundamental=clamp(Number(f.fundamental||0),-5,5),market=clamp(Number(f.market||0),-5,5);
-    const effective=(fw*fundamental+mw*market)/5;
-    const freshW=channelFreshnessWeight(c),factorC=clamp(Number(f.confidence??.5),0,1),channelC=clamp(Number(c.confidence??.5),0,1);
-    const adjustment=(Number(c.score||0)/2)*effective*Number(f.weight||0)*factorC*pc*channelC*freshW;
-    if(Math.abs(adjustment)<.00005)return;
-    rows.push({id:`${x.ticker}:${key}`,kind:key,title:c.label||prettyKind(key),detail:c.interpretation||'',adjustment,channelScore:Number(c.score||0),effectiveSensitivity:effective,fundamentalSensitivity:fundamental,marketSensitivity:market,factorWeight:Number(f.weight||0),factorConfidence:factorC,profileConfidence:pc,channelConfidence:channelC,freshnessWeight:freshW,rationale:f.rationale||'',observedAt:c.observedAt||macroContext.generatedAt,sourceName:macroContext.source||'Power Stack Macro Context',sourceUrl:macroContext.sourceUrl||null});
-  });
-  const sum=rows.reduce((s,r)=>s+r.adjustment,0),clipped=clamp(sum,-1,1);
-  if(Math.abs(sum)>1&&Math.abs(sum)>.0001){const scale=clipped/sum;rows=rows.map(r=>({...r,adjustment:r.adjustment*scale}))}
-  return rows.sort((a,b)=>Math.abs(b.adjustment)-Math.abs(a.adjustment));
-}
-function contextWatchSignals(x){const t=themeContext(x);return packetFresh()?(t?.watch||[]).slice(0,5):[]}
-function contextDelta(_x){return 0}
-function contextConviction(x){return clamp(Number(x.conviction||0),0,10)}
-function contextState(x){if(!stockProfile(x))return'none';if(!packetFresh())return'stale';return contextSignalContributions(x).length?'fresh':'none'}
-function themeDelta(theme){const rows=ideas.filter(x=>x.themeGroup===theme&&stockProfile(x));return rows.length?rows.reduce((s,x)=>s+contextDelta(x),0)/rows.length:0}
-function themeTopDrivers(theme){const rows=ideas.filter(x=>x.themeGroup===theme&&stockProfile(x));const sums={};rows.forEach(x=>contextSignalContributions(x).forEach(r=>{sums[r.kind]=(sums[r.kind]||0)+r.adjustment}));return Object.entries(sums).map(([kind,total])=>({kind,total:rows.length?total/rows.length:0})).sort((a,b)=>Math.abs(b.total)-Math.abs(a.total)).slice(0,5)}
-
 function navButton(label,count,total,group,active){return `<button class="nav-item ${active?'active':''}" data-group="${group}" data-value="${esc(label)}"><div class="nav-top"><span>${esc(label)}</span><b>${count}</b></div><div class="mini-track"><span class="mini-fill" style="width:${total?count/total*100:0}%"></span></div></button>`}
 function renderSidebar(){
   const total=ideas.length;
@@ -122,8 +89,6 @@ function renderCard(x){
 
 function renderSummary(rows){const avg=rows.length?rows.reduce((s,x)=>s+Number(x.conviction||0),0)/rows.length:0;const profiled=rows.filter(x=>stockProfile(x)).length;const priorities=rows.filter(x=>statusBucket(x)==='Priority').length;const lowTheme=rows.filter(x=>Number(x.themeDependency)<=2).length;$('#summaryStats').innerHTML=`<div class="summary-card"><b>${rows.length}</b><span>Ideas in view</span></div><div class="summary-card"><b>${avg.toFixed(1)}</b><span>Base conviction</span></div><div class="summary-card"><b>${profiled} / ${rows.length}</b><span>Macro profiles mapped</span></div><div class="summary-card"><b>${priorities} / ${lowTheme}</b><span>Priority / low dependency</span></div>`}
 
-function renderSignalMini(t){const fresh=packetFresh(),impact=themeDelta(t.theme),drivers=themeTopDrivers(t.theme),top=drivers[0];return `<div class="theme-signal ${fresh?'':'stale-panel'}"><div class="signal-top"><span class="signal-name">${esc(t.theme)}</span><b class="signal-score ${fresh?scoreClass(impact):'neutral'}">${fresh?fmtSigned(impact,2):'STALE'}</b></div><div class="signal-track"><span class="signal-fill ${fresh?scoreClass(impact):'neutral'}" style="width:${fresh?clamp(Math.abs(impact)*50,0,50):0}%"></span></div><div class="signal-driver">${top?`${esc(prettyKind(top.kind))} ${fmtSigned(top.total,2)} avg`:`${esc(t.regime||'No stock-level driver')}`}</div><div class="signal-freshness">${fresh?'average stock macro adjustment · stock-specific':'no adjustment · stale snapshot'}</div></div>`}
-function renderBlockMini(c){const fresh=channelFresh(c),width=Math.abs(Number(c.score))/2*50,cls=fresh?scoreClass(c.score):'neutral';return `<div class="theme-signal ${fresh?'':'stale-panel'}"><div class="signal-top"><span class="signal-name">${esc(c.label||c.key)}</span><b class="signal-score ${cls}">${fresh?fmtSigned(c.score):'STALE'}</b></div><div class="signal-track"><span class="signal-fill ${cls}" style="width:${fresh?clamp(width,0,50):0}%"></span></div><div class="signal-driver">${esc(c.regime||'')} · ${esc(c.interpretation||'')}</div><div class="signal-freshness">${fresh?`${Math.round(Number(c.confidence||0)*100)}% confidence · ${timeLabel(c.observedAt||macroContext.generatedAt)}`:'stale channel · no influence'}</div></div>`}
 function renderLiveDeskCrossCheck(){
   if(!liveDeskContext)return '<div class="macro-section"><div class="macro-section-title">LIVE DESK CANONICAL BASELINE</div><div class="context-copy">Live Desk snapshot unavailable. Power Stack keeps Base Conviction unchanged and records the market-context gap rather than rebuilding a competing regime.</div></div>';
   const fresh=liveDeskFresh(),regime=liveDeskContext.regime||{},allSignals=liveDeskContext?.monetarySignals?.signals||[],lenses=liveDeskContext.lenses||[];
@@ -178,9 +143,6 @@ function openDetail(x){
   $('#detailDialog').showModal();
 }
 
-async function loadMacroContext(){
-  try{const r=await fetch('data/macro-context.json',{cache:'no-store'});if(!r.ok)throw new Error(`HTTP ${r.status}`);macroContext=await r.json()}catch(_){macroContext=null}
-}
 async function loadLiveDeskContext(){
   try{
     const r=await fetch('data/live-desk-canonical.json',{cache:'no-store'});
