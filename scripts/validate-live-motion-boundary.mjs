@@ -54,8 +54,8 @@ requireMatch("Motion surface", motionSurface, /POWER STACK DISCOVERY/);
 requireMatch("Motion surface", motionSurface, /isCoveredByLive/);
 requireMatch("Motion surface", motionSurface, /liveKeys/);
 requireMatch("Home surface", homeSurface, /LIVE PROMOTED/);
-requireMatch("Home surface", homeSurface, /liveUrls/);
 requireMatch("Home surface", homeSurface, /LIVE PROMOTED/);
+forbidMatch("Home surface", homeSurface, /localItems|data\/market-motion\.json/);
 
 requireMatch("Motion shadow", shadow, /power-stack-motion-shadow\/1/);
 requireMatch("Motion shadow", shadow, /SHADOW_ONLY/);
