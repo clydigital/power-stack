@@ -244,7 +244,6 @@ function motionForTicker(live, ticker) {
   const symbol = String(ticker || "").toUpperCase();
   return (live.marketMotion?.items || [])
     .filter((item) => (item.tickers || []).some((candidate) => String(candidate).toUpperCase() === symbol))
-    .slice(0, 3)
     .map((item) => ({
       id: item.id,
       headline: item.headline,
