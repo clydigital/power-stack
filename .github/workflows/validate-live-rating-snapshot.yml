@@ -15,12 +15,14 @@ on:
       - "data/live-fundamentals-export-config.json"
       - "data/market-extension*.json"
       - "data/live-desk-canonical.json"
+      - "data/motion-shadow.json"
       - "data/research-sweep-config.json"
       - "data/research-sweep-latest.json"
       - "data/power-sweep-latest.json"
       - "data/macro-methodology.json"
       - "scripts/generate-live-fundamentals-snapshot.mjs"
       - "scripts/sync-live-desk.mjs"
+      - "scripts/generate-motion-shadow.mjs"
       - "scripts/generate-portfolio-live-overlay.mjs"
       - "scripts/generate-power-sweep.mjs"
       - "scripts/validate-live-motion-boundary.mjs"
@@ -58,6 +60,7 @@ jobs:
       - run: node --check app.js
       - run: node --check capital-scarcity.js
       - run: node --check scripts/sync-live-desk.mjs
+      - run: node --check scripts/generate-motion-shadow.mjs
       - run: node --check scripts/generate-live-fundamentals-snapshot.mjs
       - run: node --check scripts/generate-portfolio-live-overlay.mjs
       - run: node --check scripts/generate-power-sweep.mjs
@@ -66,7 +69,8 @@ jobs:
       - run: node scripts/sync-holding-tape.mjs --check
       - run: node scripts/validate-static-html-js.mjs
       - run: node scripts/validate-live-motion-boundary.mjs
-      - run: node -e "const fs=require('fs'); for (const f of ['data/live-desk-canonical.json','data/live-fundamentals-snapshot.json','data/portfolio-live-overlay.json','data/holding-tape.json','data/research-sweep-config.json','data/research-sweep-latest.json','data/power-sweep-latest.json','data/macro-methodology.json']) JSON.parse(fs.readFileSync(f,'utf8'));"
+      - run: node scripts/generate-motion-shadow.mjs --check
+      - run: node -e "const fs=require('fs'); for (const f of ['data/live-desk-canonical.json','data/motion-shadow.json','data/live-fundamentals-snapshot.json','data/portfolio-live-overlay.json','data/holding-tape.json','data/research-sweep-config.json','data/research-sweep-latest.json','data/power-sweep-latest.json','data/macro-methodology.json']) JSON.parse(fs.readFileSync(f,'utf8'));"
       - run: node scripts/generate-live-fundamentals-snapshot.mjs --check
       - run: node scripts/generate-portfolio-live-overlay.mjs --check
       - run: node scripts/generate-power-sweep.mjs --check

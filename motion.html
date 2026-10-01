@@ -78,7 +78,7 @@
         <div>
           <div class="eyebrow">LIVE PROMOTED MOTION → POWER STACK DISCOVERY</div>
           <h1>Market Motion</h1>
-          <p>Live owns promoted market motion. Power Stack consumes those canonical hooks first, then adds only uncovered portfolio-specific discovery and asks whether any company-level research is actually needed.</p>
+          <p>Live owns active Market Motion. Power Stack consumes those immutable hooks; its legacy discovery feed now runs in shadow mode only to measure what Live covered or missed.</p>
         </div>
         <div class="motion-actions">
           <a class="ghost-link" href="index.html">← All Ideas</a>
@@ -96,8 +96,8 @@
       <section class="motion-hero">
         <div class="panel motion-hero-copy">
           <div class="eyebrow">WHY THIS EXISTS</div>
-          <h2>Start with Live. Add only what the portfolio still needs.</h2>
-          <p>The first layer is promoted Motion frozen by Live. The second layer is Power Stack discovery for uncovered company, sector or geopolitical hooks. Duplicate headlines are removed before they reach the portfolio research queue.</p>
+          <h2>Live is active. Power Stack discovery is shadow validation.</h2>
+          <p>Promoted Motion frozen by Live is the only active short-horizon Motion input. Power Stack discovery is retained below as a coverage test; shadow-only headlines do not enter portfolio research priority.</p>
         </div>
         <div id="motionStats" class="panel motion-stats"></div>
       </section>
@@ -127,16 +127,16 @@
 
       <section class="motion-section">
         <div class="motion-section-head">
-          <div><div class="eyebrow">POWER STACK DISCOVERY</div><h2>Additional opening hooks not already covered by Live</h2></div>
-          <p>High relevance + clean big-picture bridge.</p>
+          <div><div class="eyebrow">POWER STACK SHADOW</div><h2>Residual discovery not already covered by Live</h2></div>
+          <p>Validation only · excluded from active research priority.</p>
         </div>
         <div id="primaryMotion" class="motion-grid"></div>
       </section>
 
       <section class="motion-section">
         <div class="motion-section-head">
-          <div><div class="eyebrow">SECONDARY MOTION</div><h2>Useful colour, watch items and side branches</h2></div>
-          <p>Interesting, but not allowed to crowd out the main portfolio questions.</p>
+          <div><div class="eyebrow">SECONDARY SHADOW</div><h2>Lower-priority residuals for coverage review</h2></div>
+          <p>Shadow-only until a later migration decision explicitly admits residual discovery.</p>
         </div>
         <div id="secondaryMotion" class="motion-grid"></div>
       </section>
@@ -146,7 +146,7 @@
   </div>
 
   <script>
-    const state = { filter: 'ALL', data: null, live: null };
+    const state = { filter: 'ALL', data: null, live: null, shadow: null };
 
     const prettyDate = value => {
       if (!value) return '—';
@@ -262,10 +262,10 @@
       liveSection.hidden = !liveItems.length;
       document.getElementById('liveMotionGrid').innerHTML = liveItems.map(renderLiveCard).join('');
       document.getElementById('motionStats').innerHTML = [
-        ['Fresh hooks', liveItems.length + primary.length + secondary.length],
-        ['Live promoted', liveItems.length],
-        ['Company-linked', [...primary,...secondary].filter(x=>x.category==='COMPANY'||x.category==='EARNINGS').length],
-        ['Macro / policy', [...primary,...secondary].filter(x=>['GEOPOLITICS','ENERGY'].includes(x.category)).length]
+        ['Active Live', liveItems.length],
+        ['Shadow fresh', state.shadow?.summary?.localFreshCandidateCount ?? (primary.length + secondary.length)],
+        ['Shadow overlap', state.shadow?.summary?.overlapCount ?? 0],
+        ['Shadow residual', state.shadow?.summary?.localOnlyCount ?? (primary.length + secondary.length)]
       ].map(([label,value])=>`<div class="motion-stat"><b>${value}</b><span>${label}</span></div>`).join('');
       document.getElementById('primaryMotion').innerHTML = primary.map(x=>renderCard(x,true)).join('') || '<div class="empty-motion">No primary motion items.</div>';
       document.getElementById('secondaryMotion').innerHTML = secondary.map(x=>renderCard(x,false)).join('') || '<div class="empty-motion">No secondary motion items.</div>';
@@ -284,9 +284,12 @@
         .then(r=>r.ok?r.json():Promise.reject(new Error('market motion HTTP '+r.status))),
       fetch('data/live-desk-canonical.json',{cache:'no-store'})
         .then(r=>r.ok?r.json():null)
+        .catch(()=>null),
+      fetch('data/motion-shadow.json',{cache:'no-store'})
+        .then(r=>r.ok?r.json():null)
         .catch(()=>null)
     ])
-      .then(([data,live])=>{state.data=data;state.live=live;render();})
+      .then(([data,live,shadow])=>{state.data=data;state.live=live;state.shadow=shadow;render();})
       .catch(err=>{
         document.getElementById('motionAsOf').textContent='Market Motion unavailable';
         document.getElementById('primaryMotion').innerHTML='<div class="empty-motion">'+escapeHtml(err.message)+'</div>';

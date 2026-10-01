@@ -78,6 +78,48 @@ function normaliseVerification(verification) {
   };
 }
 
+const MARKET_MOTION_SAFETY_LIMIT = 18;
+
+function deriveMotionAttention(item) {
+  const verificationBonus =
+    item.verificationState === "VERIFIED" ? 7
+      : item.verificationState === "REPORTED" ? 4
+        : item.verificationState === "PARTIAL" ? 2
+          : item.verificationState === "UNRESOLVED" ? -2
+            : item.verificationState === "CONTRADICTED" ? -8
+              : 0;
+  const tickerBonus = Array.isArray(item.tickers) && item.tickers.length ? 2 : 0;
+  const reactionBonus = item.marketReaction ? 2 : 0;
+  const promotionBonus = item.lifecycleState === "PROMOTED" ? 3 : 0;
+  const materiality = Number(item.materiality || 0);
+  const relevance = Number(item.relevance || 0);
+  const novelty = Number(item.novelty || 0);
+  const score = Math.max(0, Math.min(100, Math.round(
+    materiality * 0.45
+    + relevance * 0.35
+    + novelty * 0.10
+    + verificationBonus
+    + tickerBonus
+    + reactionBonus
+    + promotionBonus,
+  )));
+  const tier = score >= 82 && materiality >= 78 && relevance >= 74 ? "PRIMARY" : "SECONDARY";
+  const companyLike = item.category === "COMPANY" || item.category === "EARNINGS";
+  const writingPotential =
+    companyLike && tickerBonus && score >= 78
+      ? "HIGH"
+      : tickerBonus || item.category === "MARKET_STRUCTURE"
+        ? "MEDIUM"
+        : "LOW";
+  const reasons = [];
+  if (materiality >= 85) reasons.push("high materiality");
+  if (relevance >= 85) reasons.push("high market relevance");
+  if (item.verificationState === "VERIFIED") reasons.push("primary/official verification");
+  if (item.marketReaction) reasons.push("market reaction captured");
+  if (tickerBonus) reasons.push("asset/ticker linked");
+  return { tier, score, writingPotential, reasons: reasons.slice(0, 4) };
+}
+
 function normaliseMarketMotion(motion) {
   if (
     !motion
@@ -91,7 +133,9 @@ function normaliseMarketMotion(motion) {
     editionId: motion.editionId,
     capturedAt: motion.capturedAt || null,
     researchRunId: motion.researchRunId || null,
-    items: motion.items.slice(0, 6).map((item) => ({
+    items: motion.items.slice(0, MARKET_MOTION_SAFETY_LIMIT).map((item) => {
+      const attention = deriveMotionAttention(item);
+      return {
       id: item.id,
       motionKey: item.motionKey,
       versionNumber: item.versionNumber ?? null,
@@ -116,7 +160,20 @@ function normaliseMarketMotion(motion) {
       storyTitle: item.storyTitle || null,
       regimeSlug: item.regimeSlug || null,
       regimeLabel: item.regimeLabel || null,
-    })),
+      attentionTier: attention.tier,
+      attentionScore: attention.score,
+      writingPotential: attention.writingPotential,
+      attentionReasons: attention.reasons,
+      };
+    }).sort((left, right) => {
+      const tierDelta = (right.attentionTier === "PRIMARY" ? 1 : 0) - (left.attentionTier === "PRIMARY" ? 1 : 0);
+      if (tierDelta) return tierDelta;
+      return right.attentionScore - left.attentionScore
+        || right.materiality - left.materiality
+        || right.relevance - left.relevance
+        || Date.parse(right.occurredAt || "") - Date.parse(left.occurredAt || "")
+        || String(left.id || "").localeCompare(String(right.id || ""));
+    }),
   };
 }
 
