@@ -1,7 +1,7 @@
 {
-  "version": 4,
+  "version": 5,
   "updatedAt": "2026-10-01",
-  "purpose": "Machine-readable PowerSweep contract. Live Desk owns canonical macro/market state; PowerSweep consumes that state, runs a bounded Market Motion scan for fresh company/sector/geopolitical hooks, then spends a bounded research budget on portfolio translation, holding/watchlist evidence, divergences, hidden concentration and capital-allocation decisions.",
+  "purpose": "Machine-readable PowerSweep contract. Live Desk owns canonical macro/market state and immutable Market Motion. PowerSweep consumes that state, keeps its legacy Market Motion discovery in SHADOW_ONLY validation mode, then spends a bounded research budget on portfolio translation, company evidence, divergences, hidden concentration and capital-allocation decisions.",
   "cranium": {
     "name": "Market Research Cranium",
     "tab": "26.09.07",
@@ -20,7 +20,7 @@
     "Read current Cranium tab and extract new claims, source URLs, charts/PDF leads and explicit disagreements. Treat it as research seed/context, not canonical macro state.",
     "Load data/live-desk-canonical.json, data/portfolio-live-overlay.json and data/holding-tape.json first. Validate contract versions, as-of times, source health, contradictions and unresolved gaps.",
     "Use Live's canonical monetary/market state as the macro baseline. Do not perform a parallel broad macro sweep unless Live is stale/unavailable; record that condition as a blocking gap instead.",
-    "Consume immutable promoted Live Market Motion from data/live-desk-canonical.json first and map exact ticker links into portfolio research priority. Then run a bounded Power Stack Market Motion scan only for additional portfolio-specific hooks not already covered upstream. Neither source may change a fundamental score by itself.",
+    "Consume immutable promoted Live Market Motion from data/live-desk-canonical.json first and map exact ticker links into portfolio research priority. Generate data/motion-shadow.json from the legacy Power Stack discovery feed to measure overlap and uncovered portfolio-specific residuals, but do not let shadow-only discovery enter the active research queue.",
     "Triage current holdings using macro exposure, completed-session tape, action gates and hidden concentration. Promote only decision-relevant divergences/data gaps into the holding research budget.",
     "Research at most the configured holdingDeepDives. Keep fundamental scores unchanged unless new company-level evidence warrants a revision.",
     "Review the watchlist using price/action state, portfolio overlap/diversification and company-specific catalysts. Research at most the configured watchlistDeepDives.",
@@ -96,9 +96,10 @@
       "liveRadarNames": 3,
       "portfolioDivergences": 4,
       "researchGaps": 6,
-      "motionDiscoveryItems": 10,
-      "motionPromotedItems": 5,
-      "motionFreshnessHours": 72
+      "motionDiscoveryItems": 18,
+      "motionPromotedItems": 18,
+      "motionFreshnessHours": 48,
+      "motionDiscoveryMode": "SHADOW_ONLY"
     },
     "priorityRules": [
       "A holding with directional macro overlay + opposite completed-session tape is PRIORITY_1 divergence research.",
@@ -133,7 +134,7 @@
       "contractVersion": "power-stack-market-motion/1",
       "output": "data/market-motion.json",
       "surface": "motion.html",
-      "role": "Fast narrative/discovery layer for stock-specific, sector and geopolitical developments.",
+      "role": "Legacy Power Stack discovery retained only as SHADOW_ONLY validation against Live immutable Market Motion during migration.",
       "requiredFields": [
         "headline",
         "event date",
@@ -156,7 +157,9 @@
       ],
       "scoreRule": "No Market Motion item changes Base Conviction or company fundamentals by itself.",
       "freshnessHours": 72,
-      "liveUpstreamRule": "Immutable promoted Live Market Motion is canonical short-horizon context and should be consumed before Power Stack's broader discovery feed. The Power Stack feed remains a separate discovery layer and must dedupe overlapping hooks."
+      "liveUpstreamRule": "Immutable promoted Live Market Motion is the only active short-horizon Motion source. The Power Stack feed is shadow-only and may not affect active research priority until a later explicit migration decision.",
+      "shadowOutput": "data/motion-shadow.json",
+      "shadowContractVersion": "power-stack-motion-shadow/1"
     },
     "monitoringPolicy": {
       "mode": "FOCUSED_ROUTINE",
