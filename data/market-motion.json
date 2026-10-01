@@ -1,15 +1,17 @@
 {
   "contractVersion": "power-stack-market-motion/1",
   "asOf": "2026-09-30T23:05:00+08:00",
-  "freshnessWindowHours": 72,
-  "purpose": "Fast-moving company, sector and geopolitical hooks that create narrative motion for Power Stack without changing company scores by themselves.",
+  "freshnessWindowHours": 48,
+  "purpose": "Portfolio-specific shadow discovery for fresh company, sector and geopolitical hooks not already covered by canonical Live Market Motion. It cannot establish upstream priority or change company scores by itself.",
   "policy": {
-    "role": "Discovery and narrative-motion layer. Every item must connect to an existing holding, watchlist name, theme or market mechanism.",
+    "role": "Shadow discovery only. Canonical Live Market Motion is consumed first; local items exist only to fill uncovered portfolio-specific hooks.",
     "sourceRule": "Yahoo Finance/Reuters may be used for discovery and current reporting. Material claims that could alter a score or capital-allocation gate require company/official/primary confirmation.",
     "scoreRule": "A motion item cannot change Base Conviction or a fundamental score by itself.",
-    "expiryRule": "Promote only fresh items. Items older than the freshness window remain archive/context unless a new development refreshes them.",
+    "expiryRule": "Local discovery uses the same 48-hour freshness horizon as Live Motion. Older items are archive/context unless a genuinely new development refreshes the event.",
     "politicalRule": "Political and geopolitical items remain factual/attributed and are used only for market transmission, not political judgement.",
-    "focusRule": "Routine view keeps only three promoted motion hooks. Broader items stay secondary until a deeper sweep is requested."
+    "focusRule": "Legacy primary/secondary buckets are storage history only. Presentation must not infer a three-item primary quota or competing editorial rank from them; render uncovered local discovery as one downstream pool.",
+    "ownershipMode": "LIVE_FIRST_SHADOW_LOCAL",
+    "legacyBucketRule": "The primary/secondary arrays are retained for compatibility during migration only and must be flattened before presentation or portfolio routing."
   },
   "primary": [
     {
@@ -305,5 +307,12 @@
         "url": "https://finance.yahoo.com/healthcare/articles/summit-soars-2-billion-investment-101352389.html"
       }
     }
-  ]
+  ],
+  "shadowMigration": {
+    "mode": "SHADOW",
+    "canonicalOwner": "Alchemy Live Desk",
+    "dedupeRule": "Exact source URL or normalised headline before local discovery is shown or routed.",
+    "parityReport": "data/motion-migration-shadow.json",
+    "retirementGate": "Retire legacy primary ownership only after parity/coverage checks remain healthy; retain only portfolio-specific uncovered discovery."
+  }
 }
