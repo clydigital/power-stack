@@ -4,6 +4,10 @@ on:
   pull_request:
     paths:
       - "app.js"
+      - "industry-risk.js"
+      - "data/live-rating-snapshot.json"
+      - "data/live-rating-export-config.json"
+      - "scripts/generate-live-rating-snapshot.mjs"
       - "index.html"
       - "motion.html"
       - "holdings.html"
@@ -27,6 +31,7 @@ on:
       - "scripts/generate-portfolio-live-overlay.mjs"
       - "scripts/generate-power-sweep.mjs"
       - "scripts/validate-live-motion-boundary.mjs"
+      - "scripts/validate-fundamentals-only-exchange.mjs"
       - "scripts/sync-holding-tape.mjs"
       - "scripts/validate-static-html-js.mjs"
       - "data/portfolio-live-overlay.json"
@@ -41,6 +46,14 @@ on:
   push:
     branches: [main]
     paths:
+      - "app.js"
+      - "industry-risk.js"
+      - "data/live-rating-snapshot.json"
+      - "data/live-rating-export-config.json"
+      - "scripts/generate-live-rating-snapshot.mjs"
+      - "data/macro-methodology.json"
+      - "data/macro-sensitivities.json"
+      - "data/macro-sensitivity-supplement.json"
       - "motion.html"
       - "index.html"
       - "data/live-desk-canonical.json"
@@ -56,6 +69,7 @@ on:
       - "scripts/generate-portfolio-live-overlay.mjs"
       - "scripts/generate-power-sweep.mjs"
       - "scripts/validate-live-motion-boundary.mjs"
+      - "scripts/validate-fundamentals-only-exchange.mjs"
       - ".github/workflows/validate-live-rating-snapshot.yml"
 
 permissions:
@@ -77,10 +91,12 @@ jobs:
       - run: node --check scripts/generate-portfolio-live-overlay.mjs
       - run: node --check scripts/generate-power-sweep.mjs
       - run: node --check scripts/validate-live-motion-boundary.mjs
+      - run: node --check scripts/validate-fundamentals-only-exchange.mjs
       - run: node --check scripts/sync-holding-tape.mjs
       - run: node scripts/sync-holding-tape.mjs --check
       - run: node scripts/validate-static-html-js.mjs
       - run: node scripts/validate-live-motion-boundary.mjs
+      - run: node scripts/validate-fundamentals-only-exchange.mjs
       - run: node scripts/generate-motion-shadow.mjs --check
       - run: node -e "const fs=require('fs'); for (const f of ['data/live-desk-canonical.json','data/motion-shadow.json','data/live-fundamentals-snapshot.json','data/portfolio-live-overlay.json','data/holding-tape.json','data/research-sweep-config.json','data/research-sweep-latest.json','data/power-sweep-latest.json','data/macro-methodology.json']) JSON.parse(fs.readFileSync(f,'utf8'));"
       - run: node scripts/generate-live-fundamentals-snapshot.mjs --check

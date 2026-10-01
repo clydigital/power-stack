@@ -71,16 +71,7 @@
       "entry discipline",
       "what-to-do-next queue"
     ],
-    "companyScoreRule": "Base Conviction or a fundamentals score changes only on company-level evidence.",
-    "signalState": "Use CONFIRMING, CONTRADICTING or UNRESOLVED when mapping Live context to a holding."
-  },
-  "legacyStockScoring": {
-    "formula": "contribution_i = (channelScore_i / 2) * ((0.65 * fundamentalSensitivity_i + 0.35 * marketSensitivity_i) / 5) * factorWeight_i * factorConfidence_i * profileConfidence * channelConfidence * freshnessWeight_i",
-    "fundamentalWeight": 0.65,
-    "marketWeight": 0.35,
-    "macroAdjustmentCap": 1,
-    "freshness": "Fresh channels decay gently with age, then contribute zero at staleAfterHours. A stale packet contributes zero globally.",
-    "baseConviction": "Never overwritten. Current rating = Base Conviction + capped macro adjustment.",
-    "status": "LEGACY / NOT CANONICAL FOR LIVE EXCHANGE"
+    "companyScoreRule": "Base Conviction or a fundamentals score changes only on company-level evidence. Live market context may change research priority and risk flags, never a numeric company score.",
+    "signalState": "Use CONFIRMING, CONTRADICTING or UNRESOLVED when mapping Live context to a holding; keep that mapping separate from Base Conviction."
   }
 }
