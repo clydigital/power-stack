@@ -4,6 +4,10 @@ on:
   pull_request:
     paths:
       - "app.js"
+      - "industry-risk.js"
+      - "data/live-rating-snapshot.json"
+      - "data/live-rating-export-config.json"
+      - "scripts/generate-live-rating-snapshot.mjs"
       - "index.html"
       - "motion.html"
       - "holdings.html"
@@ -42,6 +46,14 @@ on:
   push:
     branches: [main]
     paths:
+      - "app.js"
+      - "industry-risk.js"
+      - "data/live-rating-snapshot.json"
+      - "data/live-rating-export-config.json"
+      - "scripts/generate-live-rating-snapshot.mjs"
+      - "data/macro-methodology.json"
+      - "data/macro-sensitivities.json"
+      - "data/macro-sensitivity-supplement.json"
       - "motion.html"
       - "index.html"
       - "data/live-desk-canonical.json"
