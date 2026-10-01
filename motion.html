@@ -97,12 +97,12 @@
         <div class="panel motion-hero-copy">
           <div class="eyebrow">WHY THIS EXISTS</div>
           <h2>Start with Live. Add only what the portfolio still needs.</h2>
-          <p>The first layer is promoted Motion frozen by Live. The second layer is Power Stack discovery for uncovered company, sector or geopolitical hooks. Duplicate headlines are removed before they reach the portfolio research queue.</p>
+          <p>The first layer is promoted Motion frozen by Live. The second layer is a 48-hour Power Stack shadow discovery pool for uncovered portfolio-specific hooks. Legacy local primary/secondary buckets are flattened before display, and duplicates are removed before they reach the portfolio research queue.</p>
         </div>
         <div id="motionStats" class="panel motion-stats"></div>
       </section>
 
-      <div class="motion-rule"><strong>Guardrail:</strong> Market Motion is a narrative/discovery layer. A fresh headline can raise research priority, create a Hybrid hook or tighten an action gate, but it cannot change a company fundamental score until primary/company evidence supports that change.</div>
+      <div class="motion-rule"><strong>Guardrail:</strong> Live owns canonical Market Motion and the Hybrid journey. Power Stack discovery can raise portfolio research priority or create a company-specific research hook, but it cannot create a canonical Hybrid hook, change a fundamental score, or establish a competing primary rank.</div>
 
       <div class="motion-toolbar">
         <div class="filter-row" id="motionFilters">
@@ -127,19 +127,12 @@
 
       <section class="motion-section">
         <div class="motion-section-head">
-          <div><div class="eyebrow">POWER STACK DISCOVERY</div><h2>Additional opening hooks not already covered by Live</h2></div>
-          <p>High relevance + clean big-picture bridge.</p>
+          <div><div class="eyebrow">POWER STACK SHADOW DISCOVERY</div><h2>Portfolio-specific hooks not already covered by Live</h2></div>
+          <p>48h local window · no competing primary quota.</p>
         </div>
         <div id="primaryMotion" class="motion-grid"></div>
       </section>
 
-      <section class="motion-section">
-        <div class="motion-section-head">
-          <div><div class="eyebrow">SECONDARY MOTION</div><h2>Useful colour, watch items and side branches</h2></div>
-          <p>Interesting, but not allowed to crowd out the main portfolio questions.</p>
-        </div>
-        <div id="secondaryMotion" class="motion-grid"></div>
-      </section>
     </main>
 
     <footer class="footer">Market Motion is intentionally fast and disposable. Fresh stories should either connect to a durable Power Stack theme, create a testable research question, or expire.</footer>
@@ -209,15 +202,15 @@
       `;
     }
 
-    function renderCard(item, promoted) {
-      const stale = ageHours(item.eventDate + 'T23:59:59Z') > Number(state.data?.freshnessWindowHours || 72);
+    function renderCard(item) {
+      const stale = ageHours(item.eventDate + 'T23:59:59Z') > Number(state.data?.freshnessWindowHours || 48);
       const matches = state.filter === 'ALL' || item.category === state.filter;
       const tickerHtml = (item.tickers || []).map(t=>`<span class="ticker-chip">${escapeHtml(t)}</span>`).join('');
       return `
-        <article class="motion-card ${promoted ? 'promoted' : ''} ${stale ? 'stale' : ''} ${matches ? '' : 'hidden-motion'}" data-category="${escapeHtml(item.category)}">
+        <article class="motion-card ${stale ? 'stale' : ''} ${matches ? '' : 'hidden-motion'}" data-category="${escapeHtml(item.category)}">
           <div class="motion-card-top">
             <div class="motion-kicker">
-              <span class="motion-pill ${promoted ? 'primary' : ''}">${escapeHtml(promoted ? 'PROMOTED' : item.status)}</span>
+              <span class="motion-pill">PS DISCOVERY</span>
               <span class="motion-pill ${categoryClass(item.category)}">${escapeHtml(String(item.category || 'OTHER').replaceAll('_',' '))}</span>
               <span class="motion-pill">${escapeHtml(String(item.motionType || 'WATCH').replaceAll('_',' '))}</span>
             </div>
@@ -243,7 +236,7 @@
     }
 
     function render() {
-      const data = state.data || { primary: [], secondary: [], freshnessWindowHours: 72 };
+      const data = state.data || { primary: [], secondary: [], freshnessWindowHours: 48 };
       const liveItems = state.live?.marketMotion?.items || [];
       const liveKeys = new Set(liveItems.flatMap(item => [
         item.sourceUrl ? 'url:' + item.sourceUrl : '',
@@ -254,21 +247,21 @@
         const headline = String(item.headline || '').trim().toLowerCase();
         return (sourceUrl && liveKeys.has('url:' + sourceUrl)) || (headline && liveKeys.has('headline:' + headline));
       };
-      const primary = (data.primary || []).filter(item => !isCoveredByLive(item));
-      const secondary = (data.secondary || []).filter(item => !isCoveredByLive(item));
+      const localDiscovery = [...(data.primary || []), ...(data.secondary || [])]
+        .filter(item => !isCoveredByLive(item))
+        .sort((left,right) => Number(left.priority || 999) - Number(right.priority || 999));
       const liveEdition = state.live?.marketMotion?.editionId || null;
       document.getElementById('motionAsOf').textContent = 'As of ' + prettyDate(data.asOf) + ' · freshness window ' + data.freshnessWindowHours + 'h' + (liveEdition ? ' · Live edition ' + liveEdition.slice(0,8) : '');
       const liveSection = document.getElementById('liveMotionSection');
       liveSection.hidden = !liveItems.length;
       document.getElementById('liveMotionGrid').innerHTML = liveItems.map(renderLiveCard).join('');
       document.getElementById('motionStats').innerHTML = [
-        ['Fresh hooks', liveItems.length + primary.length + secondary.length],
+        ['Fresh hooks', liveItems.length + localDiscovery.length],
         ['Live promoted', liveItems.length],
-        ['Company-linked', [...primary,...secondary].filter(x=>x.category==='COMPANY'||x.category==='EARNINGS').length],
-        ['Macro / policy', [...primary,...secondary].filter(x=>['GEOPOLITICS','ENERGY'].includes(x.category)).length]
+        ['PS discovery', localDiscovery.length],
+        ['Company-linked', localDiscovery.filter(x=>x.category==='COMPANY'||x.category==='EARNINGS').length]
       ].map(([label,value])=>`<div class="motion-stat"><b>${value}</b><span>${label}</span></div>`).join('');
-      document.getElementById('primaryMotion').innerHTML = primary.map(x=>renderCard(x,true)).join('') || '<div class="empty-motion">No primary motion items.</div>';
-      document.getElementById('secondaryMotion').innerHTML = secondary.map(x=>renderCard(x,false)).join('') || '<div class="empty-motion">No secondary motion items.</div>';
+      document.getElementById('primaryMotion').innerHTML = localDiscovery.map(renderCard).join('') || '<div class="empty-motion">No uncovered Power Stack discovery inside the 48-hour window.</div>';
     }
 
     document.getElementById('motionFilters').addEventListener('click', event => {
