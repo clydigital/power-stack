@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-09-27T21:18:00Z",
-  "purpose": "Live Power Stack thematic radar; dynamically ranked by freshness/materiality and current market significance. Theme rank changes research priority, not company fundamental scores.",
+  "lastUpdated": "2026-10-02T15:55:00+08:00",
+  "purpose": "Power Stack story map. Themes decide what deserves research; they do not automatically raise a company score. Each theme should explain the money chain, the investable bottleneck and what would prove the story wrong.",
   "environment": {
-    "label": "Global duration + energy inflation + AI compute sovereignty",
-    "summary": "US and Japanese long yields remain elevated while refined-product tightness keeps inflation risk alive. Physical AI/grid demand is still strong, but a second AI axis is now first-class: Chinese model price compression is accelerating inference adoption while export controls and policy support push China to localise memory, accelerators, interconnect and semiconductor equipment. The best AI exposures must clear both financing/valuation hurdles and bottleneck/sovereignty tests.",
-    "asOf": "2026-09-28"
+    "label": "Growth is strong. Money is expensive.",
+    "summary": "AI and nominal growth are still creating real demand, but 5%+ long yields mean the market is less forgiving about who finances that growth. The best setups are businesses already converting demand into cash, especially where supply is genuinely hard to add.",
+    "asOf": "2026-10-02"
   },
   "topQuestions": {
     "whatIsNewNow": [
@@ -34,14 +34,14 @@
   "themes": [
     {
       "priorityRank": 1,
-      "name": "Global Duration / Capital Scarcity + Energy-Inflation Feedback",
+      "name": "Expensive Money Is the Market Hurdle",
       "lifecycleState": "ACTIVE / DOMINANT",
       "significanceScore": 100,
       "freshnessScore": 100,
       "directionOfTravel": "strengthening",
       "lastMaterialChange": "2026-09-25",
-      "whyNow": "US 10Y ~5.19%, US 30Y ~5.48% and Japan 10Y ~3.115% coincide with renewed oil/product inflation. The market is facing both a higher risk-free rate and an inflation impulse rather than one offsetting the other.",
-      "marketTransmission": "equity multiples, housing, project finance, AI capex hurdle rates, USD, gold, credit, infrastructure valuation",
+      "whyNow": "Long-term yields remain high enough that every stock now competes with a much better cash and bond return. That matters most for companies whose profits sit far in the future or whose growth needs constant outside financing.",
+      "marketTransmission": "high yields → higher financing cost → lower present value of future profits → tougher valuation hurdle",
       "keyAssetsTickers": [
         "US10Y",
         "US30Y",
@@ -54,19 +54,19 @@
       ],
       "confirmation": "long yields stay above 5% while oil/product prices remain elevated and Fed tightening expectations persist",
       "invalidation": "inflation/growth cool enough for long yields and energy-product prices to fall sustainably together",
-      "nextTest": "US data, Treasury supply/auctions, Fed pricing and whether oil/product inflation persists",
-      "watchlistHoldingAction": "raise entry hurdle for duration/capex-heavy names; demand valuation discount or superior contracted cash-flow visibility"
+      "nextTest": "2Y/5Y/10Y/20Y/30Y yields, Treasury supply, credit spreads and whether inflation allows yields to fall.",
+      "watchlistHoldingAction": "Prefer companies already producing cash. Demand a better price from long-duration or heavily financed growth."
     },
     {
       "priorityRank": 2,
-      "name": "Refined Products / Diesel Inflation + Middle East Supply Risk",
+      "name": "Diesel and LNG Can Keep Inflation Sticky",
       "lifecycleState": "ACTIVE / DOMINANT",
       "significanceScore": 98,
       "freshnessScore": 100,
       "directionOfTravel": "strengthening",
       "lastMaterialChange": "2026-09-25",
-      "whyNow": "US commercial crude stocks rose, but distillate stocks fell to ~107.4M barrels and remain structurally tight. Diesel scarcity and Middle East disruption can transmit into freight, farm margins and inflation even when crude inventories look less alarming.",
-      "marketTransmission": "headline/core inflation, freight, agriculture margins, refining, tanker economics, consumer purchasing power, Fed expectations",
+      "whyNow": "Crude alone no longer tells the whole energy story. Diesel, shipping and LNG can stay tight even when headline oil cools, feeding freight and power costs back into inflation.",
+      "marketTransmission": "fuel/logistics scarcity → freight and power costs → margins and inflation → fewer rate cuts",
       "keyAssetsTickers": [
         "XOM",
         "VLO",
@@ -78,66 +78,88 @@
       "confirmation": "distillate inventories/cracks and freight stay elevated independently of crude",
       "invalidation": "product inventories rebuild and cracks/freight normalize together",
       "nextTest": "EIA product inventories, same-contract ULSD/RBOB cracks, refinery utilization and Middle East flows",
-      "watchlistHoldingAction": "XOM remains quality hold; MISC/HIBISCS stay hold/no-chase until company and price confirmation"
+      "watchlistHoldingAction": "XOM and LNG remain cleaner cash-generating exposures. Shipping and upstream names still need company-level confirmation."
     },
     {
       "priorityRank": 3,
-      "name": "AI Credit / Financing Dispersion + Realizable MW",
+      "name": "Who Is Financing the AI Boom?",
       "lifecycleState": "ACTIVE / DOMINANT",
       "significanceScore": 97,
       "freshnessScore": 96,
       "directionOfTravel": "strengthening",
       "lastMaterialChange": "2026-09-25",
-      "whyNow": "Physical AI demand remains strong but 5%+ long yields raise project-finance, sponsor and refinancing hurdles. Announced capacity deserves less weight than funded, contracted and energizable capacity.",
-      "marketTransmission": "AI capex, sponsor leverage, corporate/project spreads, data-centre timelines, infrastructure multiples",
+      "whyNow": "AI demand is real, but the financing structure is becoming part of the thesis. Broadcom's proposed financing tied to Anthropic is the clearest new example: suppliers may increasingly help customers fund the infrastructure that buys their products.",
+      "marketTransmission": "AI capex → customer funding need → supplier/project financing → credit exposure and lower-quality revenue if financing becomes necessary",
       "keyAssetsTickers": [
+        "AVGO",
         "ORCL",
         "AMZN",
         "META",
         "NVDA",
-        "9984",
         "YTLPOWR"
       ],
-      "confirmation": "strong sponsors fund at acceptable spreads while weaker projects require concessions, guarantees or delays",
-      "invalidation": "AI credit spreads normalize broadly and funded FCF conversion improves across projects",
-      "nextTest": "new issuance/project-finance pricing, sponsor guarantees, contracted load and energization milestones",
-      "watchlistHoldingAction": "prefer cash-generative/contracted exposures; YTLPOWR requires funding + grid/self-supply + FCF proof before adding"
+      "confirmation": "AI customers can fund expansion at acceptable terms and suppliers do not need to take growing credit risk to preserve demand",
+      "invalidation": "financing support becomes widespread or losses/guarantees start eroding the economics",
+      "nextTest": "Anthropic/Broadcom financing terms, AI debt issuance, guarantees, lease commitments and cash conversion",
+      "watchlistHoldingAction": "Reward self-funded or contracted AI exposure. Treat supplier financing as a deduction until the risk-adjusted return is clear."
     },
     {
       "priorityRank": 4,
-      "name": "AI Infrastructure / Grid / Power / Cooling / Optical Interconnect",
+      "name": "AI Still Needs the Physical Stuff",
       "lifecycleState": "ACTIVE / DOMINANT",
       "significanceScore": 96,
       "freshnessScore": 97,
       "directionOfTravel": "strengthening selectively",
       "lastMaterialChange": "2026-09-25",
-      "whyNow": "Grid access, generation, switchgear, wire/cable, cooling and optical connectivity remain physical bottlenecks. China/HK AI infrastructure is now broadening from power into optical transceivers, CXL/memory interconnect and domestic compute capacity; valuations still require discipline.",
-      "marketTransmission": "generation, transmission, switchgear, cooling, fiber/optical networking, water, permitting, data-centre commissioning",
+      "whyNow": "Models can get cheaper while the physical workload keeps growing. More inference still needs memory, interconnect, power, cooling and grid access. Those bottlenecks matter because they are harder to copy than another model.",
+      "marketTransmission": "cheaper AI → more usage → more compute traffic → memory/interconnect/power demand",
       "keyAssetsTickers": [
+        "MU",
+        "CRDO",
+        "DELL",
         "PWR",
         "ETN",
         "VRT",
         "GEV",
-        "GNRC",
-        "YTLPOWR",
-        "3308.HK",
-        "6809.HK"
+        "YTLPOWR"
       ],
       "confirmation": "funded backlog, signed customers, interconnection/self-supply and FCF conversion",
       "invalidation": "cancellations, utilization shortfalls or rapid shortage normalization",
       "nextTest": "supplier backlog/pricing, energised MW, grid interconnections, Chinese CSP capex and economics of HK optical/interconnect names",
-      "watchlistHoldingAction": "PWR/ETN remain high-quality but price-sensitive; research Ligent/RoboTechnik branches without chasing"
+      "watchlistHoldingAction": "MU and CRDO move to the front of research. DELL needs margin proof. Power/grid names remain good businesses but price still matters."
     },
     {
       "priorityRank": 5,
-      "name": "US–China AI War / AI Abundance + Compute Sovereignty",
+      "name": "Memory and Interconnect Are the AI Bottleneck",
+      "lifecycleState": "ACTIVE / STRENGTHENING",
+      "significanceScore": 96,
+      "freshnessScore": 100,
+      "directionOfTravel": "strengthening",
+      "lastMaterialChange": "2026-10-02",
+      "whyNow": "The next AI constraint is not only GPUs. Large clusters need high-bandwidth memory and fast links between accelerators, racks and data centres. MU and CRDO already have businesses exposed to those bottlenecks.",
+      "marketTransmission": "larger AI clusters → more memory bandwidth + faster links → pricing power for scarce components",
+      "keyAssetsTickers": [
+        "MU",
+        "CRDO",
+        "AVGO",
+        "6809.HK",
+        "3191.HK"
+      ],
+      "confirmation": "HBM/interconnect demand stays ahead of supply and converts into revenue, margin and cash",
+      "invalidation": "capacity catches demand quickly, pricing rolls over or customers redesign around the bottleneck",
+      "nextTest": "MU HBM commitments/pricing, CRDO growth/customer mix, hyperscaler networking capex",
+      "watchlistHoldingAction": "Research MU and CRDO first; avoid assuming every semiconductor name captures the same economics."
+    },
+    {
+      "priorityRank": 6,
+      "name": "Cheaper AI Makes the Hardware War Bigger",
       "lifecycleState": "PHASING IN / HIGH SIGNIFICANCE",
       "significanceScore": 94,
       "freshnessScore": 100,
       "directionOfTravel": "strengthening",
       "lastMaterialChange": "2026-09-28",
-      "whyNow": "Chinese labs are competing aggressively on model price and openness while Alibaba is expanding a full-stack AI platform and China is pushing domestic semiconductor self-sufficiency. CXMT's fifth-generation DRAM platform has entered mass production; Montage is commercialising CXL/PCIe memory interconnect; optical-network demand is supporting Innolight; and China-semiconductor baskets now hold CXMT, Cambricon, AMEC, NAURA, SMIC and Montage together.",
-      "marketTransmission": "model/API price compression -> more inference and token consumption -> memory bandwidth, accelerators, CXL/PCIe, optical networking, cloud and power demand; simultaneously model margins and hyperscaler AI ROIC face pressure while Chinese domestic-substitution spending rises",
+      "whyNow": "Chinese labs are pushing model prices down while China is also trying to localise the hardware stack. Cheaper models can hurt software economics but expand usage, which can increase demand for memory, interconnect and domestic semiconductor capacity.",
+      "marketTransmission": "model price ↓ → inference ↑ → hardware traffic ↑; export controls → localisation spend ↑",
       "keyAssetsTickers": [
         "9988.HK",
         "688825",
@@ -150,10 +172,10 @@
       "confirmation": "Chinese AI/cloud usage and CSP capex keep rising while memory/interconnect demand remains strong and domestic semiconductor qualification/localisation advances",
       "invalidation": "inference growth fails to offset falling model prices, Chinese CSP capex rolls over, or memory/interconnect supply normalises faster than workload growth",
       "nextTest": "Alibaba AI-cloud growth versus capex; CXMT HBM/customer qualification; Montage CXL adoption; Innolight optical orders; Chinese CSP capex and semiconductor-equipment localisation",
-      "watchlistHoldingAction": "Prefer Alibaba/3191 for active broad research; treat CXMT as higher-upside but memory-cycle/HBM-execution sensitive; keep Montage and Innolight high-quality no-chase watches after recent rerating"
+      "watchlistHoldingAction": "Separate beneficiaries of more AI usage from companies that merely have an AI label. Verify CXMT/HBM progress before treating it like proven MU economics."
     },
     {
-      "priorityRank": 6,
+      "priorityRank": 7,
       "name": "Critical Minerals / Rare Earth / Copper Supply Security",
       "lifecycleState": "PHASING IN / STRENGTHENING",
       "significanceScore": 91,
@@ -173,7 +195,7 @@
       "watchlistHoldingAction": "FCX remains active at disciplined prices; avoid conflating strategic scarcity with automatic miner upside"
     },
     {
-      "priorityRank": 7,
+      "priorityRank": 8,
       "name": "AI Security / Governance",
       "lifecycleState": "PHASING IN / STRENGTHENING",
       "significanceScore": 87,
@@ -193,7 +215,7 @@
       "watchlistHoldingAction": "keep PANW/CRWD high quality; wait for price rather than chase"
     },
     {
-      "priorityRank": 8,
+      "priorityRank": 9,
       "name": "US LNG Diversification / Energy Security",
       "lifecycleState": "MATURE / STILL RELEVANT",
       "significanceScore": 80,
@@ -211,7 +233,7 @@
       "watchlistHoldingAction": "LNG remains a high-quality entry candidate; no urgency chase"
     },
     {
-      "priorityRank": 9,
+      "priorityRank": 10,
       "name": "Agriculture / Fertilizer / Food Affordability",
       "lifecycleState": "PHASING IN",
       "significanceScore": 78,
@@ -234,7 +256,7 @@
       "watchlistHoldingAction": "CTVA/NTR active-price research; CF wait for a base; BG/VMI background; AGCO second-stage only"
     },
     {
-      "priorityRank": 10,
+      "priorityRank": 11,
       "name": "Uranium / Nuclear Fuel",
       "lifecycleState": "MATURE / STILL RELEVANT",
       "significanceScore": 76,
@@ -250,27 +272,6 @@
       "invalidation": "utility contracting weakens materially or supply normalizes faster than demand",
       "nextTest": "utility contracting/fuel-cycle awards and CCJ price stabilization",
       "watchlistHoldingAction": "CCJ stays quality nuclear exposure but wait for a base/reclaim before increasing priority"
-    },
-    {
-      "priorityRank": 11,
-      "name": "Robotics / Automation",
-      "lifecycleState": "MATURE / SELECTIVE",
-      "significanceScore": 70,
-      "freshnessScore": 78,
-      "directionOfTravel": "stable-selective",
-      "lastMaterialChange": "2026-09-25",
-      "whyNow": "Evidence still favors conventional industrial/warehouse automation and cobots over general-purpose humanoids. Chinese regulators are applying more discipline to humanoid IPOs while installed volumes remain small versus standard industrial robots.",
-      "marketTransmission": "industrial capex, warehouse productivity, machine vision, motion control, sensors, semiconductor equipment",
-      "keyAssetsTickers": [
-        "ROK",
-        "TER",
-        "ABB",
-        "FANUY"
-      ],
-      "confirmation": "repeat orders, utilization, margins and scaled commercial deployments",
-      "invalidation": "pilot-heavy demand without attractive economics",
-      "nextTest": "industrial orders and Hong Kong pricing/trading for new automation listings",
-      "watchlistHoldingAction": "favor profitable fixed/warehouse automation; RoboTechnik/humanoids research-only until pricing and economics prove out"
     },
     {
       "priorityRank": 12,
@@ -293,6 +294,27 @@
     },
     {
       "priorityRank": 13,
+      "name": "Robotics / Automation",
+      "lifecycleState": "MATURE / SELECTIVE",
+      "significanceScore": 70,
+      "freshnessScore": 78,
+      "directionOfTravel": "stable-selective",
+      "lastMaterialChange": "2026-09-25",
+      "whyNow": "Evidence still favors conventional industrial/warehouse automation and cobots over general-purpose humanoids. Chinese regulators are applying more discipline to humanoid IPOs while installed volumes remain small versus standard industrial robots.",
+      "marketTransmission": "industrial capex, warehouse productivity, machine vision, motion control, sensors, semiconductor equipment",
+      "keyAssetsTickers": [
+        "ROK",
+        "TER",
+        "ABB",
+        "FANUY"
+      ],
+      "confirmation": "repeat orders, utilization, margins and scaled commercial deployments",
+      "invalidation": "pilot-heavy demand without attractive economics",
+      "nextTest": "industrial orders and Hong Kong pricing/trading for new automation listings",
+      "watchlistHoldingAction": "favor profitable fixed/warehouse automation; RoboTechnik/humanoids research-only until pricing and economics prove out"
+    },
+    {
+      "priorityRank": 14,
       "name": "Grid ESS vs Lithium Overcapacity",
       "lifecycleState": "MATURE / SELECTIVE",
       "significanceScore": 68,
