@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-stack-bond-watch/1",
-  "asOf": "2026-09-30",
+  "asOf": "2026-10-02",
   "purpose": "Small bond/duration watchlist for capital-allocation research. Live Desk owns the rate state; Power Stack uses it to compare duration, inflation protection and cash alternatives.",
   "monitorPolicy": {
     "mainScreenMax": 5,
@@ -58,19 +58,24 @@
       "marketRowId": "us2y"
     },
     {
+      "id": "us5y",
+      "label": "US 5Y",
+      "marketRowId": "us5y-fred"
+    },
+    {
       "id": "us10y",
       "label": "US 10Y",
       "marketRowId": "us10y-fred"
     },
     {
+      "id": "us20y",
+      "label": "US 20Y",
+      "marketRowId": "us20y-fred"
+    },
+    {
       "id": "us30y",
       "label": "US 30Y",
       "marketRowId": "us30y"
-    },
-    {
-      "id": "real10y",
-      "label": "10Y Real",
-      "marketRowId": "us10y-real"
     }
   ],
   "nextDeepSweep": [
@@ -79,5 +84,59 @@
     "Check Treasury auctions/supply and liquidity rather than using yield level alone.",
     "Compare USTs with JGBs/Bunds and USDJPY before calling the move US-specific.",
     "Compare SGOV/BIL/SHY, IEF, TLT and TIP on yield/duration/convexity rather than treating 'bonds' as one trade."
-  ]
+  ],
+  "currentRead": "September NFP created the first meaningful duration-relief signal: payrolls +29k, unemployment 4.2%, wages +0.1% m/m and -60k net revisions pulled the US 2Y/10Y sharply lower. Long duration is more interesting, but not a clean all-in bond bull yet because diesel/product inflation, Treasury term premium and long-end supply remain live risks.",
+  "currentDecision": {
+    "cashShort": "KEEP / DRY POWDER",
+    "intermediate": "PREFERRED FIRST DURATION ADD",
+    "longDuration": "TACTICAL STARTER / WATCH",
+    "inflationProtected": "SELECTIVE HEDGE"
+  },
+  "eventOverlay": {
+    "event": "US Employment Situation — September 2026",
+    "releasedAt": "2026-10-02T08:30:00-04:00",
+    "payrollsK": 29,
+    "consensusK": 90,
+    "unemploymentRatePct": 4.2,
+    "participationRatePct": 61.8,
+    "avgHourlyEarningsMoMPct": 0.1,
+    "avgHourlyEarningsYoYPct": 3,
+    "priorTwoMonthNetRevisionK": -60,
+    "policyRead": "The report materially weakens the case for an October hike because hiring, wages and revisions all cooled at once. It does not remove the year-end hike risk: Reuters reported December pricing still near 90% after the release.",
+    "marketReaction": "US 2Y fell toward 4.72% and US 10Y toward 5.18%; equities rallied and oil fell more than 3% intraday.",
+    "divergence": "The labour signal is bond-friendly, but the long end still has to prove that inflation/term-premium pressure is peaking. A one-session rally is not enough.",
+    "seasonalityCaveat": "Reuters noted that late-Labor-Day seasonal adjustment effects may have depressed the headline. Treat the print as a real policy input, but cross-check claims, revisions, household employment, wages and subsequent data before declaring a labour break.",
+    "sources": [
+      "https://www.bls.gov/news.release/archives/empsit_10022026.htm",
+      "https://www.reuters.com/business/fed-seen-skipping-october-rate-hike-job-market-cools-2026-10-02/",
+      "https://www.reuters.com/world/china/global-markets-wrapup-1-2026-10-02/"
+    ]
+  },
+  "positioning": {
+    "tlt": {
+      "asOf": "2026-09-15",
+      "shortInterestShares": 107775353,
+      "shortFloatPct": 19.2,
+      "daysToCover": 3.68,
+      "read": "Crowded short positioning can amplify a rally if yields reverse, but it is not a standalone buy signal.",
+      "source": "https://www.marketbeat.com/stocks/NASDAQ/TLT/short-interest/"
+    }
+  },
+  "tltFramework": {
+    "status": "TACTICAL_STARTER_ONLY",
+    "whyInteresting": "TLT now offers unusually high carry plus large convexity after the long-end selloff. iShares reported a 5.49% 30-day SEC yield, 5.65% portfolio YTM and 14.74-year effective duration on Sep 29.",
+    "whyNotFullSize": "TLT is still a concentrated bet that 20Y/30Y yields and real yields have peaked. Energy/product inflation, Treasury supply/term premium and another December Fed hike can still push the long end back up.",
+    "confirmation": [
+      "US 10Y stops making new highs and sustains a move below 5.0%.",
+      "US 20Y/30Y stop making new highs and the curve rally broadens beyond the 2Y.",
+      "Oil and, more importantly, diesel/product inflation continue easing.",
+      "10Y real yield and inflation breakevens stop rising together."
+    ],
+    "invalidation": [
+      "US 10Y retakes the recent ~5.34% high and holds above it.",
+      "20Y/30Y yields make fresh highs while TLT loses the Oct 1 low area.",
+      "Crude/diesel reaccelerate and breakevens rise, reviving the inflation/term-premium shock."
+    ],
+    "source": "https://www.ishares.com/us/products/239454/ishares-20-year-treasury-bond-etf"
+  }
 }
