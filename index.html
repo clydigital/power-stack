@@ -137,7 +137,7 @@
       const curveHtml='<div class="bond-metric"><span>2s10s</span><b>'+(Number.isFinite(Number(curve.spreadBps))?Number(curve.spreadBps).toFixed(0)+' bp':'OPEN')+'</b><small>'+String(curve.state||'curve state unresolved')+'</small></div>';
       document.getElementById('bondMetrics').innerHTML=metricHtml+curveHtml;
       document.getElementById('bondBuckets').innerHTML=(bw.buckets||[]).map(x=>'<div class="bond-bucket"><strong>'+x.label+'</strong><span>'+x.instruments.join(' / ')+'</span><p>'+x.question+'</p></div>').join('');
-      document.getElementById('bondHomeRead').textContent='Start with the simple question: what return can I get without owning the stock? If a company cannot comfortably beat that hurdle, I need a better price.';
+      document.getElementById('bondHomeRead').textContent=bw.currentRead||'Start with the simple question: what return can I get without owning the stock? If a company cannot comfortably beat that hurdle, I need a better price.';
     }).catch(()=>{document.getElementById('bondWatchHome').style.display='none';});
   </script>
   <script>
