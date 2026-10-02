@@ -45,7 +45,7 @@ function importanceScore(holding) {
 
 function holdingReason(holding) {
   const reasons = [];
-  if (holding.actualReaction?.status === "DIVERGES") reasons.push("completed-session tape moved against the directional macro overlay");
+  if (holding.actualReaction?.status === "DIVERGES") reasons.push("completed-session tape moved against the directional market overlay");
   if (holding.actualReaction?.status === "UNRESOLVED") reasons.push("completed-session tape/instrument data is unresolved");
   if (holding.profileStatus === "MISSING") reasons.push("macro-sensitivity profile is missing");
   if (holding.reviewPriority === "HIGH_REVIEW") reasons.push("portfolio overlay marks the holding HIGH_REVIEW");
@@ -304,7 +304,7 @@ function build(existingGeneratedAt = null) {
       reason:item.motionContext?.length
         ? "Fresh promoted Live Motion is linked, but this holding remains outside the capped deep-dive queue unless budget or priority changes."
         : item.actualReaction?.status === "CONFIRMS"
-          ? "Tape currently confirms the macro overlay; no extra research budget unless company evidence changes."
+          ? "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
           : item.overlayState === "MIXED"
             ? "Mixed exposure is monitored without forcing a directional conclusion."
             : "No current decision-relevant divergence promoted into the capped queue.",
@@ -366,7 +366,7 @@ function build(existingGeneratedAt = null) {
     newCapitalPriority: portfolio.newCapitalPriority || [],
     researchGaps,
     explicitNoChange: [
-      "Do not change any company fundamental score from Live macro state or holding-tape reaction alone.",
+      "Do not change any company company-evidence component from Live macro state or holding-tape reaction alone.",
       "Do not mechanically rerank the watchlist from Live Stock Radar.",
       "Do not convert MIXED exposure into a directional trade signal.",
       "Do not rebuild a competing Power Stack macro regime when Live canonical inputs are healthy.",
@@ -377,11 +377,11 @@ function build(existingGeneratedAt = null) {
         "holding/watchlist action text and gates when new Power Stack-owned evidence supports a change",
         "portfolio-management concentration and capital-allocation flags",
         "developing-theme priority when mechanism/timing/beneficiaries materially change",
-        "company fundamental score only on new company-level earnings/cash-flow/balance-sheet/business-quality/growth/valuation evidence",
+        "company company-evidence component only on new company-level earnings/cash-flow/balance-sheet/business-quality/growth/valuation evidence",
       ],
       forbidden: [
         "Live-derived macro score exported back to Live",
-        "macro overlay arithmetic added to company fundamental score",
+        "market overlay arithmetic added to company company-evidence component",
         "creator/social claim used as score evidence without independent verification",
         "forced conclusion when the evidence remains unresolved",
       ],
