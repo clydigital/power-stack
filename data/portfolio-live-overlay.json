@@ -1,8 +1,8 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-02T12:33:23.124Z",
-  "liveAsOf": "2026-09-30T10:37:31.129+00:00",
-  "liveSyncedAt": "2026-10-02T05:45:04.533Z",
+  "generatedAt": "2026-10-02T12:43:12.826Z",
+  "liveAsOf": "2026-10-02T09:01:33.819+00:00",
+  "liveSyncedAt": "2026-10-02T12:43:12.643Z",
   "sourceHealth": {
     "dossier": "OK",
     "marketMonitor": "PARTIAL",
@@ -14,15 +14,15 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "Markets trading a rates‑led tightening regime with incomplete transmission",
-    "answer": "Markets are in a rates‑led tightening regime: real and nominal long yields have jumped alongside front‑end tightness while credit spreads and broad-market breadth have not fully transmitted, and narrow AI/semiconductor leadership is acting as a relief valve.",
-    "implication": "Rates/real‑yield pressure is the dominant market force; transmission to credit, volatility and broad breadth remains partial.",
-    "whatWouldChangeMind": "If HY and IG OAS widen materially and breadth/ MOVE/VIX confirm broad risk‑off (credit + volatility transmission), reclassify away from rates‑led tightening."
+    "headline": "Markets trading a rates‑led tightening regime with incomplete transmission to credit and breadth",
+    "answer": "Long and real US yields have re‑priced materially alongside front‑end tightness, while credit spreads are only modestly wider and AI/semiconductor breadth remains strong—supporting a rates‑led tightening regime with transmission still incomplete.",
+    "implication": "Expect policy‑and‑real‑yield pressure to remain the dominant market driver; whether this broadens into credit/breadth weakness depends on persistence and evidence of transmission.",
+    "whatWouldChangeMind": "Sustained narrowing of HY/IG spreads with falling MOVE/VIX and broad‑market breadth improvement while long and real yields remain elevated would weaken the rates‑led thesis."
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "54be9c89-02a7-4a7f-aaf8-d4db35d9898b",
-    "capturedAt": "2026-10-02T02:47:22.120Z",
+    "editionId": "9c111586-2eb4-4f17-886f-ff72d7f897f8",
+    "capturedAt": "2026-10-02T10:47:34.188Z",
     "itemCount": 0,
     "linkedHoldingCount": 0
   },
@@ -48,39 +48,39 @@
           "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
           "detail": "No current deterministic policy impulse or directional next-meeting repricing is present in the bounded rate context.",
-          "asOf": "2026-09-30T10:37:31.129Z"
+          "asOf": "2026-10-02T09:01:33.819Z"
         },
         {
           "key": "RATES_FRONT_END",
           "label": "Front-end pricing",
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
-          "detail": "US 2Y 4.92%; 5D +16.0 bp; vs effective fed funds +104.0 bp.",
-          "asOf": "2026-09-30T10:37:31.129Z"
+          "detail": "US 2Y 4.88%; 5D +3.0 bp; vs effective fed funds +100.0 bp.",
+          "asOf": "2026-10-02T09:01:33.819Z"
         },
         {
           "key": "RATES_REAL_YIELDS",
           "label": "10Y real yield",
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
-          "detail": "10Y real yield 2.90%; 5D +28.0 bp.",
-          "asOf": "2026-09-30T10:37:31.129Z"
+          "detail": "10Y real yield 2.93%; 5D +17.0 bp.",
+          "asOf": "2026-10-02T09:01:33.819Z"
         },
         {
           "key": "RATES_BREAKEVENS",
           "label": "10Y inflation breakeven",
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
-          "detail": "10Y breakeven 2.35%; 5D +2.0 bp.",
-          "asOf": "2026-09-30T10:37:31.129Z"
+          "detail": "10Y breakeven 2.36%; 5D +3.0 bp.",
+          "asOf": "2026-10-02T09:01:33.819Z"
         },
         {
           "key": "RATES_LONG_END",
           "label": "Long-end nominal yields",
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
-          "detail": "US 10Y 5.26%; 5D +30.0 bp.",
-          "asOf": "2026-09-30T10:37:31.129Z"
+          "detail": "US 10Y 5.24%; 5D +6.0 bp; US 20Y 5.68%; 5D +23.0 bp; US 30Y 5.64%; 5D +24.0 bp.",
+          "asOf": "2026-10-02T09:01:33.819Z"
         },
         {
           "key": "BILLS",
@@ -96,8 +96,8 @@
       "state": "TIGHTER",
       "tighter": 1,
       "easier": 0,
-      "neutral": 1,
-      "unresolved": 0,
+      "neutral": 0,
+      "unresolved": 1,
       "keys": [
         "FUNDING",
         "CREDIT"
@@ -106,10 +106,10 @@
         {
           "key": "FUNDING",
           "label": "Secured funding / collateral",
-          "direction": "NEUTRAL",
+          "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
-          "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR +0.7 bp. Volumes: SOFR $3230bn, TGCR $1154bn, BGCR $1210bn.",
-          "asOf": "2026-09-30"
+          "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR n/a. Volumes: SOFR $3067bn, TGCR $1178bn, BGCR $1221bn.",
+          "asOf": "2026-10-01"
         },
         {
           "key": "CREDIT",
@@ -124,11 +124,12 @@
     "physicalEnergy": {
       "status": "ACTIVE",
       "observed": true,
-      "detail": "Product stress is a plausible sustaining force for breakevens and long yields; crude weakness complicates the picture.",
+      "detail": "Product stress plausibly supports breakevens and long yields, but regional/physical confirmation is needed.",
       "evidenceRefs": [
-        "market-monitor:crack-distillate:2026-09-22",
-        "market-monitor:distillate:2026-09-22",
-        "market-monitor:wti:2026-09-22"
+        "market-monitor:crack-distillate:2026-09-29",
+        "market-monitor:distillate:2026-09-29",
+        "market-monitor:wti:2026-09-29",
+        "market-monitor:us10y-breakeven:2026-10-01"
       ]
     }
   },
@@ -1166,7 +1167,7 @@
       "importance": "HIGH",
       "divergence": "PARTIAL",
       "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-      "actual": "Concentrated breadth in AI/semis and SMH outperformance amid broader weakness.",
+      "actual": "AI/semiconductor breadth and Mag‑7 breadth are strong, supporting indices.",
       "affectedHoldings": [
         "TSLA",
         "TTWO",
@@ -1179,12 +1180,12 @@
         "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
       ],
       "evidenceFor": [
-        "Relief valve: concentrated leadership supporting indices and masking transmission to broad risk assets.",
-        "Breadth metrics show mixed signals: broad measures still positive on moving averages while new highs/new lows data indicate some dispersion.",
-        "Nasdaq daily move 0.24 with bias MIXED."
+        "Concentrated tech leadership is acting as a relief valve, limiting immediate breadth‑based downside.",
+        "Breadth resilience and concentrated leadership are limiting immediate downside despite rates pressure.",
+        "Nasdaq daily move 0.04 with bias MIXED."
       ],
       "evidenceAgainst": [
-        "Hawkish—both front and long ends are signaling higher real returns and nominal discounting pressure."
+        "Policy and real‑yield repricing is the dominant tightening impulse and a primary cross‑asset transmission channel."
       ],
       "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
       "confidence": "HIGH",
@@ -1195,7 +1196,7 @@
       "importance": "HIGH",
       "divergence": "YES",
       "expected": "Softer crude would normally reduce immediate energy-inflation pressure and weaken the case for broad energy outperformance.",
-      "actual": "Distillate cracks and heating oil remain elevated while WTI softened.",
+      "actual": "Distillate cracks and heating oil elevated while WTI is modestly softer.",
       "affectedHoldings": [
         "XOM",
         "HIBISCS",
@@ -1208,11 +1209,11 @@
         "Geopolitical premium and physical-product stress are moving on different timelines."
       ],
       "evidenceFor": [
-        "Product stress is a plausible sustaining force for breakevens and long yields; crude weakness complicates the picture.",
+        "Product stress plausibly supports breakevens and long yields, but regional/physical confirmation is needed.",
         "Crude daily move -3.23 with bias BEARISH."
       ],
       "evidenceAgainst": [
-        "Regional inventories and utilisation data"
+        "Regional refinery utilisation and inventories."
       ],
       "leadingHypothesis": "Product-market tightness is currently more informative for the portfolio's energy sleeve than the crude headline alone.",
       "confidence": "HIGH",
