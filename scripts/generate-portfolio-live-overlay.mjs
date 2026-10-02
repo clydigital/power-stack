@@ -210,7 +210,7 @@ function tapeAlignment(overlayState, row) {
   if (overlayState === "MIXED" || overlayState === "NEUTRAL" || overlayState === "UNRESOLVED") {
     return {
       status: "INCONCLUSIVE",
-      reason: "The macro overlay is not directional enough to judge one-session confirmation.",
+      reason: "The market overlay is not directional enough to judge one-session confirmation.",
     };
   }
   if (Math.abs(move) < threshold) {
@@ -225,8 +225,8 @@ function tapeAlignment(overlayState, row) {
     status: expectedSign === actualSign ? "CONFIRMS" : "DIVERGES",
     reason:
       expectedSign === actualSign
-        ? "Completed-session tape moved in the direction implied by the current macro overlay."
-        : "Completed-session tape moved against the direction implied by the current macro overlay.",
+        ? "Completed-session tape moved in the direction implied by the current market overlay."
+        : "Completed-session tape moved against the direction implied by the current market overlay.",
   };
 }
 
@@ -501,14 +501,14 @@ function buildOverlay(existingGeneratedAt = null) {
     divergences: (live.contradictions || []).slice(0, 6),
     liveResearchGaps: live.researchGaps || [],
     guardrails: [
-      "This overlay does not change company fundamental scores.",
+      "This overlay does not change company company-evidence components.",
       "HEADWIND / TAILWIND describes current macro exposure, not a buy or sell recommendation.",
       "Power Stack action gates remain company- and portfolio-owned.",
       "Live contradictions remain open investigations until independently resolved.",
       "Portfolio divergence hypotheses are deterministic prompts for investigation, not causal proof.",
       "Holding-tape confirmation uses completed regular sessions only; MIXED overlays are never forced into directional confirmation.",
       "Missing profiles remain RESEARCH_GAP rather than zero sensitivity.",
-      ...(live.marketMotion ? ["Live promoted Market Motion raises research priority only; it does not alter overlay state or fundamental score."] : []),
+      ...(live.marketMotion ? ["Live promoted Market Motion raises research priority only; it does not alter overlay state or company-evidence component."] : []),
     ],
     sourceFiles: [
       "data/live-desk-canonical.json",
