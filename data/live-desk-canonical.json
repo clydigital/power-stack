@@ -275,14 +275,14 @@
         "label": "US dollar transmission",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "US Dollar · UUP proxy 5D +0.42%.",
-        "asOf": "2026-09-30",
+        "detail": "US Dollar · UUP proxy 5D +0.94%.",
+        "asOf": "2026-10-01",
         "sourceName": "Nasdaq official etf history",
         "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical",
         "evidenceRefs": [],
         "metrics": {
-          "proxyLevel": 28.77,
-          "change5dPct": 0.42
+          "proxyLevel": 28.96,
+          "change5dPct": 0.94
         }
       },
       {
@@ -339,9 +339,9 @@
       "id": "dxy",
       "symbol": "UUP",
       "label": "US Dollar · UUP proxy",
-      "last": 28.77,
-      "change5d": 0.42,
-      "asOf": "2026-09-30",
+      "last": 28.96,
+      "change5d": 0.94,
+      "asOf": "2026-10-01",
       "sourceName": "Nasdaq official etf history",
       "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical"
     },
@@ -553,14 +553,14 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-01T22:44:36.149Z",
+    "asOf": "2026-10-02T05:45:04.440Z",
     "assets": [
       {
         "key": "SPX",
         "label": "S&P 500",
         "symbol": "SP500",
-        "last": 7651.54,
-        "dailyChange": -0.25,
+        "last": 7666.45,
+        "dailyChange": 0.19,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "MEDIUM",
@@ -568,7 +568,7 @@
         "confirmingSignal": "Large‑cap breadth remains above recent averages while SPX is modestly down.",
         "contradictingSignal": "Small‑cap breadth and intraday breadth flow",
         "invalidation": "If HY and IG OAS widen materially and breadth/ MOVE/VIX confirm broad risk‑off (credit + volatility transmission), reclassify away from rates‑led tightening.",
-        "asOf": "2026-09-30"
+        "asOf": "2026-10-01"
       },
       {
         "key": "NASDAQ",
@@ -619,8 +619,8 @@
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4177.100098,
-        "dailyChange": -0.23,
+        "last": 4190.5,
+        "dailyChange": -0.41,
         "dailyChangeUnit": "percent",
         "bias": "BEARISH",
         "conviction": "MEDIUM",
@@ -628,14 +628,14 @@
         "confirmingSignal": "Gold lower on 5‑day view despite recent small uptick.",
         "contradictingSignal": null,
         "invalidation": "If HY and IG OAS widen materially and breadth/ MOVE/VIX confirm broad risk‑off (credit + volatility transmission), reclassify away from rates‑led tightening.",
-        "asOf": "2026-10-01"
+        "asOf": "2026-10-02"
       },
       {
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 84671.37,
-        "dailyChange": 1.33,
+        "last": 86123.84,
+        "dailyChange": 1.5,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -643,7 +643,7 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": null,
-        "asOf": "2026-10-01"
+        "asOf": "2026-10-02"
       }
     ]
   },
@@ -1180,9 +1180,9 @@
   },
   "marketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "5906723b-73fc-4e12-a5e6-2c2a7a692f28",
-    "capturedAt": "2026-10-01T20:18:44.689Z",
-    "researchRunId": "8150a596-fa74-431a-8f02-ee2f2e40b50d",
+    "editionId": "54be9c89-02a7-4a7f-aaf8-d4db35d9898b",
+    "capturedAt": "2026-10-02T02:47:22.120Z",
+    "researchRunId": "70e39f79-9011-4f24-b52e-992ca9095a70",
     "items": []
   },
   "upstreamGuardrails": [
@@ -1201,5 +1201,5 @@
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-01T22:44:36.303Z"
+  "syncedAt": "2026-10-02T05:45:04.533Z"
 }
