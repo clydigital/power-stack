@@ -23,7 +23,7 @@ function source(relative) {
 
 function requireMatch(label, text, pattern) {
   if (!pattern.test(text)) {
-    throw new Error(`${label}: required fundamentals-only boundary marker missing: ${pattern}`);
+    throw new Error(`${label}: required company-evidence boundary marker missing: ${pattern}`);
   }
 }
 
@@ -61,4 +61,4 @@ for (const [label, text] of [
   forbidMatch(label, text, /power-stack-rating-snapshot\/v1|live-rating-snapshot\.json|live-rating-export-config\.json|generate-live-rating-snapshot\.mjs/);
 }
 
-console.log("Fundamentals-only Live exchange boundary is intact: no legacy macro-adjusted rating export or active macro-context scoring path.");
+console.log("Company-evidence Live exchange boundary is intact: no legacy macro-adjusted rating export or active macro-context scoring path.");
