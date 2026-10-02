@@ -37,7 +37,7 @@ requireMatch("Live sync", sync, /attentionTier/);
 requireMatch("Portfolio overlay", overlay, /function motionForTicker/);
 requireMatch("Portfolio overlay", overlay, /motionContext/);
 requireMatch("Portfolio overlay", overlay, /motionLinked/);
-requireMatch("Portfolio overlay", overlay, /does not alter overlay state or fundamental score/);
+requireMatch("Portfolio overlay", overlay, /does not alter overlay state or company-evidence component/);
 
 requireMatch("PowerSweep", sweep, /holding\.motionContext\?\.length/);
 requireMatch("PowerSweep", sweep, /function liveMotionForTicker/);
@@ -50,7 +50,7 @@ requireMatch("PowerSweep config", config, /motionFreshnessHours"\s*:\s*48/);
 requireMatch("PowerSweep config", config, /"freshnessHours"\s*:\s*48/);
 requireMatch("PowerSweep config", config, /"uiMode"\s*:\s*"LIVE_ONLY"/);
 requireMatch("PowerSweep config", config, /"fallbackPolicy"\s*:\s*"NONE"/);
-requireMatch("PowerSweep config", config, /cannot change company fundamentals, Base Conviction, ranking, sizing or an action gate|No Market Motion item changes Base Conviction/);
+requireMatch("PowerSweep config", config, /cannot change company fundamentals, Research Score, ranking, sizing or an action gate|No Market Motion item changes Research Score/);
 
 requireMatch("Motion surface", motionSurface, /LIVE PROMOTED MOTION/);
 requireMatch("Motion surface", motionSurface, /There is no local Motion fallback/);
