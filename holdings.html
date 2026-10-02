@@ -108,16 +108,15 @@
         <section class="context-panel panel">
           <div class="context-head">
             <div>
-              <div class="eyebrow">SCORING METHOD</div>
-              <h2>Fundamentals are separated from the thesis</h2>
+              <div class="eyebrow">DECISION SCORE</div><h2>Score the setup. Keep the action separate.</h2>
             </div>
             <div id="asOf" class="context-meta">Loading…</div>
           </div>
           <div class="method-grid context-body">
             <div class="method-copy">
-              <p>The score is deliberately harsher than the main Power Stack conviction system. A great narrative cannot rescue weak cash flow, excessive leverage or an extreme valuation here.</p>
-              <p>Scores are cross-sector judgements, not mechanical screens. Property companies are judged with more weight on book value, core earnings and leverage; software and gaming receive more credit for recurring revenue and IP quality; cyclical energy is judged through-cycle rather than on a single oil-price quarter.</p>
-              <p><strong>Important:</strong> this is not a buy/sell signal and does not include portfolio sizing, entry price timing, macro regime, technicals or hedge-fund positioning.</p>
+              <p>The score asks one question: how strong is this setup in the market we actually have?</p>
+              <p>Business tells us whether the company is improving. Regime fit asks whether today's market helps it. Cash / financing asks whether it can fund itself while money is expensive. Valuation and Price stop a great story from becoming an automatic buy.</p>
+              <p><strong>Score is not Action.</strong> A great company can still be WAIT if the price already assumes too much. Creator ideas and unverified leads add zero points until the evidence is checked.</p>
             </div>
             <div id="weights" class="weights"></div>
           </div>
@@ -125,26 +124,27 @@
 
         <section class="ranking-panel panel">
           <div class="ranking-head">
-            <div><div class="eyebrow">RANKED BY FUNDAMENTALS</div><h2>Portfolio scorecard</h2></div>
-            <span>Highest score = strongest current financial proposition, not highest expected share-price return.</span>
+            <div><div class="eyebrow">RANKED BY DECISION SCORE</div><h2>Current capital-allocation scorecard</h2></div>
+            <span>Higher score = stronger setup. It still does not mean buy now.</span>
           </div>
-          <div class="ranking-wrap"><table class="ranking"><thead><tr><th>#</th><th>Holding</th><th>Score</th><th>Grade</th><th>Confidence</th><th>Current fundamental read</th></tr></thead><tbody id="rankingBody"></tbody></table></div>
+          <div class="ranking-wrap"><table class="ranking"><thead><tr><th>#</th><th>Holding</th><th>Score</th><th>Grade</th><th>Evidence</th><th>Current PS read</th></tr></thead><tbody id="rankingBody"></tbody></table></div>
         </section>
 
         <section id="holdingsGrid" class="holdings-grid"></section>
       </main>
 
-      <footer class="footer">Power Stack · Fundamental scores remain company-owned. The Live portfolio overlay is a separate exposure, concentration and investigation layer.</footer>
+      <footer class="footer">Power Stack · Company facts stay company-owned. Regime and price can change the decision score without rewriting the underlying evidence.</footer>
     </div>
   </div>
 
   <script>
     const maxByComponent = {
-      'Earnings & cash generation': 25,
-      'Balance sheet': 20,
-      'Business quality': 20,
-      'Growth trajectory': 15,
-      'Valuation': 20
+      'Business': 20,
+      'Regime fit': 20,
+      'Cash / financing': 20,
+      'Valuation': 15,
+      'Price': 15,
+      'Catalyst': 10
     };
 
     const gradeClass = grade => grade === 'A' ? 'grade-a' : grade.startsWith('B') ? 'grade-b' : grade.startsWith('C') ? 'grade-c' : 'grade-f';
@@ -158,9 +158,9 @@
       const top = [...holdings].sort((a,b)=>b.score-a.score)[0];
       document.getElementById('summaryStats').innerHTML = [
         [holdings.length, 'Current holdings scored'],
-        [avg, 'Average fundamental score'],
+        [avg, 'Average decision score'],
         [strong, 'Scores 70+'],
-        [top.ticker, 'Strongest fundamentals']
+        [top.ticker, 'Highest current score']
       ].map(([v,l])=>`<div class="summary-card"><b>${v}</b><span>${l}</span></div>`).join('');
     }
 
@@ -178,7 +178,7 @@
           <td><strong>${h.ticker}</strong><span>${h.name} · ${h.market}</span></td>
           <td><span class="ranking-score">${h.score}</span></td>
           <td><span class="grade-pill ${gradeClass(h.grade)}">${h.grade}</span></td>
-          <td><span class="${confidenceClass(h.confidence)}">${h.confidence}</span></td>
+          <td><span class="${confidenceClass(h.confidence)}">${h.evidenceHealth || h.confidence}</span></td>
           <td>${h.status}</td>
         </tr>`).join('');
     }
@@ -285,9 +285,9 @@
           ${position}
           <div class="metric-grid">${metrics}</div>
           <div class="component-grid">${components}</div>
-          <div class="card-section"><h3>What supports the score</h3><p>${h.strength}</p></div>
-          <div class="card-section risk"><h3>What drags the score</h3><p>${h.weakness}</p></div>
-          <div class="card-section verdict"><h3>Fundamental verdict</h3><p>${h.verdict}</p></div>
+          <div class="card-section"><h3>Why it works</h3><p>${h.strength}</p></div>
+          <div class="card-section risk"><h3>The catch</h3><p>${h.weakness}</p></div>
+          <div class="card-section verdict"><h3>${h.action || 'ACTION'} · ${h.contradiction || 'UNRESOLVED'}</h3><p>${h.verdict}</p></div>
           <div class="source-list">${sources}</div>
         </article>`;
       }).join('');
