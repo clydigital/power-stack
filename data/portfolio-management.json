@@ -2,12 +2,12 @@
   "asOf": "2026-09-25",
   "capturedAt": "2026-09-25 · Live Desk canonical + 10Y rate-resilience cross-check",
   "title": "Power Stack Portfolio Management Overlay",
-  "purpose": "Position-sizing, concentration, add/trim/recycle and risk-budget overlay. This does not change company fundamental scores.",
+  "purpose": "Position-sizing, concentration, add/trim/recycle and risk-budget overlay. This does not change company company-evidence components.",
   "dataQuality": {
     "currentWeights": "Not calculated across the whole portfolio because holdings span MYR/USD and the YTL-linked warrant lacks a reliable standalone value. Avoid false precision until all positions and cash balances are normalized into one base currency.",
-    "scorePolicy": "Fundamental scores remain in holdings-fundamentals.json. Macro/theme research only changes sizing, action gates and research priority unless company-specific evidence changes.",
-    "liveDeskPolicy": "Live Desk canonical reasoning is a cross-check and research-priority input. It may tighten or loosen Power Stack action gates, but it does not overwrite company fundamental scores or automatically rerank a stock.",
-    "rateResiliencePolicy": "The 10Y overlay may rerank research priority and tighten/loosen entry gates using already-verified company evidence. It does not mechanically change fundamental scores."
+    "scorePolicy": "Company-evidence components remain in holdings-fundamentals.json. Macro/theme research only changes sizing, action gates and research priority unless company-specific evidence changes.",
+    "liveDeskPolicy": "Live Desk canonical reasoning is a cross-check and research-priority input. It may tighten or loosen Power Stack action gates, but it does not overwrite company company-evidence components or automatically rerank a stock.",
+    "rateResiliencePolicy": "The 10Y overlay may rerank research priority and tighten/loosen entry gates using already-verified company evidence. It does not mechanically change company-evidence components."
   },
   "regime": {
     "structural": "Global duration + energy-inflation collision / capital scarcity",
@@ -204,7 +204,7 @@
         "action": "SELECTIVE / WAIT FOR RETEST"
       }
     ],
-    "scoreDecision": "No current-holding fundamental score changes and no mechanical watchlist rerank from Live Desk alone."
+    "scoreDecision": "No current-holding company-evidence component changes and no mechanical watchlist rerank from Live Desk alone."
   },
   "rateResilienceOverlay": {
     "source": "data/rate-resilience-overlay-2026-09-25.json",
