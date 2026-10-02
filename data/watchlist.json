@@ -1,9 +1,9 @@
 {
-  "asOf": "2026-09-28",
-  "capturedAt": "2026-09-28T07:22:00Z",
+  "asOf": "2026-10-02",
+  "capturedAt": "2026-10-02T15:47:00+08:00",
   "title": "Power Stack Watchlist",
-  "method": "Action-oriented queue combining business quality, current price asymmetry, funding/rate sensitivity, technical location, theme significance and portfolio overlap. Sep 25 adds a dedicated 10Y rate-resilience queue: research priority and entry gates can rerank without mechanically changing company fundamental scores.",
-  "marketRegime": "Global duration + energy-inflation collision. Prefer cash-generative/contracted exposures and discounted quality; avoid chasing excellent themes at prices already above recent tape. Refined-product tightness and high sovereign yields simultaneously raise inflation and discount-rate risk. China AI is now treated as a separate abundance/compute-sovereignty branch: cheaper models can expand inference demand while memory, interconnect, optics and domestic semiconductor capacity remain strategic bottlenecks.",
+  "method": "Fresh-money queue. Score and Action are separate. Strong themes do not automatically rank highly: the business must be able to fund itself, the valuation must leave room, and price should eventually confirm the thesis. Unverified creator/research leads contribute zero points.",
+  "marketRegime": "Nominal and AI-led growth is still strong, but money is expensive and physical inputs remain tight. Prefer companies already turning demand into cash. Be more careful with businesses that need customers, suppliers or capital markets to finance the growth story.",
   "buckets": [
     {
       "id": "buy",
@@ -29,70 +29,154 @@
   "candidates": [
     {
       "rank": 1,
+      "previousRank": 12,
+      "ticker": "MU",
+      "name": "Micron Technology",
+      "market": "US",
+      "score": 9.4,
+      "bucket": "buy",
+      "action": "RESEARCH NOW · NO BLIND CHASE",
+      "price": "$927.60 · Sep 16",
+      "entry": "Research the next clean pullback or consolidation rather than chase a vertical move.",
+      "confirmation": "HBM pricing and customer commitments stay firm while cash conversion remains strong.",
+      "invalidation": "Cash generation weakens before supply catches up, or conventional-memory pricing rolls over hard.",
+      "theme": "AI memory · HBM scarcity",
+      "thesis": "AI systems need far more high-end memory, and Micron is already turning that shortage into cash. The question is no longer whether demand is strong. It is how long today's exceptional margins can last.",
+      "rateSensitivity": "MODERATE"
+    },
+    {
+      "rank": 2,
+      "previousRank": 3,
+      "ticker": "LNG",
+      "name": "Cheniere Energy",
+      "market": "US",
+      "score": 9.2,
+      "bucket": "buy",
+      "action": "RESEARCH NOW · CONTRACTED ENERGY",
+      "price": "~$276.40 · Sep 24",
+      "entry": "Prefer a pullback or stable base; do not chase an energy headline.",
+      "confirmation": "Utilisation, contracts and distributable cash flow stay strong.",
+      "invalidation": "Global LNG supply normalises faster than expected or cash generation weakens materially.",
+      "theme": "LNG · energy security",
+      "thesis": "Europe and Asia still need gas, and Cheniere can ship US LNG into that gap. The business is producing cash while new capacity comes online, so this is more than a bet on higher gas prices."
+    },
+    {
+      "ticker": "CRDO",
+      "name": "CRDO",
+      "market": "US",
+      "previousRank": null,
+      "price": "Verify current price",
+      "sources": [],
+      "score": 9.1,
+      "bucket": "buy",
+      "action": "RESEARCH NOW · AI INTERCONNECT",
+      "theme": "AI infrastructure · interconnect",
+      "thesis": "Bigger AI clusters need more connections between chips, racks and data centres. Credo sells those connections, and revenue is already growing quickly without the company having to finance the data centres itself.",
+      "entry": "Build an entry study around valuation and the next earnings/price reset.",
+      "confirmation": "Revenue growth stays strong and cash remains healthy as hyperscaler demand broadens.",
+      "invalidation": "Customer concentration rises further, growth slows sharply or margins fail to scale.",
+      "rank": 3
+    },
+    {
+      "rank": 4,
+      "ticker": "GRAB",
+      "name": "Grab Holdings",
+      "market": "US / Southeast Asia",
+      "score": 8.9,
+      "bucket": "buy",
+      "action": "DEEP DIVE · ENTRY STUDY",
+      "price": "~$3.13 · Sep 25",
+      "entry": "Do not buy simply because it is down. Underwrite the acquisitions and find the price where cash generation pays for the risk.",
+      "confirmation": "Free cash flow keeps improving and acquisitions show a credible return on capital.",
+      "invalidation": "Capital allocation deteriorates, financial-services losses reaccelerate or growth slows without better margins.",
+      "theme": "Southeast Asia platforms · turnaround",
+      "rateSensitivity": "MODERATE-HIGH",
+      "thesis": "Grab's share price has fallen much harder than the business. Revenue, EBITDA and free cash flow are improving. The catch is what management does with that cash as it expands financial services."
+    },
+    {
+      "ticker": "DELL",
+      "name": "DELL",
+      "market": "US",
+      "previousRank": null,
+      "price": "Verify current price",
+      "sources": [],
+      "score": 8.8,
+      "bucket": "selective",
+      "action": "WATCH · ENTRY STUDY",
+      "theme": "AI servers · enterprise infrastructure",
+      "thesis": "Customers have ordered far more AI servers than Dell has delivered, leaving a large backlog. The catch is simple: huge server revenue is less useful if Dell keeps too little profit from each system.",
+      "entry": "Wait for a valuation/price setup that compensates for hardware-margin risk.",
+      "confirmation": "AI backlog converts into revenue, margin and cash rather than revenue alone.",
+      "invalidation": "Backlog conversion slows or AI server margins deteriorate.",
+      "rank": 5
+    },
+    {
+      "rank": 6,
       "previousRank": 1,
       "ticker": "CTVA",
       "name": "Corteva",
       "market": "US",
       "score": 8.7,
-      "bucket": "buy",
-      "action": "PRIORITY QUALITY ENTRY RESEARCH",
+      "bucket": "selective",
+      "action": "WATCH · DIVERSIFIER",
       "price": "~$79.27 · Sep 24",
-      "entry": "Current high-$70s/low-$80s zone is materially better than early-September references; stage only if tape stabilizes",
-      "confirmation": "Hold ~$79-80 then reclaim $82-83; stronger >$86-87",
-      "invalidation": "Fundamental deterioration in seed/genetics pricing, farm margins or sustained technical breakdown",
-      "theme": "Agriculture · seed genetics · value unlock",
-      "thesis": "Premium seed/genetics is harder to defer than machinery and some crop-protection spend. Current price discount plus differentiated agriculture exposure produces one of the cleaner quality/price combinations in the stack."
+      "entry": "Prefer weakness into support rather than treating diversification itself as a reason to chase.",
+      "confirmation": "Seed pricing, margins and guidance remain firm.",
+      "invalidation": "Farm economics weaken enough to pressure pricing or volumes.",
+      "theme": "Agriculture · seed genetics",
+      "thesis": "Farmers can delay some equipment and chemicals, but good seed is harder to skip. Corteva gives the stack an earnings engine that does not depend on AI continuing to lead the market."
     },
     {
-      "rank": 2,
-      "previousRank": 2,
-      "ticker": "NTR",
-      "name": "Nutrien",
-      "market": "US / Canada",
-      "score": 8.1,
-      "bucket": "buy",
-      "action": "PRIORITY / NEAR PREFERRED ZONE",
-      "price": "~$73.82 · Sep 24",
-      "entry": "~$72-74 remains the preferred research zone; stage only with stable fertilizer/farm-margin evidence",
-      "confirmation": "Hold ~$72-74 and recover recent breakdown levels",
-      "invalidation": "Farm affordability forces larger potash/phosphate volume cuts or sustained technical break",
-      "theme": "Diversified fertilizer",
-      "thesis": "Valuation has improved into the original preferred area. Potash/phosphate is more deferrable than seed/nitrogen, so rank behind CTVA but keep on the active screen."
-    },
-    {
-      "rank": 3,
-      "previousRank": 3,
-      "ticker": "LNG",
-      "name": "Cheniere Energy",
-      "market": "US",
-      "score": 9.1,
-      "bucket": "buy",
-      "action": "PRIORITY CONTRACTED ENERGY-SECURITY EXPOSURE",
-      "price": "~$276.40 · Sep 24",
-      "entry": "$270-278 preferred; avoid chasing above prior $293 confirmation without new contracting evidence",
-      "confirmation": "New SPAs/utilization plus >$293, then ~$301",
-      "invalidation": "Sustained <$268 or material weakening in contracting/utilization economics",
-      "theme": "LNG · rerouting · contracted energy security",
-      "thesis": "Contracted LNG diversification remains a differentiated energy-security exposure that does not require crude scarcity. Current price remains close to the preferred zone despite less immediate China-trade urgency."
-    },
-    {
-      "rank": 4,
+      "rank": 7,
       "previousRank": 4,
       "ticker": "FCX",
       "name": "Freeport-McMoRan",
       "market": "US",
-      "score": 8.6,
-      "bucket": "buy",
-      "action": "PRIORITY COPPER / GRID MATERIALS AT DISCIPLINED PRICE",
+      "score": 8.5,
+      "bucket": "selective",
+      "action": "WATCH · WAIT FOR MINE PROOF",
       "price": "~$72.08 · Sep 24",
-      "entry": "~$70-72 preferred; ~$66-68 stronger value if macro liquidation deepens",
-      "confirmation": "Stabilize in preferred zone; >$80.25 is major breakout rather than an entry requirement",
-      "invalidation": "Physical copper demand/inventory thesis weakens or China/grid demand deteriorates materially",
-      "theme": "Copper · grid · electrification",
-      "thesis": "Price is near the original preferred zone while grid/electrification demand remains structurally supportive. Strategic-mineral framing is secondary; physical copper evidence remains the real thesis."
+      "entry": "Wait for better operating proof or a price that pays us for the mine risk.",
+      "confirmation": "Grasberg recovery improves while copper stays structurally tight.",
+      "invalidation": "Production recovery slips again or copper demand weakens materially.",
+      "theme": "Copper · electrification · AI power",
+      "thesis": "AI, grids and electrification all need copper. But Freeport still has to execute at Grasberg, so a strong copper price cannot do all the work for us."
     },
     {
-      "rank": 5,
+      "rank": 8,
+      "previousRank": 2,
+      "ticker": "NTR",
+      "name": "Nutrien",
+      "market": "US / Canada",
+      "score": 8.2,
+      "bucket": "wait",
+      "action": "WATCH · PRICE FIRST",
+      "price": "~$73.82 · Sep 24",
+      "entry": "Wait for a better risk/reward area rather than chase the fertilizer story.",
+      "confirmation": "Potash pricing and volumes hold while the stock builds support.",
+      "invalidation": "Farm affordability drives meaningful volume cuts or fertilizer pricing normalises faster.",
+      "theme": "Fertilizer · agriculture",
+      "thesis": "Fertilizer supply is still tight enough to support earnings, but Nutrien has already rerated well off its lows. This is now more of a price question than a missing-theme question."
+    },
+    {
+      "ticker": "AVGO",
+      "name": "AVGO",
+      "market": "US",
+      "previousRank": null,
+      "price": "Verify current price",
+      "sources": [],
+      "score": 8,
+      "bucket": "wait",
+      "action": "WATCH · FINANCING RISK",
+      "theme": "AI semiconductors · customer financing",
+      "thesis": "Broadcom has excellent AI exposure, but the Anthropic financing changes the question. It is no longer only selling the shovel; it may also help finance the customer buying it.",
+      "entry": "Wait until the financing structure and risk-adjusted economics are clearer.",
+      "confirmation": "AI demand remains strong without financing losses or weaker returns on capital.",
+      "invalidation": "Supplier financing becomes necessary to sustain demand or credit risk starts eating into the economics.",
+      "rank": 9
+    },
+    {
+      "rank": 10,
       "previousRank": 5,
       "ticker": "CCJ",
       "name": "Cameco",
@@ -108,7 +192,7 @@
       "thesis": "Strategic nuclear/fuel-cycle thesis remains high quality and valuation has improved, but the falling tape means discount alone is not enough."
     },
     {
-      "rank": 6,
+      "rank": 11,
       "previousRank": 6,
       "ticker": "CF",
       "name": "CF Industries",
@@ -137,10 +221,10 @@
       "invalidation": "AI-cloud growth decelerates while capex/dilution remain elevated or cloud returns on capital deteriorate",
       "theme": "China AI · cloud · models · custom silicon",
       "thesis": "The broadest listed China-AI expression: cheaper/open models can drive usage into Alibaba Cloud while proprietary silicon and data-centre scale improve vertical integration. Valuation is less demanding than many pure semiconductor names, but capex discipline is the core gate.",
-      "rank": 7
+      "rank": 12
     },
     {
-      "rank": 8,
+      "rank": 13,
       "previousRank": 7,
       "ticker": "GEV",
       "name": "GE Vernova",
@@ -156,7 +240,7 @@
       "thesis": "One of the cleanest physical-AI exposures because existing backlog and cash conversion reduce dependence on speculative requested MW. The Sep 21 filter is funded/contracted demand, not data-centre headlines alone. The renewed US/Japan long-yield shock is a valuation and funding headwind, but the Power Stack still requires contracted/funded demand, backlog conversion and valuation discipline. Sep 23 evening delta: stressed project finance and delayed pre-operating AI-infrastructure offerings increase the relative value of funded backlog, existing operating capacity and cash conversion; this improves selection quality but is not a reason to chase price."
     },
     {
-      "rank": 9,
+      "rank": 14,
       "previousRank": 8,
       "ticker": "VST",
       "name": "Vistra",
@@ -186,10 +270,10 @@
       "invalidation": "China semiconductor capex rolls over, localisation stalls or constituent valuations detach materially from earnings",
       "theme": "China semiconductors · domestic substitution",
       "thesis": "Diversifies CXMT/Cambricon/AMEC/NAURA/SMIC/Montage execution risk and solves some direct-access constraints. Best implementation candidate when the thesis is China semiconductor sovereignty rather than one technical winner.",
-      "rank": 10
+      "rank": 15
     },
     {
-      "rank": 11,
+      "rank": 16,
       "previousRank": 9,
       "ticker": "PWR",
       "name": "Quanta Services",
@@ -205,7 +289,7 @@
       "thesis": "Physical grid bottlenecks are one of the strongest themes, but 5%+ yields make current valuation asymmetry less attractive."
     },
     {
-      "rank": 12,
+      "rank": 17,
       "previousRank": 10,
       "ticker": "ETN",
       "name": "Eaton",
@@ -221,7 +305,7 @@
       "thesis": "Excellent contracted electrical-scarcity exposure, but current price premium and global yield shock argue for patience."
     },
     {
-      "rank": 13,
+      "rank": 18,
       "previousRank": 11,
       "ticker": "CRWD",
       "name": "CrowdStrike",
@@ -237,23 +321,6 @@
       "thesis": "AI security is a preferred software branch, but the recent move has outrun the 15-session tape; retain the company, not the current entry."
     },
     {
-      "rank": 14,
-      "previousRank": 12,
-      "ticker": "MU",
-      "name": "Micron Technology",
-      "market": "US",
-      "score": 9.3,
-      "bucket": "selective",
-      "action": "CHALLENGER THESIS ACTIVE · MEMORY SCARCITY / NO CHASE",
-      "price": "$927.60 · Sep 16",
-      "entry": "Wait for consolidation or a controlled retest after the vertical move",
-      "confirmation": "HBM/DRAM pricing, customer contracts, supply discipline and cash conversion remain strong",
-      "invalidation": "Capacity response, customer inventory correction, labor disruption or material memory-pricing reversal",
-      "theme": "HBM · DRAM · AI memory bottleneck",
-      "thesis": "AI memory remains an active scarcity branch and semiconductors retain leadership. Creator-reported bearish MU positioning is a challenger question only: verify the position/source, valuation, HBM/DRAM pricing, capacity response and cash conversion before changing the base score. The broader AI-credit repricing does not directly negate HBM scarcity, but it raises the hurdle for customer capex quality and cash conversion. The Trump-Xi summit adds an advanced-chip/export-control catalyst, but no thesis change should be made without specific policy language.",
-      "rateSensitivity": "MODERATE"
-    },
-    {
       "previousRank": 36,
       "ticker": "688825",
       "name": "CXMT",
@@ -267,10 +334,10 @@
       "invalidation": "DRAM pricing rolls over before HBM monetisation, capacity creates oversupply or advanced-memory execution stalls",
       "theme": "DRAM · HBM localisation · China AI memory",
       "thesis": "The purest strategic memory-localisation expression, but current profits are amplified by an exceptional memory cycle. The decisive rerating catalyst is commercial HBM progress, not simply more conventional DRAM volume.",
-      "rank": 15
+      "rank": 19
     },
     {
-      "rank": 16,
+      "rank": 20,
       "previousRank": 13,
       "ticker": "TENAGA",
       "name": "Tenaga Nasional",
@@ -287,7 +354,7 @@
       "thesis": "Malaysia data-centre demand is now observed load: data centres reached a record 9.3% of power use in mid-August. Regulated transmission/distribution remains a lower-duration way to own the buildout than speculative project developers."
     },
     {
-      "rank": 17,
+      "rank": 21,
       "previousRank": 14,
       "ticker": "BKR",
       "name": "Baker Hughes",
@@ -303,7 +370,7 @@
       "thesis": "New promotion. Q2 IET orders were $7.1B with record $37.1B IET RPO; current awards span LNG and 1.3GW of mobile gas turbines for data-centre/oil-and-gas applications. Chart adds cooling and gas-handling exposure."
     },
     {
-      "rank": 18,
+      "rank": 22,
       "previousRank": 15,
       "ticker": "STNG",
       "name": "Scorpio Tankers",
@@ -332,7 +399,7 @@
       "invalidation": "CXL adoption slips, competitive standards compress margins or AI-server demand weakens materially",
       "theme": "CXL · DDR5 · PCIe · AI memory interconnect",
       "thesis": "A cleaner bottleneck business than a model winner bet. Montage benefits from increasingly complex memory architecture across Chinese and global AI servers, but price discipline matters after the recent move.",
-      "rank": 19
+      "rank": 23
     },
     {
       "previousRank": 36,
@@ -348,10 +415,10 @@
       "invalidation": "US-China restrictions disrupt customer access, hyperscaler demand normalises sharply or optical pricing/margins compress",
       "theme": "AI optical networking · 800G/1.6T interconnect",
       "thesis": "One of the strongest realised AI-infrastructure earnings profiles in the China universe and a global, not purely domestic, AI exposure. Geopolitical/customer concentration and recent rerating keep it selective.",
-      "rank": 20
+      "rank": 24
     },
     {
-      "rank": 21,
+      "rank": 25,
       "previousRank": 16,
       "ticker": "VLO",
       "name": "Valero Energy",
@@ -367,7 +434,7 @@
       "thesis": "The highest-ranked macro theme directly supports VLO, but the stock already reflects much of the squeeze. Thesis stronger; entry discipline tighter. WTI below $90 increases the value of independently checking ULSD/3-2-1 and product inventories: downstream relative strength matters more than crude direction in this phase."
     },
     {
-      "rank": 22,
+      "rank": 26,
       "previousRank": 17,
       "ticker": "MPC",
       "name": "Marathon Petroleum",
@@ -383,7 +450,7 @@
       "thesis": "Strong direct beneficiary of limited spare refining slack, but price location remains the main problem. WTI below $90 increases the value of independently checking ULSD/3-2-1 and product inventories: downstream relative strength matters more than crude direction in this phase."
     },
     {
-      "rank": 23,
+      "rank": 27,
       "previousRank": 18,
       "ticker": "PSX",
       "name": "Phillips 66",
@@ -399,7 +466,7 @@
       "thesis": "Useful downstream diversification and logistics exposure, but current valuation already embeds a large part of the near-term product squeeze. WTI below $90 increases the value of independently checking ULSD/3-2-1 and product inventories: downstream relative strength matters more than crude direction in this phase."
     },
     {
-      "rank": 24,
+      "rank": 28,
       "previousRank": 19,
       "ticker": "NVT",
       "name": "nVent Electric",
@@ -415,7 +482,7 @@
       "thesis": "New promotion. nVent is adding its third liquid-cooling capacity expansion in three years, taking new space added above 400,000 sq ft. It offers narrower component-level exposure to the cooling/electrical bottleneck."
     },
     {
-      "rank": 25,
+      "rank": 29,
       "previousRank": 20,
       "ticker": "FLEX",
       "name": "Flex",
@@ -431,7 +498,7 @@
       "thesis": "Physical demand remains strong, but the new AI-financing theme raises the premium on named customers, deposits and cash conversion. Keep high research priority without treating all backlog equally. Sep 23 evening delta: stressed project finance and delayed pre-operating AI-infrastructure offerings increase the relative value of funded backlog, existing operating capacity and cash conversion; this improves selection quality but is not a reason to chase price."
     },
     {
-      "rank": 26,
+      "rank": 30,
       "previousRank": 21,
       "ticker": "MNHLDG",
       "name": "MN Holdings",
@@ -447,7 +514,7 @@
       "thesis": "Company-specific order-book proof keeps MN Holdings high in the Malaysia grid stack. Price and smaller-cap liquidity keep it below TENAGA/GEV/ETN/PWR."
     },
     {
-      "rank": 27,
+      "rank": 31,
       "previousRank": 22,
       "ticker": "GLDM",
       "name": "SPDR Gold MiniShares",
@@ -463,7 +530,7 @@
       "thesis": "Promoted structurally by record ETF holdings and persistent reserve diversification. High real yields remain the tactical timing conflict, so this is a staged hedge rather than a momentum chase. Gold remains a strategic hedge, but the current trade relief plus elevated US real yields/DXY keeps the near-term setup rate-sensitive."
     },
     {
-      "rank": 28,
+      "rank": 32,
       "previousRank": 23,
       "ticker": "AEM",
       "name": "Agnico Eagle Mines",
@@ -479,7 +546,7 @@
       "thesis": "AEM remains a high-quality miner expression, but lower nominal yields alone are insufficient while DXY stays firm. Upgrade the tactical case only if real yields and the dollar soften or miners show durable relative strength versus bullion."
     },
     {
-      "rank": 29,
+      "rank": 33,
       "previousRank": 24,
       "ticker": "SLB",
       "name": "SLB",
@@ -495,7 +562,7 @@
       "thesis": "Energy security plus cooling remains interesting, but BKR now ranks above because its LNG/power/cooling backlog evidence is more directly aligned with the current theme stack."
     },
     {
-      "rank": 30,
+      "rank": 34,
       "previousRank": 25,
       "ticker": "WPM",
       "name": "Wheaton Precious Metals",
@@ -511,23 +578,7 @@
       "thesis": "Cleaner cost structure than miners; still below GLDM/AEM for current implementation."
     },
     {
-      "rank": 31,
-      "ticker": "GRAB",
-      "name": "Grab Holdings",
-      "market": "US / Southeast Asia",
-      "score": 8.2,
-      "bucket": "selective",
-      "action": "SELECTIVE WATCH / DO NOT CHASE — CREDIT + M&A PROOF",
-      "price": "~$3.13 · Sep 25",
-      "entry": "Current ~$3.00-3.15 area is interesting for staged research, not a full-size entry. Better asymmetry on a controlled retest toward ~$2.80-3.00 if operating KPIs remain intact.",
-      "confirmation": "Core On-Demand GMV and Adjusted EBITDA continue compounding; Financial Services reaches breakeven without a material deterioration in credit losses; hold ~$3.00 and reclaim ~$3.20-3.25, with ~$3.40 a stronger repair.",
-      "invalidation": "Credit losses/impairments accelerate faster than lending economics, Financial Services misses the breakeven path, core incentives keep rising faster than monetisation, or management commits to another large acquisition before Atome/Stash/Foodpanda-Taiwan returns are proven.",
-      "theme": "Southeast Asia digital consumption · super-app · fintech monetisation",
-      "rateSensitivity": "MODERATE-HIGH",
-      "thesis": "Contrarian quality-growth watch. Q2 2026 On-Demand GMV grew 21% YoY, revenue 22% and Adjusted EBITDA 54%, while the stock remains deeply below its prior peak. The asymmetry comes from improving core Mobility/Delivery economics versus depressed sentiment. The counter-thesis is capital allocation: Grab is committing significant cash to Atome, Stash and foodpanda Taiwan while rapidly scaling lending. Treat the 2028 $1.7B Adjusted EBITDA target as conditional on integration and credit quality, not as a base-case certainty."
-    },
-    {
-      "rank": 32,
+      "rank": 35,
       "previousRank": 26,
       "ticker": "FCFS",
       "name": "FirstCash Holdings",
@@ -543,7 +594,7 @@
       "thesis": "High fuel, food and finance costs support the trade-down thesis, but this remains a second-order beneficiary rather than a top physical-scarcity exposure."
     },
     {
-      "rank": 33,
+      "rank": 36,
       "previousRank": 27,
       "ticker": "BG",
       "name": "Bunge Global",
@@ -559,7 +610,7 @@
       "thesis": "Still investable, but lower information value than seed/genetics and selected fertilizer exposures in the current queue."
     },
     {
-      "rank": 34,
+      "rank": 37,
       "previousRank": 28,
       "ticker": "VMI",
       "name": "Valmont Industries",
@@ -575,7 +626,7 @@
       "thesis": "Quality business, but irrigation is capex-cyclical and current price does not offer enough asymmetry to justify daily attention."
     },
     {
-      "rank": 35,
+      "rank": 38,
       "previousRank": 29,
       "ticker": "CRM",
       "name": "Salesforce",
@@ -591,7 +642,7 @@
       "thesis": "Broad SaaS is less differentiated than AI security and physical infrastructure in the current 5%+ yield regime."
     },
     {
-      "rank": 36,
+      "rank": 39,
       "previousRank": 30,
       "ticker": "VYX",
       "name": "NCR Voyix",
@@ -607,7 +658,7 @@
       "thesis": "Asymmetry remains, but the three-day duration/credit move makes leverage and slow top-line growth more expensive. Downgraded from selective starter to wait/confirm."
     },
     {
-      "rank": 37,
+      "rank": 40,
       "previousRank": 31,
       "ticker": "SYM",
       "name": "Symbotic",
@@ -623,7 +674,7 @@
       "thesis": "Commercial automation remains valid, but customer-capex and duration sensitivity lower relative priority."
     },
     {
-      "rank": 38,
+      "rank": 41,
       "previousRank": 32,
       "ticker": "COIN",
       "name": "Coinbase Global",
@@ -639,7 +690,7 @@
       "thesis": "Company fundamentals can be sound while the macro liquidity hurdle is poor. Duration and weak-end credit keep crypto beta below physical cash-flow scarcity."
     },
     {
-      "rank": 39,
+      "rank": 42,
       "previousRank": 33,
       "ticker": "BTC",
       "name": "Bitcoin",
@@ -655,7 +706,7 @@
       "thesis": "Structural scarcity remains, but gold and cash-generative physical scarcity rank better under current real yields."
     },
     {
-      "rank": 40,
+      "rank": 43,
       "previousRank": 34,
       "ticker": "MSTR",
       "name": "Strategy",
@@ -671,7 +722,7 @@
       "thesis": "The current duration/credit regime directly worsens leveraged crypto convexity."
     },
     {
-      "rank": 41,
+      "rank": 44,
       "previousRank": 35,
       "ticker": "SMR",
       "name": "NuScale Power",
