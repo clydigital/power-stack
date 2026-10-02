@@ -76,7 +76,7 @@ Promise.all([
   const divs=overlay.reviewQueue?.tapeDivergences || [];
   const confirms=overlay.reviewQueue?.tapeConfirmations || [];
   document.querySelector('#provenance').textContent =
-    'Live Desk is the canonical macro baseline. The 10Y rate-resilience overlay owns the current fresh-US research order and entry hurdle; Power Stack still owns company fundamentals and action gates. Completed-session tape is secondary delayed quote data and never changes the fundamental score. Current tape divergences: ' +
+    'Live Desk is the canonical macro baseline. The 10Y rate-resilience overlay owns the current fresh-US research order and entry hurdle; Power Stack still owns company fundamentals and action gates. Completed-session tape is secondary delayed quote data and never changes the company-evidence component. Current tape divergences: ' +
     (divs.length ? divs.join(', ') : 'none') + '. Confirmations: ' + (confirms.length ? confirms.join(', ') : 'none') + '. USD and MYR are not aggregated until portfolio weights are normalized.';
 }).catch(e=>{
   document.querySelector('#summary').textContent='Data unavailable: ' + e.message;
