@@ -290,12 +290,12 @@
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
         "detail": "US Dollar · UUP proxy 5D +0.94%.",
-        "asOf": "2026-10-01",
+        "asOf": "2026-10-02",
         "sourceName": "Nasdaq official etf history",
         "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical",
         "evidenceRefs": [],
         "metrics": {
-          "proxyLevel": 28.96,
+          "proxyLevel": 28.89,
           "change5dPct": 0.94
         }
       },
@@ -353,9 +353,9 @@
       "id": "dxy",
       "symbol": "UUP",
       "label": "US Dollar · UUP proxy",
-      "last": 28.96,
+      "last": 28.89,
       "change5d": 0.94,
-      "asOf": "2026-10-01",
+      "asOf": "2026-10-02",
       "sourceName": "Nasdaq official etf history",
       "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical"
     },
@@ -563,14 +563,14 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-02T22:18:06.129Z",
+    "asOf": "2026-10-03T05:23:31.991Z",
     "assets": [
       {
         "key": "SPX",
         "label": "S&P 500",
         "symbol": "SP500",
-        "last": 7666.45,
-        "dailyChange": 0.19,
+        "last": 7722.72,
+        "dailyChange": 0.73,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "HIGH",
@@ -578,14 +578,14 @@
         "confirmingSignal": "Large‑cap breadth remains above multi‑day averages while AI/semis breadth is especially strong.",
         "contradictingSignal": null,
         "invalidation": "Sustained narrowing of HY/IG spreads with falling MOVE/VIX and broad‑market breadth improvement while long and real yields remain elevated would weaken the rates‑led thesis.",
-        "asOf": "2026-10-01"
+        "asOf": "2026-10-02"
       },
       {
         "key": "NASDAQ",
         "label": "Nasdaq Composite",
         "symbol": "^IXIC",
-        "last": 26871.6,
-        "dailyChange": 0.04,
+        "last": 27190.86,
+        "dailyChange": 1.19,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "HIGH",
@@ -593,7 +593,7 @@
         "confirmingSignal": "AI/semiconductor breadth and Mag‑7 breadth are strong, supporting indices.",
         "contradictingSignal": null,
         "invalidation": "Sustained narrowing of HY/IG spreads with falling MOVE/VIX and broad‑market breadth improvement while long and real yields remain elevated would weaken the rates‑led thesis.",
-        "asOf": "2026-10-01"
+        "asOf": "2026-10-02"
       },
       {
         "key": "CRUDE",
@@ -630,7 +630,7 @@
         "label": "Gold spot",
         "symbol": "XAUUSD",
         "last": 4141.799805,
-        "dailyChange": -1.44,
+        "dailyChange": -0.73,
         "dailyChangeUnit": "percent",
         "bias": "BEARISH",
         "conviction": "MEDIUM",
@@ -638,14 +638,14 @@
         "confirmingSignal": "Gold weaker on the 5‑day window.",
         "contradictingSignal": null,
         "invalidation": "Sustained narrowing of HY/IG spreads with falling MOVE/VIX and broad‑market breadth improvement while long and real yields remain elevated would weaken the rates‑led thesis.",
-        "asOf": "2026-10-02"
+        "asOf": "2026-10-03"
       },
       {
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 84523.33,
-        "dailyChange": -0.38,
+        "last": 84602.93,
+        "dailyChange": 0.12,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -653,7 +653,7 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": null,
-        "asOf": "2026-10-02"
+        "asOf": "2026-10-03"
       }
     ]
   },
@@ -1193,9 +1193,9 @@
   },
   "marketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "90bbe995-00de-438e-ac7f-eeeab73803dd",
-    "capturedAt": "2026-10-02T20:01:29.912Z",
-    "researchRunId": "5c93cb72-36db-42ed-979b-6fc25c1d8459",
+    "editionId": "ae1cca27-229b-40dd-8040-1dbaf05c1182",
+    "capturedAt": "2026-10-03T02:47:26.132Z",
+    "researchRunId": "b5db71cb-07d2-4f65-b147-db7ba48df5ff",
     "items": []
   },
   "upstreamGuardrails": [
@@ -1214,5 +1214,5 @@
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-02T22:18:06.217Z"
+  "syncedAt": "2026-10-03T05:23:32.094Z"
 }
