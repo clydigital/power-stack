@@ -563,7 +563,7 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-03T05:23:31.991Z",
+    "asOf": "2026-10-03T11:44:19.763Z",
     "assets": [
       {
         "key": "SPX",
@@ -630,7 +630,7 @@
         "label": "Gold spot",
         "symbol": "XAUUSD",
         "last": 4141.799805,
-        "dailyChange": -0.73,
+        "dailyChange": -0.49,
         "dailyChangeUnit": "percent",
         "bias": "BEARISH",
         "conviction": "MEDIUM",
@@ -644,8 +644,8 @@
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 84602.93,
-        "dailyChange": 0.12,
+        "last": 84649.98,
+        "dailyChange": 0.17,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -743,40 +743,7 @@
         "Credit widening lags yields and may follow if yields persist.",
         "Dealer/liquidity/collateral dynamics are absorbing flows and delaying spread moves."
       ],
-      "candidateExplanations": [
-        {
-          "rank": 1,
-          "explanation": "Evidence shows materially higher nominal and real yields and front‑end tightness while HY/IG spreads widened modestly and large‑cap and AI/semiconductor breadth remain elevated, implying incomplete transmission so far.",
-          "evidenceForRefs": [],
-          "evidenceAgainstRefs": [],
-          "confidence": "UNRESOLVED",
-          "discriminatingTest": "Pull intraday MOVE/VIX, timestamped Treasury flow, Bund/JGB 10Y/30Y intraday series, updated dealer fails and FX‑swap/cross‑currency basis to discriminate US‑only front‑end pressure from global duration shock. Confirm global duration with Bund, gilt and JGB long ends; cross-check gold versus real yields and USD; compare HY/IG, breadth and MOVE/VIX"
-        },
-        {
-          "rank": 2,
-          "explanation": "Concentrated AI/semiconductor leadership is propping indices and masking transmission.",
-          "evidenceForRefs": [],
-          "evidenceAgainstRefs": [],
-          "confidence": "UNRESOLVED",
-          "discriminatingTest": "Pull intraday MOVE/VIX, timestamped Treasury flow, Bund/JGB 10Y/30Y intraday series, updated dealer fails and FX‑swap/cross‑currency basis to discriminate US‑only front‑end pressure from global duration shock. Confirm global duration with Bund, gilt and JGB long ends; cross-check gold versus real yields and USD; compare HY/IG, breadth and MOVE/VIX"
-        },
-        {
-          "rank": 3,
-          "explanation": "Credit widening lags yields and may follow if yields persist.",
-          "evidenceForRefs": [],
-          "evidenceAgainstRefs": [],
-          "confidence": "UNRESOLVED",
-          "discriminatingTest": "Pull intraday MOVE/VIX, timestamped Treasury flow, Bund/JGB 10Y/30Y intraday series, updated dealer fails and FX‑swap/cross‑currency basis to discriminate US‑only front‑end pressure from global duration shock. Confirm global duration with Bund, gilt and JGB long ends; cross-check gold versus real yields and USD; compare HY/IG, breadth and MOVE/VIX"
-        },
-        {
-          "rank": 4,
-          "explanation": "Dealer/liquidity/collateral dynamics are absorbing flows and delaying spread moves.",
-          "evidenceForRefs": [],
-          "evidenceAgainstRefs": [],
-          "confidence": "UNRESOLVED",
-          "discriminatingTest": "Pull intraday MOVE/VIX, timestamped Treasury flow, Bund/JGB 10Y/30Y intraday series, updated dealer fails and FX‑swap/cross‑currency basis to discriminate US‑only front‑end pressure from global duration shock. Confirm global duration with Bund, gilt and JGB long ends; cross-check gold versus real yields and USD; compare HY/IG, breadth and MOVE/VIX"
-        }
-      ],
+      "candidateExplanations": [],
       "researchNext": "Pull intraday MOVE/VIX, timestamped Treasury flow, Bund/JGB 10Y/30Y intraday series, updated dealer fails and FX‑swap/cross‑currency basis to discriminate US‑only front‑end pressure from global duration shock. Confirm global duration with Bund, gilt and JGB long ends; cross-check gold versus real yields and USD; compare HY/IG, breadth and MOVE/VIX",
       "confirmationCondition": "HY and IG spreads widen materially in lockstep with rising MOVE/VIX and falling breadth across broad caps.",
       "invalidationCondition": "Spreads and volatility remain contained while yields persistently rise and AI/semis breadth stays strong.",
@@ -853,40 +820,7 @@
         "Seasonal or distribution factors explain product strength.",
         "Crude demand weakness will eventually force cracks lower, removing support."
       ],
-      "candidateExplanations": [
-        {
-          "rank": 1,
-          "explanation": "Distillate crack proxies and heating oil remain elevated while WTI softened modestly and 10Y breakeven shows limited decline, suggesting product stress is supporting breakevens but regional confirmation is incomplete.",
-          "evidenceForRefs": [],
-          "evidenceAgainstRefs": [],
-          "confidence": "UNRESOLVED",
-          "discriminatingTest": "Pull regional refinery utilisation, prompt cracks/backwardation, inventories and PADD flows to separate physical product stress from temporary dislocations. Check the crude curve, backwardation and refined-product cracks; verify Trump–Xi outcomes and implementation before using them as facts"
-        },
-        {
-          "rank": 2,
-          "explanation": "Regional refinery outages or logistics are keeping product cracks rich.",
-          "evidenceForRefs": [],
-          "evidenceAgainstRefs": [],
-          "confidence": "UNRESOLVED",
-          "discriminatingTest": "Pull regional refinery utilisation, prompt cracks/backwardation, inventories and PADD flows to separate physical product stress from temporary dislocations. Check the crude curve, backwardation and refined-product cracks; verify Trump–Xi outcomes and implementation before using them as facts"
-        },
-        {
-          "rank": 3,
-          "explanation": "Seasonal or distribution factors explain product strength.",
-          "evidenceForRefs": [],
-          "evidenceAgainstRefs": [],
-          "confidence": "UNRESOLVED",
-          "discriminatingTest": "Pull regional refinery utilisation, prompt cracks/backwardation, inventories and PADD flows to separate physical product stress from temporary dislocations. Check the crude curve, backwardation and refined-product cracks; verify Trump–Xi outcomes and implementation before using them as facts"
-        },
-        {
-          "rank": 4,
-          "explanation": "Crude demand weakness will eventually force cracks lower, removing support.",
-          "evidenceForRefs": [],
-          "evidenceAgainstRefs": [],
-          "confidence": "UNRESOLVED",
-          "discriminatingTest": "Pull regional refinery utilisation, prompt cracks/backwardation, inventories and PADD flows to separate physical product stress from temporary dislocations. Check the crude curve, backwardation and refined-product cracks; verify Trump–Xi outcomes and implementation before using them as facts"
-        }
-      ],
+      "candidateExplanations": [],
       "researchNext": "Pull regional refinery utilisation, prompt cracks/backwardation, inventories and PADD flows to separate physical product stress from temporary dislocations. Check the crude curve, backwardation and refined-product cracks; verify Trump–Xi outcomes and implementation before using them as facts",
       "confirmationCondition": "Regional refinery outages/inventories confirm persistent product tightness while cracks stay elevated.",
       "invalidationCondition": "Inventories rebuild and prompt cracks collapse with WTI weakness, removing product support for breakevens.",
@@ -1193,9 +1127,9 @@
   },
   "marketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "ae1cca27-229b-40dd-8040-1dbaf05c1182",
-    "capturedAt": "2026-10-03T02:47:26.132Z",
-    "researchRunId": "b5db71cb-07d2-4f65-b147-db7ba48df5ff",
+    "editionId": "3fcc9750-451c-4e55-a1f2-1bd6febd5eb4",
+    "capturedAt": "2026-10-03T09:16:21.212Z",
+    "researchRunId": "ed4834e0-1787-4bdd-8ffc-2bf7a462eba1",
     "items": []
   },
   "upstreamGuardrails": [
@@ -1214,5 +1148,5 @@
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-03T05:23:32.094Z"
+  "syncedAt": "2026-10-03T11:44:19.921Z"
 }
