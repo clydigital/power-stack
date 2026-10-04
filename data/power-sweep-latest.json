@@ -1,21 +1,21 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-04T05:51:16.756Z",
-  "asOf": "2026-10-02T09:01:33.819+00:00",
+  "generatedAt": "2026-10-04T05:59:29.913Z",
+  "asOf": "2026-10-03T18:05:40.201+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
   "inputHealth": {
     "liveDesk": {
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
-      "asOf": "2026-10-02T09:01:33.819+00:00",
-      "syncedAt": "2026-10-03T21:22:02.837Z",
+      "asOf": "2026-10-03T18:05:40.201+00:00",
+      "syncedAt": "2026-10-04T05:59:29.673Z",
       "status": "OK"
     },
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-04T05:51:16.698Z",
+      "generatedAt": "2026-10-04T05:59:29.852Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -29,10 +29,10 @@
     }
   },
   "regime": {
-    "family": "RATES_LED_TIGHTENING",
-    "headline": "Markets trading a rates‑led tightening regime with incomplete transmission to credit and breadth",
-    "implication": "Expect policy‑and‑real‑yield pressure to remain the dominant market driver; whether this broadens into credit/breadth weakness depends on persistence and evidence of transmission.",
-    "monetarySummary": "Rate baseline HAWKISH; 5 confirming, 0 contradicting, 6 unresolved/neutral monetary-market layers."
+    "family": "UNRESOLVED",
+    "headline": "Research Brain Operating in Degraded Fallback Mode",
+    "implication": "UNRESOLVED",
+    "monetarySummary": "Rate baseline HAWKISH; 4 confirming, 0 contradicting, 7 unresolved/neutral monetary-market layers."
   },
   "queueCounts": {
     "holdings": 3,
@@ -44,31 +44,32 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "d8cff2ad-95e8-4b67-87a1-77a2f6470a96",
-    "capturedAt": "2026-10-03T18:46:19.261Z",
+    "editionId": "7271a4d0-850b-43fe-9a79-26572add3b6b",
+    "capturedAt": "2026-10-04T02:47:26.381Z",
     "itemCount": 0,
     "items": []
   },
   "portfolioTriage": {
     "tapeDivergences": [
-      "YTLPOWR"
+      "XOM",
+      "YTLPOWR",
+      "DAYANG"
     ],
     "tapeConfirmations": [
+      "MISC",
+      "HIBISCS",
       "TTWO",
       "TSLA"
     ],
     "highReview": [
+      "HIBISCS",
       "YTLPOWR",
       "6742UW",
       "TTWO",
-      "TSLA"
-    ],
-    "mixed": [
-      "XOM",
-      "MISC",
-      "HIBISCS",
+      "TSLA",
       "DAYANG"
     ],
+    "mixed": [],
     "hiddenConcentration": [
       {
         "id": "ytl-linked",
@@ -127,67 +128,41 @@
         "nextCheck": "Normalize combined weight in base currency and verify warrant terms."
       }
     ],
-    "portfolioDivergences": [
-      {
-        "id": "rates-vs-tech-resilience",
-        "importance": "HIGH",
-        "divergence": "PARTIAL",
-        "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-        "actual": "AI/semiconductor breadth and Mag‑7 breadth are strong, supporting indices.",
-        "affectedHoldings": [
-          "TSLA",
-          "TTWO",
-          "YTLPOWR",
-          "6742UW"
-        ],
-        "candidateExplanations": [
-          "Narrow AI/semiconductor leadership is offsetting broad duration pressure at index level.",
-          "Company-specific catalysts and funded/backlogged AI infrastructure demand are overpowering the discount-rate headwind in selected names.",
-          "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
-        ],
-        "evidenceFor": [
-          "Concentrated tech leadership is acting as a relief valve, limiting immediate breadth‑based downside.",
-          "Breadth resilience and concentrated leadership are limiting immediate downside despite rates pressure.",
-          "Nasdaq daily move 1.19 with bias MIXED."
-        ],
-        "evidenceAgainst": [
-          "Policy and real‑yield repricing is the dominant tightening impulse and a primary cross‑asset transmission channel."
-        ],
-        "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
-        "confidence": "HIGH",
-        "invalidation": "If breadth broadens materially while credit remains benign and real yields stay high, the rate headwind is less dominant than assumed. If AI/semiconductor leadership rolls over, the divergence resolves in the bearish direction."
-      },
-      {
-        "id": "crude-vs-product-tightness",
-        "importance": "HIGH",
-        "divergence": "YES",
-        "expected": "Softer crude would normally reduce immediate energy-inflation pressure and weaken the case for broad energy outperformance.",
-        "actual": "Distillate cracks and heating oil elevated while WTI is modestly softer.",
-        "affectedHoldings": [
-          "XOM",
-          "HIBISCS",
-          "MISC",
-          "DAYANG"
-        ],
-        "candidateExplanations": [
-          "Physical product scarcity and regional inventory/refinery constraints are stronger than the headline crude move suggests.",
-          "Shipping/logistics constraints may be keeping product markets tight even as crude futures soften.",
-          "Geopolitical premium and physical-product stress are moving on different timelines."
-        ],
-        "evidenceFor": [
-          "Product stress plausibly supports breakevens and long yields, but regional/physical confirmation is needed.",
-          "Crude daily move -3.23 with bias BEARISH."
-        ],
-        "evidenceAgainst": [
-          "Regional refinery utilisation and inventories."
-        ],
-        "leadingHypothesis": "Product-market tightness is currently more informative for the portfolio's energy sleeve than the crude headline alone.",
-        "confidence": "HIGH",
-        "invalidation": "Falling crack spreads, rebuilding product inventories and improving refinery utilization would weaken the physical-tightness explanation."
-      }
-    ]
+    "portfolioDivergences": []
   },
   "holdingResearchQueue": [
+    {
+      "ticker": "DAYANG",
+      "name": "Dayang Enterprise Holdings Berhad",
+      "priorityScore": 198,
+      "overlayState": "HEADWIND",
+      "reviewPriority": "HIGH_REVIEW",
+      "actualReaction": {
+        "status": "DIVERGES",
+        "reason": "Completed-session tape moved against the direction implied by the current market overlay.",
+        "sessionDate": "2026-09-25",
+        "close": 1.5,
+        "previousClose": 1.47,
+        "change": 0.03,
+        "changePct": 2.04,
+        "currency": "MYR",
+        "sourceName": "Yahoo Finance delayed quote",
+        "sourceUrl": "https://sg.finance.yahoo.com/quote/5141.KL/",
+        "closeNotice": "At close: 4:50:59 pm MYT"
+      },
+      "currentAction": "HOLD / DO NOT AVERAGE DOWN",
+      "reasons": [
+        "completed-session tape moved against the directional market overlay",
+        "portfolio overlay marks the holding HIGH_REVIEW"
+      ],
+      "researchQuestion": "Has new company-specific evidence changed DAYANG's current action gate or thesis risk?",
+      "requiredEvidence": [
+        "company-specific news/catalysts for the completed session",
+        "technical/flow context sufficient to test whether the divergence is company-specific or temporary",
+        "funding, valuation, cash-flow or operating evidence that could offset or reinforce the macro headwind"
+      ],
+      "possibleDecisionImpact": "Could change the current add/hold gate or create a new company-specific catalyst/invalidation."
+    },
     {
       "ticker": "YTLPOWR",
       "name": "YTL Power International Berhad",
@@ -250,35 +225,6 @@
         "funding, valuation, cash-flow or operating evidence that could offset or reinforce the macro headwind"
       ],
       "possibleDecisionImpact": "Could unlock accurate YTL-linked concentration and portfolio-weight measurement."
-    },
-    {
-      "ticker": "HIBISCS",
-      "name": "Hibiscus Petroleum Berhad",
-      "priorityScore": 45,
-      "overlayState": "MIXED",
-      "reviewPriority": "REVIEW",
-      "actualReaction": {
-        "status": "INCONCLUSIVE",
-        "reason": "The market overlay is not directional enough to judge one-session confirmation.",
-        "sessionDate": "2026-09-25",
-        "close": 2.23,
-        "previousClose": 2.3,
-        "change": -0.07,
-        "changePct": -3.04,
-        "currency": "MYR",
-        "sourceName": "Yahoo Finance delayed quote",
-        "sourceUrl": "https://sg.finance.yahoo.com/quote/5199.KL/",
-        "closeNotice": "At close: 4:59:53 pm MYT"
-      },
-      "currentAction": "HOLD / NO ADD",
-      "reasons": [
-        "mixed macro exposure coincided with a material one-session move"
-      ],
-      "researchQuestion": "What drove HIBISCS's material move, and which documented macro/company channel currently dominates its risk?",
-      "requiredEvidence": [
-        "which channel dominated the tape: company fundamentals, crude/products, freight, rates or positioning"
-      ],
-      "possibleDecisionImpact": "Could identify which macro/company channel is driving the position and whether the current action gate remains appropriate."
     }
   ],
   "watchlistResearchQueue": [
@@ -437,38 +383,28 @@
       "researchQuestion": "Does current China/HK credit transmission, policy and demand evidence strengthen or weaken 9988.HK's company thesis?"
     }
   ],
-  "liveRadar": [
-    {
-      "ticker": "NVDA",
-      "companyName": "NVIDIA",
-      "whyRelevant": "Largest AI/semiconductor leader; concentrated strength could continue to prop indices amid rates pressure.",
-      "researchQuestion": "Can NVDA sustain relative leadership if credit spreads widen and breadth deteriorates?",
-      "status": "DISCOVERY_ONLY",
-      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
-    },
-    {
-      "ticker": "ASML",
-      "companyName": "ASML Holding",
-      "whyRelevant": "Capital‑intensive semiconductor equipment exposure sensitive to funding conditions.",
-      "researchQuestion": "Does equipment capex leadership persist if credit conditions tighten further?",
-      "status": "DISCOVERY_ONLY",
-      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
-    }
-  ],
+  "liveRadar": [],
   "monitorOnly": [
     {
       "ticker": "XOM",
-      "overlayState": "MIXED",
-      "reaction": "INCONCLUSIVE",
+      "overlayState": "HEADWIND",
+      "reaction": "DIVERGES",
       "action": "CORE HOLD / NO CHASE",
-      "reason": "Mixed exposure is monitored without forcing a directional conclusion."
+      "reason": "No current decision-relevant divergence promoted into the capped queue."
     },
     {
       "ticker": "MISC",
-      "overlayState": "MIXED",
-      "reaction": "INCONCLUSIVE",
+      "overlayState": "HEADWIND",
+      "reaction": "CONFIRMS",
       "action": "HOLD",
-      "reason": "Mixed exposure is monitored without forcing a directional conclusion."
+      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
+    },
+    {
+      "ticker": "HIBISCS",
+      "overlayState": "HEADWIND",
+      "reaction": "CONFIRMS",
+      "action": "HOLD / NO ADD",
+      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
     },
     {
       "ticker": "TTWO",
@@ -483,13 +419,6 @@
       "reaction": "CONFIRMS",
       "action": "HOLD / DO NOT AVERAGE DOWN",
       "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
-    },
-    {
-      "ticker": "DAYANG",
-      "overlayState": "MIXED",
-      "reaction": "INCONCLUSIVE",
-      "action": "HOLD / DO NOT AVERAGE DOWN",
-      "reason": "Mixed exposure is monitored without forcing a directional conclusion."
     }
   ],
   "newCapitalPriority": [
@@ -520,6 +449,7 @@
     }
   ],
   "researchGaps": [
+    "RESEARCH_BRAIN_DEGRADED: OpenAI response was incomplete (max_output_tokens).",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence.",
     "Holding tape unresolved: 6742UW"
   ],
