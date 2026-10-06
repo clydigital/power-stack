@@ -1,8 +1,8 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-06T06:19:14.996Z",
-  "liveAsOf": "2026-10-05T23:28:41.314+00:00",
-  "liveSyncedAt": "2026-10-06T00:06:24.915Z",
+  "generatedAt": "2026-10-06T06:27:11.978Z",
+  "liveAsOf": "2026-10-06T02:20:52.143+00:00",
+  "liveSyncedAt": "2026-10-06T06:27:11.863Z",
   "sourceHealth": {
     "dossier": "OK",
     "marketMonitor": "PARTIAL",
@@ -14,15 +14,15 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "US long and real yields have repriced higher while credit and breadth transmission remain incomplete; AI/semis leadership is buffering index weakness.",
-    "answer": "Markets are trading a rates‑led tightening regime: long nominal and real yields (10Y nominal 5.31%, real 2.92%) and a rising 10Y term premium are the dominant forces, but credit spreads and volatility have only widened modestly and AI/semiconductor breadth remains strong — implying transmission to broad risk is incomplete.",
-    "implication": "Expect rates-driven pressure to persist unless credit, breadth or MOVE/VIX show sustained transmission; AI/semis can continue to concentrate leadership and delay broad repricing.",
-    "whatWouldChangeMind": "Sustained narrowing of HY/IG spreads with broad breadth deterioration and rising MOVE/VIX, or rapid reversal in long real yields/breakevens, would overturn the incomplete‑transmission conclusion."
+    "headline": "Rates‑led tightening: long and real yields rising while credit/vol breadth show incomplete transmission; AI/semis remain a concentrated counterweight.",
+    "answer": "Markets are trading a rates‑led tightening regime: long nominal and real yields plus a higher ACM term premium have moved materially higher while HY/IG spreads and volatility have only modestly widened and AI/semiconductor breadth is strong, implying incomplete transmission to broad risk so far.",
+    "implication": "Policy/real‑yield pressure is the dominant market impulse now; transmission to broad credit/volatility remains incomplete and key confirmatory signals are still outstanding.",
+    "whatWouldChangeMind": "Sustained HY/IG widening and a durable MOVE/VIX pickup coincident with breadth deterioration (e.g., HY OAS materially higher on a 5–10 day basis plus falling market‑breadth) or a prompt fall in 10Y real yields/breakevens would undermine the rates‑led tightening read."
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "531ef001-c7cb-4aef-a436-66865e9b4b16",
-    "capturedAt": "2026-10-06T00:01:13.483Z",
+    "editionId": "0fa6d196-4067-47e1-b1c3-9f68aadb039d",
+    "capturedAt": "2026-10-06T02:47:24.514Z",
     "itemCount": 0,
     "linkedHoldingCount": 0
   },
@@ -48,7 +48,7 @@
           "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
           "detail": "No current deterministic policy impulse or directional next-meeting repricing is present in the bounded rate context.",
-          "asOf": "2026-10-05T23:28:41.314Z"
+          "asOf": "2026-10-06T02:20:52.143Z"
         },
         {
           "key": "RATES_FRONT_END",
@@ -56,7 +56,7 @@
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
           "detail": "US 2Y 4.83%; 5D +2.0 bp; vs effective fed funds +95.0 bp.",
-          "asOf": "2026-10-05T23:28:41.314Z"
+          "asOf": "2026-10-06T02:20:52.143Z"
         },
         {
           "key": "RATES_REAL_YIELDS",
@@ -64,7 +64,7 @@
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
           "detail": "10Y real yield 2.92%; 5D +9.0 bp.",
-          "asOf": "2026-10-05T23:28:41.314Z"
+          "asOf": "2026-10-06T02:20:52.143Z"
         },
         {
           "key": "RATES_BREAKEVENS",
@@ -72,7 +72,7 @@
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
           "detail": "10Y breakeven 2.36%; 5D +2.0 bp.",
-          "asOf": "2026-10-05T23:28:41.314Z"
+          "asOf": "2026-10-06T02:20:52.143Z"
         },
         {
           "key": "RATES_LONG_END",
@@ -80,7 +80,7 @@
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
           "detail": "US 10Y 5.31%; 5D +7.0 bp; US 20Y 5.67%; 5D +13.0 bp; US 30Y 5.63%; 5D +14.0 bp.",
-          "asOf": "2026-10-05T23:28:41.314Z"
+          "asOf": "2026-10-06T02:20:52.143Z"
         },
         {
           "key": "BILLS",
@@ -124,11 +124,11 @@
     "physicalEnergy": {
       "status": "ACTIVE",
       "observed": true,
-      "detail": "Product stress plausibly supports breakevens and long yields even as spot crude softens; regional confirmation is required.",
+      "detail": "Product stress plausibly supports breakevens and long yields; regional inventory/utilisation confirmation is required to sustain the inference.",
       "evidenceRefs": [
-        "market-monitor:wti:2026-09-29",
         "market-monitor:crack-distillate:2026-09-29",
         "market-monitor:distillate:2026-09-29",
+        "market-monitor:wti:2026-09-29",
         "market-monitor:us10y-breakeven:2026-10-05"
       ]
     }
@@ -1167,7 +1167,7 @@
       "importance": "HIGH",
       "divergence": "PARTIAL",
       "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-      "actual": "AI infrastructure breadth and SMH strongly positive and materially above medium‑term averages.",
+      "actual": "AI/semis breadth strong and SMH outperforming (evidence: market-breadth:ai-basket:2026-10-05; market-monitor:smh:2026-10-05).",
       "affectedHoldings": [
         "TSLA",
         "TTWO",
@@ -1180,12 +1180,12 @@
         "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
       ],
       "evidenceFor": [
-        "Concentrated AI/semis leadership is providing an index‑level counterweight to rates pressure.",
-        "Breadth is mixed: index‑supporting in large caps and concentrated in AI/semis, creating an appearance of resilience despite rates pressure.",
-        "Nasdaq daily move 1.19 with bias BEARISH."
+        "Concentrated leadership is a meaningful counterweight to broad risk weakness, masking transmission so far.",
+        "Breadth remains positive overall, driven by concentrated AI/semis participation, reducing immediate index downside risk.",
+        "Nasdaq daily move 1.19 with bias MIXED."
       ],
       "evidenceAgainst": [
-        "Real‑yield move plus a rising term premium are driving nominal long‑end pressure; this is the dominant market force."
+        "Long and real yields are the primary tightening channel and term‑premium increases partly explain the nominal rise; decomposition gaps remain (auction/dealer flow, MOVE)."
       ],
       "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
       "confidence": "HIGH",
@@ -1196,7 +1196,7 @@
       "importance": "HIGH",
       "divergence": "YES",
       "expected": "Softer crude would normally reduce immediate energy-inflation pressure and weaken the case for broad energy outperformance.",
-      "actual": "WTI softened modestly while distillate cracks and heating oil remained elevated, and 10Y breakeven held near 2.36%.",
+      "actual": "Distillate cracks and heating oil elevated while WTI softened modestly; 10Y breakeven little changed.",
       "affectedHoldings": [
         "XOM",
         "HIBISCS",
@@ -1209,7 +1209,7 @@
         "Geopolitical premium and physical-product stress are moving on different timelines."
       ],
       "evidenceFor": [
-        "Product stress plausibly supports breakevens and long yields even as spot crude softens; regional confirmation is required.",
+        "Product stress plausibly supports breakevens and long yields; regional inventory/utilisation confirmation is required to sustain the inference.",
         "Crude daily move -3.23 with bias BEARISH."
       ],
       "evidenceAgainst": [
