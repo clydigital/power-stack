@@ -1,21 +1,21 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-06T18:21:15.306Z",
-  "asOf": "2026-10-06T02:20:52.143+00:00",
+  "generatedAt": "2026-10-06T18:25:57.409Z",
+  "asOf": "2026-10-06T17:58:35.445+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
   "inputHealth": {
     "liveDesk": {
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
-      "asOf": "2026-10-06T02:20:52.143+00:00",
-      "syncedAt": "2026-10-06T06:27:11.863Z",
+      "asOf": "2026-10-06T17:58:35.445+00:00",
+      "syncedAt": "2026-10-06T18:25:57.206Z",
       "status": "OK"
     },
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-06T18:21:15.245Z",
+      "generatedAt": "2026-10-06T18:25:57.336Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -30,9 +30,9 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "Rates‑led tightening: long and real yields rising while credit/vol breadth show incomplete transmission; AI/semis remain a concentrated counterweight.",
-    "implication": "Policy/real‑yield pressure is the dominant market impulse now; transmission to broad credit/volatility remains incomplete and key confirmatory signals are still outstanding.",
-    "monetarySummary": "Rate baseline HAWKISH; 6 confirming, 0 contradicting, 5 unresolved/neutral monetary-market layers."
+    "headline": "Markets trading a rates‑led tightening regime; AI/semis concentration is insulating headline breadth so far.",
+    "implication": "Policy/real‑yield pressure is the dominant market driver now; transmission to credit and broad risk assets is incomplete and should be monitored for signs of widening or breadth deterioration.",
+    "monetarySummary": "Rate baseline HAWKISH; 5 confirming, 0 contradicting, 6 unresolved/neutral monetary-market layers."
   },
   "queueCounts": {
     "holdings": 3,
@@ -44,10 +44,48 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "0fa6d196-4067-47e1-b1c3-9f68aadb039d",
-    "capturedAt": "2026-10-06T02:47:24.514Z",
-    "itemCount": 0,
-    "items": []
+    "editionId": "c9d32dcc-e5b1-46f4-96e1-a5a0eb67d411",
+    "capturedAt": "2026-10-06T16:04:10.105Z",
+    "itemCount": 1,
+    "items": [
+      {
+        "id": "e506ac12-87da-41a5-9633-11841c1ee23d",
+        "motionKey": "creator:youtube:wall-street-truth-bombs:MpEPbDCsSE0:5da06b64ff89074a",
+        "versionNumber": 4,
+        "headline": "Nvidia hit all‑time high 237.88 and market value roughly $5.7 trillion.",
+        "category": "EARNINGS",
+        "verificationState": "LEAD",
+        "lifecycleState": "PROMOTED",
+        "whatHappened": "Wall Street Truthbombs surfaced this in a recent transcript. It remains a creator-sourced lead until independently corroborated: Nvidia hit all‑time high 237.88 and market value roughly $5.7 trillion.",
+        "marketReaction": null,
+        "whyInteresting": "Transcript writing angle: ‘Yield Disconnect’ — concrete angle: examine whether 10Y strength during a dovish re‑pricing is driven by oil/real‑yield moves, Treasury technicals (auction/flows), or a rising term premium tied to fiscal talk; combine intraday oil, Treasury and equity‑constituent timestamps to test causality.",
+        "bigPictureBridge": "Fresh rates / funding evidence → sovereign yields and financing costs → Cost of Capital regime",
+        "nextTest": "Intraday/close price and market‑cap snapshot from exchange or consolidated tape on the referenced date.",
+        "tickers": [
+          "MU",
+          "NVDA"
+        ],
+        "sourceName": "Wall Street Truthbombs",
+        "sourceUrl": "https://www.youtube.com/watch?v=MpEPbDCsSE0",
+        "materiality": 86,
+        "relevance": 86,
+        "novelty": 86,
+        "occurredAt": "2026-10-04T20:00:35.000Z",
+        "storyId": "93c3e32f-9168-49ec-aaa3-9ce678511c9b",
+        "storySlug": "fed-long-end-stress",
+        "storyTitle": "Real Yields and Funding Pressure Keep Rates Restrictive",
+        "regimeSlug": "global-cost-of-capital",
+        "regimeLabel": "US Rate Regime",
+        "attentionTier": "PRIMARY",
+        "attentionScore": 82,
+        "writingPotential": "HIGH",
+        "attentionReasons": [
+          "high materiality",
+          "high market relevance",
+          "asset/ticker linked"
+        ]
+      }
+    ]
   },
   "portfolioTriage": {
     "tapeDivergences": [
@@ -133,7 +171,7 @@
         "importance": "HIGH",
         "divergence": "PARTIAL",
         "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-        "actual": "AI/semis breadth strong and SMH outperforming (evidence: market-breadth:ai-basket:2026-10-05; market-monitor:smh:2026-10-05).",
+        "actual": "AI/semiconductor breadth and SMH are strong and NVIDIA near ATHs.",
         "affectedHoldings": [
           "TSLA",
           "TTWO",
@@ -146,23 +184,52 @@
           "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
         ],
         "evidenceFor": [
-          "Concentrated leadership is a meaningful counterweight to broad risk weakness, masking transmission so far.",
-          "Breadth remains positive overall, driven by concentrated AI/semis participation, reducing immediate index downside risk.",
-          "Nasdaq daily move 1.19 with bias MIXED."
+          "Concentrated sector leadership is propping headline indices and reducing visible breadth deterioration.",
+          "Breadth is currently supported by concentrated AI/semis leadership, which masks broader fragility risk if rates pressures persist.",
+          "Nasdaq daily move 1.05 with bias BEARISH."
         ],
         "evidenceAgainst": [
-          "Long and real yields are the primary tightening channel and term‑premium increases partly explain the nominal rise; decomposition gaps remain (auction/dealer flow, MOVE)."
+          "Rates are the dominant tightening force; long‑end move is real‑yield led with a measured term‑premium increase."
         ],
         "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
         "confidence": "HIGH",
         "invalidation": "If breadth broadens materially while credit remains benign and real yields stay high, the rate headwind is less dominant than assumed. If AI/semiconductor leadership rolls over, the divergence resolves in the bearish direction."
       },
       {
+        "id": "rates-vs-credit-transmission",
+        "importance": "HIGH",
+        "divergence": "YES",
+        "expected": "A persistent long-end tightening shock should eventually raise financing stress and widen credit spreads.",
+        "actual": "HY and IG OAS remain modest by historical standards.",
+        "affectedHoldings": [
+          "TSLA",
+          "TTWO",
+          "YTLPOWR",
+          "6742UW",
+          "MISC"
+        ],
+        "candidateExplanations": [
+          "The current move is still primarily a rates/term-premium shock rather than a broad solvency or funding shock.",
+          "Strong nominal growth and healthy corporate balance sheets may be delaying credit transmission.",
+          "Credit may simply be lagging rates and could become the next confirmation leg."
+        ],
+        "evidenceFor": [
+          "Credit has not yet meaningfully widened, supporting the incomplete‑transmission assessment.",
+          "Funding/credit composite is currently NEUTRAL."
+        ],
+        "evidenceAgainst": [
+          "Policy/real‑yield pressure is the dominant market driver now; transmission to credit and broad risk assets is incomplete and should be monitored for signs of widening or breadth deterioration."
+        ],
+        "leadingHypothesis": "The shock is rates-led, not yet systemic; keep dry powder because credit remains the key confirmation risk.",
+        "confidence": "HIGH",
+        "invalidation": "Sustained HY/IG widening with weaker breadth and higher volatility would confirm transmission and require a stricter portfolio-risk posture."
+      },
+      {
         "id": "crude-vs-product-tightness",
         "importance": "HIGH",
         "divergence": "YES",
         "expected": "Softer crude would normally reduce immediate energy-inflation pressure and weaken the case for broad energy outperformance.",
-        "actual": "Distillate cracks and heating oil elevated while WTI softened modestly; 10Y breakeven little changed.",
+        "actual": "Distillate cracks and heating oil proxies elevated while WTI softened.",
         "affectedHoldings": [
           "XOM",
           "HIBISCS",
@@ -175,8 +242,8 @@
           "Geopolitical premium and physical-product stress are moving on different timelines."
         ],
         "evidenceFor": [
-          "Product stress plausibly supports breakevens and long yields; regional inventory/utilisation confirmation is required to sustain the inference.",
-          "Crude daily move -3.23 with bias BEARISH."
+          "Product‑led inflation support is plausible and may be sustaining breakevens and long yields; regional confirmation is missing.",
+          "Crude daily move -3.23 with bias UNRESOLVED."
         ],
         "evidenceAgainst": [
           "PADD inventories and refinery utilisation"
@@ -283,6 +350,44 @@
   ],
   "watchlistResearchQueue": [
     {
+      "ticker": "MU",
+      "name": "Micron Technology",
+      "rank": 1,
+      "score": 9.4,
+      "bucket": "buy",
+      "action": "RESEARCH NOW · NO BLIND CHASE",
+      "entry": "Research the next clean pullback or consolidation rather than chase a vertical move.",
+      "confirmation": "HBM pricing and customer commitments stay firm while cash conversion remains strong.",
+      "invalidation": "Cash generation weakens before supply catches up, or conventional-memory pricing rolls over hard.",
+      "theme": "AI memory · HBM scarcity",
+      "priorityScore": 137,
+      "liveMotion": [
+        {
+          "id": "e506ac12-87da-41a5-9633-11841c1ee23d",
+          "headline": "Nvidia hit all‑time high 237.88 and market value roughly $5.7 trillion.",
+          "category": "EARNINGS",
+          "verificationState": "LEAD",
+          "occurredAt": "2026-10-04T20:00:35.000Z",
+          "whyInteresting": "Transcript writing angle: ‘Yield Disconnect’ — concrete angle: examine whether 10Y strength during a dovish re‑pricing is driven by oil/real‑yield moves, Treasury technicals (auction/flows), or a rising term premium tied to fiscal talk; combine intraday oil, Treasury and equity‑constituent timestamps to test causality.",
+          "bigPictureBridge": "Fresh rates / funding evidence → sovereign yields and financing costs → Cost of Capital regime",
+          "nextTest": "Intraday/close price and market‑cap snapshot from exchange or consolidated tape on the referenced date.",
+          "storyId": "93c3e32f-9168-49ec-aaa3-9ce678511c9b",
+          "storyTitle": "Real Yields and Funding Pressure Keep Rates Restrictive",
+          "regimeSlug": "global-cost-of-capital",
+          "regimeLabel": "US Rate Regime",
+          "sourceName": "Wall Street Truthbombs",
+          "sourceUrl": "https://www.youtube.com/watch?v=MpEPbDCsSE0",
+          "materiality": 86,
+          "relevance": 86
+        }
+      ],
+      "diversification": {
+        "label": "OVERLAP",
+        "reason": "adds to the existing duration/power/AI dependency set"
+      },
+      "researchQuestion": "Does the promoted Live Motion change MU's company-specific evidence, action gate or thesis risk after independent verification?"
+    },
+    {
       "ticker": "GRAB",
       "name": "Grab Holdings",
       "rank": 4,
@@ -317,24 +422,6 @@
         "reason": "adds agriculture/input exposure outside the current power/energy/duration clusters"
       },
       "researchQuestion": "Does CTVA still offer enough quality + price asymmetry to justify priority research under the current Live regime?"
-    },
-    {
-      "ticker": "MU",
-      "name": "Micron Technology",
-      "rank": 1,
-      "score": 9.4,
-      "bucket": "buy",
-      "action": "RESEARCH NOW · NO BLIND CHASE",
-      "entry": "Research the next clean pullback or consolidation rather than chase a vertical move.",
-      "confirmation": "HBM pricing and customer commitments stay firm while cash conversion remains strong.",
-      "invalidation": "Cash generation weakens before supply catches up, or conventional-memory pricing rolls over hard.",
-      "theme": "AI memory · HBM scarcity",
-      "priorityScore": 117,
-      "diversification": {
-        "label": "OVERLAP",
-        "reason": "adds to the existing duration/power/AI dependency set"
-      },
-      "researchQuestion": "Is MU sufficiently better than the portfolio's existing overlapping exposures to justify new capital?"
     },
     {
       "ticker": "LNG",
@@ -439,18 +526,26 @@
   ],
   "liveRadar": [
     {
-      "ticker": "SMH",
-      "companyName": "VanEck Semiconductor ETF (SMH)",
-      "whyRelevant": "Semiconductors/AI breadth is a central counterweight to rates‑led weakness.",
-      "researchQuestion": "Will SMH leadership persist if credit/volatility begin to widen?",
+      "ticker": "NVDA",
+      "companyName": "NVIDIA",
+      "whyRelevant": "Near ATH and central to AI/semis concentration that is propping breadth.",
+      "researchQuestion": "Is NVDA leadership masking broad market fragility if yields persist?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     },
     {
-      "ticker": "XAUUSD",
-      "companyName": "Gold (XAUUSD)",
-      "whyRelevant": "Gold reaction helps test whether safe‑haven flows are dominated by rates/USD or geopolitical risk.",
-      "researchQuestion": "Is gold weak because rates/USD dominate safe‑haven flows?",
+      "ticker": "SMH",
+      "companyName": "VanEck Semiconductor ETF",
+      "whyRelevant": "Semiconductor ETF is a proxy for sector strength and breadth concentration.",
+      "researchQuestion": "Does SMH breadth/leadership persist if yields continue to rise?",
+      "status": "DISCOVERY_ONLY",
+      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
+    },
+    {
+      "ticker": "CL=F",
+      "companyName": "WTI crude",
+      "whyRelevant": "WTI softness vs elevated product cracks informs inflation transmission.",
+      "researchQuestion": "Are product cracks and regional supply constraints sustaining breakevens despite weaker WTI?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     }
