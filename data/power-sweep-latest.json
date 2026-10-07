@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-07T06:06:09.849Z",
+  "generatedAt": "2026-10-07T11:44:00.000Z",
   "asOf": "2026-10-06T19:42:31.471+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -330,9 +330,27 @@
       "researchQuestion": "Does GRAB still offer enough quality + price asymmetry to justify priority research under the current Live regime?"
     },
     {
+      "ticker": "CEG",
+      "name": "Constellation Energy",
+      "rank": 6,
+      "score": 9.3,
+      "bucket": "buy",
+      "action": "PRIORITY RESEARCH · GOOGLE-CONTRACTED NUCLEAR / NO CHASE DEAL GAP",
+      "entry": "Do not chase the deal gap. Wait for an orderly retest or consolidation and reassess valuation after the rerating.",
+      "confirmation": "Google-backed 3.59-GW agreements proceed, fleet upgrades stay on budget and contracted cash economics remain attractive.",
+      "invalidation": "Contract economics weaken, fleet-upgrade capex overruns emerge or power-market/regulatory terms deteriorate.",
+      "theme": "Nuclear generation · AI power · long-duration contracts",
+      "priorityScore": 124,
+      "diversification": {
+        "label": "OVERLAP",
+        "reason": "adds to the existing duration/power/AI dependency set"
+      },
+      "researchQuestion": "Is CEG sufficiently better than the portfolio's existing overlapping exposures to justify new capital?"
+    },
+    {
       "ticker": "CTVA",
       "name": "Corteva",
-      "rank": 6,
+      "rank": 7,
       "score": 8.7,
       "bucket": "selective",
       "action": "WATCH · DIVERSIFIER",
@@ -340,7 +358,7 @@
       "confirmation": "Seed pricing, margins and guidance remain firm.",
       "invalidation": "Farm economics weaken enough to pressure pricing or volumes.",
       "theme": "Agriculture · seed genetics",
-      "priorityScore": 124,
+      "priorityScore": 123,
       "diversification": {
         "label": "DIVERSIFIES",
         "reason": "adds agriculture/input exposure outside the current power/energy/duration clusters"
@@ -364,34 +382,16 @@
         "reason": "adds to the existing duration/power/AI dependency set"
       },
       "researchQuestion": "Is MU sufficiently better than the portfolio's existing overlapping exposures to justify new capital?"
-    },
-    {
-      "ticker": "LNG",
-      "name": "Cheniere Energy",
-      "rank": 2,
-      "score": 9.2,
-      "bucket": "buy",
-      "action": "RESEARCH NOW · CONTRACTED ENERGY",
-      "entry": "Prefer a pullback or stable base; do not chase an energy headline.",
-      "confirmation": "Utilisation, contracts and distributable cash flow stay strong.",
-      "invalidation": "Global LNG supply normalises faster than expected or cash generation weakens materially.",
-      "theme": "LNG · energy security",
-      "priorityScore": 116,
-      "diversification": {
-        "label": "OVERLAP",
-        "reason": "adds to the existing energy/shipping cluster"
-      },
-      "researchQuestion": "Is LNG sufficiently better than the portfolio's existing overlapping exposures to justify new capital?"
     }
   ],
   "themeResearchQueue": [
     {
-      "priorityRank": 2,
+      "priorityRank": 4,
       "name": "Diesel and LNG Can Keep Inflation Sticky",
       "lifecycleState": "ACTIVE / DOMINANT",
-      "directionOfTravel": "strengthening",
-      "nextTest": "EIA product inventories, same-contract ULSD/RBOB cracks, refinery utilization and Middle East flows",
-      "watchlistHoldingAction": "XOM and LNG remain cleaner cash-generating exposures. Shipping and upstream names still need company-level confirmation.",
+      "directionOfTravel": "persistent / changing shape",
+      "nextTest": "EIA product inventories, ULSD/RBOB cracks, refinery utilisation, Gulf storm shut-ins, substitute-barrel premiums and refined-product export recovery",
+      "watchlistHoldingAction": "Keep XOM/LNG as higher-quality cash generators; VLO/STNG remain selective product/logistics expressions. Do not rerate generic upstream beta just because oil headlines rise.",
       "intersections": {
         "held": [
           "XOM",
@@ -404,16 +404,16 @@
           "MPC"
         ]
       },
-      "relevanceScore": 212,
+      "relevanceScore": 211,
       "researchQuestion": "What company/industry evidence would materially change the current Power Stack action for XOM, MISC, HIBISCS?"
     },
     {
-      "priorityRank": 4,
+      "priorityRank": 2,
       "name": "AI Still Needs the Physical Stuff",
       "lifecycleState": "ACTIVE / DOMINANT",
-      "directionOfTravel": "strengthening selectively",
-      "nextTest": "supplier backlog/pricing, energised MW, grid interconnections, Chinese CSP capex and economics of HK optical/interconnect names",
-      "watchlistHoldingAction": "MU and CRDO move to the front of research. DELL needs margin proof. Power/grid names remain good businesses but price still matters.",
+      "directionOfTravel": "strengthening",
+      "nextTest": "Google/Constellation contract economics, Black Hills regulatory and cost-recovery terms, more hyperscaler-backed generation deals, grid interconnections and backlog conversion",
+      "watchlistHoldingAction": "Promote operating, contracted power and grid exposure. CEG moves into the active watchlist; GEV/ETN/PWR stay high quality but no-chase.",
       "intersections": {
         "held": [
           "YTLPOWR"
@@ -422,21 +422,22 @@
           "MU",
           "CRDO",
           "DELL",
+          "CEG",
           "GEV",
           "PWR",
           "ETN"
         ]
       },
-      "relevanceScore": 174,
+      "relevanceScore": 185,
       "researchQuestion": "What company/industry evidence would materially change the current Power Stack action for YTLPOWR?"
     },
     {
       "priorityRank": 1,
       "name": "Expensive Money Is the Market Hurdle",
       "lifecycleState": "ACTIVE / DOMINANT",
-      "directionOfTravel": "strengthening",
-      "nextTest": "2Y/5Y/10Y/20Y/30Y yields, Treasury supply, credit spreads and whether inflation allows yields to fall.",
-      "watchlistHoldingAction": "Prefer companies already producing cash. Demand a better price from long-duration or heavily financed growth.",
+      "directionOfTravel": "strengthening selectively",
+      "nextTest": "2Y/5Y/10Y/20Y/30Y yields, HY/IG spreads, refinancing calendars and whether strong-project financing remains distributable.",
+      "watchlistHoldingAction": "Prefer cash generators, named customers and contracted offtake. Penalise businesses that need cheap refinancing or speculative project finance.",
       "intersections": {
         "held": [
           "TTWO",
@@ -524,28 +525,28 @@
   "newCapitalPriority": [
     {
       "priority": 1,
-      "bucket": "10Y rate-resilience gate",
-      "instruction": "Fresh-US research order: ITRI > BDC > KLIC > AZZ > GNRC > AMKR. Require current FCF/backlog/balance-sheet evidence before deployment; this is a research/action overlay, not a fundamental-score rewrite."
+      "bucket": "Contracted / customer-backed AI power",
+      "instruction": "CEG moves to the front of research after Google's 3.59-GW package. GEV/ETN/PWR remain high-quality secondary beneficiaries and BKH enters research-only on its $1.8B Google-linked generation plan. Do not chase the first deal gap."
     },
     {
       "priority": 2,
-      "bucket": "Diversification / reserve",
-      "instruction": "Do not force deployment. Preserve cash or equivalent dry powder while financials/credit/breadth remain unconfirmed."
+      "bucket": "AI memory and interconnect",
+      "instruction": "MU and CRDO remain top direct bottleneck research because they monetise real AI workload without financing the data centre. Keep valuation and customer-concentration gates."
     },
     {
       "priority": 3,
-      "bucket": "Funded physical infrastructure",
-      "instruction": "If adding risk, prefer pullbacks in funded/backlogged grid/power/electrical names over pre-operating AI project-finance exposure. GEV/ETN/PWR remain research candidates, not automatic buys."
+      "bucket": "Product / logistics energy",
+      "instruction": "Prefer XOM/LNG quality and selective VLO/STNG expressions over generic crude beta. Verify product inventories, cracks, physical premiums, storm outages and route economics before adding."
     },
     {
       "priority": 4,
-      "bucket": "Strategic hedge",
-      "instruction": "Gold/miner exposure can diversify the existing power/energy/growth concentration, but timing still requires DXY/real-yield confirmation."
+      "bucket": "Diversification / reserve",
+      "instruction": "Do not force deployment while broad credit and breadth confirmation remain incomplete. Preserve deployable cash and recycle lower-quality correlated exposure before adding more power/energy beta."
     },
     {
       "priority": 5,
-      "bucket": "AI beneficiaries",
-      "instruction": "Treat NVDA as the concentration/leadership barometer and NBIS as research-only despite the verified analyst catalyst. Do not add broad AI beta unless financing quality, cash conversion and price asymmetry clear the Power Stack gates."
+      "bucket": "Strategic hedge",
+      "instruction": "Gold/miners remain diversification candidates, but current creator bearishness adds no score weight. Timing still requires DXY and real-yield confirmation."
     }
   ],
   "researchGaps": [
