@@ -1,21 +1,21 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-07T23:04:35.608Z",
-  "asOf": "2026-10-06T19:42:31.471+00:00",
+  "generatedAt": "2026-10-07T23:08:44.129Z",
+  "asOf": "2026-10-07T20:03:56.914+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
   "inputHealth": {
     "liveDesk": {
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
-      "asOf": "2026-10-06T19:42:31.471+00:00",
-      "syncedAt": "2026-10-07T13:31:00.236Z",
+      "asOf": "2026-10-07T20:03:56.914+00:00",
+      "syncedAt": "2026-10-07T23:08:43.899Z",
       "status": "OK"
     },
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-07T23:04:35.548Z",
+      "generatedAt": "2026-10-07T23:08:44.070Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -30,9 +30,9 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "Long and real yields have moved higher while credit stays calm and AI/semiconductor breadth is strong — transmission to broader market stress is incomplete and NVDA at/near ATH raises conditional fragility.",
-    "implication": "Higher real and nominal yields are tightening financial conditions, yet credit spreads and volatility have not confirmed systemic stress; concentrated AI/semiconductor leadership is insulating headline indices and raising fragility if yields or credit widen.",
-    "monetarySummary": "Rate baseline HAWKISH; 4 confirming, 0 contradicting, 7 unresolved/neutral monetary-market layers."
+    "headline": "Long‑end yields and real yields are elevated and restraining conditions, yet credit and volatility remain calm while AI/semiconductor breadth stays strong — a rates‑led tightening that has not fully transmitted to broader markets.",
+    "implication": "Rising long and real yields are tightening financial conditions, but calm credit spreads and concentrated equity leadership mean market stress is conditional rather than broad; a persistent long‑end move or credit widening would change this.",
+    "monetarySummary": "Rate baseline HAWKISH; 3 confirming, 0 contradicting, 8 unresolved/neutral monetary-market layers."
   },
   "queueCounts": {
     "holdings": 3,
@@ -44,8 +44,8 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "65db7931-4c1a-4547-af5e-308d9db20df0",
-    "capturedAt": "2026-10-07T02:47:26.352Z",
+    "editionId": "a42d6a82-f876-4db2-8c08-18923bcbebb9",
+    "capturedAt": "2026-10-07T14:01:49.733Z",
     "itemCount": 0,
     "items": []
   },
@@ -133,7 +133,7 @@
         "importance": "HIGH",
         "divergence": "PARTIAL",
         "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-        "actual": "AI/semiconductor breadth is notably strong and SMH has outperformed; NVDA is trading at/near all‑time highs.",
+        "actual": "AI/semiconductor breadth is very strong and is supporting headline indices.",
         "affectedHoldings": [
           "TSLA",
           "TTWO",
@@ -146,12 +146,12 @@
           "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
         ],
         "evidenceFor": [
-          "Concentrated leadership is supporting headline indices and raising conditional fragility if rates or credit widen.",
-          "Headline indices benefit from concentrated participation, leaving breadth outside AI vulnerable if stress widens.",
+          "Concentrated leadership is acting as an index support; this reduces near‑term breadth vulnerability but raises conditional fragility.",
+          "Breadth is concentrated but not uniformly weak; this supports headline resilience despite rates pressure.",
           "Nasdaq daily move 0.45 with bias MIXED."
         ],
         "evidenceAgainst": [
-          "Real‑yield strength plus an observed term‑premium uptick is driving long yields higher, supporting a rates‑led tightening reading."
+          "Policy path appears restrictive while long‑end real yields and term premium keep duration pressure; this is consistent with a rates‑led tightening that is not yet broad."
         ],
         "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
         "confidence": "HIGH",
@@ -162,7 +162,7 @@
         "importance": "HIGH",
         "divergence": "YES",
         "expected": "A persistent long-end tightening shock should eventually raise financing stress and widen credit spreads.",
-        "actual": "HY and IG OAS remain relatively contained (HY ~3.12%; IG ~0.84%).",
+        "actual": "HY and IG OAS are still muted and slightly tighter on the 5‑day window.",
         "affectedHoldings": [
           "TSLA",
           "TTWO",
@@ -176,11 +176,11 @@
           "Credit may simply be lagging rates and could become the next confirmation leg."
         ],
         "evidenceFor": [
-          "Credit has not yet confirmed a broader risk‑off; contained spreads support the incomplete‑transmission view.",
+          "Credit does not yet confirm systemic risk‑off; contained spreads are a key counterweight to long‑end‑led tightening.",
           "Funding/credit composite is currently NEUTRAL."
         ],
         "evidenceAgainst": [
-          "Higher real and nominal yields are tightening financial conditions, yet credit spreads and volatility have not confirmed systemic stress; concentrated AI/semiconductor leadership is insulating headline indices and raising fragility if yields or credit widen."
+          "Rising long and real yields are tightening financial conditions, but calm credit spreads and concentrated equity leadership mean market stress is conditional rather than broad; a persistent long‑end move or credit widening would change this."
         ],
         "leadingHypothesis": "The shock is rates-led, not yet systemic; keep dry powder because credit remains the key confirmation risk.",
         "confidence": "HIGH",
@@ -191,7 +191,7 @@
         "importance": "HIGH",
         "divergence": "YES",
         "expected": "Softer crude would normally reduce immediate energy-inflation pressure and weaken the case for broad energy outperformance.",
-        "actual": "Distillate cracks and heating oil proxies are elevated while WTI softened.",
+        "actual": "Distillate cracks and heating oil remain elevated while WTI is relatively flat, supporting steady breakevens.",
         "affectedHoldings": [
           "XOM",
           "HIBISCS",
@@ -204,11 +204,11 @@
           "Geopolitical premium and physical-product stress are moving on different timelines."
         ],
         "evidenceFor": [
-          "Product stress could sustain breakevens and long yields even with softer crude, but regional inventory checks are needed.",
-          "Crude daily move -3.23 with bias BEARISH."
+          "Product‑led inflation pressure could sustain breakevens and long yields, but regional inventory confirmation is required.",
+          "Crude daily move 0.11 with bias BEARISH."
         ],
         "evidenceAgainst": [
-          "Regional PADD inventories and refinery utilisation data"
+          "Regional PADD inventories and refinery utilisation"
         ],
         "leadingHypothesis": "Product-market tightness is currently more informative for the portfolio's energy sleeve than the crude headline alone.",
         "confidence": "HIGH",
@@ -469,18 +469,26 @@
   ],
   "liveRadar": [
     {
-      "ticker": "NVDA",
-      "companyName": "NVIDIA",
-      "whyRelevant": "Central to concentration/fragility story; reported near ATH in packet evidence.",
-      "researchQuestion": "Are NVDA moves driven by fresh fundamental flows, buybacks, or concentrated options/positioning?",
+      "ticker": "SMH",
+      "companyName": "Semiconductor ETF (SMH)",
+      "whyRelevant": "Semiconductor / AI leadership is a primary index support and gauges breadth concentration.",
+      "researchQuestion": "Will SMH leadership persist if long yields remain elevated or if credit/volatility seep in?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     },
     {
-      "ticker": "SMH",
-      "companyName": "Semiconductor ETF (SMH)",
-      "whyRelevant": "Proxy for semiconductor leadership and breadth in AI‑infrastructure complex.",
-      "researchQuestion": "Is SMH outperformance driving headline indices and is it concentrated among a few constituents?",
+      "ticker": "MRVL",
+      "companyName": "Marvell Technology (research lead)",
+      "whyRelevant": "Analyst upgrades and AI‑day flow can extend semis leadership and index support.",
+      "researchQuestion": "Do upgrades and flows materially extend AI/semis breadth or are they isolated?",
+      "status": "DISCOVERY_ONLY",
+      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
+    },
+    {
+      "ticker": "XAUUSD",
+      "companyName": "Gold (XAU/USD)",
+      "whyRelevant": "Gold behavior versus real yields and USD indicates whether safe‑haven flows or rates dominate.",
+      "researchQuestion": "Is gold weakening due to rates/real yields dominance or because geopolitical risk is low?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     }
