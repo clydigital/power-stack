@@ -473,20 +473,20 @@
         "label": "Secured funding / collateral",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR -0.3 bp. Volumes: SOFR $3007bn, TGCR $1168bn, BGCR $1209bn.",
-        "asOf": "2026-10-05",
+        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR +0.7 bp. Volumes: SOFR $2997bn, TGCR $1180bn, BGCR $1219bn.",
+        "asOf": "2026-10-06",
         "sourceName": "Federal Reserve Bank of New York",
         "sourceUrl": "https://markets.newyorkfed.org/api/rates/all/latest.json",
         "evidenceRefs": [],
         "metrics": {
           "effr": 3.88,
-          "sofr": 3.89,
-          "tgcr": 3.87,
-          "bgcr": 3.87,
-          "securedVsEffrBps": -0.3,
-          "sofrVolumeBillions": 3007,
-          "tgcrVolumeBillions": 1168,
-          "bgcrVolumeBillions": 1209
+          "sofr": 3.9,
+          "tgcr": 3.88,
+          "bgcr": 3.88,
+          "securedVsEffrBps": 0.7,
+          "sofrVolumeBillions": 2997,
+          "tgcrVolumeBillions": 1180,
+          "bgcrVolumeBillions": 1219
         }
       },
       {
@@ -808,7 +808,7 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-07T06:06:08.637Z",
+    "asOf": "2026-10-07T13:31:00.084Z",
     "assets": [
       {
         "key": "SPX",
@@ -829,8 +829,8 @@
         "key": "NASDAQ",
         "label": "Nasdaq Composite",
         "symbol": "^IXIC",
-        "last": 27477.31,
-        "dailyChange": 1.05,
+        "last": 27599.89,
+        "dailyChange": 0.45,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "MEDIUM",
@@ -838,7 +838,7 @@
         "confirmingSignal": "AI/semiconductor breadth is notably strong and SMH has outperformed; NVDA is trading at/near all‑time highs.",
         "contradictingSignal": "Detailed options open‑interest/flow surface to confirm concentration mechanics",
         "invalidation": "Sustained HY/IG widening, a clear MOVE/VIX pickup, or breadth deterioration outside AI/semis (breadth ex‑AI collapsing) would indicate transmission and invalidate the incomplete‑transmission reading.",
-        "asOf": "2026-10-05"
+        "asOf": "2026-10-06"
       },
       {
         "key": "CRUDE",
@@ -874,8 +874,8 @@
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4131.200195,
-        "dailyChange": -1.34,
+        "last": 4091.399902,
+        "dailyChange": -2.29,
         "dailyChangeUnit": "percent",
         "bias": "BEARISH",
         "conviction": "MEDIUM",
@@ -889,8 +889,8 @@
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 84290.46,
-        "dailyChange": -1.46,
+        "last": 83347.66,
+        "dailyChange": -2.56,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -1480,5 +1480,5 @@
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-07T06:06:08.787Z"
+  "syncedAt": "2026-10-07T13:31:00.236Z"
 }
