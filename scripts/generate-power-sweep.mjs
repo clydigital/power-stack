@@ -96,7 +96,7 @@ function watchlistDiversification(candidate) {
   if (/(fertil|agric|seed|crop|farm)/.test(text)) return { label: "DIVERSIFIES", reason: "adds agriculture/input exposure outside the current power/energy/duration clusters" };
   if (/(copper|critical mineral|rare earth)/.test(text)) return { label: "PARTIAL_DIVERSIFIER", reason: "adds materials exposure, though still linked to grid/industrial capex" };
   if (/(lng|oil|gas|refin|tanker|shipping)/.test(text)) return { label: "OVERLAP", reason: "adds to the existing energy/shipping cluster" };
-  if (/(ai|data cent|software|cyber|semiconductor|memory|grid|power|electrical)/.test(text)) return { label: "OVERLAP", reason: "adds to the existing duration/power/AI dependency set" };
+  if (/(\bai\b|data cent|software|cyber|semiconductor|memory|grid|power|electrical)/.test(text)) return { label: "OVERLAP", reason: "adds to the existing duration/power/AI dependency set" };
   return { label: "NEUTRAL", reason: "no dominant overlap classification from current documented theme text" };
 }
 

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-07T19:30:00+08:00",
+  "lastUpdated": "2026-10-07T21:25:00+08:00",
   "purpose": "Power Stack story map. Themes decide what deserves research; they do not automatically raise a company score. Each theme should explain the money chain, the investable bottleneck and what would prove the story wrong.",
   "environment": {
     "label": "Growth is strong. Money is expensive. Strong sponsors can still fund real assets.",
@@ -8,6 +8,7 @@
   },
   "topQuestions": {
     "whatIsNewNow": [
+      "Agriculture map reset: Corteva completed the Vylor separation on 1 October, so the old CTVA seed/genetics thesis is no longer valid. Seed/genetics research moves to VYLR; CTVA must be re-underwritten as crop protection.",
       "Google has now turned AI power scarcity into contracted infrastructure: 3.59 GW with Constellation, including 890 MW of nuclear power for 20 years, with more than $4.3B of fleet investment tied to the deal.",
       "Black Hills plans $1.8B of generation investment for a proposed Google data centre. Named hyperscaler load is starting to underwrite utility-style capex rather than merely compete for existing grid capacity.",
       "The credit market is becoming two-speed. Weak borrowers are facing punitive refinancing costs, while strong sponsor-backed AI infrastructure can still raise record-scale financing.",
@@ -236,14 +237,15 @@
     {
       "priorityRank": 10,
       "name": "Agriculture / Fertilizer / Food Affordability",
-      "lifecycleState": "PHASING IN",
-      "significanceScore": 78,
-      "freshnessScore": 77,
-      "directionOfTravel": "stable-selective",
-      "lastMaterialChange": "2026-09-25",
-      "whyNow": "Energy/diesel pressure worsens farm margins while input elasticity remains uneven. Premium genetics and nitrogen are harder to defer than potash/phosphate; machinery/irrigation remain more capex-cyclical.",
-      "marketTransmission": "food inflation, crop/input ratios, fertilizer volumes, farm cash flow, machinery demand",
+      "lifecycleState": "ACTIVE / RE-UNDERWRITING",
+      "significanceScore": 82,
+      "freshnessScore": 100,
+      "directionOfTravel": "improving selectively / structure changed",
+      "lastMaterialChange": "2026-10-01",
+      "whyNow": "The old agriculture map changed structurally on 1 October when Corteva separated its seed/genetics business into Vylor. CF is producing strong cash in a constructive nitrogen market, Nutrien reported record first-half potash volumes and lower capex guidance, while Bunge raised its full-year EPS outlook. Agriculture is a real portfolio diversifier, but the preferred vehicle must now be re-selected.",
+      "marketTransmission": "farm income and crop/input ratios → seed/trait demand, nitrogen/potash application, crop-protection volumes and processing margins",
       "keyAssetsTickers": [
+        "VYLR",
         "CTVA",
         "CF",
         "NTR",
@@ -251,10 +253,10 @@
         "VMI",
         "AGCO"
       ],
-      "confirmation": "crop/input ratios and farmer margins improve without destroying core input volumes",
-      "invalidation": "farm economics force broad input cuts and capex deferral",
-      "nextTest": "crop prices, fertilizer, diesel, weather and acreage/input decisions",
-      "watchlistHoldingAction": "CTVA/NTR active-price research; CF wait for a base; BG/VMI background; AGCO second-stage only"
+      "confirmation": "VYLR proves standalone seed economics, CF/NTR maintain cash conversion and farmer affordability does not force broad input cuts",
+      "invalidation": "farm economics deteriorate enough to cut seed/input volumes broadly or the post-spin businesses fail to convert margins into cash",
+      "nextTest": "VYLR Form 10/first standalone results, New Corteva post-spin margins, CF nitrogen pricing/gas costs, NTR potash pricing/volumes and Bunge/Viterra integration",
+      "watchlistHoldingAction": "VYLR becomes the seed/genetics research target; New CTVA must be rebuilt as crop protection; CF is the strongest current cash case; NTR is secondary; BG remains background rather than stop-looking."
     },
     {
       "priorityRank": 11,
