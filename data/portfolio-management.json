@@ -1,6 +1,6 @@
 {
-  "asOf": "2026-09-25",
-  "capturedAt": "2026-09-25 · Live Desk canonical + 10Y rate-resilience cross-check",
+  "asOf": "2026-10-07",
+  "capturedAt": "2026-10-07 · MacroPulse + Live Regime + transcript cross-check",
   "title": "Power Stack Portfolio Management Overlay",
   "purpose": "Position-sizing, concentration, add/trim/recycle and risk-budget overlay. This does not change company company-evidence components.",
   "dataQuality": {
@@ -10,9 +10,9 @@
     "rateResiliencePolicy": "The 10Y overlay may rerank research priority and tighten/loosen entry gates using already-verified company evidence. It does not mechanically change company-evidence components."
   },
   "regime": {
-    "structural": "Global duration + energy-inflation collision / capital scarcity",
-    "tactical": "Selective AI/semiconductor resilience inside a rates-led tightening regime; credit has not yet confirmed a broad systemic risk-off.",
-    "portfolioRead": "Do not de-risk indiscriminately, but raise the hurdle for new duration and crowded AI beta. Prefer cash-generative, contracted or physically scarce exposures; use weaker breadth and concentration as a diversification warning rather than a standalone sell signal."
+    "structural": "Expensive money + customer-backed AI infrastructure + product/logistics energy risk",
+    "tactical": "US equities can keep pushing on AI/earnings while broad credit stays relatively calm, but weak borrowers are already feeling punitive refinancing. Energy risk has shifted from missing crude toward products, logistics and infrastructure.",
+    "portfolioRead": "Do not de-risk indiscriminately and do not treat record indices as proof that rates no longer matter. Prefer contracted, cash-generative or strong-sponsor assets; keep dry powder for any broadening in HY/IG, MOVE/VIX or breadth weakness."
   },
   "portfolioRules": [
     {
@@ -32,18 +32,18 @@
     },
     {
       "id": "rate-resilience-gate",
-      "rule": "For fresh Power Stack additions, ask whether current earnings/FCF/backlog can beat a ~5.2% risk-free hurdle without relying on multiple expansion or cheaper refinancing.",
-      "reason": "The 24 Sep U.S. 10Y official close at 5.18%, weak breadth and weak 5Y auction materially raise the opportunity cost of capital."
+      "rule": "For fresh Power Stack additions, ask whether current earnings, FCF or contracted backlog can beat a 5%+ risk-free hurdle without relying on multiple expansion or cheaper refinancing.",
+      "reason": "Long real and nominal yields remain historically restrictive even though equities are resilient. The hurdle stays high, but strong sponsor-backed projects are proving that good assets can still finance."
     },
     {
       "id": "funding-quality",
-      "rule": "For AI/power additions, require funded/contracted demand, customer quality, financing visibility and cash conversion. Penalize pre-operating, single-tenant or guarantee-dependent capacity.",
-      "reason": "Live Desk now confirms selective AI leadership alongside 5%+ long yields. Demand can remain strong while financing, dilution and valuation become more punitive."
+      "rule": "For AI/power additions, require named customers, contracted demand, sponsor quality, financing visibility, cost recovery and cash conversion. Penalise projects that need cheap refinancing or weak guarantees.",
+      "reason": "The market is two-speed: weak borrowers face punitive costs while Google/Constellation-style contracted infrastructure and strongly sponsored AI financing can still clear at scale."
     },
     {
       "id": "cash-reserve",
       "rule": "Keep a deployable reserve rather than forcing full investment while bank/credit/breadth confirmation is incomplete.",
-      "reason": "Live Desk confirms that long-end stress is real while credit and broad breadth transmission remain incomplete. Dry powder preserves optionality if that divergence resolves negatively."
+      "reason": "Broad HY/IG stress is not yet confirmed, but long yields remain restrictive and the weak-credit tail is already worsening. Dry powder preserves optionality if stress broadens."
     },
     {
       "id": "recycle-before-add",
@@ -120,28 +120,28 @@
   "newCapitalPriority": [
     {
       "priority": 1,
-      "bucket": "10Y rate-resilience gate",
-      "instruction": "Fresh-US research order: ITRI > BDC > KLIC > AZZ > GNRC > AMKR. Require current FCF/backlog/balance-sheet evidence before deployment; this is a research/action overlay, not a fundamental-score rewrite."
+      "bucket": "Contracted / customer-backed AI power",
+      "instruction": "CEG moves to the front of research after Google's 3.59-GW package. GEV/ETN/PWR remain high-quality secondary beneficiaries and BKH enters research-only on its $1.8B Google-linked generation plan. Do not chase the first deal gap."
     },
     {
       "priority": 2,
-      "bucket": "Diversification / reserve",
-      "instruction": "Do not force deployment. Preserve cash or equivalent dry powder while financials/credit/breadth remain unconfirmed."
+      "bucket": "AI memory and interconnect",
+      "instruction": "MU and CRDO remain top direct bottleneck research because they monetise real AI workload without financing the data centre. Keep valuation and customer-concentration gates."
     },
     {
       "priority": 3,
-      "bucket": "Funded physical infrastructure",
-      "instruction": "If adding risk, prefer pullbacks in funded/backlogged grid/power/electrical names over pre-operating AI project-finance exposure. GEV/ETN/PWR remain research candidates, not automatic buys."
+      "bucket": "Product / logistics energy",
+      "instruction": "Prefer XOM/LNG quality and selective VLO/STNG expressions over generic crude beta. Verify product inventories, cracks, physical premiums, storm outages and route economics before adding."
     },
     {
       "priority": 4,
-      "bucket": "Strategic hedge",
-      "instruction": "Gold/miner exposure can diversify the existing power/energy/growth concentration, but timing still requires DXY/real-yield confirmation."
+      "bucket": "Diversification / reserve",
+      "instruction": "Do not force deployment while broad credit and breadth confirmation remain incomplete. Preserve deployable cash and recycle lower-quality correlated exposure before adding more power/energy beta."
     },
     {
       "priority": 5,
-      "bucket": "AI beneficiaries",
-      "instruction": "Treat NVDA as the concentration/leadership barometer and NBIS as research-only despite the verified analyst catalyst. Do not add broad AI beta unless financing quality, cash conversion and price asymmetry clear the Power Stack gates."
+      "bucket": "Strategic hedge",
+      "instruction": "Gold/miners remain diversification candidates, but current creator bearishness adds no score weight. Timing still requires DXY and real-yield confirmation."
     }
   ],
   "riskDashboard": [
@@ -162,49 +162,50 @@
     },
     {
       "signal": "Banks / credit / breadth",
-      "status": "RISK-ON CONFIRMATION INCOMPLETE",
-      "nextCheck": "XLF/KRE/IWM/RSP plus credit spreads."
+      "status": "BROAD STRESS NOT YET CONFIRMED",
+      "nextCheck": "HY/IG spreads, MOVE/VIX, RSP/IWM and breadth outside AI/semiconductors."
     },
     {
       "signal": "AI project finance",
-      "status": "FUNDING QUALITY DETERIORATING SELECTIVELY",
-      "nextCheck": "Project Jupiter/Hyperion marks, SB Energy/Nscale pricing, guarantees and new issuance."
+      "status": "TWO-SPEED FUNDING MARKET",
+      "nextCheck": "Weak-credit refinancing costs versus sponsor-backed AI debt distribution, junior-tranche pricing, guarantees and cash conversion."
     },
     {
       "signal": "Live Desk Radar",
-      "status": "NVDA / NBIS / VLO — RESEARCH PRIORITY ONLY",
-      "nextCheck": "NVDA breadth leadership, NBIS cash-conversion/financing quality and VLO product cracks/inventories before any Power Stack score or entry change."
+      "status": "NVDA / SMH — RESEARCH PRIORITY ONLY",
+      "nextCheck": "Whether AI/semiconductor breadth stays strong if long yields re-test highs; no automatic PS rerank from Live Radar."
+    },
+    {
+      "signal": "AI power procurement",
+      "status": "CONTRACTED CAPEX CONFIRMING",
+      "nextCheck": "CEG/Google deal economics, BKH regulatory/cost-recovery terms and whether other hyperscalers copy the long-duration generation model."
     }
   ],
-  "nextPortfolioCheck": "After the next verified US close: refresh the 10Y, MOVE, credit and breadth first; then test whether ITRI/BDC/KLIC/AZZ/GNRC/AMKR still clear the rate-resilience gate and whether premium grid/power no-chase rules can loosen.",
+  "nextPortfolioCheck": "After the next verified US close and rates catalysts: refresh US10Y/30Y, HY/IG, MOVE/VIX and breadth first; then check CEG deal follow-through, BKH cost-recovery terms, Google-style hyperscaler power replication, and whether product/logistics energy tightness persists.",
   "liveDeskCrossCheck": {
     "source": "data/live-desk-canonical.json",
     "regime": "RATES_LED_TIGHTENING",
-    "alignment": "Confirms the Sep 25 Power Stack view that global duration and refined-product inflation are the dominant constraints while AI leadership remains selective rather than broad risk-on.",
+    "alignment": "Live still shows higher real/nominal yields with strong AI/semiconductor breadth and relatively calm broad credit. MacroPulse adds an important refinement: weak-credit stress is already visible, while strong sponsor-backed AI and customer-backed power projects remain financeable.",
     "portfolioImplications": [
-      "High global sovereign yields reinforce no-chase rules for duration-heavy AI, software and project-finance exposure.",
-      "Narrow breadth and S&P concentration increase the value of diversification and make headline index resilience a weaker risk-on signal.",
-      "Refined-product tightness validates continued preference for cash-generative integrated/refining/logistics exposure over generic crude beta.",
-      "Selective AI strength supports funded/backlogged infrastructure, but does not relax financing, dilution or valuation screens."
+      "Do not treat expensive money as a uniform sell signal: separate weak borrowers from cash-generative, contracted and strong-sponsor assets.",
+      "Google's Constellation and Black Hills commitments materially raise the research priority of operating generation, grid and electrical infrastructure.",
+      "Record equity indices are genuine AI/earnings resilience, but renewed yield or credit widening can still expose concentration risk.",
+      "Energy exposure should now be judged through products, logistics, refinery economics and infrastructure risk rather than crude price alone.",
+      "Creator warnings about offshore dollar funding, labour weakness and gold remain research questions until canonical evidence verifies them."
     ],
     "stockRadar": [
       {
         "ticker": "NVDA",
-        "powerStackRead": "Leadership/concentration barometer, not a diversification priority.",
+        "powerStackRead": "Leadership and concentration barometer. Strong AI breadth supports the theme, but price/valuation and flow mechanics remain separate PS questions.",
+        "action": "MONITOR / NO AUTOMATIC RERANK"
+      },
+      {
+        "ticker": "SMH",
+        "powerStackRead": "Cleaner read on semiconductor leadership and breadth than one stock. Use it to test whether the AI rally remains broad inside the complex.",
         "action": "MONITOR"
-      },
-      {
-        "ticker": "NBIS",
-        "powerStackRead": "Verified analyst catalyst improves near-term research priority, but convertibles, capex intensity and dilution keep the Power Stack quality gate restrictive.",
-        "action": "RESEARCH ONLY / NO AUTOMATIC RERANK"
-      },
-      {
-        "ticker": "VLO",
-        "powerStackRead": "Direct expression of product tightness already represented in the Power Stack watchlist; thesis support rises but entry discipline remains no-chase.",
-        "action": "SELECTIVE / WAIT FOR RETEST"
       }
     ],
-    "scoreDecision": "No current-holding company-evidence component changes and no mechanical watchlist rerank from Live Desk alone."
+    "scoreDecision": "No current-holding company-evidence component changes. CEG is promoted on independently verified company-level contracted-power evidence; other macro and transcript changes alter research priority and action gates, not holding scores."
   },
   "rateResilienceOverlay": {
     "source": "data/rate-resilience-overlay-2026-09-25.json",
