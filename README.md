@@ -107,6 +107,10 @@ The legacy macro-adjusted rating export has been retired. `power-stack-fundament
 
 Live Desk is the canonical macro/market-state owner and Power Stack is an active downstream consumer. Power Stack retains ownership of company fundamentals, portfolio construction, ranking discipline and entry decisions.
 
+## Optional chat lenses
+
+[Rates and capital sensitivity](docs/rates-and-capital-sensitivity.md) is an on-demand Power Stack chat reference. It is disabled by design: it does not run during refreshes, alter any data or scores, create a task, or block publication. Invoke it only in chat for a specific asset or causal question.
+
 ## Hosting
 
 GitHub Pages publishes from `main`.
