@@ -473,20 +473,20 @@
         "label": "Secured funding / collateral",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR +0.7 bp. Volumes: SOFR $2997bn, TGCR $1180bn, BGCR $1219bn.",
-        "asOf": "2026-10-06",
+        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR -1.3 bp. Volumes: SOFR $2968bn, TGCR $1181bn, BGCR $1229bn.",
+        "asOf": "2026-10-07",
         "sourceName": "Federal Reserve Bank of New York",
         "sourceUrl": "https://markets.newyorkfed.org/api/rates/all/latest.json",
         "evidenceRefs": [],
         "metrics": {
           "effr": 3.88,
-          "sofr": 3.9,
-          "tgcr": 3.88,
-          "bgcr": 3.88,
-          "securedVsEffrBps": 0.7,
-          "sofrVolumeBillions": 2997,
-          "tgcrVolumeBillions": 1180,
-          "bgcrVolumeBillions": 1219
+          "sofr": 3.88,
+          "tgcr": 3.86,
+          "bgcr": 3.86,
+          "securedVsEffrBps": -1.3,
+          "sofrVolumeBillions": 2968,
+          "tgcrVolumeBillions": 1181,
+          "bgcrVolumeBillions": 1229
         }
       },
       {
@@ -803,7 +803,7 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-08T06:11:38.044Z",
+    "asOf": "2026-10-08T13:37:02.732Z",
     "assets": [
       {
         "key": "SPX",
@@ -824,8 +824,8 @@
         "key": "NASDAQ",
         "label": "Nasdaq Composite",
         "symbol": "^IXIC",
-        "last": 27599.89,
-        "dailyChange": 0.45,
+        "last": 27538.69,
+        "dailyChange": -0.22,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "HIGH",
@@ -833,7 +833,7 @@
         "confirmingSignal": "AI/semiconductor breadth is very strong and is supporting headline indices.",
         "contradictingSignal": null,
         "invalidation": "Sustained HY/IG widening or a material MOVE/VIX spike with breadth deterioration (evidence: market-monitor:hy-oas:2026-10-06 moving materially wider, a canonical MOVE volatility monitor showing a jump) or resolved dealer/auction evidence showing failed absorption.",
-        "asOf": "2026-10-06"
+        "asOf": "2026-10-07"
       },
       {
         "key": "CRUDE",
@@ -869,8 +869,8 @@
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4121.700195,
-        "dailyChange": -0.46,
+        "last": 4125.799805,
+        "dailyChange": -0.36,
         "dailyChangeUnit": "percent",
         "bias": "BEARISH",
         "conviction": "HIGH",
@@ -884,8 +884,8 @@
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 82829.76,
-        "dailyChange": -0.53,
+        "last": 82150.09,
+        "dailyChange": -1.35,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -1575,5 +1575,5 @@
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-08T06:11:38.196Z"
+  "syncedAt": "2026-10-08T13:37:02.886Z"
 }
