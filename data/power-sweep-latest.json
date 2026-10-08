@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-08T23:20:17.016Z",
+  "generatedAt": "2026-10-08T23:24:19.850Z",
   "asOf": "2026-10-07T20:03:56.914+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -9,13 +9,13 @@
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
       "asOf": "2026-10-07T20:03:56.914+00:00",
-      "syncedAt": "2026-10-08T13:37:02.886Z",
+      "syncedAt": "2026-10-08T23:24:19.620Z",
       "status": "OK"
     },
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-08T23:20:16.969Z",
+      "generatedAt": "2026-10-08T23:24:19.791Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -44,86 +44,10 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "2768647d-546f-4e31-9ac4-256de0cba6ac",
-    "capturedAt": "2026-10-08T04:06:02.856Z",
-    "itemCount": 2,
-    "items": [
-      {
-        "id": "0a8075fb-f348-4637-9806-267851765856",
-        "motionKey": "event:record_high:spx",
-        "versionNumber": 3,
-        "headline": "The S&P 500 just hit an all-time high of $7,844, surpassing $71 trillion in market cap for the first time ever.",
-        "category": "ENERGY",
-        "verificationState": "LEAD",
-        "lifecycleState": "PROMOTED",
-        "whatHappened": "StockedUp surfaced this in a recent transcript. It remains a creator-sourced lead until independently corroborated: The S&P 500 just hit an all-time high of $7,844, surpassing $71 trillion in market cap for the first time ever.",
-        "marketReaction": null,
-        "whyInteresting": "Transcript writing angle: Contradiction between record market cap/concentration and continuing maritime attacks — angle: 'Why the market is racing higher while the oil shipping lane is still under attack.'",
-        "bigPictureBridge": "Fresh energy / geopolitical evidence → physical supply and inflation channel → Energy Security regime",
-        "nextTest": "S&P 500 index level quoted and methodology for converting index level to total US market cap (S&P Dow Jones Indices / Bloomberg / FactSet)",
-        "tickers": [
-          "AMD",
-          "SPX",
-          "ULSD"
-        ],
-        "sourceName": "StockedUp",
-        "sourceUrl": "https://www.youtube.com/watch?v=inC7GFs1FaU",
-        "materiality": 86,
-        "relevance": 86,
-        "novelty": 86,
-        "occurredAt": "2026-10-06T22:00:53.000Z",
-        "storyId": "fe9e1860-ace4-4393-8f2d-7f8081990661",
-        "storySlug": "market-breadth-health",
-        "storyTitle": "Tech-Led Breadth Transition: Confirmation Still Incomplete",
-        "regimeSlug": "energy-security-inflation",
-        "regimeLabel": "Energy Security",
-        "attentionTier": "PRIMARY",
-        "attentionScore": 82,
-        "writingPotential": "MEDIUM",
-        "attentionReasons": [
-          "high materiality",
-          "high market relevance",
-          "asset/ticker linked"
-        ]
-      },
-      {
-        "id": "2ec14b25-82c6-4afe-9822-c6d68fb3764a",
-        "motionKey": "event:record_high:nasdaq",
-        "versionNumber": 3,
-        "headline": "NASDAQ made a new all-time high today.",
-        "category": "EARNINGS",
-        "verificationState": "LEAD",
-        "lifecycleState": "PROMOTED",
-        "whatHappened": "StockedUp surfaced this in a recent transcript. It remains a creator-sourced lead until independently corroborated: NASDAQ made a new all-time high today.",
-        "marketReaction": null,
-        "whyInteresting": "Transcript writing angle: Angle: ‘Why equities rallied into rising long yields — disentangling services‑driven risk‑on from geopolitical de‑risking in the Gulf’ — combine ISM, tanker flows, yield moves and intraday breadth.",
-        "bigPictureBridge": "Fresh energy / geopolitical evidence → physical supply and inflation channel → Energy Security regime",
-        "nextTest": "Intraday/closing price series for Nasdaq Composite on the published date to confirm new ATH and timestamp.",
-        "tickers": [
-          "TSLA",
-          "NASDAQ"
-        ],
-        "sourceName": "StockedUp",
-        "sourceUrl": "https://www.youtube.com/watch?v=X778EqVRRLw",
-        "materiality": 86,
-        "relevance": 86,
-        "novelty": 86,
-        "occurredAt": "2026-10-05T22:00:02.000Z",
-        "storyId": "fe9e1860-ace4-4393-8f2d-7f8081990661",
-        "storySlug": "market-breadth-health",
-        "storyTitle": "Tech-Led Breadth Transition: Confirmation Still Incomplete",
-        "regimeSlug": "energy-security-inflation",
-        "regimeLabel": "Energy Security",
-        "attentionTier": "PRIMARY",
-        "attentionScore": 82,
-        "writingPotential": "HIGH",
-        "attentionReasons": [
-          "high materiality",
-          "high market relevance",
-          "asset/ticker linked"
-        ]
-      }
-    ]
+    "editionId": "730d1ebd-d1f4-48c4-a844-95299973b359",
+    "capturedAt": "2026-10-08T16:21:20.045Z",
+    "itemCount": 0,
+    "items": []
   },
   "portfolioTriage": {
     "tapeDivergences": [
@@ -144,9 +68,6 @@
       "MISC",
       "HIBISCS",
       "DAYANG"
-    ],
-    "liveMotionLinkedHoldings": [
-      "TSLA"
     ],
     "hiddenConcentration": [
       {
@@ -360,55 +281,33 @@
       "possibleDecisionImpact": "Could unlock accurate YTL-linked concentration and portfolio-weight measurement."
     },
     {
-      "ticker": "TSLA",
-      "name": "Tesla",
-      "priorityScore": 115,
-      "overlayState": "HEADWIND",
-      "reviewPriority": "HIGH_REVIEW",
+      "ticker": "HIBISCS",
+      "name": "Hibiscus Petroleum Berhad",
+      "priorityScore": 45,
+      "overlayState": "MIXED",
+      "reviewPriority": "REVIEW",
       "actualReaction": {
-        "status": "CONFIRMS",
-        "reason": "Completed-session tape moved in the direction implied by the current market overlay.",
-        "sessionDate": "2026-09-24",
-        "close": 377.94,
-        "previousClose": 380.12,
-        "change": -2.18,
-        "changePct": -0.57,
-        "currency": "USD",
+        "status": "INCONCLUSIVE",
+        "reason": "The market overlay is not directional enough to judge one-session confirmation.",
+        "sessionDate": "2026-09-25",
+        "close": 2.23,
+        "previousClose": 2.3,
+        "change": -0.07,
+        "changePct": -3.04,
+        "currency": "MYR",
         "sourceName": "Yahoo Finance delayed quote",
-        "sourceUrl": "https://finance.yahoo.com/quote/TSLA/",
-        "closeNotice": "At close: September 24 at 4:00:00 PM EDT"
+        "sourceUrl": "https://sg.finance.yahoo.com/quote/5199.KL/",
+        "closeNotice": "At close: 4:59:53 pm MYT"
       },
-      "currentAction": "HOLD / DO NOT AVERAGE DOWN",
-      "motionContext": [
-        {
-          "id": "2ec14b25-82c6-4afe-9822-c6d68fb3764a",
-          "headline": "NASDAQ made a new all-time high today.",
-          "category": "EARNINGS",
-          "verificationState": "LEAD",
-          "occurredAt": "2026-10-05T22:00:02.000Z",
-          "whyInteresting": "Transcript writing angle: Angle: ‘Why equities rallied into rising long yields — disentangling services‑driven risk‑on from geopolitical de‑risking in the Gulf’ — combine ISM, tanker flows, yield moves and intraday breadth.",
-          "bigPictureBridge": "Fresh energy / geopolitical evidence → physical supply and inflation channel → Energy Security regime",
-          "nextTest": "Intraday/closing price series for Nasdaq Composite on the published date to confirm new ATH and timestamp.",
-          "storyId": "fe9e1860-ace4-4393-8f2d-7f8081990661",
-          "storyTitle": "Tech-Led Breadth Transition: Confirmation Still Incomplete",
-          "regimeSlug": "energy-security-inflation",
-          "regimeLabel": "Energy Security",
-          "sourceName": "StockedUp",
-          "sourceUrl": "https://www.youtube.com/watch?v=X778EqVRRLw",
-          "materiality": 86,
-          "relevance": 86
-        }
-      ],
+      "currentAction": "HOLD / NO ADD",
       "reasons": [
-        "portfolio overlay marks the holding HIGH_REVIEW",
-        "fresh promoted Live Market Motion is linked to the holding"
+        "mixed macro exposure coincided with a material one-session move"
       ],
-      "researchQuestion": "Has new company-specific evidence changed TSLA's current action gate or thesis risk?",
+      "researchQuestion": "What drove HIBISCS's material move, and which documented macro/company channel currently dominates its risk?",
       "requiredEvidence": [
-        "funding, valuation, cash-flow or operating evidence that could offset or reinforce the macro headwind",
-        "independent company/official evidence testing whether the promoted Live Motion changes the action gate, thesis risk, cash flow or funding case"
+        "which channel dominated the tape: company fundamentals, crude/products, freight, rates or positioning"
       ],
-      "possibleDecisionImpact": "Monitor unless new company evidence changes the existing Power Stack action gate."
+      "possibleDecisionImpact": "Could identify which macro/company channel is driving the position and whether the current action gate remains appropriate."
     }
   ],
   "watchlistResearchQueue": [
@@ -610,17 +509,17 @@
       "reason": "Mixed exposure is monitored without forcing a directional conclusion."
     },
     {
-      "ticker": "HIBISCS",
-      "overlayState": "MIXED",
-      "reaction": "INCONCLUSIVE",
-      "action": "HOLD / NO ADD",
-      "reason": "Mixed exposure is monitored without forcing a directional conclusion."
-    },
-    {
       "ticker": "TTWO",
       "overlayState": "HEADWIND",
       "reaction": "CONFIRMS",
       "action": "HOLD / NO ADD",
+      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
+    },
+    {
+      "ticker": "TSLA",
+      "overlayState": "HEADWIND",
+      "reaction": "CONFIRMS",
+      "action": "HOLD / DO NOT AVERAGE DOWN",
       "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
     },
     {
@@ -659,7 +558,6 @@
     }
   ],
   "researchGaps": [
-    "Latest primary-dealer report date 2026-09-23 is more than fourteen calendar days old.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence.",
     "Holding tape unresolved: 6742UW"
   ],

@@ -494,16 +494,16 @@
         "label": "Treasury bills / front-end cash",
         "direction": "TIGHTER",
         "confirmation": "CONFIRMING",
-        "detail": "3M 4.22%; 6M 4.28%; average vs EFFR +37.0 bp.",
-        "asOf": "2026-10-07",
+        "detail": "3M 4.23%; 6M 4.30%; average vs EFFR +38.5 bp.",
+        "asOf": "2026-10-08",
         "sourceName": "U.S. Department of the Treasury",
         "sourceUrl": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026",
         "evidenceRefs": [],
         "metrics": {
-          "bill3m": 4.22,
-          "bill6m": 4.28,
+          "bill3m": 4.23,
+          "bill6m": 4.3,
           "effectiveFedFunds": 3.88,
-          "billsVsEffrBps": 37
+          "billsVsEffrBps": 38.5
         }
       },
       {
@@ -511,16 +511,16 @@
         "label": "Credit spreads",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "HY OAS 3.03 (5D -5.0 bp); IG OAS 0.83 (5D -1.0 bp).",
-        "asOf": "2026-10-06",
+        "detail": "HY OAS 3.09 (5D -3.0 bp); IG OAS 0.82 (5D -2.0 bp).",
+        "asOf": "2026-10-07",
         "sourceName": "Federal Reserve Economic Data",
         "sourceUrl": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
         "evidenceRefs": [],
         "metrics": {
-          "hyOas": 3.03,
-          "hyOas5dBps": -5,
-          "igOas": 0.83,
-          "igOas5dBps": -1
+          "hyOas": 3.09,
+          "hyOas5dBps": -3,
+          "igOas": 0.82,
+          "igOas5dBps": -2
         }
       },
       {
@@ -543,16 +543,16 @@
         "label": "Primary-dealer balance sheet",
         "direction": "UNRESOLVED",
         "confirmation": "UNRESOLVED",
-        "detail": "Treasury dealer net position ex-TIPS $470,836m; weekly change $16,279m. Fails to deliver 192514m; fails to receive 197503m. Direction is not forced without a validated balance-sheet interpretation.",
-        "asOf": "2026-09-23",
+        "detail": "Treasury dealer net position ex-TIPS $432,032m; weekly change $-38,804m. Fails to deliver 130689m; fails to receive 129280m. Direction is not forced without a validated balance-sheet interpretation.",
+        "asOf": "2026-09-30",
         "sourceName": "Federal Reserve Bank of New York",
         "sourceUrl": "https://markets.newyorkfed.org/api/pd/get/PDPOSGST-TOT_PDFTD-USTET_PDFTR-USTET.json",
         "evidenceRefs": [],
         "metrics": {
-          "treasuryNetPositionMillions": 470836,
-          "treasuryNetPositionWeeklyChangeMillions": 16279,
-          "failsToDeliverMillions": 192514,
-          "failsToReceiveMillions": 197503
+          "treasuryNetPositionMillions": 432032,
+          "treasuryNetPositionWeeklyChangeMillions": -38804,
+          "failsToDeliverMillions": 130689,
+          "failsToReceiveMillions": 129280
         }
       }
     ],
@@ -579,13 +579,12 @@
     "marketMonitor": "PARTIAL",
     "fredRates": "OK",
     "nyFedReferenceRates": "OK",
-    "nyFedPrimaryDealers": "STALE",
+    "nyFedPrimaryDealers": "OK",
     "treasuryBills": "OK",
     "treasurySupply": "UNRESOLVED"
   },
   "contradictions": [],
   "researchGaps": [
-    "Latest primary-dealer report date 2026-09-23 is more than fourteen calendar days old.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],
   "marketRows": [
@@ -603,9 +602,9 @@
       "id": "us3m-bill",
       "symbol": "DGS3MO",
       "label": "US 3M Treasury Bill Yield",
-      "last": 4.21,
-      "change5d": -0.94,
-      "asOf": "2026-10-06",
+      "last": 4.22,
+      "change5d": 0.48,
+      "asOf": "2026-10-07",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/DGS3MO"
     },
@@ -614,8 +613,8 @@
       "symbol": "DGS6MO",
       "label": "US 6M Treasury Bill Yield",
       "last": 4.28,
-      "change5d": -1.83,
-      "asOf": "2026-10-06",
+      "change5d": -1.15,
+      "asOf": "2026-10-07",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/DGS6MO"
     },
@@ -623,9 +622,9 @@
       "id": "us2y",
       "symbol": "DGS2",
       "label": "US 2Y Yield",
-      "last": 4.79,
-      "change5d": -2.04,
-      "asOf": "2026-10-06",
+      "last": 4.77,
+      "change5d": -2.25,
+      "asOf": "2026-10-07",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/DGS2"
     },
@@ -633,9 +632,9 @@
       "id": "us10y-fred",
       "symbol": "DGS10",
       "label": "US 10Y Yield · FRED",
-      "last": 5.27,
-      "change5d": 0.19,
-      "asOf": "2026-10-06",
+      "last": 5.28,
+      "change5d": -0.19,
+      "asOf": "2026-10-07",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/DGS10"
     },
@@ -643,9 +642,9 @@
       "id": "us10y-real",
       "symbol": "DFII10",
       "label": "US 10Y Real Yield",
-      "last": 2.91,
-      "change5d": 0,
-      "asOf": "2026-10-06",
+      "last": 2.92,
+      "change5d": -0.34,
+      "asOf": "2026-10-07",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/DFII10"
     },
@@ -653,9 +652,9 @@
       "id": "us10y-breakeven",
       "symbol": "T10YIE",
       "label": "US 10Y Breakeven Inflation",
-      "last": 2.36,
-      "change5d": 0,
-      "asOf": "2026-10-07",
+      "last": 2.35,
+      "change5d": -0.42,
+      "asOf": "2026-10-08",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/T10YIE"
     },
@@ -665,7 +664,7 @@
       "label": "Effective Federal Funds Rate",
       "last": 3.88,
       "change5d": 0,
-      "asOf": "2026-10-06",
+      "asOf": "2026-10-07",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/DFF"
     },
@@ -673,9 +672,9 @@
       "id": "hy-oas",
       "symbol": "BAMLH0A0HYM2",
       "label": "US High Yield OAS",
-      "last": 3.03,
-      "change5d": -1.62,
-      "asOf": "2026-10-06",
+      "last": 3.09,
+      "change5d": -0.96,
+      "asOf": "2026-10-07",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
     },
@@ -683,9 +682,9 @@
       "id": "ig-oas",
       "symbol": "BAMLC0A0CM",
       "label": "US Investment Grade OAS",
-      "last": 0.83,
-      "change5d": -1.19,
-      "asOf": "2026-10-06",
+      "last": 0.82,
+      "change5d": -2.38,
+      "asOf": "2026-10-07",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/BAMLC0A0CM"
     }
@@ -803,7 +802,7 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-08T13:37:02.732Z",
+    "asOf": "2026-10-08T23:24:19.539Z",
     "assets": [
       {
         "key": "SPX",
@@ -854,8 +853,8 @@
         "key": "US_RATES",
         "label": "US 10Y",
         "symbol": "^TNX",
-        "last": 5.28,
-        "dailyChange": 1,
+        "last": 5.22,
+        "dailyChange": -6,
         "dailyChangeUnit": "bps",
         "bias": "HAWKISH",
         "conviction": "HIGH",
@@ -863,14 +862,14 @@
         "confirmingSignal": "Long‑end yields remain elevated with 10Y ~5.28% and 20Y/30Y rising while 2Y is lower, indicating front‑end easing but long‑end stickiness.",
         "contradictingSignal": "Canonical MOVE/Treasury volatility is missing for volatility confirmation.",
         "invalidation": "Sustained HY/IG widening or a material MOVE/VIX spike with breadth deterioration (evidence: market-monitor:hy-oas:2026-10-06 moving materially wider, a canonical MOVE volatility monitor showing a jump) or resolved dealer/auction evidence showing failed absorption.",
-        "asOf": "2026-10-07"
+        "asOf": "2026-10-08"
       },
       {
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4125.799805,
-        "dailyChange": -0.36,
+        "last": 4144,
+        "dailyChange": 0.08,
         "dailyChangeUnit": "percent",
         "bias": "BEARISH",
         "conviction": "HIGH",
@@ -884,8 +883,8 @@
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 82150.09,
-        "dailyChange": -1.35,
+        "last": 81821.78,
+        "dailyChange": -1.75,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -1478,86 +1477,10 @@
   },
   "marketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "2768647d-546f-4e31-9ac4-256de0cba6ac",
-    "capturedAt": "2026-10-08T04:06:02.856Z",
-    "researchRunId": "49b5891b-c60c-4023-a371-a922666a5c06",
-    "items": [
-      {
-        "id": "0a8075fb-f348-4637-9806-267851765856",
-        "motionKey": "event:record_high:spx",
-        "versionNumber": 3,
-        "headline": "The S&P 500 just hit an all-time high of $7,844, surpassing $71 trillion in market cap for the first time ever.",
-        "category": "ENERGY",
-        "verificationState": "LEAD",
-        "lifecycleState": "PROMOTED",
-        "whatHappened": "StockedUp surfaced this in a recent transcript. It remains a creator-sourced lead until independently corroborated: The S&P 500 just hit an all-time high of $7,844, surpassing $71 trillion in market cap for the first time ever.",
-        "marketReaction": null,
-        "whyInteresting": "Transcript writing angle: Contradiction between record market cap/concentration and continuing maritime attacks — angle: 'Why the market is racing higher while the oil shipping lane is still under attack.'",
-        "bigPictureBridge": "Fresh energy / geopolitical evidence → physical supply and inflation channel → Energy Security regime",
-        "nextTest": "S&P 500 index level quoted and methodology for converting index level to total US market cap (S&P Dow Jones Indices / Bloomberg / FactSet)",
-        "tickers": [
-          "AMD",
-          "SPX",
-          "ULSD"
-        ],
-        "sourceName": "StockedUp",
-        "sourceUrl": "https://www.youtube.com/watch?v=inC7GFs1FaU",
-        "materiality": 86,
-        "relevance": 86,
-        "novelty": 86,
-        "occurredAt": "2026-10-06T22:00:53.000Z",
-        "storyId": "fe9e1860-ace4-4393-8f2d-7f8081990661",
-        "storySlug": "market-breadth-health",
-        "storyTitle": "Tech-Led Breadth Transition: Confirmation Still Incomplete",
-        "regimeSlug": "energy-security-inflation",
-        "regimeLabel": "Energy Security",
-        "attentionTier": "PRIMARY",
-        "attentionScore": 82,
-        "writingPotential": "MEDIUM",
-        "attentionReasons": [
-          "high materiality",
-          "high market relevance",
-          "asset/ticker linked"
-        ]
-      },
-      {
-        "id": "2ec14b25-82c6-4afe-9822-c6d68fb3764a",
-        "motionKey": "event:record_high:nasdaq",
-        "versionNumber": 3,
-        "headline": "NASDAQ made a new all-time high today.",
-        "category": "EARNINGS",
-        "verificationState": "LEAD",
-        "lifecycleState": "PROMOTED",
-        "whatHappened": "StockedUp surfaced this in a recent transcript. It remains a creator-sourced lead until independently corroborated: NASDAQ made a new all-time high today.",
-        "marketReaction": null,
-        "whyInteresting": "Transcript writing angle: Angle: ‘Why equities rallied into rising long yields — disentangling services‑driven risk‑on from geopolitical de‑risking in the Gulf’ — combine ISM, tanker flows, yield moves and intraday breadth.",
-        "bigPictureBridge": "Fresh energy / geopolitical evidence → physical supply and inflation channel → Energy Security regime",
-        "nextTest": "Intraday/closing price series for Nasdaq Composite on the published date to confirm new ATH and timestamp.",
-        "tickers": [
-          "TSLA",
-          "NASDAQ"
-        ],
-        "sourceName": "StockedUp",
-        "sourceUrl": "https://www.youtube.com/watch?v=X778EqVRRLw",
-        "materiality": 86,
-        "relevance": 86,
-        "novelty": 86,
-        "occurredAt": "2026-10-05T22:00:02.000Z",
-        "storyId": "fe9e1860-ace4-4393-8f2d-7f8081990661",
-        "storySlug": "market-breadth-health",
-        "storyTitle": "Tech-Led Breadth Transition: Confirmation Still Incomplete",
-        "regimeSlug": "energy-security-inflation",
-        "regimeLabel": "Energy Security",
-        "attentionTier": "PRIMARY",
-        "attentionScore": 82,
-        "writingPotential": "HIGH",
-        "attentionReasons": [
-          "high materiality",
-          "high market relevance",
-          "asset/ticker linked"
-        ]
-      }
-    ]
+    "editionId": "730d1ebd-d1f4-48c4-a844-95299973b359",
+    "capturedAt": "2026-10-08T16:21:20.045Z",
+    "researchRunId": "46781f94-f346-4d15-8f87-f617522dedb5",
+    "items": []
   },
   "upstreamGuardrails": [
     "This snapshot is a read-only Live canonical market-intelligence view for downstream consumers.",
@@ -1575,5 +1498,5 @@
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-08T13:37:02.886Z"
+  "syncedAt": "2026-10-08T23:24:19.620Z"
 }
