@@ -1,23 +1,59 @@
 {
   "contractVersion": "power-stack-motion-shadow/1",
   "mode": "SHADOW_ONLY",
-  "generatedAt": "2026-10-07T14:01:49.733Z",
+  "generatedAt": "2026-10-08T04:06:02.856Z",
   "freshnessWindowHours": 48,
   "safetyLimit": 18,
   "activeSource": "LIVE_IMMUTABLE_EDITION",
   "shadowSource": "POWER_STACK_DISCOVERY",
-  "liveEditionId": "a42d6a82-f876-4db2-8c08-18923bcbebb9",
-  "liveCapturedAt": "2026-10-07T14:01:49.733Z",
+  "liveEditionId": "2768647d-546f-4e31-9ac4-256de0cba6ac",
+  "liveCapturedAt": "2026-10-08T04:06:02.856Z",
   "summary": {
-    "liveItemCount": 0,
+    "liveItemCount": 2,
     "localFreshCandidateCount": 0,
     "overlapCount": 0,
-    "liveOnlyCount": 0,
+    "liveOnlyCount": 2,
     "localOnlyCount": 0,
     "overlapRate": null
   },
   "overlap": [],
-  "liveOnly": [],
+  "liveOnly": [
+    {
+      "id": "0a8075fb-f348-4637-9806-267851765856",
+      "headline": "The S&P 500 just hit an all-time high of $7,844, surpassing $71 trillion in market cap for the first time ever.",
+      "category": "ENERGY",
+      "tickers": [
+        "AMD",
+        "SPX",
+        "ULSD"
+      ],
+      "sourceUrl": "https://www.youtube.com/watch?v=inC7GFs1FaU",
+      "sourceName": "StockedUp",
+      "occurredAt": "2026-10-06T22:00:53.000Z",
+      "storyId": "fe9e1860-ace4-4393-8f2d-7f8081990661",
+      "storyTitle": "Tech-Led Breadth Transition: Confirmation Still Incomplete",
+      "regimeSlug": "energy-security-inflation",
+      "attentionTier": "PRIMARY",
+      "attentionScore": 82
+    },
+    {
+      "id": "2ec14b25-82c6-4afe-9822-c6d68fb3764a",
+      "headline": "NASDAQ made a new all-time high today.",
+      "category": "EARNINGS",
+      "tickers": [
+        "TSLA",
+        "NASDAQ"
+      ],
+      "sourceUrl": "https://www.youtube.com/watch?v=X778EqVRRLw",
+      "sourceName": "StockedUp",
+      "occurredAt": "2026-10-05T22:00:02.000Z",
+      "storyId": "fe9e1860-ace4-4393-8f2d-7f8081990661",
+      "storyTitle": "Tech-Led Breadth Transition: Confirmation Still Incomplete",
+      "regimeSlug": "energy-security-inflation",
+      "attentionTier": "PRIMARY",
+      "attentionScore": 82
+    }
+  ],
   "localOnly": [],
   "promotionGate": "Shadow-only Power Stack discovery cannot enter active portfolio research priority. A future migration decision must explicitly enable residual discovery after shadow coverage is reviewed.",
   "guardrails": [
