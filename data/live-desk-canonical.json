@@ -528,14 +528,14 @@
         "label": "US dollar transmission",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "US Dollar · UUP proxy 5D +0.94%.",
-        "asOf": "2026-10-07",
+        "detail": "US Dollar · UUP proxy 5D +0.07%.",
+        "asOf": "2026-10-08",
         "sourceName": "Nasdaq official etf history",
         "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical",
         "evidenceRefs": [],
         "metrics": {
-          "proxyLevel": 29.04,
-          "change5dPct": 0.94
+          "proxyLevel": 28.98,
+          "change5dPct": 0.07
         }
       },
       {
@@ -592,9 +592,9 @@
       "id": "dxy",
       "symbol": "UUP",
       "label": "US Dollar · UUP proxy",
-      "last": 29.04,
-      "change5d": 0.94,
-      "asOf": "2026-10-07",
+      "last": 28.98,
+      "change5d": 0.07,
+      "asOf": "2026-10-08",
       "sourceName": "Nasdaq official etf history",
       "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical"
     },
@@ -802,14 +802,14 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-08T23:24:19.539Z",
+    "asOf": "2026-10-09T06:14:59.731Z",
     "assets": [
       {
         "key": "SPX",
         "label": "S&P 500",
         "symbol": "SP500",
-        "last": 7801.77,
-        "dailyChange": -0.22,
+        "last": 7765.36,
+        "dailyChange": -0.47,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "HIGH",
@@ -817,14 +817,14 @@
         "confirmingSignal": "Large‑cap and Magnificent Seven breadth measures are above multi‑day averages while AI breadth is especially strong.",
         "contradictingSignal": null,
         "invalidation": "Sustained HY/IG widening or a material MOVE/VIX spike with breadth deterioration (evidence: market-monitor:hy-oas:2026-10-06 moving materially wider, a canonical MOVE volatility monitor showing a jump) or resolved dealer/auction evidence showing failed absorption.",
-        "asOf": "2026-10-07"
+        "asOf": "2026-10-08"
       },
       {
         "key": "NASDAQ",
         "label": "Nasdaq Composite",
         "symbol": "^IXIC",
-        "last": 27538.69,
-        "dailyChange": -0.22,
+        "last": 27193.34,
+        "dailyChange": -1.25,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "HIGH",
@@ -832,7 +832,7 @@
         "confirmingSignal": "AI/semiconductor breadth is very strong and is supporting headline indices.",
         "contradictingSignal": null,
         "invalidation": "Sustained HY/IG widening or a material MOVE/VIX spike with breadth deterioration (evidence: market-monitor:hy-oas:2026-10-06 moving materially wider, a canonical MOVE volatility monitor showing a jump) or resolved dealer/auction evidence showing failed absorption.",
-        "asOf": "2026-10-07"
+        "asOf": "2026-10-08"
       },
       {
         "key": "CRUDE",
@@ -868,23 +868,23 @@
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4144,
-        "dailyChange": 0.08,
+        "last": 4192.899902,
+        "dailyChange": 0.86,
         "dailyChangeUnit": "percent",
-        "bias": "BEARISH",
+        "bias": "BULLISH",
         "conviction": "HIGH",
         "primaryDriver": "Gold weakening alongside stronger real yields suggests rates/USD dominance over safe‑haven flows in this window.",
         "confirmingSignal": "Gold is weaker over the 5‑day window while real yields are higher.",
         "contradictingSignal": null,
         "invalidation": "Sustained HY/IG widening or a material MOVE/VIX spike with breadth deterioration (evidence: market-monitor:hy-oas:2026-10-06 moving materially wider, a canonical MOVE volatility monitor showing a jump) or resolved dealer/auction evidence showing failed absorption.",
-        "asOf": "2026-10-08"
+        "asOf": "2026-10-09"
       },
       {
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 81821.78,
-        "dailyChange": -1.75,
+        "last": 82408.93,
+        "dailyChange": 0.88,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -892,7 +892,7 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": null,
-        "asOf": "2026-10-08"
+        "asOf": "2026-10-09"
       }
     ]
   },
@@ -1477,9 +1477,9 @@
   },
   "marketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "730d1ebd-d1f4-48c4-a844-95299973b359",
-    "capturedAt": "2026-10-08T16:21:20.045Z",
-    "researchRunId": "46781f94-f346-4d15-8f87-f617522dedb5",
+    "editionId": "d8db2411-4e98-43d7-8386-50f4a3b1bb30",
+    "capturedAt": "2026-10-09T04:05:51.565Z",
+    "researchRunId": "dcc6d118-4f34-4687-94e9-faadd4644068",
     "items": []
   },
   "upstreamGuardrails": [
@@ -1498,5 +1498,5 @@
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-08T23:24:19.620Z"
+  "syncedAt": "2026-10-09T06:14:59.880Z"
 }
