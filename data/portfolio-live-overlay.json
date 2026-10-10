@@ -1,8 +1,8 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-10T21:42:55.124Z",
-  "liveAsOf": "2026-10-10T08:42:00.746+00:00",
-  "liveSyncedAt": "2026-10-10T12:38:04.811Z",
+  "generatedAt": "2026-10-10T21:48:43.294Z",
+  "liveAsOf": "2026-10-10T18:51:09.076+00:00",
+  "liveSyncedAt": "2026-10-10T21:48:43.210Z",
   "sourceHealth": {
     "dossier": "DEGRADED",
     "marketMonitor": "PARTIAL",
@@ -13,16 +13,16 @@
     "treasurySupply": "UNRESOLVED"
   },
   "regime": {
-    "family": "UNRESOLVED",
-    "headline": "Research Brain Operating in Degraded Fallback Mode",
-    "answer": "Primary reasoning pass was unavailable or failed validation.",
-    "implication": "UNRESOLVED",
-    "whatWouldChangeMind": "Successful execution of next Research Brain reasoning pass."
+    "family": "RATES_LED_TIGHTENING",
+    "headline": "US long yields and a small ACM term‑premium uptick coexist with muted broad credit and strong AI/semiconductor breadth, so higher yields are tightening conditions but transmission into credit/volatility remains incomplete.",
+    "answer": "10Y at 5.24% and NY Fed ACM term premium ~0.92% coexist with a 20‑session HY OAS widening and durable AI/semiconductor breadth; credit and IG are not uniformly stressed, so indices can advance even as conditions tighten unless yields and HY widen further.",
+    "implication": "Higher long yields raise borrowing costs and tighten financial conditions, but absent broad credit widening or volatility pickup the tightening is partial and equity strength stays concentrated in AI/semiconductors.",
+    "whatWouldChangeMind": "Sustained narrowing/underperformance in SMH/AI breadth plus persistent IG+HY widening (canonical HY OAS continuing to widen across 5–10 sessions) would indicate full transmission."
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "fe9844dc-3040-421c-9a30-5cc030ecf933",
-    "capturedAt": "2026-10-10T04:05:44.450Z",
+    "editionId": "88008ef8-c439-4aa3-9c7c-10ba5ced2502",
+    "capturedAt": "2026-10-10T16:20:21.263Z",
     "itemCount": 0,
     "linkedHoldingCount": 0
   },
@@ -48,7 +48,7 @@
           "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
           "detail": "No current deterministic policy impulse or directional next-meeting repricing is present in the bounded rate context.",
-          "asOf": "2026-10-10T08:42:00.746Z"
+          "asOf": "2026-10-10T18:51:09.076Z"
         },
         {
           "key": "RATES_FRONT_END",
@@ -56,7 +56,7 @@
           "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
           "detail": "US 2Y rate context is unavailable.",
-          "asOf": "2026-10-10T08:42:00.746Z"
+          "asOf": "2026-10-10T18:51:09.076Z"
         },
         {
           "key": "RATES_REAL_YIELDS",
@@ -64,7 +64,7 @@
           "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
           "detail": "10Y real-yield context is unavailable.",
-          "asOf": "2026-10-10T08:42:00.746Z"
+          "asOf": "2026-10-10T18:51:09.076Z"
         },
         {
           "key": "RATES_BREAKEVENS",
@@ -72,7 +72,7 @@
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
           "detail": "10Y breakeven 2.33%; 5D n/a.",
-          "asOf": "2026-10-10T08:42:00.746Z"
+          "asOf": "2026-10-10T18:51:09.076Z"
         },
         {
           "key": "RATES_LONG_END",
@@ -80,7 +80,7 @@
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
           "detail": "US 10Y 5.24%; 5D n/a.",
-          "asOf": "2026-10-10T08:42:00.746Z"
+          "asOf": "2026-10-10T18:51:09.076Z"
         },
         {
           "key": "BILLS",
@@ -124,7 +124,7 @@
     "physicalEnergy": {
       "status": "UNRESOLVED",
       "observed": false,
-      "detail": "Unobserved / degraded mode.",
+      "detail": "Breakevens are steady but canonical regional product/inventory evidence is missing, so product‑led inflation support is unresolved.",
       "evidenceRefs": []
     }
   },
@@ -1156,7 +1156,66 @@
       "nextCheck": "Normalize combined weight in base currency and verify warrant terms."
     }
   ],
-  "portfolioDivergences": [],
+  "portfolioDivergences": [
+    {
+      "id": "rates-vs-tech-resilience",
+      "importance": "HIGH",
+      "divergence": "PARTIAL",
+      "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
+      "actual": "Semiconductor/AI breadth is robust and SMH has outperformed QQQ over the 20‑session window; individual names show dispersion (ARM down, PLTR up).",
+      "affectedHoldings": [
+        "TSLA",
+        "TTWO",
+        "YTLPOWR",
+        "6742UW"
+      ],
+      "candidateExplanations": [
+        "Narrow AI/semiconductor leadership is offsetting broad duration pressure at index level.",
+        "Company-specific catalysts and funded/backlogged AI infrastructure demand are overpowering the discount-rate headwind in selected names.",
+        "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
+      ],
+      "evidenceFor": [
+        "Concentrated AI/semiconductor leadership is supporting headline indices and masking broader weakness.",
+        "Breadth is mixed‑to‑positive at the large‑cap and AI levels, but RSP‑SPX relative weakness and RSP vs SPX 20s signal shows equal‑weight lag.",
+        "Nasdaq daily move 0.64 with bias MIXED."
+      ],
+      "evidenceAgainst": [
+        "Long‑end tightening is present with a governed term‑premium signal, but real/breakeven decomposition and volatility evidence are incomplete."
+      ],
+      "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
+      "confidence": "HIGH",
+      "invalidation": "If breadth broadens materially while credit remains benign and real yields stay high, the rate headwind is less dominant than assumed. If AI/semiconductor leadership rolls over, the divergence resolves in the bearish direction."
+    },
+    {
+      "id": "rates-vs-credit-transmission",
+      "importance": "HIGH",
+      "divergence": "YES",
+      "expected": "A persistent long-end tightening shock should eventually raise financing stress and widen credit spreads.",
+      "actual": "HY widening signal over 20 sessions versus flat IG.",
+      "affectedHoldings": [
+        "TSLA",
+        "TTWO",
+        "YTLPOWR",
+        "6742UW",
+        "MISC"
+      ],
+      "candidateExplanations": [
+        "The current move is still primarily a rates/term-premium shock rather than a broad solvency or funding shock.",
+        "Strong nominal growth and healthy corporate balance sheets may be delaying credit transmission.",
+        "Credit may simply be lagging rates and could become the next confirmation leg."
+      ],
+      "evidenceFor": [
+        "Credit is showing early HY stress but not yet broad IG distress.",
+        "Funding/credit composite is currently NEUTRAL."
+      ],
+      "evidenceAgainst": [
+        "Higher long yields raise borrowing costs and tighten financial conditions, but absent broad credit widening or volatility pickup the tightening is partial and equity strength stays concentrated in AI/semiconductors."
+      ],
+      "leadingHypothesis": "The shock is rates-led, not yet systemic; keep dry powder because credit remains the key confirmation risk.",
+      "confidence": "HIGH",
+      "invalidation": "Sustained HY/IG widening with weaker breadth and higher volatility would confirm transmission and require a stricter portfolio-risk posture."
+    }
+  ],
   "reviewQueue": {
     "highReview": [
       "HIBISCS",
@@ -1193,7 +1252,7 @@
     }
   ],
   "liveResearchGaps": [
-    "RESEARCH_BRAIN_DEGRADED: Validation failures: research_gaps[0] (gap:canonical-credit-metrics) references unknown canonical conclusion \"inv:duration-transmission\".; research_gaps[1] (gap:dealer-fails-funding) references unknown canonical conclusion \"story:duration-stress-real-led\".; research_gaps[2] (gap:product-cracks-padd) references unknown canonical conclusion \"inv:energy-inflation-transmission\".; research_gaps[2] (gap:product-cracks-padd) references unknown canonical conclusion \"story:energy-product-stress\".",
+    "MARKET_DATA: Canonical MOVE / Treasury volatility (intraday and 20‑session) is missing, blocking long‑end decomposition and volatility confirmation.",
     "US 2Y is missing from persistent rate context.",
     "US 10Y real yield is missing from persistent rate context.",
     "Effective fed funds is missing from persistent rate context.",
