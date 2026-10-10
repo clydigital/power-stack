@@ -1,8 +1,8 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-10T05:51:37.591Z",
+  "generatedAt": "2026-10-10T05:58:08.497Z",
   "liveAsOf": "2026-10-07T20:03:56.914+00:00",
-  "liveSyncedAt": "2026-10-09T22:42:21.493Z",
+  "liveSyncedAt": "2026-10-10T05:58:08.314Z",
   "sourceHealth": {
     "dossier": "OK",
     "marketMonitor": "PARTIAL",
@@ -21,8 +21,8 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "9b9f59b8-675f-4145-9d24-1e9195787b0a",
-    "capturedAt": "2026-10-09T16:20:31.026Z",
+    "editionId": "fe9844dc-3040-421c-9a30-5cc030ecf933",
+    "capturedAt": "2026-10-10T04:05:44.450Z",
     "itemCount": 0,
     "linkedHoldingCount": 0
   },
@@ -87,8 +87,8 @@
           "label": "Treasury bills / front-end cash",
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
-          "detail": "3M 4.23%; 6M 4.30%; average vs EFFR +38.5 bp.",
-          "asOf": "2026-10-08"
+          "detail": "3M 4.25%; 6M 4.32%; average vs EFFR +40.5 bp.",
+          "asOf": "2026-10-09"
         }
       ]
     },
@@ -1272,7 +1272,17 @@
     ],
     "researchGaps": []
   },
-  "divergences": [],
+  "divergences": [
+    {
+      "id": "ndx-soxx",
+      "title": "Nasdaq and semis are diverging",
+      "detail": "NDX proxy 0.5% vs SOXX -0.7%.",
+      "assets": [
+        "ndx",
+        "soxx"
+      ]
+    }
+  ],
   "liveResearchGaps": [
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],
