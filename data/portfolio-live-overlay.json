@@ -1,23 +1,23 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-10T12:30:28.083Z",
-  "liveAsOf": "2026-10-07T20:03:56.914+00:00",
-  "liveSyncedAt": "2026-10-10T05:58:08.314Z",
+  "generatedAt": "2026-10-10T12:38:04.931Z",
+  "liveAsOf": "2026-10-10T08:42:00.746+00:00",
+  "liveSyncedAt": "2026-10-10T12:38:04.811Z",
   "sourceHealth": {
-    "dossier": "OK",
+    "dossier": "DEGRADED",
     "marketMonitor": "PARTIAL",
-    "fredRates": "OK",
+    "fredRates": "PARTIAL",
     "nyFedReferenceRates": "OK",
     "nyFedPrimaryDealers": "OK",
     "treasuryBills": "OK",
     "treasurySupply": "UNRESOLVED"
   },
   "regime": {
-    "family": "RATES_LED_TIGHTENING",
-    "headline": "Long‑end yields and real yields are elevated and restraining conditions, yet credit and volatility remain calm while AI/semiconductor breadth stays strong — a rates‑led tightening that has not fully transmitted to broader markets.",
-    "answer": "10Y nominal and real yields are high with a visible ACM term‑premium uptick, driving a US‑led rates tightening; however HY/IG spreads are still muted and AI/semiconductor breadth is robust, so transmission into credit, breadth and volatility is incomplete for now.",
-    "implication": "Rising long and real yields are tightening financial conditions, but calm credit spreads and concentrated equity leadership mean market stress is conditional rather than broad; a persistent long‑end move or credit widening would change this.",
-    "whatWouldChangeMind": "Sustained HY/IG widening or a material MOVE/VIX spike with breadth deterioration (evidence: market-monitor:hy-oas:2026-10-06 moving materially wider, a canonical MOVE volatility monitor showing a jump) or resolved dealer/auction evidence showing failed absorption."
+    "family": "UNRESOLVED",
+    "headline": "Research Brain Operating in Degraded Fallback Mode",
+    "answer": "Primary reasoning pass was unavailable or failed validation.",
+    "implication": "UNRESOLVED",
+    "whatWouldChangeMind": "Successful execution of next Research Brain reasoning pass."
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
@@ -29,10 +29,10 @@
   "currentSignals": {
     "rates": {
       "state": "TIGHTER",
-      "tighter": 3,
+      "tighter": 1,
       "easier": 0,
       "neutral": 2,
-      "unresolved": 1,
+      "unresolved": 3,
       "keys": [
         "RATES_POLICY",
         "RATES_FRONT_END",
@@ -48,45 +48,45 @@
           "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
           "detail": "No current deterministic policy impulse or directional next-meeting repricing is present in the bounded rate context.",
-          "asOf": "2026-10-07T20:03:56.914Z"
+          "asOf": "2026-10-10T08:42:00.746Z"
         },
         {
           "key": "RATES_FRONT_END",
           "label": "Front-end pricing",
-          "direction": "NEUTRAL",
+          "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
-          "detail": "US 2Y 4.84%; 5D -8.0 bp; vs effective fed funds +96.0 bp.",
-          "asOf": "2026-10-07T20:03:56.914Z"
+          "detail": "US 2Y rate context is unavailable.",
+          "asOf": "2026-10-10T08:42:00.746Z"
         },
         {
           "key": "RATES_REAL_YIELDS",
           "label": "10Y real yield",
-          "direction": "TIGHTER",
-          "confirmation": "CONFIRMING",
-          "detail": "10Y real yield 2.95%; 5D +5.0 bp.",
-          "asOf": "2026-10-07T20:03:56.914Z"
+          "direction": "UNRESOLVED",
+          "confirmation": "UNRESOLVED",
+          "detail": "10Y real-yield context is unavailable.",
+          "asOf": "2026-10-10T08:42:00.746Z"
         },
         {
           "key": "RATES_BREAKEVENS",
           "label": "10Y inflation breakeven",
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
-          "detail": "10Y breakeven 2.36%; 5D +1.0 bp.",
-          "asOf": "2026-10-07T20:03:56.914Z"
+          "detail": "10Y breakeven 2.33%; 5D n/a.",
+          "asOf": "2026-10-10T08:42:00.746Z"
         },
         {
           "key": "RATES_LONG_END",
           "label": "Long-end nominal yields",
-          "direction": "TIGHTER",
-          "confirmation": "CONFIRMING",
-          "detail": "US 10Y 5.28%; 5D -1.0 bp; US 20Y 5.70%; 5D +10.0 bp; US 30Y 5.66%; 5D +10.0 bp.",
-          "asOf": "2026-10-07T20:03:56.914Z"
+          "direction": "NEUTRAL",
+          "confirmation": "UNRESOLVED",
+          "detail": "US 10Y 5.24%; 5D n/a.",
+          "asOf": "2026-10-10T08:42:00.746Z"
         },
         {
           "key": "BILLS",
           "label": "Treasury bills / front-end cash",
           "direction": "TIGHTER",
-          "confirmation": "CONFIRMING",
+          "confirmation": "UNRESOLVED",
           "detail": "3M 4.25%; 6M 4.32%; average vs EFFR +40.5 bp.",
           "asOf": "2026-10-09"
         }
@@ -122,15 +122,10 @@
       ]
     },
     "physicalEnergy": {
-      "status": "ACTIVE",
-      "observed": true,
-      "detail": "Product‑led inflation pressure could sustain breakevens and long yields, but regional inventory confirmation is required.",
-      "evidenceRefs": [
-        "market-monitor:crack-distillate:2026-10-06",
-        "market-monitor:distillate:2026-10-06",
-        "market-monitor:wti:2026-10-06",
-        "market-monitor:us10y-breakeven:2026-10-06"
-      ]
+      "status": "UNRESOLVED",
+      "observed": false,
+      "detail": "Unobserved / degraded mode.",
+      "evidenceRefs": []
     }
   },
   "holdings": [
@@ -142,11 +137,11 @@
       "profileStatus": "MAPPED",
       "inheritedFrom": null,
       "profileConfidence": 0.78,
-      "overlayState": "MIXED",
-      "reviewPriority": "REVIEW",
+      "overlayState": "HEADWIND",
+      "reviewPriority": "MONITOR",
       "actualReaction": {
-        "status": "INCONCLUSIVE",
-        "reason": "The market overlay is not directional enough to judge one-session confirmation.",
+        "status": "DIVERGES",
+        "reason": "Completed-session tape moved against the direction implied by the current market overlay.",
         "sessionDate": "2026-09-24",
         "close": 162.14,
         "previousClose": 161.23,
@@ -160,7 +155,7 @@
       "effects": {
         "rates": "HEADWIND",
         "funding": "NEUTRAL",
-        "energy": "TAILWIND"
+        "energy": "UNRESOLVED"
       },
       "sensitivities": {
         "rates": {
@@ -269,7 +264,7 @@
       "rationale": [
         "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
         "Funding/credit: no material directional overlay at the current sensitivity threshold.",
-        "Physical energy: tailwind while Live marks the product/energy lens observed."
+        "Physical energy: unresolved because the Live energy lens is not observed."
       ]
     },
     {
@@ -280,11 +275,11 @@
       "profileStatus": "MAPPED",
       "inheritedFrom": null,
       "profileConfidence": 0.87,
-      "overlayState": "MIXED",
-      "reviewPriority": "REVIEW",
+      "overlayState": "HEADWIND",
+      "reviewPriority": "MONITOR",
       "actualReaction": {
-        "status": "INCONCLUSIVE",
-        "reason": "The market overlay is not directional enough to judge one-session confirmation.",
+        "status": "CONFIRMS",
+        "reason": "Completed-session tape moved in the direction implied by the current market overlay.",
         "sessionDate": "2026-09-25",
         "close": 7.85,
         "previousClose": 7.92,
@@ -298,7 +293,7 @@
       "effects": {
         "rates": "HEADWIND",
         "funding": "NEUTRAL",
-        "energy": "TAILWIND"
+        "energy": "UNRESOLVED"
       },
       "sensitivities": {
         "rates": {
@@ -399,7 +394,7 @@
       "rationale": [
         "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
         "Funding/credit: no material directional overlay at the current sensitivity threshold.",
-        "Physical energy: tailwind while Live marks the product/energy lens observed."
+        "Physical energy: unresolved because the Live energy lens is not observed."
       ]
     },
     {
@@ -410,11 +405,11 @@
       "profileStatus": "MAPPED",
       "inheritedFrom": null,
       "profileConfidence": 0.9,
-      "overlayState": "MIXED",
-      "reviewPriority": "REVIEW",
+      "overlayState": "HEADWIND",
+      "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
-        "status": "INCONCLUSIVE",
-        "reason": "The market overlay is not directional enough to judge one-session confirmation.",
+        "status": "CONFIRMS",
+        "reason": "Completed-session tape moved in the direction implied by the current market overlay.",
         "sessionDate": "2026-09-25",
         "close": 2.23,
         "previousClose": 2.3,
@@ -428,7 +423,7 @@
       "effects": {
         "rates": "HEADWIND",
         "funding": "NEUTRAL",
-        "energy": "TAILWIND"
+        "energy": "UNRESOLVED"
       },
       "sensitivities": {
         "rates": {
@@ -521,7 +516,7 @@
       "rationale": [
         "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
         "Funding/credit: no material directional overlay at the current sensitivity threshold.",
-        "Physical energy: tailwind while Live marks the product/energy lens observed."
+        "Physical energy: unresolved because the Live energy lens is not observed."
       ]
     },
     {
@@ -550,7 +545,7 @@
       "effects": {
         "rates": "HEADWIND",
         "funding": "NEUTRAL",
-        "energy": "NEUTRAL"
+        "energy": "UNRESOLVED"
       },
       "sensitivities": {
         "rates": {
@@ -643,7 +638,7 @@
       "rationale": [
         "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
         "Funding/credit: no material directional overlay at the current sensitivity threshold.",
-        "Physical energy: neutral while Live marks the product/energy lens observed."
+        "Physical energy: unresolved because the Live energy lens is not observed."
       ]
     },
     {
@@ -672,7 +667,7 @@
       "effects": {
         "rates": "HEADWIND",
         "funding": "NEUTRAL",
-        "energy": "NEUTRAL"
+        "energy": "UNRESOLVED"
       },
       "sensitivities": {
         "rates": {
@@ -765,7 +760,7 @@
       "rationale": [
         "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
         "Funding/credit: no material directional overlay at the current sensitivity threshold.",
-        "Physical energy: neutral while Live marks the product/energy lens observed."
+        "Physical energy: unresolved because the Live energy lens is not observed."
       ]
     },
     {
@@ -794,7 +789,7 @@
       "effects": {
         "rates": "HEADWIND",
         "funding": "NEUTRAL",
-        "energy": "NEUTRAL"
+        "energy": "UNRESOLVED"
       },
       "sensitivities": {
         "rates": {
@@ -871,7 +866,7 @@
       "rationale": [
         "Rates/duration: headwind with very high sensitivity while the Live channel is tighter.",
         "Funding/credit: no material directional overlay at the current sensitivity threshold.",
-        "Physical energy: neutral while Live marks the product/energy lens observed."
+        "Physical energy: unresolved because the Live energy lens is not observed."
       ]
     },
     {
@@ -900,7 +895,7 @@
       "effects": {
         "rates": "HEADWIND",
         "funding": "NEUTRAL",
-        "energy": "HEADWIND"
+        "energy": "UNRESOLVED"
       },
       "sensitivities": {
         "rates": {
@@ -977,7 +972,7 @@
       "rationale": [
         "Rates/duration: headwind with very high sensitivity while the Live channel is tighter.",
         "Funding/credit: no material directional overlay at the current sensitivity threshold.",
-        "Physical energy: headwind while Live marks the product/energy lens observed."
+        "Physical energy: unresolved because the Live energy lens is not observed."
       ]
     },
     {
@@ -988,11 +983,11 @@
       "profileStatus": "MAPPED",
       "inheritedFrom": null,
       "profileConfidence": 0.83,
-      "overlayState": "MIXED",
-      "reviewPriority": "REVIEW",
+      "overlayState": "HEADWIND",
+      "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
-        "status": "INCONCLUSIVE",
-        "reason": "The market overlay is not directional enough to judge one-session confirmation.",
+        "status": "DIVERGES",
+        "reason": "Completed-session tape moved against the direction implied by the current market overlay.",
         "sessionDate": "2026-09-25",
         "close": 1.5,
         "previousClose": 1.47,
@@ -1006,7 +1001,7 @@
       "effects": {
         "rates": "HEADWIND",
         "funding": "NEUTRAL",
-        "energy": "TAILWIND"
+        "energy": "UNRESOLVED"
       },
       "sensitivities": {
         "rates": {
@@ -1099,7 +1094,7 @@
       "rationale": [
         "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
         "Funding/credit: no material directional overlay at the current sensitivity threshold.",
-        "Physical energy: tailwind while Live marks the product/energy lens observed."
+        "Physical energy: unresolved because the Live energy lens is not observed."
       ]
     }
   ],
@@ -1161,112 +1156,26 @@
       "nextCheck": "Normalize combined weight in base currency and verify warrant terms."
     }
   ],
-  "portfolioDivergences": [
-    {
-      "id": "rates-vs-tech-resilience",
-      "importance": "HIGH",
-      "divergence": "PARTIAL",
-      "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-      "actual": "AI/semiconductor breadth is very strong and is supporting headline indices.",
-      "affectedHoldings": [
-        "TSLA",
-        "TTWO",
-        "YTLPOWR",
-        "6742UW"
-      ],
-      "candidateExplanations": [
-        "Narrow AI/semiconductor leadership is offsetting broad duration pressure at index level.",
-        "Company-specific catalysts and funded/backlogged AI infrastructure demand are overpowering the discount-rate headwind in selected names.",
-        "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
-      ],
-      "evidenceFor": [
-        "Concentrated leadership is acting as an index support; this reduces near‑term breadth vulnerability but raises conditional fragility.",
-        "Breadth is concentrated but not uniformly weak; this supports headline resilience despite rates pressure.",
-        "Nasdaq daily move -1.25 with bias MIXED."
-      ],
-      "evidenceAgainst": [
-        "Policy path appears restrictive while long‑end real yields and term premium keep duration pressure; this is consistent with a rates‑led tightening that is not yet broad."
-      ],
-      "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
-      "confidence": "HIGH",
-      "invalidation": "If breadth broadens materially while credit remains benign and real yields stay high, the rate headwind is less dominant than assumed. If AI/semiconductor leadership rolls over, the divergence resolves in the bearish direction."
-    },
-    {
-      "id": "rates-vs-credit-transmission",
-      "importance": "HIGH",
-      "divergence": "YES",
-      "expected": "A persistent long-end tightening shock should eventually raise financing stress and widen credit spreads.",
-      "actual": "HY and IG OAS are still muted and slightly tighter on the 5‑day window.",
-      "affectedHoldings": [
-        "TSLA",
-        "TTWO",
-        "YTLPOWR",
-        "6742UW",
-        "MISC"
-      ],
-      "candidateExplanations": [
-        "The current move is still primarily a rates/term-premium shock rather than a broad solvency or funding shock.",
-        "Strong nominal growth and healthy corporate balance sheets may be delaying credit transmission.",
-        "Credit may simply be lagging rates and could become the next confirmation leg."
-      ],
-      "evidenceFor": [
-        "Credit does not yet confirm systemic risk‑off; contained spreads are a key counterweight to long‑end‑led tightening.",
-        "Funding/credit composite is currently NEUTRAL."
-      ],
-      "evidenceAgainst": [
-        "Rising long and real yields are tightening financial conditions, but calm credit spreads and concentrated equity leadership mean market stress is conditional rather than broad; a persistent long‑end move or credit widening would change this."
-      ],
-      "leadingHypothesis": "The shock is rates-led, not yet systemic; keep dry powder because credit remains the key confirmation risk.",
-      "confidence": "HIGH",
-      "invalidation": "Sustained HY/IG widening with weaker breadth and higher volatility would confirm transmission and require a stricter portfolio-risk posture."
-    },
-    {
-      "id": "crude-vs-product-tightness",
-      "importance": "HIGH",
-      "divergence": "YES",
-      "expected": "Softer crude would normally reduce immediate energy-inflation pressure and weaken the case for broad energy outperformance.",
-      "actual": "Distillate cracks and heating oil remain elevated while WTI is relatively flat, supporting steady breakevens.",
-      "affectedHoldings": [
-        "XOM",
-        "HIBISCS",
-        "MISC",
-        "DAYANG"
-      ],
-      "candidateExplanations": [
-        "Physical product scarcity and regional inventory/refinery constraints are stronger than the headline crude move suggests.",
-        "Shipping/logistics constraints may be keeping product markets tight even as crude futures soften.",
-        "Geopolitical premium and physical-product stress are moving on different timelines."
-      ],
-      "evidenceFor": [
-        "Product‑led inflation pressure could sustain breakevens and long yields, but regional inventory confirmation is required.",
-        "Crude daily move 0.11 with bias BEARISH."
-      ],
-      "evidenceAgainst": [
-        "Regional PADD inventories and refinery utilisation"
-      ],
-      "leadingHypothesis": "Product-market tightness is currently more informative for the portfolio's energy sleeve than the crude headline alone.",
-      "confidence": "HIGH",
-      "invalidation": "Falling crack spreads, rebuilding product inventories and improving refinery utilization would weaken the physical-tightness explanation."
-    }
-  ],
+  "portfolioDivergences": [],
   "reviewQueue": {
     "highReview": [
+      "HIBISCS",
       "YTLPOWR",
       "6742UW",
       "TTWO",
-      "TSLA"
-    ],
-    "mixed": [
-      "XOM",
-      "MISC",
-      "HIBISCS",
+      "TSLA",
       "DAYANG"
     ],
+    "mixed": [],
     "supported": [],
     "tapeDivergences": [
-      "YTLPOWR"
+      "XOM",
+      "YTLPOWR",
+      "DAYANG"
     ],
     "tapeConfirmations": [
+      "MISC",
+      "HIBISCS",
       "TTWO",
       "TSLA"
     ],
@@ -1284,6 +1193,10 @@
     }
   ],
   "liveResearchGaps": [
+    "RESEARCH_BRAIN_DEGRADED: Validation failures: research_gaps[0] (gap:canonical-credit-metrics) references unknown canonical conclusion \"inv:duration-transmission\".; research_gaps[1] (gap:dealer-fails-funding) references unknown canonical conclusion \"story:duration-stress-real-led\".; research_gaps[2] (gap:product-cracks-padd) references unknown canonical conclusion \"inv:energy-inflation-transmission\".; research_gaps[2] (gap:product-cracks-padd) references unknown canonical conclusion \"story:energy-product-stress\".",
+    "US 2Y is missing from persistent rate context.",
+    "US 10Y real yield is missing from persistent rate context.",
+    "Effective fed funds is missing from persistent rate context.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],
   "guardrails": [
