@@ -1,8 +1,8 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-11T21:57:11.147Z",
-  "liveAsOf": "2026-10-11T09:05:59.751+00:00",
-  "liveSyncedAt": "2026-10-11T12:57:04.944Z",
+  "generatedAt": "2026-10-11T22:02:22.654Z",
+  "liveAsOf": "2026-10-11T19:09:59.44+00:00",
+  "liveSyncedAt": "2026-10-11T22:02:22.545Z",
   "sourceHealth": {
     "dossier": "DEGRADED",
     "marketMonitor": "PARTIAL",
@@ -13,16 +13,16 @@
     "treasurySupply": "UNRESOLVED"
   },
   "regime": {
-    "family": "UNRESOLVED",
-    "headline": "Research Brain Operating in Degraded Fallback Mode",
-    "answer": "Primary reasoning pass was unavailable or failed validation.",
-    "implication": "UNRESOLVED",
-    "whatWouldChangeMind": "Successful execution of next Research Brain reasoning pass."
+    "family": "MIXED_TRANSITION",
+    "headline": "NY Fed ACM shows a governed 10Y term premium (~0.92%) while AI/semiconductor leaders close resiliently, leaving rate pressure present but transmission into credit and breadth unresolved.",
+    "answer": "A governed term premium (0.92%, +1.5bp) is observable alongside strong closes in AI/semiconductor names, implying long‑end repricing exists but broad credit, volatility and breadth transmission remain unproven by the canonical tape.",
+    "implication": "Long‑end yield pressure is present, but concentrated AI/semiconductor strength is still offsetting broad market weakness; whether this becomes a rates‑led tightening or broader stress is unresolved until credit, volatility and nominal yield/breakeven evidence arrive.",
+    "whatWouldChangeMind": "Canonical nominal 10Y/real/breakeven series, MOVE/T‑vol, or HY/IG OAS evidence showing broad credit widening or sustained volatility would shift this to a rates‑led tightening conclusion."
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "5ff5a262-33d6-4389-9369-c75037e4109e",
-    "capturedAt": "2026-10-11T04:05:32.120Z",
+    "editionId": "637ff2c0-da2a-4b7e-a9bc-f590671fe29a",
+    "capturedAt": "2026-10-11T16:20:43.495Z",
     "itemCount": 0,
     "linkedHoldingCount": 0
   },
@@ -48,7 +48,7 @@
           "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
           "detail": "No current deterministic policy impulse or directional next-meeting repricing is present in the bounded rate context.",
-          "asOf": "2026-10-11T09:05:59.751Z"
+          "asOf": "2026-10-11T19:09:59.440Z"
         },
         {
           "key": "RATES_FRONT_END",
@@ -56,7 +56,7 @@
           "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
           "detail": "US 2Y rate context is unavailable.",
-          "asOf": "2026-10-11T09:05:59.751Z"
+          "asOf": "2026-10-11T19:09:59.440Z"
         },
         {
           "key": "RATES_REAL_YIELDS",
@@ -64,7 +64,7 @@
           "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
           "detail": "10Y real-yield context is unavailable.",
-          "asOf": "2026-10-11T09:05:59.751Z"
+          "asOf": "2026-10-11T19:09:59.440Z"
         },
         {
           "key": "RATES_BREAKEVENS",
@@ -72,7 +72,7 @@
           "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
           "detail": "10Y breakeven context is unavailable.",
-          "asOf": "2026-10-11T09:05:59.751Z"
+          "asOf": "2026-10-11T19:09:59.440Z"
         },
         {
           "key": "RATES_LONG_END",
@@ -80,7 +80,7 @@
           "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
           "detail": "US long-end nominal-yield context is unavailable.",
-          "asOf": "2026-10-11T09:05:59.751Z"
+          "asOf": "2026-10-11T19:09:59.440Z"
         },
         {
           "key": "BILLS",
@@ -124,7 +124,7 @@
     "physicalEnergy": {
       "status": "UNRESOLVED",
       "observed": false,
-      "detail": "Unobserved / degraded mode.",
+      "detail": "No canonical PADD/inventory or crack series in packet, so product‑led inflationary support for breakevens is unresolved.",
       "evidenceRefs": []
     }
   },
@@ -1156,7 +1156,37 @@
       "nextCheck": "Normalize combined weight in base currency and verify warrant terms."
     }
   ],
-  "portfolioDivergences": [],
+  "portfolioDivergences": [
+    {
+      "id": "rates-vs-tech-resilience",
+      "importance": "HIGH",
+      "divergence": "PARTIAL",
+      "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
+      "actual": "Resilient closes in major AI/semiconductor names on 2026-10-09.",
+      "affectedHoldings": [
+        "TSLA",
+        "TTWO",
+        "YTLPOWR",
+        "6742UW"
+      ],
+      "candidateExplanations": [
+        "Narrow AI/semiconductor leadership is offsetting broad duration pressure at index level.",
+        "Company-specific catalysts and funded/backlogged AI infrastructure demand are overpowering the discount-rate headwind in selected names.",
+        "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
+      ],
+      "evidenceFor": [
+        "Concentrated AI/semiconductor leadership is supporting indices despite a present term‑premium signal; this offsets but does not negate potential broader stress.",
+        "Index closes suggest concentrated leadership, but breadth ex‑AI is not computed in canonical evidence, leaving breadth confirmation unresolved.",
+        "Nasdaq daily move 0.64 with bias BEARISH."
+      ],
+      "evidenceAgainst": [
+        "Modelled term premium is present (ACM) but canonical nominal yields and volatility monitors are missing from this packet, so the full rate reaction is unresolved."
+      ],
+      "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
+      "confidence": "HIGH",
+      "invalidation": "If breadth broadens materially while credit remains benign and real yields stay high, the rate headwind is less dominant than assumed. If AI/semiconductor leadership rolls over, the divergence resolves in the bearish direction."
+    }
+  ],
   "reviewQueue": {
     "highReview": [
       "HIBISCS",
@@ -1193,7 +1223,7 @@
     }
   ],
   "liveResearchGaps": [
-    "RESEARCH_BRAIN_DEGRADED: Validation failures: market_verdict lens \"USD\" non-null observed_reaction requires at least one market/pricing evidence reference (e.g., PRICING_FEED, MARKET_DATA, YIELD).",
+    "MARKET_DATA: Canonical nominal 10Y and 10Y breakeven series are missing from observed_evidence, blocking long‑end decomposition and a rates‑led versus term‑premium judgement.",
     "US 2Y is missing from persistent rate context.",
     "US 10Y nominal is missing from persistent rate context.",
     "US 10Y real yield is missing from persistent rate context.",

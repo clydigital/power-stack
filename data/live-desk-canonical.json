@@ -3,17 +3,17 @@
   "sourceUrl": "https://alchemy-live-market-desk.vercel.app/api/market-intelligence-snapshot",
   "liveContractVersion": "market-intelligence-snapshot/v1",
   "sourceStatus": "degraded_latest",
-  "dossierId": "cc40ff78-2ad3-4d13-94bb-c7ae7e50bb31",
-  "asOf": "2026-10-11T09:05:59.751+00:00",
+  "dossierId": "6646d0fa-5e6d-45a4-b627-3edd1769f78b",
+  "asOf": "2026-10-11T19:09:59.44+00:00",
   "regime": {
-    "family": "UNRESOLVED",
-    "headline": "Research Brain Operating in Degraded Fallback Mode",
-    "answer": "Primary reasoning pass was unavailable or failed validation.",
-    "implication": "UNRESOLVED",
-    "whatWouldChangeMind": "Successful execution of next Research Brain reasoning pass."
+    "family": "MIXED_TRANSITION",
+    "headline": "NY Fed ACM shows a governed 10Y term premium (~0.92%) while AI/semiconductor leaders close resiliently, leaving rate pressure present but transmission into credit and breadth unresolved.",
+    "answer": "A governed term premium (0.92%, +1.5bp) is observable alongside strong closes in AI/semiconductor names, implying long‑end repricing exists but broad credit, volatility and breadth transmission remain unproven by the canonical tape.",
+    "implication": "Long‑end yield pressure is present, but concentrated AI/semiconductor strength is still offsetting broad market weakness; whether this becomes a rates‑led tightening or broader stress is unresolved until credit, volatility and nominal yield/breakeven evidence arrive.",
+    "whatWouldChangeMind": "Canonical nominal 10Y/real/breakeven series, MOVE/T‑vol, or HY/IG OAS evidence showing broad credit widening or sustained volatility would shift this to a rates‑led tightening conclusion."
   },
   "rateRegime": {
-    "asOf": "2026-10-11T09:05:59.751Z",
+    "asOf": "2026-10-11T19:09:59.440Z",
     "gaps": [
       "US 2Y is missing from persistent rate context.",
       "US 10Y nominal is missing from persistent rate context.",
@@ -102,7 +102,7 @@
     "contradictions": [],
     "contractVersion": "rate-regime/1",
     "curveDiagnostic": {
-      "asOf": "2026-10-11T09:05:59.751Z",
+      "asOf": "2026-10-11T19:09:59.440Z",
       "shape": "UNRESOLVED",
       "detail": "No current Treasury curve levels are available. 2s10s n/a · 2s30s n/a Curve: unresolved · move: unresolved · path: unresolved.",
       "points": [
@@ -206,7 +206,7 @@
     },
     "usRatesReaction": null,
     "longEndDiagnostic": {
-      "asOf": "2026-10-11T09:05:59.751Z",
+      "asOf": "2026-10-11T19:09:59.440Z",
       "gaps": [
         "5Y real-yield/breakeven cross-check is incomplete; do not infer the missing leg.",
         "No structured current Treasury-auction absorption evidence is present.",
@@ -282,7 +282,7 @@
         "change5dPct": null,
         "evidenceRef": null
       },
-      "asOf": "2026-10-11T09:05:59.751Z",
+      "asOf": "2026-10-11T19:09:59.440Z",
       "gaps": [
         "Direct Japan MOF JGB constant-maturity evidence is unavailable.",
         "Treasury TIC country-level Treasury holdings are unavailable.",
@@ -352,7 +352,7 @@
         "direction": "UNRESOLVED",
         "confirmation": "UNRESOLVED",
         "detail": "No current deterministic policy impulse or directional next-meeting repricing is present in the bounded rate context.",
-        "asOf": "2026-10-11T09:05:59.751Z",
+        "asOf": "2026-10-11T19:09:59.440Z",
         "sourceName": "Live deterministic rate regime",
         "sourceUrl": null,
         "evidenceRefs": [],
@@ -366,7 +366,7 @@
         "direction": "UNRESOLVED",
         "confirmation": "UNRESOLVED",
         "detail": "US 2Y rate context is unavailable.",
-        "asOf": "2026-10-11T09:05:59.751Z",
+        "asOf": "2026-10-11T19:09:59.440Z",
         "sourceName": "Live deterministic rate regime",
         "sourceUrl": null,
         "evidenceRefs": [],
@@ -380,7 +380,7 @@
         "direction": "UNRESOLVED",
         "confirmation": "UNRESOLVED",
         "detail": "10Y real-yield context is unavailable.",
-        "asOf": "2026-10-11T09:05:59.751Z",
+        "asOf": "2026-10-11T19:09:59.440Z",
         "sourceName": "Live deterministic rate regime",
         "sourceUrl": null,
         "evidenceRefs": [],
@@ -394,7 +394,7 @@
         "direction": "UNRESOLVED",
         "confirmation": "UNRESOLVED",
         "detail": "10Y breakeven context is unavailable.",
-        "asOf": "2026-10-11T09:05:59.751Z",
+        "asOf": "2026-10-11T19:09:59.440Z",
         "sourceName": "Live deterministic rate regime",
         "sourceUrl": null,
         "evidenceRefs": [],
@@ -408,7 +408,7 @@
         "direction": "UNRESOLVED",
         "confirmation": "UNRESOLVED",
         "detail": "US long-end nominal-yield context is unavailable.",
-        "asOf": "2026-10-11T09:05:59.751Z",
+        "asOf": "2026-10-11T19:09:59.440Z",
         "sourceName": "Live deterministic rate regime",
         "sourceUrl": null,
         "evidenceRefs": [],
@@ -422,7 +422,7 @@
         "direction": "UNRESOLVED",
         "confirmation": "UNRESOLVED",
         "detail": "No governed current fiscal-supply or auction rule is present in the bounded rate context; Treasury supply direction remains unresolved.",
-        "asOf": "2026-10-11T09:05:59.751Z",
+        "asOf": "2026-10-11T19:09:59.440Z",
         "sourceName": "Live deterministic rate regime",
         "sourceUrl": null,
         "evidenceRefs": [],
@@ -556,7 +556,7 @@
     }
   ],
   "researchGaps": [
-    "RESEARCH_BRAIN_DEGRADED: Validation failures: market_verdict lens \"USD\" non-null observed_reaction requires at least one market/pricing evidence reference (e.g., PRICING_FEED, MARKET_DATA, YIELD).",
+    "MARKET_DATA: Canonical nominal 10Y and 10Y breakeven series are missing from observed_evidence, blocking long‑end decomposition and a rates‑led versus term‑premium judgement.",
     "US 2Y is missing from persistent rate context.",
     "US 10Y nominal is missing from persistent rate context.",
     "US 10Y real yield is missing from persistent rate context.",
@@ -669,80 +669,95 @@
   "lenses": [
     {
       "key": "US_RATES",
-      "label": "US_RATES",
+      "label": "US rates",
       "observed": false,
       "reaction": null,
-      "interpretation": "Unobserved / degraded mode.",
-      "unresolvedSignals": [],
+      "interpretation": "Modelled term premium is present (ACM) but canonical nominal yields and volatility monitors are missing from this packet, so the full rate reaction is unresolved.",
+      "unresolvedSignals": [
+        "Canonical nominal 10Y and MOVE/T‑vol series absent"
+      ],
       "evidenceRefs": []
     },
     {
       "key": "BONDS",
-      "label": "BONDS",
+      "label": "Bonds",
       "observed": false,
       "reaction": null,
-      "interpretation": "Unobserved / degraded mode.",
-      "unresolvedSignals": [],
+      "interpretation": "Dealer balance‑sheet snapshots exist but auction/absorption and MOVE are not present; bond market structure direction is unresolved.",
+      "unresolvedSignals": [
+        "system1-dollar:dealer-balance-sheet:2026-09-30"
+      ],
       "evidenceRefs": []
     },
     {
       "key": "USD",
-      "label": "USD",
+      "label": "USD / funding",
       "observed": false,
       "reaction": null,
-      "interpretation": "Unobserved / degraded mode.",
-      "unresolvedSignals": [],
+      "interpretation": "Secured vs EFFR spread data exists but no USD trend series; dollar funding picture is unresolved for cross‑asset readthrough.",
+      "unresolvedSignals": [
+        "system1-dollar:nyfed-rates:2026-10-08"
+      ],
       "evidenceRefs": []
     },
     {
       "key": "CREDIT",
-      "label": "CREDIT",
+      "label": "Credit",
       "observed": false,
       "reaction": null,
-      "interpretation": "Unobserved / degraded mode.",
+      "interpretation": "HY/IG OAS canonical evidence is missing, so whether long‑end pressure is bleeding into credit cannot be determined here.",
       "unresolvedSignals": [],
       "evidenceRefs": []
     },
     {
       "key": "BREADTH",
-      "label": "BREADTH",
+      "label": "Breadth",
       "observed": false,
       "reaction": null,
-      "interpretation": "Unobserved / degraded mode.",
+      "interpretation": "Index closes suggest concentrated leadership, but breadth ex‑AI is not computed in canonical evidence, leaving breadth confirmation unresolved.",
       "unresolvedSignals": [],
       "evidenceRefs": []
     },
     {
       "key": "TECH_AI",
-      "label": "TECH_AI",
-      "observed": false,
-      "reaction": null,
-      "interpretation": "Unobserved / degraded mode.",
+      "label": "Tech / AI equities",
+      "observed": true,
+      "reaction": "Resilient closes in major AI/semiconductor names on 2026-10-09.",
+      "interpretation": "Concentrated AI/semiconductor leadership is supporting indices despite a present term‑premium signal; this offsets but does not negate potential broader stress.",
       "unresolvedSignals": [],
-      "evidenceRefs": []
+      "evidenceRefs": [
+        "ai-close:AMZN:2026-10-09",
+        "ai-close:GOOGL:2026-10-09",
+        "ai-close:AMD:2026-10-09",
+        "ai-close:AVGO:2026-10-09",
+        "ai-close:META:2026-10-09",
+        "ai-close:CRWV:2026-10-09"
+      ]
     },
     {
       "key": "OIL_WAR_INFLATION",
-      "label": "OIL_WAR_INFLATION",
+      "label": "Energy / inflation",
       "observed": false,
       "reaction": null,
-      "interpretation": "Unobserved / degraded mode.",
-      "unresolvedSignals": [],
+      "interpretation": "No canonical PADD/inventory or crack series in packet, so product‑led inflationary support for breakevens is unresolved.",
+      "unresolvedSignals": [
+        "No PADD inventories or product crack canonical evidence"
+      ],
       "evidenceRefs": []
     },
     {
       "key": "GOLD",
-      "label": "GOLD",
+      "label": "Gold",
       "observed": false,
       "reaction": null,
-      "interpretation": "Unobserved / degraded mode.",
+      "interpretation": "No canonical gold price or positioning evidence supplied; lens unavailable.",
       "unresolvedSignals": [],
       "evidenceRefs": []
     }
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-11T12:57:04.804Z",
+    "asOf": "2026-10-11T21:38:08.679Z",
     "assets": [
       {
         "key": "SPX",
@@ -751,12 +766,12 @@
         "last": 7811.54,
         "dailyChange": 0.59,
         "dailyChangeUnit": "percent",
-        "bias": "UNRESOLVED",
+        "bias": "MIXED",
         "conviction": "LOW",
-        "primaryDriver": "UNRESOLVED",
+        "primaryDriver": "Long‑end yield pressure is present, but concentrated AI/semiconductor strength is still offsetting broad market weakness; whether this becomes a rates‑led tightening or broader stress is unresolved until credit, volatility and nominal yield/breakeven evidence arrive.",
         "confirmingSignal": null,
         "contradictingSignal": null,
-        "invalidation": "Successful execution of next Research Brain reasoning pass.",
+        "invalidation": "Canonical nominal 10Y/real/breakeven series, MOVE/T‑vol, or HY/IG OAS evidence showing broad credit widening or sustained volatility would shift this to a rates‑led tightening conclusion.",
         "asOf": "2026-10-09"
       },
       {
@@ -766,12 +781,12 @@
         "last": 27366.17,
         "dailyChange": 0.64,
         "dailyChangeUnit": "percent",
-        "bias": "UNRESOLVED",
-        "conviction": "LOW",
-        "primaryDriver": "Unobserved / degraded mode.",
-        "confirmingSignal": null,
+        "bias": "BEARISH",
+        "conviction": "HIGH",
+        "primaryDriver": "Concentrated AI/semiconductor leadership is supporting indices despite a present term‑premium signal; this offsets but does not negate potential broader stress.",
+        "confirmingSignal": "Resilient closes in major AI/semiconductor names on 2026-10-09.",
         "contradictingSignal": null,
-        "invalidation": "Successful execution of next Research Brain reasoning pass.",
+        "invalidation": "Canonical nominal 10Y/real/breakeven series, MOVE/T‑vol, or HY/IG OAS evidence showing broad credit widening or sustained volatility would shift this to a rates‑led tightening conclusion.",
         "asOf": "2026-10-09"
       },
       {
@@ -783,10 +798,10 @@
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "LOW",
-        "primaryDriver": "Unobserved / degraded mode.",
+        "primaryDriver": "No canonical PADD/inventory or crack series in packet, so product‑led inflationary support for breakevens is unresolved.",
         "confirmingSignal": null,
-        "contradictingSignal": null,
-        "invalidation": "Successful execution of next Research Brain reasoning pass.",
+        "contradictingSignal": "No PADD inventories or product crack canonical evidence",
+        "invalidation": "Canonical nominal 10Y/real/breakeven series, MOVE/T‑vol, or HY/IG OAS evidence showing broad credit widening or sustained volatility would shift this to a rates‑led tightening conclusion.",
         "asOf": "2026-10-06"
       },
       {
@@ -800,8 +815,8 @@
         "conviction": "UNRESOLVED",
         "primaryDriver": "The rate regime is unresolved.",
         "confirmingSignal": null,
-        "contradictingSignal": null,
-        "invalidation": "Successful execution of next Research Brain reasoning pass.",
+        "contradictingSignal": "Canonical nominal 10Y and MOVE/T‑vol series absent",
+        "invalidation": "Canonical nominal 10Y/real/breakeven series, MOVE/T‑vol, or HY/IG OAS evidence showing broad credit widening or sustained volatility would shift this to a rates‑led tightening conclusion.",
         "asOf": "2026-10-09"
       },
       {
@@ -813,18 +828,18 @@
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "LOW",
-        "primaryDriver": "Unobserved / degraded mode.",
+        "primaryDriver": "No canonical gold price or positioning evidence supplied; lens unavailable.",
         "confirmingSignal": null,
         "contradictingSignal": null,
-        "invalidation": "Successful execution of next Research Brain reasoning pass.",
+        "invalidation": "Canonical nominal 10Y/real/breakeven series, MOVE/T‑vol, or HY/IG OAS evidence showing broad credit widening or sustained volatility would shift this to a rates‑led tightening conclusion.",
         "asOf": "2026-10-11"
       },
       {
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 83025.48,
-        "dailyChange": 0.14,
+        "last": 83413.52,
+        "dailyChange": 0.61,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -836,29 +851,149 @@
       }
     ]
   },
-  "stories": [],
+  "stories": [
+    {
+      "id": "story:duration-stress-real-led",
+      "persistentStoryId": "93c3e32f-9168-49ec-aaa3-9ce678511c9b",
+      "title": "NY Fed ACM term premium observed near 0.92% with a small uptick.",
+      "whatChanged": "The New York Fed ACM model records a 10Y term premium of ~0.92% (obs. 2026-10-08; +1.5bp five‑session), evidencing a governed term‑premium component to long‑end yields.",
+      "whyItMatters": "A governed term premium increases long‑end funding cost even if nominal yield drivers are mixed, raising the bar for credit and equity breadth to hold rallies.",
+      "mechanism": "Term premium rise reflects a persistent compensation for duration/fiscal/liquidity factors; if nominal yields move with it, financing costs for duration‑sensitive issuers increase.",
+      "conclusion": "A governed term‑premium signal is present and supports the view that duration pressure exists, but nominal yield decomposition and auction/dealer absorption remain unresolved.",
+      "whatWouldChangeMind": "Canonical nominal 10Y and breakeven observations, MOVE/T‑vol data, or auction/absorption evidence that lower the modelled term premium or show dealer inability to absorb supply would weaken this story.",
+      "epistemicLabel": "OBSERVED",
+      "evidenceRefs": [
+        "ny-fed-acm:10y:2026-10-08",
+        "system1-dollar:dealer-balance-sheet:2026-09-30"
+      ],
+      "confirmingEvidenceRefs": [
+        "ny-fed-acm:10y:2026-10-08"
+      ],
+      "contradictingEvidenceRefs": [],
+      "acceleratingEvidenceRefs": [],
+      "unresolvedEvidenceRefs": [
+        "system1-dollar:dealer-balance-sheet:2026-09-30"
+      ],
+      "investigationIds": [
+        "inv:duration-transmission"
+      ],
+      "chartIds": []
+    },
+    {
+      "id": "story:incomplete-transmission-ai-counterweight",
+      "persistentStoryId": "fe9e1860-ace4-4393-8f2d-7f8081990661",
+      "title": "AI/semiconductor leaders closed resiliently even as term‑premium ticked up.",
+      "whatChanged": "Canonical end‑of‑day closes show major AI/semiconductor names largely holding gains or modest moves on 2026-10-09, providing a concentration offset to duration pressure.",
+      "whyItMatters": "Concentrated leadership can sustain indices despite rising long‑end compensation, delaying a breadth‑ and credit‑led market correction.",
+      "mechanism": "Earnings/profit expectations and concentration flows into AI/semis maintain index performance even if funding costs edge higher for the broader market.",
+      "conclusion": "AI/semiconductor leadership remains a plausible counterweight to long‑end pressure, but this does not prove durability or that credit/volatility will stay calm.",
+      "whatWouldChangeMind": "Canonical HY/IG OAS widening, sustained breadth deterioration ex‑AI, or earnings downgrades in AI/cloud names would invalidate the counterweight thesis.",
+      "epistemicLabel": "SUPPORTED",
+      "evidenceRefs": [
+        "ai-close:AMZN:2026-10-09",
+        "ai-close:GOOGL:2026-10-09",
+        "ai-close:AMD:2026-10-09",
+        "ai-close:AVGO:2026-10-09",
+        "ai-close:META:2026-10-09",
+        "ai-close:CRWV:2026-10-09"
+      ],
+      "confirmingEvidenceRefs": [
+        "ai-close:AMZN:2026-10-09",
+        "ai-close:GOOGL:2026-10-09",
+        "ai-close:AMD:2026-10-09",
+        "ai-close:AVGO:2026-10-09",
+        "ai-close:META:2026-10-09",
+        "ai-close:CRWV:2026-10-09"
+      ],
+      "contradictingEvidenceRefs": [],
+      "acceleratingEvidenceRefs": [],
+      "unresolvedEvidenceRefs": [],
+      "investigationIds": [
+        "inv:duration-transmission"
+      ],
+      "chartIds": []
+    }
+  ],
   "investigations": [
     {
-      "id": "inv:degraded:research-intake:18e01387-f8cb-43b9-bd4f-7c3c7708bdd7",
+      "id": "inv:duration-transmission",
       "status": "open",
-      "question": "Justice Department probes TV networks over Trump pool boycott",
-      "whyItMatters": "Preserved research lead during degraded run.",
-      "currentExplanation": "Unresolved lead carried forward.",
-      "expectedReaction": null,
+      "question": "Is repricing in term premium / long yields transmitting into credit spreads, volatility and breadth?",
+      "whyItMatters": "If long‑end repricing spills into credit and volatility, concentrated equity leadership can quickly give way to broader market weakness.",
+      "currentExplanation": "Modelled 10Y term premium is present (ny‑fed‑acm:10y:2026-10-08) while canonical credit, MOVE/VIX and breadth ex‑AI monitors are not yet ingested here, so transmission remains unresolved.",
+      "expectedReaction": "Conventional: rising real yields/front end should widen credit spreads, lift VIX and weaken broad breadth/small caps.",
       "observedReaction": null,
       "divergence": "UNRESOLVED",
-      "competingExplanations": [],
-      "candidateExplanations": [],
-      "researchNext": "Avert fabrication and await primary model pass.",
-      "confirmationCondition": "Corroborating primary market evidence.",
-      "invalidationCondition": "Contradictory primary market evidence.",
-      "evidenceRefs": [],
-      "missingEvidence": [
-        "Justice Department probes TV networks over Trump pool boycott"
+      "competingExplanations": [
+        "Concentrated AI/semis leadership is propping indices and masking breadth weakness.",
+        "Dealer/market‑structure absorption is delaying spread transmission.",
+        "Credit widening is lagged and may follow persistent yields."
       ],
-      "chartIds": [],
-      "storyIds": [],
-      "thesisIds": [],
+      "candidateExplanations": [
+        {
+          "rank": 1,
+          "explanation": "AI/semis concentration is propping indices and masking breadth weakness.",
+          "evidenceForRefs": [
+            "ai-close:AMZN:2026-10-09",
+            "ai-close:GOOGL:2026-10-09",
+            "ai-close:AMD:2026-10-09"
+          ],
+          "evidenceAgainstRefs": [],
+          "confidence": "MEDIUM",
+          "discriminatingTest": "Breadth ex‑AI deteriorates materially over next 3–7 sessions while AI breadth stays elevated."
+        },
+        {
+          "rank": 2,
+          "explanation": "Dealer/market‑structure absorption is delaying transmission to credit and breadth.",
+          "evidenceForRefs": [
+            "system1-dollar:dealer-balance-sheet:2026-09-30"
+          ],
+          "evidenceAgainstRefs": [],
+          "confidence": "LOW",
+          "discriminatingTest": "Intraday dealer position/fails and FX‑swap/cross‑currency basis show persistent selling or failed auction absorption in canonical feeds."
+        },
+        {
+          "rank": 3,
+          "explanation": "Credit widening is lagged and will follow persistent yields.",
+          "evidenceForRefs": [
+            "ny-fed-acm:10y:2026-10-08"
+          ],
+          "evidenceAgainstRefs": [],
+          "confidence": "LOW",
+          "discriminatingTest": "Sustained HY/IG widening correlated with persistently higher nominal yields over next 5–10 sessions."
+        }
+      ],
+      "researchNext": "Ingest canonical nominal 10Y and breakeven series, HY/IG OAS and MOVE; compute breadth ex‑AI and monitor SMH:QQQ; check dealer intraday fails/positioning. Confirm global duration with Bund, gilt and JGB long ends; cross-check gold versus real yields and USD; compare HY/IG, breadth and MOVE/VIX",
+      "confirmationCondition": "Canonical HY/IG OAS and MOVE show material widening correlated with nominal 10Y persistence and breadth ex‑AI deterioration.",
+      "invalidationCondition": "HY/IG OAS and MOVE remain calm while breadth stays stable ex‑AI despite term‑premium persistence.",
+      "evidenceRefs": [
+        "ny-fed-acm:10y:2026-10-08",
+        "system1-dollar:dealer-balance-sheet:2026-09-30",
+        "ai-close:AMZN:2026-10-09",
+        "ai-close:GOOGL:2026-10-09",
+        "ai-close:AMD:2026-10-09"
+      ],
+      "missingEvidence": [
+        "Canonical nominal 10Y and 10Y breakeven time series in observed_evidence",
+        "Canonical HY/IG OAS monitor and MOVE/T‑vol series",
+        "Breadth ex‑AI computed from index constituents",
+        "Bund, gilt and JGB long-end confirmation for any global-duration label",
+        "gold versus real-yield and USD cross-check",
+        "HY/IG credit spreads, breadth and MOVE/VIX confirmation of whether higher yields are spreading"
+      ],
+      "chartIds": [
+        "chart:10y-term-vs-acm",
+        "chart:smh-qqq-semiconductor-lead",
+        "chart:hyg-lqd-credit-proxy"
+      ],
+      "storyIds": [
+        "story:duration-stress-real-led",
+        "story:incomplete-transmission-ai-counterweight"
+      ],
+      "thesisIds": [
+        "thesis-ai-capital-scarcity",
+        "thesis-tech-riskon-confirmation"
+      ],
       "reactionChecks": [],
       "reactionCalibration": {
         "basis": "SYSTEM1_REACTION_AUDIT",
@@ -868,45 +1003,71 @@
         "alignedCount": 0,
         "divergentCount": 0,
         "reactionWindows": [],
-        "expectationChanged": null,
+        "expectationChanged": false,
         "requiresReview": false
       },
       "journey": {
-        "currentId": "inv:degraded:research-intake:18e01387-f8cb-43b9-bd4f-7c3c7708bdd7",
-        "previousId": null,
-        "matchedBy": null,
-        "transition": "NEW",
-        "previousDivergence": null,
+        "currentId": "inv:duration-transmission",
+        "previousId": "inv:duration-transmission",
+        "matchedBy": "id",
+        "transition": "UNCHANGED",
+        "previousDivergence": "UNRESOLVED",
         "currentDivergence": "UNRESOLVED",
-        "previousStatus": null,
+        "previousStatus": "open",
         "currentStatus": "open",
-        "previousExpectedReaction": null,
-        "currentExpectedReaction": null,
-        "expectationChanged": null,
-        "question": "Justice Department probes TV networks over Trump pool boycott"
+        "previousExpectedReaction": "Conventional: rising real yields/front end should widen credit spreads, lift VIX and weaken broad breadth/small caps.",
+        "currentExpectedReaction": "Conventional: rising real yields/front end should widen credit spreads, lift VIX and weaken broad breadth/small caps.",
+        "expectationChanged": false,
+        "question": "Is repricing in term premium / long yields transmitting into credit spreads, volatility and breadth?"
       }
     },
     {
-      "id": "inv:degraded:research-intake:e84808b5-dcab-49b8-a58d-64b77b980553",
+      "id": "inv:energy-inflation-transmission",
       "status": "open",
-      "question": "Ukraine's Drones Reach Russia's Arctic \"Gas Capital\"; Is Nornickel's Palladium Next? For most of the war, Russia's Arctic was the part of the map nobody bothered to defend. That changed a month ago. On September 9, Ukraine's Special Operations Forces said their drones flew \" more than 3,000 kilometers \" to hit two gas condensate plants in the Yamalo-Nenets region: Gazprom's Novy Urengoy condensate treatment plant, with a design capacity of 19.5 million tons of feedstock a year , and Novatek's Purovsky plant near Tarko-Sale, which processed 13.4 million tons of condensate in 2025 ( Hromadske , Al Jazeera ). \" Until today, this was considered an absolutely safe rear area for the aggressor ,\" the SOF said. Bloomberg and Reuters both picked up the claim; the Kremlin's envoy to the Urals, Artem Zhoga, confirmed it was the first attack to reach the Arctic. On Tuesday Moscow gave its answer: cash. The Yamalo-Nenets government approved a payment of 1 million rubles (about $11,700) for every...",
-      "whyItMatters": "Preserved research lead during degraded run.",
-      "currentExplanation": "Unresolved lead carried forward.",
-      "expectedReaction": null,
+      "question": "Are refined‑product tightness and cracks sufficient to sustain breakevens and long yields independent of crude?",
+      "whyItMatters": "Product‑led inflation would keep breakevens and yields elevated even if crude softens, extending inflationary pressure.",
+      "currentExplanation": "No canonical PADD/inventory or product‑crack time series is present in the packet, so product‑led support for breakevens cannot be established here.",
+      "expectedReaction": "Conventional: falling crude would relieve inflationary impulse and press breakevens/yields lower.",
       "observedReaction": null,
       "divergence": "UNRESOLVED",
-      "competingExplanations": [],
-      "candidateExplanations": [],
-      "researchNext": "Avert fabrication and await primary model pass.",
-      "confirmationCondition": "Corroborating primary market evidence.",
-      "invalidationCondition": "Contradictory primary market evidence.",
+      "competingExplanations": [
+        "Regional product tightness is sustaining cracks and breakevens.",
+        "Prompt‑curve/seasonal effects explain elevated cracks without durable inflationary pressure."
+      ],
+      "candidateExplanations": [
+        {
+          "rank": 1,
+          "explanation": "Regional product tightness is sustaining cracks and supporting breakevens.",
+          "evidenceForRefs": [],
+          "evidenceAgainstRefs": [],
+          "confidence": "UNRESOLVED",
+          "discriminatingTest": "PADD inventories and refinery utilisation show persistent draws and low throughput."
+        },
+        {
+          "rank": 2,
+          "explanation": "Seasonal or prompt‑curve effects are creating elevated cracks.",
+          "evidenceForRefs": [],
+          "evidenceAgainstRefs": [],
+          "confidence": "LOW",
+          "discriminatingTest": "Weekly PADD flows and refinery inputs revert to seasonal norms and cracks fall."
+        }
+      ],
+      "researchNext": "Ingest weekly PADD inventories, refinery utilisation, product cracks and breakeven/nominal series; compare to crude curve/backwardation. Check the crude curve, backwardation and refined-product cracks; verify Trump–Xi outcomes and implementation before using them as facts",
+      "confirmationCondition": "Sustained regional inventory draws and elevated cracks persist for multiple weeks.",
+      "invalidationCondition": "Inventories rebuild and cracks normalize to seasonal expected ranges.",
       "evidenceRefs": [],
       "missingEvidence": [
-        "Ukraine's Drones Reach Russia's Arctic \"Gas Capital\"; Is Nornickel's Palladium Next? For most of the war, Russia's Arctic was the part of the map nobody bothered to defend. That changed a month ago. On September 9, Ukraine's Special Operations Forces said their drones flew \" more than 3,000 kilometers \" to hit two gas condensate plants in the Yamalo-Nenets region: Gazprom's Novy Urengoy condensate treatment plant, with a design capacity of 19.5 million tons of feedstock a year , and Novatek's Purovsky plant near Tarko-Sale, which processed 13.4 million tons of condensate in 2025 ( Hromadske , Al Jazeera ). \" Until today, this was considered an absolutely safe rear area for the aggressor ,\" the SOF said. Bloomberg and Reuters both picked up the claim; the Kremlin's envoy to the Urals, Artem Zhoga, confirmed it was the first attack to reach the Arctic. On Tuesday Moscow gave its answer: cash. The Yamalo-Nenets government approved a payment of 1 million rubles (about $11,700) for every..."
+        "Canonical PADD inventories and regional refinery utilisation series",
+        "Refined‑product crack time series and prompt‑curve/backwardation",
+        "10Y breakeven canonical series for cross‑check",
+        "crude curve, backwardation and refined-product cracks",
+        "verified Trump–Xi outcome and implementation evidence before any political claim"
       ],
       "chartIds": [],
       "storyIds": [],
-      "thesisIds": [],
+      "thesisIds": [
+        "thesis-energy-physical-financial"
+      ],
       "reactionChecks": [],
       "reactionCalibration": {
         "basis": "SYSTEM1_REACTION_AUDIT",
@@ -916,26 +1077,63 @@
         "alignedCount": 0,
         "divergentCount": 0,
         "reactionWindows": [],
-        "expectationChanged": null,
+        "expectationChanged": false,
         "requiresReview": false
       },
       "journey": {
-        "currentId": "inv:degraded:research-intake:e84808b5-dcab-49b8-a58d-64b77b980553",
-        "previousId": null,
-        "matchedBy": null,
-        "transition": "NEW",
-        "previousDivergence": null,
+        "currentId": "inv:energy-inflation-transmission",
+        "previousId": "inv:energy-inflation-transmission",
+        "matchedBy": "id",
+        "transition": "UNCHANGED",
+        "previousDivergence": "UNRESOLVED",
         "currentDivergence": "UNRESOLVED",
-        "previousStatus": null,
+        "previousStatus": "open",
         "currentStatus": "open",
-        "previousExpectedReaction": null,
-        "currentExpectedReaction": null,
-        "expectationChanged": null,
-        "question": "Ukraine's Drones Reach Russia's Arctic \"Gas Capital\"; Is Nornickel's Palladium Next? For most of the war, Russia's Arctic was the part of the map nobody bothered to defend. That changed a month ago. On September 9, Ukraine's Special Operations Forces said their drones flew \" more than 3,000 kilometers \" to hit two gas condensate plants in the Yamalo-Nenets region: Gazprom's Novy Urengoy condensate treatment plant, with a design capacity of 19.5 million tons of feedstock a year , and Novatek's Purovsky plant near Tarko-Sale, which processed 13.4 million tons of condensate in 2025 ( Hromadske , Al Jazeera ). \" Until today, this was considered an absolutely safe rear area for the aggressor ,\" the SOF said. Bloomberg and Reuters both picked up the claim; the Kremlin's envoy to the Urals, Artem Zhoga, confirmed it was the first attack to reach the Arctic. On Tuesday Moscow gave its answer: cash. The Yamalo-Nenets government approved a payment of 1 million rubles (about $11,700) for every..."
+        "previousExpectedReaction": "Conventional: falling crude would relieve inflationary impulse and press breakevens/yields lower.",
+        "currentExpectedReaction": "Conventional: falling crude would relieve inflationary impulse and press breakevens/yields lower.",
+        "expectationChanged": false,
+        "question": "Are refined‑product tightness and cracks sufficient to sustain breakevens and long yields independent of crude?"
       }
     }
   ],
-  "stockRadar": [],
+  "stockRadar": [
+    {
+      "symbol": "AMD",
+      "companyName": "Advanced Micro Devices",
+      "whyRelevant": "Semiconductor exposure central to AI hardware and capex cycle; canonical close available.",
+      "researchQuestion": "Are AMD share moves reflecting durable demand for AI hardware or short‑term positioning?",
+      "confirmingSignal": "ai-close:AMD:2026-10-09",
+      "invalidatingSignal": "Canonical revenue/capex order announcements showing material demand decline",
+      "linkedStoryId": "thread:5c072640",
+      "evidenceRefs": [
+        "ai-close:AMD:2026-10-09"
+      ]
+    },
+    {
+      "symbol": "AMZN",
+      "companyName": "Amazon.com",
+      "whyRelevant": "Hyperscaler cloud/AI revenue is a key test of AI capex sustainability; canonical close available.",
+      "researchQuestion": "Is AMZN pricing consistent with stronger cloud/AI revenue expectations sustaining capex?",
+      "confirmingSignal": "ai-close:AMZN:2026-10-09",
+      "invalidatingSignal": "Canonical guidance or revenue misses for cloud/AI",
+      "linkedStoryId": "thread:5c072640",
+      "evidenceRefs": [
+        "ai-close:AMZN:2026-10-09"
+      ]
+    },
+    {
+      "symbol": "AVGO",
+      "companyName": "Broadcom",
+      "whyRelevant": "Chip and infrastructure exposure relevant to AI capex and semiconductors breadth.",
+      "researchQuestion": "Does AVGO price action align with durable AI-infra demand or idiosyncratic flows?",
+      "confirmingSignal": "ai-close:AVGO:2026-10-09",
+      "invalidatingSignal": "Canonical order/backlog reductions announced by customers",
+      "linkedStoryId": "thread:5c072640",
+      "evidenceRefs": [
+        "ai-close:AVGO:2026-10-09"
+      ]
+    }
+  ],
   "verification": {
     "contractVersion": "stockedup-evidence-brief/1",
     "reportLabel": "StockedUp verification · 24 Sep 2026",
@@ -1161,9 +1359,9 @@
   },
   "marketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "5ff5a262-33d6-4389-9369-c75037e4109e",
-    "capturedAt": "2026-10-11T04:05:32.120Z",
-    "researchRunId": "e5c24c20-684b-4d0b-830d-a1b6039c5d5a",
+    "editionId": "637ff2c0-da2a-4b7e-a9bc-f590671fe29a",
+    "capturedAt": "2026-10-11T16:20:43.495Z",
+    "researchRunId": "888208e3-d59b-4fe9-b546-9a50dced24bf",
     "items": []
   },
   "upstreamGuardrails": [
@@ -1182,5 +1380,5 @@
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-11T12:57:04.944Z"
+  "syncedAt": "2026-10-11T22:02:22.545Z"
 }
