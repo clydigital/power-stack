@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "updatedAt": "2026-10-01",
+  "updatedAt": "2026-10-12",
   "purpose": "Machine-readable PowerSweep contract. Live Desk owns canonical macro/market state and immutable Market Motion. PowerSweep consumes that state, keeps its legacy Market Motion discovery only as an internal AUDIT_ONLY comparator, then spends a bounded research budget on portfolio translation, company evidence, divergences, hidden concentration and capital-allocation decisions.",
   "cranium": {
     "name": "Market Research Cranium",
@@ -182,5 +182,37 @@
       "deepSweepRule": "Use the broader Live fields, dealer/funding plumbing, wider stock universe and full theme list only during an explicit deeper sweep or when a core signal creates a new decision-relevant divergence.",
       "bondRule": "Treat bonds as a first-class capital-allocation comparison: cash/short Treasury, intermediate duration, long duration and TIPS. The routine screen stays compact; 20Y/30Y, term premium, auctions/supply and UST-vs-JGB/Bund are deep-sweep items."
     }
+  },
+  "personalDecisionDesk": {
+    "contractVersion": "power-stack-personal-decision/v1",
+    "path": "data/personal-decision-desk.json",
+    "purpose": "One-screen decisions for personal capital allocation, limiting visible candidates without erasing the scored and archived research universe.",
+    "maximumVisibleCandidates": 8,
+    "defaultView": "Personal Investment Desk; original research library remains at research-library.html",
+    "sourcePrecedence": [
+      "Live Desk canonical read-only regime/market Motion + source health",
+      "ChatGPT source-verified current MacroPulse + Research Gap/Gate and latest Dossier",
+      "AI Notion 16-company daily hub for capex/FCF/credit as research evidence only",
+      "Company issuer/filing evidence in holdings, ideas and watchlist",
+      "Fresh dated security quotes and user broker positions for action gates"
+    ],
+    "notionAIHub": "https://app.notion.com/p/3f4519b67a9481639302eee63384c180",
+    "requiredOnChatSweep": [
+      "Read current 8 focus candidates and compare against latest company research and portfolio overlap",
+      "Review all current holdings; prioritise those with actionable new risk and overlapping exposure",
+      "Preserve unverified source distinctions and stale-price flags; do not label any stale quote current",
+      "Recheck the eight-name cap: demote duplicate thesis exposure to archived tracked universe rather than deleting files",
+      "Promote newly independently researched companies to scored canonical ideas/watchlist only after separate full fundamental underwriting",
+      "Update data/personal-decision-desk.json only if a specific capital decision, source health or company evidence gate materially changes",
+      "Run node scripts/check-personal-decision-desk.mjs and existing snapshot boundary validations"
+    ],
+    "sweepResearchBudget": "PowerSweep's 12 external investigations remain unchanged; the eight visible names are presentation focus, not the only investable research universe.",
+    "writeGuardrails": [
+      "Do not rewrite data/live-desk-canonical.json from Notion or chat interpretation",
+      "Company score and action change require independently verified company evidence and current price",
+      "Unscored healthcare/water/cooling leads cannot become BUY entries by displaying them",
+      "Archive only front-page visibility; no deletion of past idea, quote, evidence or holding data",
+      "No silent removal of holdings or user position quantities"
+    ]
   }
 }
