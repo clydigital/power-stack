@@ -2,6 +2,20 @@
 
 A searchable, versioned investment-research vault for nuclear, AI infrastructure, grid/electrical equipment, uranium/fuel, oil & gas, robotics, water/cooling, agriculture, healthcare, metals and adjacent ideas across the US, Hong Kong/China and Malaysia.
 
+## Personal Investment Desk — 12 October 2026
+
+`index.html` is now the minimal personal investment home. Its goal is to make decisions easy **without hiding or diluting research**:
+
+- **Holdings first:** all eight recorded positions remain in `data/holdings-fundamentals.json`, with actual price-as-of dates. The desk foregrounds risky/stale positions, not falsely executable quotes.
+- **Only eight focus companies:** `data/personal-decision-desk.json` is the curated decision layer. Five existing scored research names are shown alongside three explicitly **unscored** AI-adjacent research candidates (Vertiv, Xylem, GE HealthCare). A research card is not a BUY order.
+- **Archive, don't delete:** the former full index is preserved at `research-library.html`; the complete 46-stock watchlist, 56-ish idea universe, risk overlays, deep theme history and existing score components remain available. Dropping a candidate from the *front page* does not rewrite its prior thesis.
+- **Three decision questions:** what do I own; what are the few opportunities; what evidence would change my decision? Each research idea has a reason, proof required and an explicit risk.
+- **Provenance:** Live Desk remains the single owner of regime and promoted Motion, including source degradation. MacroPulse, Research Gap/Gate, creator transcripts and the Notion AI-capex hub provide research leads; company scores and action gates change only on independent company-level evidence.
+- **Chat sweeps:** after a material company change, refresh the decision desk only when necessary; keep all other stock history. `data/research-sweep-config.json.personalDecisionDesk` records intake rules and boundaries, while `node scripts/check-personal-decision-desk.mjs` validates the front page.
+- **Research evidence:** `research/2026-10-12-ai-adjacent-and-healthcare.md` has issuer sources and explicit valuation gaps for cooling, power, water and healthcare.
+
+The old process/automation integrations still use the same canonical `data/live-desk-canonical.json`, `data/ideas.json`, `data/watchlist.json`, and `data/holdings-fundamentals.json` files. The visible eight-company shortlist is not a replacement for PowerSweep's 12-investigation research limit. Never feed Live-derived macro conclusions back into Live as company evidence.
+
 ## Data model
 
 - `data/ideas.json` is the canonical long-term research database.
