@@ -213,6 +213,22 @@
       "Unscored healthcare/water/cooling leads cannot become BUY entries by displaying them",
       "Archive only front-page visibility; no deletion of past idea, quote, evidence or holding data",
       "No silent removal of holdings or user position quantities"
-    ]
+    ],
+    "marketSummary": {
+      "path": "data/market-summary.json",
+      "contractVersion": "power-stack-market-summary/v1",
+      "pagePosition": "Immediately after the opening decision panel, before the holdings section. Leave the remaining homepage format unchanged.",
+      "editorial": "Client-facing LY style. Three short, cause-and-effect paragraphs with actual market reaction, contradictions, verification trigger and dated sources. Short British English, no institutional jargon or guaranteed outcomes.",
+      "inputs": [
+        "Latest verified full MacroPulse (not only Log summary)",
+        "Latest Research Gap/Gate if material",
+        "Canonical Live Desk regime, source health and Motion state",
+        "AI Notion 16-company tracker for company/sector crosscheck",
+        "Issuer and official market data as required"
+      ],
+      "updatePolicy": "Chat-mode Power Stack sweeps should update only when material, independently sourced market change warrants new client conclusions; stamp exact MYT publication time and specific source URLs; use NO_CHANGE otherwise. Do not infer a new cash close from futures, use stale bond quotes as Monday yields, or imply a negotiation is a verified shipment.",
+      "freshness": "Homepage explicitly flags notes older than 24 hours. It must never quietly recast the dated note as a live market price ticker.",
+      "boundary": "Market-summary.json is editorial display, not canonical Live/Dossier evidence, company score input, market-trade execution or a new scheduler."
+    }
   }
 }
