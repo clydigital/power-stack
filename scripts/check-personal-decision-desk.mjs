@@ -10,6 +10,7 @@ const live = read("data/live-desk-canonical.json");
 const home = readText("index.html");
 const archive = readText("research-library.html");
 const report = readText("research/2026-10-12-ai-adjacent-and-healthcare.md");
+const market = read("data/market-summary.json");
 
 assert.equal(desk.contractVersion, "power-stack-personal-decision/v1");
 assert.equal(desk.focus.length, 8, "Eight, not dozens of active candidates");
@@ -31,4 +32,13 @@ assert(desk.researchInputs.find(x=>x.source==="Live macro snapshot")?.status ===
 assert(live.contractVersion === "power-stack-live-desk-canonical/2", "Canonical source contract changed");
 assert(desk.sourceLinks.notionAI.includes("3f4519b67a9481639302eee63384c180"), "Source hub missing");
 assert(/GEHC/.test(report) && /DHR/.test(report) && /VRT/.test(report) && /XYL/.test(report), "Missing adjacent-source audit");
+assert.equal(market.contractVersion, "power-stack-market-summary/v1", "Market summary contract changed");
+assert.equal(market.sections.length, 3, "Client market summary must have three accessible subthemes");
+assert(Number.isFinite(Date.parse(market.asOf)), "Invalid market summary as-of");
+assert(Date.parse(market.asOf) <= Date.now(), "Market summary may not claim a future publication");
+assert(market.intro && market.verdict && market.sections.every(x => x.label && x.text), "Missing market-summary client prose");
+assert(market.dataLimits.includes("not live quotes"), "Must disclose market prices are not live");
+assert((market.sourceLinks||[]).length >= 3 && market.sourceLinks.every(x=>/^https:\/\//.test(x.url)), "Market summary must link to sources");
+assert(home.includes('id="market-summary"') && home.includes("renderMarketSummary(vals.market)") && home.includes("data/market-summary.json"), "Client market summary must be displayed and wired to its dated data");
+assert(home.includes("marketSummaryFreshness") && home.includes("marketSummarySources"), "Missing freshness or sources");
 console.log("Personal decision desk validation OK: 8 focused names, 8 holdings, archived research preserved, Live/read-only source, unscored adjacent candidates, no unsupported buy signal.");
