@@ -1,8 +1,9 @@
 {
-  "asOf": "2026-09-25",
+  "asOf": "2026-10-12",
   "config": "data/research-sweep-config.json",
   "currentOverlay": "data/power-sweep-latest.json",
   "componentOverlays": [
+    "data/research-sweep-2026-10-12.json",
     "data/power-sweep-latest.json",
     "data/live-desk-canonical.json",
     "data/portfolio-live-overlay.json",
@@ -24,6 +25,7 @@
     "data/developing-themes.json",
     "data/portfolio-management.json"
   ],
-  "note": "PowerSweep is now the canonical recurring Power Stack research plan. It consumes Live Desk macro/market state, portfolio exposure, holding tape, watchlist and portfolio-management inputs; it does not rebuild a competing macro regime. The current run is capped at 12 external investigations and preserves explicit NO_CHANGE / RESEARCH_GAP outcomes.",
-  "powerSweep": "data/power-sweep-latest.json"
+  "note": "The latest manually verified research overlay is dated 12 Oct and includes MacroPulse, Research Gap/Gate, creator-summary provenance, AI capex and source validation; see its report link. PowerSweep remains the 12-investigation deterministic operational queue as of 11 Oct and is not silently regenerated or reranked by narrative research. Preserve NO_CHANGE, RESEARCH_GAP and Live-first ownership; do not treat historical candidate prices as current.",
+  "powerSweep": "data/power-sweep-latest.json",
+  "currentResearchEvidence": "data/research-sweep-2026-10-12.json"
 }
