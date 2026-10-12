@@ -140,7 +140,9 @@ function renderMarketSummary(note){
 function renderHealth(){
  const entries=(data?.researchInputs||[]).map(x=>({...x}));
  if(live){const it=entries.find(x=>x.source==='Live macro snapshot');if(it)it.status=String(live.sourceStatus||'').toUpperCase().includes('DEGRADED')?'DEGRADED':'CURRENT';}
+ const hasVerifiedMarketUpdates=Number(live?.marketMotion?.itemCount||0)>0;
  const readable={'AI 16-company regime':['AI companies','Latest earnings and spending figures reviewed.'],'MacroPulse / Research Gap':['Market news','Recent events and their market impact reviewed.'],'Live macro snapshot':['Interest rates','Some bond and credit readings still need confirmation.'],'Power Stack holdings and quotes':['Portfolio prices','Some prices need to be refreshed before acting.']};
+ if(hasVerifiedMarketUpdates && live?.sourceStatus==='OK')readable['Live macro snapshot'][1]='Bond and credit figures have been checked alongside the latest confirmed market developments.';
  const statuses={CURRENT:'Updated',DEGRADED:'Partial data',STALE:'Older prices',PARTIAL:'Partial data'};
  $('#health').innerHTML=entries.map(x=>{const copy=readable[x.source]||[x.source,x.note];return '<div class="health-line"><div><span>'+esc(copy[0])+'</span><small>'+esc(copy[1])+'</small></div>'+signal(statuses[x.status]||'Check date')+'</div>';}).join('')||'The latest checks are unavailable.';
 }
