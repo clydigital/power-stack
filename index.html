@@ -20,6 +20,16 @@ h1{font-size:clamp(30px,4vw,48px);line-height:1.09;letter-spacing:-1.5px;margin:
 .verdict{border-color:#574936;background:linear-gradient(118deg,#211b14,#12171c 72%)}.verdict h2{font-size:20px;color:#f2d29e;margin:8px 0}.verdict p{color:#bec9cb}
 .pill{display:inline-flex;border:1px solid #46525c;border-radius:8px;padding:4px 8px;font-size:10px;color:#cfddda;letter-spacing:.2px;font-weight:700;white-space:nowrap}
 .pill.strong{color:#9fe2b7;border-color:#2a5c47}.pill.warn{color:var(--amber);border-color:#746043}
+.market-summary .market-headline{font-size:clamp(19px,2.5vw,26px);line-height:1.25;letter-spacing:-.5px;margin:5px 0 13px}
+.market-summary .market-prose{max-width:855px;color:#d4dddb;font-size:14px;line-height:1.7}
+.market-summary .market-prose p{margin:0 0 15px}
+.market-summary .market-prose h3{font-size:11px;letter-spacing:.9px;text-transform:uppercase;color:var(--mint);margin:19px 0 6px}
+.market-summary .market-prose p.market-view{font-weight:650;color:var(--text);margin-top:13px}
+.market-summary .market-sources{display:flex;gap:8px 16px;flex-wrap:wrap;margin-top:15px;border-top:1px solid var(--line);padding-top:12px;font-size:11px}
+.market-summary .market-sources a{text-decoration:none;color:var(--blue)}
+.market-summary .market-freshness{font-size:11px;color:var(--muted);margin:9px 0}
+.market-summary .market-freshness.stale{color:var(--amber);font-weight:650}
+
 .health{display:grid;gap:8px;margin-top:12px}.health-line{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding-bottom:8px;border-bottom:1px solid var(--line)}.health-line:last-child{border:0}
 .health-line span:first-child{font-size:12px;color:#c7d0ce}.health-line small{font-size:10px;color:var(--muted);max-width:200px;display:block}
 section{margin:34px 0}.section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:15px}.section-title p{color:var(--muted);max-width:800px;margin:4px 0}.quiet-link{font-size:12px;color:var(--blue);text-decoration:none}
@@ -54,6 +64,15 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:#7d8a90;font-size:1
 <div class="panel verdict"><div class="eyebrow">Fresh capital</div><h2 id="verdict">Loading the decision summary…</h2><p id="verdictWhy">Checking research inputs and dated market evidence.</p><p class="meta" id="asOf">Research date pending</p><div class="links"><a href="#shortlist">See 8 ideas ↓</a><a href="#holdings">Review portfolio ↓</a></div></div>
 <div class="panel"><div class="eyebrow">Evidence health</div><div id="health" class="health" aria-live="polite">Loading source status…</div></div>
 </div>
+<section id="market-summary" class="market-summary" aria-labelledby="marketSummaryHeading">
+<div class="section-title"><div><h2 id="marketSummaryHeading">Market Summary</h2><p>Where the markets stand, what is actually changing and what to watch next.</p></div><a class="quiet-link" href="https://app.notion.com/p/3ea519b67a948161ba4dec8f97ebf658" target="_blank" rel="noopener noreferrer">More market research ↗</a></div>
+<div class="panel">
+<div class="card-top"><div class="eyebrow">The bigger picture</div><div id="marketSummaryDate" class="meta">Loading dated research…</div></div>
+<h3 class="market-headline" id="marketSummaryTitle">Market summary unavailable</h3>
+<div class="market-prose" id="marketSummaryBody"><p>Open the latest <a href="https://app.notion.com/p/3ea519b67a948161ba4dec8f97ebf658">MacroPulse</a> for the most recent verified market context.</p></div>
+<p class="market-freshness" id="marketSummaryFreshness"></p>
+<div class="market-sources" id="marketSummarySources"></div>
+</div></section>
 <section id="holdings">
 <div class="section-title"><div><h2>1. Your holdings</h2><p>Protect the positions you already own before hunting for another stock. Prices show their actual recorded date.</p></div><a class="quiet-link" href="holdings.html">Full portfolio ledger →</a></div>
 <div class="alert" id="portfolioCaution">Current-position prices are not a substitute for a fresh broker quote. The YTL-linked warrant needs verified terms.</div>
@@ -81,6 +100,35 @@ const when=x=>String(x||'not available');
 const baseLinks={research:"research-library.html",watch:"watchlist.html"};
 function signal(text){return '<span class="pill'+(/DEGRADED|STALE|PARTIAL|UNVERIFIED/.test(text)?' warn':/CURRENT/.test(text)?' strong':'')+'">'+esc(text)+'</span>'}
 function markAsOf(x){return x?'Quote '+esc(x):'Quote unavailable'}
+function renderMarketSummary(note){
+ const title=$('#marketSummaryTitle'),date=$('#marketSummaryDate'),body=$('#marketSummaryBody'),fresh=$('#marketSummaryFreshness'),sources=$('#marketSummarySources');
+ if(!note||note.contractVersion!=='power-stack-market-summary/v1'||!Array.isArray(note.sections)||!note.asOf){
+   title.textContent='The current briefing is unavailable';
+   date.textContent='No verified publication time';
+   body.textContent='The short market summary could not be loaded. Follow the linked MacroPulse research instead.';
+   fresh.textContent='No market or price information is implied by this page.';
+   return;
+ }
+ const stamp=Date.parse(note.asOf),age=Number.isFinite(stamp)?Math.max(0,(Date.now()-stamp)/3600000):Infinity;
+ const fmt=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kuala_Lumpur',day:'numeric',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',hour12:false});
+ date.textContent=Number.isFinite(stamp)?'Reviewed '+fmt.format(new Date(stamp))+' MYT':'Research time unavailable';
+ title.textContent=note.title||'Market Summary';
+ const prose=document.createDocumentFragment();
+ const intro=document.createElement('p');intro.textContent=note.intro||'';prose.append(intro);
+ for(const sec of note.sections.slice(0,4)){
+   const h=document.createElement('h3');h.textContent=sec.label||'';prose.append(h);
+   const p=document.createElement('p');p.textContent=sec.text||'';prose.append(p);
+ }
+ if(note.verdict){const end=document.createElement('p');end.className='market-view';end.textContent=note.verdict;prose.append(end);}
+ body.replaceChildren(prose);
+ fresh.classList.toggle('stale',age>Number(note.editorial?.freshnessHours||24));
+ fresh.textContent=(age>Number(note.editorial?.freshnessHours||24)?'This briefing is older than 24 hours. ': 'Source-dated market note. ')+(note.dataLimits||'Values are not live quotes.');
+ sources.replaceChildren();
+ for(const src of (note.sourceLinks||[])){
+   if(typeof src.url!=='string'||!/^https:\/\//.test(src.url))continue;
+   const a=document.createElement('a');a.href=src.url;a.textContent=src.label||'Source';a.target='_blank';a.rel='noopener noreferrer';sources.append(a);
+ }
+}
 function renderHealth(){
 const entries=[...(data?.researchInputs||[])];
 if(live){const status=String(live.sourceStatus||'UNKNOWN').toUpperCase(),asOf=live.asOf||'unknown';const it=entries.find(x=>x.source==="Live macro snapshot");if(it){it.status=status==='OK'?'CURRENT':status.includes('DEGRADED')?'DEGRADED':status;it.note='Live as of '+asOf+'; '+(live.marketMotion?.itemCount||0)+' promoted Motion items. Missing canonical inputs are unresolved.';}}
@@ -110,8 +158,9 @@ $('#adjacent').innerHTML=(data?.additionalAdjacentResearch||[]).map(x=>'<div cla
 }
 async function go(){
 try{
-const inputs=[['decision','data/personal-decision-desk.json'],['holdings','data/holdings-fundamentals.json'],['watch','data/watchlist.json'],['live','data/live-desk-canonical.json']];
+const inputs=[['decision','data/personal-decision-desk.json'],['holdings','data/holdings-fundamentals.json'],['watch','data/watchlist.json'],['live','data/live-desk-canonical.json'],['market','data/market-summary.json']];
 const res=await Promise.all(inputs.map(async ([k,url])=>{try{const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);return [k,await r.json()]}catch(e){return [k,null]}}));const vals=Object.fromEntries(res);
+renderMarketSummary(vals.market);
 data=vals.decision;holdings=vals.holdings?.holdings||[];watchlist=new Map((vals.watch?.candidates||[]).map(c=>[c.ticker,c]));live=vals.live;
 if(!data)throw Error('Decision research file unavailable');
 $('#verdict').textContent=data.headline.verdict;$('#verdictWhy').textContent=data.headline.detail+' '+data.headline.next;
