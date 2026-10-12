@@ -1,9 +1,9 @@
 {
-  "asOf": "2026-10-07",
-  "capturedAt": "2026-10-07T21:25:00+08:00",
+  "asOf": "2026-10-12",
+  "capturedAt": "2026-10-12T09:40:00+08:00",
   "title": "Power Stack Watchlist",
   "method": "Fresh-money queue. Score and Action are separate. Strong themes do not automatically rank highly: the business must be able to fund itself, the valuation must leave room, and price should eventually confirm the thesis. Unverified creator/research leads contribute zero points.",
-  "marketRegime": "AI earnings and physical buildout are still strong enough to support record equities, but money remains expensive. The market is splitting between weak borrowers facing punitive refinancing and strong sponsor-backed projects that can still fund. In energy, crude availability is improving faster than products, logistics and infrastructure risk.",
+  "marketRegime": "Live Desk canonical is MIXED_TRANSITION (latest snapshot degraded). AI remains EARLY WARNING, not confirmed bubble rollover: strong TSMC demand and Microsoft cash generation coexist with selective AI financing fragility (Firmus withdrawn IPO, external debt-issuance questions). Gulf offshore crude shut-ins improved in the 11 Oct regulator survey, but diesel/refinery deliveries and Hormuz freight remain unverified. Friday 9 Oct is the latest full US Treasury close; Monday 12 Oct is a USD fixed-income holiday.",
   "buckets": [
     {
       "id": "buy",
@@ -869,8 +869,8 @@
       "status": "IMPLEMENTATION RESEARCH — Identifier and fund structure verified: 21 securities, 0.68% ongoing charge, with Cambricon/NAURA/CXMT among the largest holdings. Compare basket valuation and concentration with direct CXMT and Montage."
     }
   ],
-  "priceCoverageNote": "This sweep updates theme, funding and action priority from MacroPulse, Live Regime and verified transcript intake. It does not invent fresh prices: existing dated price references remain until the quote pipeline refreshes them.",
-  "sweepNote": "07 Oct deep-research sweep: GRAB upgraded to active buy research; BWXT promoted into the scored Research Now list; TTWO reactivated separately in the holding review ahead of the verified 19 Nov GTA VI launch; agriculture map corrected after the 1 Oct Corteva/Vylor separation; CF strengthened, NTR retained as secondary, BG remains lower-priority but is not a stop-looking name; China identifiers verified (3191.HK ETF, CXMT 688825, Montage 688008.SH/6809.HK) and the China semiconductor cluster remains active rather than being dropped.",
+  "priceCoverageNote": "12 Oct research narrative only. Many candidate price strings and holding completed-session tape are from September or early October, NOT 12 Oct live quotes; preserve their original dates and require fresh executable prices before investing. US dollar fixed-income markets observe a full-close recommendation Monday 12 Oct; latest US full nominal close used here is Friday 9 Oct. The research sweep must not be interpreted as a current-price refresh.",
+  "sweepNote": "07 Oct deep-research sweep: GRAB upgraded to active buy research; BWXT promoted into the scored Research Now list; TTWO reactivated separately in the holding review ahead of the verified 19 Nov GTA VI launch; agriculture map corrected after the 1 Oct Corteva/Vylor separation; CF strengthened, NTR retained as secondary, BG remains lower-priority but is not a stop-looking name; China identifiers verified (3191.HK ETF, CXMT 688825, Montage 688008.SH/6809.HK) and the China semiconductor cluster remains active rather than being dropped. | 12 Oct nine-part sweep: incorporated 10-12 Oct MacroPulse + 11 PM/12 AM Research Gap/Gate and latest recoverable creator summaries. Confirmed TSMC Sep revenue +54.6% YoY, Microsoft FY26 Q4 $19.6B FCF, and Firmus planned $5B IPO withdrawal. Highlighted upstream Gulf recovery versus unproved diesel relief, stalled Hormuz talks versus Saudi-Iran contact, and selective AI financing rather than universal credit failure. No score/rank/position changes; action queues unchanged pending dated company prices, issuer debt terms, raw timecoded transcripts and Live source repair. Full dated manifest in research/2026-10-12-power-stack-nine-part-sweep.md.",
   "creatorPolicy": "Deep Research, Live Desk and creator/transcript material can change research priority, but company scores/actions change only where independent company or official evidence supports the move. Identifier confusion or unsupported synthesis is rejected rather than written through.",
   "macroDiagnostics": [
     {
@@ -936,6 +936,35 @@
         "XLF"
       ],
       "question": "Verify offshore-dollar funding, foreign Treasury demand, white-collar labour weakness and gold/yield claims before allowing any creator narrative to affect Power Stack decisions."
+    },
+    {
+      "name": "AI capex returns versus funded-customer fragility · 12 Oct",
+      "tickers": [
+        "CRWV",
+        "ORCL",
+        "AVGO",
+        "NVDA",
+        "SMH",
+        "MU",
+        "TSM",
+        "MSFT",
+        "CEG"
+      ],
+      "question": "Do secured AI infrastructure obligations and ecosystem-financing transfers have sustainable customer receipts and FCF, or is funded demand running ahead of monetisation? Verify primary financing terms, loan spreads, contract quality and gross-versus-net revenue before changing issuer scores."
+    },
+    {
+      "name": "Storm recovery versus diesel delivery · 12 Oct",
+      "tickers": [
+        "XOM",
+        "MISC",
+        "HIBISCS",
+        "DAYANG",
+        "VLO",
+        "MPC",
+        "PSX",
+        "STNG"
+      ],
+      "question": "Does lower Gulf offshore shut-in capacity translate into actual refinery runs, distillate stocks and cheaper ULSD, or do port, power and Hormuz freight constraints keep product prices elevated?"
     }
   ],
   "eventOverlays": {
@@ -1001,6 +1030,37 @@
         "STNG",
         "MISC",
         "HIBISCS"
+      ]
+    },
+    "AI financing versus realised monetisation": {
+      "status": "EARLY WARNING / CONDITIONAL",
+      "date": "2026-10-12",
+      "constructiveIf": "TSMC/other actual chip sales and hyperscaler FCF remain strong while funded customers show executed debt terms and paying end-user margins",
+      "negativeIf": "primary loan terms deteriorate, GPU/deployment commitments cancel, or capex cannot be covered by operating cash generation",
+      "mostSensitive": [
+        "CRWV",
+        "ORCL",
+        "AVGO",
+        "NVDA",
+        "MU",
+        "CEG",
+        "YTLPOWR"
+      ]
+    },
+    "Storm restoration versus refined-fuel bottleneck": {
+      "status": "OFFSHORE RECOVERING / PRODUCT DELIVERY UNRESOLVED",
+      "date": "2026-10-12",
+      "constructiveIf": "refinery power, ports, throughput, ULSD inventories and physical premiums normalise alongside offshore restart",
+      "negativeIf": "refinery/pipeline outages or Hormuz route costs keep distillate and freight scarce after offshore output improves",
+      "mostSensitive": [
+        "XOM",
+        "MISC",
+        "HIBISCS",
+        "DAYANG",
+        "VLO",
+        "MPC",
+        "PSX",
+        "STNG"
       ]
     }
   },
