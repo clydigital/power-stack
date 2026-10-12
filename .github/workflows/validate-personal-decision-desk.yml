@@ -1,0 +1,30 @@
+name: Validate personal decision desk
+on:
+  pull_request:
+    paths:
+      - "index.html"
+      - "research-library.html"
+      - "data/personal-decision-desk.json"
+      - "data/watchlist.json"
+      - "data/holdings-fundamentals.json"
+      - "data/live-desk-canonical.json"
+      - "scripts/check-personal-decision-desk.mjs"
+      - "research/2026-10-12-ai-adjacent-and-healthcare.md"
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "data/personal-decision-desk.json"
+      - "data/watchlist.json"
+      - "data/holdings-fundamentals.json"
+      - "data/live-desk-canonical.json"
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate source boundaries and decision gates
+        run: node scripts/check-personal-decision-desk.mjs

@@ -1,0 +1,231 @@
+{
+  "contractVersion": "power-stack-personal-decision/v1",
+  "asOf": "2026-10-12",
+  "dateNote": "Malaysia morning before the next complete US cash-equity close. Do not treat archived quotes as executable prices.",
+  "purpose": "One actionable personal-investment desk. Company facts and history stay in the original files; no extra macro engine.",
+  "owners": {
+    "regime": "data/live-desk-canonical.json (read-only Live)",
+    "research": "ChatGPT sweeps + Notion MacroPulse/Research Gap + AI capex hub",
+    "companyEvidence": "data/ideas.json and data/holdings-fundamentals.json",
+    "watchlist": "data/watchlist.json",
+    "portfolio": "data/portfolio-management.json"
+  },
+  "policy": {
+    "activeCandidateCap": 8,
+    "visibleTabs": [
+      "Decisions",
+      "Holdings",
+      "Shortlist"
+    ],
+    "defaultOnUnverifiedPrice": "WAIT_FOR_CURRENT_PRICE",
+    "researchNeverAltersFundamentalsWithoutIssuerEvidence": true,
+    "creatorsAreHypothesesOnly": true,
+    "archival": "The 46-stock watchlist and 56-idea library remain available in secondary archive pages, not deleted.",
+    "scope": "Informational triage, not automatic trade execution."
+  },
+  "sourceLinks": {
+    "notionAI": "https://app.notion.com/p/3f4519b67a9481639302eee63384c180",
+    "macroPulse": "https://app.notion.com/p/3ea519b67a948161ba4dec8f97ebf658",
+    "researchGap": "https://app.notion.com/p/3f7519b67a9481539c9ceffe5a6a0700",
+    "live": "https://alchemy-live-market-desk.vercel.app/",
+    "latestSweep": "https://github.com/clydigital/power-stack/blob/main/research/2026-10-12-power-stack-nine-part-sweep.md",
+    "adjacentResearch": "https://github.com/clydigital/power-stack/blob/main/research/2026-10-12-ai-adjacent-and-healthcare.md"
+  },
+  "headline": {
+    "verdict": "NO NEW BUY SIGNAL CONFIRMED",
+    "detail": "AI capex cycle is in EARLY WARNING, not confirmed collapse. Rates context is incomplete in the Live snapshot; primary 9 October closes are not Monday price quotes.",
+    "next": "Reconcile current executable prices, issuer FCF and financing terms before any fresh-capital decisions."
+  },
+  "focus": [
+    {
+      "ticker": "GRAB",
+      "lane": "UNDERWRITE",
+      "sector": "Consumer platforms / fintech",
+      "rationale": "Diversification away from AI and power; core marketplace turnaround",
+      "mustProve": "Atome credit losses, lending returns and cash generation justify capital commitment",
+      "risk": "Losses in consumer credit or spending more on acquisitions",
+      "action": "RESEARCH FIRST",
+      "sourceType": "POWER_STACK_VERIFIED_RESEARCH"
+    },
+    {
+      "ticker": "BWXT",
+      "lane": "UNDERWRITE",
+      "sector": "Nuclear / defence equipment",
+      "rationale": "Contracted defence/nuclear cash flow and diversified customer mix",
+      "mustProve": "Backlog converts into free cash flow at a reasonable entry valuation",
+      "risk": "Capacity cost overruns or government programme delays",
+      "action": "WAIT FOR VALUATION",
+      "sourceType": "POWER_STACK_VERIFIED_RESEARCH"
+    },
+    {
+      "ticker": "CF",
+      "lane": "UNDERWRITE",
+      "sector": "Agriculture / fertiliser",
+      "rationale": "Operating cash generator offering macro diversification from AI",
+      "mustProve": "Nitrogen margins and shareholder returns remain attractive through commodity normalisation",
+      "risk": "Falling urea margins or expensive natural gas compress FCF",
+      "action": "WAIT FOR BASE",
+      "sourceType": "POWER_STACK_VERIFIED_RESEARCH"
+    },
+    {
+      "ticker": "ETN",
+      "lane": "ENTRY_STUDY",
+      "sector": "AI-adjacent electrical infrastructure",
+      "rationale": "2Q26 electrical demand and orders strong beyond data centres; FCF positive",
+      "mustProve": "Customer-backed orders, margin and reasonable valuation hold",
+      "risk": "Orders decelerate or multiple remains stretched",
+      "action": "NO CHASE",
+      "sourceType": "ISSUER_VERIFIED",
+      "source": "https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-second-quarter-2026-results.html",
+      "sourceDate": "2026-07-31"
+    },
+    {
+      "ticker": "MU",
+      "lane": "ENTRY_STUDY",
+      "sector": "AI memory / HBM",
+      "rationale": "AI hardware demand remains strong, but substantial factor overlap with semiconductors",
+      "mustProve": "HBM demand and cash conversion hold after a current earnings and valuation review",
+      "risk": "Memory pricing reverses or AI capex declines",
+      "action": "NO CHASE",
+      "sourceType": "POWER_STACK_VERIFIED_RESEARCH"
+    },
+    {
+      "ticker": "VRT",
+      "lane": "ADJACENT_RESEARCH",
+      "sector": "Data-centre cooling and power",
+      "rationale": "Liquid-cooling and electrical infrastructure supplier; Q2 2026 revenue +24%, adjusted FCF $925m",
+      "mustProve": "Order backlog, margins and durable cooling service economics justify current valuation",
+      "risk": "AI project delays and premium valuation",
+      "action": "RESEARCH ONLY",
+      "sourceType": "ISSUER_VERIFIED",
+      "source": "https://www.sec.gov/Archives/edgar/data/1674101/000162828026050323/q22026exhibit991vrt07292026.htm",
+      "sourceDate": "2026-07-29",
+      "unscored": true
+    },
+    {
+      "ticker": "XYL",
+      "lane": "ADJACENT_RESEARCH",
+      "sector": "Water, treatment and industrial efficiency",
+      "rationale": "Water demand extends across semiconductor fabrication, power and cities; 2Q26 orders +42% while revenue +2%",
+      "mustProve": "Order surge converts to revenue and free cash flow; separate AI-specific benefit from broad industrial demand",
+      "risk": "Revenue conversion disappoints; AI linkage overstated",
+      "action": "RESEARCH ONLY",
+      "sourceType": "ISSUER_VERIFIED",
+      "source": "https://www.xylem.com/en-us/resources/press-releases/xylem-reports-second-quarter-2026-results/",
+      "sourceDate": "2026-Q2",
+      "unscored": true
+    },
+    {
+      "ticker": "GEHC",
+      "lane": "ADJACENT_RESEARCH",
+      "sector": "Healthcare imaging and diagnostics",
+      "rationale": "AI-enabled imaging and radiopharma distribution; Q2 revenue +5.7% and FCF $68m. October $945m SOFIE acquisition expands PET radiotracer supply, not proven AI earnings.",
+      "mustProve": "Incremental imaging/diagnostics returns, $945m SOFIE acquisition integration, debt service, cash conversion and clear pricing advantage",
+      "risk": "Existing $10.1bn debt, weak Patient Care margins, M&A funding and unproven AI monetisation",
+      "action": "RESEARCH ONLY",
+      "sourceType": "ISSUER_VERIFIED",
+      "source": "https://www.gehealthcare.com/en-us/about/newsroom/press-releases/ge-healthcare-reports-second-quarter-2026-financial-results",
+      "sourceDate": "2026-07-29",
+      "unscored": true,
+      "additionalSource": "https://investor.gehealthcare.com/news-releases/news-release-details/ge-healthcare-acquire-sofie-biosciences-establishing-final-mile"
+    }
+  ],
+  "additionalAdjacentResearch": [
+    {
+      "ticker": "ISRG",
+      "theme": "Robotic surgery / recurring instruments",
+      "gate": "Q2 2026 procedures grew ~16%, revenue +19%; check repeat instrument/service profits, valuation and the marginal AI/digital economics.",
+      "source": "https://www.sec.gov/Archives/edgar/data/1035267/000103526726000047/q226ex-991earningsrelease.htm",
+      "stage": "PARKED_RESEARCH"
+    },
+    {
+      "ticker": "DHR",
+      "theme": "Biological data and life-science tooling",
+      "gate": "New AI-powered autonomous lab planned for early 2027; test real customer revenue, instruments/services margins and rollout cost versus the 2Q26 $1.3bn FCF baseline.",
+      "source": "https://investors.danaher.com/2026-10-07-Danaher-Accelerates-Life-Sciences-Research-with-New-AI-powered-Autonomous-Lab",
+      "stage": "PARKED_RESEARCH"
+    }
+  ],
+  "demotedFromFront": [
+    {
+      "ticker": "LNG",
+      "reason": "Already significant direct energy exposure across held XOM/MISC/HIBISCS/DAYANG"
+    },
+    {
+      "ticker": "CRDO",
+      "reason": "Overlap with existing AI chip and semiconductor risk"
+    },
+    {
+      "ticker": "CEG",
+      "reason": "Good contracted generation case, but overlaps with ETN/YTL and AI power; wait for valuation"
+    },
+    {
+      "ticker": "DELL",
+      "reason": "Hardware/margin risk and AI factor concentration; no differentiated near-term decision"
+    },
+    {
+      "ticker": "CTVA",
+      "reason": "Old pre-separation thesis invalid: re-underwrite new business before active ranking"
+    },
+    {
+      "ticker": "NTR",
+      "reason": "Keep CF as primary agriculture research; compare NTR only when valuations justify it"
+    },
+    {
+      "ticker": "VST",
+      "reason": "Utility/power overlap with ETN/CEG/YTL; avoid redundant new-capital shortlist"
+    },
+    {
+      "ticker": "AVGO",
+      "reason": "Funding structure and chip-cycle overlap; monitor, not fresh-money priority"
+    },
+    {
+      "ticker": "9988.HK",
+      "reason": "China AI credit/monetisation work continues in regional research, not a default new-buy signal"
+    }
+  ],
+  "portfolioWatch": {
+    "top": [
+      "DAYANG",
+      "YTLPOWR",
+      "6742UW",
+      "TSLA"
+    ],
+    "why": "Outdated September holding prices, linked YTL/warrant concentration and mixed growth/rates sensitivity demand an action-gate refresh before adding.",
+    "noBlindChanges": true
+  },
+  "researchInputs": [
+    {
+      "source": "AI 16-company regime",
+      "status": "CURRENT",
+      "note": "16/16 updated 12 October ~06:00 MYT; daily automation enabled; downstream Dossier/Hybrid handoff not verified."
+    },
+    {
+      "source": "MacroPulse / Research Gap",
+      "status": "CURRENT",
+      "note": "12 October AM Gate completed with partial upstream input health."
+    },
+    {
+      "source": "Live macro snapshot",
+      "status": "DEGRADED",
+      "note": "11 October snapshot: missing canonical rate components, zero promoted Market Motion."
+    },
+    {
+      "source": "Power Stack holdings and quotes",
+      "status": "STALE",
+      "note": "Portfolio ledger as of 2 October; many underlying closing prices are dated September."
+    }
+  ],
+  "nextEvents": [
+    {
+      "date": "2026-10-14",
+      "event": "US CPI",
+      "watch": "Policy/real-yield reaction; compare rates, credit, QQQ and SMH"
+    },
+    {
+      "date": "2026-10-15",
+      "event": "US PPI / TSMC earnings",
+      "watch": "Margins, orders, HBM and infrastructure demand against high AI valuations"
+    }
+  ]
+}

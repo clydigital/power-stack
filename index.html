@@ -1,159 +1,127 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Power Stack — cross-market investment research vault for nuclear, AI infrastructure, grid, uranium, oil & gas, robotics and adjacent themes." />
-  <title>Power Stack</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <style>.rate-home{margin-bottom:14px;border:1px solid #5a4528;background:linear-gradient(110deg,#19130c,#0d1216 62%);padding:15px}.rate-home-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}.rate-home h2{font-size:18px;margin:4px 0}.rate-home p{font-size:10px;color:#aeb7bf;line-height:1.55;margin:0}.rate-home-ranks{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.rate-chip{border:1px solid #3d3527;background:#0b0f12;border-radius:8px;padding:7px 9px;font-size:9px}.rate-chip b{color:#ffbd77;margin-right:5px}.rate-chip span{font-weight:850}.ghost-link.primary-link{color:#071115;background:linear-gradient(100deg,var(--green),var(--blue));border-color:transparent;font-weight:800;box-shadow:0 0 22px rgba(143,184,223,.12)}.ghost-link.primary-link:hover{filter:brightness(1.08);color:#071115}.ghost-link.holdings-link{color:#1b0e03;background:linear-gradient(100deg,#ff8a3d,#ffc15a);border-color:transparent;font-weight:900;box-shadow:0 0 22px rgba(255,138,61,.18)}.ghost-link.holdings-link:hover{filter:brightness(1.08);color:#1b0e03;box-shadow:0 0 28px rgba(255,138,61,.28)}.ghost-link.watchlist-link{color:#f5efff;background:linear-gradient(100deg,#5f47a7,#8e66d8);border-color:transparent;font-weight:850;box-shadow:0 0 22px rgba(142,102,216,.16)}.ghost-link.watchlist-link:hover{filter:brightness(1.08);color:#fff}.motion-home{margin-bottom:14px;padding:15px;border:1px solid #3f365b;background:linear-gradient(120deg,#151126,#0d1216 65%);border-radius:12px}.motion-home-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}.motion-home h2{font-size:18px;margin:4px 0}.motion-home p{font-size:10px;color:#aeb7bf;line-height:1.55;margin:0;max-width:850px}.motion-home-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:10px}.motion-home-card{display:grid;gap:6px;padding:10px;border:1px solid #242b31;border-radius:9px;background:#090d10;text-decoration:none}.motion-home-card:hover{border-color:#5f4d89}.motion-home-card span{font-size:7px;color:#8f83aa;text-transform:uppercase;letter-spacing:.08em;font-weight:850}.motion-home-card strong{font-size:10px;line-height:1.35;color:#e7e1f1}.motion-home-card small{font-size:8px;line-height:1.4;color:#78838c}.ghost-link.motion-link{color:#f5efff;background:linear-gradient(100deg,#4d3c79,#7658b6);border-color:transparent;font-weight:850}
-.bond-home{margin-bottom:14px;padding:15px;border:1px solid #30475a;background:linear-gradient(115deg,#0c151c,#0d1216 68%);border-radius:12px}.bond-home-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}.bond-home h2{font-size:18px;margin:4px 0}.bond-home p{font-size:10px;color:#aeb7bf;line-height:1.55;margin:0;max-width:900px}.bond-metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin-top:10px}.bond-metric{padding:9px;border:1px solid #25323c;border-radius:8px;background:#090d10}.bond-metric span{display:block;font-size:7px;color:#71808b;text-transform:uppercase;letter-spacing:.08em}.bond-metric b{display:block;margin-top:3px;font-size:15px;color:#d7e6ef}.bond-metric small{display:block;margin-top:3px;color:#70808b;font-size:7px}.bond-buckets{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-top:8px}.bond-bucket{padding:10px;border:1px solid #202b33;border-radius:8px;background:#0a0f13}.bond-bucket strong{display:block;color:#d5e2e9;font-size:9px}.bond-bucket span{display:block;color:#83a0b3;font-size:8px;margin:3px 0}.bond-bucket p{font-size:8px;line-height:1.45;color:#78858e}@media(max-width:1100px){.bond-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}.bond-buckets{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.bond-home-head{display:grid}.bond-metrics,.bond-buckets{grid-template-columns:1fr}}@media(max-width:1100px){.motion-home-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.motion-home-head{display:grid}.motion-home-grid{grid-template-columns:1fr}}
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Power Stack personal investment decisions. Eight researched candidates, current holdings and evidence-backed entry gates.">
+<title>Personal Investment Desk · Power Stack</title>
+<style>
+:root{color-scheme:dark;--bg:#0a0d10;--surface:#12171c;--surface2:#171e24;--text:#edf2ee;--muted:#a1abb0;--line:#29333a;--mint:#9fd7bb;--amber:#f0c884;--blue:#a8c8e2}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--mint)}a:focus-visible,button:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
+.wrap{max-width:1140px;margin:auto;padding:0 24px 58px}
+header{border-bottom:1px solid var(--line);background:#0e1216}header .wrap{padding-top:17px;padding-bottom:17px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.logo{font-size:17px;font-weight:850;letter-spacing:-.4px;color:white;text-decoration:none}.logo small{font-size:11px;font-weight:500;color:var(--muted);margin-left:10px}
+nav{display:flex;gap:18px;flex-wrap:wrap}nav a{color:#d0d8d8;text-decoration:none;font-size:12px}nav a:hover{color:var(--mint)}
+main{padding-top:34px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--mint);font-weight:750}
+h1{font-size:clamp(30px,4vw,48px);line-height:1.09;letter-spacing:-1.5px;margin:8px 0 12px}h2{font-size:23px;letter-spacing:-.5px;margin:0}h3{font-size:15px;margin:0 0 8px}p{margin:6px 0 0}
+.lead{font-size:16px;color:#c5cfd1;max-width:750px}.meta{font-size:11px;color:var(--muted)}
+.hero{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(250px,.95fr);gap:16px;margin:26px 0 20px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:21px}
+.verdict{border-color:#574936;background:linear-gradient(118deg,#211b14,#12171c 72%)}.verdict h2{font-size:20px;color:#f2d29e;margin:8px 0}.verdict p{color:#bec9cb}
+.pill{display:inline-flex;border:1px solid #46525c;border-radius:8px;padding:4px 8px;font-size:10px;color:#cfddda;letter-spacing:.2px;font-weight:700;white-space:nowrap}
+.pill.strong{color:#9fe2b7;border-color:#2a5c47}.pill.warn{color:var(--amber);border-color:#746043}
+.health{display:grid;gap:8px;margin-top:12px}.health-line{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding-bottom:8px;border-bottom:1px solid var(--line)}.health-line:last-child{border:0}
+.health-line span:first-child{font-size:12px;color:#c7d0ce}.health-line small{font-size:10px;color:var(--muted);max-width:200px;display:block}
+section{margin:34px 0}.section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:15px}.section-title p{color:var(--muted);max-width:800px;margin:4px 0}.quiet-link{font-size:12px;color:var(--blue);text-decoration:none}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.cards3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.kicker{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.7px}
+.ticker{font-size:21px;font-weight:850;letter-spacing:-.5px;margin:6px 0 4px}
+.company{color:var(--muted);font-size:12px;min-height:18px}
+.card-top{display:flex;align-items:start;justify-content:space-between;gap:10px}.card-body{color:#cbd4d3;font-size:13px;margin-top:12px}.card-body p{margin-top:8px}
+.card-body strong{color:var(--text);font-weight:650}
+.card-foot{border-top:1px solid var(--line);padding-top:11px;margin-top:13px;font-size:11px;color:var(--muted)}.card-foot a{color:var(--blue)}
+.tabs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}.tabs button{border:1px solid var(--line);border-radius:9px;background:#151b1f;color:#bfcbcc;padding:9px 13px;cursor:pointer;font-size:12px}
+.tabs button[aria-pressed=true]{background:#26352d;border-color:#447254;color:#bde9cd}
+.alert{border-left:3px solid #ad9063;padding:12px 14px;background:#171714;border-radius:0 8px 8px 0;color:#d0d2ca;margin-bottom:13px}
+details{border:1px solid var(--line);border-radius:12px;padding:15px 18px;background:var(--surface);margin-top:10px}
+summary{font-weight:700;cursor:pointer}details p{color:var(--muted);margin-top:10px}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}
+.links a{display:inline-flex;border:1px solid #354b43;border-radius:8px;padding:8px 12px;text-decoration:none;color:#d3ebdc;font-size:12px}
+aside.note{background:#111b1a;border:1px solid #284c44;border-radius:12px;padding:14px 18px;font-size:12px;color:#b9d6ca;margin-top:18px}
+footer{border-top:1px solid var(--line);padding:22px 0;color:#7d8a90;font-size:11px}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.cards3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.wrap{padding-left:15px;padding-right:15px}.grid,.cards3{grid-template-columns:1fr}.panel{padding:16px}header .wrap{align-items:flex-start}.logo small{display:block;margin:0}nav{gap:12px}}
 </style>
 </head>
 <body>
-  <div class="app-shell">
-    <aside class="sidebar">
-      <div class="brand-block"><div class="eyebrow">INVESTMENT RESEARCH VAULT</div><div class="brand">POWER STACK</div><div class="brand-sub">AI · POWER · NUCLEAR · OIL · ROBOTICS</div></div>
-      <nav class="side-scroll">
-        <section class="side-section"><div class="side-heading">Idea universe</div><div id="allIdeasNav"></div></section>
-        <section class="side-section"><div class="side-heading">Themes</div><div id="themeNav" class="side-nav"></div></section>
-        <section class="side-section"><div class="side-heading">Regions</div><div id="regionNav" class="side-nav"></div></section>
-        <section class="side-section"><div class="side-heading">Research state</div><div id="statusNav" class="side-nav"></div></section>
-        <section class="side-section live-pulse-section"><div class="side-heading row-between"><span>Live rates & bonds</span><span id="sidebarLiveDot" class="live-dot"></span></div><div id="livePulse"></div><div id="liveTimestamp" class="side-micro">Waiting for Live snapshot…</div></section>
-      </nav>
-      <div class="side-footer"><span>Source of truth</span><strong>GitHub · ideas + live research overlays</strong></div>
-    </aside>
-    <div class="workspace">
-      <header class="topbar">
-        <div><div class="eyebrow">POWER STACK · CURRENT IDEAS</div><h1>All Ideas</h1><p id="viewSubtitle">The best ideas are the ones that still work when money is expensive. Score the business, check the price, then decide what deserves fresh cash.</p></div>
-        <div class="top-actions"><div id="liveBadge" class="live-badge offline"><span></span> Live macro loading</div><a class="ghost-link" href="capital-scarcity.html">10Y / Capital Scarcity →</a><a class="ghost-link holdings-link" href="holdings.html">Current Holdings →</a><a class="ghost-link watchlist-link" href="watchlist.html">Watchlist →</a><a class="ghost-link motion-link" href="motion.html">Market Motion →</a><a class="ghost-link primary-link" href="themes.html">Developing Themes →</a><a class="ghost-link" href="https://alchemy-live-market-desk.vercel.app/" target="_blank" rel="noopener">Live Macro ↗</a></div>
-      </header>
-      <main class="main-content">
-        <section id="rateResilienceHome" class="panel rate-home"><div class="rate-home-head"><div><div class="eyebrow">10Y RATE-RESILIENCE · 25 SEP</div><h2 id="rateHomeGate">Loading rate-resilience gate…</h2><p id="rateHomeRead"></p></div><a class="ghost-link" href="capital-scarcity.html">Full ranking →</a></div><div id="rateHomeRanks" class="rate-home-ranks"></div></section>\n        <section id="bondWatchHome" class="bond-home"><div class="bond-home-head"><div><div class="eyebrow">BOND WATCH · CAPITAL ALLOCATION</div><h2>Cash and bonds set the hurdle now.</h2><p id="bondHomeRead">Loading the core curve, real-yield and inflation read…</p></div><a class="ghost-link" href="capital-scarcity.html">Rates / capital scarcity →</a></div><div id="bondMetrics" class="bond-metrics"></div><div id="bondBuckets" class="bond-buckets"></div></section>
-        <section id="marketMotionHome" class="motion-home"><div class="motion-home-head"><div><div class="eyebrow">MARKET MOTION · FRESH HOOKS</div><h2>What changed today?</h2><p id="motionHomeRead">Loading stock-specific and geopolitical motion…</p></div><a class="ghost-link motion-link" href="motion.html">Open Market Motion →</a></div><div id="motionHomeGrid" class="motion-home-grid"></div></section>\n        <section id="summaryStats" class="summary-grid"></section>
-        <section class="context-panel panel"><div class="context-head"><div><div class="eyebrow">LIVE RATES + MARKET OVERLAY</div><h2 id="contextTitle">What does the market backdrop change for these ideas?</h2></div><div id="contextMeta" class="context-meta">Loading Live snapshot…</div></div><div id="contextBody" class="context-body"></div><div class="context-rule">Live Desk tells us what the market is doing. Power Stack asks what that means for the companies we own or might buy. A macro move can change the setup, but it cannot rewrite the company facts.</div></section>
-        <section class="control-row panel"><div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Search ticker, company, thesis, catalyst, risk…" autocomplete="off" /></div><select id="sort" aria-label="Sort ideas"><option value="conviction">Current research score</option><option value="aiRisk">AI crash risk</option><option value="themeDependency">Theme dependency</option><option value="cyclicality">Cyclicality</option><option value="speculation">Speculation</option><option value="ticker">Ticker / company</option></select><div class="view-toggle" role="group" aria-label="Idea presentation"><button id="cardViewBtn" class="view-button active" type="button" aria-pressed="true" title="Card View"><span aria-hidden="true">▦</span> Card</button><button id="rowViewBtn" class="view-button" type="button" aria-pressed="false" title="Row View"><span aria-hidden="true">☷</span> Row</button></div></section>
-        <section class="result-bar"><div><strong id="count">0</strong> ideas shown</div><button id="clearFilters" class="text-button">Clear filters</button></section><section id="grid" class="idea-grid"></section>
-      </main>
-      <footer class="footer">Power Stack keeps the research in one place. The score shows how strong the setup is; the Action tells us what, if anything, to do with it now.</footer>
-    </div>
-  </div>
-  <dialog id="detailDialog"><div class="dialog-head"><div><div id="dialogMarket" class="eyebrow"></div><h2 id="dialogTitle"></h2></div><button id="closeDialog" class="icon-btn" aria-label="Close">×</button></div><div id="dialogBody" class="dialog-body"></div></dialog>
-  <script>
-    (() => {
-      const nativeFetch = window.fetch.bind(window);
-      window.fetch = async (input, init) => {
-        const url = typeof input === 'string' ? input : input?.url;
-        if (url === 'data/macro-sensitivity-supplement.json') {
-          const [baseRes,extraRes,extra2Res]=await Promise.all([
-            nativeFetch(input,init),
-            nativeFetch('data/macro-sensitivity-supplement-2-2026-09-03.json',{cache:'no-store'}).catch(()=>null),
-            nativeFetch('data/macro-sensitivity-supplement-3-2026-09-03.json',{cache:'no-store'}).catch(()=>null)
-          ]);
-          if(!baseRes.ok)return baseRes;
-          const base=await baseRes.json();
-          const extra=extraRes?.ok?await extraRes.json():null;
-          const extra2=extra2Res?.ok?await extra2Res.json():null;
-          const merged=new Map((base.stocks||[]).map(x=>[x.ticker,x]));
-          (extra?.stocks||[]).forEach(x=>{if(x?.ticker)merged.set(x.ticker,x)});
-          (extra2?.stocks||[]).forEach(x=>{if(x?.ticker)merged.set(x.ticker,x)});
-          const coverage=[...new Set([...(base.coverageAdded||[]),...(extra?.coverageAdded||[]),...(extra2?.coverageAdded||[])])];
-          return new Response(JSON.stringify({...base,updatedAt:extra2?.updatedAt||extra?.updatedAt||base.updatedAt,coverageAdded:coverage,stocks:[...merged.values()]}),{status:200,headers:{'Content-Type':'application/json'}});
-        }
-        if (url !== 'data/ideas.json') return nativeFetch(input, init);
-        const [coreRes, roboticsRes, opportunityRes, videoScreenRes, ttRes, nbisRes, aug24Res, rescanRes] = await Promise.all([
-          nativeFetch(input, init),
-          nativeFetch('data/robotics-research.json',{cache:'no-store'}).catch(()=>null),
-          nativeFetch('data/video-opportunity-research.json',{cache:'no-store'}).catch(()=>null),
-          nativeFetch('data/video-screen-2026-08-20.json',{cache:'no-store'}).catch(()=>null),
-          nativeFetch('data/tt-research.json',{cache:'no-store'}).catch(()=>null),
-          nativeFetch('data/nbis-research.json',{cache:'no-store'}).catch(()=>null),
-          nativeFetch('data/idea-promotions-2026-08-24.json',{cache:'no-store'}).catch(()=>null),
-          nativeFetch('data/universe-rescan-2026-09-01.json',{cache:'no-store'}).catch(()=>null)
-        ]);
-        if(!coreRes.ok) return coreRes;
-        const core=await coreRes.json();
-        const roboticsPayload=roboticsRes?.ok?await roboticsRes.json():null;
-        const opportunityPayload=opportunityRes?.ok?await opportunityRes.json():null;
-        const videoScreenPayload=videoScreenRes?.ok?await videoScreenRes.json():null;
-        const ttPayload=ttRes?.ok?await ttRes.json():null;
-        const nbisPayload=nbisRes?.ok?await nbisRes.json():null;
-        const aug24Payload=aug24Res?.ok?await aug24Res.json():null;
-        const rescanPayload=rescanRes?.ok?await rescanRes.json():null;
-        const [extensionRes,extension2Res,extension3Res,extension4Res]=await Promise.all([
-          nativeFetch('data/market-extension-2026-09-01.json',{cache:'no-store'}).catch(()=>null),
-          nativeFetch('data/market-extension-2-2026-09-01.json',{cache:'no-store'}).catch(()=>null),
-          nativeFetch('data/market-extension-3-2026-09-03.json',{cache:'no-store'}).catch(()=>null),
-          nativeFetch('data/market-extension-4-2026-09-03.json',{cache:'no-store'}).catch(()=>null)
-        ]);
-        const extensionPayload=extensionRes?.ok?await extensionRes.json():null;
-        const extension2Payload=extension2Res?.ok?await extension2Res.json():null;
-        const extension3Payload=extension3Res?.ok?await extension3Res.json():null;
-        const extension4Payload=extension4Res?.ok?await extension4Res.json():null;
-        const supplemental=[
-          ...(Array.isArray(roboticsPayload?.ideas)?roboticsPayload.ideas:[]),
-          ...(Array.isArray(opportunityPayload?.ideas)?opportunityPayload.ideas:[]),
-          ...(Array.isArray(videoScreenPayload?.promotedOrAdded)?videoScreenPayload.promotedOrAdded:[]),
-          ...(ttPayload?.ticker?[ttPayload]:[]),...(nbisPayload?.ticker?[nbisPayload]:[]),
-          ...(Array.isArray(aug24Payload?.promotions)?aug24Payload.promotions:[]),
-          ...(Array.isArray(aug24Payload?.tacticalWatches)?aug24Payload.tacticalWatches:[])
-        ];
-        const existing=new Set(core.map(x=>x.ticker));
-        const normalisedSupplemental=supplemental.filter(x=>!existing.has(x.ticker)).filter((x,i,arr)=>arr.findIndex(y=>y.ticker===x.ticker)===i).map(x=>({...x,aiRisk:x.aiRisk??3,themeDependency:x.themeDependency??3,cyclicality:x.cyclicality??3,speculation:x.speculation??(/speculative/i.test(x.status||'')?4:2),thesis:x.thesis??x.researchNote??'Research watch; full thesis is in the current deep-research packet.',catalysts:x.catalysts??'Monitor the current catalyst set in the current deep-research packet.',risks:x.risks??'Theme and cycle risk remain elevated; treat as research-stage exposure.',sources:Array.isArray(x.sources)?x.sources:[],lastUpdated:x.lastUpdated??aug24Payload?.date??roboticsPayload?.lastUpdated??opportunityPayload?.lastUpdated??videoScreenPayload?.date??ttPayload?.lastUpdated??nbisPayload?.lastUpdated??'2026-08-24'}));
-        const byTicker=new Map([...core,...normalisedSupplemental].map(x=>[x.ticker,{...x}]));
-        const applyPacket=packet=>{
-          (Array.isArray(packet?.newIdeas)?packet.newIdeas:[]).forEach(x=>{if(x?.ticker)byTicker.set(x.ticker,{...(byTicker.get(x.ticker)||{}),...x});});
-          const overrides=packet?.overrides&&typeof packet.overrides==='object'?packet.overrides:{};
-          Object.entries(overrides).forEach(([ticker,patch])=>{if(byTicker.has(ticker)&&patch&&typeof patch==='object')byTicker.set(ticker,{...byTicker.get(ticker),...patch});});
-        };
-        applyPacket(rescanPayload);applyPacket(extensionPayload);applyPacket(extension2Payload);applyPacket(extension3Payload);applyPacket(extension4Payload);
-        return new Response(JSON.stringify([...byTicker.values()]),{status:200,headers:{'Content-Type':'application/json'}});
-      };
-    })();
-  </script>
-  <script>
-    fetch('data/rate-resilience-overlay-2026-09-25.json',{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject(new Error('rate overlay unavailable'))).then(rr=>{
-      document.getElementById('rateHomeGate').textContent=rr.macroGate.admissionQuestion;
-      document.getElementById('rateHomeRead').textContent='US10Y '+rr.macroGate.us10yOfficialClosePct.toFixed(2)+'% official Sep 24 close · '+rr.implementation.scorePolicy;
-      document.getElementById('rateHomeRanks').innerHTML=(rr.ranking||[]).map(x=>'<div class="rate-chip"><b>#'+x.rank+'</b><span>'+x.ticker+'</span> · '+x.decision+'</div>').join('');
-    }).catch(()=>{document.getElementById('rateResilienceHome').style.display='none';});
-  </script>
-  <script>
-    Promise.all([
-      fetch('data/bond-watch.json',{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject(new Error('bond watch unavailable'))),
-      fetch('data/live-desk-canonical.json',{cache:'no-store'}).then(r=>r.ok?r.json():Promise.reject(new Error('Live rates unavailable')))
-    ]).then(([bw,live])=>{
-      const rows=new Map((live.marketRows||[]).map(x=>[x.id,x]));
-      const curve=live.rateRegime?.curve||{};
-      const metricHtml=(bw.coreMetrics||[]).map(m=>{
-        const row=rows.get(m.marketRowId);
-        const val=row?Number(row.last):null;
-        const change=row?Number(row.change5d):null;
-        return '<div class="bond-metric"><span>'+m.label+'</span><b>'+(Number.isFinite(val)?val.toFixed(2)+'%':'OPEN')+'</b><small>'+(Number.isFinite(change)?(change>0?'+':'')+change.toFixed(2)+'% 5D':m.id==='us30y'?'Needs canonical 30Y feed':'No fresh move')+'</small></div>';
-      }).join('');
-      const curveHtml='<div class="bond-metric"><span>2s10s</span><b>'+(Number.isFinite(Number(curve.spreadBps))?Number(curve.spreadBps).toFixed(0)+' bp':'OPEN')+'</b><small>'+String(curve.state||'curve state unresolved')+'</small></div>';
-      document.getElementById('bondMetrics').innerHTML=metricHtml+curveHtml;
-      document.getElementById('bondBuckets').innerHTML=(bw.buckets||[]).map(x=>'<div class="bond-bucket"><strong>'+x.label+'</strong><span>'+x.instruments.join(' / ')+'</span><p>'+x.question+'</p></div>').join('');
-      document.getElementById('bondHomeRead').textContent=bw.currentRead||'Start with the simple question: what return can I get without owning the stock? If a company cannot comfortably beat that hurdle, I need a better price.';
-    }).catch(()=>{document.getElementById('bondWatchHome').style.display='none';});
-  </script>
-  <script>
-    fetch('data/live-desk-canonical.json',{cache:'no-store'})
-      .then(r=>r.ok?r.json():Promise.reject(new Error('Live Motion unavailable')))
-      .then(live=>{
-        const escape=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'","&#039;");
-        const items=(live?.marketMotion?.items||[]).slice(0,6);
-        document.getElementById('motionHomeRead').textContent=items.length
-          ? 'Live-promoted Motion is the only active short-horizon feed. Power Stack discovery now runs shadow-only for coverage validation.'
-          : 'No immutable Live Motion is cached yet. Power Stack will not substitute its shadow discovery feed as active market intelligence.';
-        document.getElementById('motionHomeGrid').innerHTML=items.map(item=>'<a class="motion-home-card" href="motion.html"><span>LIVE PROMOTED · '+escape(item.attentionTier||'SECONDARY')+' · '+escape(String(item.category||'OTHER').replaceAll('_',' '))+' · '+escape((item.tickers||[]).slice(0,3).join(' / '))+'</span><strong>'+escape(item.headline)+'</strong><small>'+escape(item.bigPictureBridge)+'</small></a>').join('');
-        if(!items.length) document.getElementById('marketMotionHome').style.display='none';
-      })
-      .catch(()=>{document.getElementById('marketMotionHome').style.display='none';});
-  </script>
-  <script src="app.js"></script>
-</body>
-</html>
+<header><div class="wrap"><a class="logo" href="index.html">POWER STACK <small>Personal Investment Desk</small></a>
+<nav aria-label="Primary"><a href="#holdings">Holdings</a><a href="#shortlist">Shortlist</a><a href="#research">Research & sources</a><a href="research-library.html">Full library ↗</a></nav></div></header>
+<main class="wrap">
+<div class="eyebrow">Simple decisions, deep evidence</div>
+<h1>Know what to do next.</h1>
+<p class="lead">One place for your holdings, eight investments worth investigating, and the evidence that could change your mind. Research lives behind the decisions—not in front of them.</p>
+<div class="hero">
+<div class="panel verdict"><div class="eyebrow">Fresh capital</div><h2 id="verdict">Loading the decision summary…</h2><p id="verdictWhy">Checking research inputs and dated market evidence.</p><p class="meta" id="asOf">Research date pending</p><div class="links"><a href="#shortlist">See 8 ideas ↓</a><a href="#holdings">Review portfolio ↓</a></div></div>
+<div class="panel"><div class="eyebrow">Evidence health</div><div id="health" class="health" aria-live="polite">Loading source status…</div></div>
+</div>
+<section id="holdings">
+<div class="section-title"><div><h2>1. Your holdings</h2><p>Protect the positions you already own before hunting for another stock. Prices show their actual recorded date.</p></div><a class="quiet-link" href="holdings.html">Full portfolio ledger →</a></div>
+<div class="alert" id="portfolioCaution">Current-position prices are not a substitute for a fresh broker quote. The YTL-linked warrant needs verified terms.</div>
+<div id="holdingGrid" class="grid" aria-live="polite"><div class="panel">Loading holdings…</div></div>
+</section>
+<section id="shortlist">
+<div class="section-title"><div><h2>2. Eight names, not forty-six</h2><p>Prioritised research and entry gates. "Research" is not a purchase recommendation; unscored candidates have no invented conviction score.</p></div><a class="quiet-link" href="watchlist.html">All 46 tracked candidates →</a></div>
+<div class="tabs" role="group" aria-label="Shortlist filter"><button data-filter="ALL" aria-pressed="true">All 8</button><button data-filter="UNDERWRITE" aria-pressed="false">Underwrite</button><button data-filter="ENTRY_STUDY" aria-pressed="false">Wait for entry</button><button data-filter="ADJACENT_RESEARCH" aria-pressed="false">AI-adjacent</button></div>
+<div id="candidateGrid" class="grid" aria-live="polite"><div class="panel">Loading shortlisted ideas…</div></div>
+<aside class="note"><strong>Deliberately off the main screen:</strong> LNG, CRDO, CEG, DELL, CTVA, NTR, VST, AVGO and Alibaba remain discoverable in the full library. They have not been deleted or automatically downgraded; they are not part of the limited new-capital review queue.</aside>
+</section>
+<section id="research">
+<div class="section-title"><div><h2>3. What changes the decisions?</h2><p>Live Desk owns the macro context. ChatGPT sweeps, the Research Gap and Notion AI work provide leads and independently sourced company findings—not automatic trading signals.</p></div></div>
+<div class="grid cards3" id="sourceCards"></div>
+<details><summary>Other AI-adjacent industries and parked research</summary><div id="adjacent" class="grid" style="margin-top:12px"></div></details>
+<details><summary>What is hidden in the full research library?</summary><p>The original broad idea interface, category pages, full watchlist, live-backed rate diagnostics and detailed rankings remain available. This front page removes duplicate exposures from the daily decision queue, not from canonical history or Live Desk data contracts.</p><div class="links"><a href="research-library.html">Research library</a><a href="themes.html">Developing themes</a><a href="capital-scarcity.html">Capital scarcity</a><a href="motion.html">Live Market Motion</a><a href="watchlist.html">Complete watchlist</a></div></details>
+</section>
+</main>
+<footer><div class="wrap">Decision summaries are conditional research, not investment instructions. Verify current prices and account exposure before acting. Power Stack research never becomes independent Live Desk macro evidence through feedback.</div></footer>
+<script>
+(()=>{'use strict';
+const $=s=>document.querySelector(s),esc=v=>String(v??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+let data=null,holdings=[],watchlist=new Map(),live=null;
+const when=x=>String(x||'not available');
+const baseLinks={research:"research-library.html",watch:"watchlist.html"};
+function signal(text){return '<span class="pill'+(/DEGRADED|STALE|PARTIAL|UNVERIFIED/.test(text)?' warn':/CURRENT/.test(text)?' strong':'')+'">'+esc(text)+'</span>'}
+function markAsOf(x){return x?'Quote '+esc(x):'Quote unavailable'}
+function renderHealth(){
+const entries=[...(data?.researchInputs||[])];
+if(live){const status=String(live.sourceStatus||'UNKNOWN').toUpperCase(),asOf=live.asOf||'unknown';const it=entries.find(x=>x.source==="Live macro snapshot");if(it){it.status=status==='OK'?'CURRENT':status.includes('DEGRADED')?'DEGRADED':status;it.note='Live as of '+asOf+'; '+(live.marketMotion?.itemCount||0)+' promoted Motion items. Missing canonical inputs are unresolved.';}}
+$('#health').innerHTML=entries.map(x=>'<div class="health-line"><div><span>'+esc(x.source)+'</span><small>'+esc(x.note)+'</small></div>'+signal(x.status)+'</div>').join('')||'No source-health details';
+}
+const holdingOrder=(data?.portfolioWatch?.top)||[];
+function renderHoldings(){
+const all=holdings.slice().sort((a,b)=>{const ia=holdingOrder.indexOf(a.ticker),ib=holdingOrder.indexOf(b.ticker);return (ia<0?99:ia)-(ib<0?99:ib)});
+$('#holdingGrid').innerHTML=all.map(h=>{
+const p=h.position||{},watch=holdingOrder.includes(h.ticker);
+return '<article class="panel"><div class="card-top"><div><div class="kicker">'+(watch?'Needs review':'Monitor')+'</div><div class="ticker">'+esc(h.ticker)+'</div><div class="company">'+esc(h.name)+'</div></div>'+signal(watch?'REVIEW':'HOLD')+'</div><div class="card-body"><p><strong>Recorded action:</strong> '+esc(h.action||'UNRESOLVED')+' · '+esc(h.status||'')+'</p><p><strong>Before changing it:</strong> '+esc(watch?'Confirm current price, instrument terms and concentration against broker statements.':'Reassess only if company results, risk or price structure changes.')+'</p></div><div class="card-foot">'+markAsOf(p.priceAsOf)+' · '+(p.latestPrice===null||p.latestPrice===undefined?'Value unavailable':esc(p.currency||'')+' '+esc(p.latestPrice))+' · Not a live quote</div></article>';
+}).join('')||'<div class="panel">Holdings data unavailable. Open the portfolio ledger.</div>';
+}
+function candidateCard(x){
+const prev=watchlist.get(x.ticker),stage=x.lane==='ADJACENT_RESEARCH'?'UNSCORED RESEARCH':x.action,src=x.source||'',hasLink=/^https:\/\//.test(src);
+return '<article class="panel" data-lane="'+esc(x.lane)+'"><div class="card-top"><div><div class="kicker">'+esc(x.sector)+'</div><div class="ticker">'+esc(x.ticker)+'</div></div>'+signal(stage)+'</div><div class="card-body"><p>'+esc(x.rationale)+'</p><p><strong>Need to prove:</strong> '+esc(x.mustProve)+'</p><p><strong>Why wait:</strong> '+esc(x.risk)+'</p></div><div class="card-foot">'+(prev?'Existing research · rank '+esc(prev.rank)+' · '+esc(prev.price||'Undated price'):'New research lead · no existing Power Stack company score')+(hasLink?' · <a href="'+esc(src)+'" target="_blank" rel="noopener noreferrer">Issuer evidence ↗</a>':'')+'</div></article>';
+}
+function renderCandidates(filter='ALL'){
+const xs=(data?.focus||[]).filter(x=>filter==='ALL'||x.lane===filter);
+$('#candidateGrid').innerHTML=xs.map(candidateCard).join('')||'<div class="panel">No candidates in this filter.</div>';
+}
+function renderSources(){
+const s=data?.sourceLinks||{};
+const contents=[['MacroPulse & Research Gap','What changed, what is missing and which hypotheses need proof.',s.researchGap,'Latest research gate'],['AI bubble tracker','The 16-company capex, revenue, profit and financing comparison.',s.notionAI,'Notion AI research'],['Live macro & Desk','Read the canonical regime; missing rate or Motion values stay missing.',s.live,'Live Desk']];
+$('#sourceCards').innerHTML=contents.map(([name,desc,url,label])=>'<article class="panel"><h3>'+esc(name)+'</h3><p class="meta">'+esc(desc)+'</p><div class="links"><a href="'+esc(url||'#')+'" target="_blank" rel="noopener noreferrer">'+esc(label)+' ↗</a></div></article>').join('');
+$('#adjacent').innerHTML=(data?.additionalAdjacentResearch||[]).map(x=>'<div class="panel"><h3>'+esc(x.ticker)+' · '+esc(x.theme)+'</h3><p class="meta">'+esc(x.gate)+'</p><div class="links"><a href="'+esc(x.source)+'" target="_blank" rel="noopener noreferrer">Source ↗</a></div></div>').join('');
+}
+async function go(){
+try{
+const inputs=[['decision','data/personal-decision-desk.json'],['holdings','data/holdings-fundamentals.json'],['watch','data/watchlist.json'],['live','data/live-desk-canonical.json']];
+const res=await Promise.all(inputs.map(async ([k,url])=>{try{const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);return [k,await r.json()]}catch(e){return [k,null]}}));const vals=Object.fromEntries(res);
+data=vals.decision;holdings=vals.holdings?.holdings||[];watchlist=new Map((vals.watch?.candidates||[]).map(c=>[c.ticker,c]));live=vals.live;
+if(!data)throw Error('Decision research file unavailable');
+$('#verdict').textContent=data.headline.verdict;$('#verdictWhy').textContent=data.headline.detail+' '+data.headline.next;
+$('#asOf').textContent='Decision research '+when(data.asOf)+' · Holdings ledger '+when(vals.holdings?.asOf)+' · Not live trading signals';
+$('#portfolioCaution').textContent=data.portfolioWatch.why+' Verify actual broker prices and corporate actions before acting.';
+renderHealth();renderHoldings();renderCandidates();renderSources();
+}catch(e){$('#verdict').textContent='Data unavailable — no action signal';$('#verdictWhy').textContent='Do not rely on a missing or stale research file. Use the source ledgers below.';$('#health').textContent='Source status unavailable';$('#holdingGrid').innerHTML='<div class="panel">Open the <a href="holdings.html">holdings ledger</a>.</div>';$('#candidateGrid').innerHTML='<div class="panel">Open the <a href="watchlist.html">research watchlist</a>.</div>';}
+}
+document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');renderCandidates(b.dataset.filter)}));
+go();
+})();
+</script>
+</body></html>

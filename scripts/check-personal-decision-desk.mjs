@@ -1,0 +1,34 @@
+import fs from "node:fs";
+import assert from "node:assert/strict";
+
+const read = (path) => JSON.parse(fs.readFileSync(path, "utf8"));
+const readText = (path) => fs.readFileSync(path, "utf8");
+const desk = read("data/personal-decision-desk.json");
+const watch = read("data/watchlist.json");
+const ledger = read("data/holdings-fundamentals.json");
+const live = read("data/live-desk-canonical.json");
+const home = readText("index.html");
+const archive = readText("research-library.html");
+const report = readText("research/2026-10-12-ai-adjacent-and-healthcare.md");
+
+assert.equal(desk.contractVersion, "power-stack-personal-decision/v1");
+assert.equal(desk.focus.length, 8, "Eight, not dozens of active candidates");
+assert.equal(desk.policy.activeCandidateCap, 8);
+assert.equal(new Set(desk.focus.map((x) => x.ticker)).size, 8, "Duplicate candidate");
+assert.equal(ledger.holdings.length, 8, "Do not delete positions");
+assert(watch.candidates.length >= 40, "Canonical watchlist must remain intact");
+assert(new Set(desk.demotedFromFront.map((x) => x.ticker)).size === desk.demotedFromFront.length, "Duplicate archive entries");
+assert(desk.demotedFromFront.every(x => !desk.focus.some(f => f.ticker === x.ticker)), "Active and archived candidates overlap");
+assert(desk.focus.every(x => typeof x.rationale === "string" && typeof x.mustProve === "string" && typeof x.risk === "string"), "Missing evidence gate");
+assert(desk.focus.filter(x => x.unscored).length === 3, "New entrants must remain unscored");
+assert(desk.focus.filter(x => x.unscored).every(x => x.lane === "ADJACENT_RESEARCH" && x.sourceType === "ISSUER_VERIFIED" && /^https:/.test(x.source)), "Unscored name improperly scored or unlinked");
+assert(desk.focus.filter(x => !x.unscored).every(x => watch.candidates.some(c => c.ticker === x.ticker)), "Existing focused company missing from canonical watchlist");
+assert(desk.focus.every(x => !/BUY NOW/.test(x.action)), "Unproven purchase signal");
+assert(home.includes("data/personal-decision-desk.json") && home.includes("data/holdings-fundamentals.json") && home.includes("data/watchlist.json") && home.includes("data/live-desk-canonical.json"), "Broken Live/portfolio integration");
+assert(home.includes("research-library.html") && archive.includes('src="app.js"'), "Historical research navigation not preserved");
+assert(home.includes("current-price") || home.includes("Not a live quote"), "Missing quote freshness disclosure");
+assert(desk.researchInputs.find(x=>x.source==="Live macro snapshot")?.status === "DEGRADED", "Live source gap was concealed");
+assert(live.contractVersion === "power-stack-live-desk-canonical/2", "Canonical source contract changed");
+assert(desk.sourceLinks.notionAI.includes("3f4519b67a9481639302eee63384c180"), "Source hub missing");
+assert(/GEHC/.test(report) && /DHR/.test(report) && /VRT/.test(report) && /XYL/.test(report), "Missing adjacent-source audit");
+console.log("Personal decision desk validation OK: 8 focused names, 8 holdings, archived research preserved, Live/read-only source, unscored adjacent candidates, no unsupported buy signal.");

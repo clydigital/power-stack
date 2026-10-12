@@ -57,7 +57,17 @@ requireMatch("Motion surface", motionSurface, /There is no local Motion fallback
 requireMatch("Motion surface", motionSurface, /data\/live-desk-canonical\.json/);
 forbidMatch("Motion surface", motionSurface, /data\/market-motion\.json|data\/motion-shadow\.json/);
 forbidMatch("Motion surface", motionSurface, /POWER STACK SHADOW|SECONDARY SHADOW|function renderCard|isCoveredByLive|liveKeys/);
-requireMatch("Home surface", homeSurface, /LIVE PROMOTED/);
+const homeIsPersonalDesk = /data\/personal-decision-desk\.json/.test(homeSurface);
+if (homeIsPersonalDesk) {
+  const researchLibrary = source("research-library.html");
+  requireMatch("Personal home Live input", homeSurface, /data\/live-desk-canonical\.json/);
+  requireMatch("Personal home source-health gate", homeSurface, /sourceStatus/);
+  requireMatch("Personal home current Motion inventory", homeSurface, /marketMotion/);
+  requireMatch("Preserved deep-research home", researchLibrary, /LIVE PROMOTED/);
+  forbidMatch("Preserved deep-research home", researchLibrary, /localItems|data\/market-motion\.json|data\/motion-shadow\.json/);
+} else {
+  requireMatch("Home surface", homeSurface, /LIVE PROMOTED/);
+}
 forbidMatch("Home surface", homeSurface, /localItems|data\/market-motion\.json|data\/motion-shadow\.json/);
 
 requireMatch("Motion shadow", shadow, /power-stack-motion-shadow\/1/);
