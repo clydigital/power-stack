@@ -117,7 +117,7 @@ const $=s=>document.querySelector(s),esc=v=>String(v??'').replace(/[&<>"']/g,ch=
 let data=null,holdings=[],watchlist=new Map(),live=null;
 const when=x=>String(x||'not available');
 const baseLinks={research:"research-library.html",watch:"watchlist.html"};
-function signal(text){return '<span class="pill'+(/DEGRADED|STALE|PARTIAL|UNVERIFIED/.test(text)?' warn':/CURRENT/.test(text)?' strong':'')+'">'+esc(text)+'</span>'}
+function signal(text){return '<span class="pill'+(/DEGRADED|STALE|PARTIAL|UNVERIFIED|Partial data|Older prices|Needs refresh/.test(text)?' warn':/CURRENT|Updated/.test(text)?' strong':'')+'">'+esc(text)+'</span>'}
 function markAsOf(x){return x?'Quote '+esc(x):'Quote unavailable'}
 function renderMarketSummary(note){
  const title=$('#marketSummaryTitle'),date=$('#marketSummaryDate'),body=$('#marketSummaryBody'),fresh=$('#marketSummaryFreshness'),sources=$('#marketSummarySources');
@@ -144,12 +144,12 @@ function renderHealth(){
  const statuses={CURRENT:'Updated',DEGRADED:'Partial data',STALE:'Older prices',PARTIAL:'Partial data'};
  $('#health').innerHTML=entries.map(x=>{const copy=readable[x.source]||[x.source,x.note];return '<div class="health-line"><div><span>'+esc(copy[0])+'</span><small>'+esc(copy[1])+'</small></div>'+signal(statuses[x.status]||'Check date')+'</div>';}).join('')||'The latest checks are unavailable.';
 }
-const holdingOrder=(data?.portfolioWatch?.top)||[];
+const holdingOrder=()=>data?.portfolioWatch?.top||[];
 function renderHoldings(){
-const all=holdings.slice().sort((a,b)=>{const ia=holdingOrder.indexOf(a.ticker),ib=holdingOrder.indexOf(b.ticker);return (ia<0?99:ia)-(ib<0?99:ib)});
+const priority=holdingOrder();const all=holdings.slice().sort((a,b)=>{const ia=priority.indexOf(a.ticker),ib=priority.indexOf(b.ticker);return (ia<0?99:ia)-(ib<0?99:ib)});
 $('#holdingGrid').innerHTML=all.map(h=>{
-const p=h.position||{},watch=holdingOrder.includes(h.ticker);
-return '<article class="panel"><div class="card-top"><div><div class="kicker">'+(watch?'Needs review':'Monitor')+'</div><div class="ticker">'+esc(h.ticker)+'</div><div class="company">'+esc(h.name)+'</div></div>'+signal(watch?'REVIEW':'HOLD')+'</div><div class="card-body"><p><strong>My current view:</strong> '+esc(h.action||'UNRESOLVED')+' · '+esc(h.status||'')+'</p><p><strong>What I am watching:</strong> '+esc(watch?'Confirm current price, instrument terms and concentration against broker statements.':'Reassess only if company results, risk or price structure changes.')+'</p></div><div class="card-foot">'+markAsOf(p.priceAsOf)+' · '+(p.latestPrice===null||p.latestPrice===undefined?'Value unavailable':esc(p.currency||'')+' '+esc(p.latestPrice))+' · Not a live quote</div></article>';
+const p=h.position||{},watch=priority.includes(h.ticker);
+return '<article class="panel"><div class="card-top"><div><div class="kicker">'+(watch?'Needs review':'Monitor')+'</div><div class="ticker">'+esc(h.ticker)+'</div><div class="company">'+esc(h.name)+'</div></div>'+signal(watch?'REVIEW':'HOLD')+'</div><div class="card-body"><p><strong>My current view:</strong> '+esc(h.action||'UNRESOLVED')+''+'</p><p><strong>What I am watching:</strong> '+esc(watch?'Check the latest price, how much of this company I already own and the terms of any linked warrant.':'New company results or a meaningful change in the share price.')+'</p></div><div class="card-foot">'+markAsOf(p.priceAsOf)+' · '+(p.latestPrice===null||p.latestPrice===undefined?'Value unavailable':esc(p.currency||'')+' '+esc(p.latestPrice))+' · Not a live quote</div></article>';
 }).join('')||'<div class="panel">Holdings data unavailable. Open the portfolio ledger.</div>';
 }
 function candidateCard(x){
@@ -162,7 +162,7 @@ $('#candidateGrid').innerHTML=xs.map(candidateCard).join('')||'<div class="panel
 }
 function renderSources(){
 const s=data?.sourceLinks||{};
-const contents=[['Today’s market research','The latest news and the next events that could move prices.',s.macroPulse,'Read the market briefing'],['The AI spending boom','A closer look at growth, profits and the cost of building AI.',s.notionAI,'Explore the AI research'],['Interest rates and the wider market','How bond yields, currencies and economic data fit together.',s.live,'Explore the Live Desk']]; missing rate or Motion values stay missing.',s.live,'Live Desk']];
+const contents=[['Today’s market research','The latest news and the next events that could move prices.',s.macroPulse,'Read the market briefing'],['The AI spending boom','A closer look at growth, profits and the cost of building AI.',s.notionAI,'Explore the AI research'],['Interest rates and the wider market','How bond yields, currencies and economic data fit together.',s.live,'Explore the Live Desk']];
 $('#sourceCards').innerHTML=contents.map(([name,desc,url,label])=>'<article class="panel"><h3>'+esc(name)+'</h3><p class="meta">'+esc(desc)+'</p><div class="links"><a href="'+esc(url||'#')+'" target="_blank" rel="noopener noreferrer">'+esc(label)+' ↗</a></div></article>').join('');
 $('#adjacent').innerHTML=(data?.additionalAdjacentResearch||[]).map(x=>'<div class="panel"><h3>'+esc(x.ticker)+' · '+esc(x.theme)+'</h3><p class="meta">'+esc(x.gate)+'</p><div class="links"><a href="'+esc(x.source)+'" target="_blank" rel="noopener noreferrer">Source ↗</a></div></div>').join('');
 }
@@ -174,8 +174,8 @@ renderMarketSummary(vals.market);
 data=vals.decision;holdings=vals.holdings?.holdings||[];watchlist=new Map((vals.watch?.candidates||[]).map(c=>[c.ticker,c]));live=vals.live;
 if(!data)throw Error('Decision research file unavailable');
 $('#verdict').textContent=data.headline.verdict;$('#verdictWhy').textContent=data.headline.detail+' '+data.headline.next;
-$('#asOf').textContent='Decision research '+when(data.asOf)+' · Holdings ledger '+when(vals.holdings?.asOf)+' · Not live trading signals';
-$('#portfolioCaution').textContent=data.portfolioWatch.why+' Verify actual broker prices and corporate actions before acting.';
+$('#asOf').textContent='Updated '+when(data.asOf)+' · Stock prices shown elsewhere may be older';
+$('#portfolioCaution').textContent=data.portfolioWatch.why+' I would check the latest price before buying or selling.';
 renderHealth();renderHoldings();renderCandidates();renderSources();
 }catch(e){$('#verdict').textContent='Data unavailable — no action signal';$('#verdictWhy').textContent='Do not rely on a missing or stale research file. Use the source ledgers below.';$('#health').textContent='Source status unavailable';$('#holdingGrid').innerHTML='<div class="panel">Open the <a href="holdings.html">holdings ledger</a>.</div>';$('#candidateGrid').innerHTML='<div class="panel">Open the <a href="watchlist.html">research watchlist</a>.</div>';}
 }
