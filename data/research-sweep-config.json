@@ -218,7 +218,7 @@
       "path": "data/market-summary.json",
       "contractVersion": "power-stack-market-summary/v1",
       "pagePosition": "Immediately after the opening decision panel, before the holdings section. Leave the remaining homepage format unchanged.",
-      "editorial": "Client-facing LY style. Three short, cause-and-effect paragraphs with actual market reaction, contradictions, verification trigger and dated sources. Short British English, no institutional jargon or guaranteed outcomes.",
+      "editorial": "Use the supplied LY style guide and approved China/Brent example: start from what price did, explain the physical/economic steps in plain language, preserve contradictions and end conditionally. Minimum 10 short paragraphs across 3–5 clear section headings. No system/status vocabulary in the reader-facing article, shortlist headings or notes.",
       "inputs": [
         "Latest verified full MacroPulse (not only Log summary)",
         "Latest Research Gap/Gate if material",
@@ -226,9 +226,10 @@
         "AI Notion 16-company tracker for company/sector crosscheck",
         "Issuer and official market data as required"
       ],
-      "updatePolicy": "Chat-mode Power Stack sweeps should update only when material, independently sourced market change warrants new client conclusions; stamp exact MYT publication time and specific source URLs; use NO_CHANGE otherwise. Do not infer a new cash close from futures, use stale bond quotes as Monday yields, or imply a negotiation is a verified shipment.",
+      "updatePolicy": "Chat-mode Power Stack sweeps should update only when material, independently sourced market change warrants new client conclusions; stamp exact MYT publication time and specific source URLs; use NO_CHANGE otherwise. Do not infer a new cash close from futures, use stale bond quotes as Monday yields, or imply a negotiation is a verified shipment. When market-summary.json is updated, refresh the matching server-rendered article text in index.html as part of the same source-dated change; JavaScript enrichment is optional, never the only place the article exists.",
       "freshness": "Homepage explicitly flags notes older than 24 hours. It must never quietly recast the dated note as a live market price ticker.",
-      "boundary": "Market-summary.json is editorial display, not canonical Live/Dossier evidence, company score input, market-trade execution or a new scheduler."
+      "boundary": "Market-summary.json is editorial display, not canonical Live/Dossier evidence, company score input, market-trade execution or a new scheduler.",
+      "readabilityAcceptance": "The first-page HTML must contain the entire market article and its source links even if JavaScript, connected data or caches fail. Index navigation must link directly to #market-summary. Never replace the full article with 'Loading' or 'Unavailable' filler."
     }
   }
 }
