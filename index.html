@@ -169,7 +169,7 @@ $('#candidateGrid').innerHTML=xs.map(candidateCard).join('')||'<div class="panel
 }
 function renderSources(){
 const s=data?.sourceLinks||{};
-const contents=[['Today’s market research','The latest news and the next events that could move prices.',s.macroPulse,'Read the market briefing'],['The AI spending boom','A closer look at growth, profits and the cost of building AI.',s.notionAI,'Explore the AI research'],['Interest rates and the wider market','How bond yields, currencies and economic data fit together.',s.live,'Explore the Live Desk']];
+const contents=[['Today’s market research','The latest news and the next events that could move prices.',s.macroPulse,'Read the market briefing'],['The AI spending boom','A closer look at growth, profits and the cost of building AI.',s.notionAI,'Explore the AI research'],['AI funding risks and picks & shovels','Which parts of the buildout can turn orders into real cash?',s.aiFundingMemo,'Read the 14 October research'],['Interest rates and the wider market','How bond yields, currencies and economic data fit together.',s.live,'Explore the Live Desk']];
 $('#sourceCards').innerHTML=contents.map(([name,desc,url,label])=>'<article class="panel"><h3>'+esc(name)+'</h3><p class="meta">'+esc(desc)+'</p><div class="links"><a href="'+esc(url||'#')+'" target="_blank" rel="noopener noreferrer">'+esc(label)+' ↗</a></div></article>').join('');
 $('#adjacent').innerHTML=(data?.additionalAdjacentResearch||[]).map(x=>'<div class="panel"><h3>'+esc(x.ticker)+' · '+esc(x.theme)+'</h3><p class="meta">'+esc(x.gate)+'</p><div class="links"><a href="'+esc(x.source)+'" target="_blank" rel="noopener noreferrer">Source ↗</a></div></div>').join('');
 }
