@@ -2,6 +2,12 @@
 
 A searchable, versioned investment-research vault for nuclear, AI infrastructure, grid/electrical equipment, uranium/fuel, oil & gas, robotics, water/cooling, agriculture, healthcare, metals and adjacent ideas across the US, Hong Kong/China and Malaysia.
 
+## 14 October — Live Desk research reuse and TSMC catalyst
+
+The source-linked `data/ai-catalyst-gates.json` powers the homepage TSMC earnings checkpoint (15 October, 14:00 MYT) without changing any security score. Its five checks distinguish margins, AI orders, cash capex, customer financing and price/rate reaction. Results are **not** recorded before the issuer publishes them.
+
+The companion `research/2026-10-14-live-ps-capability-routing.md` inventories reusable Live API contracts, documented provider adapters and analyst plugin/skill workflows. It explicitly avoids duplicate MacroPulse, Story/Regime reasoning, API credentials, Market Motion feeds or recurring PS research schedules. Missing credit/breadth and stale quote inputs block investment conclusions rather than becoming assumed confirmations.
+
 ## Personal Investment Desk — 14 October 2026
 
 `index.html` is now the minimal personal investment home. Its goal is to make decisions easy **without hiding or diluting research**:
