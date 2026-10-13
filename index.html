@@ -111,6 +111,14 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:#7d8a90;font-size:1
 <section id="research">
 <div class="section-title"><div><h2>What Could Change My View?</h2><p>Price is only part of the story. I also want to know if earnings are improving, whether companies can afford their expansion plans and whether the broader market is supporting the trend.</p></div></div>
 <div class="grid cards3" id="sourceCards"></div>
+<article class="panel" id="tsmcCatalystGate" aria-label="TSMC earnings: the next AI investment test" style="margin-top:16px">
+<div class="card-top"><div class="eyebrow">Upcoming earnings test · 15 October 2026</div><div class="meta" id="tsmcGateStatus">Issuer results not yet published as of 14 October</div></div>
+<h3 style="font-size:18px">TSMC: will AI orders still justify the spending?</h3>
+<p id="tsmcGateDate">15 October, 14:00 MYT · Q3 earnings conference.</p>
+<p>As of 14 October, revenue was already reported up about 50% year on year. Previous Q3 guidance was 65–67% gross margin and 56–58% operating margin. These are <strong>pre-release figures</strong>, not final Q3 margins.</p>
+<p id="tsmcGateDecision">I want to see profitable orders, advanced packaging demand and cash flow hold up. Weaker revenue alone does not prove AI labs cannot pay their bills; it would take verifiable project cuts and worsening funding to raise the concern.</p>
+<div class="links"><a href="https://investor.tsmc.com/english/quarterly-results/2026/q3" target="_blank" rel="noopener noreferrer">Issuer results ↗</a><a href="research/2026-10-14-live-ps-capability-routing.md">Research questions ↗</a></div>
+</article>
 <details><summary>Other ways to invest around AI</summary><div id="adjacent" class="grid" style="margin-top:12px"></div></details>
 <details><summary>Explore more ideas and market research</summary><p>The wider library includes company comparisons, market themes, interest-rate analysis and the full watchlist.</p><div class="links"><a href="research-library.html">Research library</a><a href="themes.html">Developing themes</a><a href="capital-scarcity.html">Capital scarcity</a><a href="motion.html">Live Market Motion</a><a href="watchlist.html">Complete watchlist</a></div></details>
 </section>
@@ -141,6 +149,29 @@ function renderMarketSummary(note){
  fresh.textContent=(age>Number(note.editorial?.freshnessHours||24)?'This commentary is more than 24 hours old. ':'Market view as of the research time above. ')+(note.dataLimits||'Not live prices.');
  sources.replaceChildren();
  for(const src of (note.sourceLinks||[])){if(typeof src.url!=='string'||!/^https:\/\//.test(src.url))continue;const a=document.createElement('a');a.href=src.url;a.textContent=src.label||'Source';a.target='_blank';a.rel='noopener noreferrer';sources.append(a);}
+}
+function renderCatalystGate(packet){
+ const status=$('#tsmcGateStatus'), date=$('#tsmcGateDate'), decision=$('#tsmcGateDecision');
+ if(!status||!packet||packet.contractVersion!=='power-stack-ai-catalyst-gates/1'||!Array.isArray(packet.events))return;
+ const event=packet.events.find(x=>x.id==='TSMC-2026Q3-20261015');
+ if(!event)return;
+ const starts=Date.parse(event.eventAtMYT||'');
+ const after=Number.isFinite(starts)&&Date.now()>=starts;
+ const hasResults=event.observedResults&&Array.isArray(event.observedResults.sourceUrls)&&event.observedResults.sourceUrls.length>0;
+ // A calendar clock or a user-submitted note is never proof an issuer result was checked.
+ if(event.status==='PRE_RELEASE'){
+   status.textContent=after?'Release time has passed; issuer evidence still awaiting review':'Issuer report pending · source dated 14 Oct';
+   decision.textContent=after?'Results are not yet verified in this dated Power Stack research. Read the issuer release before changing the AI investment view.':'Watch reported margins, the next revenue and capex guide, packaging utilisation and cash conversion. TSMC earnings cannot by themselves verify AI lab payments.';
+ }else if(event.status==='PUBLISHED_UNRECONCILED'){
+   status.textContent='Issuer figures received; investment implications not yet reviewed';
+   decision.textContent='Do not change company scores or buying decisions until the release, sources and market reaction are reconciled.';
+ }else if(event.status==='ADJUDICATED'&&hasResults){
+   status.textContent='Source-backed earnings review recorded';
+   decision.textContent=event.observedResults.conclusion||'Read the published issuer results and reviewed company-specific gates before acting.';
+ }else{
+   status.textContent='Research incomplete; no investment action';
+ }
+ if(Number.isFinite(starts))date.textContent='15 October 2026, 14:00 MYT · '+(after?'event time passed; check primary-source results':'scheduled Q3 earnings conference');
 }
 function renderHealth(){
  const entries=(data?.researchInputs||[]).map(x=>({...x}));
@@ -175,9 +206,10 @@ $('#adjacent').innerHTML=(data?.additionalAdjacentResearch||[]).map(x=>'<div cla
 }
 async function go(){
 try{
-const inputs=[['decision','data/personal-decision-desk.json'],['holdings','data/holdings-fundamentals.json'],['watch','data/watchlist.json'],['live','data/live-desk-canonical.json'],['market','data/market-summary.json']];
+const inputs=[['decision','data/personal-decision-desk.json'],['holdings','data/holdings-fundamentals.json'],['watch','data/watchlist.json'],['live','data/live-desk-canonical.json'],['market','data/market-summary.json'],['catalyst','data/ai-catalyst-gates.json']];
 const res=await Promise.all(inputs.map(async ([k,url])=>{try{const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);return [k,await r.json()]}catch(e){return [k,null]}}));const vals=Object.fromEntries(res);
 renderMarketSummary(vals.market);
+renderCatalystGate(vals.catalyst);
 data=vals.decision;holdings=vals.holdings?.holdings||[];watchlist=new Map((vals.watch?.candidates||[]).map(c=>[c.ticker,c]));live=vals.live;
 if(!data)throw Error('Decision research file unavailable');
 $('#verdict').textContent=data.headline.verdict;$('#verdictWhy').textContent=data.headline.detail+' '+data.headline.next;
