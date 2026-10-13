@@ -479,10 +479,10 @@
       {
         "key": "FUNDING",
         "label": "Secured funding / collateral",
-        "direction": "UNRESOLVED",
+        "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR -2.3 bp. Volumes: SOFR $2963bn, TGCR $1189bn, BGCR $1228bn.",
-        "asOf": "2026-10-08",
+        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR -2.3 bp. Volumes: SOFR $2961bn, TGCR $1199bn, BGCR $1243bn.",
+        "asOf": "2026-10-09",
         "sourceName": "Federal Reserve Bank of New York",
         "sourceUrl": "https://markets.newyorkfed.org/api/rates/all/latest.json",
         "evidenceRefs": [],
@@ -492,9 +492,9 @@
           "tgcr": 3.85,
           "bgcr": 3.85,
           "securedVsEffrBps": -2.3,
-          "sofrVolumeBillions": 2963,
-          "tgcrVolumeBillions": 1189,
-          "bgcrVolumeBillions": 1228
+          "sofrVolumeBillions": 2961,
+          "tgcrVolumeBillions": 1199,
+          "bgcrVolumeBillions": 1243
         }
       },
       {
@@ -536,14 +536,14 @@
         "label": "US dollar transmission",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "US Dollar · UUP proxy 5D +0.45%.",
-        "asOf": "2026-10-09",
+        "detail": "US Dollar · UUP proxy 5D +0.48%.",
+        "asOf": "2026-10-12",
         "sourceName": "Nasdaq official etf history",
         "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical",
         "evidenceRefs": [],
         "metrics": {
-          "proxyLevel": 29.02,
-          "change5dPct": 0.45
+          "proxyLevel": 29.13,
+          "change5dPct": 0.48
         }
       },
       {
@@ -586,25 +586,24 @@
     "dossier": "DEGRADED",
     "marketMonitor": "PARTIAL",
     "fredRates": "OK",
-    "nyFedReferenceRates": "STALE",
+    "nyFedReferenceRates": "OK",
     "nyFedPrimaryDealers": "OK",
     "treasuryBills": "OK",
     "treasurySupply": "UNRESOLVED"
   },
   "contradictions": [
     {
-      "id": "ndx-soxx",
-      "title": "Nasdaq and semis are diverging",
-      "detail": "NDX proxy 0.5% vs SOXX -0.7%.",
+      "id": "copper-china",
+      "title": "Copper is decoupling from China equities",
+      "detail": "Copper proxy 1.9% vs China A-shares -1.5%.",
       "assets": [
-        "ndx",
-        "soxx"
+        "copper",
+        "csi300"
       ]
     }
   ],
   "researchGaps": [
     "DATA_BLOCKER: Canonical HY/IG OAS, MOVE/Treasury‑volatility and breadth ex‑AI series are missing and block any conclusion about transmission of higher yields into credit, volatility and equity breadth.",
-    "Latest NY Fed reference-rate date 2026-10-08 is more than five calendar days old.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],
   "marketRows": [
@@ -612,9 +611,9 @@
       "id": "dxy",
       "symbol": "UUP",
       "label": "US Dollar · UUP proxy",
-      "last": 29.02,
-      "change5d": 0.45,
-      "asOf": "2026-10-09",
+      "last": 29.13,
+      "change5d": 0.48,
+      "asOf": "2026-10-12",
       "sourceName": "Nasdaq official etf history",
       "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical"
     },
@@ -813,7 +812,7 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-13T00:46:11.558Z",
+    "asOf": "2026-10-13T13:33:57.664Z",
     "assets": [
       {
         "key": "SPX",
@@ -834,8 +833,8 @@
         "key": "NASDAQ",
         "label": "Nasdaq Composite",
         "symbol": "^IXIC",
-        "last": 27366.17,
-        "dailyChange": 0.64,
+        "last": 27245.9,
+        "dailyChange": -0.44,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "LOW",
@@ -843,7 +842,7 @@
         "confirmingSignal": null,
         "contradictingSignal": "research-intake:8ce3f30d-262e-458c-a04c-1fec7633aa2c",
         "invalidation": "Canonical HY/IG OAS widening, a persistent MOVE pick‑up, or breadth deterioration ex‑AI in canonical feeds would convert the unresolved transmission into confirmed market stress.",
-        "asOf": "2026-10-09"
+        "asOf": "2026-10-12"
       },
       {
         "key": "CRUDE",
@@ -878,24 +877,24 @@
       {
         "key": "GOLD",
         "label": "Gold spot",
-        "symbol": "XAUUSD",
-        "last": 4163.399902,
-        "dailyChange": -0.74,
+        "symbol": null,
+        "last": null,
+        "dailyChange": null,
         "dailyChangeUnit": "percent",
-        "bias": "BEARISH",
+        "bias": "UNRESOLVED",
         "conviction": "LOW",
         "primaryDriver": "No canonical same‑session gold price evidence supplied; correlations with real yields and USD are a research lead, unresolved here.",
         "confirmingSignal": null,
         "contradictingSignal": "research-intake:a88dd06d-bb1e-42bf-970a-8e8db2e62de0",
         "invalidation": "Canonical HY/IG OAS widening, a persistent MOVE pick‑up, or breadth deterioration ex‑AI in canonical feeds would convert the unresolved transmission into confirmed market stress.",
-        "asOf": "2026-10-13"
+        "asOf": null
       },
       {
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 81240.44,
-        "dailyChange": -0.61,
+        "last": 83306.89,
+        "dailyChange": 1.91,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -1411,9 +1410,9 @@
   },
   "marketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "c53227f3-c915-4b58-b85d-e408730ee6eb",
-    "capturedAt": "2026-10-12T16:20:49.455Z",
-    "researchRunId": "726a5789-f496-4db2-9259-94e7bdada157",
+    "editionId": "e26e730f-c88c-4d03-8295-d44c63cf8ff6",
+    "capturedAt": "2026-10-13T02:47:24.256Z",
+    "researchRunId": "549c64cf-c82f-4254-be9e-0da9e4ef8251",
     "items": []
   },
   "upstreamGuardrails": [
@@ -1432,5 +1431,5 @@
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-13T00:46:11.635Z"
+  "syncedAt": "2026-10-13T14:17:52.578Z"
 }
