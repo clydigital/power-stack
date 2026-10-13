@@ -1,0 +1,171 @@
+{
+  "contractVersion": "power-stack-ai-catalyst-gates/1",
+  "asOf": "2026-10-14T06:00:00+08:00",
+  "owner": "Power Stack investment research; Alchemy Live Desk retains canonical market regime and Motion authority",
+  "policy": {
+    "sourcePrecedence": [
+      "Issuer-published earnings, presentation and SEC or Taiwan exchange filing",
+      "Existing Alchemy Live canonical snapshot (rates, credit, breadth, regime, promoted Motion; only when timestamp/source health valid)",
+      "Official government macro releases",
+      "Credible contemporaneous reporting and financial-data vendors with source/as-of metadata",
+      "Creator and research commentary (hypotheses only)"
+    ],
+    "ratingRule": "Never modify company score, ranking, conviction or holding quantities from the event calendar, issuer-free estimates, Live Motion, creator interviews or a broad price reaction. Verify issuer evidence, current security price and valuation separately.",
+    "degradedRule": "If current issuer/market evidence is unavailable or the Live input is stale/degraded, record UNKNOWN / RESEARCH_GAP; do not generate a compensating PS macro regime or assume a positive or negative release.",
+    "noNewFeed": "Consume the existing Live Desk snapshot; do not copy API keys or create a separate PS macro or provider polling schedule."
+  },
+  "events": [
+    {
+      "id": "TSMC-2026Q3-20261015",
+      "issuer": "Taiwan Semiconductor Manufacturing Company",
+      "ticker": "TSM / 2330.TW",
+      "event": "Q3 2026 earnings and guidance",
+      "eventAtMYT": "2026-10-15T14:00:00+08:00",
+      "timeBasis": "Issuer IR conference time: Thursday 15 October 2026 14:00 Taiwan time (MYT is same UTC+8). Results documents may appear ahead of the conference.",
+      "status": "PRE_RELEASE",
+      "observedResults": null,
+      "marketBaseline": {
+        "asOf": "2026-10-13 US close",
+        "usEquities": "S&P 500 7,805.45 (−0.02%); Nasdaq Composite 27,204.38 (−0.15%)",
+        "semiconductors": "Weakness in chip/memory shares; do not equate price declines with cancellations of AI orders.",
+        "liveSnapshot": "Power Stack committed Live snapshot dossier as-of 2026-10-12T22:11:23.968+00:00; status degraded_latest; not fresh company evidence or October 15 earnings.",
+        "credit": "Current canonical HY/IG credit transmission unresolved in the prior PS snapshot. Do not fill missing confirmation with unaudited market narrative."
+      },
+      "knownPreRelease": {
+        "q3Revenue": "TSMC already reported approximately NT$1.49 trillion Q3 2026 revenue, up around 50% year-on-year (published 8 October); strong revenue is not proof of AI lab profitability.",
+        "q3RevenueGuidance": "Issuer's prior Q3 2026 revenue guide: US$44.6B–45.8B.",
+        "grossMarginGuide": "Issuer's prior Q3 2026 gross margin guide: 65.0%–67.0%.",
+        "operatingMarginGuide": "Issuer's prior Q3 2026 operating margin guide: 56.0%–58.0%.",
+        "streetProfitEstimate": "Reuters 12 October: analysts expect about NT$746.3B Q3 net profit, ~65% year-on-year; a street estimate, not an issued result.",
+        "notes": "Currency translation can make TWD reported revenue differ from USD guidance; compare periods, units and FX first."
+      },
+      "checks": [
+        {
+          "topic": "Margins and mix",
+          "why": "Whether 3nm/HPC/advanced packaging demand converts revenue into durable profitability",
+          "evidence": "Reported Q3 gross and operating margins versus issuer guidance, management explanation",
+          "positive": "Margin stability/beat with healthy product mix and disclosed cost drivers",
+          "negative": "Unexplained deterioration or a weak forward margin guide",
+          "impacted": [
+            "TSM",
+            "NVDA",
+            "AVGO",
+            "MU",
+            "CRDO"
+          ]
+        },
+        {
+          "topic": "Forward AI order quality and capacity",
+          "why": "Discriminates full datacentre funding and HBM bottlenecks from headline backlog",
+          "evidence": "Issuer Q4 revenue/margin outlook, 2026 and 2027 capex commentary, HPC contribution, CoWoS expansion utilisation, customer order commentary",
+          "positive": "Broad, executable AI orders and guidance that supports sustained actual utilisation",
+          "negative": "Confirmed deferral/cancellation of orders or utilisation decline, particularly across multiple customers",
+          "impacted": [
+            "TSM",
+            "NVDA",
+            "AVGO",
+            "MU",
+            "CRDO",
+            "ANET",
+            "GEV",
+            "ETN"
+          ]
+        },
+        {
+          "topic": "Free cash flow and capital intensity",
+          "why": "High capex is tolerable if realised economics can fund it",
+          "evidence": "Cash from operations, cash capex, FCF, 2026 capex outlook and return/utilisation context",
+          "positive": "Healthy cash generation relative to investment and delivery costs",
+          "negative": "Deteriorating operating cash conversion or rising investment with weaker realised orders",
+          "impacted": [
+            "TSM",
+            "NVDA",
+            "MU",
+            "AVGO",
+            "ETN",
+            "GEV"
+          ]
+        },
+        {
+          "topic": "AI financing and external paying customers",
+          "why": "Tests Eisman's circular-funding concern beyond a hardware provider",
+          "evidence": "Independent OpenAI/Anthropic/Oracle/cloud customer payment and financing disclosures from their own filings; NOT deduced from TSMC earnings",
+          "positive": "Funded third-party demand and counterparties collecting cash",
+          "negative": "Financing failure accompanied by actual supplier order cuts and weaker forecasts",
+          "impacted": [
+            "ORCL",
+            "CRWV",
+            "AVGO",
+            "NVDA",
+            "MU",
+            "GEV",
+            "ETN"
+          ]
+        },
+        {
+          "topic": "Market and rates response",
+          "why": "Separates fundamental earnings from macro repricing and concentration",
+          "evidence": "Post-release TSM/SMH/QQQ relative price action, 2Y/10Y/30Y real/nominal yields and credit/breadth via dated Live canonical feeds",
+          "positive": "Sustained order strength plus breadth stabilisation without credit stress",
+          "negative": "Order/earnings cuts alongside spreads widening and weak breadth ex-AI",
+          "impacted": [
+            "TSM",
+            "MU",
+            "NVDA",
+            "YTLPOWR",
+            "6742UW"
+          ]
+        }
+      ],
+      "interpretation": [
+        {
+          "case": "SUPPORTS_BULLISH_BUILDOUT",
+          "condition": "Strong actual margins, order/utilisation guidance and cash conversion; financed projects remain supported",
+          "portfolioTranslation": "Maintain existing scored suppliers and study entries for GEV/ETN/MU/CRDO; no automatic buy/score lift from TSMC alone."
+        },
+        {
+          "case": "HEALTHY_DIGESTION",
+          "condition": "Capex expansion moderates, but profitability/FCF and real customer demand improve; no verified order failure",
+          "portfolioTranslation": "Do not treat lower gross capex as a bubble pop. Compare expected returns on capital and valuation."
+        },
+        {
+          "case": "FINANCING_WARNING",
+          "condition": "Material funding/collection problems plus confirmed order slowdown, worsening cash economics and/or sustained credit stress",
+          "portfolioTranslation": "Review AI/power factor concentration, YTLPOWR and linked warrant, and supplier share entry gates before committing capital; still no mechanical score change."
+        },
+        {
+          "case": "UNKNOWN",
+          "condition": "Results, issuer confirmation or canonical credit/breadth evidence missing",
+          "portfolioTranslation": "Preserve prior thesis, label RESEARCH_GAP and request first-party document readback."
+        }
+      ],
+      "researchBudget": "Use an existing PowerSweep watchlist or theme deep-dive slot. Do not create a parallel unlimited earnings research queue.",
+      "primarySources": [
+        {
+          "title": "TSMC Q3 2026 earnings IR",
+          "url": "https://investor.tsmc.com/english/quarterly-results/2026/q3",
+          "asOf": "2026-10-14",
+          "sourceClass": "ISSUER"
+        },
+        {
+          "title": "Reuters pre-release Q3 revenue",
+          "url": "https://www.reuters.com/world/asia-pacific/tsmcs-third-quarter-revenue-surges-50-yy-beating-market-forecast-2026-10-08/",
+          "asOf": "2026-10-08",
+          "sourceClass": "REPORTING"
+        },
+        {
+          "title": "Reuters Q3 consensus preview",
+          "url": "https://www.reuters.com/world/china/tsmc-expected-report-sixth-straight-quarter-record-profit-thanks-ai-boom-2026-10-12/",
+          "asOf": "2026-10-12",
+          "sourceClass": "REPORTING"
+        },
+        {
+          "title": "Live canonical snapshot endpoint",
+          "url": "https://alchemy-live-market-desk.vercel.app/api/market-intelligence-snapshot",
+          "asOf": null,
+          "sourceClass": "UPSTREAM_CANONICAL_ONLY"
+        }
+      ]
+    }
+  ]
+}

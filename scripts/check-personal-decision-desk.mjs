@@ -11,6 +11,7 @@ const home = readText("index.html");
 const archive = readText("research-library.html");
 const report = readText("research/2026-10-12-ai-adjacent-and-healthcare.md");
 const market = read("data/market-summary.json");
+const catalyst = read("data/ai-catalyst-gates.json");
 
 assert.equal(desk.contractVersion, "power-stack-personal-decision/v1");
 assert.equal(desk.focus.length, 8, "Eight, not dozens of active candidates");
@@ -52,4 +53,18 @@ assert(market.dataLimits.includes("not live quotes"), "Must disclose market pric
 assert((market.sourceLinks||[]).length >= 3 && market.sourceLinks.every(x=>/^https:\/\//.test(x.url)), "Market summary must link to sources");
 assert(home.includes('id="market-summary"') && home.includes("renderMarketSummary(vals.market)") && home.includes("data/market-summary.json"), "Client market summary must be displayed and wired to its dated data");
 assert(home.includes("marketSummaryFreshness") && home.includes("marketSummarySources"), "Missing freshness or sources");
+
+assert.equal(catalyst.contractVersion, "power-stack-ai-catalyst-gates/1");
+assert.equal(catalyst.events.length, 1, "Event calendar must not create an unlimited parallel intake queue");
+const tsmc = catalyst.events[0];
+assert.equal(tsmc.id, "TSMC-2026Q3-20261015");
+assert(["PRE_RELEASE","PUBLISHED_UNRECONCILED","ADJUDICATED"].includes(tsmc.status), "Unknown or invented event stage");
+if(tsmc.status==="PRE_RELEASE") assert.equal(tsmc.observedResults, null, "No pre-release result fabrication");
+if(tsmc.status==="ADJUDICATED") assert(tsmc.observedResults && Array.isArray(tsmc.observedResults.sourceUrls) && tsmc.observedResults.sourceUrls.some(x=>x.startsWith("https://")) && tsmc.observedResults.conclusion, "No adjudication without a sourced issuer readback");
+assert(Number.isFinite(Date.parse(tsmc.eventAtMYT)) && tsmc.eventAtMYT === "2026-10-15T14:00:00+08:00", "TSMC time must match issuer IR");
+assert(tsmc.checks.length >= 5 && tsmc.checks.every(x=>x.evidence && x.positive && x.negative), "Missing two-sided catalyst evidence");
+assert(tsmc.primarySources.some(x=>x.sourceClass==="ISSUER" && x.url.includes("investor.tsmc.com")), "No primary earnings source");
+assert(catalyst.policy.ratingRule.includes("Never modify company score"), "Live/event bypassed issuer action boundaries");
+assert(home.includes('id="tsmcCatalystGate"') && home.includes("renderCatalystGate(vals.catalyst)") && home.includes("data/ai-catalyst-gates.json"), "TSMC card not linked to the dated research contract");
+assert(home.includes("pre-release figures") && home.includes("research/2026-10-14-live-ps-capability-routing.md"), "No dated static fall-back/skills research link");
 console.log("Personal decision desk validation OK: 8 focused names, 8 holdings, archived research preserved, Live/read-only source, unscored adjacent candidates, no unsupported buy signal.");

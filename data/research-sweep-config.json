@@ -206,7 +206,8 @@
       "Promote newly independently researched companies to scored canonical ideas/watchlist only after separate full fundamental underwriting",
       "Update data/personal-decision-desk.json only if a specific capital decision, source health or company evidence gate materially changes",
       "Run node scripts/check-personal-decision-desk.mjs and existing snapshot boundary validations",
-      "For high AI/power exposure, read the latest dated Power Stack AI-financing memo and Notion AI 16-company regime; check supplier order-to-cash, customer concentration, cloud net/gross revenue, hyperscaler leases/FCF and semiconductor leadership versus QQQ, while preserving existing eight-name front page."
+      "For high AI/power exposure, read the latest dated Power Stack AI-financing memo and Notion AI 16-company regime; check supplier order-to-cash, customer concentration, cloud net/gross revenue, hyperscaler leases/FCF and semiconductor leadership versus QQQ, while preserving existing eight-name front page.",
+      "Check the dated AI catalyst gate and source evidence; if the event time has passed but published issuer results are not reconciled, show RESEARCH_GAP rather than inventing post-earnings conclusions."
     ],
     "sweepResearchBudget": "PowerSweep's 12 external investigations remain unchanged; the eight visible names are presentation focus, not the only investable research universe.",
     "writeGuardrails": [
@@ -232,6 +233,12 @@
       "freshness": "Homepage explicitly flags notes older than 24 hours. It must never quietly recast the dated note as a live market price ticker.",
       "boundary": "Market-summary.json is editorial display, not canonical Live/Dossier evidence, company score input, market-trade execution or a new scheduler.",
       "readabilityAcceptance": "The first-page HTML must contain the entire market article and its source links even if JavaScript, connected data or caches fail. Index navigation must link directly to #market-summary. Never replace the full article with 'Loading' or 'Unavailable' filler."
+    },
+    "catalystReview": {
+      "path": "data/ai-catalyst-gates.json",
+      "contractVersion": "power-stack-ai-catalyst-gates/1",
+      "researchPlaybook": "research/2026-10-14-live-ps-capability-routing.md",
+      "policy": "Read-only, source-dated event research; TSMC Q3 is a test of supplier orders/margins and capital intensity, not private AI lab profitability. Record issuer readback before changing any company-specific gate. No new provider keys or independent scheduler."
     }
   }
 }
