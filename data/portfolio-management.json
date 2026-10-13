@@ -1,18 +1,19 @@
 {
-  "asOf": "2026-10-07",
-  "capturedAt": "2026-10-07 · deep-research correction sweep",
+  "asOf": "2026-10-14",
+  "capturedAt": "2026-10-14 05:26 MYT · selective AI-financing market overlay",
   "title": "Power Stack Portfolio Management Overlay",
   "purpose": "Position-sizing, concentration, add/trim/recycle and risk-budget overlay. This does not change company company-evidence components.",
   "dataQuality": {
     "currentWeights": "Not calculated across the whole portfolio because holdings span MYR/USD and the YTL-linked warrant lacks a reliable standalone value. Avoid false precision until all positions and cash balances are normalized into one base currency.",
     "scorePolicy": "Company-evidence components remain in holdings-fundamentals.json. Macro/theme research only changes sizing, action gates and research priority unless company-specific evidence changes.",
     "liveDeskPolicy": "Live Desk canonical reasoning is a cross-check and research-priority input. It may tighten or loosen Power Stack action gates, but it does not overwrite company company-evidence components or automatically rerank a stock.",
-    "rateResiliencePolicy": "The 10Y overlay may rerank research priority and tighten/loosen entry gates using already-verified company evidence. It does not mechanically change company-evidence components."
+    "rateResiliencePolicy": "The 10Y overlay may rerank research priority and tighten/loosen entry gates using already-verified company evidence. It does not mechanically change company-evidence components.",
+    "aiFundingLens": "Dated 14 Oct analyst overlay; no repricing, security score change, inferred consolidated portfolio weight or feed-back into Live. Stale prices remain unsuitable for trades."
   },
   "regime": {
-    "structural": "Expensive money + customer-backed AI infrastructure + product/logistics energy risk",
-    "tactical": "US equities can keep pushing on AI/earnings while broad credit stays relatively calm, but weak borrowers are already feeling punitive refinancing. Energy risk has shifted from missing crude toward products, logistics and infrastructure.",
-    "portfolioRead": "Do not de-risk indiscriminately and do not treat record indices as proof that rates no longer matter. Prefer contracted, cash-generative or strong-sponsor assets; keep dry powder for any broadening in HY/IG, MOVE/VIX or breadth weakness."
+    "structural": "High long yields + selective AI customer financing + established power/electrical bottlenecks + product/logistics inflation risk",
+    "tactical": "13 Oct S&P 500 7,805.45 (-0.02%), Nasdaq 27,204.38 (-0.15%), SMH 588.12 (-0.49%). Semiconductor leadership weakens as CXMT competition grows, but market indices remain near highs and no broad AI order collapse is confirmed. US10Y ~5.216% (13 Oct reported) retains a high funding hurdle.",
+    "portfolioRead": "Remain selective. Do not sell all AI exposure just because chips weaken, but do not add another correlated power/memory/AI position without a fresh valuation, outside-customer cash demand and risk-budget test. Favour funded supplier contracts/FCF while checking energy-driven inflation and credit spillovers."
   },
   "portfolioRules": [
     {
@@ -141,10 +142,20 @@
     {
       "priority": 5,
       "bucket": "AI bottlenecks / overlap",
-      "instruction": "MU and CRDO remain high-quality research, but they add to an already heavy AI/power factor. Fresh capital requires a clearly better price/asymmetry than the diversifying opportunities above."
+      "instruction": "MU/CRDO remain serious candidates but increase correlation to existing power/AI exposures. Stress-test CXMT competition, actual cash collections, financing of end customers and entry valuation; GEV/ETN are diversified physical supplier alternatives, not risk-free substitutes. New ANET/CSCO leads are unscored until full issuer underwriting."
     }
   ],
   "riskDashboard": [
+    {
+      "signal": "Semiconductors versus broader market · 13 Oct close",
+      "status": "RELATIVE WEAKNESS · NOT A CONFIRMED TOP",
+      "nextCheck": "SMH closed 588.12 (-0.49%) while S&P 500 -0.02%. Watch 14 Oct CPI/rates and 15 Oct TSMC; require real order/earnings cuts, not price alone."
+    },
+    {
+      "signal": "AI financing circularity / customer cash",
+      "status": "EARLY WARNING · EISMAN HYPOTHESIS",
+      "nextCheck": "Outside-customer net AI revenue and cash collections, OpenAI/Anthropic actual funding closes, Nvidia receivables, Oracle RPO conversion and borrower credit spreads; inspect Microsoft positive FCF as counterevidence."
+    },
     {
       "signal": "YTLPOWR + 6742UW",
       "status": "CONCENTRATION WATCH",
