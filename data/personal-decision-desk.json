@@ -1,7 +1,7 @@
 {
   "contractVersion": "power-stack-personal-decision/v1",
-  "asOf": "2026-10-12",
-  "dateNote": "Malaysia morning before the next complete US cash-equity close. Do not treat archived quotes as executable prices.",
+  "asOf": "2026-10-14",
+  "dateNote": "14 October MYT after the completed 13 October US session. Market-close indices are verified; archived individual security prices and holdings remain non-executable and often date to September.",
   "purpose": "One actionable personal-investment desk. Company facts and history stay in the original files; no extra macro engine.",
   "owners": {
     "regime": "data/live-desk-canonical.json (read-only Live)",
@@ -29,12 +29,13 @@
     "researchGap": "https://app.notion.com/p/3f7519b67a9481539c9ceffe5a6a0700",
     "live": "https://alchemy-live-market-desk.vercel.app/",
     "latestSweep": "https://github.com/clydigital/power-stack/blob/main/research/2026-10-12-power-stack-nine-part-sweep.md",
-    "adjacentResearch": "https://github.com/clydigital/power-stack/blob/main/research/2026-10-12-ai-adjacent-and-healthcare.md"
+    "adjacentResearch": "https://github.com/clydigital/power-stack/blob/main/research/2026-10-12-ai-adjacent-and-healthcare.md",
+    "aiFundingMemo": "https://github.com/clydigital/power-stack/blob/main/research/2026-10-14-ai-financing-picks-shovels.md"
   },
   "headline": {
-    "verdict": "I am staying selective for now.",
-    "detail": "AI investment is still growing, but energy prices and borrowing costs remain high. Good businesses can still offer opportunities, provided the price makes sense.",
-    "next": "I would rather wait for solid company results and a better entry than rush into a stock because the market bounced."
+    "verdict": "AI chips are weakening; I am staying selective.",
+    "detail": "The S&P 500 barely fell on 13 October, but SMH slipped 0.49%. AI infrastructure spending is still substantial, while the ability of large AI customers to fund and pay for it is under closer scrutiny.",
+    "next": "I want real cash collection and order conversion, not just AI headlines. Check CPI on 14 October and TSMC results on 15 October before pressing fresh AI/power exposure."
   },
   "focus": [
     {
@@ -72,8 +73,8 @@
       "lane": "ENTRY_STUDY",
       "sector": "AI-adjacent electrical infrastructure",
       "rationale": "Eaton makes electrical equipment needed by factories, power grids and data centres. Demand has been strong.",
-      "mustProve": "Can its growing order book lead to higher profits without paying too much for the shares?",
-      "risk": "A slower construction cycle or expensive valuation could limit returns.",
+      "mustProve": "Are electrical orders from funded customers translating into margins and free cash flow at a sensible current share price?",
+      "risk": "Premium valuation and delayed/underfunded data-centre projects could overwhelm strong reported electrical backlogs.",
       "action": "NO CHASE",
       "sourceType": "ISSUER_VERIFIED",
       "source": "https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-second-quarter-2026-results.html",
@@ -84,8 +85,8 @@
       "lane": "ENTRY_STUDY",
       "sector": "AI memory / HBM",
       "rationale": "Micron supplies memory chips used in AI servers, and demand for advanced memory has been strong.",
-      "mustProve": "Can stronger chip sales keep translating into cash if memory prices change?",
-      "risk": "The memory market can turn quickly, and a high share price leaves less room for mistakes.",
+      "mustProve": "Will verified HBM pricing, paid orders and cash generation stay strong despite CXMT competition and chip-sector share-price weakness?",
+      "risk": "Memory oversupply, Chinese competition, customer concentration and a stale entry price can turn excellent growth into a poor stock purchase.",
       "action": "NO CHASE",
       "sourceType": "POWER_STACK_VERIFIED_RESEARCH"
     },
@@ -94,7 +95,7 @@
       "lane": "ADJACENT_RESEARCH",
       "sector": "Data-centre cooling and power",
       "rationale": "Vertiv helps keep data centres powered and cool. More powerful AI servers need more electricity and better cooling.",
-      "mustProve": "Can its cooling orders turn into lasting profits at a sensible share price?",
+      "mustProve": "Are cooling orders linked to financed data centres converting to delivered revenue, cash and sustainable margins?",
       "risk": "If AI projects are delayed, growth could slow while expectations remain high.",
       "action": "RESEARCH ONLY",
       "sourceType": "ISSUER_VERIFIED",
@@ -191,19 +192,19 @@
       "6742UW",
       "TSLA"
     ],
-    "why": "Several holdings are still shown at older prices. Dayang, YTL Power and its warrant deserve another look before I increase exposure.",
+    "why": "YTLPOWR plus its warrant remains a combined AI/power risk; do not infer diversification from the instrument split. DAYANG, YTLPOWR and 6742UW deserve fresh prices/terms before reallocating. Keep oil/product inflation and rate sensitivity alongside the AI-financing watch.",
     "noBlindChanges": true
   },
   "researchInputs": [
     {
       "source": "AI 16-company regime",
-      "status": "CURRENT",
-      "note": "16/16 updated 12 October ~06:00 MYT; daily automation enabled; downstream Dossier/Hybrid handoff not verified."
+      "status": "PARTIAL",
+      "note": "Notion AI regime read through 13 October; 14 October Eisman outlook added. Live/Dossier/Hybrid writeback unverified."
     },
     {
       "source": "MacroPulse / Research Gap",
-      "status": "CURRENT",
-      "note": "12 October AM Gate completed with partial upstream input health."
+      "status": "PARTIAL",
+      "note": "12 October Gate baseline; new 14 October AI financing research is a lead, not a newly promoted canonical Market Motion."
     },
     {
       "source": "Live macro snapshot",
@@ -213,19 +214,19 @@
     {
       "source": "Power Stack holdings and quotes",
       "status": "STALE",
-      "note": "Portfolio ledger as of 2 October; many underlying closing prices are dated September."
+      "note": "Eight position sizes and 2 October holdings ledger preserved; several prices dated September. Market indices refreshed through 13 October, NOT individual holding trade quotes."
     }
   ],
   "nextEvents": [
     {
       "date": "2026-10-14",
-      "event": "US CPI",
-      "watch": "Policy/real-yield reaction; compare rates, credit, QQQ and SMH"
+      "event": "US CPI · 08:30 ET",
+      "watch": "Inflation versus consensus, US10Y/real rates, HY spreads, QQQ/SMH and YTL-linked concentration sensitivity"
     },
     {
       "date": "2026-10-15",
-      "event": "US PPI / TSMC earnings",
-      "watch": "Margins, orders, HBM and infrastructure demand against high AI valuations"
+      "event": "US PPI 08:30 ET / TSMC Q3 results",
+      "watch": "HBM and AI-capex demand, actual semiconductor guidance and funded supplier orders; differentiate healthy capex digestion from cancelled spending."
     }
   ]
 }

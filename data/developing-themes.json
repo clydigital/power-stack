@@ -1,13 +1,15 @@
 {
-  "lastUpdated": "2026-10-07T21:25:00+08:00",
+  "lastUpdated": "2026-10-14T05:26:00+08:00",
   "purpose": "Power Stack story map. Themes decide what deserves research; they do not automatically raise a company score. Each theme should explain the money chain, the investable bottleneck and what would prove the story wrong.",
   "environment": {
-    "label": "Growth is strong. Money is expensive. Strong sponsors can still fund real assets.",
-    "summary": "AI and earnings are strong enough to keep US equities near records, but capital is splitting in two. Weak borrowers are being punished while customer-backed AI power, strong sponsors and contracted infrastructure can still raise very large amounts of money. Energy risk is also changing shape: crude flows are recovering faster than refined products, logistics and infrastructure.",
-    "asOf": "2026-10-07"
+    "label": "Near-record US indices, weaker AI chips, still-expensive long-term finance.",
+    "summary": "13 October US close: S&P 500 7,805.45 (-0.02%), Nasdaq 27,204.38 (-0.15%), SMH 588.12 (-0.49%). The AI buildout remains real, but China/CXMT memory competition and expensive financing are making the chip trade less forgiving. US10Y ~5.216% in 13 October financial-market reporting; CPI on 14 October and TSMC Q3 on 15 October are next tests. Power Stack treats this as a selective early-warning market, not a proven collapse.",
+    "asOf": "2026-10-14"
   },
   "topQuestions": {
     "whatIsNewNow": [
+      "13 Oct close: S&P 500 slipped 0.02%, Nasdaq 0.15% and SMH 0.49%. Semiconductor selling is outpacing the broader market; check earnings/orders and not only the AI growth story.",
+      "Eisman financing-chain warning is a research hypothesis: big cloud RPO/capex and circular venture sponsorship require independently paid demand, cash conversion and comparable net lab revenue. Microsoft positive FCF and strong power/electrical backlogs are bullish counterevidence.",
       "Agriculture map reset: Corteva completed the Vylor separation on 1 October, so the old CTVA seed/genetics thesis is no longer valid. Seed/genetics research moves to VYLR; CTVA must be re-underwritten as crop protection.",
       "Google has now turned AI power scarcity into contracted infrastructure: 3.59 GW with Constellation, including 890 MW of nuclear power for 20 years, with more than $4.3B of fleet investment tied to the deal.",
       "Black Hills plans $1.8B of generation investment for a proposed Google data centre. Named hyperscaler load is starting to underwrite utility-style capex rather than merely compete for existing grid capacity.",
@@ -19,6 +21,7 @@
       "The strongest investable change is upstream of compute: operating generation, contracted power, grid equipment and interconnection now have direct customer-backed evidence rather than only thematic demand."
     ],
     "whatMattersMostToMarketsNow": [
+      "AI commitments versus paid end-customer cash; issuer FCF, leases, customer concentration and verified debt distribution",
       "Long-end real yields, term premium and whether credit stress broadens beyond weak borrowers",
       "Customer-backed AI power procurement and funded generation/grid capex",
       "AI financing quality, sponsor strength and cash conversion",
@@ -64,9 +67,9 @@
       "significanceScore": 99,
       "freshnessScore": 100,
       "directionOfTravel": "strengthening",
-      "lastMaterialChange": "2026-10-07",
-      "whyNow": "Google's 3.59-GW Constellation deal and Black Hills' planned $1.8B generation buildout show the AI power bottleneck becoming financed physical infrastructure. Hyperscalers are starting to underwrite generation, not just buy chips and servers.",
-      "marketTransmission": "cheaper AI → more usage → more compute traffic → memory/interconnect/power demand",
+      "lastMaterialChange": "2026-10-14",
+      "whyNow": "Steve Eisman's financing warning adds a crucial question to strong power and equipment demand: are the named projects actually funded by external paying customers? GEV and ETN have disclosed operating backlogs, but even picks-and-shovels orders may be deferred if lab commitments are not collected. Chip shares fell in the 13 Oct session while wider US indices barely moved.",
+      "marketTransmission": "AI lab commitments and funded data centres create turbine, grid, electrical and cooling orders; actual project cash receipts turn backlog into earnings. Cheaper models may raise usage, but financing delays can interrupt delivery.",
       "keyAssetsTickers": [
         "MU",
         "CRDO",
@@ -79,10 +82,10 @@
         "CEG",
         "BKH"
       ],
-      "confirmation": "funded backlog, signed customers, interconnection/self-supply and FCF conversion",
-      "invalidation": "cancellations, utilization shortfalls or rapid shortage normalization",
-      "nextTest": "Google/Constellation contract economics, Black Hills regulatory and cost-recovery terms, more hyperscaler-backed generation deals, grid interconnections and backlog conversion",
-      "watchlistHoldingAction": "Promote operating, contracted power and grid exposure. CEG moves into the active watchlist; GEV/ETN/PWR stay high quality but no-chase."
+      "confirmation": "Named, creditworthy customer funding; deposits/interconnection; delivered generation and electrical backlog converted to improving free cash flow",
+      "invalidation": "Material project cancellations, postponed grid links, cancelled turbine/electrical orders, backlog margin erosion or weak collection despite growth",
+      "nextTest": "GEV/ETN/VRT order-to-cash conversion and customer concentration; TSMC 15 Oct to test hardware demand; debt funding and power interconnection",
+      "watchlistHoldingAction": "GEV/ETN remain scored no-chase entry studies, VRT stays unscored research; do not promote ANET/CSCO without issuer underwriting and price/valuation."
     },
     {
       "priorityRank": 3,
@@ -90,22 +93,26 @@
       "lifecycleState": "ACTIVE / DOMINANT",
       "significanceScore": 98,
       "freshnessScore": 100,
-      "directionOfTravel": "bifurcating",
-      "lastMaterialChange": "2026-10-06",
-      "whyNow": "AI financing is not simply getting worse; it is becoming more selective. Record-scale Anthropic-linked financing can clear because lenders have strong sponsors, collateral and structure, while weak corporate borrowers face far harsher refinancing costs.",
-      "marketTransmission": "AI capex → customer funding need → supplier/project financing → credit exposure and lower-quality revenue if financing becomes necessary",
+      "directionOfTravel": "fragile / financing bifurcation",
+      "lastMaterialChange": "2026-10-14",
+      "whyNow": "Eisman's concentration thesis highlights the dependence of future cloud revenue on OpenAI/Anthropic payments. Nvidia's five direct receivables customers represented ~70% in its July 2026 10-Q; Oracle's $664B RPO is future contracted revenue, not cash. Microsoft's reported positive $19.6B FY2026 Q4 FCF is a crucial bullish exception. The interview's claim that two labs represent 70% of hyperscaler AI revenue is unverified on common denominators.",
+      "marketTransmission": "AI lab paid users → lab cash/financing → actual cloud payment → hyperscaler cash capex/leases → GPU, network and power supplier orders; concentration/funding gaps can force cuts before broad AI adoption stops",
       "keyAssetsTickers": [
         "AVGO",
         "ORCL",
         "AMZN",
         "META",
         "NVDA",
-        "YTLPOWR"
+        "YTLPOWR",
+        "CRWV",
+        "MU",
+        "GEV",
+        "ETN"
       ],
-      "confirmation": "AI customers can fund expansion at acceptable terms and suppliers do not need to take growing credit risk to preserve demand",
-      "invalidation": "financing support becomes widespread or losses/guarantees start eroding the economics",
-      "nextTest": "Anthropic/Broadcom financing distribution, junior-debt pricing, sponsor guarantees, AI debt issuance, lease commitments and cash conversion",
-      "watchlistHoldingAction": "Reward strong sponsors and contracted demand, but keep financing economics inside the thesis. AVGO remains watch rather than automatic promotion."
+      "confirmation": "Signed outside-lab paying customer contracts; comparable net revenue and improving cash margins; closed financing and sustained supplier orders without vendor-funded demand",
+      "invalidation": "Verified funding failure or poor cash collections followed by delayed payments/orders, weak utilisation, earnings cuts and widening issuer credit spreads",
+      "nextTest": "OpenAI/Anthropic net paying revenue and funding closes; Oracle RPO conversion/deposits; Nvidia receivables; Microsoft/AWS/Google cash capex, leases and FCF; Meta lease obligations; borrower spreads",
+      "watchlistHoldingAction": "Keep AVGO conditional and ORCL/CRWV as risk comparators; favour independently paid orders and FCF. Do not mechanically change scores or declare a bubble pop from creator testimony."
     },
     {
       "priorityRank": 4,
@@ -136,21 +143,24 @@
       "lifecycleState": "ACTIVE / STRENGTHENING",
       "significanceScore": 96,
       "freshnessScore": 100,
-      "directionOfTravel": "strengthening",
-      "lastMaterialChange": "2026-10-02",
-      "whyNow": "The next AI constraint is not only GPUs. Large clusters need high-bandwidth memory and fast links between accelerators, racks and data centres. MU and CRDO already have businesses exposed to those bottlenecks.",
+      "directionOfTravel": "fundamentals strong / share prices weakening",
+      "lastMaterialChange": "2026-10-14",
+      "whyNow": "CXMT progress increases competitive questions for memory and adds risk of future lower selling prices. SMH closed 13 October at 588.12 (-0.49%), underperforming the broad US indices; this is price weakness, not proof of cancelled HBM orders. Look past GPU headlines to the economics of HBM, fibre/network switches and booked cash margins.",
       "marketTransmission": "larger AI clusters → more memory bandwidth + faster links → pricing power for scarce components",
       "keyAssetsTickers": [
         "MU",
         "CRDO",
         "AVGO",
         "6809.HK",
-        "3191.HK"
+        "3191.HK",
+        "ANET",
+        "CSCO",
+        "NVDA"
       ],
-      "confirmation": "HBM/interconnect demand stays ahead of supply and converts into revenue, margin and cash",
-      "invalidation": "capacity catches demand quickly, pricing rolls over or customers redesign around the bottleneck",
-      "nextTest": "MU HBM commitments/pricing, CRDO growth/customer mix, hyperscaler networking capex",
-      "watchlistHoldingAction": "Research MU and CRDO first; avoid assuming every semiconductor name captures the same economics."
+      "confirmation": "Current HBM contract pricing/utilisation and interconnect/network orders hold up after current China news; cash conversion and customer diversification improve",
+      "invalidation": "HBM mix/pricing falls, verified orders roll over, inventory rises or customer-concentration plus lower expected earnings undermines multiples",
+      "nextTest": "TSMC Q3 15 Oct, Micron memory/HBM contract evidence, ANET AI networking revenue and repeat order quality, CRDO customer concentration; compare chip performance against QQQ",
+      "watchlistHoldingAction": "MU remains scored but no-blind-chase; ANET/CSCO are unscored supplier research leads, CRDO remains an existing high-ranked candidate."
     },
     {
       "priorityRank": 6,

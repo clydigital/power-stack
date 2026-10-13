@@ -2,7 +2,7 @@
 
 A searchable, versioned investment-research vault for nuclear, AI infrastructure, grid/electrical equipment, uranium/fuel, oil & gas, robotics, water/cooling, agriculture, healthcare, metals and adjacent ideas across the US, Hong Kong/China and Malaysia.
 
-## Personal Investment Desk — 12 October 2026
+## Personal Investment Desk — 14 October 2026
 
 `index.html` is now the minimal personal investment home. Its goal is to make decisions easy **without hiding or diluting research**:
 
@@ -13,6 +13,7 @@ A searchable, versioned investment-research vault for nuclear, AI infrastructure
 - **Provenance:** Live Desk remains the single owner of regime and promoted Motion, including source degradation. MacroPulse, Research Gap/Gate, creator transcripts and the Notion AI-capex hub provide research leads; company scores and action gates change only on independent company-level evidence.
 - **Chat sweeps:** after a material company change, refresh the decision desk only when necessary; keep all other stock history. `data/research-sweep-config.json.personalDecisionDesk` records intake rules and boundaries, while `node scripts/check-personal-decision-desk.mjs` validates the front page.
 - **Research evidence:** `research/2026-10-12-ai-adjacent-and-healthcare.md` has issuer sources and explicit valuation gaps for cooling, power, water and healthcare.
+- **14 October financing/market overlay:** `research/2026-10-14-ai-financing-picks-shovels.md` adds the 13 October completed US close, Nvidia/Oracle concentration tests, actual customer cash versus contracted spend, picks-and-shovels lanes (GEV/ETN/ANET/CSCO/MU/NVDA), conditional risk paths and named next proof points. Theme, watchlist, portfolio, decision-desk and dated market-summary entries link back to it; no company score or holding quantity was changed.
 
 The old process/automation integrations still use the same canonical `data/live-desk-canonical.json`, `data/ideas.json`, `data/watchlist.json`, and `data/holdings-fundamentals.json` files. The visible eight-company shortlist is not a replacement for PowerSweep's 12-investigation research limit. Never feed Live-derived macro conclusions back into Live as company evidence.
 
