@@ -67,4 +67,8 @@ assert(tsmc.primarySources.some(x=>x.sourceClass==="ISSUER" && x.url.includes("i
 assert(catalyst.policy.ratingRule.includes("Never modify company score"), "Live/event bypassed issuer action boundaries");
 assert(home.includes('id="tsmcCatalystGate"') && home.includes("renderCatalystGate(vals.catalyst)") && home.includes("data/ai-catalyst-gates.json"), "TSMC card not linked to the dated research contract");
 assert(home.includes("pre-release figures") && home.includes("research/2026-10-14-live-ps-capability-routing.md"), "No dated static fall-back/skills research link");
+assert(market.sourceLinks.some(x=>x.url.includes("sec.gov/Archives/edgar/data/1046179")), "TSMC revenue not anchored in issuer filing");
+assert(market.sourceLinks.some(x=>x.url.includes("broadcom-ceo-says-biggest-hurdle")), "Capital risk narrative missing Reuters source");
+assert(catalyst.events[0].preReleaseReadback?.some(x=>x.class==="ISSUER_VERIFIED" && x.sourceUrl.includes("sec.gov")), "TSMC catalyst lacks first-party pre-release revenue");
+assert(catalyst.events[0].preReleaseReadback?.some(x=>x.class==="TECHNOLOGY_CLAIM_REPORTED"), "CXMT commercial-scale claim must stay provisional");
 console.log("Personal decision desk validation OK: 8 focused names, 8 holdings, archived research preserved, Live/read-only source, unscored adjacent candidates, no unsupported buy signal.");
