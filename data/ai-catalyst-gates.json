@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-stack-ai-catalyst-gates/1",
-  "asOf": "2026-10-14T06:00:00+08:00",
+  "asOf": "2026-10-14T06:11:00+08:00",
   "owner": "Power Stack investment research; Alchemy Live Desk retains canonical market regime and Motion authority",
   "policy": {
     "sourcePrecedence": [
@@ -27,12 +27,12 @@
       "marketBaseline": {
         "asOf": "2026-10-13 US close",
         "usEquities": "S&P 500 7,805.45 (−0.02%); Nasdaq Composite 27,204.38 (−0.15%)",
-        "semiconductors": "Weakness in chip/memory shares; do not equate price declines with cancellations of AI orders.",
+        "semiconductors": "13 October US/Asian semiconductor weakness has both an AI-funding question and a separate China memory-competition claim. CXMT's announced density improvement is not yet proof of scaled low-cost DRAM/HBM volume. Broadcom management described capital funding as a future hurdle, not cancelled orders.",
         "liveSnapshot": "Power Stack committed Live snapshot dossier as-of 2026-10-12T22:11:23.968+00:00; status degraded_latest; not fresh company evidence or October 15 earnings.",
-        "credit": "Current canonical HY/IG credit transmission unresolved in the prior PS snapshot. Do not fill missing confirmation with unaudited market narrative."
+        "credit": "Committed Live canonical snapshot as-of 12 October was degraded_latest and could not verify HY/IG/MOVE/breadth transmission. A fresh runtime GET check on 14 October returned no usable data (provider timeout); do not infer either confirmed stress or recovery."
       },
       "knownPreRelease": {
-        "q3Revenue": "TSMC already reported approximately NT$1.49 trillion Q3 2026 revenue, up around 50% year-on-year (published 8 October); strong revenue is not proof of AI lab profitability.",
+        "q3Revenue": "TSMC's 8 October 2026 SEC-filed monthly revenue and official monthly table show July NT$467.580B, August NT$514.806B and September NT$511.857B, totalling NT$1,494.243B for Q3 2026. Reuters attributes approximately +50% YoY, but full Q3 margins and profit remain unreleased.",
         "q3RevenueGuidance": "Issuer's prior Q3 2026 revenue guide: US$44.6B–45.8B.",
         "grossMarginGuide": "Issuer's prior Q3 2026 gross margin guide: 65.0%–67.0%.",
         "operatingMarginGuide": "Issuer's prior Q3 2026 operating margin guide: 56.0%–58.0%.",
@@ -148,6 +148,24 @@
           "sourceClass": "ISSUER"
         },
         {
+          "title": "TSMC SEC 6-K · September monthly revenue",
+          "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000680/tsm-revenue20261008.htm",
+          "asOf": "2026-10-08",
+          "sourceClass": "ISSUER"
+        },
+        {
+          "title": "Reuters · Broadcom CEO on AI financing",
+          "url": "https://www.reuters.com/world/asia-pacific/broadcom-ceo-says-biggest-hurdle-ai-fuelled-tech-growth-is-capital-not-memory-2026-10-12/",
+          "asOf": "2026-10-12",
+          "sourceClass": "REPORTING"
+        },
+        {
+          "title": "Reuters · CXMT memory-competition concerns",
+          "url": "https://www.reuters.com/world/china/us-chip-stocks-extend-slide-china-memory-report-ai-spending-jitters-hit-sector-2026-10-13/",
+          "asOf": "2026-10-13",
+          "sourceClass": "REPORTING"
+        },
+        {
           "title": "Reuters pre-release Q3 revenue",
           "url": "https://www.reuters.com/world/asia-pacific/tsmcs-third-quarter-revenue-surges-50-yy-beating-market-forecast-2026-10-08/",
           "asOf": "2026-10-08",
@@ -164,6 +182,48 @@
           "url": "https://alchemy-live-market-desk.vercel.app/api/market-intelligence-snapshot",
           "asOf": null,
           "sourceClass": "UPSTREAM_CANONICAL_ONLY"
+        }
+      ],
+      "preReleaseReadback": [
+        {
+          "id": "TSMC-MONTHLY-20261008",
+          "asOf": "2026-10-08",
+          "class": "ISSUER_VERIFIED",
+          "fact": "September 2026 revenue NT$511.857B, up 54.6% YoY; Q3 cumulative NT$1,494.243B calculated from issuer July/August/September figures.",
+          "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000680/tsm-revenue20261008.htm",
+          "implication": "Strong delivered foundry demand; does not establish reported Q3 margins or customer cash-profitability."
+        },
+        {
+          "id": "TSMC-GUIDANCE-Q3-20260716",
+          "asOf": "2026-07-16",
+          "class": "ISSUER_GUIDANCE",
+          "fact": "Q3 revenue US$44.6B–45.8B, gross margin 65–67%, operating margin 56–58%.",
+          "sourceUrl": "https://investor.tsmc.com/english/quarterly-results/2026/q3",
+          "implication": "Comparison baseline only; do not imply actual Q3 earnings released."
+        },
+        {
+          "id": "AVGO-CEO-20261012",
+          "asOf": "2026-10-12",
+          "class": "ATTRIBUTED_MANAGEMENT_REPORTED",
+          "fact": "Broadcom CEO Hock Tan described capital as the largest upcoming hurdle for AI expansion and criticised speculative AI investing.",
+          "sourceUrl": "https://www.reuters.com/world/asia-pacific/broadcom-ceo-says-biggest-hurdle-ai-fuelled-tech-growth-is-capital-not-memory-2026-10-12/",
+          "implication": "Financing verification is a priority. Commentary is not issuer evidence of cancelled capacity or revenue."
+        },
+        {
+          "id": "CXMT-DRAM-20261013",
+          "asOf": "2026-10-13",
+          "class": "TECHNOLOGY_CLAIM_REPORTED",
+          "fact": "CXMT claimed a denser DRAM architecture and upcoming server-memory product; independent yield, HBM competitiveness and mass-production economics not verified.",
+          "sourceUrl": "https://www.reuters.com/world/china/us-chip-stocks-extend-slide-china-memory-report-ai-spending-jitters-hit-sector-2026-10-13/",
+          "implication": "Micron/Samsung/SK Hynix pricing-power risk research, not an automatic MU rating downgrade."
+        },
+        {
+          "id": "US-CLOSE-20261013",
+          "asOf": "2026-10-13",
+          "class": "VERIFIED_MARKET_CLOSE",
+          "fact": "S&P 500 7,805.45 (−0.02%), Nasdaq Composite 27,204.38 (−0.15%). Sector stress is more pronounced than the broad indices.",
+          "sourceUrl": "https://apnews.com/article/a0a577dfd12f63ee6780a56ab02b55c4",
+          "implication": "Market-breadth divergence requires dated credit/breadth confirmation, not price action as proof of failed financing."
         }
       ]
     }
