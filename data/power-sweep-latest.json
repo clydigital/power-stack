@@ -1,21 +1,21 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-13T22:44:02.246Z",
-  "asOf": "2026-10-12T22:11:23.968+00:00",
+  "generatedAt": "2026-10-13T22:50:00.213Z",
+  "asOf": "2026-10-13T20:18:17.734+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
   "inputHealth": {
     "liveDesk": {
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
-      "asOf": "2026-10-12T22:11:23.968+00:00",
-      "syncedAt": "2026-10-13T14:17:52.578Z",
+      "asOf": "2026-10-13T20:18:17.734+00:00",
+      "syncedAt": "2026-10-13T22:50:00.033Z",
       "status": "OK"
     },
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-13T22:44:02.189Z",
+      "generatedAt": "2026-10-13T22:50:00.149Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -29,10 +29,10 @@
     }
   },
   "regime": {
-    "family": "RATES_LED_TIGHTENING",
-    "headline": "UST yields are high and front‑end/bill signals show tighter dollar liquidity; transmission to credit and breadth is unresolved.",
-    "implication": "Observed long and front‑end yield pressure plus tighter bills implies a rates‑led tightening that could compress risk appetite if credit and breadth begin to widen; absent canonical credit/MOVE/breadth confirmation the tightening has not yet become broad market stress.",
-    "monetarySummary": "Rate baseline HAWKISH; 3 confirming, 0 contradicting, 8 unresolved/neutral monetary-market layers."
+    "family": "MIXED_TRANSITION",
+    "headline": "Long‑end Treasury pressure is visible but credit transmission is mixed and AI/semis are still leading markets.",
+    "implication": "Long‑end rates and front‑end collateral are tightening conditions, but concentrated AI/semiconductor leadership and only partial HY widening mean broader market stress is not yet confirmed.",
+    "monetarySummary": "Rate baseline UNRESOLVED; 0 confirming, 0 contradicting, 11 unresolved/neutral monetary-market layers."
   },
   "queueCounts": {
     "holdings": 3,
@@ -44,8 +44,8 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "e26e730f-c88c-4d03-8295-d44c63cf8ff6",
-    "capturedAt": "2026-10-13T02:47:24.256Z",
+    "editionId": "ce3b4df7-298e-4281-853a-14ce7853a1e7",
+    "capturedAt": "2026-10-13T14:41:05.250Z",
     "itemCount": 0,
     "items": []
   },
@@ -128,7 +128,66 @@
         "nextCheck": "Normalize combined weight in base currency and verify warrant terms."
       }
     ],
-    "portfolioDivergences": []
+    "portfolioDivergences": [
+      {
+        "id": "rates-vs-tech-resilience",
+        "importance": "HIGH",
+        "divergence": "PARTIAL",
+        "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
+        "actual": "AI infrastructure and semiconductor breadth are strong while many semis have traded down over the past week.",
+        "affectedHoldings": [
+          "TSLA",
+          "TTWO",
+          "YTLPOWR",
+          "6742UW"
+        ],
+        "candidateExplanations": [
+          "Narrow AI/semiconductor leadership is offsetting broad duration pressure at index level.",
+          "Company-specific catalysts and funded/backlogged AI infrastructure demand are overpowering the discount-rate headwind in selected names.",
+          "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
+        ],
+        "evidenceFor": [
+          "Concentrated AI/semiconductor leadership is supporting indices but per‑name weakness exists; this concentration can mask broader stress.",
+          "Indices are being driven by concentrated leadership, leaving the question of broad participation open.",
+          "Nasdaq daily move -0.44 with bias BEARISH."
+        ],
+        "evidenceAgainst": [
+          "Nominal long‑end pressure is supported by governed term‑premium and auction yields, but nominal decomposition and volatility context remain incomplete."
+        ],
+        "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
+        "confidence": "HIGH",
+        "invalidation": "If breadth broadens materially while credit remains benign and real yields stay high, the rate headwind is less dominant than assumed. If AI/semiconductor leadership rolls over, the divergence resolves in the bearish direction."
+      },
+      {
+        "id": "rates-vs-credit-transmission",
+        "importance": "HIGH",
+        "divergence": "YES",
+        "expected": "A persistent long-end tightening shock should eventually raise financing stress and widen credit spreads.",
+        "actual": "HY OAS has widened materially on a 20‑session basis while IG OAS moved little over the same window.",
+        "affectedHoldings": [
+          "TSLA",
+          "TTWO",
+          "YTLPOWR",
+          "6742UW",
+          "MISC"
+        ],
+        "candidateExplanations": [
+          "The current move is still primarily a rates/term-premium shock rather than a broad solvency or funding shock.",
+          "Strong nominal growth and healthy corporate balance sheets may be delaying credit transmission.",
+          "Credit may simply be lagging rates and could become the next confirmation leg."
+        ],
+        "evidenceFor": [
+          "HY shows notable widening consistent with risk repricing in lower credit quality, but IG and volatility confirmation are incomplete.",
+          "Funding/credit composite is currently NEUTRAL."
+        ],
+        "evidenceAgainst": [
+          "Long‑end rates and front‑end collateral are tightening conditions, but concentrated AI/semiconductor leadership and only partial HY widening mean broader market stress is not yet confirmed."
+        ],
+        "leadingHypothesis": "The shock is rates-led, not yet systemic; keep dry powder because credit remains the key confirmation risk.",
+        "confidence": "HIGH",
+        "invalidation": "Sustained HY/IG widening with weaker breadth and higher volatility would confirm transmission and require a stricter portfolio-risk posture."
+      }
+    ]
   },
   "holdingResearchQueue": [
     {
@@ -386,18 +445,26 @@
   ],
   "liveRadar": [
     {
-      "ticker": "SMH",
-      "companyName": "Semiconductors ETF (SMH)",
-      "whyRelevant": "Potential concentration driver of index resilience versus broader breadth.",
-      "researchQuestion": "Is SMH leadership decoupling from QQQ and masking breadth weakness?",
+      "ticker": "AMD",
+      "companyName": "Advanced Micro Devices",
+      "whyRelevant": "Major AI/semiconductor supplier whose price action informs breadth and capex narratives.",
+      "researchQuestion": "Are AMD moves consistent with durable AI capex strength or short‑term risk‑off?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     },
     {
-      "ticker": "XAUUSD",
-      "companyName": "Gold (XAUUSD)",
-      "whyRelevant": "Gold/real‑yield/USD correlations could signal whether rates or safe‑haven flows dominate.",
-      "researchQuestion": "Is gold moving inversely to real yields and USD as expected?",
+      "ticker": "ARM",
+      "companyName": "Arm Holdings",
+      "whyRelevant": "Large move over the week that affects AI/semis concentration assessment.",
+      "researchQuestion": "Is ARM's weakness idiosyncratic or evidence of demand/capex concern?",
+      "status": "DISCOVERY_ONLY",
+      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
+    },
+    {
+      "ticker": "SMH",
+      "companyName": "VanEck Semiconductor ETF (proxy for semis breadth)",
+      "whyRelevant": "SMH vs QQQ performance helps discriminate concentrated leadership.",
+      "researchQuestion": "Is SMH leadership persistent and broad‑based across constituents?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     }
@@ -467,7 +534,10 @@
     }
   ],
   "researchGaps": [
-    "DATA_BLOCKER: Canonical HY/IG OAS, MOVE/Treasury‑volatility and breadth ex‑AI series are missing and block any conclusion about transmission of higher yields into credit, volatility and equity breadth.",
+    "US 2Y is missing from persistent rate context.",
+    "US 10Y nominal is missing from persistent rate context.",
+    "US 10Y real yield is missing from persistent rate context.",
+    "Effective fed funds is missing from persistent rate context.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence.",
     "Holding tape unresolved: 6742UW"
   ],
