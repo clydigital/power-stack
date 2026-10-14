@@ -44,3 +44,31 @@ body .idea-row.stock-card-state[data-thesis-tone=conditional]{border-left-color:
 [hidden]{display:none!important}
 @media(max-width:650px){.stock-filter-tabs{gap:6px}.stock-filter{padding:8px 9px}.stock-state-key{gap:5px}.stock-tag{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.stock-filter{transition:none}}
+
+/* Action playbook. Explicit decisions in the classic Power Stack colour scheme,
+   with thesis signals and macro badges still separate from trade eligibility. */
+.stock-plan{border:1px solid #39454b;background:#11171b;border-radius:10px;margin:12px 0;padding:12px 13px;color:#dbe2e5;}
+.stock-plan-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:9px;}
+.stock-plan-top .stock-tag{font-size:11px;padding:5px 9px;}
+.stock-plan-date{font-size:10px;color:#a5b0b7;}
+.stock-plan-row{border-top:1px solid #263038;padding:9px 0 5px;}
+.stock-plan-row>b{display:block;font-size:9px;line-height:1.4;letter-spacing:.09em;text-transform:uppercase;color:#9ba9b3;}
+.stock-plan-row>p{margin:4px 0 2px;line-height:1.55;font-size:11px;color:#e0e6e8;}
+.stock-plan-row--now{border-left:3px solid #6fbb94;padding-left:10px;background:#132019;margin:7px 0 8px;border-radius:0 5px 5px 0;}
+.stock-plan-row--now>b{color:#a8f0c7;}
+.stock-plan-row--risk{border-left:3px solid #ba6974;padding-left:10px;background:#24171c;border-top:0;border-radius:0 5px 5px 0;margin:8px 0;}
+.stock-plan-row--risk>b{color:#ffb6b8;}
+.stock-plan-row--entry>b{color:#f4d18d;}
+.stock-plan-conditions{display:grid;gap:5px;grid-template-columns:repeat(2,minmax(0,1fr));}
+.stock-plan-conditions>.stock-plan-row{min-width:0;}
+.stock-plan-conditions>.stock-plan-row:last-child:nth-child(odd){grid-column:1/-1;}
+.stock-plan-foot{border-top:1px dashed #40505a;padding-top:8px;margin-top:9px;color:#b6c2c9;font-size:9px;line-height:1.5;}
+.stock-plan-details{border:1px solid #374149;border-radius:7px;background:#151d21;margin-top:9px;padding:7px 9px;}
+.stock-plan-details summary{cursor:pointer;font-size:10px;font-weight:750;color:#cbd5dc;padding:5px;list-style:revert;}
+.stock-plan-details:focus-within{border-color:#b7a5ff;}
+.stock-plan-details[open]{margin-bottom:5px;}
+.stock-plan-details .stock-plan-row{padding-top:10px;}
+.stock-plan-summary{font-size:11px;color:#b0bec6;margin:7px 0 11px;line-height:1.5;}
+.stock-plan-inline{font-weight:650;color:#d6e2e6;font-size:10px;line-height:1.45;}
+.stock-plan-inline b{color:#b6edce;}
+@media(max-width:790px){.stock-plan-conditions{grid-template-columns:1fr}.stock-plan-conditions>.stock-plan-row:last-child:nth-child(odd){grid-column:auto}}

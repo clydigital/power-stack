@@ -78,7 +78,7 @@
           <p id="regimeSummary">Loading current market overlay…</p>
         </section>
 
-        <section id="rateOverlaySection" class="section"><div class="rate-gate"><div class="eyebrow">10Y RATE-RESILIENCE OVERLAY · 25 SEP</div><h2 id="rateGateTitle">Loading 10Y admission gate…</h2><p id="rateGateRead"></p></div><div id="rateRankRoot" class="bucket-grid"></div></section>\n\n        <div class="stock-state-note">Colour is the dated research stance; the action tag tells you what to do. “Bullish thesis” means research first, not an executable buy. Archived price references may be stale.</div>
+        <section id="rateOverlaySection" class="section"><div class="rate-gate"><div class="eyebrow">10Y RATE-RESILIENCE OVERLAY · 25 SEP</div><h2 id="rateGateTitle">Loading 10Y admission gate…</h2><p id="rateGateRead"></p></div><div id="rateRankRoot" class="bucket-grid"></div></section>\n\n        <div class="stock-state-note">Each card now says exactly WHAT TO DO, the dated entry/price gate, company proof and when to stand aside. Bullish thesis is not a live buy recommendation; price references may be stale.</div>
 <div id="watchSignalTabs" class="stock-filter-tabs" role="group" aria-label="Filter stocks by thesis"><button type="button" class="stock-filter stock-filter--all" data-watch-tone="all" aria-pressed="true">All stocks</button><button type="button" class="stock-filter stock-filter--bullish" data-watch-tone="bullish" aria-pressed="false">Bullish thesis</button><button type="button" class="stock-filter stock-filter--conditional" data-watch-tone="conditional" aria-pressed="false">Conditional / retest</button><button type="button" class="stock-filter stock-filter--unconfirmed" data-watch-tone="unconfirmed" aria-pressed="false">Needs proof</button><button type="button" class="stock-filter stock-filter--bearish" data-watch-tone="bearish" aria-pressed="false">Bearish / avoid</button></div>
 <div id="bucketRoot"></div>
 
@@ -102,7 +102,7 @@
 
   <script src="stock-states.js"></script>
   <script>
-    let cpiOverlayWatch=new Map(),cpiOverlayHold=new Map();
+    let cpiOverlayWatch=new Map(),cpiOverlayHold=new Map(),actionWatch=new Map(),actionHeld=new Map();
     const bucketClass = id => id === 'buy' ? 'buy' : id === 'selective' ? 'selective' : id === 'wait' ? 'wait' : 'avoid';
     const moveClass = value => value > .15 ? 'up' : value < -.15 ? 'down' : 'flat';
     const moveLabel = value => Number.isFinite(value) ? `${value > 0 ? '+' : ''}${value.toFixed(1)}%` : '—';
@@ -169,11 +169,7 @@
               </div>
               ${(()=>{const c=PowerStackState.cpiImpact(cpiOverlayWatch.get(item.ticker));return c?'<div class="stock-state-inline">'+PowerStackState.badge(c.text,c.tone,c.basis)+'</div>':''})()}
               <div class="theme-line"><span>${item.theme}</span><span>current ${item.price}</span>${Number.isFinite(item.snapshotChangePct) ? `<span class="move-pill ${moveClass(item.snapshotChangePct)}">${moveLabel(item.snapshotChangePct)} vs prior snapshot</span>` : ''}</div>
-              <div class="watch-levels">
-                <div class="level"><span>Entry</span><b>${item.entry}</b></div>
-                <div class="level"><span>Confirmation</span><b>${item.confirmation}</b></div>
-                <div class="level"><span>Risk / invalidation</span><b>${item.invalidation}</b></div>
-              </div>
+              ${PowerStackState.watchPlan(actionWatch.get(item.ticker),item,cpiOverlayWatch.get(item.ticker),false)}
               <div class="thesis">${item.thesis}</div>
               ${chartButton(item.ticker)}
             </article>`).join('')}</div>
@@ -191,7 +187,7 @@
           <td><strong>${h.ticker}</strong><br><span style="color:#77818a">${h.name}</span><div class="stock-state-inline">${PowerStackState.badge(PowerStackState.holding(h).text,PowerStackState.holding(h).tone,PowerStackState.holding(h).basis)}${(()=>{const c=PowerStackState.cpiImpact(cpiOverlayHold.get(h.ticker));return c?PowerStackState.badge(c.text,c.tone,c.basis):''})()}</div>${chartButton(h.ticker)}</td>
           <td><strong>${h.score}/100</strong><br><span style="color:#77818a">${h.grade} · ${h.status}</span></td>
           <td class="price-cell"><b>${m.price || '—'}</b>${Number.isFinite(m.changePct) ? `<span class="move-pill ${moveClass(m.changePct)}">${moveLabel(m.changePct)}</span>` : ''}</td>
-          <td><span class="holding-action ${cls}">${m.action || 'HOLD'}</span><div class="stock-state-inline">${PowerStackState.badge(PowerStackState.holdingAction(h).text,PowerStackState.holdingAction(h).tone,PowerStackState.holdingAction(h).basis)}</div></td>
+          <td><span class="holding-action ${cls}">${m.action || 'HOLD'}</span><div class="stock-state-inline">${PowerStackState.badge(PowerStackState.holdingAction(h).text,PowerStackState.holdingAction(h).tone,PowerStackState.holdingAction(h).basis)}</div><div class="stock-plan-inline"><b>NOW:</b> ${PowerStackState.escape(actionHeld.get(h.ticker)?.now||h.verdict||"Verify research")}</div></td>
           <td class="holding-read">${m.read || h.verdict || '—'}</td>
         </tr>`;
       }).join('');
@@ -202,8 +198,12 @@
       fetch('data/holdings-fundamentals.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('holdings HTTP ' + r.status);return r.json();}),
       fetch('data/latest-market-review.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('market review HTTP ' + r.status);return r.json();}),
       fetch('data/live-desk-canonical.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('Live Desk HTTP ' + r.status);return r.json();}),
-      fetch('data/cpi-2026-10-14-security-overlay.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)
-    ]).then(([watch,holdingData,market,live,cpi])=>{
+      fetch('data/cpi-2026-10-14-security-overlay.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null),
+      fetch('data/stock-action-playbook.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)
+    ]).then(([watch,holdingData,market,live,cpi,plans])=>{
+      const playbook=plans?.contractVersion==='power-stack-action-playbook/1'?plans:null;
+      actionWatch=new Map((playbook?.watchlist||[]).map(x=>[x.ticker,x]));
+      actionHeld=new Map((playbook?.holdings||[]).map(x=>[x.ticker,x]));
       const valid=cpi?.contractVersion==='power-stack-cpi-crossasset-security-review/1'?cpi:null;
       cpiOverlayWatch=new Map((valid?.watchlist||[]).map(x=>[x.ticker,x]));
       cpiOverlayHold=new Map((valid?.holdings||[]).map(x=>[x.ticker,x]));

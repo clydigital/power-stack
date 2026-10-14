@@ -74,5 +74,45 @@
     const out=modes[observation.macroTransmission];
     return out?{...out,basis:String(observation.interpretation||'Macro-only interpretation. Not a company or trade rating.')}:null;
   }
-  root.PowerStackState=Object.freeze({holding,holdingAction,watchlist,watchlistAction,candidate,candidateAction,library,cpiImpact,badge,strip,escape});
+  // Presentation-only playbook: instructions are curated from existing dated stock
+  // evidence and must never be mistaken for executable orders or live quotes.
+  const planTone = code => ({
+    HOLD_NO_CHASE:'caution',HOLD_NO_ADD:'caution',VERIFY_INSTRUMENT:'bearish',
+    NO_AVERAGE_DOWN:'bearish',PRIORITY_RESEARCH:'conditional',
+    WAIT_FOR_ENTRY:'caution',WAIT_FOR_PROOF:'unconfirmed',AVOID:'bearish',
+    RESEARCH_ONLY:'unrated'
+  })[code]||'neutral';
+  function planHeader(plan) {
+    return '<div class="stock-plan-top">'+badge('WHAT TO DO · '+plan.label,planTone(plan.code))+
+      '<span class="stock-plan-date">Decision as of 14 Oct 2026'+(plan.priority==='URGENT'?' · Urgent review':plan.priority==='HIGH'?' · Priority review':'')+'</span></div>';
+  }
+  const planRow = (label,body,tone) => '<div class="stock-plan-row '+(tone?'stock-plan-row--'+tone:'')+'"><b>'+escape(label)+'</b><p>'+escape(body||'Awaiting issuer evidence')+'</p></div>';
+  const planFoot = (price,extra) => '<div class="stock-plan-foot">Trade gate: BLOCKED pending current quote, valuation and issuer confirmation.'+
+    (price?' Prior reference: '+escape(price)+'.':'')+(extra?' '+escape(extra):'')+'</div>';
+  function holdingPlan(plan,compact) {
+    if(!plan)return '';
+    const base='<div class="stock-plan">'+planHeader(plan)+planRow('DO NOW',plan.now,'now')+
+      (compact?'<details class="stock-plan-details"><summary>See add and risk conditions</summary>':'<div class="stock-plan-conditions">')+
+      planRow('CONSIDER ADDING ONLY IF',plan.addOnlyIf,'entry')+
+      planRow('REVIEW REDUCING / EXIT IF',plan.reviewOrReduceIf,'risk')+
+      '</'+(compact?'details':'div')+'>'+planFoot(plan.quoteAsOf?'quote '+plan.quoteAsOf:'warrant quote unavailable')+'</div>';
+    return base;
+  }
+  function watchPlan(plan,source,review,compact) {
+    if(!plan)return '';
+    const unscored=plan.code==='RESEARCH_ONLY';
+    const entry=unscored ? source?.mustProve : source?.entry;
+    const confirm=unscored ? 'Issuer evidence and cash economics must first be verified; no rating or entry established.' : source?.confirmation;
+    const fail=unscored ? source?.risk : source?.invalidation;
+    const gates=planRow('ENTRY / PRICE GATE',entry,'entry')+
+      planRow('COMPANY PROOF REQUIRED',confirm,'entry')+
+      planRow('STAND ASIDE / REVIEW IF',fail,'risk')+
+      (review?.nextProof?planRow('CPI FOLLOW-UP',review.nextProof):'');
+    const details=compact?'<details class="stock-plan-details"><summary>See entry, proof and risk gates</summary>'+gates+'</details>':
+      '<div class="stock-plan-conditions">'+gates+'</div>';
+    const price=unscored?'unscored research only':source?.price;
+    return '<div class="stock-plan">'+planHeader(plan)+planRow('DO NOW',plan.now,'now')+
+      details+planFoot(price,unscored?'No instrument score or action exists.':'Any historic price/level must be rechecked.')+'</div>';
+  }
+  root.PowerStackState=Object.freeze({holding,holdingAction,watchlist,watchlistAction,candidate,candidateAction,library,cpiImpact,holdingPlan,watchPlan,badge,strip,escape});
 })(typeof window!=='undefined'?window:globalThis);

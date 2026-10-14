@@ -2,6 +2,17 @@
 
 A searchable, versioned investment-research vault for nuclear, AI infrastructure, grid/electrical equipment, uranium/fuel, oil & gas, robotics, water/cooling, agriculture, healthcare, metals and adjacent ideas across the US, Hong Kong/China and Malaysia.
 
+## Decision instructions on stock cards — 14 October 2026
+
+The [action playbook](data/stock-action-playbook.json) adds a **plain-language next decision** for every current holding (8), every scored watchlist security (46), and the three unrated adjacent focus ideas. This is a presentation and review overlay, not a new stock-scoring system. It uses the existing [post-CPI 54-security review](data/cpi-2026-10-14-security-overlay.json), unchanged holding/stock fundamentals and each watchlist item's existing **entry / confirmation / invalidation**.
+
+- For holdings, read **DO NOW** first; open **CONSIDER ADDING ONLY IF** and **REVIEW REDUCING / EXIT IF** for separate evidence-based gates.
+- For watchlist/focus stocks, read **DO NOW**, **ENTRY / PRICE GATE**, **COMPANY PROOF REQUIRED** and **STAND ASIDE / REVIEW IF**. The CPI follow-up is shown separately from company fundamentals.
+- The highest-priority risk reviews currently include the instrument-level YTL-linked warrant (verify strike/expiry/terms) and DAYANG's weak operating proof. **Risk review is not an automatic sell order.**
+- The current as-of date is 14 October 2026, **not an observation that those shares traded at the archived quote today**. No position size, score, rank, watchlist bucket, rating or source has changed; the trade gate remains blocked pending a current quote, valuation and issuer evidence.
+
+Run `node scripts/check-stock-action-playbook.mjs` to validate complete coverage, action taxonomy, stale-price guardrails and identical canonical source values.
+
 ## 14 October CPI · 54-security investment review
 
 The [official September US CPI](https://www.bls.gov/news.release/archives/cpi_10142026.htm) was released 14 October 2026 at 20:30 Malaysia time. The [dated 8-holding + 46-watchlist post-CPI decision review](research/2026-10-14-post-cpi-54-security-review.md) and [read-only machine-ledger](data/cpi-2026-10-14-security-overlay.json) document **energy vs core-service effects, initial 2Y/10Y and futures reactions, and each security's rate/energy/customer-funding transmission and issuer proof gates**. The latest Power Stack market summary has been updated for the event.

@@ -131,7 +131,7 @@
           <div class="ranking-wrap"><table class="ranking"><thead><tr><th>#</th><th>Holding</th><th>Score</th><th>Grade</th><th>Evidence</th><th>Current PS read</th></tr></thead><tbody id="rankingBody"></tbody></table></div>
         </section>
 
-        <div class="stock-state-note">Thesis colour comes from the stored confirmation/contradiction state, not the price. An action badge is separate: HOLD and NO ADD are not buy signals. Last recorded quotes may be stale.</div>
+        <div class="stock-state-note">Each position shows DO NOW, consider-add conditions and downside review triggers. The original score and company thesis remain separate from trade permission; old prices are not live.</div>
 <section id="holdingsGrid" class="holdings-grid"></section>
       </main>
 
@@ -141,7 +141,7 @@
 
   <script src="stock-states.js"></script>
   <script>
-    let cpiOverlayHold=new Map();
+    let cpiOverlayHold=new Map(),actionHeld=new Map();
     const maxByComponent = {
       'Business': 20,
       'Regime fit': 20,
@@ -290,6 +290,7 @@
             </div>
             <div class="score-orb"><div><b>${h.score}</b><span>/100</span></div></div>
           </div>
+          ${PowerStackState.holdingPlan(actionHeld.get(h.ticker),false)}
           ${position}
           <div class="metric-grid">${metrics}</div>
           <div class="component-grid">${components}</div>
@@ -304,8 +305,11 @@
     Promise.all([
       fetch('data/holdings-fundamentals.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('holdings HTTP ' + r.status);return r.json();}),
       fetch('data/portfolio-live-overlay.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('overlay HTTP ' + r.status);return r.json();}),
-      fetch('data/cpi-2026-10-14-security-overlay.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)
-    ]).then(([data,overlay,cpi])=>{
+      fetch('data/cpi-2026-10-14-security-overlay.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null),
+      fetch('data/stock-action-playbook.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)
+    ]).then(([data,overlay,cpi,plans])=>{
+      const playbook=plans?.contractVersion==='power-stack-action-playbook/1'?plans:null;
+      actionHeld=new Map((playbook?.holdings||[]).map(x=>[x.ticker,x]));
       const valid=cpi?.contractVersion==='power-stack-cpi-crossasset-security-review/1'?cpi:null;
       cpiOverlayHold=new Map((valid?.holdings||[]).map(x=>[x.ticker,x]));
       document.getElementById('asOf').textContent = 'Research snapshot · ' + data.asOf;

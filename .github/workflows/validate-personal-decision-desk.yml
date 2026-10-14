@@ -9,6 +9,8 @@ on:
       - "stock-states.js"
       - "stock-states.css"
       - "scripts/check-stock-states.mjs"
+      - "data/stock-action-playbook.json"
+      - "scripts/check-stock-action-playbook.mjs"
       - "holdings.html"
       - "watchlist.html"
       - "app.js"
@@ -31,6 +33,8 @@ on:
       - "stock-states.js"
       - "stock-states.css"
       - "scripts/check-stock-states.mjs"
+      - "data/stock-action-playbook.json"
+      - "scripts/check-stock-action-playbook.mjs"
       - "holdings.html"
       - "watchlist.html"
       - "app.js"
@@ -54,3 +58,5 @@ jobs:
         run: node scripts/check-stock-states.mjs
       - name: Validate post-CPI 54-security decision review
         run: node scripts/check-cpi-security-review.mjs
+      - name: Validate explicit per-stock next actions
+        run: node scripts/check-stock-action-playbook.mjs

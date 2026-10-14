@@ -103,14 +103,14 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:#7d8a90;font-size:1
 <section id="holdings">
 <div class="section-title"><div><h2>Your Portfolio</h2><p>Before looking for the next opportunity, I want to know what I already own and whether the reasons for holding it still make sense.</p></div><a class="quiet-link" href="holdings.html">View all holdings →</a></div>
 <div class="alert" id="portfolioCaution">Some of the last recorded prices are older. I would check the latest prices and the terms of the YTL-linked warrant before making changes.</div>
-<div class="stock-state-note">Colours show the stored thesis, not today’s price. The second badge shows the recorded action. Green does not mean buy now.</div>
+<div class="stock-state-note">Every holding shows <strong>DO NOW</strong>, <strong>CONSIDER ADDING ONLY IF</strong> and <strong>REVIEW REDUCING / EXIT IF</strong>. Open its conditions. Bullish thesis does not mean buy now.</div>
 <div id="holdingsToneFilters" class="stock-filter-tabs" role="group" aria-label="Filter holdings by thesis state"><button class="stock-filter stock-filter--all" type="button" data-holding-tone="all" aria-pressed="true">All holdings</button><button class="stock-filter stock-filter--bullish" type="button" data-holding-tone="bullish" aria-pressed="false">Bullish thesis</button><button class="stock-filter stock-filter--conditional" type="button" data-holding-tone="caution" aria-pressed="false">Under pressure</button><button class="stock-filter stock-filter--bearish" type="button" data-holding-tone="bearish" aria-pressed="false">Bearish / breaking</button><button class="stock-filter stock-filter--unconfirmed" type="button" data-holding-tone="unconfirmed" aria-pressed="false">Unconfirmed</button></div>
 <div id="holdingGrid" class="grid" aria-live="polite"><div class="panel">Loading holdings…</div></div>
 </section>
 <section id="shortlist">
 <div class="section-title"><div><h2>Stocks on My Radar</h2><p>These are the businesses I am spending more time on. Some have strong earnings behind them, while others could become much more interesting if their prices settle or their results improve.</p></div><a class="quiet-link" href="watchlist.html">Explore the wider watchlist →</a></div>
 <div class="tabs" role="group" aria-label="Shortlist filter"><button data-filter="ALL" aria-pressed="true">All ideas</button><button data-filter="UNDERWRITE" aria-pressed="false">Worth a closer look</button><button data-filter="ENTRY_STUDY" aria-pressed="false">Waiting for a better price</button><button data-filter="ADJACENT_RESEARCH" aria-pressed="false">Beyond the AI chips</button></div>
-<div class="stock-state-note">Thesis strength and what to do next are separate. A bullish research case can still be a no-chase entry.</div>
+<div class="stock-state-note">Start with <strong>DO NOW</strong> for each stock. Open its price, company-proof and risk gates before any entry. Priority research is not an order to buy.</div>
 <div id="shortlistToneFilters" class="stock-filter-tabs" role="group" aria-label="Filter stocks by thesis state"><button class="stock-filter stock-filter--all" type="button" data-shortlist-tone="all" aria-pressed="true">All states</button><button class="stock-filter stock-filter--bullish" type="button" data-shortlist-tone="bullish" aria-pressed="false">Bullish thesis</button><button class="stock-filter stock-filter--conditional" type="button" data-shortlist-tone="conditional" aria-pressed="false">Conditional</button><button class="stock-filter stock-filter--unconfirmed" type="button" data-shortlist-tone="unrated" aria-pressed="false">Unrated research</button></div>
 <div id="candidateGrid" class="grid" aria-live="polite"><div class="panel">Loading shortlisted ideas…</div></div>
 <details><summary>Other companies I am keeping an eye on</summary><p>LNG, CRDO, CEG, DELL, CTVA, NTR, VST, AVGO and Alibaba are still on my wider watchlist. Several overlap with existing exposure or need more convincing earnings at their current valuations.</p><p><a href="watchlist.html">View more companies →</a></p></details>
@@ -135,7 +135,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:#7d8a90;font-size:1
 <script>
 (()=>{'use strict';
 const $=s=>document.querySelector(s),esc=v=>String(v??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
-let data=null,holdings=[],watchlist=new Map(),live=null,cpiHold=new Map(),cpiWatch=new Map();
+let data=null,holdings=[],watchlist=new Map(),live=null,cpiHold=new Map(),cpiWatch=new Map(),actionHeld=new Map(),actionWatch=new Map(),actionAdjacent=new Map();
 let holdingsToneFilter='all',shortlistToneFilter='all',shortlistLaneFilter='ALL';
 const when=x=>String(x||'not available');
 const baseLinks={research:"research-library.html",watch:"watchlist.html"};
@@ -202,7 +202,7 @@ const thesis=PowerStackState.holding(h),decision=PowerStackState.holdingAction(h
 const inflation=PowerStackState.cpiImpact(cpiHold.get(h.ticker));
 const inflationTag=inflation?'<div class="stock-state-inline">'+PowerStackState.badge(inflation.text,inflation.tone,inflation.basis)+'</div>':'';
 const tags=PowerStackState.strip([{text:'THESIS · '+thesis.text,tone:thesis.tone,label:thesis.basis},{text:'ACTION · '+decision.text,tone:decision.tone,label:decision.basis}]);
-return '<article class="panel stock-card-state" data-thesis-tone="'+thesis.tone+'"><div class="card-top"><div><div class="kicker">'+(watch?'Needs review':'Monitor')+'</div><div class="ticker">'+esc(h.ticker)+'</div><div class="company">'+esc(h.name)+'</div></div></div>'+tags+inflationTag+'<div class="card-body"><p><strong>Existing holding action:</strong> '+esc(h.action||'UNRESOLVED')+'</p><p><strong>What I am watching:</strong> '+esc(watch?'Check the latest price, current portfolio exposure and any warrant terms.':'New company results or a meaningful change in the share price.')+'</p></div><div class="card-foot">'+markAsOf(p.priceAsOf)+' · '+(p.latestPrice===null||p.latestPrice===undefined?'Value unavailable':esc(p.currency||'')+' '+esc(p.latestPrice))+' · Not a live quote</div></article>';
+return '<article class="panel stock-card-state" data-thesis-tone="'+thesis.tone+'"><div class="card-top"><div><div class="kicker">'+(watch?'Needs review':'Monitor')+'</div><div class="ticker">'+esc(h.ticker)+'</div><div class="company">'+esc(h.name)+'</div></div></div>'+tags+inflationTag+PowerStackState.holdingPlan(actionHeld.get(h.ticker),true)+'<div class="card-foot">'+markAsOf(p.priceAsOf)+' · '+(p.latestPrice===null||p.latestPrice===undefined?'Value unavailable':esc(p.currency||'')+' '+esc(p.latestPrice))+' · Not a live quote</div></article>';
 }).join('')||'<div class="panel">No holdings match this thesis state.</div>';
 }
 function candidateCard(x){
@@ -211,7 +211,7 @@ const thesis=PowerStackState.candidate(x,prev),decision=PowerStackState.candidat
 const inflation=PowerStackState.cpiImpact(cpiWatch.get(x.ticker));
 const inflationTag=inflation?'<div class="stock-state-inline">'+PowerStackState.badge(inflation.text,inflation.tone,inflation.basis)+'</div>':'';
 const tags=PowerStackState.strip([{text:'THESIS · '+thesis.text,tone:thesis.tone,label:thesis.basis},{text:'ACTION · '+decision.text,tone:decision.tone,label:decision.basis}]);
-return '<article class="panel stock-card-state" data-lane="'+esc(x.lane)+'" data-thesis-tone="'+thesis.tone+'"><div class="card-top"><div><div class="kicker">'+esc(x.sector)+'</div><div class="ticker">'+esc(x.ticker)+'</div></div></div>'+tags+inflationTag+'<div class="card-body"><p>'+esc(x.rationale)+'</p><p><strong>What I would look for:</strong> '+esc(x.mustProve)+'</p><p><strong>The main risk:</strong> '+esc(x.risk)+'</p></div><div class="card-foot">'+(prev?'Previous price reference: '+esc(prev.price||'Check latest quote'):'No scored entry quote')+(hasLink?' · <a href="'+esc(src)+'" target="_blank" rel="noopener noreferrer">Issuer evidence ↗</a>':'')+'</div></article>';
+return '<article class="panel stock-card-state" data-lane="'+esc(x.lane)+'" data-thesis-tone="'+thesis.tone+'"><div class="card-top"><div><div class="kicker">'+esc(x.sector)+'</div><div class="ticker">'+esc(x.ticker)+'</div></div></div>'+tags+inflationTag+PowerStackState.watchPlan(actionWatch.get(x.ticker)||actionAdjacent.get(x.ticker),prev||x,cpiWatch.get(x.ticker),true)+'<div class="card-foot">'+(prev?'Previous price reference: '+esc(prev.price||'Check latest quote'):'No scored entry quote')+(hasLink?' · <a href="'+esc(src)+'" target="_blank" rel="noopener noreferrer">Issuer evidence ↗</a>':'')+'</div></article>';
 }
 function renderCandidates(){
 const xs=(data?.focus||[]).filter(x=>(shortlistLaneFilter==='ALL'||x.lane===shortlistLaneFilter)&&(shortlistToneFilter==='all'||PowerStackState.candidate(x,watchlist.get(x.ticker)).tone===shortlistToneFilter));
@@ -225,13 +225,15 @@ $('#adjacent').innerHTML=(data?.additionalAdjacentResearch||[]).map(x=>'<div cla
 }
 async function go(){
 try{
-const inputs=[['decision','data/personal-decision-desk.json'],['holdings','data/holdings-fundamentals.json'],['watch','data/watchlist.json'],['live','data/live-desk-canonical.json'],['market','data/market-summary.json'],['catalyst','data/ai-catalyst-gates.json'],['cpi','data/cpi-2026-10-14-security-overlay.json']];
+const inputs=[['decision','data/personal-decision-desk.json'],['holdings','data/holdings-fundamentals.json'],['watch','data/watchlist.json'],['live','data/live-desk-canonical.json'],['market','data/market-summary.json'],['catalyst','data/ai-catalyst-gates.json'],['cpi','data/cpi-2026-10-14-security-overlay.json'],['actions','data/stock-action-playbook.json']];
 const res=await Promise.all(inputs.map(async ([k,url])=>{try{const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);return [k,await r.json()]}catch(e){return [k,null]}}));const vals=Object.fromEntries(res);
 renderMarketSummary(vals.market);
 renderCatalystGate(vals.catalyst);
 data=vals.decision;holdings=vals.holdings?.holdings||[];watchlist=new Map((vals.watch?.candidates||[]).map(c=>[c.ticker,c]));live=vals.live;
 const overlay=vals.cpi?.contractVersion==='power-stack-cpi-crossasset-security-review/1'?vals.cpi:null;
 cpiHold=new Map((overlay?.holdings||[]).map(h=>[h.ticker,h]));cpiWatch=new Map((overlay?.watchlist||[]).map(w=>[w.ticker,w]));
+const playbook=vals.actions?.contractVersion==='power-stack-action-playbook/1'?vals.actions:null;
+actionHeld=new Map((playbook?.holdings||[]).map(h=>[h.ticker,h]));actionWatch=new Map((playbook?.watchlist||[]).map(w=>[w.ticker,w]));actionAdjacent=new Map((playbook?.adjacent||[]).map(x=>[x.ticker,x]));
 if(!data)throw Error('Decision research file unavailable');
 $('#verdict').textContent=data.headline.verdict;$('#verdictWhy').textContent=data.headline.detail+' '+data.headline.next;
 $('#asOf').textContent='Updated '+when(data.asOf)+' · Stock prices shown elsewhere may be older';
