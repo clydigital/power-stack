@@ -80,6 +80,7 @@
 
         <section id="rateOverlaySection" class="section"><div class="rate-gate"><div class="eyebrow">10Y RATE-RESILIENCE OVERLAY · 25 SEP</div><h2 id="rateGateTitle">Loading 10Y admission gate…</h2><p id="rateGateRead"></p></div><div id="rateRankRoot" class="bucket-grid"></div></section>\n\n        <div class="stock-state-note">Each card now says exactly WHAT TO DO, the dated entry/price gate, company proof and when to stand aside. Bullish thesis is not a live buy recommendation; price references may be stale.</div>
 <div id="watchSignalTabs" class="stock-filter-tabs" role="group" aria-label="Filter stocks by thesis"><button type="button" class="stock-filter stock-filter--all" data-watch-tone="all" aria-pressed="true">All stocks</button><button type="button" class="stock-filter stock-filter--bullish" data-watch-tone="bullish" aria-pressed="false">Bullish thesis</button><button type="button" class="stock-filter stock-filter--conditional" data-watch-tone="conditional" aria-pressed="false">Conditional / retest</button><button type="button" class="stock-filter stock-filter--unconfirmed" data-watch-tone="unconfirmed" aria-pressed="false">Needs proof</button><button type="button" class="stock-filter stock-filter--bearish" data-watch-tone="bearish" aria-pressed="false">Bearish / avoid</button></div>
+<div id="archiveRadarNote" class="stock-state-note">15 October cross-asset research: active radar excludes parked candidates. Historical scores and research are preserved. <a href="research/2026-10-15-power-stack-full-spectrum-sweep.md" target="_blank" rel="noopener">Read sector sweep ↗</a> <button type="button" id="archiveToggle" class="stock-filter stock-filter--unconfirmed" hidden>Show parked assets</button></div>
 <div id="bucketRoot"></div>
 
         <section class="holdings-panel panel">
@@ -154,10 +155,10 @@
         </article>`).join('');
     }
 
-    let watchFilter='all';
+    let watchFilter='all', showArchived=false, archiveCandidates=new Set();
     function renderBuckets(data){
       document.getElementById('bucketRoot').innerHTML = data.buckets.map(bucket=>{
-        const items = data.candidates.filter(x=>x.bucket===bucket.id && (watchFilter==='all'||PowerStackState.watchlist(x).tone===watchFilter)).sort((a,b)=>a.rank-b.rank);
+        const items = data.candidates.filter(x=>x.bucket===bucket.id && (!archiveCandidates.has(x.ticker)||showArchived) && (watchFilter==='all'||PowerStackState.watchlist(x).tone===watchFilter)).sort((a,b)=>a.rank-b.rank);
         if(!items.length) return '';
         return `<section class="bucket-section">
           <div class="bucket-head"><div><div class="eyebrow">ACTION BUCKET</div><h2>${bucket.label}</h2></div><p>${bucket.description}</p></div>
@@ -199,8 +200,9 @@
       fetch('data/latest-market-review.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('market review HTTP ' + r.status);return r.json();}),
       fetch('data/live-desk-canonical.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('Live Desk HTTP ' + r.status);return r.json();}),
       fetch('data/cpi-2026-10-14-security-overlay.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null),
-      fetch('data/stock-action-playbook.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)
-    ]).then(([watch,holdingData,market,live,cpi,plans])=>{
+      fetch('data/stock-action-playbook.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null),
+      fetch('data/full-spectrum-triage-2026-10-15.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)
+    ]).then(([watch,holdingData,market,live,cpi,plans,triage])=>{
       const playbook=plans?.contractVersion==='power-stack-action-playbook/1'?plans:null;
       actionWatch=new Map((playbook?.watchlist||[]).map(x=>[x.ticker,x]));
       actionHeld=new Map((playbook?.holdings||[]).map(x=>[x.ticker,x]));
@@ -216,6 +218,19 @@
       document.getElementById('regimeSummary').textContent = regime.implication || regime.answer || market.summary || watch.marketRegime || '—';
       document.getElementById('regimeDate').textContent = 'Live canonical · rates ' + (live.rateRegime?.state || 'UNRESOLVED') + ' · Treasury bills ' + (live.sourceHealth?.treasuryBills || 'unknown') + ' · NY Fed funding ' + (live.sourceHealth?.nyFedReferenceRates || 'unknown');
       renderStats(watch, holdingData.holdings);
+      if(triage?.contractVersion==='power-stack-full-spectrum-triage/v1' && Array.isArray(triage.watchlistTriage)){
+        archiveCandidates=new Set(triage.watchlistTriage.filter(x=>x.priority==='ARCHIVE_FROM_ACTIVE_RADAR').map(x=>x.ticker));
+        const toggle=document.getElementById('archiveToggle');
+        toggle.hidden=archiveCandidates.size===0;
+        toggle.textContent='Show '+archiveCandidates.size+' parked assets';
+        toggle.addEventListener('click',()=>{
+          showArchived=!showArchived;
+          toggle.textContent=(showArchived?'Hide':'Show')+' '+archiveCandidates.size+' parked assets';
+          toggle.setAttribute('aria-pressed',String(showArchived));
+          renderBuckets(watch);
+        });
+        document.getElementById('archiveRadarNote').firstChild.textContent=(watch.candidates.length-archiveCandidates.size)+' active research names; '+archiveCandidates.size+' parked in archive after 15 October sweep. All 46 historical scores and original actions are preserved. ';
+      }
       renderRateOverlay(watch);
       renderBuckets(watch);
       document.querySelectorAll('[data-watch-tone]').forEach(button=>button.addEventListener('click',()=>{watchFilter=button.dataset.watchTone;document.querySelectorAll('[data-watch-tone]').forEach(other=>other.setAttribute('aria-pressed',String(other===button)));renderBuckets(watch)}));
