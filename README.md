@@ -1,5 +1,11 @@
 # Power Stack
 
+## Spectrum palette — 14 October 2026
+
+The visual-only `spectrum.css` layer is loaded **after each page's existing styles**, preserving layout, market calculations and data contracts. Purple marks navigation/research, cyan highlights holdings/data, rose highlights stock ideas and gold highlights upcoming catalysts; bright green, red and amber retain their risk/confirmation semantics. Coloured card borders are navigation cues, **not investment ratings**. The seven public views covered are the decision desk, research library, holdings, watchlist, themes, Market Motion and capital scarcity.
+
+Accessible text contrast, visible keyboard focus, reduced-motion support and small-screen layouts are prioritised; the legacy application uses a dark palette rather than activating the previously unused optional `theme-ui.css` light-mode experiment. Changing this design should not modify canonical company scores, archived research or holding amounts.
+
 A searchable, versioned investment-research vault for nuclear, AI infrastructure, grid/electrical equipment, uranium/fuel, oil & gas, robotics, water/cooling, agriculture, healthcare, metals and adjacent ideas across the US, Hong Kong/China and Malaysia.
 
 ## 14 October — Live Desk research reuse and TSMC catalyst
