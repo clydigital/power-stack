@@ -457,22 +457,22 @@
       {
         "key": "FUNDING",
         "label": "Secured funding / collateral",
-        "direction": "UNRESOLVED",
+        "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR -2.3 bp. Volumes: SOFR $2961bn, TGCR $1199bn, BGCR $1243bn.",
-        "asOf": "2026-10-09",
+        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR +0.3 bp. Volumes: SOFR $3000bn, TGCR $1195bn, BGCR $1226bn.",
+        "asOf": "2026-10-13",
         "sourceName": "Federal Reserve Bank of New York",
         "sourceUrl": "https://markets.newyorkfed.org/api/rates/all/latest.json",
         "evidenceRefs": [],
         "metrics": {
           "effr": 3.88,
-          "sofr": 3.87,
-          "tgcr": 3.85,
-          "bgcr": 3.85,
-          "securedVsEffrBps": -2.3,
-          "sofrVolumeBillions": 2961,
-          "tgcrVolumeBillions": 1199,
-          "bgcrVolumeBillions": 1243
+          "sofr": 3.89,
+          "tgcr": 3.88,
+          "bgcr": 3.88,
+          "securedVsEffrBps": 0.3,
+          "sofrVolumeBillions": 3000,
+          "tgcrVolumeBillions": 1195,
+          "bgcrVolumeBillions": 1226
         }
       },
       {
@@ -497,16 +497,16 @@
         "label": "Credit spreads",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "HY OAS 3.11 (5D -1.0 bp); IG OAS 0.83 (5D -1.0 bp).",
-        "asOf": "2026-10-12",
+        "detail": "HY OAS 3.16 (5D +13.0 bp); IG OAS 0.83 (5D +0.0 bp).",
+        "asOf": "2026-10-13",
         "sourceName": "Federal Reserve Economic Data",
         "sourceUrl": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
         "evidenceRefs": [],
         "metrics": {
-          "hyOas": 3.11,
-          "hyOas5dBps": -1,
+          "hyOas": 3.16,
+          "hyOas5dBps": 13,
           "igOas": 0.83,
-          "igOas5dBps": -1
+          "igOas5dBps": 0
         }
       },
       {
@@ -563,7 +563,7 @@
     "dossier": "DEGRADED",
     "marketMonitor": "PARTIAL",
     "fredRates": "OK",
-    "nyFedReferenceRates": "STALE",
+    "nyFedReferenceRates": "OK",
     "nyFedPrimaryDealers": "STALE",
     "treasuryBills": "OK",
     "treasurySupply": "UNRESOLVED"
@@ -575,7 +575,6 @@
     "ENERGY_DATA: PADD inventories, refinery utilisation and ULSD crack series are missing; without them the diesel/geopolitics evidence cannot be connected to breakevens.",
     "US 2Y is missing from persistent rate context.",
     "US 10Y real yield is missing from persistent rate context.",
-    "Latest NY Fed reference-rate date 2026-10-09 is more than five calendar days old.",
     "Latest primary-dealer report date 2026-09-30 is more than fourteen calendar days old.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],
@@ -664,9 +663,9 @@
       "id": "hy-oas",
       "symbol": "BAMLH0A0HYM2",
       "label": "US High Yield OAS",
-      "last": 3.11,
-      "change5d": -0.32,
-      "asOf": "2026-10-12",
+      "last": 3.16,
+      "change5d": 4.29,
+      "asOf": "2026-10-13",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
     },
@@ -675,8 +674,8 @@
       "symbol": "BAMLC0A0CM",
       "label": "US Investment Grade OAS",
       "last": 0.83,
-      "change5d": -1.19,
-      "asOf": "2026-10-12",
+      "change5d": 0,
+      "asOf": "2026-10-13",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/BAMLC0A0CM"
     }
@@ -795,7 +794,7 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-14T11:59:19.180Z",
+    "asOf": "2026-10-14T17:16:44.938Z",
     "assets": [
       {
         "key": "SPX",
@@ -816,8 +815,8 @@
         "key": "NASDAQ",
         "label": "Nasdaq Composite",
         "symbol": "^IXIC",
-        "last": 27245.9,
-        "dailyChange": -0.44,
+        "last": 27204.38,
+        "dailyChange": -0.15,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "MEDIUM",
@@ -825,7 +824,7 @@
         "confirmingSignal": "AI/semiconductor breadth metrics remain strong even as some large semiconductor names have recent session losses.",
         "contradictingSignal": "Earnings and capex cadence for hyperscalers and AI labs",
         "invalidation": "Canonical MOVE rise with persistent HY/IG OAS widening or a material deterioration in breadth ex‑AI would confirm transmission into broader risk assets.",
-        "asOf": "2026-10-12"
+        "asOf": "2026-10-13"
       },
       {
         "key": "CRUDE",
@@ -861,8 +860,8 @@
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4141.600098,
-        "dailyChange": -0.85,
+        "last": 4081.199951,
+        "dailyChange": -2.3,
         "dailyChangeUnit": "percent",
         "bias": "BEARISH",
         "conviction": "LOW",
@@ -876,8 +875,8 @@
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 83395.02,
-        "dailyChange": 0.35,
+        "last": 81889.91,
+        "dailyChange": -1.46,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -1440,10 +1439,49 @@
   },
   "marketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "d7bed53c-44af-4e5c-8390-6046d0839c7b",
-    "capturedAt": "2026-10-14T02:47:29.894Z",
-    "researchRunId": "f0e3644d-1b56-453a-8f20-d76c52b1145f",
-    "items": []
+    "editionId": "c82a7d11-7e2c-4da0-b903-34b1af2fdc73",
+    "capturedAt": "2026-10-14T14:02:10.417Z",
+    "researchRunId": "6c652a48-104e-4fad-87f1-37bdfe4e90c3",
+    "items": [
+      {
+        "id": "05f74703-f902-42f2-89a1-ee55feb1f942",
+        "motionKey": "event:earnings:goldman",
+        "versionNumber": 4,
+        "headline": "Goldman Sachs up $5.29/29 billion up 29% YoY; Citi up 40% YoY; Wells Fargo up 6% (earnings figures presented as comparative YoY percentages).",
+        "category": "EARNINGS",
+        "verificationState": "LEAD",
+        "lifecycleState": "PROMOTED",
+        "whatHappened": "FX Evolution surfaced this in a recent transcript. It remains a creator-sourced lead until independently corroborated: Goldman Sachs up $5.29/29 billion up 29% YoY; Citi up 40% YoY; Wells Fargo up 6% (earnings figures presented as comparative YoY percentages).",
+        "marketReaction": null,
+        "whyInteresting": "Transcript writing angle: Frame a piece as 'When JPM goes haywire: why intraday chop can be a leading market warning'—use JPM microstructure, dark‑pool prints, and semis' 10% drawdown as hooks.",
+        "bigPictureBridge": "Fresh company / sector evidence → earnings breadth and market participation → Equity Rally Quality regime",
+        "nextTest": "Quarterly results releases and YoY comparisons for GS, C, WFC (company earnings releases / consensus summaries).",
+        "tickers": [
+          "SMH",
+          "NASDAQ",
+          "KOSPI"
+        ],
+        "sourceName": "FX Evolution",
+        "sourceUrl": "https://www.youtube.com/watch?v=jlcdyjMnYTI",
+        "materiality": 86,
+        "relevance": 86,
+        "novelty": 86,
+        "occurredAt": "2026-10-14T04:16:07.000Z",
+        "storyId": "fe9e1860-ace4-4393-8f2d-7f8081990661",
+        "storySlug": "market-breadth-health",
+        "storyTitle": "Tech-Led Breadth Transition: Confirmation Still Incomplete",
+        "regimeSlug": "equity-rally-quality",
+        "regimeLabel": "Equity Rally Quality",
+        "attentionTier": "PRIMARY",
+        "attentionScore": 82,
+        "writingPotential": "HIGH",
+        "attentionReasons": [
+          "high materiality",
+          "high market relevance",
+          "asset/ticker linked"
+        ]
+      }
+    ]
   },
   "upstreamGuardrails": [
     "This snapshot is a read-only Live canonical market-intelligence view for downstream consumers.",
@@ -1461,5 +1499,5 @@
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-14T11:59:19.260Z"
+  "syncedAt": "2026-10-14T17:16:45.029Z"
 }

@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-14T17:09:21.342Z",
+  "generatedAt": "2026-10-14T17:16:45.190Z",
   "asOf": "2026-10-14T07:49:42.014+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -9,13 +9,13 @@
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
       "asOf": "2026-10-14T07:49:42.014+00:00",
-      "syncedAt": "2026-10-14T11:59:19.260Z",
+      "syncedAt": "2026-10-14T17:16:45.029Z",
       "status": "OK"
     },
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-14T17:09:21.286Z",
+      "generatedAt": "2026-10-14T17:16:45.146Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -44,10 +44,49 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "d7bed53c-44af-4e5c-8390-6046d0839c7b",
-    "capturedAt": "2026-10-14T02:47:29.894Z",
-    "itemCount": 0,
-    "items": []
+    "editionId": "c82a7d11-7e2c-4da0-b903-34b1af2fdc73",
+    "capturedAt": "2026-10-14T14:02:10.417Z",
+    "itemCount": 1,
+    "items": [
+      {
+        "id": "05f74703-f902-42f2-89a1-ee55feb1f942",
+        "motionKey": "event:earnings:goldman",
+        "versionNumber": 4,
+        "headline": "Goldman Sachs up $5.29/29 billion up 29% YoY; Citi up 40% YoY; Wells Fargo up 6% (earnings figures presented as comparative YoY percentages).",
+        "category": "EARNINGS",
+        "verificationState": "LEAD",
+        "lifecycleState": "PROMOTED",
+        "whatHappened": "FX Evolution surfaced this in a recent transcript. It remains a creator-sourced lead until independently corroborated: Goldman Sachs up $5.29/29 billion up 29% YoY; Citi up 40% YoY; Wells Fargo up 6% (earnings figures presented as comparative YoY percentages).",
+        "marketReaction": null,
+        "whyInteresting": "Transcript writing angle: Frame a piece as 'When JPM goes haywire: why intraday chop can be a leading market warning'—use JPM microstructure, dark‑pool prints, and semis' 10% drawdown as hooks.",
+        "bigPictureBridge": "Fresh company / sector evidence → earnings breadth and market participation → Equity Rally Quality regime",
+        "nextTest": "Quarterly results releases and YoY comparisons for GS, C, WFC (company earnings releases / consensus summaries).",
+        "tickers": [
+          "SMH",
+          "NASDAQ",
+          "KOSPI"
+        ],
+        "sourceName": "FX Evolution",
+        "sourceUrl": "https://www.youtube.com/watch?v=jlcdyjMnYTI",
+        "materiality": 86,
+        "relevance": 86,
+        "novelty": 86,
+        "occurredAt": "2026-10-14T04:16:07.000Z",
+        "storyId": "fe9e1860-ace4-4393-8f2d-7f8081990661",
+        "storySlug": "market-breadth-health",
+        "storyTitle": "Tech-Led Breadth Transition: Confirmation Still Incomplete",
+        "regimeSlug": "equity-rally-quality",
+        "regimeLabel": "Equity Rally Quality",
+        "attentionTier": "PRIMARY",
+        "attentionScore": 82,
+        "writingPotential": "HIGH",
+        "attentionReasons": [
+          "high materiality",
+          "high market relevance",
+          "asset/ticker linked"
+        ]
+      }
+    ]
   },
   "portfolioTriage": {
     "tapeDivergences": [
@@ -148,7 +187,7 @@
         "evidenceFor": [
           "Concentrated AI/semiconductor strength is supporting indices and can mask broader weakness from rates.",
           "Breadth is mixed: large‑cap measures look healthy on averages, but equal‑weight underperformance suggests narrowing leadership.",
-          "Nasdaq daily move -0.44 with bias MIXED."
+          "Nasdaq daily move -0.15 with bias MIXED."
         ],
         "evidenceAgainst": [
           "Long‑end pressure is present and term‑premium evidence exists, but a complete decomposition and volatility read (MOVE) are missing."
@@ -534,7 +573,7 @@
     "ENERGY_DATA: PADD inventories, refinery utilisation and ULSD crack series are missing; without them the diesel/geopolitics evidence cannot be connected to breakevens.",
     "US 2Y is missing from persistent rate context.",
     "US 10Y real yield is missing from persistent rate context.",
-    "Latest NY Fed reference-rate date 2026-10-09 is more than five calendar days old."
+    "Latest primary-dealer report date 2026-09-30 is more than fourteen calendar days old."
   ],
   "explicitNoChange": [
     "Do not change any company company-evidence component from Live macro state or holding-tape reaction alone.",

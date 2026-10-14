@@ -1,13 +1,13 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-14T17:09:21.286Z",
+  "generatedAt": "2026-10-14T17:16:45.146Z",
   "liveAsOf": "2026-10-14T07:49:42.014+00:00",
-  "liveSyncedAt": "2026-10-14T11:59:19.260Z",
+  "liveSyncedAt": "2026-10-14T17:16:45.029Z",
   "sourceHealth": {
     "dossier": "DEGRADED",
     "marketMonitor": "PARTIAL",
     "fredRates": "OK",
-    "nyFedReferenceRates": "STALE",
+    "nyFedReferenceRates": "OK",
     "nyFedPrimaryDealers": "STALE",
     "treasuryBills": "OK",
     "treasurySupply": "UNRESOLVED"
@@ -21,9 +21,9 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "d7bed53c-44af-4e5c-8390-6046d0839c7b",
-    "capturedAt": "2026-10-14T02:47:29.894Z",
-    "itemCount": 0,
+    "editionId": "c82a7d11-7e2c-4da0-b903-34b1af2fdc73",
+    "capturedAt": "2026-10-14T14:02:10.417Z",
+    "itemCount": 1,
     "linkedHoldingCount": 0
   },
   "currentSignals": {
@@ -93,11 +93,11 @@
       ]
     },
     "funding": {
-      "state": "UNRESOLVED",
+      "state": "NEUTRAL",
       "tighter": 0,
       "easier": 0,
-      "neutral": 1,
-      "unresolved": 1,
+      "neutral": 2,
+      "unresolved": 0,
       "keys": [
         "FUNDING",
         "CREDIT"
@@ -106,18 +106,18 @@
         {
           "key": "FUNDING",
           "label": "Secured funding / collateral",
-          "direction": "UNRESOLVED",
+          "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
-          "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR -2.3 bp. Volumes: SOFR $2961bn, TGCR $1199bn, BGCR $1243bn.",
-          "asOf": "2026-10-09"
+          "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR +0.3 bp. Volumes: SOFR $3000bn, TGCR $1195bn, BGCR $1226bn.",
+          "asOf": "2026-10-13"
         },
         {
           "key": "CREDIT",
           "label": "Credit spreads",
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
-          "detail": "HY OAS 3.11 (5D -1.0 bp); IG OAS 0.83 (5D -1.0 bp).",
-          "asOf": "2026-10-12"
+          "detail": "HY OAS 3.16 (5D +13.0 bp); IG OAS 0.83 (5D +0.0 bp).",
+          "asOf": "2026-10-13"
         }
       ]
     },
@@ -157,7 +157,7 @@
       },
       "effects": {
         "rates": "HEADWIND",
-        "funding": "UNRESOLVED",
+        "funding": "NEUTRAL",
         "energy": "TAILWIND"
       },
       "sensitivities": {
@@ -266,7 +266,7 @@
       "trimOrRecycleGate": "Reduce only if energy cluster concentration is excessive or integrated/refining economics deteriorate; crude de-escalation alone is not enough.",
       "rationale": [
         "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
-        "Funding/credit: unresolved because signal or profile evidence is incomplete.",
+        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
         "Physical energy: tailwind while Live marks the product/energy lens observed."
       ]
     },
@@ -295,7 +295,7 @@
       },
       "effects": {
         "rates": "HEADWIND",
-        "funding": "UNRESOLVED",
+        "funding": "NEUTRAL",
         "energy": "TAILWIND"
       },
       "sensitivities": {
@@ -396,7 +396,7 @@
       "trimOrRecycleGate": "Route normalization plus weaker freight or adverse funding terms reduce the case.",
       "rationale": [
         "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
-        "Funding/credit: unresolved because signal or profile evidence is incomplete.",
+        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
         "Physical energy: tailwind while Live marks the product/energy lens observed."
       ]
     },
@@ -425,7 +425,7 @@
       },
       "effects": {
         "rates": "HEADWIND",
-        "funding": "UNRESOLVED",
+        "funding": "NEUTRAL",
         "energy": "TAILWIND"
       },
       "sensitivities": {
@@ -518,7 +518,7 @@
       "trimOrRecycleGate": "Failure to repair with weakening operations makes it a candidate source of capital for higher-quality or less-correlated exposure.",
       "rationale": [
         "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
-        "Funding/credit: unresolved because signal or profile evidence is incomplete.",
+        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
         "Physical energy: tailwind while Live marks the product/energy lens observed."
       ]
     },
@@ -791,7 +791,7 @@
       },
       "effects": {
         "rates": "HEADWIND",
-        "funding": "UNRESOLVED",
+        "funding": "NEUTRAL",
         "energy": "NEUTRAL"
       },
       "sensitivities": {
@@ -868,7 +868,7 @@
       "trimOrRecycleGate": "Further technical deterioration or catalyst/cash-flow slippage.",
       "rationale": [
         "Rates/duration: headwind with very high sensitivity while the Live channel is tighter.",
-        "Funding/credit: unresolved because signal or profile evidence is incomplete.",
+        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
         "Physical energy: neutral while Live marks the product/energy lens observed."
       ]
     },
@@ -897,7 +897,7 @@
       },
       "effects": {
         "rates": "HEADWIND",
-        "funding": "UNRESOLVED",
+        "funding": "NEUTRAL",
         "energy": "HEADWIND"
       },
       "sensitivities": {
@@ -974,7 +974,7 @@
       "trimOrRecycleGate": "Failure of repair, worsening auto economics or evidence that optionality is not converting into cash flow.",
       "rationale": [
         "Rates/duration: headwind with very high sensitivity while the Live channel is tighter.",
-        "Funding/credit: unresolved because signal or profile evidence is incomplete.",
+        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
         "Physical energy: headwind while Live marks the product/energy lens observed."
       ]
     },
@@ -1003,7 +1003,7 @@
       },
       "effects": {
         "rates": "HEADWIND",
-        "funding": "UNRESOLVED",
+        "funding": "NEUTRAL",
         "energy": "TAILWIND"
       },
       "sensitivities": {
@@ -1096,7 +1096,7 @@
       "trimOrRecycleGate": "Break of RM1.42 or continued weak utilization/work-order conversion.",
       "rationale": [
         "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
-        "Funding/credit: unresolved because signal or profile evidence is incomplete.",
+        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
         "Physical energy: tailwind while Live marks the product/energy lens observed."
       ]
     }
@@ -1180,7 +1180,7 @@
       "evidenceFor": [
         "Concentrated AI/semiconductor strength is supporting indices and can mask broader weakness from rates.",
         "Breadth is mixed: large‑cap measures look healthy on averages, but equal‑weight underperformance suggests narrowing leadership.",
-        "Nasdaq daily move -0.44 with bias MIXED."
+        "Nasdaq daily move -0.15 with bias MIXED."
       ],
       "evidenceAgainst": [
         "Long‑end pressure is present and term‑premium evidence exists, but a complete decomposition and volatility read (MOVE) are missing."
@@ -1248,7 +1248,6 @@
     "ENERGY_DATA: PADD inventories, refinery utilisation and ULSD crack series are missing; without them the diesel/geopolitics evidence cannot be connected to breakevens.",
     "US 2Y is missing from persistent rate context.",
     "US 10Y real yield is missing from persistent rate context.",
-    "Latest NY Fed reference-rate date 2026-10-09 is more than five calendar days old.",
     "Latest primary-dealer report date 2026-09-30 is more than fourteen calendar days old.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],
