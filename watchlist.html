@@ -102,6 +102,7 @@
 
   <script src="stock-states.js"></script>
   <script>
+    let cpiOverlayWatch=new Map(),cpiOverlayHold=new Map();
     const bucketClass = id => id === 'buy' ? 'buy' : id === 'selective' ? 'selective' : id === 'wait' ? 'wait' : 'avoid';
     const moveClass = value => value > .15 ? 'up' : value < -.15 ? 'down' : 'flat';
     const moveLabel = value => Number.isFinite(value) ? `${value > 0 ? '+' : ''}${value.toFixed(1)}%` : '—';
@@ -166,6 +167,7 @@
                 <div><div class="ticker-line"><span class="watch-ticker">${item.ticker}</span><span class="action-pill ${bucketClass(item.bucket)}">${item.action}</span></div><div class="watch-name">#${item.rank} · ${item.name} · ${item.market}</div>${PowerStackState.strip([{text:"THESIS · "+PowerStackState.watchlist(item).text,tone:PowerStackState.watchlist(item).tone,label:PowerStackState.watchlist(item).basis},{text:"ACTION · "+PowerStackState.watchlistAction(item).text,tone:PowerStackState.watchlistAction(item).tone,label:PowerStackState.watchlistAction(item).basis}])}</div>
                 <div class="watch-score"><b>${item.score.toFixed(1)}</b><span>PS / 10</span></div>
               </div>
+              ${(()=>{const c=PowerStackState.cpiImpact(cpiOverlayWatch.get(item.ticker));return c?'<div class="stock-state-inline">'+PowerStackState.badge(c.text,c.tone,c.basis)+'</div>':''})()}
               <div class="theme-line"><span>${item.theme}</span><span>current ${item.price}</span>${Number.isFinite(item.snapshotChangePct) ? `<span class="move-pill ${moveClass(item.snapshotChangePct)}">${moveLabel(item.snapshotChangePct)} vs prior snapshot</span>` : ''}</div>
               <div class="watch-levels">
                 <div class="level"><span>Entry</span><b>${item.entry}</b></div>
@@ -186,7 +188,7 @@
         const m = marketByTicker.get(h.ticker) || {};
         const cls = m.class || (h.score>=80 ? 'core' : 'hold');
         return `<tr>
-          <td><strong>${h.ticker}</strong><br><span style="color:#77818a">${h.name}</span><div class="stock-state-inline">${PowerStackState.badge(PowerStackState.holding(h).text,PowerStackState.holding(h).tone,PowerStackState.holding(h).basis)}</div>${chartButton(h.ticker)}</td>
+          <td><strong>${h.ticker}</strong><br><span style="color:#77818a">${h.name}</span><div class="stock-state-inline">${PowerStackState.badge(PowerStackState.holding(h).text,PowerStackState.holding(h).tone,PowerStackState.holding(h).basis)}${(()=>{const c=PowerStackState.cpiImpact(cpiOverlayHold.get(h.ticker));return c?PowerStackState.badge(c.text,c.tone,c.basis):''})()}</div>${chartButton(h.ticker)}</td>
           <td><strong>${h.score}/100</strong><br><span style="color:#77818a">${h.grade} · ${h.status}</span></td>
           <td class="price-cell"><b>${m.price || '—'}</b>${Number.isFinite(m.changePct) ? `<span class="move-pill ${moveClass(m.changePct)}">${moveLabel(m.changePct)}</span>` : ''}</td>
           <td><span class="holding-action ${cls}">${m.action || 'HOLD'}</span><div class="stock-state-inline">${PowerStackState.badge(PowerStackState.holdingAction(h).text,PowerStackState.holdingAction(h).tone,PowerStackState.holdingAction(h).basis)}</div></td>
@@ -199,8 +201,12 @@
       fetch('data/watchlist.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('watchlist HTTP ' + r.status);return r.json();}),
       fetch('data/holdings-fundamentals.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('holdings HTTP ' + r.status);return r.json();}),
       fetch('data/latest-market-review.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('market review HTTP ' + r.status);return r.json();}),
-      fetch('data/live-desk-canonical.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('Live Desk HTTP ' + r.status);return r.json();})
-    ]).then(([watch,holdingData,market,live])=>{
+      fetch('data/live-desk-canonical.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('Live Desk HTTP ' + r.status);return r.json();}),
+      fetch('data/cpi-2026-10-14-security-overlay.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)
+    ]).then(([watch,holdingData,market,live,cpi])=>{
+      const valid=cpi?.contractVersion==='power-stack-cpi-crossasset-security-review/1'?cpi:null;
+      cpiOverlayWatch=new Map((valid?.watchlist||[]).map(x=>[x.ticker,x]));
+      cpiOverlayHold=new Map((valid?.holdings||[]).map(x=>[x.ticker,x]));
       const date = prettyDate(watch.asOf);
       const regime = live.regime || {};
       const liveDate = live.asOf ? prettyDate(String(live.asOf).slice(0,10)) : 'latest';

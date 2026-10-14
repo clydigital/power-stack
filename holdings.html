@@ -141,6 +141,7 @@
 
   <script src="stock-states.js"></script>
   <script>
+    let cpiOverlayHold=new Map();
     const maxByComponent = {
       'Business': 20,
       'Regime fit': 20,
@@ -277,12 +278,14 @@
         const position=`<div class="position-strip"><div class="position-cell"><b>${p.quantity??'—'}</b><span>Quantity</span></div><div class="position-cell"><b>${money(p.latestPrice)}</b><span>Latest price</span></div><div class="position-cell"><b>${money(p.estimatedValue)}</b><span>Market value</span></div><div class="position-cell ${pnlClass}"><b>${p.unrealisedPnl==null?'—':`${p.unrealisedPnl>0?'+':''}${money(p.unrealisedPnl)} (${p.unrealisedPnlPct}%)`}</b><span>Unrealised P/L</span></div></div>`;
         const sources = h.sources.map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${s.label} ↗</a>`).join('');
         const thesis=PowerStackState.holding(h),decision=PowerStackState.holdingAction(h);
+        const inflation=PowerStackState.cpiImpact(cpiOverlayHold.get(h.ticker));
         return `<article class="holding-card stock-card-state" data-thesis-tone="${thesis.tone}">
           <div class="holding-card-head">
             <div>
               <div class="holding-title"><div><div class="holding-ticker">${h.ticker}</div><div class="holding-name">${h.name} · ${h.market}</div></div><span class="grade-pill ${gradeClass(h.grade)}">${h.grade}</span></div>
               <div class="holding-status">${h.status}</div>
               ${PowerStackState.strip([{text:"THESIS · "+thesis.text,tone:thesis.tone,label:thesis.basis},{text:"ACTION · "+decision.text,tone:decision.tone,label:decision.basis}])}
+              ${inflation?PowerStackState.badge(inflation.text,inflation.tone,inflation.basis):''}
               ${holdingChartButton(h.ticker)}
             </div>
             <div class="score-orb"><div><b>${h.score}</b><span>/100</span></div></div>
@@ -300,8 +303,11 @@
 
     Promise.all([
       fetch('data/holdings-fundamentals.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('holdings HTTP ' + r.status);return r.json();}),
-      fetch('data/portfolio-live-overlay.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('overlay HTTP ' + r.status);return r.json();})
-    ]).then(([data,overlay])=>{
+      fetch('data/portfolio-live-overlay.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('overlay HTTP ' + r.status);return r.json();}),
+      fetch('data/cpi-2026-10-14-security-overlay.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)
+    ]).then(([data,overlay,cpi])=>{
+      const valid=cpi?.contractVersion==='power-stack-cpi-crossasset-security-review/1'?cpi:null;
+      cpiOverlayHold=new Map((valid?.holdings||[]).map(x=>[x.ticker,x]));
       document.getElementById('asOf').textContent = 'Research snapshot · ' + data.asOf;
       renderSummary(data.holdings);
       renderWeights(data.methodology.weights);

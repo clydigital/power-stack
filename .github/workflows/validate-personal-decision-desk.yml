@@ -3,6 +3,9 @@ on:
   pull_request:
     paths:
       - "index.html"
+      - "data/cpi-2026-10-14-security-overlay.json"
+      - "research/2026-10-14-post-cpi-54-security-review.md"
+      - "scripts/check-cpi-security-review.mjs"
       - "stock-states.js"
       - "stock-states.css"
       - "scripts/check-stock-states.mjs"
@@ -22,6 +25,9 @@ on:
     branches: [main]
     paths:
       - "index.html"
+      - "data/cpi-2026-10-14-security-overlay.json"
+      - "research/2026-10-14-post-cpi-54-security-review.md"
+      - "scripts/check-cpi-security-review.mjs"
       - "stock-states.js"
       - "stock-states.css"
       - "scripts/check-stock-states.mjs"
@@ -46,3 +52,5 @@ jobs:
         run: node scripts/check-personal-decision-desk.mjs
       - name: Validate thesis colours and recorded action gates
         run: node scripts/check-stock-states.mjs
+      - name: Validate post-CPI 54-security decision review
+        run: node scripts/check-cpi-security-review.mjs

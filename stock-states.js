@@ -63,5 +63,16 @@
     if(status==='Research Queue') return {tone:'unrated',text:'Research queue',basis:'More research required'};
     return {tone:'neutral',text:'Watchlist',basis:'No company-level action adjudication'};
   }
-  root.PowerStackState=Object.freeze({holding,holdingAction,watchlist,watchlistAction,candidate,candidateAction,library,badge,strip,escape});
+  function cpiImpact(observation) {
+    if(!observation || !observation.macroTransmission) return null;
+    const modes={
+      ADVERSE:{tone:'caution',text:'CPI · Rates headwind'},
+      MIXED:{tone:'neutral',text:'CPI · Two-sided'},
+      FAVOURABLE_BUT_CONDITIONAL:{tone:'conditional',text:'CPI · Possible tailwind'},
+      ADVERSE_WITH_HEDGE_OPTION:{tone:'caution',text:'CPI · Rates / hedge'}
+    };
+    const out=modes[observation.macroTransmission];
+    return out?{...out,basis:String(observation.interpretation||'Macro-only interpretation. Not a company or trade rating.')}:null;
+  }
+  root.PowerStackState=Object.freeze({holding,holdingAction,watchlist,watchlistAction,candidate,candidateAction,library,cpiImpact,badge,strip,escape});
 })(typeof window!=='undefined'?window:globalThis);

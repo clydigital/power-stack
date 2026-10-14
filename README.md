@@ -2,6 +2,12 @@
 
 A searchable, versioned investment-research vault for nuclear, AI infrastructure, grid/electrical equipment, uranium/fuel, oil & gas, robotics, water/cooling, agriculture, healthcare, metals and adjacent ideas across the US, Hong Kong/China and Malaysia.
 
+## 14 October CPI · 54-security investment review
+
+The [official September US CPI](https://www.bls.gov/news.release/archives/cpi_10142026.htm) was released 14 October 2026 at 20:30 Malaysia time. The [dated 8-holding + 46-watchlist post-CPI decision review](research/2026-10-14-post-cpi-54-security-review.md) and [read-only machine-ledger](data/cpi-2026-10-14-security-overlay.json) document **energy vs core-service effects, initial 2Y/10Y and futures reactions, and each security's rate/energy/customer-funding transmission and issuer proof gates**. The latest Power Stack market summary has been updated for the event.
+
+CPI-specific labels are **separate** from original bullish/bearish stock thesis and action tabs. They imply no trade and **do not edit stock scores, buckets, rankings, holding quantities or security actions**. Current event prices, complete Treasury and real-yield curves, live credit and TSMC final earnings are not independently verified at this event time. Read the linked BLS and Notion MacroPulse for official CPI detail; the existing Research Gap Gate precedes CPI.
+
 ## Stock-state colours (14 October 2026)
 
 The previous visual-only `spectrum.css` site-wide redesign was reverted. The original dark theme, typography, backgrounds and navigation are retained. Only `stock-states.css` and `stock-states.js` add purpose-specific **stock thesis** and **action** colours on the Personal Desk, Holdings, Watchlist and Research Library. Themes, Motion and Capital Scarcity retain their original page styling.
