@@ -446,7 +446,7 @@
       {
         "key": "FUNDING",
         "label": "Secured funding / collateral",
-        "direction": "NEUTRAL",
+        "direction": "UNRESOLVED",
         "confirmation": "UNRESOLVED",
         "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR -2.3 bp. Volumes: SOFR $2961bn, TGCR $1199bn, BGCR $1243bn.",
         "asOf": "2026-10-09",
@@ -503,14 +503,14 @@
         "label": "US dollar transmission",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "US Dollar · UUP proxy 5D +0.48%.",
-        "asOf": "2026-10-12",
+        "detail": "US Dollar · UUP proxy 5D +0.42%.",
+        "asOf": "2026-10-13",
         "sourceName": "Nasdaq official etf history",
         "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical",
         "evidenceRefs": [],
         "metrics": {
-          "proxyLevel": 29.13,
-          "change5dPct": 0.48
+          "proxyLevel": 29.02,
+          "change5dPct": 0.42
         }
       },
       {
@@ -552,27 +552,19 @@
     "dossier": "DEGRADED",
     "marketMonitor": "PARTIAL",
     "fredRates": "PARTIAL",
-    "nyFedReferenceRates": "OK",
-    "nyFedPrimaryDealers": "OK",
+    "nyFedReferenceRates": "STALE",
+    "nyFedPrimaryDealers": "STALE",
     "treasuryBills": "OK",
     "treasurySupply": "UNRESOLVED"
   },
-  "contradictions": [
-    {
-      "id": "copper-china",
-      "title": "Copper is decoupling from China equities",
-      "detail": "Copper proxy 1.9% vs China A-shares -1.5%.",
-      "assets": [
-        "copper",
-        "csi300"
-      ]
-    }
-  ],
+  "contradictions": [],
   "researchGaps": [
     "US 2Y is missing from persistent rate context.",
     "US 10Y nominal is missing from persistent rate context.",
     "US 10Y real yield is missing from persistent rate context.",
     "Effective fed funds is missing from persistent rate context.",
+    "Latest NY Fed reference-rate date 2026-10-09 is more than five calendar days old.",
+    "Latest primary-dealer report date 2026-09-30 is more than fourteen calendar days old.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],
   "marketRows": [
@@ -580,9 +572,9 @@
       "id": "dxy",
       "symbol": "UUP",
       "label": "US Dollar · UUP proxy",
-      "last": 29.13,
-      "change5d": 0.48,
-      "asOf": "2026-10-12",
+      "last": 29.02,
+      "change5d": 0.42,
+      "asOf": "2026-10-13",
       "sourceName": "Nasdaq official etf history",
       "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical"
     },
@@ -786,14 +778,14 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-13T22:17:32.347Z",
+    "asOf": "2026-10-14T03:56:07.238Z",
     "assets": [
       {
         "key": "SPX",
         "label": "S&P 500",
         "symbol": "SP500",
-        "last": 7807.24,
-        "dailyChange": -0.06,
+        "last": 7805.45,
+        "dailyChange": -0.02,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "HIGH",
@@ -801,7 +793,7 @@
         "confirmingSignal": "AI basket and Magnificent Seven breadth strong; large‑cap ex‑AI breadth positive but lagging AI basket.",
         "contradictingSignal": null,
         "invalidation": "Canonical MOVE/Treasury‑volatility plus persistent HY/IG OAS widening and breadth deterioration ex‑AI would confirm broad stress and shift the regime to rates‑led tightening.",
-        "asOf": "2026-10-12"
+        "asOf": "2026-10-13"
       },
       {
         "key": "NASDAQ",
@@ -852,8 +844,8 @@
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4160,
-        "dailyChange": -0.73,
+        "last": 4163.799805,
+        "dailyChange": -0.64,
         "dailyChangeUnit": "percent",
         "bias": "BEARISH",
         "conviction": "LOW",
@@ -861,14 +853,14 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": "Canonical MOVE/Treasury‑volatility plus persistent HY/IG OAS widening and breadth deterioration ex‑AI would confirm broad stress and shift the regime to rates‑led tightening.",
-        "asOf": "2026-10-13"
+        "asOf": "2026-10-14"
       },
       {
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 83353.83,
-        "dailyChange": 1.97,
+        "last": 83686.52,
+        "dailyChange": 0.7,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -876,7 +868,7 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": null,
-        "asOf": "2026-10-13"
+        "asOf": "2026-10-14"
       }
     ]
   },
@@ -1422,9 +1414,9 @@
   },
   "marketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "ce3b4df7-298e-4281-853a-14ce7853a1e7",
-    "capturedAt": "2026-10-13T14:41:05.250Z",
-    "researchRunId": "306250f7-7e6d-47b7-a995-f9e8ab9e93f0",
+    "editionId": "d7bed53c-44af-4e5c-8390-6046d0839c7b",
+    "capturedAt": "2026-10-14T02:47:29.894Z",
+    "researchRunId": "f0e3644d-1b56-453a-8f20-d76c52b1145f",
     "items": []
   },
   "upstreamGuardrails": [
@@ -1443,5 +1435,5 @@
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-13T22:50:00.033Z"
+  "syncedAt": "2026-10-14T04:59:12.762Z"
 }

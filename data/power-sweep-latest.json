@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-14T04:52:04.531Z",
+  "generatedAt": "2026-10-14T04:59:12.914Z",
   "asOf": "2026-10-13T20:18:17.734+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -9,13 +9,13 @@
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
       "asOf": "2026-10-13T20:18:17.734+00:00",
-      "syncedAt": "2026-10-13T22:50:00.033Z",
+      "syncedAt": "2026-10-14T04:59:12.762Z",
       "status": "OK"
     },
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-14T04:52:04.484Z",
+      "generatedAt": "2026-10-14T04:59:12.864Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -44,8 +44,8 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "ce3b4df7-298e-4281-853a-14ce7853a1e7",
-    "capturedAt": "2026-10-13T14:41:05.250Z",
+    "editionId": "d7bed53c-44af-4e5c-8390-6046d0839c7b",
+    "capturedAt": "2026-10-14T02:47:29.894Z",
     "itemCount": 0,
     "items": []
   },
@@ -178,7 +178,7 @@
         ],
         "evidenceFor": [
           "HY shows notable widening consistent with risk repricing in lower credit quality, but IG and volatility confirmation are incomplete.",
-          "Funding/credit composite is currently NEUTRAL."
+          "Funding/credit composite is currently UNRESOLVED."
         ],
         "evidenceAgainst": [
           "Long‑end rates and front‑end collateral are tightening conditions, but concentrated AI/semiconductor leadership and only partial HY widening mean broader market stress is not yet confirmed."
@@ -538,8 +538,8 @@
     "US 10Y nominal is missing from persistent rate context.",
     "US 10Y real yield is missing from persistent rate context.",
     "Effective fed funds is missing from persistent rate context.",
-    "Treasury supply/auction state is not yet resolved from verified Live rate evidence.",
-    "Holding tape unresolved: 6742UW"
+    "Latest NY Fed reference-rate date 2026-10-09 is more than five calendar days old.",
+    "Latest primary-dealer report date 2026-09-30 is more than fourteen calendar days old."
   ],
   "explicitNoChange": [
     "Do not change any company company-evidence component from Live macro state or holding-tape reaction alone.",
