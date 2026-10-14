@@ -1,12 +1,19 @@
 # Power Stack
 
-## Spectrum palette — 14 October 2026
-
-The visual-only `spectrum.css` layer is loaded **after each page's existing styles**, preserving layout, market calculations and data contracts. Purple marks navigation/research, cyan highlights holdings/data, rose highlights stock ideas and gold highlights upcoming catalysts; bright green, red and amber retain their risk/confirmation semantics. Coloured card borders are navigation cues, **not investment ratings**. The seven public views covered are the decision desk, research library, holdings, watchlist, themes, Market Motion and capital scarcity.
-
-Accessible text contrast, visible keyboard focus, reduced-motion support and small-screen layouts are prioritised; the legacy application uses a dark palette rather than activating the previously unused optional `theme-ui.css` light-mode experiment. Changing this design should not modify canonical company scores, archived research or holding amounts.
-
 A searchable, versioned investment-research vault for nuclear, AI infrastructure, grid/electrical equipment, uranium/fuel, oil & gas, robotics, water/cooling, agriculture, healthcare, metals and adjacent ideas across the US, Hong Kong/China and Malaysia.
+
+## Stock-state colours (14 October 2026)
+
+The previous visual-only `spectrum.css` site-wide redesign was reverted. The original dark theme, typography, backgrounds and navigation are retained. Only `stock-states.css` and `stock-states.js` add purpose-specific **stock thesis** and **action** colours on the Personal Desk, Holdings, Watchlist and Research Library. Themes, Motion and Capital Scarcity retain their original page styling.
+
+- **Green (bullish thesis):** stored `CONFIRMED` holdings or `buy`-bucket priority research; not a live BUY action.
+- **Red (bearish/high risk):** stored `BREAKING` holdings, high-risk `avoid` research, or recorded restrictions such as DO NOT AVERAGE DOWN.
+- **Amber (caution):** diverging/price-led holdings, NO CHASE/NO ADD and WAIT/RETEST entry decisions.
+- **Purple (conditional):** selective entry study; not an active position or implied purchase.
+- **Grey/blue (unconfirmed or unrated):** incomplete evidence, unscored research or warrant-term verification.
+
+Two separate pills prevent thesis and action being conflated. Interactive state filters select from stored classifications only and never generate a fresh market signal. Full valuation/entry evidence and current quotes are still needed before capital is added; prices in the archived research may be stale. No scores, rankings, positions, data contracts or canonical Live Desk state were changed by this UI work.
+
 
 ## 14 October — Live Desk research reuse and TSMC catalyst
 
