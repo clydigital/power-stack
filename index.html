@@ -135,7 +135,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:#7d8a90;font-size:1
 <script>
 (()=>{'use strict';
 const $=s=>document.querySelector(s),esc=v=>String(v??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
-let data=null,holdings=[],watchlist=new Map(),live=null;
+let data=null,holdings=[],watchlist=new Map(),live=null,cpiHold=new Map(),cpiWatch=new Map();
 let holdingsToneFilter='all',shortlistToneFilter='all',shortlistLaneFilter='ALL';
 const when=x=>String(x||'not available');
 const baseLinks={research:"research-library.html",watch:"watchlist.html"};
@@ -199,15 +199,19 @@ const xs=all.filter(h=>holdingsToneFilter==='all'||PowerStackState.holding(h).to
 $('#holdingGrid').innerHTML=xs.map(h=>{
 const p=h.position||{},watch=priority.includes(h.ticker);
 const thesis=PowerStackState.holding(h),decision=PowerStackState.holdingAction(h);
+const inflation=PowerStackState.cpiImpact(cpiHold.get(h.ticker));
+const inflationTag=inflation?'<div class="stock-state-inline">'+PowerStackState.badge(inflation.text,inflation.tone,inflation.basis)+'</div>':'';
 const tags=PowerStackState.strip([{text:'THESIS · '+thesis.text,tone:thesis.tone,label:thesis.basis},{text:'ACTION · '+decision.text,tone:decision.tone,label:decision.basis}]);
-return '<article class="panel stock-card-state" data-thesis-tone="'+thesis.tone+'"><div class="card-top"><div><div class="kicker">'+(watch?'Needs review':'Monitor')+'</div><div class="ticker">'+esc(h.ticker)+'</div><div class="company">'+esc(h.name)+'</div></div></div>'+tags+'<div class="card-body"><p><strong>Existing holding action:</strong> '+esc(h.action||'UNRESOLVED')+'</p><p><strong>What I am watching:</strong> '+esc(watch?'Check the latest price, current portfolio exposure and any warrant terms.':'New company results or a meaningful change in the share price.')+'</p></div><div class="card-foot">'+markAsOf(p.priceAsOf)+' · '+(p.latestPrice===null||p.latestPrice===undefined?'Value unavailable':esc(p.currency||'')+' '+esc(p.latestPrice))+' · Not a live quote</div></article>';
+return '<article class="panel stock-card-state" data-thesis-tone="'+thesis.tone+'"><div class="card-top"><div><div class="kicker">'+(watch?'Needs review':'Monitor')+'</div><div class="ticker">'+esc(h.ticker)+'</div><div class="company">'+esc(h.name)+'</div></div></div>'+tags+inflationTag+'<div class="card-body"><p><strong>Existing holding action:</strong> '+esc(h.action||'UNRESOLVED')+'</p><p><strong>What I am watching:</strong> '+esc(watch?'Check the latest price, current portfolio exposure and any warrant terms.':'New company results or a meaningful change in the share price.')+'</p></div><div class="card-foot">'+markAsOf(p.priceAsOf)+' · '+(p.latestPrice===null||p.latestPrice===undefined?'Value unavailable':esc(p.currency||'')+' '+esc(p.latestPrice))+' · Not a live quote</div></article>';
 }).join('')||'<div class="panel">No holdings match this thesis state.</div>';
 }
 function candidateCard(x){
 const prev=watchlist.get(x.ticker),src=x.source||'',hasLink=/^https:\/\//.test(src);
 const thesis=PowerStackState.candidate(x,prev),decision=PowerStackState.candidateAction(x);
+const inflation=PowerStackState.cpiImpact(cpiWatch.get(x.ticker));
+const inflationTag=inflation?'<div class="stock-state-inline">'+PowerStackState.badge(inflation.text,inflation.tone,inflation.basis)+'</div>':'';
 const tags=PowerStackState.strip([{text:'THESIS · '+thesis.text,tone:thesis.tone,label:thesis.basis},{text:'ACTION · '+decision.text,tone:decision.tone,label:decision.basis}]);
-return '<article class="panel stock-card-state" data-lane="'+esc(x.lane)+'" data-thesis-tone="'+thesis.tone+'"><div class="card-top"><div><div class="kicker">'+esc(x.sector)+'</div><div class="ticker">'+esc(x.ticker)+'</div></div></div>'+tags+'<div class="card-body"><p>'+esc(x.rationale)+'</p><p><strong>What I would look for:</strong> '+esc(x.mustProve)+'</p><p><strong>The main risk:</strong> '+esc(x.risk)+'</p></div><div class="card-foot">'+(prev?'Previous price reference: '+esc(prev.price||'Check latest quote'):'No scored entry quote')+(hasLink?' · <a href="'+esc(src)+'" target="_blank" rel="noopener noreferrer">Issuer evidence ↗</a>':'')+'</div></article>';
+return '<article class="panel stock-card-state" data-lane="'+esc(x.lane)+'" data-thesis-tone="'+thesis.tone+'"><div class="card-top"><div><div class="kicker">'+esc(x.sector)+'</div><div class="ticker">'+esc(x.ticker)+'</div></div></div>'+tags+inflationTag+'<div class="card-body"><p>'+esc(x.rationale)+'</p><p><strong>What I would look for:</strong> '+esc(x.mustProve)+'</p><p><strong>The main risk:</strong> '+esc(x.risk)+'</p></div><div class="card-foot">'+(prev?'Previous price reference: '+esc(prev.price||'Check latest quote'):'No scored entry quote')+(hasLink?' · <a href="'+esc(src)+'" target="_blank" rel="noopener noreferrer">Issuer evidence ↗</a>':'')+'</div></article>';
 }
 function renderCandidates(){
 const xs=(data?.focus||[]).filter(x=>(shortlistLaneFilter==='ALL'||x.lane===shortlistLaneFilter)&&(shortlistToneFilter==='all'||PowerStackState.candidate(x,watchlist.get(x.ticker)).tone===shortlistToneFilter));
@@ -221,11 +225,13 @@ $('#adjacent').innerHTML=(data?.additionalAdjacentResearch||[]).map(x=>'<div cla
 }
 async function go(){
 try{
-const inputs=[['decision','data/personal-decision-desk.json'],['holdings','data/holdings-fundamentals.json'],['watch','data/watchlist.json'],['live','data/live-desk-canonical.json'],['market','data/market-summary.json'],['catalyst','data/ai-catalyst-gates.json']];
+const inputs=[['decision','data/personal-decision-desk.json'],['holdings','data/holdings-fundamentals.json'],['watch','data/watchlist.json'],['live','data/live-desk-canonical.json'],['market','data/market-summary.json'],['catalyst','data/ai-catalyst-gates.json'],['cpi','data/cpi-2026-10-14-security-overlay.json']];
 const res=await Promise.all(inputs.map(async ([k,url])=>{try{const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);return [k,await r.json()]}catch(e){return [k,null]}}));const vals=Object.fromEntries(res);
 renderMarketSummary(vals.market);
 renderCatalystGate(vals.catalyst);
 data=vals.decision;holdings=vals.holdings?.holdings||[];watchlist=new Map((vals.watch?.candidates||[]).map(c=>[c.ticker,c]));live=vals.live;
+const overlay=vals.cpi?.contractVersion==='power-stack-cpi-crossasset-security-review/1'?vals.cpi:null;
+cpiHold=new Map((overlay?.holdings||[]).map(h=>[h.ticker,h]));cpiWatch=new Map((overlay?.watchlist||[]).map(w=>[w.ticker,w]));
 if(!data)throw Error('Decision research file unavailable');
 $('#verdict').textContent=data.headline.verdict;$('#verdictWhy').textContent=data.headline.detail+' '+data.headline.next;
 $('#asOf').textContent='Updated '+when(data.asOf)+' · Stock prices shown elsewhere may be older';
