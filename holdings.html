@@ -20,9 +20,9 @@
     @media(max-width:1100px){.holdings-grid{grid-template-columns:1fr}.method-grid{grid-template-columns:1fr}.signal-grid,.cluster-grid,.divergence-grid{grid-template-columns:1fr}.live-open-items{grid-template-columns:1fr}}
     @media(max-width:650px){.metric-grid{grid-template-columns:1fr}.component-row{grid-template-columns:110px minmax(0,1fr) 42px}.ranking-head{align-items:flex-start;flex-direction:column}.score-orb{width:52px;height:52px;flex-basis:52px}}
   </style>
-  <link rel="stylesheet" href="spectrum.css" />
+  <link rel="stylesheet" href="stock-states.css" />
 </head>
-<body class="ps-holdings">
+<body>
   <div class="app-shell">
     <aside class="sidebar">
       <div class="brand-block">
@@ -138,6 +138,7 @@
     </div>
   </div>
 
+  <script src="stock-states.js"></script>
   <script>
     const maxByComponent = {
       'Business': 20,
