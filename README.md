@@ -1,5 +1,9 @@
 # Power Stack
 
+## 15 October 2026 — Full-spectrum portfolio sweep (research only)
+
+The [15 Oct cross-asset research report](research/2026-10-15-power-stack-full-spectrum-sweep.md) and [full-coverage triage ledger](data/full-spectrum-triage-2026-10-15.json) reconcile latest MacroPulse, 15 Oct reviewed creator-video hypotheses and independent sector sources across picks-and-shovels, agriculture, refined energy, LNG, nuclear, renewables and bonds. All eight holdings, 46 scored watchlist names and 56 historical idea rows have triage dispositions; seven additional sector names are explicitly **unscored**. The proposed active-radar archive is **not deletion, a sale or a reranking**. Current scores, buckets, holding quantities, prior company evidence, existing canonical Live authority and all executable action gates remain unchanged; mostly September quotes are stale and new additions require current pricing and issuer due diligence.
+
 A searchable, versioned investment-research vault for nuclear, AI infrastructure, grid/electrical equipment, uranium/fuel, oil & gas, robotics, water/cooling, agriculture, healthcare, metals and adjacent ideas across the US, Hong Kong/China and Malaysia.
 
 ## Decision instructions on stock cards — 14 October 2026
