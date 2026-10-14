@@ -20,9 +20,9 @@
     @media(max-width:1000px){.watch-hero{grid-template-columns:1fr}.bucket-grid{grid-template-columns:1fr}.regime-panel{grid-template-columns:1fr}}
     @media(max-width:650px){.watch-levels{grid-template-columns:1fr}.bucket-head,.holdings-head{align-items:flex-start;flex-direction:column}.bucket-head p,.holdings-head p{text-align:left}.watch-hero-meta{grid-template-columns:repeat(2,minmax(0,1fr))}}
   </style>
-  <link rel="stylesheet" href="spectrum.css" />
+  <link rel="stylesheet" href="stock-states.css" />
 </head>
-<body class="ps-watchlist">
+<body>
   <div class="app-shell">
     <aside class="sidebar">
       <div class="brand-block">
@@ -78,7 +78,9 @@
           <p id="regimeSummary">Loading current market overlay…</p>
         </section>
 
-        <section id="rateOverlaySection" class="section"><div class="rate-gate"><div class="eyebrow">10Y RATE-RESILIENCE OVERLAY · 25 SEP</div><h2 id="rateGateTitle">Loading 10Y admission gate…</h2><p id="rateGateRead"></p></div><div id="rateRankRoot" class="bucket-grid"></div></section>\n\n        <div id="bucketRoot"></div>
+        <section id="rateOverlaySection" class="section"><div class="rate-gate"><div class="eyebrow">10Y RATE-RESILIENCE OVERLAY · 25 SEP</div><h2 id="rateGateTitle">Loading 10Y admission gate…</h2><p id="rateGateRead"></p></div><div id="rateRankRoot" class="bucket-grid"></div></section>\n\n        <div class="stock-state-note">Colour is the dated research stance; the action tag tells you what to do. “Bullish thesis” means research first, not an executable buy. Archived price references may be stale.</div>
+<div id="watchSignalTabs" class="stock-filter-tabs" role="group" aria-label="Filter stocks by thesis"><button type="button" class="stock-filter stock-filter--all" data-watch-tone="all" aria-pressed="true">All stocks</button><button type="button" class="stock-filter stock-filter--bullish" data-watch-tone="bullish" aria-pressed="false">Bullish thesis</button><button type="button" class="stock-filter stock-filter--conditional" data-watch-tone="conditional" aria-pressed="false">Conditional / retest</button><button type="button" class="stock-filter stock-filter--unconfirmed" data-watch-tone="unconfirmed" aria-pressed="false">Needs proof</button><button type="button" class="stock-filter stock-filter--bearish" data-watch-tone="bearish" aria-pressed="false">Bearish / avoid</button></div>
+<div id="bucketRoot"></div>
 
         <section class="holdings-panel panel">
           <div class="holdings-head">
@@ -98,6 +100,7 @@
     </div>
   </div>
 
+  <script src="stock-states.js"></script>
   <script>
     const bucketClass = id => id === 'buy' ? 'buy' : id === 'selective' ? 'selective' : id === 'wait' ? 'wait' : 'avoid';
     const moveClass = value => value > .15 ? 'up' : value < -.15 ? 'down' : 'flat';
@@ -131,7 +134,7 @@
       const selectiveCount = data.candidates.filter(x=>x.bucket==='selective').length;
       document.getElementById('watchStats').innerHTML = [
         [data.candidates.length, 'Candidates tracked'],
-        [buyCount, 'Buy / accumulate'],
+        [buyCount, 'Bullish research'],
         [selectiveCount, 'Selective / retest'],
         [holdings.length, 'Current holdings']
       ].map(([v,l])=>`<div class="watch-stat"><b>${v}</b><span>${l}</span></div>`).join('');
@@ -150,16 +153,17 @@
         </article>`).join('');
     }
 
+    let watchFilter='all';
     function renderBuckets(data){
       document.getElementById('bucketRoot').innerHTML = data.buckets.map(bucket=>{
-        const items = data.candidates.filter(x=>x.bucket===bucket.id).sort((a,b)=>a.rank-b.rank);
+        const items = data.candidates.filter(x=>x.bucket===bucket.id && (watchFilter==='all'||PowerStackState.watchlist(x).tone===watchFilter)).sort((a,b)=>a.rank-b.rank);
         if(!items.length) return '';
         return `<section class="bucket-section">
           <div class="bucket-head"><div><div class="eyebrow">ACTION BUCKET</div><h2>${bucket.label}</h2></div><p>${bucket.description}</p></div>
           <div class="bucket-grid">${items.map(item=>`
-            <article class="watch-card ${bucketClass(item.bucket)}">
+            <article class="watch-card stock-card-state ${bucketClass(item.bucket)}" data-thesis-tone="${PowerStackState.watchlist(item).tone}">
               <div class="watch-card-top">
-                <div><div class="ticker-line"><span class="watch-ticker">${item.ticker}</span><span class="action-pill ${bucketClass(item.bucket)}">${item.action}</span></div><div class="watch-name">#${item.rank} · ${item.name} · ${item.market}</div></div>
+                <div><div class="ticker-line"><span class="watch-ticker">${item.ticker}</span><span class="action-pill ${bucketClass(item.bucket)}">${item.action}</span></div><div class="watch-name">#${item.rank} · ${item.name} · ${item.market}</div>${PowerStackState.strip([{text:"THESIS · "+PowerStackState.watchlist(item).text,tone:PowerStackState.watchlist(item).tone,label:PowerStackState.watchlist(item).basis},{text:"ACTION · "+PowerStackState.watchlistAction(item).text,tone:PowerStackState.watchlistAction(item).tone,label:PowerStackState.watchlistAction(item).basis}])}</div>
                 <div class="watch-score"><b>${item.score.toFixed(1)}</b><span>PS / 10</span></div>
               </div>
               <div class="theme-line"><span>${item.theme}</span><span>current ${item.price}</span>${Number.isFinite(item.snapshotChangePct) ? `<span class="move-pill ${moveClass(item.snapshotChangePct)}">${moveLabel(item.snapshotChangePct)} vs prior snapshot</span>` : ''}</div>
@@ -182,10 +186,10 @@
         const m = marketByTicker.get(h.ticker) || {};
         const cls = m.class || (h.score>=80 ? 'core' : 'hold');
         return `<tr>
-          <td><strong>${h.ticker}</strong><br><span style="color:#77818a">${h.name}</span>${chartButton(h.ticker)}</td>
+          <td><strong>${h.ticker}</strong><br><span style="color:#77818a">${h.name}</span><div class="stock-state-inline">${PowerStackState.badge(PowerStackState.holding(h).text,PowerStackState.holding(h).tone,PowerStackState.holding(h).basis)}</div>${chartButton(h.ticker)}</td>
           <td><strong>${h.score}/100</strong><br><span style="color:#77818a">${h.grade} · ${h.status}</span></td>
           <td class="price-cell"><b>${m.price || '—'}</b>${Number.isFinite(m.changePct) ? `<span class="move-pill ${moveClass(m.changePct)}">${moveLabel(m.changePct)}</span>` : ''}</td>
-          <td><span class="holding-action ${cls}">${m.action || 'HOLD'}</span></td>
+          <td><span class="holding-action ${cls}">${m.action || 'HOLD'}</span><div class="stock-state-inline">${PowerStackState.badge(PowerStackState.holdingAction(h).text,PowerStackState.holdingAction(h).tone,PowerStackState.holdingAction(h).basis)}</div></td>
           <td class="holding-read">${m.read || h.verdict || '—'}</td>
         </tr>`;
       }).join('');
@@ -208,6 +212,7 @@
       renderStats(watch, holdingData.holdings);
       renderRateOverlay(watch);
       renderBuckets(watch);
+      document.querySelectorAll('[data-watch-tone]').forEach(button=>button.addEventListener('click',()=>{watchFilter=button.dataset.watchTone;document.querySelectorAll('[data-watch-tone]').forEach(other=>other.setAttribute('aria-pressed',String(other===button)));renderBuckets(watch)}));
       renderHoldings(holdingData.holdings, market);
     }).catch(err=>{
       document.getElementById('bucketRoot').innerHTML = '<div class="error-state">Could not load watchlist: ' + err.message + '</div>';

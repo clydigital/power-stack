@@ -52,9 +52,9 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:#7d8a90;font-size:1
 @media(max-width:850px){.hero{grid-template-columns:1fr}.cards3{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.wrap{padding-left:15px;padding-right:15px}.grid,.cards3{grid-template-columns:1fr}.panel{padding:16px}header .wrap{align-items:flex-start}.logo small{display:block;margin:0}nav{gap:12px}}
 </style>
-  <link rel="stylesheet" href="spectrum.css" />
+  <link rel="stylesheet" href="stock-states.css" />
 </head>
-<body class="ps-home">
+<body>
 <header><div class="wrap"><a class="logo" href="index.html">POWER STACK <small>Personal Investment Desk</small></a>
 <nav aria-label="Primary"><a href="#market-summary">Market summary</a><a href="#holdings">Holdings</a><a href="#shortlist">Shortlist</a><a href="#research">Research & sources</a><a href="research-library.html">Full library ↗</a></nav></div></header>
 <main class="wrap">
@@ -106,11 +106,15 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:#7d8a90;font-size:1
 <section id="holdings">
 <div class="section-title"><div><h2>Your Portfolio</h2><p>Before looking for the next opportunity, I want to know what I already own and whether the reasons for holding it still make sense.</p></div><a class="quiet-link" href="holdings.html">View all holdings →</a></div>
 <div class="alert" id="portfolioCaution">Some of the last recorded prices are older. I would check the latest prices and the terms of the YTL-linked warrant before making changes.</div>
+<div class="stock-state-note">Colours show the stored thesis, not today’s price. The second badge shows the recorded action. Green does not mean buy now.</div>
+<div id="holdingsToneFilters" class="stock-filter-tabs" role="group" aria-label="Filter holdings by thesis state"><button class="stock-filter stock-filter--all" type="button" data-holding-tone="all" aria-pressed="true">All holdings</button><button class="stock-filter stock-filter--bullish" type="button" data-holding-tone="bullish" aria-pressed="false">Bullish thesis</button><button class="stock-filter stock-filter--conditional" type="button" data-holding-tone="caution" aria-pressed="false">Under pressure</button><button class="stock-filter stock-filter--bearish" type="button" data-holding-tone="bearish" aria-pressed="false">Bearish / breaking</button><button class="stock-filter stock-filter--unconfirmed" type="button" data-holding-tone="unconfirmed" aria-pressed="false">Unconfirmed</button></div>
 <div id="holdingGrid" class="grid" aria-live="polite"><div class="panel">Loading holdings…</div></div>
 </section>
 <section id="shortlist">
 <div class="section-title"><div><h2>Stocks on My Radar</h2><p>These are the businesses I am spending more time on. Some have strong earnings behind them, while others could become much more interesting if their prices settle or their results improve.</p></div><a class="quiet-link" href="watchlist.html">Explore the wider watchlist →</a></div>
 <div class="tabs" role="group" aria-label="Shortlist filter"><button data-filter="ALL" aria-pressed="true">All ideas</button><button data-filter="UNDERWRITE" aria-pressed="false">Worth a closer look</button><button data-filter="ENTRY_STUDY" aria-pressed="false">Waiting for a better price</button><button data-filter="ADJACENT_RESEARCH" aria-pressed="false">Beyond the AI chips</button></div>
+<div class="stock-state-note">Thesis strength and what to do next are separate. A bullish research case can still be a no-chase entry.</div>
+<div id="shortlistToneFilters" class="stock-filter-tabs" role="group" aria-label="Filter stocks by thesis state"><button class="stock-filter stock-filter--all" type="button" data-shortlist-tone="all" aria-pressed="true">All states</button><button class="stock-filter stock-filter--bullish" type="button" data-shortlist-tone="bullish" aria-pressed="false">Bullish thesis</button><button class="stock-filter stock-filter--conditional" type="button" data-shortlist-tone="conditional" aria-pressed="false">Conditional</button><button class="stock-filter stock-filter--unconfirmed" type="button" data-shortlist-tone="unrated" aria-pressed="false">Unrated research</button></div>
 <div id="candidateGrid" class="grid" aria-live="polite"><div class="panel">Loading shortlisted ideas…</div></div>
 <details><summary>Other companies I am keeping an eye on</summary><p>LNG, CRDO, CEG, DELL, CTVA, NTR, VST, AVGO and Alibaba are still on my wider watchlist. Several overlap with existing exposure or need more convincing earnings at their current valuations.</p><p><a href="watchlist.html">View more companies →</a></p></details>
 </section>
@@ -130,10 +134,12 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:#7d8a90;font-size:1
 </section>
 </main>
 <footer><div class="wrap">Market views and stock ideas are for information and discussion. Prices may have changed since the stated research time; consider your own financial circumstances before making an investment decision.</div></footer>
+<script src="stock-states.js"></script>
 <script>
 (()=>{'use strict';
 const $=s=>document.querySelector(s),esc=v=>String(v??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 let data=null,holdings=[],watchlist=new Map(),live=null;
+let holdingsToneFilter='all',shortlistToneFilter='all',shortlistLaneFilter='ALL';
 const when=x=>String(x||'not available');
 const baseLinks={research:"research-library.html",watch:"watchlist.html"};
 function signal(text){return '<span class="pill'+(/DEGRADED|STALE|PARTIAL|UNVERIFIED|Partial data|Older prices|Needs refresh/.test(text)?' warn':/CURRENT|Updated/.test(text)?' strong':'')+'">'+esc(text)+'</span>'}
@@ -190,19 +196,25 @@ function renderHealth(){
 }
 const holdingOrder=()=>data?.portfolioWatch?.top||[];
 function renderHoldings(){
-const priority=holdingOrder();const all=holdings.slice().sort((a,b)=>{const ia=priority.indexOf(a.ticker),ib=priority.indexOf(b.ticker);return (ia<0?99:ia)-(ib<0?99:ib)});
-$('#holdingGrid').innerHTML=all.map(h=>{
+const priority=holdingOrder();
+const all=holdings.slice().sort((a,b)=>{const ia=priority.indexOf(a.ticker),ib=priority.indexOf(b.ticker);return (ia<0?99:ia)-(ib<0?99:ib)});
+const xs=all.filter(h=>holdingsToneFilter==='all'||PowerStackState.holding(h).tone===holdingsToneFilter);
+$('#holdingGrid').innerHTML=xs.map(h=>{
 const p=h.position||{},watch=priority.includes(h.ticker);
-return '<article class="panel"><div class="card-top"><div><div class="kicker">'+(watch?'Needs review':'Monitor')+'</div><div class="ticker">'+esc(h.ticker)+'</div><div class="company">'+esc(h.name)+'</div></div>'+signal(watch?'REVIEW':'HOLD')+'</div><div class="card-body"><p><strong>My current view:</strong> '+esc(h.action||'UNRESOLVED')+''+'</p><p><strong>What I am watching:</strong> '+esc(watch?'Check the latest price, how much of this company I already own and the terms of any linked warrant.':'New company results or a meaningful change in the share price.')+'</p></div><div class="card-foot">'+markAsOf(p.priceAsOf)+' · '+(p.latestPrice===null||p.latestPrice===undefined?'Value unavailable':esc(p.currency||'')+' '+esc(p.latestPrice))+' · Not a live quote</div></article>';
-}).join('')||'<div class="panel">Holdings data unavailable. Open the portfolio ledger.</div>';
+const thesis=PowerStackState.holding(h),decision=PowerStackState.holdingAction(h);
+const tags=PowerStackState.strip([{text:'THESIS · '+thesis.text,tone:thesis.tone,label:thesis.basis},{text:'ACTION · '+decision.text,tone:decision.tone,label:decision.basis}]);
+return '<article class="panel stock-card-state" data-thesis-tone="'+thesis.tone+'"><div class="card-top"><div><div class="kicker">'+(watch?'Needs review':'Monitor')+'</div><div class="ticker">'+esc(h.ticker)+'</div><div class="company">'+esc(h.name)+'</div></div></div>'+tags+'<div class="card-body"><p><strong>Existing holding action:</strong> '+esc(h.action||'UNRESOLVED')+'</p><p><strong>What I am watching:</strong> '+esc(watch?'Check the latest price, current portfolio exposure and any warrant terms.':'New company results or a meaningful change in the share price.')+'</p></div><div class="card-foot">'+markAsOf(p.priceAsOf)+' · '+(p.latestPrice===null||p.latestPrice===undefined?'Value unavailable':esc(p.currency||'')+' '+esc(p.latestPrice))+' · Not a live quote</div></article>';
+}).join('')||'<div class="panel">No holdings match this thesis state.</div>';
 }
 function candidateCard(x){
-const prev=watchlist.get(x.ticker),stage=x.lane==='ADJACENT_RESEARCH'?'On my radar':x.lane==='ENTRY_STUDY'?'Wait for the right price':'Taking a closer look',src=x.source||'',hasLink=/^https:\/\//.test(src);
-return '<article class="panel" data-lane="'+esc(x.lane)+'"><div class="card-top"><div><div class="kicker">'+esc(x.sector)+'</div><div class="ticker">'+esc(x.ticker)+'</div></div>'+signal(stage)+'</div><div class="card-body"><p>'+esc(x.rationale)+'</p><p><strong>What I would look for:</strong> '+esc(x.mustProve)+'</p><p><strong>The main risk:</strong> '+esc(x.risk)+'</p></div><div class="card-foot">'+(prev?'Previous price reference: '+esc(prev.price||'Check latest quote'):'A company I am still getting to know')+(hasLink?' · <a href="'+esc(src)+'" target="_blank" rel="noopener noreferrer">Issuer evidence ↗</a>':'')+'</div></article>';
+const prev=watchlist.get(x.ticker),src=x.source||'',hasLink=/^https:\/\//.test(src);
+const thesis=PowerStackState.candidate(x,prev),decision=PowerStackState.candidateAction(x);
+const tags=PowerStackState.strip([{text:'THESIS · '+thesis.text,tone:thesis.tone,label:thesis.basis},{text:'ACTION · '+decision.text,tone:decision.tone,label:decision.basis}]);
+return '<article class="panel stock-card-state" data-lane="'+esc(x.lane)+'" data-thesis-tone="'+thesis.tone+'"><div class="card-top"><div><div class="kicker">'+esc(x.sector)+'</div><div class="ticker">'+esc(x.ticker)+'</div></div></div>'+tags+'<div class="card-body"><p>'+esc(x.rationale)+'</p><p><strong>What I would look for:</strong> '+esc(x.mustProve)+'</p><p><strong>The main risk:</strong> '+esc(x.risk)+'</p></div><div class="card-foot">'+(prev?'Previous price reference: '+esc(prev.price||'Check latest quote'):'No scored entry quote')+(hasLink?' · <a href="'+esc(src)+'" target="_blank" rel="noopener noreferrer">Issuer evidence ↗</a>':'')+'</div></article>';
 }
-function renderCandidates(filter='ALL'){
-const xs=(data?.focus||[]).filter(x=>filter==='ALL'||x.lane===filter);
-$('#candidateGrid').innerHTML=xs.map(candidateCard).join('')||'<div class="panel">No candidates in this filter.</div>';
+function renderCandidates(){
+const xs=(data?.focus||[]).filter(x=>(shortlistLaneFilter==='ALL'||x.lane===shortlistLaneFilter)&&(shortlistToneFilter==='all'||PowerStackState.candidate(x,watchlist.get(x.ticker)).tone===shortlistToneFilter));
+$('#candidateGrid').innerHTML=xs.map(candidateCard).join('')||'<div class="panel">No stocks match both selected filters.</div>';
 }
 function renderSources(){
 const s=data?.sourceLinks||{};
@@ -224,7 +236,9 @@ $('#portfolioCaution').textContent=data.portfolioWatch.why+' I would check the l
 renderHealth();renderHoldings();renderCandidates();renderSources();
 }catch(e){$('#verdict').textContent='Data unavailable — no action signal';$('#verdictWhy').textContent='Do not rely on a missing or stale research file. Use the source ledgers below.';$('#health').textContent='Source status unavailable';$('#holdingGrid').innerHTML='<div class="panel">Open the <a href="holdings.html">holdings ledger</a>.</div>';$('#candidateGrid').innerHTML='<div class="panel">Open the <a href="watchlist.html">research watchlist</a>.</div>';}
 }
-document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');renderCandidates(b.dataset.filter)}));
+document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{shortlistLaneFilter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));renderCandidates()}));
+document.querySelectorAll('[data-holding-tone]').forEach(b=>b.addEventListener('click',()=>{holdingsToneFilter=b.dataset.holdingTone;document.querySelectorAll('[data-holding-tone]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));renderHoldings()}));
+document.querySelectorAll('[data-shortlist-tone]').forEach(b=>b.addEventListener('click',()=>{shortlistToneFilter=b.dataset.shortlistTone;document.querySelectorAll('[data-shortlist-tone]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));renderCandidates()}));
 go();
 })();
 </script>

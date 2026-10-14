@@ -3,6 +3,12 @@ on:
   pull_request:
     paths:
       - "index.html"
+      - "stock-states.js"
+      - "stock-states.css"
+      - "scripts/check-stock-states.mjs"
+      - "holdings.html"
+      - "watchlist.html"
+      - "app.js"
       - "research-library.html"
       - "data/personal-decision-desk.json"
       - "data/market-summary.json"
@@ -16,6 +22,13 @@ on:
     branches: [main]
     paths:
       - "index.html"
+      - "stock-states.js"
+      - "stock-states.css"
+      - "scripts/check-stock-states.mjs"
+      - "holdings.html"
+      - "watchlist.html"
+      - "app.js"
+      - "research-library.html"
       - "data/personal-decision-desk.json"
       - "data/market-summary.json"
       - "data/watchlist.json"
@@ -31,3 +44,5 @@ jobs:
           node-version: "22"
       - name: Validate source boundaries and decision gates
         run: node scripts/check-personal-decision-desk.mjs
+      - name: Validate thesis colours and recorded action gates
+        run: node scripts/check-stock-states.mjs

@@ -20,9 +20,9 @@
     @media(max-width:1100px){.holdings-grid{grid-template-columns:1fr}.method-grid{grid-template-columns:1fr}.signal-grid,.cluster-grid,.divergence-grid{grid-template-columns:1fr}.live-open-items{grid-template-columns:1fr}}
     @media(max-width:650px){.metric-grid{grid-template-columns:1fr}.component-row{grid-template-columns:110px minmax(0,1fr) 42px}.ranking-head{align-items:flex-start;flex-direction:column}.score-orb{width:52px;height:52px;flex-basis:52px}}
   </style>
-  <link rel="stylesheet" href="spectrum.css" />
+  <link rel="stylesheet" href="stock-states.css" />
 </head>
-<body class="ps-holdings">
+<body>
   <div class="app-shell">
     <aside class="sidebar">
       <div class="brand-block">
@@ -131,13 +131,15 @@
           <div class="ranking-wrap"><table class="ranking"><thead><tr><th>#</th><th>Holding</th><th>Score</th><th>Grade</th><th>Evidence</th><th>Current PS read</th></tr></thead><tbody id="rankingBody"></tbody></table></div>
         </section>
 
-        <section id="holdingsGrid" class="holdings-grid"></section>
+        <div class="stock-state-note">Thesis colour comes from the stored confirmation/contradiction state, not the price. An action badge is separate: HOLD and NO ADD are not buy signals. Last recorded quotes may be stale.</div>
+<section id="holdingsGrid" class="holdings-grid"></section>
       </main>
 
       <footer class="footer">Power Stack · Company facts stay company-owned. Regime and price can change the decision score without rewriting the underlying evidence.</footer>
     </div>
   </div>
 
+  <script src="stock-states.js"></script>
   <script>
     const maxByComponent = {
       'Business': 20,
@@ -180,7 +182,7 @@
           <td><span class="ranking-score">${h.score}</span></td>
           <td><span class="grade-pill ${gradeClass(h.grade)}">${h.grade}</span></td>
           <td><span class="${confidenceClass(h.confidence)}">${h.evidenceHealth || h.confidence}</span></td>
-          <td>${h.status}</td>
+          <td>${PowerStackState.strip([{text:PowerStackState.holding(h).text,tone:PowerStackState.holding(h).tone,label:PowerStackState.holding(h).basis},{text:PowerStackState.holdingAction(h).text,tone:PowerStackState.holdingAction(h).tone,label:PowerStackState.holdingAction(h).basis}])}<span class="stock-state-footnote">${h.status}</span></td>
         </tr>`).join('');
     }
 
@@ -274,11 +276,13 @@
         const pnlClass=(p.unrealisedPnl||0)>0?'pnl-up':(p.unrealisedPnl||0)<0?'pnl-down':'';
         const position=`<div class="position-strip"><div class="position-cell"><b>${p.quantity??'—'}</b><span>Quantity</span></div><div class="position-cell"><b>${money(p.latestPrice)}</b><span>Latest price</span></div><div class="position-cell"><b>${money(p.estimatedValue)}</b><span>Market value</span></div><div class="position-cell ${pnlClass}"><b>${p.unrealisedPnl==null?'—':`${p.unrealisedPnl>0?'+':''}${money(p.unrealisedPnl)} (${p.unrealisedPnlPct}%)`}</b><span>Unrealised P/L</span></div></div>`;
         const sources = h.sources.map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${s.label} ↗</a>`).join('');
-        return `<article class="holding-card">
+        const thesis=PowerStackState.holding(h),decision=PowerStackState.holdingAction(h);
+        return `<article class="holding-card stock-card-state" data-thesis-tone="${thesis.tone}">
           <div class="holding-card-head">
             <div>
               <div class="holding-title"><div><div class="holding-ticker">${h.ticker}</div><div class="holding-name">${h.name} · ${h.market}</div></div><span class="grade-pill ${gradeClass(h.grade)}">${h.grade}</span></div>
               <div class="holding-status">${h.status}</div>
+              ${PowerStackState.strip([{text:"THESIS · "+thesis.text,tone:thesis.tone,label:thesis.basis},{text:"ACTION · "+decision.text,tone:decision.tone,label:decision.basis}])}
               ${holdingChartButton(h.ticker)}
             </div>
             <div class="score-orb"><div><b>${h.score}</b><span>/100</span></div></div>
