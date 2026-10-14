@@ -1,7 +1,7 @@
 {
   "contractVersion": "power-stack-personal-decision/v1",
   "asOf": "2026-10-14",
-  "dateNote": "14 October MYT after the completed 13 October US session. Market-close indices are verified; archived individual security prices and holdings remain non-executable and often date to September.",
+  "dateNote": "14 October 2026, after the 20:30 MYT US September CPI release; early futures and Treasury event snapshots are NOT a completed US trading session. Holding and watchlist stock prices remain historic/unverified.",
   "purpose": "One actionable personal-investment desk. Company facts and history stay in the original files; no extra macro engine.",
   "owners": {
     "regime": "data/live-desk-canonical.json (read-only Live)",
@@ -33,12 +33,14 @@
     "aiFundingMemo": "https://github.com/clydigital/power-stack/blob/main/research/2026-10-14-ai-financing-picks-shovels.md",
     "liveSkillRouting": "https://github.com/clydigital/power-stack/blob/main/research/2026-10-14-live-ps-capability-routing.md",
     "nextAICatalyst": "https://github.com/clydigital/power-stack/blob/main/data/ai-catalyst-gates.json",
-    "latestEvidenceReadback": "https://github.com/clydigital/power-stack/blob/main/research/2026-10-14-ai-financing-picks-shovels.md"
+    "latestEvidenceReadback": "https://github.com/clydigital/power-stack/blob/main/research/2026-10-14-ai-financing-picks-shovels.md",
+    "cpi54SecurityReview": "https://github.com/clydigital/power-stack/blob/main/research/2026-10-14-post-cpi-54-security-review.md",
+    "cpiNotionPulse": "https://app.notion.com/p/3f9519b67a948187b850f1562e1a5ad8"
   },
   "headline": {
-    "verdict": "AI chips are weakening; I am staying selective.",
-    "detail": "The 13 October S&P 500 close was nearly flat (−0.02%), but chip/memory shares faced China competition and capital-funding worries. TSMC's September revenue rose 54.6% YoY; Broadcom's CEO described financing as a bottleneck, not a proven current order collapse.",
-    "next": "Do not rerank MU, AVGO or the power suppliers from rhetoric or one chip sell-off. Recheck CPI on 14 October, then TSMC's actual margins/orders/capex and PPI on 15 October; issuer cash, valuation and fresh credit evidence remain decisive."
+    "verdict": "Hot CPI raises the hurdle; I am staying selective.",
+    "detail": "September headline CPI rose 0.6% MoM and 3.7% YoY; core was 0.3% MoM versus 0.2% expected and 2.6% YoY versus 2.5% expected. Petrol +9.1%, shelter +0.4% and firmer services reinforced inflation persistence. Early post-release 2Y yields rose and Nasdaq futures fell; no US cash close or broad credit confirmation yet.",
+    "next": "Review the documented CPI transmission for all eight holdings and 46 watchlist stocks. Hold existing actions without new purchases or score changes; prioritise proof of refinery/product cash margins, funded AI orders, current valuation, TSMC Q3 at 14:00 MYT and US PPI at 20:30 MYT on 15 October."
   },
   "focus": [
     {
@@ -207,24 +209,24 @@
     {
       "source": "MacroPulse / Research Gap",
       "status": "PARTIAL",
-      "note": "12 October Gate baseline; new 14 October AI financing research is a lead, not a newly promoted canonical Market Motion."
+      "note": "14 October 20:30 MYT hot-CPI MacroPulse and detailed original BLS component audit read; 20:14 MYT PM Research Gap Gate predates the CPI release and is incomplete for post-release reconciliation."
     },
     {
       "source": "Live macro snapshot",
       "status": "DEGRADED",
-      "note": "11 October snapshot: missing canonical rate components, zero promoted Market Motion."
+      "note": "Stored canonical bridge read at 14 October 15:49 MYT (asOf 07:49:42 UTC) with degraded_latest source health, BEFORE CPI. No updated complete post-CPI 2Y–30Y/TIPS/credit or promoted Dossier state verified."
     },
     {
       "source": "Power Stack holdings and quotes",
       "status": "STALE",
-      "note": "Eight position sizes and 2 October holdings ledger preserved; several prices dated September. Market indices refreshed through 13 October, NOT individual holding trade quotes."
+      "note": "Eight original holding quantities/score components preserved; current 14 October stock closing prices are unverified. 54-security CPI overlay is research-only, with NO new price or trade instructions."
     }
   ],
   "nextEvents": [
     {
       "date": "2026-10-14",
-      "event": "US CPI · 20:30 MYT (08:30 ET)",
-      "watch": "Inflation versus consensus, US10Y/real rates, HY spreads, QQQ/SMH and YTL-linked concentration sensitivity"
+      "event": "US CPI · RELEASED 14 Oct, 20:30 MYT",
+      "watch": "Actual headline +0.6% MoM / +3.7% YoY, core +0.3% / +2.6%: core +0.1pp above MoM/YoY consensus. Check actual post-release 2Y–30Y, real yields, DXY/JXY, credit OAS, gold and QQQ/SMH after cash session; early yields/futures are not a closing price."
     },
     {
       "date": "2026-10-15",
