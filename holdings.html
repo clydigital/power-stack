@@ -141,7 +141,7 @@
 
   <script src="stock-states.js"></script>
   <script>
-    let cpiOverlayHold=new Map();
+    let cpiOverlayHold=new Map(),actionHeld=new Map();
     const maxByComponent = {
       'Business': 20,
       'Regime fit': 20,
@@ -290,6 +290,7 @@
             </div>
             <div class="score-orb"><div><b>${h.score}</b><span>/100</span></div></div>
           </div>
+          ${PowerStackState.holdingPlan(actionHeld.get(h.ticker),false)}
           ${position}
           <div class="metric-grid">${metrics}</div>
           <div class="component-grid">${components}</div>
