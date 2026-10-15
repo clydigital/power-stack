@@ -1,8 +1,8 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-15T04:37:11.934Z",
-  "liveAsOf": "2026-10-14T20:55:22.057+00:00",
-  "liveSyncedAt": "2026-10-14T21:45:24.519Z",
+  "generatedAt": "2026-10-15T04:47:15.380Z",
+  "liveAsOf": "2026-10-15T03:04:26.861+00:00",
+  "liveSyncedAt": "2026-10-15T04:47:15.268Z",
   "sourceHealth": {
     "dossier": "DEGRADED",
     "marketMonitor": "PARTIAL",
@@ -13,26 +13,26 @@
     "treasurySupply": "UNRESOLVED"
   },
   "regime": {
-    "family": "RATES_LED_TIGHTENING",
-    "headline": "CPI surprised hotter, but same‑day Treasury/Fed‑funds repricing is unresolved; AI/semiconductor breadth remains supportive.",
-    "answer": "September CPI is a clear upside print, but the packet lacks canonical same‑session Fed‑funds‑futures and intraday 2Y/10Y UST repricing needed to show a sustained policy‑path shift; long real yields and AI/semiconductor breadth together keep the regime ambiguous.",
-    "implication": "Hot CPI raises the risk of higher policy expectations and sustained yields if futures/2Y repricing appears; absent that, credit and breadth determine whether tightening is broad.",
-    "whatWouldChangeMind": "Canonical same‑session Fed‑funds‑futures repricing and intraday 2Y/10Y UST bars showing sustained moves consistent with the CPI surprise."
+    "family": "MIXED_TRANSITION",
+    "headline": "Hot September CPI lifted near‑term hike odds and 2Y repricing intraday, but the long end eased and term premium fell, so durable Fed repricing is unresolved.",
+    "answer": "September CPI surprised hotter (core +0.3m/m) and reporters show an immediate 2Y lift and higher Fed‑funds‑futures odds, yet daily 10Y closed lower and the ACM 10Y term premium declined; this mix implies front‑end hawkishness but no confirmed durable policy‑path shift until canonical futures/intraday 2Y evidence and auction sequencing arrive.",
+    "implication": "Front‑end pricing tightened—raising near‑term policy odds—while long‑end signals (ACM term premium, 10Y close) point against a durable broadening of tightening; credit/breadth transmission remains unresolved.",
+    "whatWouldChangeMind": "Canonical intraday Fed‑funds‑futures bars and 5–30m 2Y/10Y bar sequence or auction when‑issued/tail evidence showing persistent front‑end repricing would confirm durable policy repricing."
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "c82a7d11-7e2c-4da0-b903-34b1af2fdc73",
-    "capturedAt": "2026-10-14T14:02:10.417Z",
+    "editionId": "2156778d-2aab-4149-8efe-7658d450cc9a",
+    "capturedAt": "2026-10-15T02:47:31.284Z",
     "itemCount": 1,
     "linkedHoldingCount": 0
   },
   "currentSignals": {
     "rates": {
       "state": "TIGHTER",
-      "tighter": 3,
+      "tighter": 4,
       "easier": 0,
       "neutral": 2,
-      "unresolved": 1,
+      "unresolved": 0,
       "keys": [
         "RATES_POLICY",
         "RATES_FRONT_END",
@@ -45,10 +45,10 @@
         {
           "key": "RATES_POLICY",
           "label": "Policy / macro impulse",
-          "direction": "UNRESOLVED",
-          "confirmation": "UNRESOLVED",
-          "detail": "No current deterministic policy impulse or directional next-meeting repricing is present in the bounded rate context.",
-          "asOf": "2026-10-14T20:55:22.057Z"
+          "direction": "TIGHTER",
+          "confirmation": "CONFIRMING",
+          "detail": "HAWKISH: At the 14 October 2026 08:30 ET BLS release, September core CPI was +0.3% m/m, above the pre-release +0.2% market forecast; headline +0.6% m/m met its forecast. This is a cross-source reported inflation surprise, not a BLS-published consensus.",
+          "asOf": "2026-10-15T03:04:26.861Z"
         },
         {
           "key": "RATES_FRONT_END",
@@ -56,7 +56,7 @@
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
           "detail": "US 2Y 4.82%; 5D n/a; vs effective fed funds +94.0 bp.",
-          "asOf": "2026-10-14T20:55:22.057Z"
+          "asOf": "2026-10-15T03:04:26.861Z"
         },
         {
           "key": "RATES_REAL_YIELDS",
@@ -64,15 +64,15 @@
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
           "detail": "10Y real yield 2.88%; 5D n/a.",
-          "asOf": "2026-10-14T20:55:22.057Z"
+          "asOf": "2026-10-15T03:04:26.861Z"
         },
         {
           "key": "RATES_BREAKEVENS",
           "label": "10Y inflation breakeven",
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
-          "detail": "10Y breakeven 2.33%; 5D n/a.",
-          "asOf": "2026-10-14T20:55:22.057Z"
+          "detail": "10Y breakeven 2.35%; 5D n/a.",
+          "asOf": "2026-10-15T03:04:26.861Z"
         },
         {
           "key": "RATES_LONG_END",
@@ -80,15 +80,15 @@
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
           "detail": "US 10Y 5.19%; 5D n/a; US 20Y 5.57%; 5D n/a; US 30Y 5.52%; 5D n/a.",
-          "asOf": "2026-10-14T20:55:22.057Z"
+          "asOf": "2026-10-15T03:04:26.861Z"
         },
         {
           "key": "BILLS",
           "label": "Treasury bills / front-end cash",
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
-          "detail": "3M 4.26%; 6M 4.34%; average vs EFFR +42.0 bp.",
-          "asOf": "2026-10-13"
+          "detail": "3M 4.28%; 6M 4.37%; average vs EFFR +44.5 bp.",
+          "asOf": "2026-10-14"
         }
       ]
     },
@@ -124,7 +124,7 @@
     "physicalEnergy": {
       "status": "UNRESOLVED",
       "observed": false,
-      "detail": "No canonical crude or product evidence in this packet to evaluate an energy-driven inflation impulse.",
+      "detail": "News links energy to CPI uptick, but canonical crude/product crack and inventory evidence are not present in this packet.",
       "evidenceRefs": []
     }
   },
@@ -1162,7 +1162,7 @@
       "importance": "HIGH",
       "divergence": "PARTIAL",
       "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-      "actual": "AI infrastructure breadth metrics remain high and SMH shows modest recent weakness; several AI infra names have had sharp 5‑day falls.",
+      "actual": "Semiconductor ETF SMH and selected AI names fell over 1–5 sessions while AI breadth metrics remain above medium‑term averages.",
       "affectedHoldings": [
         "TSLA",
         "TTWO",
@@ -1175,45 +1175,16 @@
         "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
       ],
       "evidenceFor": [
-        "Sector leadership persists and could sustain indices despite rates pressure, though concentrated pullbacks increase downside vulnerability.",
-        "Breadth remains supportive at large‑cap and AI levels, which can mask macro stress; monitoring ex‑AI breadth is critical.",
+        "Leadership is showing near‑term weakness but breadth remains historically elevated; resilience in earnings or capex would sustain sector leadership.",
+        "Breadth metrics suggest market internals are not broadly weak yet, leaving a narrow leadership vulnerability if rates/credit worsen.",
         "Nasdaq daily move -0.15 with bias BEARISH."
       ],
       "evidenceAgainst": [
-        "Rates conditions are hawkish with elevated real yields and an observed term premium; however, absence of canonical intraday repricing data leaves the policy‑path repricing unresolved."
+        "Front‑end tightened intraday consistent with a hawkish CPI impulse, but long‑end easing and a lower modelled term premium counter a durable policy‑path reprice."
       ],
       "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
       "confidence": "HIGH",
       "invalidation": "If breadth broadens materially while credit remains benign and real yields stay high, the rate headwind is less dominant than assumed. If AI/semiconductor leadership rolls over, the divergence resolves in the bearish direction."
-    },
-    {
-      "id": "rates-vs-credit-transmission",
-      "importance": "HIGH",
-      "divergence": "YES",
-      "expected": "A persistent long-end tightening shock should eventually raise financing stress and widen credit spreads.",
-      "actual": "HY OAS 3.16% and IG OAS 0.83% as of 2026‑10‑13; 20‑session HY change +40bp indicates some deterioration over weeks but immediate contemporaneous widening with CPI is unresolved.",
-      "affectedHoldings": [
-        "TSLA",
-        "TTWO",
-        "YTLPOWR",
-        "6742UW",
-        "MISC"
-      ],
-      "candidateExplanations": [
-        "The current move is still primarily a rates/term-premium shock rather than a broad solvency or funding shock.",
-        "Strong nominal growth and healthy corporate balance sheets may be delaying credit transmission.",
-        "Credit may simply be lagging rates and could become the next confirmation leg."
-      ],
-      "evidenceFor": [
-        "Credit shows some multi‑session widening but not a canonical, immediate transmission from the CPI print in this packet.",
-        "Funding/credit composite is currently NEUTRAL."
-      ],
-      "evidenceAgainst": [
-        "Hot CPI raises the risk of higher policy expectations and sustained yields if futures/2Y repricing appears; absent that, credit and breadth determine whether tightening is broad."
-      ],
-      "leadingHypothesis": "The shock is rates-led, not yet systemic; keep dry powder because credit remains the key confirmation risk.",
-      "confidence": "HIGH",
-      "invalidation": "Sustained HY/IG widening with weaker breadth and higher volatility would confirm transmission and require a stricter portfolio-risk posture."
     }
   ],
   "reviewQueue": {
@@ -1240,9 +1211,19 @@
     ],
     "researchGaps": []
   },
-  "divergences": [],
+  "divergences": [
+    {
+      "id": "spx-rsp",
+      "title": "Headline index and equal weight are separating",
+      "detail": "SPX cash -1.1% over 5D vs RSP 0.7%.",
+      "assets": [
+        "spx",
+        "rsp"
+      ]
+    }
+  ],
   "liveResearchGaps": [
-    "MARKET_DATA: Same‑session Fed‑funds‑futures ticks and intraday 2Y/10Y UST bars for 2026‑10‑14 are missing, blocking confirmation that CPI repriced policy expectations.",
+    "DATA_BLOCKER: Canonical intraday LSEG Fed‑funds‑futures bars and timestamped 1–5m US2Y/US10Y bars around the 2026‑10‑14 08:30 ET CPI release are missing; without them we cannot confirm durable front‑end repricing.",
     "Latest primary-dealer report date 2026-09-30 is more than fourteen calendar days old.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],

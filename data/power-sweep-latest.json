@@ -1,21 +1,21 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-15T04:37:11.990Z",
-  "asOf": "2026-10-14T20:55:22.057+00:00",
+  "generatedAt": "2026-10-15T04:47:15.440Z",
+  "asOf": "2026-10-15T03:04:26.861+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
   "inputHealth": {
     "liveDesk": {
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
-      "asOf": "2026-10-14T20:55:22.057+00:00",
-      "syncedAt": "2026-10-14T21:45:24.519Z",
+      "asOf": "2026-10-15T03:04:26.861+00:00",
+      "syncedAt": "2026-10-15T04:47:15.268Z",
       "status": "OK"
     },
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-15T04:37:11.934Z",
+      "generatedAt": "2026-10-15T04:47:15.380Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -29,10 +29,10 @@
     }
   },
   "regime": {
-    "family": "RATES_LED_TIGHTENING",
-    "headline": "CPI surprised hotter, but same‑day Treasury/Fed‑funds repricing is unresolved; AI/semiconductor breadth remains supportive.",
-    "implication": "Hot CPI raises the risk of higher policy expectations and sustained yields if futures/2Y repricing appears; absent that, credit and breadth determine whether tightening is broad.",
-    "monetarySummary": "Rate baseline HAWKISH; 3 confirming, 0 contradicting, 8 unresolved/neutral monetary-market layers."
+    "family": "MIXED_TRANSITION",
+    "headline": "Hot September CPI lifted near‑term hike odds and 2Y repricing intraday, but the long end eased and term premium fell, so durable Fed repricing is unresolved.",
+    "implication": "Front‑end pricing tightened—raising near‑term policy odds—while long‑end signals (ACM term premium, 10Y close) point against a durable broadening of tightening; credit/breadth transmission remains unresolved.",
+    "monetarySummary": "Rate baseline HAWKISH; 4 confirming, 0 contradicting, 7 unresolved/neutral monetary-market layers."
   },
   "queueCounts": {
     "holdings": 3,
@@ -44,45 +44,50 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "c82a7d11-7e2c-4da0-b903-34b1af2fdc73",
-    "capturedAt": "2026-10-14T14:02:10.417Z",
+    "editionId": "2156778d-2aab-4149-8efe-7658d450cc9a",
+    "capturedAt": "2026-10-15T02:47:31.284Z",
     "itemCount": 1,
     "items": [
       {
-        "id": "05f74703-f902-42f2-89a1-ee55feb1f942",
-        "motionKey": "event:earnings:goldman",
-        "versionNumber": 4,
-        "headline": "Goldman Sachs up $5.29/29 billion up 29% YoY; Citi up 40% YoY; Wells Fargo up 6% (earnings figures presented as comparative YoY percentages).",
-        "category": "EARNINGS",
-        "verificationState": "LEAD",
+        "id": "23141e0c-5991-446d-b59b-404d76495e44",
+        "motionKey": "event:cpi:2026-09",
+        "versionNumber": 5,
+        "headline": "Consumer Price Index for September 2026 · Released",
+        "category": "COMMODITY",
+        "verificationState": "VERIFIED",
         "lifecycleState": "PROMOTED",
-        "whatHappened": "FX Evolution surfaced this in a recent transcript. It remains a creator-sourced lead until independently corroborated: Goldman Sachs up $5.29/29 billion up 29% YoY; Citi up 40% YoY; Wells Fargo up 6% (earnings figures presented as comparative YoY percentages).",
+        "whatHappened": "Released high-impact inflation event scheduled for 2026-10-14 at 08:30 ET. Actual: Headline CPI +0.6% m/m; +3.7% y/y; Core +0.3% m/m; +2.6% y/y · Consensus: not loaded · Alchemy expectation: not recorded · Previous: not loaded. Desk question: Do headline and core inflation change Fed expectations, and do Treasury yields confirm the initial reaction?",
         "marketReaction": null,
-        "whyInteresting": "Transcript writing angle: Frame a piece as 'When JPM goes haywire: why intraday chop can be a leading market warning'—use JPM microstructure, dark‑pool prints, and semis' 10% drawdown as hooks.",
-        "bigPictureBridge": "Fresh company / sector evidence → earnings breadth and market participation → Equity Rally Quality regime",
-        "nextTest": "Quarterly results releases and YoY comparisons for GS, C, WFC (company earnings releases / consensus summaries).",
+        "whyInteresting": "United States · Inflation · 08:30 ET · USD, US02Y, US10Y, SPX, GOLD",
+        "bigPictureBridge": "Fresh rates / funding evidence → sovereign yields and financing costs → Cost of Capital regime",
+        "nextTest": "Check the headline, revisions, components and cross-asset reaction before updating an existing Story or opening a new one.",
         "tickers": [
-          "SMH",
-          "NASDAQ",
-          "KOSPI"
+          "SPX",
+          "XAUUSD",
+          "US02Y",
+          "US10Y",
+          "AMD",
+          "NVDA",
+          "GLOBAL_BONDS"
         ],
-        "sourceName": "FX Evolution",
-        "sourceUrl": "https://www.youtube.com/watch?v=jlcdyjMnYTI",
-        "materiality": 86,
-        "relevance": 86,
-        "novelty": 86,
-        "occurredAt": "2026-10-14T04:16:07.000Z",
-        "storyId": "fe9e1860-ace4-4393-8f2d-7f8081990661",
-        "storySlug": "market-breadth-health",
-        "storyTitle": "Tech-Led Breadth Transition: Confirmation Still Incomplete",
-        "regimeSlug": "equity-rally-quality",
-        "regimeLabel": "Equity Rally Quality",
+        "sourceName": "U.S. Bureau of Labor Statistics",
+        "sourceUrl": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+        "materiality": 100,
+        "relevance": 100,
+        "novelty": 94,
+        "occurredAt": "2026-10-14T12:00:00.000Z",
+        "storyId": "849d173f-d1dc-42eb-b1f6-927c55bbc348",
+        "storySlug": "fed-hold-versus-hikes",
+        "storyTitle": "Fed hold versus hikes",
+        "regimeSlug": "global-cost-of-capital",
+        "regimeLabel": "US Rate Regime",
         "attentionTier": "PRIMARY",
-        "attentionScore": 82,
-        "writingPotential": "HIGH",
+        "attentionScore": 100,
+        "writingPotential": "MEDIUM",
         "attentionReasons": [
           "high materiality",
           "high market relevance",
+          "primary/official verification",
           "asset/ticker linked"
         ]
       }
@@ -173,7 +178,7 @@
         "importance": "HIGH",
         "divergence": "PARTIAL",
         "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-        "actual": "AI infrastructure breadth metrics remain high and SMH shows modest recent weakness; several AI infra names have had sharp 5‑day falls.",
+        "actual": "Semiconductor ETF SMH and selected AI names fell over 1–5 sessions while AI breadth metrics remain above medium‑term averages.",
         "affectedHoldings": [
           "TSLA",
           "TTWO",
@@ -186,45 +191,16 @@
           "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
         ],
         "evidenceFor": [
-          "Sector leadership persists and could sustain indices despite rates pressure, though concentrated pullbacks increase downside vulnerability.",
-          "Breadth remains supportive at large‑cap and AI levels, which can mask macro stress; monitoring ex‑AI breadth is critical.",
+          "Leadership is showing near‑term weakness but breadth remains historically elevated; resilience in earnings or capex would sustain sector leadership.",
+          "Breadth metrics suggest market internals are not broadly weak yet, leaving a narrow leadership vulnerability if rates/credit worsen.",
           "Nasdaq daily move -0.15 with bias BEARISH."
         ],
         "evidenceAgainst": [
-          "Rates conditions are hawkish with elevated real yields and an observed term premium; however, absence of canonical intraday repricing data leaves the policy‑path repricing unresolved."
+          "Front‑end tightened intraday consistent with a hawkish CPI impulse, but long‑end easing and a lower modelled term premium counter a durable policy‑path reprice."
         ],
         "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
         "confidence": "HIGH",
         "invalidation": "If breadth broadens materially while credit remains benign and real yields stay high, the rate headwind is less dominant than assumed. If AI/semiconductor leadership rolls over, the divergence resolves in the bearish direction."
-      },
-      {
-        "id": "rates-vs-credit-transmission",
-        "importance": "HIGH",
-        "divergence": "YES",
-        "expected": "A persistent long-end tightening shock should eventually raise financing stress and widen credit spreads.",
-        "actual": "HY OAS 3.16% and IG OAS 0.83% as of 2026‑10‑13; 20‑session HY change +40bp indicates some deterioration over weeks but immediate contemporaneous widening with CPI is unresolved.",
-        "affectedHoldings": [
-          "TSLA",
-          "TTWO",
-          "YTLPOWR",
-          "6742UW",
-          "MISC"
-        ],
-        "candidateExplanations": [
-          "The current move is still primarily a rates/term-premium shock rather than a broad solvency or funding shock.",
-          "Strong nominal growth and healthy corporate balance sheets may be delaying credit transmission.",
-          "Credit may simply be lagging rates and could become the next confirmation leg."
-        ],
-        "evidenceFor": [
-          "Credit shows some multi‑session widening but not a canonical, immediate transmission from the CPI print in this packet.",
-          "Funding/credit composite is currently NEUTRAL."
-        ],
-        "evidenceAgainst": [
-          "Hot CPI raises the risk of higher policy expectations and sustained yields if futures/2Y repricing appears; absent that, credit and breadth determine whether tightening is broad."
-        ],
-        "leadingHypothesis": "The shock is rates-led, not yet systemic; keep dry powder because credit remains the key confirmation risk.",
-        "confidence": "HIGH",
-        "invalidation": "Sustained HY/IG widening with weaker breadth and higher volatility would confirm transmission and require a stricter portfolio-risk posture."
       }
     ]
   },
@@ -484,18 +460,26 @@
   ],
   "liveRadar": [
     {
-      "ticker": "C",
-      "companyName": "Citigroup",
-      "whyRelevant": "Issuer reported Q3 results but shares fell; reconciliatory work is required between verified issuer results and price reaction.",
-      "researchQuestion": "Did Citi's reported results materially change credit or regional banking risk pricing?",
+      "ticker": "SMH",
+      "companyName": "Semiconductor ETF (SMH)",
+      "whyRelevant": "Sector leadership showing near‑term weakness vs elevated AI breadth — key to risk‑on quality check.",
+      "researchQuestion": "Will SMH underperformance precede large‑cap ex‑AI breadth deterioration?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     },
     {
       "ticker": "ARM",
-      "companyName": "Arm Holdings",
-      "whyRelevant": "Large recent 5‑day drawdown in an AI supply chain leader could signal sector de‑rating risk.",
-      "researchQuestion": "Is Arm's short‑term weakness symptomatic of broader AI capex deterioration or idiosyncratic profit‑taking?",
+      "companyName": "Arm Holdings (ARM)",
+      "whyRelevant": "Large single‑name sell‑off in AI ecosystem that may signal sector leadership risk.",
+      "researchQuestion": "Is ARM's decline driven by sector‑specific positioning or fundamental revisions?",
+      "status": "DISCOVERY_ONLY",
+      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
+    },
+    {
+      "ticker": "C",
+      "companyName": "Citigroup (C)",
+      "whyRelevant": "Issuer beat but shares fell; reconciling issuer results with price movement matters for bank risk signaling.",
+      "researchQuestion": "Did Citi's Q3 release timing or guidance explain the same‑session share decline?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     }
@@ -565,7 +549,7 @@
     }
   ],
   "researchGaps": [
-    "MARKET_DATA: Same‑session Fed‑funds‑futures ticks and intraday 2Y/10Y UST bars for 2026‑10‑14 are missing, blocking confirmation that CPI repriced policy expectations.",
+    "DATA_BLOCKER: Canonical intraday LSEG Fed‑funds‑futures bars and timestamped 1–5m US2Y/US10Y bars around the 2026‑10‑14 08:30 ET CPI release are missing; without them we cannot confirm durable front‑end repricing.",
     "Latest primary-dealer report date 2026-09-30 is more than fourteen calendar days old.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence.",
     "Holding tape unresolved: 6742UW"
