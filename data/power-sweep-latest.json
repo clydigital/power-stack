@@ -1,21 +1,21 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-15T21:21:57.696Z",
-  "asOf": "2026-10-15T03:04:26.861+00:00",
+  "generatedAt": "2026-10-15T21:27:54.164Z",
+  "asOf": "2026-10-15T18:39:37.599+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
   "inputHealth": {
     "liveDesk": {
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
-      "asOf": "2026-10-15T03:04:26.861+00:00",
-      "syncedAt": "2026-10-15T17:05:35.152Z",
+      "asOf": "2026-10-15T18:39:37.599+00:00",
+      "syncedAt": "2026-10-15T21:27:54.021Z",
       "status": "OK"
     },
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-15T21:21:57.633Z",
+      "generatedAt": "2026-10-15T21:27:54.114Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -29,9 +29,9 @@
     }
   },
   "regime": {
-    "family": "MIXED_TRANSITION",
-    "headline": "Hot September CPI lifted near‑term hike odds and 2Y repricing intraday, but the long end eased and term premium fell, so durable Fed repricing is unresolved.",
-    "implication": "Front‑end pricing tightened—raising near‑term policy odds—while long‑end signals (ACM term premium, 10Y close) point against a durable broadening of tightening; credit/breadth transmission remains unresolved.",
+    "family": "RATES_LED_TIGHTENING",
+    "headline": "Producer prices jump and reinforce CPI’s hawkish impulse, but long‑end easing and a lower ACM term premium leave a durable Fed‑path reprice unresolved.",
+    "implication": "Front‑end Fed repricing remains the immediate market force (higher short‑end yields / hike odds), but long‑end easing and term‑premium decline mean the move has not transmitted into a clear durable policy‑path shift; watch intraday futures/auction sequencing and HY/volatility for confirmation.",
     "monetarySummary": "Rate baseline HAWKISH; 5 confirming, 0 contradicting, 6 unresolved/neutral monetary-market layers."
   },
   "queueCounts": {
@@ -179,7 +179,7 @@
         "importance": "HIGH",
         "divergence": "PARTIAL",
         "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-        "actual": "Semiconductor ETF SMH and selected AI names fell over 1–5 sessions while AI breadth metrics remain above medium‑term averages.",
+        "actual": "Semis and several AI names pulled back in the week but AI‑basket breadth remains elevated versus long averages.",
         "affectedHoldings": [
           "TSLA",
           "TTWO",
@@ -192,12 +192,12 @@
           "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
         ],
         "evidenceFor": [
-          "Leadership is showing near‑term weakness but breadth remains historically elevated; resilience in earnings or capex would sustain sector leadership.",
-          "Breadth metrics suggest market internals are not broadly weak yet, leaving a narrow leadership vulnerability if rates/credit worsen.",
-          "Nasdaq daily move -1.88 with bias BEARISH."
+          "Leadership is concentrated: single‑name/sector pullbacks have not collapsed AI‑basket breadth metrics, supporting a view of mixed sector internals rather than broad risk‑off.",
+          "Breadth is mixed: overall large‑cap participation is healthy but signs of narrow leadership and small‑cap underperformance persist.",
+          "Nasdaq daily move -1.88 with bias MIXED."
         ],
         "evidenceAgainst": [
-          "Front‑end tightened intraday consistent with a hawkish CPI impulse, but long‑end easing and a lower modelled term premium counter a durable policy‑path reprice."
+          "Immediate CPI/PPI prints pushed short‑end pricing, but long‑end easing and a lower ACM term premium keep a durable policy reprice unproven."
         ],
         "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
         "confidence": "HIGH",
@@ -462,25 +462,17 @@
   "liveRadar": [
     {
       "ticker": "SMH",
-      "companyName": "Semiconductor ETF (SMH)",
-      "whyRelevant": "Sector leadership showing near‑term weakness vs elevated AI breadth — key to risk‑on quality check.",
-      "researchQuestion": "Will SMH underperformance precede large‑cap ex‑AI breadth deterioration?",
+      "companyName": "VanEck Semiconductor ETF (SMH)",
+      "whyRelevant": "Semiconductor ETF shows sector pressure and is central to the AI/semis breadth check.",
+      "researchQuestion": "Is SMH weakness consistent with broad AI‑infra demand deterioration or stock‑specific profit‑taking?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     },
     {
       "ticker": "ARM",
       "companyName": "Arm Holdings (ARM)",
-      "whyRelevant": "Large single‑name sell‑off in AI ecosystem that may signal sector leadership risk.",
-      "researchQuestion": "Is ARM's decline driven by sector‑specific positioning or fundamental revisions?",
-      "status": "DISCOVERY_ONLY",
-      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
-    },
-    {
-      "ticker": "C",
-      "companyName": "Citigroup (C)",
-      "whyRelevant": "Issuer beat but shares fell; reconciling issuer results with price movement matters for bank risk signaling.",
-      "researchQuestion": "Did Citi's Q3 release timing or guidance explain the same‑session share decline?",
+      "whyRelevant": "Major AI‑infrastructure name with recent large drawdown; useful to test single‑name vs sector dynamics.",
+      "researchQuestion": "Does ARM share weakness reflect earnings/capex concerns or broader semis rotation?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     }
@@ -550,8 +542,7 @@
     }
   ],
   "researchGaps": [
-    "DATA_BLOCKER: Canonical intraday LSEG Fed‑funds‑futures bars and timestamped 1–5m US2Y/US10Y bars around the 2026‑10‑14 08:30 ET CPI release are missing; without them we cannot confirm durable front‑end repricing.",
-    "Latest primary-dealer report date 2026-09-30 is more than fourteen calendar days old.",
+    "MARKET_DATA: Canonical intraday LSEG Fed‑funds‑futures bars and exchange 2Y intraday bars for 2026‑10‑14 are missing; this blocks durable policy repricing adjudication.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence.",
     "Holding tape unresolved: 6742UW"
   ],
