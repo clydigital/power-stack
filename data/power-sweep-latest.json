@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-15T16:59:49.724Z",
+  "generatedAt": "2026-10-15T17:05:35.368Z",
   "asOf": "2026-10-15T03:04:26.861+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -9,13 +9,13 @@
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
       "asOf": "2026-10-15T03:04:26.861+00:00",
-      "syncedAt": "2026-10-15T11:36:07.795Z",
+      "syncedAt": "2026-10-15T17:05:35.152Z",
       "status": "OK"
     },
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-15T16:59:49.662Z",
+      "generatedAt": "2026-10-15T17:05:35.302Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -32,7 +32,7 @@
     "family": "MIXED_TRANSITION",
     "headline": "Hot September CPI lifted near‑term hike odds and 2Y repricing intraday, but the long end eased and term premium fell, so durable Fed repricing is unresolved.",
     "implication": "Front‑end pricing tightened—raising near‑term policy odds—while long‑end signals (ACM term premium, 10Y close) point against a durable broadening of tightening; credit/breadth transmission remains unresolved.",
-    "monetarySummary": "Rate baseline HAWKISH; 4 confirming, 0 contradicting, 7 unresolved/neutral monetary-market layers."
+    "monetarySummary": "Rate baseline HAWKISH; 5 confirming, 0 contradicting, 6 unresolved/neutral monetary-market layers."
   },
   "queueCounts": {
     "holdings": 3,
@@ -44,24 +44,25 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "2156778d-2aab-4149-8efe-7658d450cc9a",
-    "capturedAt": "2026-10-15T02:47:31.284Z",
+    "editionId": "487fdb6c-267e-4d58-8860-8c3fb8089c2b",
+    "capturedAt": "2026-10-15T16:20:38.657Z",
     "itemCount": 1,
     "items": [
       {
-        "id": "23141e0c-5991-446d-b59b-404d76495e44",
+        "id": "4d380a2f-830b-4a48-9c86-f9f7e842692f",
         "motionKey": "event:cpi:2026-09",
-        "versionNumber": 5,
+        "versionNumber": 8,
         "headline": "Consumer Price Index for September 2026 · Released",
         "category": "COMMODITY",
         "verificationState": "VERIFIED",
         "lifecycleState": "PROMOTED",
-        "whatHappened": "Released high-impact inflation event scheduled for 2026-10-14 at 08:30 ET. Actual: Headline CPI +0.6% m/m; +3.7% y/y; Core +0.3% m/m; +2.6% y/y · Consensus: not loaded · Alchemy expectation: not recorded · Previous: not loaded. Desk question: Do headline and core inflation change Fed expectations, and do Treasury yields confirm the initial reaction?",
+        "whatHappened": "Released high-impact inflation event scheduled for 2026-10-14 at 08:30 ET. Actual: Headline CPI +0.6% m/m; +3.7% y/y; Core +0.3% m/m; +2.6% y/y · Consensus: 0.6 % · Alchemy expectation: not recorded · Previous: 0.4 %. Desk question: Do headline and core inflation change Fed expectations, and do Treasury yields confirm the initial reaction?",
         "marketReaction": null,
         "whyInteresting": "United States · Inflation · 08:30 ET · USD, US02Y, US10Y, SPX, GOLD",
         "bigPictureBridge": "Fresh rates / funding evidence → sovereign yields and financing costs → Cost of Capital regime",
         "nextTest": "Check the headline, revisions, components and cross-asset reaction before updating an existing Story or opening a new one.",
         "tickers": [
+          "SMH",
           "SPX",
           "XAUUSD",
           "US02Y",
@@ -76,9 +77,9 @@
         "relevance": 100,
         "novelty": 94,
         "occurredAt": "2026-10-14T12:00:00.000Z",
-        "storyId": "849d173f-d1dc-42eb-b1f6-927c55bbc348",
-        "storySlug": "fed-hold-versus-hikes",
-        "storyTitle": "Fed hold versus hikes",
+        "storyId": "26955788-e038-4e8a-abae-90cde0c17a90",
+        "storySlug": "cpi-shock-splits-front-end-fed-repricing-from-long-end-yield-locking-pro",
+        "storyTitle": "CPI shock splits front‑end Fed repricing from long‑end yield‑locking, producing a Treasury–equity divergence",
         "regimeSlug": "global-cost-of-capital",
         "regimeLabel": "US Rate Regime",
         "attentionTier": "PRIMARY",
@@ -193,7 +194,7 @@
         "evidenceFor": [
           "Leadership is showing near‑term weakness but breadth remains historically elevated; resilience in earnings or capex would sustain sector leadership.",
           "Breadth metrics suggest market internals are not broadly weak yet, leaving a narrow leadership vulnerability if rates/credit worsen.",
-          "Nasdaq daily move -0.15 with bias BEARISH."
+          "Nasdaq daily move -1.88 with bias BEARISH."
         ],
         "evidenceAgainst": [
           "Front‑end tightened intraday consistent with a hawkish CPI impulse, but long‑end easing and a lower modelled term premium counter a durable policy‑path reprice."
