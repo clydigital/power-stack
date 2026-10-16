@@ -1,21 +1,21 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-16T11:22:24.457Z",
-  "asOf": "2026-10-15T18:39:37.599+00:00",
+  "generatedAt": "2026-10-16T11:30:40.316Z",
+  "asOf": "2026-10-16T07:22:09.116+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
   "inputHealth": {
     "liveDesk": {
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
-      "asOf": "2026-10-15T18:39:37.599+00:00",
-      "syncedAt": "2026-10-16T04:37:43.333Z",
+      "asOf": "2026-10-16T07:22:09.116+00:00",
+      "syncedAt": "2026-10-16T11:30:40.202Z",
       "status": "OK"
     },
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-16T11:22:24.406Z",
+      "generatedAt": "2026-10-16T11:30:40.278Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -30,9 +30,9 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "Producer prices jump and reinforce CPI’s hawkish impulse, but long‑end easing and a lower ACM term premium leave a durable Fed‑path reprice unresolved.",
-    "implication": "Front‑end Fed repricing remains the immediate market force (higher short‑end yields / hike odds), but long‑end easing and term‑premium decline mean the move has not transmitted into a clear durable policy‑path shift; watch intraday futures/auction sequencing and HY/volatility for confirmation.",
-    "monetarySummary": "Rate baseline HAWKISH; 5 confirming, 0 contradicting, 6 unresolved/neutral monetary-market layers."
+    "headline": "Hot PPI lifted short‑end repricing while 10Y and ACM term premium eased; equities held and credit stress remains unconfirmed.",
+    "implication": "Short‑end hawkish repricing increases borrowing costs pressure, but long‑end easing and a lower model term premium mean the market has not yet re‑priced a sustained tighter policy path; credit/volatility confirmation is required before declaring broad risk‑off.",
+    "monetarySummary": "Rate baseline HAWKISH; 4 confirming, 0 contradicting, 7 unresolved/neutral monetary-market layers."
   },
   "queueCounts": {
     "holdings": 3,
@@ -175,7 +175,7 @@
         "importance": "HIGH",
         "divergence": "PARTIAL",
         "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-        "actual": "Semis and several AI names pulled back in the week but AI‑basket breadth remains elevated versus long averages.",
+        "actual": "Semiconductors lagged QQQ over 20 sessions and SMH is down over 5D; AI‑basket breadth weakened versus longer averages.",
         "affectedHoldings": [
           "TSLA",
           "TTWO",
@@ -188,12 +188,12 @@
           "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
         ],
         "evidenceFor": [
-          "Leadership is concentrated: single‑name/sector pullbacks have not collapsed AI‑basket breadth metrics, supporting a view of mixed sector internals rather than broad risk‑off.",
-          "Breadth is mixed: overall large‑cap participation is healthy but signs of narrow leadership and small‑cap underperformance persist.",
-          "Nasdaq daily move -1.88 with bias MIXED."
+          "Leadership remains concentrated; intra‑sector weakness in semis suggests the rally is not broad‑based despite headline resilience.",
+          "Broad large‑cap participation remains OK, but AI/semis show intra‑sector deterioration that could narrow leadership if it spreads.",
+          "Nasdaq daily move -1.88 with bias BEARISH."
         ],
         "evidenceAgainst": [
-          "Immediate CPI/PPI prints pushed short‑end pricing, but long‑end easing and a lower ACM term premium keep a durable policy reprice unproven."
+          "Inflation prints prompted short‑end repricing but long‑end eased via lower model term premium/real‑yield moves, so a durable policy‑path reprice is not yet established."
         ],
         "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
         "confidence": "HIGH",
@@ -477,18 +477,10 @@
   ],
   "liveRadar": [
     {
-      "ticker": "SMH",
-      "companyName": "VanEck Semiconductor ETF (SMH)",
-      "whyRelevant": "Semiconductor ETF shows sector pressure and is central to the AI/semis breadth check.",
-      "researchQuestion": "Is SMH weakness consistent with broad AI‑infra demand deterioration or stock‑specific profit‑taking?",
-      "status": "DISCOVERY_ONLY",
-      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
-    },
-    {
-      "ticker": "ARM",
-      "companyName": "Arm Holdings (ARM)",
-      "whyRelevant": "Major AI‑infrastructure name with recent large drawdown; useful to test single‑name vs sector dynamics.",
-      "researchQuestion": "Does ARM share weakness reflect earnings/capex concerns or broader semis rotation?",
+      "ticker": "CRWV",
+      "companyName": "CoreWeave",
+      "whyRelevant": "Large 5‑day drawdown and intra‑day bounce suggest idiosyncratic or flow‑driven stress in AI infra proxies.",
+      "researchQuestion": "Is CRWV's move sector‑driven or idiosyncratic to the name?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     }
@@ -558,7 +550,8 @@
     }
   ],
   "researchGaps": [
-    "MARKET_DATA: Canonical intraday LSEG Fed‑funds‑futures bars and exchange 2Y intraday bars for 2026‑10‑14 are missing; this blocks durable policy repricing adjudication.",
+    "MARKET_DATA: Canonical intraday Fed‑funds‑futures and 2Y/10Y intraday bars for 2026-10-14–15 are missing, blocking resolution of whether short‑end repricing persisted.",
+    "MARKET_DATA: Canonical MOVE (Treasury volatility) and matched HY/IG OAS series are not present, blocking confirmation of transmission to credit and volatility.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence.",
     "Holding tape unresolved: 6742UW"
   ],
