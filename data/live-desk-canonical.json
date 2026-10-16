@@ -547,14 +547,14 @@
         "label": "US dollar transmission",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "US Dollar · UUP proxy 5D +0.28%.",
-        "asOf": "2026-10-14",
+        "detail": "US Dollar · UUP proxy 5D +0.07%.",
+        "asOf": "2026-10-15",
         "sourceName": "Nasdaq official etf history",
         "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical",
         "evidenceRefs": [],
         "metrics": {
-          "proxyLevel": 29.12,
-          "change5dPct": 0.28
+          "proxyLevel": 29,
+          "change5dPct": 0.07
         }
       },
       {
@@ -606,7 +606,7 @@
     {
       "id": "spx-rsp",
       "title": "Headline index and equal weight are separating",
-      "detail": "SPX cash -1.1% over 5D vs RSP 0.7%.",
+      "detail": "SPX cash -0.3% over 5D vs RSP 1.5%.",
       "assets": [
         "spx",
         "rsp"
@@ -622,9 +622,9 @@
       "id": "dxy",
       "symbol": "UUP",
       "label": "US Dollar · UUP proxy",
-      "last": 29.12,
-      "change5d": 0.28,
-      "asOf": "2026-10-14",
+      "last": 29,
+      "change5d": 0.07,
+      "asOf": "2026-10-15",
       "sourceName": "Nasdaq official etf history",
       "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical"
     },
@@ -831,14 +831,14 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-15T21:22:08.386Z",
+    "asOf": "2026-10-16T04:30:49.561Z",
     "assets": [
       {
         "key": "SPX",
         "label": "S&P 500",
         "symbol": "SP500",
-        "last": 7718.94,
-        "dailyChange": -1.11,
+        "last": 7744.06,
+        "dailyChange": 0.33,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "HIGH",
@@ -846,7 +846,7 @@
         "confirmingSignal": "Large‑cap breadth remains above 50/200‑day norms while AI basket breadth is elevated; RSP underperformance vs S&P shows some breadth narrowing.",
         "contradictingSignal": null,
         "invalidation": "Sustained intraday Fed‑funds‑futures and 2Y intraday bars showing persistent repricing plus multi‑session 10Y increases or auction tails indicating durable bond repricing.",
-        "asOf": "2026-10-14"
+        "asOf": "2026-10-15"
       },
       {
         "key": "NASDAQ",
@@ -897,23 +897,23 @@
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4171.799805,
-        "dailyChange": 1.56,
+        "last": 4179.700195,
+        "dailyChange": -0.07,
         "dailyChangeUnit": "percent",
-        "bias": "BULLISH",
+        "bias": "UNRESOLVED",
         "conviction": "LOW",
         "primaryDriver": "No canonical gold pricing evidence supplied to evaluate safe‑haven flows versus rates.",
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": "Sustained intraday Fed‑funds‑futures and 2Y intraday bars showing persistent repricing plus multi‑session 10Y increases or auction tails indicating durable bond repricing.",
-        "asOf": "2026-10-15"
+        "asOf": "2026-10-16"
       },
       {
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 82179.76,
-        "dailyChange": 0.75,
+        "last": 81955.83,
+        "dailyChange": -0.21,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -921,7 +921,7 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": null,
-        "asOf": "2026-10-15"
+        "asOf": "2026-10-16"
       }
     ]
   },
@@ -1472,51 +1472,47 @@
   },
   "marketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "487fdb6c-267e-4d58-8860-8c3fb8089c2b",
-    "capturedAt": "2026-10-15T16:20:38.657Z",
-    "researchRunId": "29923746-50a4-4c40-baa8-9b24a4719da3",
+    "editionId": "c49c896c-7366-41e9-a50c-2e86206d69f5",
+    "capturedAt": "2026-10-16T04:05:30.986Z",
+    "researchRunId": "cc7eeff0-cb87-4fcb-b609-cabeb47a77f9",
     "items": [
       {
-        "id": "4d380a2f-830b-4a48-9c86-f9f7e842692f",
-        "motionKey": "event:cpi:2026-09",
-        "versionNumber": 8,
-        "headline": "Consumer Price Index for September 2026 · Released",
+        "id": "f12b7a41-407a-4a40-b23e-f3e24e67219f",
+        "motionKey": "event:rates_move:us10y",
+        "versionNumber": 11,
+        "headline": "Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
         "category": "COMMODITY",
-        "verificationState": "VERIFIED",
+        "verificationState": "LEAD",
         "lifecycleState": "PROMOTED",
-        "whatHappened": "Released high-impact inflation event scheduled for 2026-10-14 at 08:30 ET. Actual: Headline CPI +0.6% m/m; +3.7% y/y; Core +0.3% m/m; +2.6% y/y · Consensus: 0.6 % · Alchemy expectation: not recorded · Previous: 0.4 %. Desk question: Do headline and core inflation change Fed expectations, and do Treasury yields confirm the initial reaction?",
+        "whatHappened": "TraderNick surfaced this in a recent transcript. It remains a creator-sourced lead until independently corroborated: Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
         "marketReaction": null,
-        "whyInteresting": "United States · Inflation · 08:30 ET · USD, US02Y, US10Y, SPX, GOLD",
+        "whyInteresting": "Transcript writing angle: Narrative hook: 'Why gold rallied despite hot inflation — an AI‑growth scare flipped the tape' — explore the intraday sequence (equities → bonds → gold) and test with time‑stamped flow data.",
         "bigPictureBridge": "Fresh rates / funding evidence → sovereign yields and financing costs → Cost of Capital regime",
-        "nextTest": "Check the headline, revisions, components and cross-asset reaction before updating an existing Story or opening a new one.",
+        "nextTest": "Verify transcript lead: Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
         "tickers": [
-          "SMH",
-          "SPX",
+          "NASDAQ",
           "XAUUSD",
-          "US02Y",
           "US10Y",
-          "AMD",
-          "NVDA",
-          "GLOBAL_BONDS"
+          "MU",
+          "NFLX"
         ],
-        "sourceName": "U.S. Bureau of Labor Statistics",
-        "sourceUrl": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
-        "materiality": 100,
-        "relevance": 100,
-        "novelty": 94,
-        "occurredAt": "2026-10-14T12:00:00.000Z",
-        "storyId": "26955788-e038-4e8a-abae-90cde0c17a90",
-        "storySlug": "cpi-shock-splits-front-end-fed-repricing-from-long-end-yield-locking-pro",
-        "storyTitle": "CPI shock splits front‑end Fed repricing from long‑end yield‑locking, producing a Treasury–equity divergence",
+        "sourceName": "TraderNick",
+        "sourceUrl": "https://www.youtube.com/watch?v=W7Mq_E9BZ6Y",
+        "materiality": 88,
+        "relevance": 88,
+        "novelty": 88,
+        "occurredAt": "2026-10-06T03:15:13.000Z",
+        "storyId": "849d173f-d1dc-42eb-b1f6-927c55bbc348",
+        "storySlug": "fed-hold-versus-hikes",
+        "storyTitle": "Fed hold versus hikes",
         "regimeSlug": "global-cost-of-capital",
         "regimeLabel": "US Rate Regime",
         "attentionTier": "PRIMARY",
-        "attentionScore": 100,
+        "attentionScore": 84,
         "writingPotential": "MEDIUM",
         "attentionReasons": [
           "high materiality",
           "high market relevance",
-          "primary/official verification",
           "asset/ticker linked"
         ]
       }
@@ -1538,5 +1534,5 @@
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-15T21:27:54.021Z"
+  "syncedAt": "2026-10-16T04:37:43.333Z"
 }

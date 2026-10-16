@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-16T04:30:35.378Z",
+  "generatedAt": "2026-10-16T04:37:43.480Z",
   "asOf": "2026-10-15T18:39:37.599+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -9,13 +9,13 @@
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
       "asOf": "2026-10-15T18:39:37.599+00:00",
-      "syncedAt": "2026-10-15T21:27:54.021Z",
+      "syncedAt": "2026-10-16T04:37:43.333Z",
       "status": "OK"
     },
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-16T04:30:35.331Z",
+      "generatedAt": "2026-10-16T04:37:43.430Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -44,51 +44,47 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "487fdb6c-267e-4d58-8860-8c3fb8089c2b",
-    "capturedAt": "2026-10-15T16:20:38.657Z",
+    "editionId": "c49c896c-7366-41e9-a50c-2e86206d69f5",
+    "capturedAt": "2026-10-16T04:05:30.986Z",
     "itemCount": 1,
     "items": [
       {
-        "id": "4d380a2f-830b-4a48-9c86-f9f7e842692f",
-        "motionKey": "event:cpi:2026-09",
-        "versionNumber": 8,
-        "headline": "Consumer Price Index for September 2026 · Released",
+        "id": "f12b7a41-407a-4a40-b23e-f3e24e67219f",
+        "motionKey": "event:rates_move:us10y",
+        "versionNumber": 11,
+        "headline": "Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
         "category": "COMMODITY",
-        "verificationState": "VERIFIED",
+        "verificationState": "LEAD",
         "lifecycleState": "PROMOTED",
-        "whatHappened": "Released high-impact inflation event scheduled for 2026-10-14 at 08:30 ET. Actual: Headline CPI +0.6% m/m; +3.7% y/y; Core +0.3% m/m; +2.6% y/y · Consensus: 0.6 % · Alchemy expectation: not recorded · Previous: 0.4 %. Desk question: Do headline and core inflation change Fed expectations, and do Treasury yields confirm the initial reaction?",
+        "whatHappened": "TraderNick surfaced this in a recent transcript. It remains a creator-sourced lead until independently corroborated: Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
         "marketReaction": null,
-        "whyInteresting": "United States · Inflation · 08:30 ET · USD, US02Y, US10Y, SPX, GOLD",
+        "whyInteresting": "Transcript writing angle: Narrative hook: 'Why gold rallied despite hot inflation — an AI‑growth scare flipped the tape' — explore the intraday sequence (equities → bonds → gold) and test with time‑stamped flow data.",
         "bigPictureBridge": "Fresh rates / funding evidence → sovereign yields and financing costs → Cost of Capital regime",
-        "nextTest": "Check the headline, revisions, components and cross-asset reaction before updating an existing Story or opening a new one.",
+        "nextTest": "Verify transcript lead: Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
         "tickers": [
-          "SMH",
-          "SPX",
+          "NASDAQ",
           "XAUUSD",
-          "US02Y",
           "US10Y",
-          "AMD",
-          "NVDA",
-          "GLOBAL_BONDS"
+          "MU",
+          "NFLX"
         ],
-        "sourceName": "U.S. Bureau of Labor Statistics",
-        "sourceUrl": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
-        "materiality": 100,
-        "relevance": 100,
-        "novelty": 94,
-        "occurredAt": "2026-10-14T12:00:00.000Z",
-        "storyId": "26955788-e038-4e8a-abae-90cde0c17a90",
-        "storySlug": "cpi-shock-splits-front-end-fed-repricing-from-long-end-yield-locking-pro",
-        "storyTitle": "CPI shock splits front‑end Fed repricing from long‑end yield‑locking, producing a Treasury–equity divergence",
+        "sourceName": "TraderNick",
+        "sourceUrl": "https://www.youtube.com/watch?v=W7Mq_E9BZ6Y",
+        "materiality": 88,
+        "relevance": 88,
+        "novelty": 88,
+        "occurredAt": "2026-10-06T03:15:13.000Z",
+        "storyId": "849d173f-d1dc-42eb-b1f6-927c55bbc348",
+        "storySlug": "fed-hold-versus-hikes",
+        "storyTitle": "Fed hold versus hikes",
         "regimeSlug": "global-cost-of-capital",
         "regimeLabel": "US Rate Regime",
         "attentionTier": "PRIMARY",
-        "attentionScore": 100,
+        "attentionScore": 84,
         "writingPotential": "MEDIUM",
         "attentionReasons": [
           "high materiality",
           "high market relevance",
-          "primary/official verification",
           "asset/ticker linked"
         ]
       }
@@ -304,6 +300,44 @@
   ],
   "watchlistResearchQueue": [
     {
+      "ticker": "MU",
+      "name": "Micron Technology",
+      "rank": 1,
+      "score": 9.4,
+      "bucket": "buy",
+      "action": "RESEARCH NOW · NO BLIND CHASE",
+      "entry": "Research the next clean pullback or consolidation rather than chase a vertical move.",
+      "confirmation": "Verify HBM paid customer demand and prices plus cash conversion after CXMT concerns; do not confuse 13 Oct chip weakness with cancelled orders.",
+      "invalidation": "Meaningful HBM pricing or customer orders weaken, inventories rise, and earnings/FCF guidance is cut; failed chart support alone is an early alert, not fundamental proof.",
+      "theme": "AI memory · HBM scarcity",
+      "priorityScore": 137,
+      "liveMotion": [
+        {
+          "id": "f12b7a41-407a-4a40-b23e-f3e24e67219f",
+          "headline": "Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
+          "category": "COMMODITY",
+          "verificationState": "LEAD",
+          "occurredAt": "2026-10-06T03:15:13.000Z",
+          "whyInteresting": "Transcript writing angle: Narrative hook: 'Why gold rallied despite hot inflation — an AI‑growth scare flipped the tape' — explore the intraday sequence (equities → bonds → gold) and test with time‑stamped flow data.",
+          "bigPictureBridge": "Fresh rates / funding evidence → sovereign yields and financing costs → Cost of Capital regime",
+          "nextTest": "Verify transcript lead: Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
+          "storyId": "849d173f-d1dc-42eb-b1f6-927c55bbc348",
+          "storyTitle": "Fed hold versus hikes",
+          "regimeSlug": "global-cost-of-capital",
+          "regimeLabel": "US Rate Regime",
+          "sourceName": "TraderNick",
+          "sourceUrl": "https://www.youtube.com/watch?v=W7Mq_E9BZ6Y",
+          "materiality": 88,
+          "relevance": 88
+        }
+      ],
+      "diversification": {
+        "label": "OVERLAP",
+        "reason": "adds to the existing duration/power/AI dependency set"
+      },
+      "researchQuestion": "Does the promoted Live Motion change MU's company-specific evidence, action gate or thesis risk after independent verification?"
+    },
+    {
       "ticker": "GRAB",
       "name": "Grab Holdings",
       "rank": 4,
@@ -356,24 +390,6 @@
         "reason": "adds to the existing duration/power/AI dependency set"
       },
       "researchQuestion": "Is CEG sufficiently better than the portfolio's existing overlapping exposures to justify new capital?"
-    },
-    {
-      "ticker": "MU",
-      "name": "Micron Technology",
-      "rank": 1,
-      "score": 9.4,
-      "bucket": "buy",
-      "action": "RESEARCH NOW · NO BLIND CHASE",
-      "entry": "Research the next clean pullback or consolidation rather than chase a vertical move.",
-      "confirmation": "Verify HBM paid customer demand and prices plus cash conversion after CXMT concerns; do not confuse 13 Oct chip weakness with cancelled orders.",
-      "invalidation": "Meaningful HBM pricing or customer orders weaken, inventories rise, and earnings/FCF guidance is cut; failed chart support alone is an early alert, not fundamental proof.",
-      "theme": "AI memory · HBM scarcity",
-      "priorityScore": 117,
-      "diversification": {
-        "label": "OVERLAP",
-        "reason": "adds to the existing duration/power/AI dependency set"
-      },
-      "researchQuestion": "Is MU sufficiently better than the portfolio's existing overlapping exposures to justify new capital?"
     }
   ],
   "themeResearchQueue": [
