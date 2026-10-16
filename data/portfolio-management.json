@@ -1,6 +1,6 @@
 {
-  "asOf": "2026-10-16",
-  "capturedAt": "2026-10-16 MYT · Notion-baseline portfolio review (trade inputs through 15 October)",
+  "asOf": "2026-10-14",
+  "capturedAt": "2026-10-14 05:26 MYT · selective AI-financing market overlay",
   "title": "Power Stack Portfolio Management Overlay",
   "purpose": "Position-sizing, concentration, add/trim/recycle and risk-budget overlay. This does not change company company-evidence components.",
   "dataQuality": {
@@ -8,10 +8,7 @@
     "scorePolicy": "Company-evidence components remain in holdings-fundamentals.json. Macro/theme research only changes sizing, action gates and research priority unless company-specific evidence changes.",
     "liveDeskPolicy": "Live Desk canonical reasoning is a cross-check and research-priority input. It may tighten or loosen Power Stack action gates, but it does not overwrite company company-evidence components or automatically rerank a stock.",
     "rateResiliencePolicy": "The 10Y overlay may rerank research priority and tighten/loosen entry gates using already-verified company evidence. It does not mechanically change company-evidence components.",
-    "aiFundingLens": "Dated 14 Oct analyst overlay; no repricing, security score change, inferred consolidated portfolio weight or feed-back into Live. Stale prices remain unsuitable for trades.",
-    "asOf": "2026-10-16",
-    "quoteCoverage": "Verified 15 October close: DAYANG RM1.34 from issuer, XOM $174.68, TSLA $362.44 from Alpha Vantage, TTWO $209.38 from issuer, CF $119.77, BWXT $137.18 secondary, GRAB $3.00 secondary. Other Malaysia holdings remain stale; no new same-session portfolio value/weight claimed.",
-    "companyActionReview": "Dayang 2Q26 official year-on-year deterioration + Oct 15 quote justify reduce/exit REVIEW; no position, cost basis, score or executed trade changed."
+    "aiFundingLens": "Dated 14 Oct analyst overlay; no repricing, security score change, inferred consolidated portfolio weight or feed-back into Live. Stale prices remain unsuitable for trades."
   },
   "regime": {
     "structural": "High long yields + selective AI customer financing + established power/electrical bottlenecks + product/logistics inflation risk",
@@ -115,10 +112,10 @@
     {
       "ticker": "DAYANG",
       "role": "lower-quality cyclical / operating recovery",
-      "action": "REVIEW REDUCE/EXIT · NO AVERAGE DOWN",
-      "sizingRead": "15 Oct confirmed RM1.34 close below former RM1.42 risk threshold, alongside 2Q26 revenue -39.7% and attributable profit -57.1% YoY. Highest-priority opportunity-cost review; do not automatically liquidate.",
-      "addGate": "NO ADD while 2Q26 operating deterioration remains; require independently verified work orders, utilisation, cash flow, earnings recovery and a fresh price structure.",
-      "trimOrRecycleGate": "Prior RM1.42 threshold already failed on 15 Oct. Review a partial/full exit after validating the current tradeable Bursa quote, liquidity and any changed post-Q2 orders/cash; no order placed."
+      "action": "HOLD / DO NOT AVERAGE DOWN",
+      "sizingRead": "Highest-priority capital-recycling candidate if operating proof does not improve.",
+      "addGate": "Utilization/work-order improvement plus RM1.50-1.52 recovery.",
+      "trimOrRecycleGate": "Break of RM1.42 or continued weak utilization/work-order conversion."
     }
   ],
   "newCapitalPriority": [
@@ -215,7 +212,7 @@
       "nextCheck": "Require utilisation/work-order/earnings repair; compare against GRAB/BWXT/agriculture candidates before committing any new money."
     }
   ],
-  "nextPortfolioCheck": "First: validate DAYANG live tradeable quote, order backlog and action economics; obtain YTL-linked warrant exact strike/expiry/price and normalize position weights. Next: underwrite BWXT at 15 Oct $137.18 versus FY26 adjusted EPS $4.70-4.80; CF owner earnings at $119.77 versus cycle volumes; GRAB $3.00 and Atome credit risks ahead of 2 Nov Q3. All other scored company records remain unmodified.",
+  "nextPortfolioCheck": "Refresh TTWO/GRAB/BWXT first, then rebuild agriculture after the CTVA/VYLR split and run China implementation comparisons. Keep DAYANG as the first opportunity-cost holding to challenge if a higher-quality candidate becomes actionable.",
   "liveDeskCrossCheck": {
     "source": "data/live-desk-canonical.json",
     "regime": "RATES_LED_TIGHTENING",
@@ -274,20 +271,5 @@
       "disorderlyRepricing": "10Y >5.25% + MOVE/credit widen → raise hurdle; financing-heavy/premium/distant-cash-flow names move toward WAIT/WATCH.",
       "growthCreditScare": "10Y falls + breadth/credit deteriorate → do not read lower yields mechanically as bullish; prefer balance-sheet resilience."
     }
-  },
-  "review20261016": {
-    "report": "research/2026-10-16-notion-led-investment-review.md",
-    "source": "data/research-sweep-2026-10-16.json",
-    "liveDossierId": "71f4afcc-14ac-4326-a6e9-a29844ac09b6",
-    "dossierAsOf": "2026-10-15T18:39:37.599Z",
-    "dossierStatus": "degraded_latest",
-    "topRisk": "DAYANG_OPERATING_AND_PRICE_DECLINE",
-    "newCapitalResearchOrder": [
-      "BWXT",
-      "CF",
-      "GRAB"
-    ],
-    "oldRanksAndScoresPreserved": true,
-    "tradeExecution": "NONE"
   }
 }
