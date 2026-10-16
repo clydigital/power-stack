@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-16T16:38:17.366Z",
+  "generatedAt": "2026-10-16T16:43:29.109Z",
   "asOf": "2026-10-16T07:22:09.116+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -9,13 +9,13 @@
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
       "asOf": "2026-10-16T07:22:09.116+00:00",
-      "syncedAt": "2026-10-16T11:30:40.202Z",
+      "syncedAt": "2026-10-16T16:43:28.930Z",
       "status": "OK"
     },
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-16T16:38:17.330Z",
+      "generatedAt": "2026-10-16T16:43:29.049Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -32,7 +32,7 @@
     "family": "RATES_LED_TIGHTENING",
     "headline": "Hot PPI lifted short‑end repricing while 10Y and ACM term premium eased; equities held and credit stress remains unconfirmed.",
     "implication": "Short‑end hawkish repricing increases borrowing costs pressure, but long‑end easing and a lower model term premium mean the market has not yet re‑priced a sustained tighter policy path; credit/volatility confirmation is required before declaring broad risk‑off.",
-    "monetarySummary": "Rate baseline HAWKISH; 4 confirming, 0 contradicting, 7 unresolved/neutral monetary-market layers."
+    "monetarySummary": "Rate baseline HAWKISH; 3 confirming, 0 contradicting, 8 unresolved/neutral monetary-market layers."
   },
   "queueCounts": {
     "holdings": 3,
@@ -44,14 +44,14 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "c49c896c-7366-41e9-a50c-2e86206d69f5",
-    "capturedAt": "2026-10-16T04:05:30.986Z",
+    "editionId": "594b4c5f-b876-43e4-8ab2-9dda6914419e",
+    "capturedAt": "2026-10-16T16:20:56.272Z",
     "itemCount": 1,
     "items": [
       {
-        "id": "f12b7a41-407a-4a40-b23e-f3e24e67219f",
+        "id": "dce8240a-d0e7-4126-ba90-514e1ae8fdba",
         "motionKey": "event:rates_move:us10y",
-        "versionNumber": 11,
+        "versionNumber": 13,
         "headline": "Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
         "category": "COMMODITY",
         "verificationState": "LEAD",
@@ -190,7 +190,7 @@
         "evidenceFor": [
           "Leadership remains concentrated; intra‑sector weakness in semis suggests the rally is not broad‑based despite headline resilience.",
           "Broad large‑cap participation remains OK, but AI/semis show intra‑sector deterioration that could narrow leadership if it spreads.",
-          "Nasdaq daily move -1.88 with bias BEARISH."
+          "Nasdaq daily move 0.08 with bias BEARISH."
         ],
         "evidenceAgainst": [
           "Inflation prints prompted short‑end repricing but long‑end eased via lower model term premium/real‑yield moves, so a durable policy‑path reprice is not yet established."
@@ -313,7 +313,7 @@
       "priorityScore": 137,
       "liveMotion": [
         {
-          "id": "f12b7a41-407a-4a40-b23e-f3e24e67219f",
+          "id": "dce8240a-d0e7-4126-ba90-514e1ae8fdba",
           "headline": "Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
           "category": "COMMODITY",
           "verificationState": "LEAD",

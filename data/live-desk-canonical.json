@@ -481,20 +481,20 @@
         "label": "Secured funding / collateral",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR -1.3 bp. Volumes: SOFR $2974bn, TGCR $1189bn, BGCR $1228bn.",
-        "asOf": "2026-10-14",
+        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR -0.3 bp. Volumes: SOFR $3025bn, TGCR $1189bn, BGCR $1223bn.",
+        "asOf": "2026-10-15",
         "sourceName": "Federal Reserve Bank of New York",
         "sourceUrl": "https://markets.newyorkfed.org/api/rates/all/latest.json",
         "evidenceRefs": [],
         "metrics": {
           "effr": 3.88,
-          "sofr": 3.88,
-          "tgcr": 3.86,
-          "bgcr": 3.86,
-          "securedVsEffrBps": -1.3,
-          "sofrVolumeBillions": 2974,
+          "sofr": 3.89,
+          "tgcr": 3.87,
+          "bgcr": 3.87,
+          "securedVsEffrBps": -0.3,
+          "sofrVolumeBillions": 3025,
           "tgcrVolumeBillions": 1189,
-          "bgcrVolumeBillions": 1228
+          "bgcrVolumeBillions": 1223
         }
       },
       {
@@ -517,16 +517,16 @@
       {
         "key": "CREDIT",
         "label": "Credit spreads",
-        "direction": "TIGHTER",
-        "confirmation": "CONFIRMING",
-        "detail": "HY OAS 3.25 (5D +16.0 bp); IG OAS 0.84 (5D +2.0 bp).",
-        "asOf": "2026-10-14",
+        "direction": "NEUTRAL",
+        "confirmation": "UNRESOLVED",
+        "detail": "HY OAS 3.23 (5D +8.0 bp); IG OAS 0.84 (5D +2.0 bp).",
+        "asOf": "2026-10-15",
         "sourceName": "Federal Reserve Economic Data",
         "sourceUrl": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
         "evidenceRefs": [],
         "metrics": {
-          "hyOas": 3.25,
-          "hyOas5dBps": 16,
+          "hyOas": 3.23,
+          "hyOas5dBps": 8,
           "igOas": 0.84,
           "igOas5dBps": 2
         }
@@ -567,8 +567,7 @@
     "confirming": [
       "RATES_FRONT_END",
       "RATES_REAL_YIELDS",
-      "BILLS",
-      "CREDIT"
+      "BILLS"
     ],
     "contradicting": [],
     "unresolved": [
@@ -577,10 +576,11 @@
       "RATES_LONG_END",
       "RATES_TREASURY_SUPPLY",
       "FUNDING",
+      "CREDIT",
       "USD",
       "DEALER_POSITIONING"
     ],
-    "summary": "Rate baseline HAWKISH; 4 confirming, 0 contradicting, 7 unresolved/neutral monetary-market layers."
+    "summary": "Rate baseline HAWKISH; 3 confirming, 0 contradicting, 8 unresolved/neutral monetary-market layers."
   },
   "sourceHealth": {
     "dossier": "DEGRADED",
@@ -692,9 +692,9 @@
       "id": "hy-oas",
       "symbol": "BAMLH0A0HYM2",
       "label": "US High Yield OAS",
-      "last": 3.25,
-      "change5d": 5.18,
-      "asOf": "2026-10-14",
+      "last": 3.23,
+      "change5d": 2.54,
+      "asOf": "2026-10-15",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
     },
@@ -704,7 +704,7 @@
       "label": "US Investment Grade OAS",
       "last": 0.84,
       "change5d": 2.44,
-      "asOf": "2026-10-14",
+      "asOf": "2026-10-15",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/BAMLC0A0CM"
     }
@@ -813,7 +813,7 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-16T11:22:00.329Z",
+    "asOf": "2026-10-16T16:38:09.324Z",
     "assets": [
       {
         "key": "SPX",
@@ -834,8 +834,8 @@
         "key": "NASDAQ",
         "label": "Nasdaq Composite",
         "symbol": "^IXIC",
-        "last": 26692.87,
-        "dailyChange": -1.88,
+        "last": 26713.03,
+        "dailyChange": 0.08,
         "dailyChangeUnit": "percent",
         "bias": "BEARISH",
         "conviction": "HIGH",
@@ -843,7 +843,7 @@
         "confirmingSignal": "Semiconductors lagged QQQ over 20 sessions and SMH is down over 5D; AI‑basket breadth weakened versus longer averages.",
         "contradictingSignal": null,
         "invalidation": "Canonical intraday Fed‑funds‑futures and 2Y/10Y intraday bars showing sustained repricing, or canonical MOVE + HY/IG widening concurrent with higher yields, would confirm a policy‑path reprice and shift the regime conclusion.",
-        "asOf": "2026-10-14"
+        "asOf": "2026-10-15"
       },
       {
         "key": "CRUDE",
@@ -879,8 +879,8 @@
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4178.399902,
-        "dailyChange": 0.2,
+        "last": 4162.399902,
+        "dailyChange": -0.18,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "LOW",
@@ -894,8 +894,8 @@
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 82720.82,
-        "dailyChange": 0.72,
+        "last": 81456.95,
+        "dailyChange": -0.82,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -1392,14 +1392,14 @@
   },
   "marketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "c49c896c-7366-41e9-a50c-2e86206d69f5",
-    "capturedAt": "2026-10-16T04:05:30.986Z",
-    "researchRunId": "cc7eeff0-cb87-4fcb-b609-cabeb47a77f9",
+    "editionId": "594b4c5f-b876-43e4-8ab2-9dda6914419e",
+    "capturedAt": "2026-10-16T16:20:56.272Z",
+    "researchRunId": "130d04d5-29b8-4e56-a06e-cfcd5eb64c46",
     "items": [
       {
-        "id": "f12b7a41-407a-4a40-b23e-f3e24e67219f",
+        "id": "dce8240a-d0e7-4126-ba90-514e1ae8fdba",
         "motionKey": "event:rates_move:us10y",
-        "versionNumber": 11,
+        "versionNumber": 13,
         "headline": "Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
         "category": "COMMODITY",
         "verificationState": "LEAD",
@@ -1454,5 +1454,5 @@
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-16T11:30:40.202Z"
+  "syncedAt": "2026-10-16T16:43:28.930Z"
 }
