@@ -1,21 +1,21 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-17T10:42:27.204Z",
-  "asOf": "2026-10-16T18:15:21.021+00:00",
+  "generatedAt": "2026-10-17T10:50:37.670Z",
+  "asOf": "2026-10-17T07:04:17.687+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
   "inputHealth": {
     "liveDesk": {
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
-      "asOf": "2026-10-16T18:15:21.021+00:00",
-      "syncedAt": "2026-10-17T04:34:09.685Z",
+      "asOf": "2026-10-17T07:04:17.687+00:00",
+      "syncedAt": "2026-10-17T10:50:37.517Z",
       "status": "OK"
     },
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-17T10:42:27.148Z",
+      "generatedAt": "2026-10-17T10:50:37.619Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -30,8 +30,8 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "US front end remains hawkish while long-end term premium eases; equity breadth is mixed and AI/semis show intra‑sector weakness.",
-    "implication": "Policy‑sensitive financing is tightening: borrowing costs for rate‑sensitive issuers are higher now, but falling modelled term premium and mixed breadth mean a full market stress signal is unproven; watch for sustained IG/HY widening, MOVE pickup, or auction deterioration to confirm systemic spread transmission.",
+    "headline": "US yields remain elevated with a hawkish front end while AI/semiconductor leadership is under pressure but large‑cap breadth holds.",
+    "implication": "Rising front-end costs and slightly tighter dollar liquidity strengthen a rates-led tightening case for now; broader market stress is not confirmed because large-cap breadth remains healthy and canonical HY/IG/MOVE evidence is missing.",
     "monetarySummary": "Rate baseline HAWKISH; 3 confirming, 0 contradicting, 8 unresolved/neutral monetary-market layers."
   },
   "queueCounts": {
@@ -175,7 +175,7 @@
         "importance": "HIGH",
         "divergence": "PARTIAL",
         "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-        "actual": "AI/semis cohort has underperformed recently (SMH down, ARM and CoreWeave showing multi‑session weakness) while headline AI financing concern narratives are circulating.",
+        "actual": "AI/semiconductor ETFs and proxies fell sharply over the past week (e.g., SMH, CRWV, CHAT declines).",
         "affectedHoldings": [
           "TSLA",
           "TTWO",
@@ -188,45 +188,16 @@
           "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
         ],
         "evidenceFor": [
-          "Concentrated sector weakness is visible and financing worries are emerging as context, but issuer‑level verified earnings and matched priced credit are required to establish a durable demand/financing shock.",
-          "Breadth is mixed — broad large‑cap internals are intact, but concentrated sector deterioration raises the risk of localized sell‑through if financing or earnings confirm stress.",
+          "Sector‑specific reprice linked to financing/capex and positioning concerns; this is concentrated stress rather than broad market failure.",
+          "Breadth is mixed: leadership is narrowing but large‑cap internals remain intact, which tempers a full risk‑off read.",
           "Nasdaq daily move 0.08 with bias BEARISH."
         ],
         "evidenceAgainst": [
-          "Policy‑path repricing is present in short‑dated rates, but modelled term‑premium easing has limited a durable long‑end sell‑off; decomposition into real vs breakeven remains required."
+          "Policy‑sensitive short end is hawkish; long‑end is mixed because a falling modelled term premium and real‑yield moves offset nominal pressure."
         ],
         "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
         "confidence": "HIGH",
         "invalidation": "If breadth broadens materially while credit remains benign and real yields stay high, the rate headwind is less dominant than assumed. If AI/semiconductor leadership rolls over, the divergence resolves in the bearish direction."
-      },
-      {
-        "id": "rates-vs-credit-transmission",
-        "importance": "HIGH",
-        "divergence": "YES",
-        "expected": "A persistent long-end tightening shock should eventually raise financing stress and widen credit spreads.",
-        "actual": "HY spreads have widened over the last 20 sessions while IG spreads show minimal change in the same window.",
-        "affectedHoldings": [
-          "TSLA",
-          "TTWO",
-          "YTLPOWR",
-          "6742UW",
-          "MISC"
-        ],
-        "candidateExplanations": [
-          "The current move is still primarily a rates/term-premium shock rather than a broad solvency or funding shock.",
-          "Strong nominal growth and healthy corporate balance sheets may be delaying credit transmission.",
-          "Credit may simply be lagging rates and could become the next confirmation leg."
-        ],
-        "evidenceFor": [
-          "Selective HY widening suggests issuer‑specific funding pressure but systemic spread transmission is unconfirmed without IG widening and MOVE pickup.",
-          "Funding/credit composite is currently NEUTRAL."
-        ],
-        "evidenceAgainst": [
-          "Policy‑sensitive financing is tightening: borrowing costs for rate‑sensitive issuers are higher now, but falling modelled term premium and mixed breadth mean a full market stress signal is unproven; watch for sustained IG/HY widening, MOVE pickup, or auction deterioration to confirm systemic spread transmission."
-        ],
-        "leadingHypothesis": "The shock is rates-led, not yet systemic; keep dry powder because credit remains the key confirmation risk.",
-        "confidence": "HIGH",
-        "invalidation": "Sustained HY/IG widening with weaker breadth and higher volatility would confirm transmission and require a stricter portfolio-risk posture."
       }
     ]
   },
@@ -506,26 +477,18 @@
   ],
   "liveRadar": [
     {
-      "ticker": "CRWV",
-      "companyName": "CoreWeave",
-      "whyRelevant": "Representative AI compute provider showing recent multi‑session weakness and cited in creator commentary about financing stress.",
-      "researchQuestion": "Is CoreWeave's equity weakness matched by issuer credit deterioration and confirmed revenue/capex guidance misses?",
-      "status": "DISCOVERY_ONLY",
-      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
-    },
-    {
-      "ticker": "ARM",
-      "companyName": "Arm Holdings",
-      "whyRelevant": "Large AI‑chip ecosystem name with recent price weakness and relevance to semiconductor breadth dynamics.",
-      "researchQuestion": "Does Arm's price action reflect sector demand weakening or idiosyncratic positioning?",
-      "status": "DISCOVERY_ONLY",
-      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
-    },
-    {
       "ticker": "SMH",
       "companyName": "VanEck Semiconductor ETF",
-      "whyRelevant": "Semiconductor ETF capturing the sector breadth signal and relative performance versus QQQ.",
-      "researchQuestion": "Will SMH underperformance vs QQQ persist and signal broader tech weakness that affects market breadth?",
+      "whyRelevant": "Semiconductor ETF shows material recent weakness and serves as a bellwether for AI/infrastructure demand and capex sensitivity.",
+      "researchQuestion": "Is SMH weakness driven by deteriorating AI capex/financing or sector positioning?",
+      "status": "DISCOVERY_ONLY",
+      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
+    },
+    {
+      "ticker": "CRWV",
+      "companyName": "CoreWeave Holdings",
+      "whyRelevant": "Large drawdowns in a GPU/cloud infra provider test the AI‑capex demand narrative and supplier/customer linkages.",
+      "researchQuestion": "Are CoreWeave moves a signal of weaker AI demand or company‑specific execution/valuation repricing?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     }
@@ -595,7 +558,8 @@
     }
   ],
   "researchGaps": [
-    "MARKET_DATA: Missing canonical intraday Fed‑funds‑futures and timestamped 2Y/10Y intraday bars for 2026-10-14–15, blocking durable policy‑path repricing attribution.",
+    "MARKET_DATA: Canonical intraday Fed‑funds‑futures and 2Y/10Y 5m–30m bars for 2026‑10‑14–15 are missing and block durability assessment of policy‑path repricing.",
+    "MARKET_DATA: Canonical HY and IG OAS time series and MOVE/Treasury volatility series are not present, blocking a verdict on transmission to credit/volatility.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence.",
     "Holding tape unresolved: 6742UW"
   ],
