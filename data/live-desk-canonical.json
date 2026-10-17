@@ -535,14 +535,14 @@
         "label": "US dollar transmission",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "US Dollar · UUP proxy 5D +0.07%.",
-        "asOf": "2026-10-15",
+        "detail": "US Dollar · UUP proxy 5D -0.34%.",
+        "asOf": "2026-10-16",
         "sourceName": "Nasdaq official etf history",
         "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical",
         "evidenceRefs": [],
         "metrics": {
-          "proxyLevel": 29,
-          "change5dPct": 0.07
+          "proxyLevel": 28.92,
+          "change5dPct": -0.34
         }
       },
       {
@@ -594,7 +594,7 @@
     {
       "id": "spx-rsp",
       "title": "Headline index and equal weight are separating",
-      "detail": "SPX cash -0.3% over 5D vs RSP 1.5%.",
+      "detail": "SPX cash -1.9% over 5D vs RSP 0.5%.",
       "assets": [
         "spx",
         "rsp"
@@ -610,9 +610,9 @@
       "id": "dxy",
       "symbol": "UUP",
       "label": "US Dollar · UUP proxy",
-      "last": 29,
-      "change5d": 0.07,
-      "asOf": "2026-10-15",
+      "last": 28.92,
+      "change5d": -0.34,
+      "asOf": "2026-10-16",
       "sourceName": "Nasdaq official etf history",
       "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical"
     },
@@ -818,14 +818,14 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-16T21:06:39.018Z",
+    "asOf": "2026-10-17T04:23:49.614Z",
     "assets": [
       {
         "key": "SPX",
         "label": "S&P 500",
         "symbol": "SP500",
-        "last": 7744.06,
-        "dailyChange": 0.33,
+        "last": 7659.44,
+        "dailyChange": -1.09,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "HIGH",
@@ -833,7 +833,7 @@
         "confirmingSignal": "Large‑cap breadth remains above medium/long averages while AI/infrastructure basket breadth has deteriorated materially versus its 50‑day trend.",
         "contradictingSignal": null,
         "invalidation": "Persistence of a nominal 10Y rise with ACM term premium reversal and canonical intraday Fed‑funds–2Y/10Y bars showing sustained repricing, or clear auction/auction‑demand deterioration, would indicate a durable policy‑path reprice.",
-        "asOf": "2026-10-15"
+        "asOf": "2026-10-16"
       },
       {
         "key": "NASDAQ",
@@ -885,7 +885,7 @@
         "label": "Gold spot",
         "symbol": "XAUUSD",
         "last": 4166.100098,
-        "dailyChange": -0.1,
+        "dailyChange": -0.49,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "LOW",
@@ -893,14 +893,14 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": "Persistence of a nominal 10Y rise with ACM term premium reversal and canonical intraday Fed‑funds–2Y/10Y bars showing sustained repricing, or clear auction/auction‑demand deterioration, would indicate a durable policy‑path reprice.",
-        "asOf": "2026-10-16"
+        "asOf": "2026-10-17"
       },
       {
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 81541.63,
-        "dailyChange": -0.72,
+        "last": 81417.69,
+        "dailyChange": -0.1,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -908,7 +908,7 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": null,
-        "asOf": "2026-10-16"
+        "asOf": "2026-10-17"
       }
     ]
   },
@@ -1462,14 +1462,14 @@
   },
   "marketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "594b4c5f-b876-43e4-8ab2-9dda6914419e",
-    "capturedAt": "2026-10-16T16:20:56.272Z",
-    "researchRunId": "130d04d5-29b8-4e56-a06e-cfcd5eb64c46",
+    "editionId": "aa9a69cd-2e6d-48b5-ae62-87987a572c16",
+    "capturedAt": "2026-10-17T04:06:39.735Z",
+    "researchRunId": "664b0fa0-356c-4e98-a107-70baadbeb0a5",
     "items": [
       {
-        "id": "dce8240a-d0e7-4126-ba90-514e1ae8fdba",
+        "id": "daa51345-94a8-46ad-8cad-f277a36cfd34",
         "motionKey": "event:rates_move:us10y",
-        "versionNumber": 13,
+        "versionNumber": 15,
         "headline": "Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
         "category": "COMMODITY",
         "verificationState": "LEAD",
@@ -1524,5 +1524,5 @@
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-16T21:15:48.986Z"
+  "syncedAt": "2026-10-17T04:34:09.685Z"
 }
