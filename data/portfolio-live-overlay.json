@@ -1,8 +1,8 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-17T20:35:41.734Z",
-  "liveAsOf": "2026-10-17T07:04:17.687+00:00",
-  "liveSyncedAt": "2026-10-17T15:40:05.418Z",
+  "generatedAt": "2026-10-17T20:39:43.823Z",
+  "liveAsOf": "2026-10-17T17:24:46.235+00:00",
+  "liveSyncedAt": "2026-10-17T20:39:43.651Z",
   "sourceHealth": {
     "dossier": "DEGRADED",
     "marketMonitor": "PARTIAL",
@@ -14,10 +14,10 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "US yields remain elevated with a hawkish front end while AI/semiconductor leadership is under pressure but large‑cap breadth holds.",
-    "answer": "Short-end pricing is high (2Y 4.74%) while 10Y nominal is ~5.09% and the NY Fed ACM 10Y term premium has fallen to ~0.75%, leaving a hawkish front end but mixed long-end signals; AI/semiconductor ETFs and names are materially weaker even as overall large‑cap breadth remains intact, so transmission to broad credit/volatility is unresolved.",
-    "implication": "Rising front-end costs and slightly tighter dollar liquidity strengthen a rates-led tightening case for now; broader market stress is not confirmed because large-cap breadth remains healthy and canonical HY/IG/MOVE evidence is missing.",
-    "whatWouldChangeMind": "Canonical intraday Fed‑funds‑futures and 2Y/10Y bars showing sustained short‑end repricing or canonical HY/IG OAS and MOVE series widening would materially revise the regime implication."
+    "headline": "US yields remain elevated while AI/semiconductor names slide, yet large‑cap breadth still holds",
+    "answer": "Short-end and nominal yields are high (2Y 4.74%, 10Y 5.09%) even as the NY Fed ACM 10Y term premium fell to ~0.75%; AI/semiconductor ETFs and infra names weakened materially while broad large‑cap breadth measures remain intact, so rates are tightening conditions but transmission to credit/volatility is unproven.",
+    "implication": "Higher front‑end yields plus slightly tighter dollar liquidity point to a rates‑led tightening backdrop; absent canonical HY/IG OAS, MOVE and intraday Fed‑funds repricing, broader credit or volatility stress is not confirmed.",
+    "whatWouldChangeMind": "Canonical intraday Fed‑funds‑futures + 2Y/10Y 5m–30m bars showing no sustained front‑end repricing, or sustained IG/HY OAS widening and rising MOVE concurrent with yield moves, would invalidate the rates‑led tightening read."
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
@@ -48,7 +48,7 @@
           "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
           "detail": "No current deterministic policy impulse or directional next-meeting repricing is present in the bounded rate context.",
-          "asOf": "2026-10-17T07:04:17.687Z"
+          "asOf": "2026-10-17T17:24:46.235Z"
         },
         {
           "key": "RATES_FRONT_END",
@@ -56,7 +56,7 @@
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
           "detail": "US 2Y 4.74%; 5D n/a; vs effective fed funds +86.0 bp.",
-          "asOf": "2026-10-17T07:04:17.687Z"
+          "asOf": "2026-10-17T17:24:46.235Z"
         },
         {
           "key": "RATES_REAL_YIELDS",
@@ -64,7 +64,7 @@
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
           "detail": "10Y real yield 2.78%; 5D n/a.",
-          "asOf": "2026-10-17T07:04:17.687Z"
+          "asOf": "2026-10-17T17:24:46.235Z"
         },
         {
           "key": "RATES_BREAKEVENS",
@@ -72,7 +72,7 @@
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
           "detail": "10Y breakeven 2.35%; 5D n/a.",
-          "asOf": "2026-10-17T07:04:17.687Z"
+          "asOf": "2026-10-17T17:24:46.235Z"
         },
         {
           "key": "RATES_LONG_END",
@@ -80,7 +80,7 @@
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
           "detail": "US 10Y 5.09%; 5D n/a; US 20Y 5.47%; 5D n/a; US 30Y 5.43%; 5D n/a.",
-          "asOf": "2026-10-17T07:04:17.687Z"
+          "asOf": "2026-10-17T17:24:46.235Z"
         },
         {
           "key": "BILLS",
@@ -124,7 +124,7 @@
     "physicalEnergy": {
       "status": "UNRESOLVED",
       "observed": false,
-      "detail": "Relevant newsflow exists around the Middle East but canonical oil/crack/product series are not part of this packet; inflation feed‑through from energy is unresolved.",
+      "detail": "No canonical crude/product inventory or crack series supplied in this packet to assess energy's inflation impulse.",
       "evidenceRefs": []
     }
   },
@@ -1162,7 +1162,7 @@
       "importance": "HIGH",
       "divergence": "PARTIAL",
       "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-      "actual": "AI/semiconductor ETFs and proxies fell sharply over the past week (e.g., SMH, CRWV, CHAT declines).",
+      "actual": "AI/semiconductor proxies and infra names declined notably over recent sessions.",
       "affectedHoldings": [
         "TSLA",
         "TTWO",
@@ -1175,12 +1175,12 @@
         "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
       ],
       "evidenceFor": [
-        "Sector‑specific reprice linked to financing/capex and positioning concerns; this is concentrated stress rather than broad market failure.",
-        "Breadth is mixed: leadership is narrowing but large‑cap internals remain intact, which tempers a full risk‑off read.",
+        "Sector weakness is concentrated; without credit/volatility confirmation this suggests idiosyncratic or positioning pressure rather than broad risk‑off.",
+        "Breadth is mixed: broad large‑cap measures are intact, but sector concentration risk is elevated.",
         "Nasdaq daily move -2.15 with bias BEARISH."
       ],
       "evidenceAgainst": [
-        "Policy‑sensitive short end is hawkish; long‑end is mixed because a falling modelled term premium and real‑yield moves offset nominal pressure."
+        "Front‑end policy sensitivity is the dominant driver while a falling modelled term premium partially offsets long‑end moves, producing mixed long‑end drivers."
       ],
       "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
       "confidence": "HIGH",
@@ -1223,8 +1223,8 @@
     }
   ],
   "liveResearchGaps": [
-    "MARKET_DATA: Canonical intraday Fed‑funds‑futures and 2Y/10Y 5m–30m bars for 2026‑10‑14–15 are missing and block durability assessment of policy‑path repricing.",
-    "MARKET_DATA: Canonical HY and IG OAS time series and MOVE/Treasury volatility series are not present, blocking a verdict on transmission to credit/volatility.",
+    "DATA: Canonical intraday Fed‑funds‑futures and 5m–30m 2Y/10Y bars for 2026-10-14–15 are missing and block decisive attribution of policy‑path repricing persistence.",
+    "DATA: Canonical HY/IG OAS series and MOVE/Treasury‑volatility index are not present, blocking confirmation of transmission from yields into credit and volatility.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],
   "guardrails": [
