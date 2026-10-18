@@ -1,8 +1,8 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-18T20:41:29.805Z",
-  "liveAsOf": "2026-10-18T07:19:14.981+00:00",
-  "liveSyncedAt": "2026-10-18T15:55:26.595Z",
+  "generatedAt": "2026-10-18T20:49:30.073Z",
+  "liveAsOf": "2026-10-18T17:27:40.581+00:00",
+  "liveSyncedAt": "2026-10-18T20:49:29.982Z",
   "sourceHealth": {
     "dossier": "DEGRADED",
     "marketMonitor": "PARTIAL",
@@ -14,16 +14,16 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "Yields remain elevated and front‑end hawkish while HY spreads widen — AI suppliers report strong revenue/capex, leaving transmission to IG/MOVE/VIX unresolved.",
-    "answer": "Short‑end pricing is hawkish (US 2Y 4.74%; US 10Y 5.09%) while the NY Fed ACM 10Y term premium fell to ~0.75%; HY OAS has widened materially (+53bp over 20 sessions) even as IG OAS moved little, and issuer evidence (TSM, CoreWeave) shows sizeable AI capex and strong supplier margins; whether yield pressure becomes broad risk‑off is unresolved without canonical MOVE, intraday Fed‑funds repricing and breadth data.",
-    "implication": "Higher short and real yields are tightening financing conditions; AI supplier results support sector resilience but do not yet disprove a rates‑led tightening if credit and volatility also widen.",
-    "whatWouldChangeMind": "Canonical MOVE rise, sustained IG OAS widening or persistent intraday Fed‑funds‑futures repricing across 5m–4h would show transmission into broader risk‑off and invalidate the selective‑stress view."
+    "headline": "US yields remain high while AI supplier results look solid; credit/breadth confirmation is unresolved",
+    "answer": "Short and real yields are elevated (US 2Y 4.74%; US 10Y 5.09%) while NY Fed ACM term premium fell to ~0.75%; issuer results (TSM, CoreWeave) show strong revenue/margins and large capex, so equities are mixed and broader credit/breadth confirmation is still unresolved.",
+    "implication": "Higher yields are tightening financial conditions, but resilience is concentrated in AI/semiconductor supplier results; whether this becomes broad risk‑off depends on credit, MOVE and breadth data not yet present.",
+    "whatWouldChangeMind": "Sustained intraday Fed‑funds repricing (canonical Fed‑funds‑futures intraday bars) plus a rising MOVE and persistent IG OAS widening would convert the view to broad risk‑off; evidence for those series is currently missing."
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "f22d8b3f-8be2-4b0d-9db8-910e98d92613",
-    "capturedAt": "2026-10-18T14:40:59.712Z",
-    "itemCount": 1,
+    "editionId": "00ba8a54-6a9a-45ce-8a23-785a344b6501",
+    "capturedAt": "2026-10-18T16:21:38.020Z",
+    "itemCount": 0,
     "linkedHoldingCount": 0
   },
   "currentSignals": {
@@ -48,7 +48,7 @@
           "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
           "detail": "No current deterministic policy impulse or directional next-meeting repricing is present in the bounded rate context.",
-          "asOf": "2026-10-18T07:19:14.981Z"
+          "asOf": "2026-10-18T17:27:40.581Z"
         },
         {
           "key": "RATES_FRONT_END",
@@ -56,7 +56,7 @@
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
           "detail": "US 2Y 4.74%; 5D n/a; vs effective fed funds +86.0 bp.",
-          "asOf": "2026-10-18T07:19:14.981Z"
+          "asOf": "2026-10-18T17:27:40.581Z"
         },
         {
           "key": "RATES_REAL_YIELDS",
@@ -64,7 +64,7 @@
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
           "detail": "10Y real yield 2.78%; 5D n/a.",
-          "asOf": "2026-10-18T07:19:14.981Z"
+          "asOf": "2026-10-18T17:27:40.581Z"
         },
         {
           "key": "RATES_BREAKEVENS",
@@ -72,7 +72,7 @@
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
           "detail": "10Y breakeven 2.35%; 5D n/a.",
-          "asOf": "2026-10-18T07:19:14.981Z"
+          "asOf": "2026-10-18T17:27:40.581Z"
         },
         {
           "key": "RATES_LONG_END",
@@ -80,7 +80,7 @@
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
           "detail": "US 10Y 5.09%; 5D n/a; US 20Y 5.47%; 5D n/a; US 30Y 5.43%; 5D n/a.",
-          "asOf": "2026-10-18T07:19:14.981Z"
+          "asOf": "2026-10-18T17:27:40.581Z"
         },
         {
           "key": "BILLS",
@@ -124,7 +124,7 @@
     "physicalEnergy": {
       "status": "UNRESOLVED",
       "observed": false,
-      "detail": "No canonical crude/product crack or inventory evidence present in this packet.",
+      "detail": "No canonical crude/product curve or crack evidence supplied; inflation transmission from energy remains unresolved.",
       "evidenceRefs": []
     }
   },
@@ -1156,66 +1156,7 @@
       "nextCheck": "Normalize combined weight in base currency and verify warrant terms."
     }
   ],
-  "portfolioDivergences": [
-    {
-      "id": "rates-vs-tech-resilience",
-      "importance": "HIGH",
-      "divergence": "PARTIAL",
-      "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-      "actual": "Supplier fundamentals strong: TSMC Q3 revenue and very high operating margins and CoreWeave large capex/cash‑flow; some AI/semis share weakness in selected names (AMD, AMZN closes).",
-      "affectedHoldings": [
-        "TSLA",
-        "TTWO",
-        "YTLPOWR",
-        "6742UW"
-      ],
-      "candidateExplanations": [
-        "Narrow AI/semiconductor leadership is offsetting broad duration pressure at index level.",
-        "Company-specific catalysts and funded/backlogged AI infrastructure demand are overpowering the discount-rate headwind in selected names.",
-        "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
-      ],
-      "evidenceFor": [
-        "Issuer evidence supports continued infrastructure demand and capex; equity dips are selective and do not yet imply broad demand weakness.",
-        "Breadth monitors (advance/decline ex‑AI) are not present; cannot confirm whether weakness is broad or concentrated.",
-        "Nasdaq daily move -2.15 with bias BEARISH."
-      ],
-      "evidenceAgainst": [
-        "Front‑end remains hawkish while model term premium contracted; long‑end pressure appears concentrated in real yields but decomposition gaps persist."
-      ],
-      "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
-      "confidence": "HIGH",
-      "invalidation": "If breadth broadens materially while credit remains benign and real yields stay high, the rate headwind is less dominant than assumed. If AI/semiconductor leadership rolls over, the divergence resolves in the bearish direction."
-    },
-    {
-      "id": "rates-vs-credit-transmission",
-      "importance": "HIGH",
-      "divergence": "YES",
-      "expected": "A persistent long-end tightening shock should eventually raise financing stress and widen credit spreads.",
-      "actual": "HY OAS widened +53bp over 20 sessions while IG OAS rose ~6bp (market-crack hy/ig series).",
-      "affectedHoldings": [
-        "TSLA",
-        "TTWO",
-        "YTLPOWR",
-        "6742UW",
-        "MISC"
-      ],
-      "candidateExplanations": [
-        "The current move is still primarily a rates/term-premium shock rather than a broad solvency or funding shock.",
-        "Strong nominal growth and healthy corporate balance sheets may be delaying credit transmission.",
-        "Credit may simply be lagging rates and could become the next confirmation leg."
-      ],
-      "evidenceFor": [
-        "Credit widening concentrated in HY; systemic transmission is not confirmed without IG/volatility confirmation.",
-        "Funding/credit composite is currently NEUTRAL."
-      ],
-      "evidenceAgainst": [
-        "Higher short and real yields are tightening financing conditions; AI supplier results support sector resilience but do not yet disprove a rates‑led tightening if credit and volatility also widen."
-      ],
-      "leadingHypothesis": "The shock is rates-led, not yet systemic; keep dry powder because credit remains the key confirmation risk.",
-      "confidence": "HIGH",
-      "invalidation": "Sustained HY/IG widening with weaker breadth and higher volatility would confirm transmission and require a stricter portfolio-risk posture."
-    }
-  ],
+  "portfolioDivergences": [],
   "reviewQueue": {
     "highReview": [
       "HIBISCS",
@@ -1252,7 +1193,8 @@
     }
   ],
   "liveResearchGaps": [
-    "DATA: Canonical intraday Fed‑funds‑futures, 5m–30m 2Y/10Y bars and MOVE/Treasury volatility series are missing and block persistence and transmission conclusions.",
+    "MARKET_DATA: Canonical intraday Fed‑funds‑futures and 5–30m UST 2Y/10Y bars for 2026-10-14–15 are missing, blocking persistence assessment of short‑end repricing.",
+    "MARKET_DATA: MOVE index and canonical HY/IG OAS series are not present, blocking a decision on whether yield moves have transmitted into credit and volatility.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],
   "guardrails": [

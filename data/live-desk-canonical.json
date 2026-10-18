@@ -3,17 +3,17 @@
   "sourceUrl": "https://alchemy-live-market-desk.vercel.app/api/market-intelligence-snapshot",
   "liveContractVersion": "market-intelligence-snapshot/v1",
   "sourceStatus": "degraded_latest",
-  "dossierId": "15c1cbd1-310c-4d91-adac-9bb75ed8824c",
-  "asOf": "2026-10-18T07:19:14.981+00:00",
+  "dossierId": "d4c5deaf-92b2-4762-885a-8569d1a2a89b",
+  "asOf": "2026-10-18T17:27:40.581+00:00",
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "Yields remain elevated and front‑end hawkish while HY spreads widen — AI suppliers report strong revenue/capex, leaving transmission to IG/MOVE/VIX unresolved.",
-    "answer": "Short‑end pricing is hawkish (US 2Y 4.74%; US 10Y 5.09%) while the NY Fed ACM 10Y term premium fell to ~0.75%; HY OAS has widened materially (+53bp over 20 sessions) even as IG OAS moved little, and issuer evidence (TSM, CoreWeave) shows sizeable AI capex and strong supplier margins; whether yield pressure becomes broad risk‑off is unresolved without canonical MOVE, intraday Fed‑funds repricing and breadth data.",
-    "implication": "Higher short and real yields are tightening financing conditions; AI supplier results support sector resilience but do not yet disprove a rates‑led tightening if credit and volatility also widen.",
-    "whatWouldChangeMind": "Canonical MOVE rise, sustained IG OAS widening or persistent intraday Fed‑funds‑futures repricing across 5m–4h would show transmission into broader risk‑off and invalidate the selective‑stress view."
+    "headline": "US yields remain high while AI supplier results look solid; credit/breadth confirmation is unresolved",
+    "answer": "Short and real yields are elevated (US 2Y 4.74%; US 10Y 5.09%) while NY Fed ACM term premium fell to ~0.75%; issuer results (TSM, CoreWeave) show strong revenue/margins and large capex, so equities are mixed and broader credit/breadth confirmation is still unresolved.",
+    "implication": "Higher yields are tightening financial conditions, but resilience is concentrated in AI/semiconductor supplier results; whether this becomes broad risk‑off depends on credit, MOVE and breadth data not yet present.",
+    "whatWouldChangeMind": "Sustained intraday Fed‑funds repricing (canonical Fed‑funds‑futures intraday bars) plus a rising MOVE and persistent IG OAS widening would convert the view to broad risk‑off; evidence for those series is currently missing."
   },
   "rateRegime": {
-    "asOf": "2026-10-18T07:19:14.981Z",
+    "asOf": "2026-10-18T17:27:40.581Z",
     "gaps": [],
     "curve": {
       "state": "POSITIVE",
@@ -118,13 +118,12 @@
       "market-monitor:us5y-real:2026-10-15",
       "market-monitor:us5y-breakeven:2026-10-16",
       "ny-fed-acm:10y:2026-10-15",
-      "system1-dollar:dealer-balance-sheet:2026-10-07",
       "treasury-auction:912810UW6:2026-10-08"
     ],
     "contradictions": [],
     "contractVersion": "rate-regime/1",
     "curveDiagnostic": {
-      "asOf": "2026-10-18T07:19:14.981Z",
+      "asOf": "2026-10-18T17:27:40.581Z",
       "shape": "POSITIVE",
       "detail": "2Y 4.74% (-1.0 bp 5D) · 5Y 4.89% (-10.0 bp 5D) · 10Y 5.09% (-13.0 bp 5D) · 20Y 5.47% (-17.0 bp 5D) · 30Y 5.43% (-17.0 bp 5D) 2s10s +35.0 bp (-12.0 bp 5D) · 2s30s +69.0 bp (-16.0 bp 5D) Curve: positive · move: bull flattener · path: mixed.",
       "points": [
@@ -228,9 +227,10 @@
     },
     "usRatesReaction": "US 2Y 5D n/a",
     "longEndDiagnostic": {
-      "asOf": "2026-10-18T07:19:14.981Z",
+      "asOf": "2026-10-18T17:27:40.581Z",
       "gaps": [
-        "MOVE/Treasury-volatility is not yet present in the canonical market-monitor sensor set."
+        "MOVE/Treasury-volatility is not yet present in the canonical market-monitor sensor set.",
+        "NY Fed primary-dealer position/fails evidence is unavailable."
       ],
       "real10y": {
         "levelPct": 2.78,
@@ -268,19 +268,18 @@
         "market-monitor:us10y-breakeven:2026-10-16",
         "ny-fed-acm:10y:2026-10-15",
         "treasury-supply:coupon-sizes:2026-10-15",
-        "system1-dollar:dealer-balance-sheet:2026-10-07",
         "treasury-auction:912810UW6:2026-10-08"
       ],
       "contractVersion": "rate-long-end-diagnostic/1",
       "marketStructure": {
-        "detail": "Official announced nominal coupon supply-volume evidence is present; market impact remains unresolved. Dealer net Treasury position 444683m (WoW 12651m); fails deliver 121178m; fails receive 137453m. Dealer direction remains intentionally uninterpreted. Current auction evidence is present for System 2 review.",
-        "dealerEvidenceRef": "system1-dollar:dealer-balance-sheet:2026-10-07",
+        "detail": "Official announced nominal coupon supply-volume evidence is present; market impact remains unresolved. Dealer balance-sheet evidence is unavailable. Current auction evidence is present for System 2 review.",
+        "dealerEvidenceRef": null,
         "auctionEvidenceRef": "treasury-auction:912810UW6:2026-10-08",
-        "failsDeliverMillions": 121178,
-        "failsReceiveMillions": 137453,
-        "dealerNetPositionMillions": 444683,
+        "failsDeliverMillions": null,
+        "failsReceiveMillions": null,
+        "dealerNetPositionMillions": null,
         "treasurySupplyEvidenceRef": "treasury-supply:coupon-sizes:2026-10-15",
-        "dealerNetPositionWeeklyChangeMillions": 12651
+        "dealerNetPositionWeeklyChangeMillions": null
       },
       "fiveYearCrossCheck": {
         "detail": "5Y real yield 2.58% (n/a 5D); 5Y breakeven 2.37% (n/a). This is a cross-check only; the 10Y long-end decomposition remains the state classifier.",
@@ -309,7 +308,7 @@
         "change5dPct": null,
         "evidenceRef": null
       },
-      "asOf": "2026-10-18T07:19:14.981Z",
+      "asOf": "2026-10-18T17:27:40.581Z",
       "gaps": [
         "Direct Japan MOF JGB constant-maturity evidence is unavailable.",
         "Treasury TIC country-level Treasury holdings are unavailable.",
@@ -385,7 +384,7 @@
         "direction": "UNRESOLVED",
         "confirmation": "UNRESOLVED",
         "detail": "No current deterministic policy impulse or directional next-meeting repricing is present in the bounded rate context.",
-        "asOf": "2026-10-18T07:19:14.981Z",
+        "asOf": "2026-10-18T17:27:40.581Z",
         "sourceName": "Live deterministic rate regime",
         "sourceUrl": null,
         "evidenceRefs": [],
@@ -399,7 +398,7 @@
         "direction": "TIGHTER",
         "confirmation": "CONFIRMING",
         "detail": "US 2Y 4.74%; 5D n/a; vs effective fed funds +86.0 bp.",
-        "asOf": "2026-10-18T07:19:14.981Z",
+        "asOf": "2026-10-18T17:27:40.581Z",
         "sourceName": "Live deterministic rate regime",
         "sourceUrl": null,
         "evidenceRefs": [
@@ -416,7 +415,7 @@
         "direction": "TIGHTER",
         "confirmation": "CONFIRMING",
         "detail": "10Y real yield 2.78%; 5D n/a.",
-        "asOf": "2026-10-18T07:19:14.981Z",
+        "asOf": "2026-10-18T17:27:40.581Z",
         "sourceName": "Live deterministic rate regime",
         "sourceUrl": null,
         "evidenceRefs": [
@@ -432,7 +431,7 @@
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
         "detail": "10Y breakeven 2.35%; 5D n/a.",
-        "asOf": "2026-10-18T07:19:14.981Z",
+        "asOf": "2026-10-18T17:27:40.581Z",
         "sourceName": "Live deterministic rate regime",
         "sourceUrl": null,
         "evidenceRefs": [
@@ -448,7 +447,7 @@
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
         "detail": "US 10Y 5.09%; 5D n/a; US 20Y 5.47%; 5D n/a; US 30Y 5.43%; 5D n/a.",
-        "asOf": "2026-10-18T07:19:14.981Z",
+        "asOf": "2026-10-18T17:27:40.581Z",
         "sourceName": "Live deterministic rate regime",
         "sourceUrl": null,
         "evidenceRefs": [
@@ -466,7 +465,7 @@
         "direction": "UNRESOLVED",
         "confirmation": "UNRESOLVED",
         "detail": "Official announced 10Y/20Y/30Y nominal coupon offering sizes total 74.0bn vs 74.0bn at the previous same-term auctions (change +0.0bn). This establishes gross issuance-volume context only; it does not deterministically establish net borrowing, auction absorption, term-premium direction, or yield direction.",
-        "asOf": "2026-10-18T07:19:14.981Z",
+        "asOf": "2026-10-18T17:27:40.581Z",
         "sourceName": "Live deterministic rate regime",
         "sourceUrl": null,
         "evidenceRefs": [
@@ -603,7 +602,8 @@
     }
   ],
   "researchGaps": [
-    "DATA: Canonical intraday Fed‑funds‑futures, 5m–30m 2Y/10Y bars and MOVE/Treasury volatility series are missing and block persistence and transmission conclusions.",
+    "MARKET_DATA: Canonical intraday Fed‑funds‑futures and 5–30m UST 2Y/10Y bars for 2026-10-14–15 are missing, blocking persistence assessment of short‑end repricing.",
+    "MARKET_DATA: MOVE index and canonical HY/IG OAS series are not present, blocking a decision on whether yield moves have transmitted into credit and volatility.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],
   "marketRows": [
@@ -711,96 +711,81 @@
   "lenses": [
     {
       "key": "US_RATES",
-      "label": "US Rates",
+      "label": "US short and nominal rates",
       "observed": true,
-      "reaction": "Short end elevated: US 2Y 4.74% (market-monitor:us2y:2026-10-16); 10Y 5.09% (market-monitor:us10y-fred:2026-10-16); ACM 10Y term premium fell to ~0.747 (ny-fed-acm:10y:2026-10-15).",
-      "interpretation": "Front‑end remains hawkish while model term premium contracted; long‑end pressure appears concentrated in real yields but decomposition gaps persist.",
+      "reaction": "Short and nominal yields elevated: US 2Y 4.74%, US 10Y 5.09% (as of 2026-10-16).",
+      "interpretation": "Front end and real yields are hawkish; ACM term premium compression suggests nominal move is largely real‑rate driven.",
       "unresolvedSignals": [
-        "MOVE/Treasury volatility not in canonical sensor set"
+        "MOVE/Treasury volatility series absent"
       ],
       "evidenceRefs": [
         "market-monitor:us2y:2026-10-16",
-        "market-monitor:us10y-fred:2026-10-16",
-        "ny-fed-acm:10y:2026-10-15"
+        "market-monitor:us10y-fred:2026-10-16"
       ]
     },
     {
       "key": "BONDS",
-      "label": "Treasury Market Structure & Auctions",
-      "observed": true,
-      "reaction": "Recent auctions show mixed metrics; announced coupon supply unchanged week‑to‑week (treasury-supply:coupon-sizes:2026-10-15); auction details present but when‑issued tails unresolved.",
-      "interpretation": "No clear auction failure signal; supply volumes unchanged but market absorption and flow sequencing remain unresolved without when‑issued tails and intraday flow.",
+      "label": "Treasury supply and auctions",
+      "observed": false,
+      "reaction": null,
+      "interpretation": "Announced coupon supply is unchanged versus prior schedule; auction metrics present but do not by themselves prove weak absorption.",
       "unresolvedSignals": [
-        "When‑issued auction tails and intraday auction flow"
+        "Dealer position/fails evidence missing"
       ],
-      "evidenceRefs": [
-        "treasury-supply:coupon-sizes:2026-10-15",
-        "treasury-auction:912810UW6:2026-10-08",
-        "treasury-auction:91282CRF0:2026-10-07"
-      ]
+      "evidenceRefs": []
     },
     {
       "key": "USD",
-      "label": "USD",
+      "label": "Dollar",
       "observed": false,
       "reaction": null,
-      "interpretation": "Dollar trend evidence not supplied; front‑end collateral tightness noted via bill yields but FX confirmation missing.",
+      "interpretation": "Front‑end collateral shows relative tightness (3M/6M bill > EFFR) but canonical FX trend evidence is missing.",
       "unresolvedSignals": [
-        "FX/JPY/JGB cross‑checks not present"
+        "Offshore USD / FX‑swap basis not in canonical set"
       ],
       "evidenceRefs": []
     },
     {
       "key": "CREDIT",
       "label": "Credit",
-      "observed": true,
-      "reaction": "HY OAS widened +53bp over 20 sessions while IG OAS rose ~6bp (market-crack hy/ig series).",
-      "interpretation": "Credit widening concentrated in HY; systemic transmission is not confirmed without IG/volatility confirmation.",
+      "observed": false,
+      "reaction": null,
+      "interpretation": "HY/IG canonical series not present here; prior HY widening flagged in earlier dossier but current packet cannot confirm transmission.",
       "unresolvedSignals": [
-        "Canonical MOVE and intraday HY/IG series"
+        "HY/IG OAS canonical series missing"
       ],
-      "evidenceRefs": [
-        "market-crack:hy_oas_20s:2026-09-17:2026-10-15",
-        "market-crack:ig_oas_20s:2026-09-17:2026-10-15"
-      ]
+      "evidenceRefs": []
     },
     {
       "key": "BREADTH",
-      "label": "Equity Breadth",
+      "label": "Equity breadth",
       "observed": false,
       "reaction": null,
-      "interpretation": "Breadth monitors (advance/decline ex‑AI) are not present; cannot confirm whether weakness is broad or concentrated.",
+      "interpretation": "Breadth series (ex‑AI) not supplied; issuer results show concentration in AI/suppliers rather than broad participation.",
       "unresolvedSignals": [
-        "Breadth series excluding AI names"
+        "Canonical breadth ex‑AI series missing"
       ],
       "evidenceRefs": []
     },
     {
       "key": "TECH_AI",
-      "label": "AI / Semiconductors",
-      "observed": true,
-      "reaction": "Supplier fundamentals strong: TSMC Q3 revenue and very high operating margins and CoreWeave large capex/cash‑flow; some AI/semis share weakness in selected names (AMD, AMZN closes).",
-      "interpretation": "Issuer evidence supports continued infrastructure demand and capex; equity dips are selective and do not yet imply broad demand weakness.",
+      "label": "AI / semiconductors",
+      "observed": false,
+      "reaction": null,
+      "interpretation": "Verified issuer results (TSM, CoreWeave) support supplier earnings and ongoing capex; priced equity reaction canonical series is missing to gauge market pricing.",
       "unresolvedSignals": [
-        "Issuer‑matched canonical priced reactions for TSM and CoreWeave (same‑ticker priced moves)"
+        "Canonical priced reaction for TSM/CRWV and hyperscaler order/capex guidance"
       ],
-      "evidenceRefs": [
-        "verified-issuer:tsm:2026q3:net_revenue",
-        "verified-issuer:tsm:2026q3:operating_margin_pct",
-        "verified-issuer:crwv:2026q2:cash_ppe",
-        "verified-issuer:crwv:2026q2:operating_cash_flow",
-        "ai-close:AMD:2026-10-16",
-        "ai-close:AMZN:2026-10-16"
-      ]
+      "evidenceRefs": []
     },
     {
       "key": "OIL_WAR_INFLATION",
-      "label": "Oil & Inflation",
+      "label": "Energy / inflation",
       "observed": false,
       "reaction": null,
-      "interpretation": "No canonical crude/product crack or inventory evidence present in this packet.",
+      "interpretation": "No canonical crude/product curve or crack evidence supplied; inflation transmission from energy remains unresolved.",
       "unresolvedSignals": [
-        "Crude curve, cracks and inventories canonical series missing"
+        "WTI curve, product cracks and inventories missing"
       ],
       "evidenceRefs": []
     },
@@ -809,14 +794,14 @@
       "label": "Gold",
       "observed": false,
       "reaction": null,
-      "interpretation": "No canonical gold pricing evidence in packet to judge safe‑haven flows versus rates.",
+      "interpretation": "No canonical gold pricing evidence supplied for the event window.",
       "unresolvedSignals": [],
       "evidenceRefs": []
     }
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-18T15:51:21.926Z",
+    "asOf": "2026-10-18T20:41:23.495Z",
     "assets": [
       {
         "key": "SPX",
@@ -827,10 +812,10 @@
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "LOW",
-        "primaryDriver": "Higher short and real yields are tightening financing conditions; AI supplier results support sector resilience but do not yet disprove a rates‑led tightening if credit and volatility also widen.",
+        "primaryDriver": "Higher yields are tightening financial conditions, but resilience is concentrated in AI/semiconductor supplier results; whether this becomes broad risk‑off depends on credit, MOVE and breadth data not yet present.",
         "confirmingSignal": null,
-        "contradictingSignal": "Breadth series excluding AI names",
-        "invalidation": "Canonical MOVE rise, sustained IG OAS widening or persistent intraday Fed‑funds‑futures repricing across 5m–4h would show transmission into broader risk‑off and invalidate the selective‑stress view.",
+        "contradictingSignal": "Canonical breadth ex‑AI series missing",
+        "invalidation": "Sustained intraday Fed‑funds repricing (canonical Fed‑funds‑futures intraday bars) plus a rising MOVE and persistent IG OAS widening would convert the view to broad risk‑off; evidence for those series is currently missing.",
         "asOf": "2026-10-16"
       },
       {
@@ -840,12 +825,12 @@
         "last": 26140.03,
         "dailyChange": -2.15,
         "dailyChangeUnit": "percent",
-        "bias": "BEARISH",
-        "conviction": "MEDIUM",
-        "primaryDriver": "Issuer evidence supports continued infrastructure demand and capex; equity dips are selective and do not yet imply broad demand weakness.",
-        "confirmingSignal": "Supplier fundamentals strong: TSMC Q3 revenue and very high operating margins and CoreWeave large capex/cash‑flow; some AI/semis share weakness in selected names (AMD, AMZN closes).",
-        "contradictingSignal": "Issuer‑matched canonical priced reactions for TSM and CoreWeave (same‑ticker priced moves)",
-        "invalidation": "Canonical MOVE rise, sustained IG OAS widening or persistent intraday Fed‑funds‑futures repricing across 5m–4h would show transmission into broader risk‑off and invalidate the selective‑stress view.",
+        "bias": "MIXED",
+        "conviction": "LOW",
+        "primaryDriver": "Verified issuer results (TSM, CoreWeave) support supplier earnings and ongoing capex; priced equity reaction canonical series is missing to gauge market pricing.",
+        "confirmingSignal": null,
+        "contradictingSignal": "Canonical priced reaction for TSM/CRWV and hyperscaler order/capex guidance",
+        "invalidation": "Sustained intraday Fed‑funds repricing (canonical Fed‑funds‑futures intraday bars) plus a rising MOVE and persistent IG OAS widening would convert the view to broad risk‑off; evidence for those series is currently missing.",
         "asOf": "2026-10-16"
       },
       {
@@ -857,10 +842,10 @@
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "LOW",
-        "primaryDriver": "No canonical crude/product crack or inventory evidence present in this packet.",
+        "primaryDriver": "No canonical crude/product curve or crack evidence supplied; inflation transmission from energy remains unresolved.",
         "confirmingSignal": null,
-        "contradictingSignal": "Crude curve, cracks and inventories canonical series missing",
-        "invalidation": "Canonical MOVE rise, sustained IG OAS widening or persistent intraday Fed‑funds‑futures repricing across 5m–4h would show transmission into broader risk‑off and invalidate the selective‑stress view.",
+        "contradictingSignal": "WTI curve, product cracks and inventories missing",
+        "invalidation": "Sustained intraday Fed‑funds repricing (canonical Fed‑funds‑futures intraday bars) plus a rising MOVE and persistent IG OAS widening would convert the view to broad risk‑off; evidence for those series is currently missing.",
         "asOf": "2026-10-14"
       },
       {
@@ -873,9 +858,9 @@
         "bias": "HAWKISH",
         "conviction": "HIGH",
         "primaryDriver": "Rates conditions are leaning hawkish/restrictive. Front-end pricing: hawkish (US 2Y 4.74%; 5D n/a; vs effective fed funds +86.0 bp.) 10Y real yield: hawkish (10Y real yield 2.78%; 5D n/a.)",
-        "confirmingSignal": "Short end elevated: US 2Y 4.74% (market-monitor:us2y:2026-10-16); 10Y 5.09% (market-monitor:us10y-fred:2026-10-16); ACM 10Y term premium fell to ~0.747 (ny-fed-acm:10y:2026-10-15).",
-        "contradictingSignal": "MOVE/Treasury volatility not in canonical sensor set",
-        "invalidation": "Canonical MOVE rise, sustained IG OAS widening or persistent intraday Fed‑funds‑futures repricing across 5m–4h would show transmission into broader risk‑off and invalidate the selective‑stress view.",
+        "confirmingSignal": "Short and nominal yields elevated: US 2Y 4.74%, US 10Y 5.09% (as of 2026-10-16).",
+        "contradictingSignal": "MOVE/Treasury volatility series absent",
+        "invalidation": "Sustained intraday Fed‑funds repricing (canonical Fed‑funds‑futures intraday bars) plus a rising MOVE and persistent IG OAS widening would convert the view to broad risk‑off; evidence for those series is currently missing.",
         "asOf": "2026-10-16"
       },
       {
@@ -887,18 +872,18 @@
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "LOW",
-        "primaryDriver": "No canonical gold pricing evidence in packet to judge safe‑haven flows versus rates.",
+        "primaryDriver": "No canonical gold pricing evidence supplied for the event window.",
         "confirmingSignal": null,
         "contradictingSignal": null,
-        "invalidation": "Canonical MOVE rise, sustained IG OAS widening or persistent intraday Fed‑funds‑futures repricing across 5m–4h would show transmission into broader risk‑off and invalidate the selective‑stress view.",
+        "invalidation": "Sustained intraday Fed‑funds repricing (canonical Fed‑funds‑futures intraday bars) plus a rising MOVE and persistent IG OAS widening would convert the view to broad risk‑off; evidence for those series is currently missing.",
         "asOf": "2026-10-18"
       },
       {
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 81033.15,
-        "dailyChange": -0.42,
+        "last": 80751,
+        "dailyChange": -0.77,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -914,20 +899,18 @@
     {
       "id": "story:ai-capex-earnings-resilience",
       "persistentStoryId": null,
-      "title": "AI suppliers report large capex and strong margins even as some AI names dip.",
-      "whatChanged": "Issuer disclosures (TSMC, CoreWeave) show sizable revenue/margins and large capex/capitalised software spending.",
-      "whyItMatters": "Strong supplier fundamentals support AI infrastructure demand and can sustain sector leadership despite episodic equity weakness.",
-      "mechanism": "Sustained demand for AI compute drives supplier revenue and justifies capex; short‑term equity dips may reflect sentiment or positioning, not necessarily end‑demand collapse.",
-      "conclusion": "Issuer-level results support continued AI infrastructure demand and capex absorption; selective equity weakness alone does not prove a demand shock.",
-      "whatWouldChangeMind": "Confirmed issuer downgrades to revenue/cash‑flow or matched canonical priced reactions (sustained share-price falls tied to company guidance) would overturn this conclusion.",
+      "title": "Supplier results show AI demand and margins remain intact despite heavy capex",
+      "whatChanged": "TSMC reported strong 2026Q3 revenue and 58.7% operating margin; CoreWeave reported large Q2 PPE/capitalised software and positive operating cash flow.",
+      "whyItMatters": "Verified issuer results show supplier earnings and sizable capex that support ongoing AI infrastructure demand, moderating a narrative of immediate demand collapse.",
+      "mechanism": "Hyperscaler and AI-lab spending sustains supplier orders and margins even as higher rates raise financing costs; large capex increases near‑term cash needs but does not prove end‑demand collapse.",
+      "conclusion": "Supplier earnings and reported capex are consistent with continued AI infrastructure demand, but large capex raises funding and cash‑flow questions that require issuer‑level financing and order evidence to resolve.",
+      "whatWouldChangeMind": "Canonical issuer disclosures showing material capex cancellations, delayed GPU orders, or sharp downward guidance from hyperscalers would falsify this resilience claim.",
       "epistemicLabel": "OBSERVED",
       "evidenceRefs": [
         "verified-issuer:tsm:2026q3:net_revenue",
         "verified-issuer:tsm:2026q3:operating_margin_pct",
         "verified-issuer:crwv:2026q2:cash_ppe",
-        "verified-issuer:crwv:2026q2:operating_cash_flow",
-        "ai-close:AMD:2026-10-16",
-        "ai-close:AMZN:2026-10-16"
+        "verified-issuer:crwv:2026q2:operating_cash_flow"
       ],
       "confirmingEvidenceRefs": [
         "verified-issuer:tsm:2026q3:net_revenue",
@@ -935,76 +918,55 @@
         "verified-issuer:crwv:2026q2:cash_ppe",
         "verified-issuer:crwv:2026q2:operating_cash_flow"
       ],
-      "contradictingEvidenceRefs": [
-        "ai-close:AMD:2026-10-16",
-        "ai-close:AMZN:2026-10-16"
-      ],
-      "acceleratingEvidenceRefs": [],
-      "unresolvedEvidenceRefs": [],
-      "investigationIds": [
-        "inv:duration-transmission"
-      ],
-      "chartIds": []
-    },
-    {
-      "id": "story:credit-selective-widening",
-      "persistentStoryId": null,
-      "title": "High‑yield spreads have widened sharply while IG barely moved — selective credit stress, not systemic yet.",
-      "whatChanged": "20‑session HY OAS widened ~53bp to 2026‑10‑15 while IG OAS rose only ~6bp over the same window.",
-      "whyItMatters": "A HY‑focused widening can signal issuer/sector stress or positioning-driven re‑pricing; systemic credit contagion requires concurrent IG and MOVE weakness.",
-      "mechanism": "Either issuer‑level risks and sector repricing hit HY, or rising real yields and funding costs selectively press weaker credit; broader transmission would show up in IG and volatility measures.",
-      "conclusion": "Credit stress currently appears concentrated in HY; evidence does not yet show broad IG contagion or volatility‑led systemic risk.",
-      "whatWouldChangeMind": "Sustained IG OAS widening, a rising MOVE index, or correlated breadth deterioration beyond AI names would indicate transmission to systemic credit risk.",
-      "epistemicLabel": "OBSERVED",
-      "evidenceRefs": [
-        "market-crack:hy_oas_20s:2026-09-17:2026-10-15",
-        "market-crack:ig_oas_20s:2026-09-17:2026-10-15"
-      ],
-      "confirmingEvidenceRefs": [
-        "market-crack:hy_oas_20s:2026-09-17:2026-10-15",
-        "market-crack:ig_oas_20s:2026-09-17:2026-10-15"
-      ],
       "contradictingEvidenceRefs": [],
       "acceleratingEvidenceRefs": [],
-      "unresolvedEvidenceRefs": [],
-      "investigationIds": [
-        "inv:duration-transmission"
+      "unresolvedEvidenceRefs": [
+        "research-intake:e5047619-d188-4ecc-86ac-d888165a3b26"
       ],
-      "chartIds": []
+      "investigationIds": [
+        "inv:ai-capex-earnings"
+      ],
+      "chartIds": [
+        "chart:tsm-smh-qqq-earnings"
+      ]
     },
     {
       "id": "story:rates-term-premium-update",
       "persistentStoryId": null,
-      "title": "Nominal yields remain high but model term premium fell; long‑end pressure looks concentrated in real yields.",
-      "whatChanged": "US 10Y nominal ~5.09% and NY Fed ACM 10Y term premium estimate fell to ~0.75% (5‑session -23.7bp).",
-      "whyItMatters": "A falling model term premium with high nominal yields implies long‑end moves are driven more by real‑rate increases than persistent term‑premium repricing — affects policy/risk outlook and auction/flow vulnerability.",
-      "mechanism": "Real yields rise (growth/real‑rate channel) while model term premium contracts; separate auction/flow or dealer‑structure mechanisms remain possible but unproven.",
-      "conclusion": "Current diagnostics point to a real‑yield‑driven long‑end rather than a sustained term‑premium regime; outstanding volatility and auction/flow evidence are needed to confirm.",
-      "whatWouldChangeMind": "Canonical MOVE/Treasury volatility data, dealer stress rules, or auction when‑issued tails showing persistent absorption issues would shift the conclusion toward a term‑premium or structural‑demand story.",
-      "epistemicLabel": "INFERRED",
+      "title": "Long‑end nominal yields high while NY Fed ACM term premium has fallen",
+      "whatChanged": "10Y nominal ~5.09% with real 10Y ~2.78% and NY Fed ACM term premium ~0.75% (five‑session −23.7bp).",
+      "whyItMatters": "Nominal long yields can be elevated because of higher real yields even as modelled term premium compresses; that alters which channel is tightening financial conditions.",
+      "mechanism": "Real‑rate pressure explains much of nominal 10Y level while term‑premium governance has eased; ongoing auction and supply context could still re‑exert upward pressure if absorption weakens.",
+      "conclusion": "Current evidence points to a nominal 10Y driven by higher real yields with a falling modelled term premium; auction/supply evidence exists but dealer balance‑sheet and volatility (MOVE) series are missing for a full decomposition.",
+      "whatWouldChangeMind": "Canonical dealer position/fails evidence, a rising MOVE index, or repeated weak auction metrics (when‑issued tail evidence) showing persistent stop‑throughs would imply term‑premium or structural demand problems instead.",
+      "epistemicLabel": "SUPPORTED",
       "evidenceRefs": [
         "market-monitor:us10y-fred:2026-10-16",
         "market-monitor:us10y-real:2026-10-15",
-        "market-monitor:us10y-breakeven:2026-10-16",
         "ny-fed-acm:10y:2026-10-15",
+        "market-monitor:us10y-breakeven:2026-10-16",
         "treasury-supply:coupon-sizes:2026-10-15",
-        "system1-dollar:dealer-balance-sheet:2026-10-07",
         "treasury-auction:912810UW6:2026-10-08"
       ],
       "confirmingEvidenceRefs": [
         "market-monitor:us10y-fred:2026-10-16",
+        "market-monitor:us10y-real:2026-10-15",
         "ny-fed-acm:10y:2026-10-15",
-        "market-monitor:us10y-real:2026-10-15"
+        "market-monitor:us10y-breakeven:2026-10-16",
+        "treasury-supply:coupon-sizes:2026-10-15",
+        "treasury-auction:912810UW6:2026-10-08"
       ],
       "contradictingEvidenceRefs": [],
       "acceleratingEvidenceRefs": [],
-      "unresolvedEvidenceRefs": [
-        "system1-dollar:nyfed-rates:2026-10-15"
-      ],
+      "unresolvedEvidenceRefs": [],
       "investigationIds": [
-        "inv:cpi-policy-transmission"
+        "inv:cpi-policy-transmission",
+        "inv:duration-transmission"
       ],
-      "chartIds": []
+      "chartIds": [
+        "chart:10y-decomp-real-breakeven-termpremium",
+        "chart:2y-10y-intraday"
+      ]
     }
   ],
   "investigations": [
@@ -1012,10 +974,10 @@
       "id": "inv:cpi-policy-transmission",
       "status": "weakened",
       "question": "Did the mid‑October inflation/news sequence materially reprice short‑end policy expectations and persist into later sessions?",
-      "whyItMatters": "If front‑end repricing persisted, policy odds and borrowing costs rose structurally; if it faded, moves were transient.",
-      "currentExplanation": "Short‑end remains elevated (US 2Y 4.74%; market-monitor:us2y:2026-10-16) while ACM term premium fell (ny-fed-acm:10y:2026-10-15); lack of canonical intraday Fed‑funds‑futures and 5–30m 2Y/10Y bars prevents proving persistence.",
+      "whyItMatters": "If front‑end repricing persisted, that implies tighter policy expectations and higher cost of capital for growth sectors.",
+      "currentExplanation": "Short end remains elevated (US 2Y 4.74%) while ACM term premium fell; lack of canonical intraday Fed‑funds‑futures and MOVE prevents proving persistence.",
       "expectedReaction": "Conventional: hotter CPI would lift short‑end Fed‑funds repricing and push nominal yields higher.",
-      "observedReaction": "US 2Y 4.74% (market-monitor:us2y:2026-10-16); US 10Y 5.09% (market-monitor:us10y-fred:2026-10-16); ACM 10Y term premium 0.747 (ny-fed-acm:10y:2026-10-15).",
+      "observedReaction": "US 2Y 4.74% (market-monitor:us2y:2026-10-16); Effective Fed Funds 3.88% (market-monitor:fed-funds-effective:2026-10-15); ACM 10Y 0.747 (ny-fed-acm:10y:2026-10-15).",
       "divergence": "UNRESOLVED",
       "competingExplanations": [
         "Initial short‑end repricing persisted as policy expectations shifted.",
@@ -1028,7 +990,8 @@
           "evidenceForRefs": [
             "market-monitor:us2y:2026-10-16",
             "market-monitor:us10y-fred:2026-10-16",
-            "ny-fed-acm:10y:2026-10-15"
+            "ny-fed-acm:10y:2026-10-15",
+            "market-monitor:fed-funds-effective:2026-10-15"
           ],
           "evidenceAgainstRefs": [],
           "confidence": "MEDIUM",
@@ -1037,40 +1000,35 @@
         {
           "rank": 2,
           "explanation": "Headline repricing faded as auction/flow sequencing rebalanced yields.",
-          "evidenceForRefs": [
-            "treasury-auction:91282CRF0:2026-10-07",
-            "treasury-auction:912810UW6:2026-10-08",
-            "treasury-supply:coupon-sizes:2026-10-15"
+          "evidenceForRefs": [],
+          "evidenceAgainstRefs": [
+            "market-monitor:us2y:2026-10-16"
           ],
-          "evidenceAgainstRefs": [],
           "confidence": "UNRESOLVED",
           "discriminatingTest": "Front‑end rates revert to pre‑print within 24–48 hours while ACM and auction metrics remain stable."
         }
       ],
-      "researchNext": "Ingest canonical intraday Fed‑funds‑futures and 2Y/10Y 5m–30m bars for 2026‑10‑14–15; add MOVE index monitoring and compare front‑end persistence with auction sequencing. Confirm global duration with Bund, gilt and JGB long ends; cross-check gold versus real yields and USD; compare HY/IG, breadth and MOVE/VIX. Check the crude curve, backwardation and refined-product cracks; verify Trump–Xi outcomes and implementation before using them as facts",
-      "confirmationCondition": "Sustained short‑end Fed‑funds repricing visible intraday through close and replicated across futures/bonds.",
-      "invalidationCondition": "Front‑end repricing reverses and Fed‑funds‑futures return to pre‑print within 24–48 hours.",
+      "researchNext": "Ingest canonical intraday Fed‑funds‑futures and 2Y/10Y 5m–30m bars for 2026‑10‑14–15; add MOVE monitoring and compare front‑end persistence with auction sequencing. Confirm global duration with Bund, gilt and JGB long ends; cross-check gold versus real yields and USD; review available credit and breadth as context. Check the crude curve, backwardation and refined-product cracks; verify Trump–Xi outcomes and implementation before using them as facts",
+      "confirmationCondition": "Persistent Fed‑funds repricing in canonical futures and 2Y staying materially above pre‑print across 4h/close windows.",
+      "invalidationCondition": "Front‑end returns to pre‑print levels within 24–48 hours and no sustained Fed‑funds‑futures change.",
       "evidenceRefs": [
         "market-monitor:us2y:2026-10-16",
+        "market-monitor:fed-funds-effective:2026-10-15",
         "market-monitor:us10y-fred:2026-10-16",
-        "ny-fed-acm:10y:2026-10-15",
-        "treasury-supply:coupon-sizes:2026-10-15",
-        "treasury-auction:91282CRF0:2026-10-07",
-        "treasury-auction:912810UW6:2026-10-08"
+        "ny-fed-acm:10y:2026-10-15"
       ],
       "missingEvidence": [
-        "Canonical intraday Fed‑funds‑futures series for 2026-10-14–15 (5m–30m)",
-        "2Y/10Y 5m–30m intraday bars for 2026-10-14–15",
-        "MOVE/Treasury‑volatility canonical series",
+        "Canonical intraday Fed‑funds‑futures and 5–30m UST bar series for 2026-10-14–15",
+        "MOVE index / Treasury volatility canonical series",
         "Bund, gilt and JGB long-end confirmation for any global-duration label",
         "gold versus real-yield and USD cross-check",
-        "HY/IG credit spreads, breadth and MOVE/VIX confirmation of whether higher yields are spreading",
+        "Market breadth and dated issuer-specific funding evidence where broader financing stress is claimed",
         "crude curve, backwardation and refined-product cracks",
         "verified Trump–Xi outcome and implementation evidence before any political claim"
       ],
       "chartIds": [
-        "chart:2s10s_intraday_cpi_2026-10-14-15",
-        "chart:smh_vs_qqq_1m"
+        "chart:2y-10y-intraday",
+        "chart:10y-decomp-real-breakeven-termpremium"
       ],
       "storyIds": [
         "story:rates-term-premium-update"
@@ -1109,10 +1067,10 @@
       "id": "inv:duration-transmission",
       "status": "open",
       "question": "Is recent yield repricing transmitting into credit spreads, volatility and equity breadth?",
-      "whyItMatters": "Transmission would convert Treasury moves into broader funding stress and equity weakness beyond AI names.",
-      "currentExplanation": "HY OAS widened materially (+53bp 20‑session) while IG OAS moved little; selected AI/semis closed lower (AMD/AMZN), but canonical MOVE and breadth ex‑AI are missing so transmission is unresolved.",
+      "whyItMatters": "Transmission into credit and breadth would signal broader tightening and higher systemic risk.",
+      "currentExplanation": "Long and real yields are elevated while ACM term premium fell; HY/IG and MOVE canonical monitors are missing so transmission to credit/volatility is unresolved.",
       "expectedReaction": "Conventional: rising real yields/front end should widen credit spreads, lift VIX and weaken broad breadth/small caps.",
-      "observedReaction": "HY OAS +53bp (market-crack:hy_oas_20s:2026-09-17:2026-10-15); IG OAS +6bp (market-crack:ig_oas_20s:2026-09-17:2026-10-15); AMD and AMZN closes down (ai-close:AMD:2026-10-16, ai-close:AMZN:2026-10-16).",
+      "observedReaction": "US 10Y 5.09% (market-monitor:us10y-fred:2026-10-16); 10Y real 2.78% (market-monitor:us10y-real:2026-10-15); ACM 0.747 (ny-fed-acm:10y:2026-10-15).",
       "divergence": "UNRESOLVED",
       "competingExplanations": [
         "Concentrated AI/semis weakness with broad large‑cap breadth still intact.",
@@ -1123,48 +1081,47 @@
           "rank": 1,
           "explanation": "Concentrated AI/semis weakness with broad large‑cap breadth still intact; selective HY moves may be idiosyncratic.",
           "evidenceForRefs": [
-            "market-crack:hy_oas_20s:2026-09-17:2026-10-15",
-            "ai-close:AMD:2026-10-16",
-            "ai-close:AMZN:2026-10-16",
-            "verified-issuer:tsm:2026q3:net_revenue"
+            "market-monitor:us10y-fred:2026-10-16"
           ],
           "evidenceAgainstRefs": [],
-          "confidence": "LOW",
+          "confidence": "UNRESOLVED",
           "discriminatingTest": "Canonical HY/IG OAS and MOVE show sustained widening concurrent with breadth deterioration ex‑AI."
         },
         {
           "rank": 2,
           "explanation": "Selective HY widening reflects issuer‑level stress that may not become systemic without persistent yield pressure.",
           "evidenceForRefs": [
-            "market-crack:hy_oas_20s:2026-09-17:2026-10-15",
-            "market-crack:ig_oas_20s:2026-09-17:2026-10-15"
+            "treasury-supply:coupon-sizes:2026-10-15",
+            "treasury-auction:912810UW6:2026-10-08"
           ],
-          "evidenceAgainstRefs": [],
+          "evidenceAgainstRefs": [
+            "market-monitor:us10y-real:2026-10-15"
+          ],
           "confidence": "UNRESOLVED",
           "discriminatingTest": "IG OAS widening and a rising MOVE index alongside HY widening and breadth deterioration."
         }
       ],
-      "researchNext": "Ingest canonical MOVE and HY/IG OAS intraday/daily series; run HY/IG vs yields regressions and breadth ex‑AI decomposition.",
-      "confirmationCondition": "IG widening and rising MOVE accompanied by breadth deterioration ex‑AI.",
-      "invalidationCondition": "IG stays flat, MOVE unchanged, and breadth remains intact outside AI names.",
+      "researchNext": "Ingest canonical MOVE and HY/IG OAS daily series; run HY/IG vs yields regressions and breadth ex‑AI decomposition.",
+      "confirmationCondition": "Sustained HY and IG widening with rising MOVE and falling breadth ex‑AI.",
+      "invalidationCondition": "HY/IG and MOVE remain contained and breadth stays intact ex‑AI.",
       "evidenceRefs": [
-        "market-crack:hy_oas_20s:2026-09-17:2026-10-15",
-        "market-crack:ig_oas_20s:2026-09-17:2026-10-15",
-        "ai-close:AMD:2026-10-16",
-        "ai-close:AMZN:2026-10-16",
-        "verified-issuer:tsm:2026q3:net_revenue"
+        "market-monitor:us10y-fred:2026-10-16",
+        "market-monitor:us10y-real:2026-10-15",
+        "market-monitor:us10y-breakeven:2026-10-16",
+        "treasury-supply:coupon-sizes:2026-10-15",
+        "treasury-auction:912810UW6:2026-10-08"
       ],
       "missingEvidence": [
-        "Canonical MOVE index (daily and intraday)",
-        "Breadth series excluding AI names (e.g., advance/decline ex‑AI)",
-        "HY/IG intraday OAS time series"
+        "Canonical MOVE index series",
+        "Daily HY/IG OAS canonical series and breadth ex‑AI",
+        "Dealer balance‑sheet / fails / position data"
       ],
       "chartIds": [
-        "chart:hy_ig_oas_20s",
-        "chart:smh_vs_qqq_1m"
+        "chart:10y-decomp-real-breakeven-termpremium",
+        "chart:tsm-smh-qqq-earnings"
       ],
       "storyIds": [
-        "story:credit-selective-widening",
+        "story:rates-term-premium-update",
         "story:ai-capex-earnings-resilience"
       ],
       "thesisIds": [
@@ -1202,10 +1159,10 @@
     {
       "symbol": "TSM",
       "companyName": "Taiwan Semiconductor Manufacturing Company",
-      "whyRelevant": "Reported strong Q3 revenue and very high operating margins, central to AI‑supplier resilience.",
-      "researchQuestion": "Do TSM pricing and orders confirm sustained AI demand and capex absorption?",
+      "whyRelevant": "Verified 2026Q3 revenue and very high operating margin directly inform the AI supplier resilience story.",
+      "researchQuestion": "Does TSM's beat and margins justify ongoing SMH leadership and durable wafer demand?",
       "confirmingSignal": "verified-issuer:tsm:2026q3:net_revenue",
-      "invalidatingSignal": "No canonical TSM priced reaction in packet",
+      "invalidatingSignal": "TSM guidance of material backlog reductions or hyperscaler order cancellations (not yet present).",
       "linkedStoryId": "story:ai-capex-earnings-resilience",
       "evidenceRefs": [
         "verified-issuer:tsm:2026q3:net_revenue",
@@ -1215,26 +1172,14 @@
     {
       "symbol": "CRWV",
       "companyName": "CoreWeave",
-      "whyRelevant": "Large Q2 cash purchases of PPE and capex indicate heavy AI infrastructure investment.",
-      "researchQuestion": "Can CoreWeave operating cash flow sustain reported capex and growth?",
+      "whyRelevant": "Large reported capitalised PPE and positive operating cash flow speak to capex scale and cash conversion in the AI infrastructure patch.",
+      "researchQuestion": "Does CoreWeave capex growth reflect sustained hyperscaler demand or front‑loaded investment requiring financing?",
       "confirmingSignal": "verified-issuer:crwv:2026q2:cash_ppe",
-      "invalidatingSignal": "No immediate priced reaction in packet",
+      "invalidatingSignal": "Issuer disclosure of material order cancellations or liquidity shortfalls (not present).",
       "linkedStoryId": "story:ai-capex-earnings-resilience",
       "evidenceRefs": [
         "verified-issuer:crwv:2026q2:cash_ppe",
         "verified-issuer:crwv:2026q2:operating_cash_flow"
-      ]
-    },
-    {
-      "symbol": "AMD",
-      "companyName": "Advanced Micro Devices",
-      "whyRelevant": "Representative AI/semiconductor name that closed down on 2026‑10‑16 and may signal sentiment.",
-      "researchQuestion": "Is AMD's price weakness idiosyncratic, short‑term positioning, or evidence of demand softness?",
-      "confirmingSignal": "ai-close:AMD:2026-10-16",
-      "invalidatingSignal": "Supplier earnings remain strong (TSM, CoreWeave)",
-      "linkedStoryId": "mt:2026-10-18:rates-credit-ai",
-      "evidenceRefs": [
-        "ai-close:AMD:2026-10-16"
       ]
     }
   ],
@@ -1463,48 +1408,10 @@
   },
   "marketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "f22d8b3f-8be2-4b0d-9db8-910e98d92613",
-    "capturedAt": "2026-10-18T14:40:59.712Z",
-    "researchRunId": "4bca09cb-45ca-4e42-a26d-8899965e4b5e",
-    "items": [
-      {
-        "id": "9378bdba-969d-4015-9c43-83523518ad8f",
-        "motionKey": "event:cpi:2026-10",
-        "versionNumber": 5,
-        "headline": "Key Market Events for the Week of October 19 – 23 , 2026",
-        "category": "MACRO",
-        "verificationState": "REPORTED",
-        "lifecycleState": "PROMOTED",
-        "whatHappened": "China growth, Brazil mid-month CPI and Mexico activity anchor a week of selective risk-taking across Latin American assets.",
-        "marketReaction": null,
-        "whyInteresting": "High-impact US macro release or release reaction. Search/index discovery only; the underlying publisher URL is canonical provenance.",
-        "bigPictureBridge": "Fresh energy / geopolitical evidence → physical supply and inflation channel → Energy Security regime",
-        "nextTest": "High-impact US macro release or release reaction",
-        "tickers": [
-          "NASDAQ",
-          "BTCUSD"
-        ],
-        "sourceName": "riotimesonline.com",
-        "sourceUrl": "https://www.riotimesonline.com/key-market-events-for-the-week-of-october-19-23-2026/",
-        "materiality": 88,
-        "relevance": 88,
-        "novelty": 88,
-        "occurredAt": "2026-10-07T03:16:24.000Z",
-        "storyId": "fe9e1860-ace4-4393-8f2d-7f8081990661",
-        "storySlug": "market-breadth-health",
-        "storyTitle": "Tech-Led Breadth Transition: Confirmation Still Incomplete",
-        "regimeSlug": "energy-security-inflation",
-        "regimeLabel": "Energy Security",
-        "attentionTier": "PRIMARY",
-        "attentionScore": 88,
-        "writingPotential": "MEDIUM",
-        "attentionReasons": [
-          "high materiality",
-          "high market relevance",
-          "asset/ticker linked"
-        ]
-      }
-    ]
+    "editionId": "00ba8a54-6a9a-45ce-8a23-785a344b6501",
+    "capturedAt": "2026-10-18T16:21:38.020Z",
+    "researchRunId": "c9bd1e0e-ccd1-4d77-b44c-486ffa73a673",
+    "items": []
   },
   "upstreamGuardrails": [
     "This snapshot is a read-only Live canonical market-intelligence view for downstream consumers.",
@@ -1522,5 +1429,5 @@
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-18T15:55:26.595Z"
+  "syncedAt": "2026-10-18T20:49:29.982Z"
 }

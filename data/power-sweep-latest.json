@@ -1,21 +1,21 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-18T20:41:29.855Z",
-  "asOf": "2026-10-18T07:19:14.981+00:00",
+  "generatedAt": "2026-10-18T20:49:30.119Z",
+  "asOf": "2026-10-18T17:27:40.581+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
   "inputHealth": {
     "liveDesk": {
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
-      "asOf": "2026-10-18T07:19:14.981+00:00",
-      "syncedAt": "2026-10-18T15:55:26.595Z",
+      "asOf": "2026-10-18T17:27:40.581+00:00",
+      "syncedAt": "2026-10-18T20:49:29.982Z",
       "status": "OK"
     },
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-18T20:41:29.805Z",
+      "generatedAt": "2026-10-18T20:49:30.073Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -30,8 +30,8 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "Yields remain elevated and front‑end hawkish while HY spreads widen — AI suppliers report strong revenue/capex, leaving transmission to IG/MOVE/VIX unresolved.",
-    "implication": "Higher short and real yields are tightening financing conditions; AI supplier results support sector resilience but do not yet disprove a rates‑led tightening if credit and volatility also widen.",
+    "headline": "US yields remain high while AI supplier results look solid; credit/breadth confirmation is unresolved",
+    "implication": "Higher yields are tightening financial conditions, but resilience is concentrated in AI/semiconductor supplier results; whether this becomes broad risk‑off depends on credit, MOVE and breadth data not yet present.",
     "monetarySummary": "Rate baseline HAWKISH; 3 confirming, 0 contradicting, 8 unresolved/neutral monetary-market layers."
   },
   "queueCounts": {
@@ -44,48 +44,10 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "f22d8b3f-8be2-4b0d-9db8-910e98d92613",
-    "capturedAt": "2026-10-18T14:40:59.712Z",
-    "itemCount": 1,
-    "items": [
-      {
-        "id": "9378bdba-969d-4015-9c43-83523518ad8f",
-        "motionKey": "event:cpi:2026-10",
-        "versionNumber": 5,
-        "headline": "Key Market Events for the Week of October 19 – 23 , 2026",
-        "category": "MACRO",
-        "verificationState": "REPORTED",
-        "lifecycleState": "PROMOTED",
-        "whatHappened": "China growth, Brazil mid-month CPI and Mexico activity anchor a week of selective risk-taking across Latin American assets.",
-        "marketReaction": null,
-        "whyInteresting": "High-impact US macro release or release reaction. Search/index discovery only; the underlying publisher URL is canonical provenance.",
-        "bigPictureBridge": "Fresh energy / geopolitical evidence → physical supply and inflation channel → Energy Security regime",
-        "nextTest": "High-impact US macro release or release reaction",
-        "tickers": [
-          "NASDAQ",
-          "BTCUSD"
-        ],
-        "sourceName": "riotimesonline.com",
-        "sourceUrl": "https://www.riotimesonline.com/key-market-events-for-the-week-of-october-19-23-2026/",
-        "materiality": 88,
-        "relevance": 88,
-        "novelty": 88,
-        "occurredAt": "2026-10-07T03:16:24.000Z",
-        "storyId": "fe9e1860-ace4-4393-8f2d-7f8081990661",
-        "storySlug": "market-breadth-health",
-        "storyTitle": "Tech-Led Breadth Transition: Confirmation Still Incomplete",
-        "regimeSlug": "energy-security-inflation",
-        "regimeLabel": "Energy Security",
-        "attentionTier": "PRIMARY",
-        "attentionScore": 88,
-        "writingPotential": "MEDIUM",
-        "attentionReasons": [
-          "high materiality",
-          "high market relevance",
-          "asset/ticker linked"
-        ]
-      }
-    ]
+    "editionId": "00ba8a54-6a9a-45ce-8a23-785a344b6501",
+    "capturedAt": "2026-10-18T16:21:38.020Z",
+    "itemCount": 0,
+    "items": []
   },
   "portfolioTriage": {
     "tapeDivergences": [
@@ -166,66 +128,7 @@
         "nextCheck": "Normalize combined weight in base currency and verify warrant terms."
       }
     ],
-    "portfolioDivergences": [
-      {
-        "id": "rates-vs-tech-resilience",
-        "importance": "HIGH",
-        "divergence": "PARTIAL",
-        "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-        "actual": "Supplier fundamentals strong: TSMC Q3 revenue and very high operating margins and CoreWeave large capex/cash‑flow; some AI/semis share weakness in selected names (AMD, AMZN closes).",
-        "affectedHoldings": [
-          "TSLA",
-          "TTWO",
-          "YTLPOWR",
-          "6742UW"
-        ],
-        "candidateExplanations": [
-          "Narrow AI/semiconductor leadership is offsetting broad duration pressure at index level.",
-          "Company-specific catalysts and funded/backlogged AI infrastructure demand are overpowering the discount-rate headwind in selected names.",
-          "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
-        ],
-        "evidenceFor": [
-          "Issuer evidence supports continued infrastructure demand and capex; equity dips are selective and do not yet imply broad demand weakness.",
-          "Breadth monitors (advance/decline ex‑AI) are not present; cannot confirm whether weakness is broad or concentrated.",
-          "Nasdaq daily move -2.15 with bias BEARISH."
-        ],
-        "evidenceAgainst": [
-          "Front‑end remains hawkish while model term premium contracted; long‑end pressure appears concentrated in real yields but decomposition gaps persist."
-        ],
-        "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
-        "confidence": "HIGH",
-        "invalidation": "If breadth broadens materially while credit remains benign and real yields stay high, the rate headwind is less dominant than assumed. If AI/semiconductor leadership rolls over, the divergence resolves in the bearish direction."
-      },
-      {
-        "id": "rates-vs-credit-transmission",
-        "importance": "HIGH",
-        "divergence": "YES",
-        "expected": "A persistent long-end tightening shock should eventually raise financing stress and widen credit spreads.",
-        "actual": "HY OAS widened +53bp over 20 sessions while IG OAS rose ~6bp (market-crack hy/ig series).",
-        "affectedHoldings": [
-          "TSLA",
-          "TTWO",
-          "YTLPOWR",
-          "6742UW",
-          "MISC"
-        ],
-        "candidateExplanations": [
-          "The current move is still primarily a rates/term-premium shock rather than a broad solvency or funding shock.",
-          "Strong nominal growth and healthy corporate balance sheets may be delaying credit transmission.",
-          "Credit may simply be lagging rates and could become the next confirmation leg."
-        ],
-        "evidenceFor": [
-          "Credit widening concentrated in HY; systemic transmission is not confirmed without IG/volatility confirmation.",
-          "Funding/credit composite is currently NEUTRAL."
-        ],
-        "evidenceAgainst": [
-          "Higher short and real yields are tightening financing conditions; AI supplier results support sector resilience but do not yet disprove a rates‑led tightening if credit and volatility also widen."
-        ],
-        "leadingHypothesis": "The shock is rates-led, not yet systemic; keep dry powder because credit remains the key confirmation risk.",
-        "confidence": "HIGH",
-        "invalidation": "Sustained HY/IG widening with weaker breadth and higher volatility would confirm transmission and require a stricter portfolio-risk posture."
-      }
-    ]
+    "portfolioDivergences": []
   },
   "holdingResearchQueue": [
     {
@@ -485,24 +388,16 @@
     {
       "ticker": "TSM",
       "companyName": "Taiwan Semiconductor Manufacturing Company",
-      "whyRelevant": "Reported strong Q3 revenue and very high operating margins, central to AI‑supplier resilience.",
-      "researchQuestion": "Do TSM pricing and orders confirm sustained AI demand and capex absorption?",
+      "whyRelevant": "Verified 2026Q3 revenue and very high operating margin directly inform the AI supplier resilience story.",
+      "researchQuestion": "Does TSM's beat and margins justify ongoing SMH leadership and durable wafer demand?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     },
     {
       "ticker": "CRWV",
       "companyName": "CoreWeave",
-      "whyRelevant": "Large Q2 cash purchases of PPE and capex indicate heavy AI infrastructure investment.",
-      "researchQuestion": "Can CoreWeave operating cash flow sustain reported capex and growth?",
-      "status": "DISCOVERY_ONLY",
-      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
-    },
-    {
-      "ticker": "AMD",
-      "companyName": "Advanced Micro Devices",
-      "whyRelevant": "Representative AI/semiconductor name that closed down on 2026‑10‑16 and may signal sentiment.",
-      "researchQuestion": "Is AMD's price weakness idiosyncratic, short‑term positioning, or evidence of demand softness?",
+      "whyRelevant": "Large reported capitalised PPE and positive operating cash flow speak to capex scale and cash conversion in the AI infrastructure patch.",
+      "researchQuestion": "Does CoreWeave capex growth reflect sustained hyperscaler demand or front‑loaded investment requiring financing?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     }
@@ -572,7 +467,8 @@
     }
   ],
   "researchGaps": [
-    "DATA: Canonical intraday Fed‑funds‑futures, 5m–30m 2Y/10Y bars and MOVE/Treasury volatility series are missing and block persistence and transmission conclusions.",
+    "MARKET_DATA: Canonical intraday Fed‑funds‑futures and 5–30m UST 2Y/10Y bars for 2026-10-14–15 are missing, blocking persistence assessment of short‑end repricing.",
+    "MARKET_DATA: MOVE index and canonical HY/IG OAS series are not present, blocking a decision on whether yield moves have transmitted into credit and volatility.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence.",
     "Holding tape unresolved: 6742UW"
   ],
