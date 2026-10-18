@@ -42,9 +42,9 @@ requireMatch("Portfolio overlay", overlay, /does not alter overlay state or comp
 requireMatch("PowerSweep", sweep, /holding\.motionContext\?\.length/);
 requireMatch("PowerSweep", sweep, /function liveMotionForTicker/);
 requireMatch("PowerSweep", sweep, /liveMotion\.length \? 20 : 0/);
-requireMatch("PowerSweep", sweep, /item\\.verificationState !== "LEAD"/);
-requireMatch("PowerSweep", sweep, /words\\.has\\(symbol\\)/);
-requireMatch("PowerSweep", sweep, /words\\.has\\(companyToken\\)/);
+requireMatch("PowerSweep", sweep, /item\.verificationState !== "LEAD"/);
+requireMatch("PowerSweep", sweep, /words\.has\(symbol\)/);
+requireMatch("PowerSweep", sweep, /words\.has\(companyToken\)/);
 requireMatch("PowerSweep", sweep, /item\.motionContext\?\.length/);
 
 requireMatch("PowerSweep config", config, /only active short-horizon Motion source|Consume immutable promoted Live Market Motion/);
