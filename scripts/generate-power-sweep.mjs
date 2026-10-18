@@ -114,7 +114,7 @@ function candidatePriority(candidate) {
 
 function liveMotionForTicker(live, ticker, companyName = "") {
   const symbol = String(ticker || "").toUpperCase();
-  const companyToken = String(companyName || "").trim().split(/\\s+/)[0]?.toUpperCase();
+  const companyToken = String(companyName || "").trim().split(/\s+/)[0]?.toUpperCase();
   return (live.marketMotion?.items || [])
     .filter((item) => {
       if (!(item.tickers || []).some((candidate) => String(candidate).toUpperCase() === symbol)) return false;
