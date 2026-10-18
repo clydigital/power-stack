@@ -1,5 +1,12 @@
 # Power Stack
 
+## 18 October 2026 — AI regime and portfolio trade review (research only)
+
+The [18 October source-dated portfolio decision review](research/2026-10-18-ai-regime-portfolio-trade-review.md) and [machine-readable decision overlay](data/portfolio-decision-review-2026-10-18.json) reconcile the existing 16/16 current Notion AI-capex company trackers, Friday 16 October US/Malaysia share closes, the eight recorded holdings and seven conditional trade candidates. The first capital-recycling reviews are **DAYANG** (support/operating thesis broken), **YTLPOWR** (large verified MY common-equity concentration, former support broken), the **unverified warrant**, and **TSLA** (21 October binary earnings risk). Research priorities are **CF, ETN and BWXT** first; **GRAB, TSM and MU** require stronger specific confirmation. This does **not** overwrite company scores, positions, ranks, canonical Dossier or live trade permissions.
+
+**Data-quality blocker:** the 6-hour Yahoo holding-tape sync still carries 24-25 September closes after failed fetches. Some displayed tape-versus-regime `CONFIRMS / DIVERGES` statuses are stale and must not be treated as October trade evidence. This separate research-only snapshot contains source-dated 16 October observations while the automated freshness/quote path is repaired. All prices and review gates require checking at the next trading session.
+
+
 ## 15 October 2026 — Full-spectrum portfolio sweep (research only)
 
 The [15 Oct cross-asset research report](research/2026-10-15-power-stack-full-spectrum-sweep.md) and [full-coverage triage ledger](data/full-spectrum-triage-2026-10-15.json) reconcile latest MacroPulse, 15 Oct reviewed creator-video hypotheses and independent sector sources across picks-and-shovels, agriculture, refined energy, LNG, nuclear, renewables and bonds. All eight holdings, 46 scored watchlist names and 56 historical idea rows have triage dispositions; seven additional sector names are explicitly **unscored**. The proposed active-radar archive is **not deletion, a sale or a reranking**. Current scores, buckets, holding quantities, prior company evidence, existing canonical Live authority and all executable action gates remain unchanged; mostly September quotes are stale and new additions require current pricing and issuer due diligence.
