@@ -112,10 +112,20 @@ function candidatePriority(candidate) {
   return score;
 }
 
-function liveMotionForTicker(live, ticker) {
+function liveMotionForTicker(live, ticker, companyName = "") {
   const symbol = String(ticker || "").toUpperCase();
+  const companyToken = String(companyName || "").trim().split(/\s+/)[0]?.toUpperCase();
   return (live.marketMotion?.items || [])
-    .filter((item) => (item.tickers || []).some((candidate) => String(candidate).toUpperCase() === symbol))
+    .filter((item) => {
+      if (!(item.tickers || []).some((candidate) => String(candidate).toUpperCase() === symbol)) return false;
+      // A creator LEAD may bundle tickers from a transcript without making a
+      // company-specific claim. Do not boost a stock merely for appearing in that list.
+      if (item.verificationState !== "LEAD") return true;
+      const narrative = [item.headline, item.whatHappened, item.whyInteresting, item.nextTest]
+        .filter(Boolean).join(" ").toUpperCase();
+      const words = new Set(narrative.split(/[^A-Z0-9]+/).filter(Boolean));
+      return words.has(symbol) || (companyToken?.length >= 4 && words.has(companyToken));
+    })
     .slice(0, 3)
     .map((item) => ({
       id: item.id,
@@ -212,7 +222,7 @@ function build(existingGeneratedAt = null) {
     .filter((item) => ["buy","selective","wait"].includes(item.bucket))
     .map((item) => {
       const diversification = watchlistDiversification(item);
-      const liveMotion = liveMotionForTicker(live, item.ticker);
+      const liveMotion = liveMotionForTicker(live, item.ticker, item.name);
       return {
         ticker: item.ticker,
         name: item.name,
