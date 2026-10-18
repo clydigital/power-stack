@@ -46,8 +46,13 @@ assert(market.sourceLinks.some(s=>s.url.includes('3f9519b67a948187b850f1562e1a5a
 assert(market.sourceLinks.some(s=>s.url.includes('research/2026-10-14-post-cpi-54-security-review.md')),'Missing 54-stock report');
 assert(memo.includes('8/8 current holdings')&&memo.includes('46/46 watchlist'));
 assert(review.sources.some(x=>x.type==='OFFICIAL')&&review.sources.some(x=>x.type==='NOTION_PULSE'));
-assert.equal(review.sourceHealth.liveSnapshot.status,live.sourceStatus);
-assert.equal(review.sourceHealth.liveSnapshot.asOf,live.asOf);
+// The 14 Oct CPI review is an immutable point-in-time assessment. The
+// current six-hour Live sync must not rewrite or invalidate its historical Dossier.
+const pinnedLive = review.sourceHealth.liveSnapshot;
+assert(pinnedLive.status && pinnedLive.dossierId,'CPI review lost its pinned Dossier provenance');
+assert(Number.isFinite(Date.parse(pinnedLive.asOf)) && Date.parse(pinnedLive.asOf) <= Date.parse(review.asOf),
+  'CPI review cites a Live snapshot newer than the review itself');
+assert(Number.isFinite(Date.parse(live.asOf)),'Current Live snapshot timestamp is invalid');
 assert(review.sourceHealth.creditAndFullCurve.includes('UNVERIFIED'),'Post-CPI full curve/credit not marked verified');
 assert(review.sourceHealth.stockPrices.includes('NO_NEW_14_OCT_QUOTES'));
 assert(index.includes('data/cpi-2026-10-14-security-overlay.json')&&index.includes('PowerStackState.cpiImpact(cpiHold.get(h.ticker))')&&index.includes('PowerStackState.cpiImpact(cpiWatch.get(x.ticker))'),'Homepage CPI chips missing');
