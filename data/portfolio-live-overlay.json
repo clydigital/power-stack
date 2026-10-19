@@ -1,8 +1,8 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-19T22:20:37.941Z",
-  "liveAsOf": "2026-10-19T07:57:06.296+00:00",
-  "liveSyncedAt": "2026-10-19T13:25:48.641Z",
+  "generatedAt": "2026-10-19T22:24:03.643Z",
+  "liveAsOf": "2026-10-19T20:12:21.646+00:00",
+  "liveSyncedAt": "2026-10-19T22:24:03.526Z",
   "sourceHealth": {
     "dossier": "DEGRADED",
     "marketMonitor": "PARTIAL",
@@ -13,16 +13,16 @@
     "treasurySupply": "UNRESOLVED"
   },
   "regime": {
-    "family": "RATES_LED_TIGHTENING",
-    "headline": "US yields stay elevated while NY Fed ACM term premium falls; credit/breadth transmission remains unproven",
-    "answer": "Front-end and real yields are high (US 2Y 4.74%; 10Y real 2.78%) while the NY Fed ACM 10Y term premium dropped to ~0.75%, and announced Treasury coupon supply is unchanged; canonical HY/IG and MOVE monitors are missing, so whether higher rates are broadening into credit/volatility is unresolved.",
-    "implication": "Rates are exerting tightening pressure (front end and real yields elevated) but there is no canonical evidence yet that credit, breadth or volatility confirm a systemic risk‑off.",
-    "whatWouldChangeMind": "Canonical MOVE and HY/IG OAS series showing sustained widening, or intraday Fed‑funds‑futures + 2Y/10Y tick bars proving front‑end repricing either persisted or faded through the close."
+    "family": "MIXED_TRANSITION",
+    "headline": "U.S. yields remain high while HY spreads have widened sharply—selective credit stress amid lower modelled term premium.",
+    "answer": "Nominal 10Y ~5.15% with 10Y real ~2.78% and NY Fed ACM term premium down to ~0.76%, while US high‑yield OAS widened ~63bp over 20 sessions versus an ~8bp IG change—signalling selective HY pressure, not broad IG stress; MOVE and intraday fed‑funds evidence are missing and would change the assessment.",
+    "implication": "Policy‑sensitive yields are sustaining a tighter financing backdrop while credit stress looks concentrated in HY; that raises conditional downside risk to cyclical/levered credits but does not yet confirm a broad risk‑off.",
+    "whatWouldChangeMind": "Canonical MOVE/Treasury‑volatility and intraday fed‑funds‑futures + 2Y/10Y 5m–30m bars for Oct 14–16 showing either persistence or rapid reversion; auction‑flow persistence would also alter the regime call."
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "b7c62bae-5203-48bd-8d0c-b8bc5271b98d",
-    "capturedAt": "2026-10-19T04:06:33.773Z",
+    "editionId": "fcea17ef-f575-4283-a363-7d5fa9c918c7",
+    "capturedAt": "2026-10-19T16:19:19.317Z",
     "itemCount": 1,
     "linkedHoldingCount": 0
   },
@@ -48,15 +48,15 @@
           "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
           "detail": "No current deterministic policy impulse or directional next-meeting repricing is present in the bounded rate context.",
-          "asOf": "2026-10-19T07:57:06.296Z"
+          "asOf": "2026-10-19T20:12:21.646Z"
         },
         {
           "key": "RATES_FRONT_END",
           "label": "Front-end pricing",
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
-          "detail": "US 2Y 4.74%; 5D n/a; vs effective fed funds +86.0 bp.",
-          "asOf": "2026-10-19T07:57:06.296Z"
+          "detail": "US 2Y 4.77%; 5D n/a; vs effective fed funds +89.0 bp.",
+          "asOf": "2026-10-19T20:12:21.646Z"
         },
         {
           "key": "RATES_REAL_YIELDS",
@@ -64,7 +64,7 @@
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
           "detail": "10Y real yield 2.78%; 5D n/a.",
-          "asOf": "2026-10-19T07:57:06.296Z"
+          "asOf": "2026-10-19T20:12:21.646Z"
         },
         {
           "key": "RATES_BREAKEVENS",
@@ -72,31 +72,31 @@
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
           "detail": "10Y breakeven 2.35%; 5D n/a.",
-          "asOf": "2026-10-19T07:57:06.296Z"
+          "asOf": "2026-10-19T20:12:21.646Z"
         },
         {
           "key": "RATES_LONG_END",
           "label": "Long-end nominal yields",
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
-          "detail": "US 10Y 5.09%; 5D n/a; US 20Y 5.47%; 5D n/a; US 30Y 5.43%; 5D n/a.",
-          "asOf": "2026-10-19T07:57:06.296Z"
+          "detail": "US 10Y 5.15%; 5D n/a; US 20Y 5.53%; 5D n/a; US 30Y 5.48%; 5D n/a.",
+          "asOf": "2026-10-19T20:12:21.646Z"
         },
         {
           "key": "BILLS",
           "label": "Treasury bills / front-end cash",
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
-          "detail": "3M 4.26%; 6M 4.34%; average vs EFFR +42.0 bp.",
-          "asOf": "2026-10-16"
+          "detail": "3M 4.27%; 6M 4.37%; average vs EFFR +44.0 bp.",
+          "asOf": "2026-10-19"
         }
       ]
     },
     "funding": {
-      "state": "NEUTRAL",
-      "tighter": 0,
+      "state": "TIGHTER",
+      "tighter": 1,
       "easier": 0,
-      "neutral": 2,
+      "neutral": 1,
       "unresolved": 0,
       "keys": [
         "FUNDING",
@@ -114,17 +114,17 @@
         {
           "key": "CREDIT",
           "label": "Credit spreads",
-          "direction": "NEUTRAL",
-          "confirmation": "UNRESOLVED",
-          "detail": "HY OAS 3.23 (5D +8.0 bp); IG OAS 0.84 (5D +2.0 bp).",
-          "asOf": "2026-10-15"
+          "direction": "TIGHTER",
+          "confirmation": "CONFIRMING",
+          "detail": "HY OAS 3.31 (5D +20.0 bp); IG OAS 0.85 (5D +2.0 bp).",
+          "asOf": "2026-10-16"
         }
       ]
     },
     "physicalEnergy": {
       "status": "UNRESOLVED",
       "observed": false,
-      "detail": "No canonical crude or product crack time‑series in this packet to test whether energy is sustaining inflation/rates pressure.",
+      "detail": "Packet includes topical leads about oil geopolitics but lacks canonical WTI/ULSD crack, inventory or curve evidence to assert a sustained inflation impulse.",
       "evidenceRefs": []
     }
   },
@@ -154,7 +154,7 @@
       },
       "effects": {
         "rates": "HEADWIND",
-        "funding": "NEUTRAL",
+        "funding": "HEADWIND",
         "energy": "UNRESOLVED"
       },
       "sensitivities": {
@@ -263,7 +263,7 @@
       "trimOrRecycleGate": "Reduce only if energy cluster concentration is excessive or integrated/refining economics deteriorate; crude de-escalation alone is not enough.",
       "rationale": [
         "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
-        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
+        "Funding/credit: headwind with moderate sensitivity while the Live channel is tighter.",
         "Physical energy: unresolved because the Live energy lens is not observed."
       ]
     },
@@ -292,7 +292,7 @@
       },
       "effects": {
         "rates": "HEADWIND",
-        "funding": "NEUTRAL",
+        "funding": "HEADWIND",
         "energy": "UNRESOLVED"
       },
       "sensitivities": {
@@ -393,7 +393,7 @@
       "trimOrRecycleGate": "Route normalization plus weaker freight or adverse funding terms reduce the case.",
       "rationale": [
         "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
-        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
+        "Funding/credit: headwind with high sensitivity while the Live channel is tighter.",
         "Physical energy: unresolved because the Live energy lens is not observed."
       ]
     },
@@ -422,7 +422,7 @@
       },
       "effects": {
         "rates": "HEADWIND",
-        "funding": "NEUTRAL",
+        "funding": "HEADWIND",
         "energy": "UNRESOLVED"
       },
       "sensitivities": {
@@ -515,7 +515,7 @@
       "trimOrRecycleGate": "Failure to repair with weakening operations makes it a candidate source of capital for higher-quality or less-correlated exposure.",
       "rationale": [
         "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
-        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
+        "Funding/credit: headwind with moderate sensitivity while the Live channel is tighter.",
         "Physical energy: unresolved because the Live energy lens is not observed."
       ]
     },
@@ -788,7 +788,7 @@
       },
       "effects": {
         "rates": "HEADWIND",
-        "funding": "NEUTRAL",
+        "funding": "HEADWIND",
         "energy": "UNRESOLVED"
       },
       "sensitivities": {
@@ -865,7 +865,7 @@
       "trimOrRecycleGate": "Further technical deterioration or catalyst/cash-flow slippage.",
       "rationale": [
         "Rates/duration: headwind with very high sensitivity while the Live channel is tighter.",
-        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
+        "Funding/credit: headwind with very high sensitivity while the Live channel is tighter.",
         "Physical energy: unresolved because the Live energy lens is not observed."
       ]
     },
@@ -894,7 +894,7 @@
       },
       "effects": {
         "rates": "HEADWIND",
-        "funding": "NEUTRAL",
+        "funding": "HEADWIND",
         "energy": "UNRESOLVED"
       },
       "sensitivities": {
@@ -971,7 +971,7 @@
       "trimOrRecycleGate": "Failure of repair, worsening auto economics or evidence that optionality is not converting into cash flow.",
       "rationale": [
         "Rates/duration: headwind with very high sensitivity while the Live channel is tighter.",
-        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
+        "Funding/credit: headwind with very high sensitivity while the Live channel is tighter.",
         "Physical energy: unresolved because the Live energy lens is not observed."
       ]
     },
@@ -1000,7 +1000,7 @@
       },
       "effects": {
         "rates": "HEADWIND",
-        "funding": "NEUTRAL",
+        "funding": "HEADWIND",
         "energy": "UNRESOLVED"
       },
       "sensitivities": {
@@ -1093,7 +1093,7 @@
       "trimOrRecycleGate": "Break of RM1.42 or continued weak utilization/work-order conversion.",
       "rationale": [
         "Rates/duration: headwind with moderate sensitivity while the Live channel is tighter.",
-        "Funding/credit: no material directional overlay at the current sensitivity threshold.",
+        "Funding/credit: headwind with moderate sensitivity while the Live channel is tighter.",
         "Physical energy: unresolved because the Live energy lens is not observed."
       ]
     }
@@ -1193,9 +1193,7 @@
     }
   ],
   "liveResearchGaps": [
-    "DATA: Canonical MOVE (Treasury volatility) series is not present; this blocks attributing persistence or systemic transmission of yield moves.",
-    "DATA: Canonical HY and IG OAS series are missing; without them transmission to credit cannot be tested.",
-    "DATA: Cross‑currency basis / FX‑swap canonical series (offshore USD liquidity) is missing and blocks a full dollar‑liquidity assessment.",
+    "MARKET_DATA: Canonical MOVE/Treasury‑volatility and intraday fed‑funds‑futures + 2Y/10Y 5m–30m bars for Oct 14–16 are missing and materially block persistence/decomposition conclusions in MAIN_THREAD and CPI/Duration investigations.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],
   "guardrails": [
