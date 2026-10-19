@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-19T04:39:10.021Z",
+  "generatedAt": "2026-10-19T04:47:30.862Z",
   "asOf": "2026-10-18T17:27:40.581+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -9,13 +9,13 @@
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
       "asOf": "2026-10-18T17:27:40.581+00:00",
-      "syncedAt": "2026-10-18T20:49:29.982Z",
+      "syncedAt": "2026-10-19T04:47:30.689Z",
       "status": "OK"
     },
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-19T04:39:09.964Z",
+      "generatedAt": "2026-10-19T04:47:30.803Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -44,10 +44,56 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "00ba8a54-6a9a-45ce-8a23-785a344b6501",
-    "capturedAt": "2026-10-18T16:21:38.020Z",
-    "itemCount": 0,
-    "items": []
+    "editionId": "b7c62bae-5203-48bd-8d0c-b8bc5271b98d",
+    "capturedAt": "2026-10-19T04:06:33.773Z",
+    "itemCount": 1,
+    "items": [
+      {
+        "id": "221ea074-344d-4c8b-b29e-b70599e16810",
+        "motionKey": "event:cpi:2026-09",
+        "versionNumber": 14,
+        "headline": "Consumer Price Index for September 2026 · Released",
+        "category": "COMMODITY",
+        "verificationState": "VERIFIED",
+        "lifecycleState": "PROMOTED",
+        "whatHappened": "Released high-impact inflation event scheduled for 2026-10-14 at 08:30 ET. Actual: Headline CPI +0.6% m/m; +3.7% y/y; Core +0.3% m/m; +2.6% y/y · Consensus: 0.6 % · Alchemy expectation: not recorded · Previous: 0.4 %. Desk question: Do headline and core inflation change Fed expectations, and do Treasury yields confirm the initial reaction?",
+        "marketReaction": null,
+        "whyInteresting": "United States · Inflation · 08:30 ET · USD, US02Y, US10Y, SPX, GOLD",
+        "bigPictureBridge": "Fresh rates / funding evidence → sovereign yields and financing costs → Cost of Capital regime",
+        "nextTest": "Check the headline, revisions, components and cross-asset reaction before updating an existing Story or opening a new one.",
+        "tickers": [
+          "AAPL",
+          "GLOBAL_BONDS",
+          "SPX",
+          "US02Y",
+          "US10Y",
+          "XAUUSD",
+          "SMH",
+          "AMD",
+          "NVDA"
+        ],
+        "sourceName": "U.S. Bureau of Labor Statistics",
+        "sourceUrl": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+        "materiality": 100,
+        "relevance": 100,
+        "novelty": 94,
+        "occurredAt": "2026-10-14T12:00:00.000Z",
+        "storyId": "26955788-e038-4e8a-abae-90cde0c17a90",
+        "storySlug": "cpi-shock-splits-front-end-fed-repricing-from-long-end-yield-locking-pro",
+        "storyTitle": "CPI shock splits front‑end Fed repricing from long‑end yield‑locking, producing a Treasury–equity divergence",
+        "regimeSlug": "global-cost-of-capital",
+        "regimeLabel": "US Rate Regime",
+        "attentionTier": "PRIMARY",
+        "attentionScore": 100,
+        "writingPotential": "MEDIUM",
+        "attentionReasons": [
+          "high materiality",
+          "high market relevance",
+          "primary/official verification",
+          "asset/ticker linked"
+        ]
+      }
+    ]
   },
   "portfolioTriage": {
     "tapeDivergences": [

@@ -801,7 +801,7 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-18T20:41:23.495Z",
+    "asOf": "2026-10-19T04:38:43.527Z",
     "assets": [
       {
         "key": "SPX",
@@ -867,8 +867,8 @@
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4166.100098,
-        "dailyChange": -0.36,
+        "last": 4183.299805,
+        "dailyChange": -0.45,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "LOW",
@@ -876,14 +876,14 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": "Sustained intraday Fed‑funds repricing (canonical Fed‑funds‑futures intraday bars) plus a rising MOVE and persistent IG OAS widening would convert the view to broad risk‑off; evidence for those series is currently missing.",
-        "asOf": "2026-10-18"
+        "asOf": "2026-10-19"
       },
       {
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 80751,
-        "dailyChange": -0.77,
+        "last": 82531.75,
+        "dailyChange": 0.64,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -891,7 +891,7 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": null,
-        "asOf": "2026-10-18"
+        "asOf": "2026-10-19"
       }
     ]
   },
@@ -1408,10 +1408,56 @@
   },
   "marketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "00ba8a54-6a9a-45ce-8a23-785a344b6501",
-    "capturedAt": "2026-10-18T16:21:38.020Z",
-    "researchRunId": "c9bd1e0e-ccd1-4d77-b44c-486ffa73a673",
-    "items": []
+    "editionId": "b7c62bae-5203-48bd-8d0c-b8bc5271b98d",
+    "capturedAt": "2026-10-19T04:06:33.773Z",
+    "researchRunId": "b9ac77b6-ed80-4bf0-b1d9-d02f8553594f",
+    "items": [
+      {
+        "id": "221ea074-344d-4c8b-b29e-b70599e16810",
+        "motionKey": "event:cpi:2026-09",
+        "versionNumber": 14,
+        "headline": "Consumer Price Index for September 2026 · Released",
+        "category": "COMMODITY",
+        "verificationState": "VERIFIED",
+        "lifecycleState": "PROMOTED",
+        "whatHappened": "Released high-impact inflation event scheduled for 2026-10-14 at 08:30 ET. Actual: Headline CPI +0.6% m/m; +3.7% y/y; Core +0.3% m/m; +2.6% y/y · Consensus: 0.6 % · Alchemy expectation: not recorded · Previous: 0.4 %. Desk question: Do headline and core inflation change Fed expectations, and do Treasury yields confirm the initial reaction?",
+        "marketReaction": null,
+        "whyInteresting": "United States · Inflation · 08:30 ET · USD, US02Y, US10Y, SPX, GOLD",
+        "bigPictureBridge": "Fresh rates / funding evidence → sovereign yields and financing costs → Cost of Capital regime",
+        "nextTest": "Check the headline, revisions, components and cross-asset reaction before updating an existing Story or opening a new one.",
+        "tickers": [
+          "AAPL",
+          "GLOBAL_BONDS",
+          "SPX",
+          "US02Y",
+          "US10Y",
+          "XAUUSD",
+          "SMH",
+          "AMD",
+          "NVDA"
+        ],
+        "sourceName": "U.S. Bureau of Labor Statistics",
+        "sourceUrl": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+        "materiality": 100,
+        "relevance": 100,
+        "novelty": 94,
+        "occurredAt": "2026-10-14T12:00:00.000Z",
+        "storyId": "26955788-e038-4e8a-abae-90cde0c17a90",
+        "storySlug": "cpi-shock-splits-front-end-fed-repricing-from-long-end-yield-locking-pro",
+        "storyTitle": "CPI shock splits front‑end Fed repricing from long‑end yield‑locking, producing a Treasury–equity divergence",
+        "regimeSlug": "global-cost-of-capital",
+        "regimeLabel": "US Rate Regime",
+        "attentionTier": "PRIMARY",
+        "attentionScore": 100,
+        "writingPotential": "MEDIUM",
+        "attentionReasons": [
+          "high materiality",
+          "high market relevance",
+          "primary/official verification",
+          "asset/ticker linked"
+        ]
+      }
+    ]
   },
   "upstreamGuardrails": [
     "This snapshot is a read-only Live canonical market-intelligence view for downstream consumers.",
@@ -1429,5 +1475,5 @@
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-18T20:49:29.982Z"
+  "syncedAt": "2026-10-19T04:47:30.689Z"
 }

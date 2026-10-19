@@ -1,23 +1,48 @@
 {
   "contractVersion": "power-stack-motion-shadow/1",
   "mode": "SHADOW_ONLY",
-  "generatedAt": "2026-10-18T16:21:38.020Z",
+  "generatedAt": "2026-10-19T04:06:33.773Z",
   "freshnessWindowHours": 48,
   "safetyLimit": 18,
   "activeSource": "LIVE_IMMUTABLE_EDITION",
   "shadowSource": "POWER_STACK_DISCOVERY",
-  "liveEditionId": "00ba8a54-6a9a-45ce-8a23-785a344b6501",
-  "liveCapturedAt": "2026-10-18T16:21:38.020Z",
+  "liveEditionId": "b7c62bae-5203-48bd-8d0c-b8bc5271b98d",
+  "liveCapturedAt": "2026-10-19T04:06:33.773Z",
   "summary": {
-    "liveItemCount": 0,
+    "liveItemCount": 1,
     "localFreshCandidateCount": 0,
     "overlapCount": 0,
-    "liveOnlyCount": 0,
+    "liveOnlyCount": 1,
     "localOnlyCount": 0,
     "overlapRate": null
   },
   "overlap": [],
-  "liveOnly": [],
+  "liveOnly": [
+    {
+      "id": "221ea074-344d-4c8b-b29e-b70599e16810",
+      "headline": "Consumer Price Index for September 2026 · Released",
+      "category": "COMMODITY",
+      "tickers": [
+        "AAPL",
+        "GLOBAL_BONDS",
+        "SPX",
+        "US02Y",
+        "US10Y",
+        "XAUUSD",
+        "SMH",
+        "AMD",
+        "NVDA"
+      ],
+      "sourceUrl": "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
+      "sourceName": "U.S. Bureau of Labor Statistics",
+      "occurredAt": "2026-10-14T12:00:00.000Z",
+      "storyId": "26955788-e038-4e8a-abae-90cde0c17a90",
+      "storyTitle": "CPI shock splits front‑end Fed repricing from long‑end yield‑locking, producing a Treasury–equity divergence",
+      "regimeSlug": "global-cost-of-capital",
+      "attentionTier": "PRIMARY",
+      "attentionScore": 100
+    }
+  ],
   "localOnly": [],
   "promotionGate": "Shadow-only Power Stack discovery cannot enter active portfolio research priority. A future migration decision must explicitly enable residual discovery after shadow coverage is reviewed.",
   "guardrails": [
