@@ -1,8 +1,8 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-19T13:12:23.155Z",
-  "liveAsOf": "2026-10-18T17:27:40.581+00:00",
-  "liveSyncedAt": "2026-10-19T04:47:30.689Z",
+  "generatedAt": "2026-10-19T13:25:48.733Z",
+  "liveAsOf": "2026-10-19T07:57:06.296+00:00",
+  "liveSyncedAt": "2026-10-19T13:25:48.641Z",
   "sourceHealth": {
     "dossier": "DEGRADED",
     "marketMonitor": "PARTIAL",
@@ -14,10 +14,10 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "US yields remain high while AI supplier results look solid; credit/breadth confirmation is unresolved",
-    "answer": "Short and real yields are elevated (US 2Y 4.74%; US 10Y 5.09%) while NY Fed ACM term premium fell to ~0.75%; issuer results (TSM, CoreWeave) show strong revenue/margins and large capex, so equities are mixed and broader credit/breadth confirmation is still unresolved.",
-    "implication": "Higher yields are tightening financial conditions, but resilience is concentrated in AI/semiconductor supplier results; whether this becomes broad risk‑off depends on credit, MOVE and breadth data not yet present.",
-    "whatWouldChangeMind": "Sustained intraday Fed‑funds repricing (canonical Fed‑funds‑futures intraday bars) plus a rising MOVE and persistent IG OAS widening would convert the view to broad risk‑off; evidence for those series is currently missing."
+    "headline": "US yields stay elevated while NY Fed ACM term premium falls; credit/breadth transmission remains unproven",
+    "answer": "Front-end and real yields are high (US 2Y 4.74%; 10Y real 2.78%) while the NY Fed ACM 10Y term premium dropped to ~0.75%, and announced Treasury coupon supply is unchanged; canonical HY/IG and MOVE monitors are missing, so whether higher rates are broadening into credit/volatility is unresolved.",
+    "implication": "Rates are exerting tightening pressure (front end and real yields elevated) but there is no canonical evidence yet that credit, breadth or volatility confirm a systemic risk‑off.",
+    "whatWouldChangeMind": "Canonical MOVE and HY/IG OAS series showing sustained widening, or intraday Fed‑funds‑futures + 2Y/10Y tick bars proving front‑end repricing either persisted or faded through the close."
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
@@ -48,7 +48,7 @@
           "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
           "detail": "No current deterministic policy impulse or directional next-meeting repricing is present in the bounded rate context.",
-          "asOf": "2026-10-18T17:27:40.581Z"
+          "asOf": "2026-10-19T07:57:06.296Z"
         },
         {
           "key": "RATES_FRONT_END",
@@ -56,7 +56,7 @@
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
           "detail": "US 2Y 4.74%; 5D n/a; vs effective fed funds +86.0 bp.",
-          "asOf": "2026-10-18T17:27:40.581Z"
+          "asOf": "2026-10-19T07:57:06.296Z"
         },
         {
           "key": "RATES_REAL_YIELDS",
@@ -64,7 +64,7 @@
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
           "detail": "10Y real yield 2.78%; 5D n/a.",
-          "asOf": "2026-10-18T17:27:40.581Z"
+          "asOf": "2026-10-19T07:57:06.296Z"
         },
         {
           "key": "RATES_BREAKEVENS",
@@ -72,7 +72,7 @@
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
           "detail": "10Y breakeven 2.35%; 5D n/a.",
-          "asOf": "2026-10-18T17:27:40.581Z"
+          "asOf": "2026-10-19T07:57:06.296Z"
         },
         {
           "key": "RATES_LONG_END",
@@ -80,7 +80,7 @@
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
           "detail": "US 10Y 5.09%; 5D n/a; US 20Y 5.47%; 5D n/a; US 30Y 5.43%; 5D n/a.",
-          "asOf": "2026-10-18T17:27:40.581Z"
+          "asOf": "2026-10-19T07:57:06.296Z"
         },
         {
           "key": "BILLS",
@@ -108,8 +108,8 @@
           "label": "Secured funding / collateral",
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
-          "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR -0.3 bp. Volumes: SOFR $3025bn, TGCR $1189bn, BGCR $1223bn.",
-          "asOf": "2026-10-15"
+          "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR -2.0 bp. Volumes: SOFR $2925bn, TGCR $1193bn, BGCR $1227bn.",
+          "asOf": "2026-10-16"
         },
         {
           "key": "CREDIT",
@@ -124,7 +124,7 @@
     "physicalEnergy": {
       "status": "UNRESOLVED",
       "observed": false,
-      "detail": "No canonical crude/product curve or crack evidence supplied; inflation transmission from energy remains unresolved.",
+      "detail": "No canonical crude or product crack time‑series in this packet to test whether energy is sustaining inflation/rates pressure.",
       "evidenceRefs": []
     }
   },
@@ -1193,8 +1193,9 @@
     }
   ],
   "liveResearchGaps": [
-    "MARKET_DATA: Canonical intraday Fed‑funds‑futures and 5–30m UST 2Y/10Y bars for 2026-10-14–15 are missing, blocking persistence assessment of short‑end repricing.",
-    "MARKET_DATA: MOVE index and canonical HY/IG OAS series are not present, blocking a decision on whether yield moves have transmitted into credit and volatility.",
+    "DATA: Canonical MOVE (Treasury volatility) series is not present; this blocks attributing persistence or systemic transmission of yield moves.",
+    "DATA: Canonical HY and IG OAS series are missing; without them transmission to credit cannot be tested.",
+    "DATA: Cross‑currency basis / FX‑swap canonical series (offshore USD liquidity) is missing and blocks a full dollar‑liquidity assessment.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],
   "guardrails": [
