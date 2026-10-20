@@ -25,6 +25,8 @@ jobs:
       - run: node --check scripts/sync-holding-tape.mjs
       - run: node scripts/sync-holding-tape.mjs --check
       - name: Refresh completed-session tape
+        env:
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
         run: node scripts/sync-holding-tape.mjs
       - name: Rebuild portfolio overlay
         run: node scripts/generate-portfolio-live-overlay.mjs
