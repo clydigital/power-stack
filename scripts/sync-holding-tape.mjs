@@ -122,6 +122,7 @@ function inferSessionDate(now, spec, notice) {
 
 async function fetchClosedHtmlRow(spec, previous) {
   const response = await fetch(spec.url, {
+    signal: AbortSignal.timeout(8000),
     headers: {
       "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/151 Safari/537.36",
       accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
