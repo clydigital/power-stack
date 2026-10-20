@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { assessHoldingTape } from "./market-data-integrity.mjs";
+import { CHART_HOSTS, fetchYahooChart, fetchFinnhubUSQuote } from "./quote-chart-source.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUTPUT = path.join(ROOT, "data/holding-tape.json");
@@ -119,8 +120,9 @@ function inferSessionDate(now, spec, notice) {
   return null;
 }
 
-async function fetchClosedRow(spec, previous) {
+async function fetchClosedHtmlRow(spec, previous) {
   const response = await fetch(spec.url, {
+    signal: AbortSignal.timeout(8000),
     headers: {
       "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/151 Safari/537.36",
       accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -162,6 +164,25 @@ async function fetchClosedRow(spec, previous) {
     status: "CLOSED",
     refreshStatus: "OK",
   };
+}
+
+async function fetchClosedRow(spec, previous) {
+  const attempted = [];
+  const token = process.env.FINNHUB_API_KEY || process.env.FINNHUB_TOKEN;
+  if (spec.market === "US" && token) {
+    try { return await fetchFinnhubUSQuote(spec, token); }
+    catch (error) { attempted.push("Finnhub: " + error.message); }
+  }
+  for (const host of CHART_HOSTS) {
+    try { return await fetchYahooChart(spec, host, { timeoutMs: 8000 }); }
+    catch (error) { attempted.push(new URL(host).hostname + ": " + error.message); }
+  }
+  try {
+    const rendered = await fetchClosedHtmlRow(spec, previous);
+    if (rendered.refreshStatus === "OK") return rendered;
+    attempted.push("Yahoo HTML: " + (rendered.refreshNote || "no completed quote"));
+  } catch (error) { attempted.push("Yahoo HTML: " + error.message); }
+  throw new Error(attempted.join(" | ").slice(0, 550));
 }
 
 function validate(tape) {
@@ -217,7 +238,7 @@ async function main() {
     generatedAt: new Date().toISOString(),
     policy: {
       cadence: "refresh every 6 hours; only completed regular sessions are eligible",
-      sourcePolicy: "Yahoo Finance rendered quote pages are used as a secondary delayed quote source. Each row carries its source URL and close notice. Missing or non-closed sessions remain unresolved.",
+      sourcePolicy: "US: optional timestamped Finnhub close if FINNHUB_API_KEY is configured, then Yahoo chart JSON query2/query1, then delayed Yahoo rendered page. MY: Yahoo chart JSON then rendered page. Preserve source-dated sessions; never invent current closes on provider failure.",
       alignmentPolicy: "HEADWIND expects negative tape, TAILWIND expects positive tape. MIXED/NEUTRAL/UNRESOLVED overlays are not forced into directional confirmation.",
     },
     holdings: rows,
