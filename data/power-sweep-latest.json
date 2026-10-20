@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-20T11:34:28.438Z",
+  "generatedAt": "2026-10-20T11:44:57.274Z",
   "asOf": "2026-10-19T20:12:21.646+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -9,13 +9,13 @@
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
       "asOf": "2026-10-19T20:12:21.646+00:00",
-      "syncedAt": "2026-10-20T04:56:39.738Z",
+      "syncedAt": "2026-10-20T11:44:57.087Z",
       "status": "OK"
     },
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-20T11:34:28.374Z",
+      "generatedAt": "2026-10-20T11:44:57.209Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -48,53 +48,10 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "fcea17ef-f575-4283-a363-7d5fa9c918c7",
-    "capturedAt": "2026-10-19T16:19:19.317Z",
-    "itemCount": 1,
-    "items": [
-      {
-        "id": "0887c1a8-da7d-4f89-8ef2-dd3ab731b531",
-        "motionKey": "event:rates_move:us10y",
-        "versionNumber": 22,
-        "headline": "Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
-        "category": "COMMODITY",
-        "verificationState": "LEAD",
-        "lifecycleState": "PROMOTED",
-        "whatHappened": "TraderNick surfaced this in a recent transcript. It remains a creator-sourced lead until independently corroborated: Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
-        "marketReaction": null,
-        "whyInteresting": "Transcript writing angle: Narrative hook: 'Why gold rallied despite hot inflation — an AI‑growth scare flipped the tape' — explore the intraday sequence (equities → bonds → gold) and test with time‑stamped flow data.",
-        "bigPictureBridge": "Fresh rates / funding evidence → sovereign yields and financing costs → Cost of Capital regime",
-        "nextTest": "Verify transcript lead: Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
-        "tickers": [
-          "ULSD",
-          "SMH",
-          "XAUUSD",
-          "US10Y",
-          "NASDAQ",
-          "MU",
-          "NFLX"
-        ],
-        "sourceName": "TraderNick",
-        "sourceUrl": "https://www.youtube.com/watch?v=W7Mq_E9BZ6Y",
-        "materiality": 88,
-        "relevance": 88,
-        "novelty": 88,
-        "occurredAt": "2026-10-06T03:15:13.000Z",
-        "storyId": "849d173f-d1dc-42eb-b1f6-927c55bbc348",
-        "storySlug": "fed-hold-versus-hikes",
-        "storyTitle": "Fed hold versus hikes",
-        "regimeSlug": "global-cost-of-capital",
-        "regimeLabel": "US Rate Regime",
-        "attentionTier": "PRIMARY",
-        "attentionScore": 84,
-        "writingPotential": "MEDIUM",
-        "attentionReasons": [
-          "high materiality",
-          "high market relevance",
-          "asset/ticker linked"
-        ]
-      }
-    ]
+    "editionId": "d8463e96-5e0d-4578-890c-0795baf3aa65",
+    "capturedAt": "2026-10-20T07:47:49.778Z",
+    "itemCount": 0,
+    "items": []
   },
   "portfolioTriage": {
     "tapeDivergences": [
@@ -467,13 +424,15 @@
       "symbol": "CRWD",
       "companyName": "CoreWeave (proxy watching)",
       "reason": "Ticker and issuer label conflict with the known listed issuer.",
-      "status": "IDENTITY_MISMATCH"
+      "status": "IDENTITY_MISMATCH",
+      "source": "Live Stock Radar"
     },
     {
       "symbol": "XENE",
       "companyName": "X Energy",
       "reason": "Ticker and issuer label conflict with the known listed issuer.",
-      "status": "IDENTITY_MISMATCH"
+      "status": "IDENTITY_MISMATCH",
+      "source": "Live Stock Radar"
     }
   ],
   "monitorOnly": [

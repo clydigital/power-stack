@@ -810,7 +810,7 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-20T04:48:48.879Z",
+    "asOf": "2026-10-20T11:34:24.017Z",
     "assets": [
       {
         "key": "SPX",
@@ -876,10 +876,10 @@
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4146.399902,
-        "dailyChange": -0.24,
+        "last": 4124.899902,
+        "dailyChange": -0.85,
         "dailyChangeUnit": "percent",
-        "bias": "UNRESOLVED",
+        "bias": "BEARISH",
         "conviction": "LOW",
         "primaryDriver": "No canonical XAUUSD observation supplied; cannot assess safe‑haven behaviour versus rates here.",
         "confirmingSignal": null,
@@ -891,8 +891,8 @@
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 82006.97,
-        "dailyChange": 0.21,
+        "last": 81362.36,
+        "dailyChange": -0.58,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -1153,28 +1153,6 @@
   ],
   "stockRadar": [
     {
-      "symbol": "CRWD",
-      "companyName": "CoreWeave (proxy watching)",
-      "whyRelevant": "Core/AI capacity providers are sensitive to higher financing costs and HY stress; leads flagged intraday rallies.",
-      "researchQuestion": "Is CoreWeave's price action driven by sector flows or idiosyncratic news and is its financing/capex at risk from HY widening?",
-      "confirmingSignal": "HY spread widening and AI sector leads",
-      "invalidatingSignal": "Canonical issuer funding or capex guidance showing ample runway",
-      "linkedStoryId": "mt:2026-10-19:rates-credit-mix",
-      "evidenceRefs": [
-        "market-crack:hy_oas_20s:2026-09-18:2026-10-16"
-      ]
-    },
-    {
-      "symbol": "XENE",
-      "companyName": "X Energy",
-      "whyRelevant": "Listed among research leads for intraday moves that could reflect sector rotation or energy‑specific flows.",
-      "researchQuestion": "Is X Energy's move idiosyncratic or tied to energy/inflation narratives that affect rates?",
-      "confirmingSignal": "Energy/news leads in packet",
-      "invalidatingSignal": "No canonical WTI/ULSD or crack confirmation",
-      "linkedStoryId": "mt:2026-10-19:rates-credit-mix",
-      "evidenceRefs": []
-    },
-    {
       "symbol": "LEU",
       "companyName": "Centrus Energy (watch)",
       "whyRelevant": "Listed among intraday research leads with a rally that may reflect sector or macro flows.",
@@ -1183,6 +1161,22 @@
       "invalidatingSignal": "Lack of matched earnings/guidance or reversal on credit widening",
       "linkedStoryId": "mt:2026-10-19:rates-credit-mix",
       "evidenceRefs": []
+    }
+  ],
+  "stockRadarQuarantine": [
+    {
+      "symbol": "CRWD",
+      "companyName": "CoreWeave (proxy watching)",
+      "reason": "Ticker and issuer label conflict with the known listed issuer.",
+      "status": "IDENTITY_MISMATCH",
+      "source": "Live Stock Radar"
+    },
+    {
+      "symbol": "XENE",
+      "companyName": "X Energy",
+      "reason": "Ticker and issuer label conflict with the known listed issuer.",
+      "status": "IDENTITY_MISMATCH",
+      "source": "Live Stock Radar"
     }
   ],
   "verification": {
@@ -1410,53 +1404,10 @@
   },
   "marketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "fcea17ef-f575-4283-a363-7d5fa9c918c7",
-    "capturedAt": "2026-10-19T16:19:19.317Z",
-    "researchRunId": "aeecc2de-9577-446a-ada2-6aa752f3b5f8",
-    "items": [
-      {
-        "id": "0887c1a8-da7d-4f89-8ef2-dd3ab731b531",
-        "motionKey": "event:rates_move:us10y",
-        "versionNumber": 22,
-        "headline": "Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
-        "category": "COMMODITY",
-        "verificationState": "LEAD",
-        "lifecycleState": "PROMOTED",
-        "whatHappened": "TraderNick surfaced this in a recent transcript. It remains a creator-sourced lead until independently corroborated: Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
-        "marketReaction": null,
-        "whyInteresting": "Transcript writing angle: Narrative hook: 'Why gold rallied despite hot inflation — an AI‑growth scare flipped the tape' — explore the intraday sequence (equities → bonds → gold) and test with time‑stamped flow data.",
-        "bigPictureBridge": "Fresh rates / funding evidence → sovereign yields and financing costs → Cost of Capital regime",
-        "nextTest": "Verify transcript lead: Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
-        "tickers": [
-          "ULSD",
-          "SMH",
-          "XAUUSD",
-          "US10Y",
-          "NASDAQ",
-          "MU",
-          "NFLX"
-        ],
-        "sourceName": "TraderNick",
-        "sourceUrl": "https://www.youtube.com/watch?v=W7Mq_E9BZ6Y",
-        "materiality": 88,
-        "relevance": 88,
-        "novelty": 88,
-        "occurredAt": "2026-10-06T03:15:13.000Z",
-        "storyId": "849d173f-d1dc-42eb-b1f6-927c55bbc348",
-        "storySlug": "fed-hold-versus-hikes",
-        "storyTitle": "Fed hold versus hikes",
-        "regimeSlug": "global-cost-of-capital",
-        "regimeLabel": "US Rate Regime",
-        "attentionTier": "PRIMARY",
-        "attentionScore": 84,
-        "writingPotential": "MEDIUM",
-        "attentionReasons": [
-          "high materiality",
-          "high market relevance",
-          "asset/ticker linked"
-        ]
-      }
-    ]
+    "editionId": "d8463e96-5e0d-4578-890c-0795baf3aa65",
+    "capturedAt": "2026-10-20T07:47:49.778Z",
+    "researchRunId": "1b0c7c79-5572-483c-899a-081a37b1dfe4",
+    "items": []
   },
   "upstreamGuardrails": [
     "This snapshot is a read-only Live canonical market-intelligence view for downstream consumers.",
@@ -1472,7 +1423,8 @@
     "No Live-derived macro score or confirmation may be exported back to Live.",
     "Creator-only claims never alter Power Stack scores without independent verification.",
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
+    "Mismatched ticker/issuer labels are quarantined, never silently remapped to another security.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-20T04:56:39.738Z"
+  "syncedAt": "2026-10-20T11:44:57.087Z"
 }
