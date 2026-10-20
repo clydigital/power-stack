@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { assessHoldingTape } from "./market-data-integrity.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUTPUT = path.join(ROOT, "data/holding-tape.json");
@@ -129,7 +130,7 @@ async function fetchClosedRow(spec, previous) {
   if (!response.ok) throw new Error(spec.ticker + " Yahoo HTTP " + response.status);
   const html = await response.text();
   const notice = extractCloseNotice(html);
-  if (!notice) return { ...previous, ticker: spec.ticker, status: previous?.status || "UNRESOLVED", refreshNote: "Regular session not closed; retained previous completed-session row." };
+  if (!notice) return { ...previous, ticker: spec.ticker, status: previous?.status || "UNRESOLVED", refreshStatus: "NO_CLOSED_SESSION", refreshNote: "Regular session not closed; retained previous completed-session row." };
 
   const close = num(extract(html, "qsp-price"));
   const change = num(extract(html, "qsp-price-change"));
@@ -137,12 +138,12 @@ async function fetchClosedRow(spec, previous) {
   const previousClose = num(extractPreviousClose(html));
   if (changePct != null && Math.abs(changePct) < 1 && /%/.test(extract(html, "qsp-price-change-percent") || "")) changePct *= 100;
   if ([close, change, changePct, previousClose].some((value) => value == null)) {
-    return { ...previous, ticker: spec.ticker, status: previous?.status || "UNRESOLVED", refreshNote: "Completed session found but required quote fields were incomplete; retained previous row." };
+    return { ...previous, ticker: spec.ticker, status: previous?.status || "UNRESOLVED", refreshStatus: "INCOMPLETE", refreshNote: "Completed session found but required quote fields were incomplete; retained previous row." };
   }
 
   const sessionDate = inferSessionDate(new Date(), spec, notice);
   if (!sessionDate) {
-    return { ...previous, ticker: spec.ticker, status: previous?.status || "UNRESOLVED", refreshNote: "Close detected during ambiguous local session window; retained previous row." };
+    return { ...previous, ticker: spec.ticker, status: previous?.status || "UNRESOLVED", refreshStatus: "INCOMPLETE", refreshNote: "Close detected during ambiguous local session window; retained previous row." };
   }
 
   return {
@@ -159,6 +160,7 @@ async function fetchClosedRow(spec, previous) {
     sourceName: "Yahoo Finance delayed quote",
     sourceUrl: spec.url,
     status: "CLOSED",
+    refreshStatus: "OK",
   };
 }
 
@@ -190,7 +192,7 @@ async function main() {
       rows.push(await fetchClosedRow(spec, prior.get(spec.ticker)));
     } catch (error) {
       const old = prior.get(spec.ticker);
-      rows.push(old ? { ...old, refreshNote: "Refresh failed: " + error.message } : {
+      rows.push(old ? { ...old, refreshStatus: "FETCH_FAILED", refreshNote: "Refresh failed: " + error.message } : {
         ticker: spec.ticker,
         providerSymbol: spec.providerSymbol,
         market: spec.market,
@@ -204,6 +206,7 @@ async function main() {
         sourceName: "Yahoo Finance delayed quote",
         sourceUrl: spec.url,
         status: "UNRESOLVED",
+        refreshStatus: "FETCH_FAILED",
         reason: error.message,
       });
     }
@@ -219,10 +222,11 @@ async function main() {
     },
     holdings: rows,
     unresolved: rows.filter((row) => row.status !== "CLOSED").map((row) => row.ticker),
+    freshness: assessHoldingTape({ holdings: rows }),
   };
   validate(tape);
   fs.writeFileSync(OUTPUT, JSON.stringify(tape, null, 2) + "\n");
-  console.log("Wrote data/holding-tape.json with " + rows.filter((row) => row.status === "CLOSED").length + " completed-session rows.");
+  console.log("Wrote data/holding-tape.json: " + tape.freshness.currentCount + " of " + tape.freshness.totalCount + " rows current; freshness=" + tape.freshness.status + ".");
 }
 
 await main();
