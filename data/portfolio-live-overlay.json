@@ -140,8 +140,15 @@
       "overlayState": "HEADWIND",
       "reviewPriority": "MONITOR",
       "actualReaction": {
-        "status": "DIVERGES",
-        "reason": "Completed-session tape moved against the direction implied by the current market overlay.",
+        "status": "STALE",
+        "reason": "Latest quote refresh failed or retained a prior row.",
+        "freshness": {
+          "status": "STALE",
+          "eligibleForComparison": false,
+          "sessionDate": "2026-09-24",
+          "businessDaysOld": 18,
+          "reason": "Latest quote refresh failed or retained a prior row."
+        },
         "sessionDate": "2026-09-24",
         "close": 162.14,
         "previousClose": 161.23,
@@ -278,8 +285,15 @@
       "overlayState": "HEADWIND",
       "reviewPriority": "MONITOR",
       "actualReaction": {
-        "status": "CONFIRMS",
-        "reason": "Completed-session tape moved in the direction implied by the current market overlay.",
+        "status": "STALE",
+        "reason": "Latest quote refresh failed or retained a prior row.",
+        "freshness": {
+          "status": "STALE",
+          "eligibleForComparison": false,
+          "sessionDate": "2026-09-25",
+          "businessDaysOld": 17,
+          "reason": "Latest quote refresh failed or retained a prior row."
+        },
         "sessionDate": "2026-09-25",
         "close": 7.85,
         "previousClose": 7.92,
@@ -408,8 +422,15 @@
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
-        "status": "CONFIRMS",
-        "reason": "Completed-session tape moved in the direction implied by the current market overlay.",
+        "status": "STALE",
+        "reason": "Latest quote refresh failed or retained a prior row.",
+        "freshness": {
+          "status": "STALE",
+          "eligibleForComparison": false,
+          "sessionDate": "2026-09-25",
+          "businessDaysOld": 17,
+          "reason": "Latest quote refresh failed or retained a prior row."
+        },
         "sessionDate": "2026-09-25",
         "close": 2.23,
         "previousClose": 2.3,
@@ -530,8 +551,15 @@
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
-        "status": "DIVERGES",
-        "reason": "Completed-session tape moved against the direction implied by the current market overlay.",
+        "status": "STALE",
+        "reason": "Latest quote refresh failed or retained a prior row.",
+        "freshness": {
+          "status": "STALE",
+          "eligibleForComparison": false,
+          "sessionDate": "2026-09-25",
+          "businessDaysOld": 17,
+          "reason": "Latest quote refresh failed or retained a prior row."
+        },
         "sessionDate": "2026-09-25",
         "close": 5.89,
         "previousClose": 5.8,
@@ -653,7 +681,12 @@
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
         "status": "UNRESOLVED",
-        "reason": "No completed-session holding tape is available.",
+        "reason": "Missing verified closed-session instrument or price data.",
+        "freshness": {
+          "status": "UNRESOLVED",
+          "eligibleForComparison": false,
+          "reason": "Missing verified closed-session instrument or price data."
+        },
         "sessionDate": null,
         "close": null,
         "previousClose": null,
@@ -774,8 +807,15 @@
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
-        "status": "CONFIRMS",
-        "reason": "Completed-session tape moved in the direction implied by the current market overlay.",
+        "status": "STALE",
+        "reason": "Latest quote refresh failed or retained a prior row.",
+        "freshness": {
+          "status": "STALE",
+          "eligibleForComparison": false,
+          "sessionDate": "2026-09-24",
+          "businessDaysOld": 18,
+          "reason": "Latest quote refresh failed or retained a prior row."
+        },
         "sessionDate": "2026-09-24",
         "close": 202.98,
         "previousClose": 206.32,
@@ -880,8 +920,15 @@
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
-        "status": "CONFIRMS",
-        "reason": "Completed-session tape moved in the direction implied by the current market overlay.",
+        "status": "STALE",
+        "reason": "Latest quote refresh failed or retained a prior row.",
+        "freshness": {
+          "status": "STALE",
+          "eligibleForComparison": false,
+          "sessionDate": "2026-09-24",
+          "businessDaysOld": 18,
+          "reason": "Latest quote refresh failed or retained a prior row."
+        },
         "sessionDate": "2026-09-24",
         "close": 377.94,
         "previousClose": 380.12,
@@ -986,8 +1033,15 @@
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
-        "status": "DIVERGES",
-        "reason": "Completed-session tape moved against the direction implied by the current market overlay.",
+        "status": "STALE",
+        "reason": "Latest quote refresh failed or retained a prior row.",
+        "freshness": {
+          "status": "STALE",
+          "eligibleForComparison": false,
+          "sessionDate": "2026-09-25",
+          "businessDaysOld": 17,
+          "reason": "Latest quote refresh failed or retained a prior row."
+        },
         "sessionDate": "2026-09-25",
         "close": 1.5,
         "previousClose": 1.47,
@@ -1168,18 +1222,11 @@
     ],
     "mixed": [],
     "supported": [],
-    "tapeDivergences": [
-      "XOM",
-      "YTLPOWR",
-      "DAYANG"
-    ],
-    "tapeConfirmations": [
-      "MISC",
-      "HIBISCS",
-      "TTWO",
-      "TSLA"
-    ],
-    "researchGaps": []
+    "tapeDivergences": [],
+    "tapeConfirmations": [],
+    "researchGaps": [
+      "Stale holding quotes block confirmation/divergence: XOM, MISC, HIBISCS, YTLPOWR, TTWO, TSLA, DAYANG"
+    ]
   },
   "divergences": [
     {
@@ -1202,7 +1249,7 @@
     "Power Stack action gates remain company- and portfolio-owned.",
     "Live contradictions remain open investigations until independently resolved.",
     "Portfolio divergence hypotheses are deterministic prompts for investigation, not causal proof.",
-    "Holding-tape confirmation uses completed regular sessions only; MIXED overlays are never forced into directional confirmation.",
+    "Only source-successful, market-local current completed sessions may CONFIRM or DIVERGE; historical closed quotes remain visible as STALE.",
     "Missing profiles remain RESEARCH_GAP rather than zero sensitivity.",
     "Live promoted Market Motion raises research priority only; it does not alter overlay state or company-evidence component."
   ],
