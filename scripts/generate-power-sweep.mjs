@@ -75,7 +75,7 @@ function holdingEvidence(holding) {
 function decisionImpact(holding) {
   if (holding.ticker === "6742UW") return "Could unlock accurate YTL-linked concentration and portfolio-weight measurement.";
   if (holding.actualReaction?.status === "DIVERGES") return "Could change the current add/hold gate or create a new company-specific catalyst/invalidation.";
-  if (holding.overlayState === "MIXED" && Math.abs(Number(holding.actualReaction?.changePct || 0)) >= 2) {
+  if (holding.overlayState === "MIXED" && holding.actualReaction?.freshness?.eligibleForComparison && Math.abs(Number(holding.actualReaction?.changePct || 0)) >= 2) {
     return "Could identify which macro/company channel is driving the position and whether the current action gate remains appropriate.";
   }
   return "Monitor unless new company evidence changes the existing Power Stack action gate.";
@@ -218,7 +218,7 @@ function build(existingGeneratedAt = null) {
       item.actualReaction?.status === "DIVERGES"
       || item.actualReaction?.status === "UNRESOLVED"
       || (item.reviewPriority === "HIGH_REVIEW" && item.actualReaction?.status !== "CONFIRMS")
-      || (item.overlayState === "MIXED" && (item.actualReaction?.freshness?.eligibleForComparison && Math.abs(Number(item.actualReaction?.changePct || 0)) >= 2)
+      || (item.overlayState === "MIXED" && item.actualReaction?.freshness?.eligibleForComparison && Math.abs(Number(item.actualReaction?.changePct || 0)) >= 2)
       || item.motionContext?.length
     )
     .sort((a,b) => b.priorityScore - a.priorityScore);
