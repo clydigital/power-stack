@@ -1,7 +1,7 @@
 {
   "contractVersion": "power-stack-personal-decision/v1",
-  "asOf": "2026-10-14",
-  "dateNote": "14 October 2026, after the 20:30 MYT US September CPI release; early futures and Treasury event snapshots are NOT a completed US trading session. Holding and watchlist stock prices remain historic/unverified.",
+  "asOf": "2026-10-20",
+  "dateNote": "20 October 2026 review; seven recorded holding instruments have 19 October source-dated completed-session closes, but 6742UW and current broker holdings remain unresolved. This does not provide executable bids or real-time quotes. Adjacent ideas still rely on earlier Q2 issuer research.",
   "purpose": "One actionable personal-investment desk. Company facts and history stay in the original files; no extra macro engine.",
   "owners": {
     "regime": "data/live-desk-canonical.json (read-only Live)",
@@ -35,65 +35,85 @@
     "nextAICatalyst": "https://github.com/clydigital/power-stack/blob/main/data/ai-catalyst-gates.json",
     "latestEvidenceReadback": "https://github.com/clydigital/power-stack/blob/main/research/2026-10-14-ai-financing-picks-shovels.md",
     "cpi54SecurityReview": "https://github.com/clydigital/power-stack/blob/main/research/2026-10-14-post-cpi-54-security-review.md",
-    "cpiNotionPulse": "https://app.notion.com/p/3f9519b67a948187b850f1562e1a5ad8"
+    "cpiNotionPulse": "https://app.notion.com/p/3f9519b67a948187b850f1562e1a5ad8",
+    "latestPortfolioReview": "https://github.com/clydigital/power-stack/blob/main/research/2026-10-20-portfolio-decision-reconciliation.md",
+    "portfolioReviewMachine": "https://github.com/clydigital/power-stack/blob/main/data/portfolio-decision-review-2026-10-20.json"
   },
   "headline": {
-    "verdict": "Hot CPI raises the hurdle; I am staying selective.",
-    "detail": "September headline CPI rose 0.6% MoM and 3.7% YoY; core was 0.3% MoM versus 0.2% expected and 2.6% YoY versus 2.5% expected. Petrol +9.1%, shelter +0.4% and firmer services reinforced inflation persistence. Early post-release 2Y yields rose and Nasdaq futures fell; no US cash close or broad credit confirmation yet.",
-    "next": "Review the documented CPI transmission for all eight holdings and 46 watchlist stocks. Hold existing actions without new purchases or score changes; prioritise proof of refinery/product cash margins, funded AI orders, current valuation, TSMC Q3 at 14:00 MYT and US PPI at 20:30 MYT on 15 October."
+    "verdict": "Real financing costs remain restrictive; prioritise earnings and cash proof.",
+    "detail": "Latest Live Dossier (19 Oct 20:12 UTC) is MIXED_TRANSITION with degraded source health. Completed 19 Oct prices now confirm source freshness for seven holding equities, not a stronger investment thesis. DAYANG operating weakness, YTL concentration and TSLA's 21 Oct earnings are the immediate review risks. Stronger issuer cash flow supports selective CF/BWXT/ETN diligence but valuation and entry remain gated.",
+    "next": "Do not alter scores, orders or holdings quantities. Reconcile brokerage weights and 6742UW identity; review Tesla's 21 Oct reported margins and cash flow; check DAYANG work orders and YTL data-centre funding. CF, BWXT and ETN lead new-money research; GRAB requires Atome credit and financing underwriting."
   },
   "focus": [
     {
-      "ticker": "GRAB",
+      "ticker": "CF",
       "lane": "UNDERWRITE",
-      "sector": "Consumer platforms / fintech",
-      "rationale": "Grab's core transport and delivery businesses have been improving, but its move into financial services adds a new question.",
-      "mustProve": "Can Grab turn growth into cash while keeping loan losses under control?",
-      "risk": "Its lending expansion and acquisitions could absorb more money than expected.",
-      "action": "RESEARCH FIRST",
-      "sourceType": "POWER_STACK_VERIFIED_RESEARCH"
+      "sector": "Agriculture / fertiliser",
+      "rationale": "Best non-AI agricultural cash-flow diversification lead in the present shortlist. H1 2026 cash generation is credible, though net income includes a one-off litigation gain and the nitrogen cycle can reverse.",
+      "mustProve": "Does $118–119 hold, then a close above $122–123 arrive with sustainable nitrogen margins, free cash flow and farmer affordability?",
+      "risk": "Gas input costs, supply normalisation, weaker fertiliser volumes and Blue Point investment may reduce apparent earnings quality.",
+      "action": "WAIT FOR CONFIRMATION",
+      "sourceType": "ISSUER_VERIFIED",
+      "source": "https://www.sec.gov/Archives/edgar/data/1324404/000132440426000017/cf-08052026_ex991xearnings.htm",
+      "sourceDate": "2026-08-05",
+      "lastCompletedCloseUSD": 118.51,
+      "marketPriceDate": "2026-10-19"
     },
     {
       "ticker": "BWXT",
       "lane": "UNDERWRITE",
       "sector": "Nuclear / defence equipment",
-      "rationale": "BWXT supplies equipment and services for nuclear and defence projects, where long contracts can support future earnings.",
-      "mustProve": "Are its orders translating into cash, and is the share price already too expensive?",
-      "risk": "Rising project costs or slower government spending could reduce profits.",
+      "rationale": "Existing nuclear-defence operating cash flow is clearer than the economics of pre-revenue reactor developers. Q2 raised adjusted earnings and FCF guidance; valuation is still demanding.",
+      "mustProve": "Can 2026 government/commercial nuclear orders fund backlog conversion and FCF while the shares base near $131–135 then reclaim $140 and $143–144?",
+      "risk": "Government programme shifts, PCG integration, growth capex and a valuation near 28.6× full-year adjusted EPS guidance midpoint.",
       "action": "WAIT FOR VALUATION",
-      "sourceType": "POWER_STACK_VERIFIED_RESEARCH"
-    },
-    {
-      "ticker": "CF",
-      "lane": "UNDERWRITE",
-      "sector": "Agriculture / fertiliser",
-      "rationale": "CF Industries sells fertiliser to farmers. It offers an investment idea that does not rely on AI spending continuing to rise.",
-      "mustProve": "Will fertiliser demand, production costs and free cash flow stay healthy if prices soften?",
-      "risk": "Lower fertiliser prices or more expensive natural gas could squeeze profits.",
-      "action": "WAIT FOR BASE",
-      "sourceType": "POWER_STACK_VERIFIED_RESEARCH"
+      "sourceType": "ISSUER_VERIFIED",
+      "source": "https://investors.bwxt.com/news-releases/news-release-details/bwx-technologies-reports-second-quarter-2026-results",
+      "sourceDate": "2026-08-03",
+      "lastCompletedCloseUSD": 135.83,
+      "marketPriceDate": "2026-10-19"
     },
     {
       "ticker": "ETN",
       "lane": "ENTRY_STUDY",
       "sector": "AI-adjacent electrical infrastructure",
-      "rationale": "Eaton makes electrical equipment needed by factories, power grids and data centres. Demand has been strong.",
-      "mustProve": "Are electrical orders from funded customers translating into margins and free cash flow at a sensible current share price?",
-      "risk": "Premium valuation and delayed/underfunded data-centre projects could overwhelm strong reported electrical backlogs.",
+      "rationale": "Electrical Americas orders, equipment backlog and Q2 free cash flow demonstrate actual supplier demand. The market price still embeds substantial future execution.",
+      "mustProve": "Will funded electrical orders translate into earnings and cash while $386 holds and $403–405 is reclaimed?",
+      "risk": "Customer financing delays, margins failing to follow orders, and valuation near 29× adjusted FY2026 EPS guidance midpoint.",
       "action": "NO CHASE",
       "sourceType": "ISSUER_VERIFIED",
-      "source": "https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-second-quarter-2026-results.html",
-      "sourceDate": "2026-07-31"
+      "source": "https://www.eaton.com/sg/en-us/company/news-insights/news-releases/2026/eaton-reports-record-second-quarter-2026-results.html",
+      "sourceDate": "2026-07-31",
+      "lastCompletedCloseUSD": 391.5,
+      "marketPriceDate": "2026-10-19"
+    },
+    {
+      "ticker": "GRAB",
+      "lane": "UNDERWRITE",
+      "sector": "Consumer platforms / fintech",
+      "rationale": "Marketplace improvement is promising, but the proposed $1.49bn Atome 60% purchase changes the investment into a much larger consumer-credit and capital-allocation question. Closing is expected by Q3 2027, not completed.",
+      "mustProve": "Can loan impairments, lending funding and the performance-linked remaining 40% purchase coexist with sustainable free cash flow? Hold $2.85–2.90, then regain $3.03/$3.15 before an entry discussion.",
+      "risk": "Credit losses, funding costs, large cash acquisition commitment and weaker-than-expected consumer-credit returns.",
+      "action": "CREDIT UNDERWRITE FIRST",
+      "sourceType": "ISSUER_VERIFIED",
+      "source": "https://www.sec.gov/Archives/edgar/data/1855612/000185561226000133/exhibit991-atometransactio.htm",
+      "sourceDate": "2026-09-15",
+      "lastCompletedCloseUSD": 2.87,
+      "marketPriceDate": "2026-10-19"
     },
     {
       "ticker": "MU",
       "lane": "ENTRY_STUDY",
       "sector": "AI memory / HBM",
-      "rationale": "Micron supplies memory chips used in AI servers, and demand for advanced memory has been strong.",
-      "mustProve": "Will verified HBM pricing, paid orders and cash generation stay strong despite CXMT competition and chip-sector share-price weakness?",
-      "risk": "Memory oversupply, Chinese competition, customer concentration and a stale entry price can turn excellent growth into a poor stock purchase.",
+      "rationale": "Micron remains a real, profitable AI-memory supplier, but chip-sector price recovery does not prove durable HBM cash margins or customer orders against future capacity competition.",
+      "mustProve": "Verify paid HBM demand and inventory/pricing before treating a $931 then $950 reclaim as leadership repair; 19 Oct close was $904.90.",
+      "risk": "Reversal in memory pricing, customer spending delays, HBM margin disappointment and China memory supply.",
       "action": "NO CHASE",
-      "sourceType": "POWER_STACK_VERIFIED_RESEARCH"
+      "sourceType": "POWER_STACK_VERIFIED_RESEARCH",
+      "source": "https://investors.micron.com/",
+      "sourceDate": "FY2026 results / prior review",
+      "lastCompletedCloseUSD": 904.9,
+      "marketPriceDate": "2026-10-19"
     },
     {
       "ticker": "VRT",
@@ -195,34 +215,56 @@
       "DAYANG",
       "YTLPOWR",
       "6742UW",
-      "TSLA"
+      "TSLA",
+      "HIBISCS"
     ],
-    "why": "YTLPOWR plus its warrant remains a combined AI/power risk; do not infer diversification from the instrument split. DAYANG, YTLPOWR and 6742UW deserve fresh prices/terms before reallocating. Keep oil/product inflation and rate sensitivity alongside the AI-financing watch.",
-    "noBlindChanges": true
+    "why": "DAYANG's Q2 operating collapse makes capital recycling the highest-quality review; YTL's valuation/position weight and unmapped warrant remain a linked risk. Tesla's 21 October earnings are a binary margin/FCF check, while Hibiscus' Q4 recovery needs netback and cash confirmation.",
+    "noBlindChanges": true,
+    "marketPriceDate": "2026-10-19",
+    "warrantIdentity": "UNRESOLVED",
+    "quantityAsOf": "2026-10-02",
+    "decisionLedger": "data/portfolio-decision-review-2026-10-20.json"
   },
   "researchInputs": [
     {
       "source": "AI 16-company regime",
       "status": "PARTIAL",
-      "note": "Notion AI regime read through 13 October; 14 October Eisman outlook added. Live/Dossier/Hybrid writeback unverified."
+      "note": "18 October tracker reviewed (16/16 issuer pages as inherited). EARLY_WARNING, not a confirmed AI investment-cycle rollover; customer funding/credit conditions remain incomplete."
     },
     {
       "source": "MacroPulse / Research Gap",
       "status": "PARTIAL",
-      "note": "14 October 20:30 MYT hot-CPI MacroPulse and detailed original BLS component audit read; 20:14 MYT PM Research Gap Gate predates the CPI release and is incomplete for post-release reconciliation."
+      "note": "20 Oct 08:42 MYT Gate references 19 Oct real-yield rise, LNG and housing weakness; partial upstream input coverage. Not canonical company score evidence."
     },
     {
       "source": "Live macro snapshot",
       "status": "DEGRADED",
-      "note": "Stored canonical bridge read at 14 October 15:49 MYT (asOf 07:49:42 UTC) with degraded_latest source health, BEFORE CPI. No updated complete post-CPI 2Y–30Y/TIPS/credit or promoted Dossier state verified."
+      "note": "Confirmed Live canonical bridge Dossier cf977394-ca7c-49da-93cc-4f3da98d873b as of 19 Oct 20:12:21 UTC, sourceStatus degraded_latest; Regime MIXED_TRANSITION."
     },
     {
       "source": "Power Stack holdings and quotes",
-      "status": "STALE",
-      "note": "Eight original holding quantities/score components preserved; current 14 October stock closing prices are unverified. 54-security CPI overlay is research-only, with NO new price or trade instructions."
+      "status": "PARTIAL",
+      "note": "19 October completed daily-bar closes verified for 7 ordinary equity holdings after 20 Oct quote-source repair. Warrant 6742UW still has no verified instrument ID or quote. Broker quantities remain 2 Oct and unverified."
     }
   ],
   "nextEvents": [
+    {
+      "date": "2026-10-21",
+      "event": "Tesla Q3 2026 financial results · after US cash close",
+      "watch": "Verify Q3 automotive and energy gross margins, FCF, capex, credits, outlook and any new financing obligations. Volume disclosures from 2 October are not earnings."
+    },
+    {
+      "date": "2026-10-30",
+      "event": "Exxon Mobil Q3 results · issuer notice",
+      "watch": "Review refining and chemical cash flows against oil/product spreads and combined energy-cluster exposure. Check event time at issuer IR before action."
+    }
+  ],
+  "previousHeadline": {
+    "verdict": "Hot CPI raises the hurdle; I am staying selective.",
+    "detail": "September headline CPI rose 0.6% MoM and 3.7% YoY; core was 0.3% MoM versus 0.2% expected and 2.6% YoY versus 2.5% expected. Petrol +9.1%, shelter +0.4% and firmer services reinforced inflation persistence. Early post-release 2Y yields rose and Nasdaq futures fell; no US cash close or broad credit confirmation yet.",
+    "next": "Review the documented CPI transmission for all eight holdings and 46 watchlist stocks. Hold existing actions without new purchases or score changes; prioritise proof of refinery/product cash margins, funded AI orders, current valuation, TSMC Q3 at 14:00 MYT and US PPI at 20:30 MYT on 15 October."
+  },
+  "priorEventWindows": [
     {
       "date": "2026-10-14",
       "event": "US CPI · RELEASED 14 Oct, 20:30 MYT",
@@ -233,5 +275,26 @@
       "event": "TSMC Q3 earnings · 14:00 MYT / US PPI · 20:30 MYT",
       "watch": "Use 8 October SEC-filed TSMC July–September revenue (NT$1.494T) and original 65–67% gross / 56–58% operating margin Q3 guidance as baselines. Review actual margins, Q4/HPC/CoWoS order and utilisation guidance, capex, CFO/FCF and response in MU/AVGO and credit. Separately verify CXMT scaled economics and real AI customer collections."
     }
-  ]
+  ],
+  "priorPortfolioWatch": {
+    "top": [
+      "DAYANG",
+      "YTLPOWR",
+      "6742UW",
+      "TSLA"
+    ],
+    "why": "YTLPOWR plus its warrant remains a combined AI/power risk; do not infer diversification from the instrument split. DAYANG, YTLPOWR and 6742UW deserve fresh prices/terms before reallocating. Keep oil/product inflation and rate sensitivity alongside the AI-financing watch.",
+    "noBlindChanges": true
+  },
+  "reviewVersion": "2026-10-20-reconciliation",
+  "changePolicy": {
+    "scoreRevisions": 0,
+    "holdingQuantityChanges": 0,
+    "tradeOrders": 0,
+    "focusCandidateCount": 8,
+    "unscoredAdjacentCount": 3,
+    "priorityIsResearchNotPurchase": true,
+    "priorHeadlinesPreserved": true,
+    "linkedSource": "research/2026-10-20-portfolio-decision-reconciliation.md"
+  }
 }
