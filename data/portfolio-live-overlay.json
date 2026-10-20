@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-20T04:56:39.836Z",
+  "generatedAt": "2026-10-20T08:37:13.685Z",
   "liveAsOf": "2026-10-19T20:12:21.646+00:00",
   "liveSyncedAt": "2026-10-20T04:56:39.738Z",
   "sourceHealth": {
@@ -140,24 +140,24 @@
       "overlayState": "HEADWIND",
       "reviewPriority": "MONITOR",
       "actualReaction": {
-        "status": "STALE",
-        "reason": "Latest quote refresh failed or retained a prior row.",
+        "status": "CONFIRMS",
+        "reason": "Completed-session tape moved in the direction implied by the current market overlay.",
         "freshness": {
-          "status": "STALE",
-          "eligibleForComparison": false,
-          "sessionDate": "2026-09-24",
-          "businessDaysOld": 18,
-          "reason": "Latest quote refresh failed or retained a prior row."
+          "status": "CURRENT",
+          "eligibleForComparison": true,
+          "sessionDate": "2026-10-19",
+          "businessDaysOld": 1,
+          "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-09-24",
-        "close": 162.14,
-        "previousClose": 161.23,
-        "change": 0.91,
-        "changePct": 0.56,
+        "sessionDate": "2026-10-19",
+        "close": 178.28,
+        "previousClose": 178.98,
+        "change": -0.7,
+        "changePct": -0.391,
         "currency": "USD",
-        "sourceName": "Yahoo Finance delayed quote",
-        "sourceUrl": "https://finance.yahoo.com/quote/XOM/",
-        "closeNotice": "At close: September 24 at 4:03:45 PM EDT"
+        "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
+        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/XOM?interval=1d&range=1mo&includePrePost=false",
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-19"
       },
       "effects": {
         "rates": "HEADWIND",
@@ -285,24 +285,24 @@
       "overlayState": "HEADWIND",
       "reviewPriority": "MONITOR",
       "actualReaction": {
-        "status": "STALE",
-        "reason": "Latest quote refresh failed or retained a prior row.",
+        "status": "CONFIRMS",
+        "reason": "Completed-session tape moved in the direction implied by the current market overlay.",
         "freshness": {
-          "status": "STALE",
-          "eligibleForComparison": false,
-          "sessionDate": "2026-09-25",
-          "businessDaysOld": 17,
-          "reason": "Latest quote refresh failed or retained a prior row."
+          "status": "CURRENT",
+          "eligibleForComparison": true,
+          "sessionDate": "2026-10-19",
+          "businessDaysOld": 1,
+          "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-09-25",
-        "close": 7.85,
-        "previousClose": 7.92,
-        "change": -0.07,
-        "changePct": -0.88,
+        "sessionDate": "2026-10-19",
+        "close": 8.35,
+        "previousClose": 8.76,
+        "change": -0.41,
+        "changePct": -4.68,
         "currency": "MYR",
-        "sourceName": "Yahoo Finance delayed quote",
-        "sourceUrl": "https://sg.finance.yahoo.com/quote/3816.KL/",
-        "closeNotice": "At close: 4:50:05 pm MYT"
+        "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
+        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/3816.KL?interval=1d&range=1mo&includePrePost=false",
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-19"
       },
       "effects": {
         "rates": "HEADWIND",
@@ -422,24 +422,24 @@
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
-        "status": "STALE",
-        "reason": "Latest quote refresh failed or retained a prior row.",
+        "status": "DIVERGES",
+        "reason": "Completed-session tape moved against the direction implied by the current market overlay.",
         "freshness": {
-          "status": "STALE",
-          "eligibleForComparison": false,
-          "sessionDate": "2026-09-25",
-          "businessDaysOld": 17,
-          "reason": "Latest quote refresh failed or retained a prior row."
+          "status": "CURRENT",
+          "eligibleForComparison": true,
+          "sessionDate": "2026-10-19",
+          "businessDaysOld": 1,
+          "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-09-25",
-        "close": 2.23,
-        "previousClose": 2.3,
-        "change": -0.07,
-        "changePct": -3.04,
+        "sessionDate": "2026-10-19",
+        "close": 2.31,
+        "previousClose": 2.29,
+        "change": 0.02,
+        "changePct": 0.873,
         "currency": "MYR",
-        "sourceName": "Yahoo Finance delayed quote",
-        "sourceUrl": "https://sg.finance.yahoo.com/quote/5199.KL/",
-        "closeNotice": "At close: 4:59:53 pm MYT"
+        "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
+        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/5199.KL?interval=1d&range=1mo&includePrePost=false",
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-19"
       },
       "effects": {
         "rates": "HEADWIND",
@@ -551,24 +551,24 @@
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
-        "status": "STALE",
-        "reason": "Latest quote refresh failed or retained a prior row.",
+        "status": "DIVERGES",
+        "reason": "Completed-session tape moved against the direction implied by the current market overlay.",
         "freshness": {
-          "status": "STALE",
-          "eligibleForComparison": false,
-          "sessionDate": "2026-09-25",
-          "businessDaysOld": 17,
-          "reason": "Latest quote refresh failed or retained a prior row."
+          "status": "CURRENT",
+          "eligibleForComparison": true,
+          "sessionDate": "2026-10-19",
+          "businessDaysOld": 1,
+          "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-09-25",
-        "close": 5.89,
-        "previousClose": 5.8,
-        "change": 0.09,
-        "changePct": 1.55,
+        "sessionDate": "2026-10-19",
+        "close": 5.26,
+        "previousClose": 5.15,
+        "change": 0.11,
+        "changePct": 2.136,
         "currency": "MYR",
-        "sourceName": "Yahoo Finance delayed quote",
-        "sourceUrl": "https://sg.finance.yahoo.com/quote/6742.KL/",
-        "closeNotice": "At close: 4:54:42 pm MYT"
+        "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
+        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/6742.KL?interval=1d&range=1mo&includePrePost=false",
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-19"
       },
       "effects": {
         "rates": "HEADWIND",
@@ -807,24 +807,24 @@
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
-        "status": "STALE",
-        "reason": "Latest quote refresh failed or retained a prior row.",
+        "status": "FLAT",
+        "reason": "The completed-session move is too small to count as confirmation or divergence.",
         "freshness": {
-          "status": "STALE",
-          "eligibleForComparison": false,
-          "sessionDate": "2026-09-24",
-          "businessDaysOld": 18,
-          "reason": "Latest quote refresh failed or retained a prior row."
+          "status": "CURRENT",
+          "eligibleForComparison": true,
+          "sessionDate": "2026-10-19",
+          "businessDaysOld": 1,
+          "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-09-24",
-        "close": 202.98,
-        "previousClose": 206.32,
-        "change": -3.34,
-        "changePct": -1.62,
+        "sessionDate": "2026-10-19",
+        "close": 204.92,
+        "previousClose": 205.28,
+        "change": -0.36,
+        "changePct": -0.175,
         "currency": "USD",
-        "sourceName": "Yahoo Finance delayed quote",
-        "sourceUrl": "https://finance.yahoo.com/quote/TTWO/",
-        "closeNotice": "At close: September 24 at 4:00:01 PM EDT"
+        "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
+        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/TTWO?interval=1d&range=1mo&includePrePost=false",
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-19"
       },
       "effects": {
         "rates": "HEADWIND",
@@ -920,24 +920,24 @@
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
-        "status": "STALE",
-        "reason": "Latest quote refresh failed or retained a prior row.",
+        "status": "DIVERGES",
+        "reason": "Completed-session tape moved against the direction implied by the current market overlay.",
         "freshness": {
-          "status": "STALE",
-          "eligibleForComparison": false,
-          "sessionDate": "2026-09-24",
-          "businessDaysOld": 18,
-          "reason": "Latest quote refresh failed or retained a prior row."
+          "status": "CURRENT",
+          "eligibleForComparison": true,
+          "sessionDate": "2026-10-19",
+          "businessDaysOld": 1,
+          "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-09-24",
-        "close": 377.94,
-        "previousClose": 380.12,
-        "change": -2.18,
-        "changePct": -0.57,
+        "sessionDate": "2026-10-19",
+        "close": 368.06,
+        "previousClose": 354.72,
+        "change": 13.34,
+        "changePct": 3.761,
         "currency": "USD",
-        "sourceName": "Yahoo Finance delayed quote",
-        "sourceUrl": "https://finance.yahoo.com/quote/TSLA/",
-        "closeNotice": "At close: September 24 at 4:00:00 PM EDT"
+        "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
+        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/TSLA?interval=1d&range=1mo&includePrePost=false",
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-19"
       },
       "effects": {
         "rates": "HEADWIND",
@@ -1033,24 +1033,24 @@
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
-        "status": "STALE",
-        "reason": "Latest quote refresh failed or retained a prior row.",
+        "status": "CONFIRMS",
+        "reason": "Completed-session tape moved in the direction implied by the current market overlay.",
         "freshness": {
-          "status": "STALE",
-          "eligibleForComparison": false,
-          "sessionDate": "2026-09-25",
-          "businessDaysOld": 17,
-          "reason": "Latest quote refresh failed or retained a prior row."
+          "status": "CURRENT",
+          "eligibleForComparison": true,
+          "sessionDate": "2026-10-19",
+          "businessDaysOld": 1,
+          "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-09-25",
-        "close": 1.5,
-        "previousClose": 1.47,
-        "change": 0.03,
-        "changePct": 2.04,
+        "sessionDate": "2026-10-19",
+        "close": 1.3,
+        "previousClose": 1.32,
+        "change": -0.02,
+        "changePct": -1.515,
         "currency": "MYR",
-        "sourceName": "Yahoo Finance delayed quote",
-        "sourceUrl": "https://sg.finance.yahoo.com/quote/5141.KL/",
-        "closeNotice": "At close: 4:50:59 pm MYT"
+        "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
+        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/5141.KL?interval=1d&range=1mo&includePrePost=false",
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-19"
       },
       "effects": {
         "rates": "HEADWIND",
@@ -1222,11 +1222,17 @@
     ],
     "mixed": [],
     "supported": [],
-    "tapeDivergences": [],
-    "tapeConfirmations": [],
-    "researchGaps": [
-      "Stale holding quotes block confirmation/divergence: XOM, MISC, HIBISCS, YTLPOWR, TTWO, TSLA, DAYANG"
-    ]
+    "tapeDivergences": [
+      "HIBISCS",
+      "YTLPOWR",
+      "TSLA"
+    ],
+    "tapeConfirmations": [
+      "XOM",
+      "MISC",
+      "DAYANG"
+    ],
+    "researchGaps": []
   },
   "divergences": [
     {
