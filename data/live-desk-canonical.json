@@ -536,14 +536,14 @@
         "label": "US dollar transmission",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "US Dollar · UUP proxy 5D -0.34%.",
-        "asOf": "2026-10-16",
+        "detail": "US Dollar · UUP proxy 5D -0.45%.",
+        "asOf": "2026-10-19",
         "sourceName": "Nasdaq official etf history",
         "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical",
         "evidenceRefs": [],
         "metrics": {
-          "proxyLevel": 28.92,
-          "change5dPct": -0.34
+          "proxyLevel": 29,
+          "change5dPct": -0.45
         }
       },
       {
@@ -595,7 +595,7 @@
     {
       "id": "spx-rsp",
       "title": "Headline index and equal weight are separating",
-      "detail": "SPX cash -1.9% over 5D vs RSP 0.5%.",
+      "detail": "SPX cash -1.5% over 5D vs RSP 0.1%.",
       "assets": [
         "spx",
         "rsp"
@@ -611,9 +611,9 @@
       "id": "dxy",
       "symbol": "UUP",
       "label": "US Dollar · UUP proxy",
-      "last": 28.92,
-      "change5d": -0.34,
-      "asOf": "2026-10-16",
+      "last": 29,
+      "change5d": -0.45,
+      "asOf": "2026-10-19",
       "sourceName": "Nasdaq official etf history",
       "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical"
     },
@@ -810,14 +810,14 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-19T22:20:45.529Z",
+    "asOf": "2026-10-20T04:48:48.879Z",
     "assets": [
       {
         "key": "SPX",
         "label": "S&P 500",
         "symbol": "SP500",
-        "last": 7659.44,
-        "dailyChange": -1.09,
+        "last": 7690.73,
+        "dailyChange": 0.41,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "LOW",
@@ -825,7 +825,7 @@
         "confirmingSignal": null,
         "contradictingSignal": "Breadth ex‑AI canonical series",
         "invalidation": "Canonical MOVE/Treasury‑volatility and intraday fed‑funds‑futures + 2Y/10Y 5m–30m bars for Oct 14–16 showing either persistence or rapid reversion; auction‑flow persistence would also alter the regime call.",
-        "asOf": "2026-10-16"
+        "asOf": "2026-10-19"
       },
       {
         "key": "NASDAQ",
@@ -875,9 +875,9 @@
       {
         "key": "GOLD",
         "label": "Gold spot",
-        "symbol": null,
-        "last": null,
-        "dailyChange": null,
+        "symbol": "XAUUSD",
+        "last": 4146.399902,
+        "dailyChange": -0.24,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "LOW",
@@ -885,14 +885,14 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": "Canonical MOVE/Treasury‑volatility and intraday fed‑funds‑futures + 2Y/10Y 5m–30m bars for Oct 14–16 showing either persistence or rapid reversion; auction‑flow persistence would also alter the regime call.",
-        "asOf": null
+        "asOf": "2026-10-20"
       },
       {
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 82115.31,
-        "dailyChange": 0.13,
+        "last": 82006.97,
+        "dailyChange": 0.21,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -900,7 +900,7 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": null,
-        "asOf": "2026-10-19"
+        "asOf": "2026-10-20"
       }
     ]
   },
@@ -1474,5 +1474,5 @@
     "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-19T22:24:03.526Z"
+  "syncedAt": "2026-10-20T04:56:39.738Z"
 }
