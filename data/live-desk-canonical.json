@@ -481,20 +481,20 @@
         "label": "Secured funding / collateral",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR -2.0 bp. Volumes: SOFR $2925bn, TGCR $1193bn, BGCR $1227bn.",
-        "asOf": "2026-10-16",
+        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR -2.3 bp. Volumes: SOFR $2888bn, TGCR $1178bn, BGCR $1208bn.",
+        "asOf": "2026-10-19",
         "sourceName": "Federal Reserve Bank of New York",
         "sourceUrl": "https://markets.newyorkfed.org/api/rates/all/latest.json",
         "evidenceRefs": [],
         "metrics": {
           "effr": 3.88,
-          "sofr": 3.88,
+          "sofr": 3.87,
           "tgcr": 3.85,
           "bgcr": 3.85,
-          "securedVsEffrBps": -2,
-          "sofrVolumeBillions": 2925,
-          "tgcrVolumeBillions": 1193,
-          "bgcrVolumeBillions": 1227
+          "securedVsEffrBps": -2.3,
+          "sofrVolumeBillions": 2888,
+          "tgcrVolumeBillions": 1178,
+          "bgcrVolumeBillions": 1208
         }
       },
       {
@@ -519,16 +519,16 @@
         "label": "Credit spreads",
         "direction": "TIGHTER",
         "confirmation": "CONFIRMING",
-        "detail": "HY OAS 3.31 (5D +20.0 bp); IG OAS 0.85 (5D +2.0 bp).",
-        "asOf": "2026-10-16",
+        "detail": "HY OAS 3.29 (5D +18.0 bp); IG OAS 0.87 (5D +4.0 bp).",
+        "asOf": "2026-10-19",
         "sourceName": "Federal Reserve Economic Data",
         "sourceUrl": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
         "evidenceRefs": [],
         "metrics": {
-          "hyOas": 3.31,
-          "hyOas5dBps": 20,
-          "igOas": 0.85,
-          "igOas5dBps": 2
+          "hyOas": 3.29,
+          "hyOas5dBps": 18,
+          "igOas": 0.87,
+          "igOas5dBps": 4
         }
       },
       {
@@ -691,9 +691,9 @@
       "id": "hy-oas",
       "symbol": "BAMLH0A0HYM2",
       "label": "US High Yield OAS",
-      "last": 3.31,
-      "change5d": 6.43,
-      "asOf": "2026-10-16",
+      "last": 3.29,
+      "change5d": 5.79,
+      "asOf": "2026-10-19",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
     },
@@ -701,9 +701,9 @@
       "id": "ig-oas",
       "symbol": "BAMLC0A0CM",
       "label": "US Investment Grade OAS",
-      "last": 0.85,
-      "change5d": 2.41,
-      "asOf": "2026-10-16",
+      "last": 0.87,
+      "change5d": 4.82,
+      "asOf": "2026-10-19",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/BAMLC0A0CM"
     }
@@ -810,7 +810,7 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-20T11:34:24.017Z",
+    "asOf": "2026-10-20T17:00:34.014Z",
     "assets": [
       {
         "key": "SPX",
@@ -831,8 +831,8 @@
         "key": "NASDAQ",
         "label": "Nasdaq Composite",
         "symbol": "^IXIC",
-        "last": 26140.03,
-        "dailyChange": -2.15,
+        "last": 26430.89,
+        "dailyChange": 1.11,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "LOW",
@@ -840,7 +840,7 @@
         "confirmingSignal": null,
         "contradictingSignal": "Issuer earnings, capex guidance and matched priced moves for hyperscalers and GPU suppliers",
         "invalidation": "Canonical MOVE/Treasury‑volatility and intraday fed‑funds‑futures + 2Y/10Y 5m–30m bars for Oct 14–16 showing either persistence or rapid reversion; auction‑flow persistence would also alter the regime call.",
-        "asOf": "2026-10-16"
+        "asOf": "2026-10-19"
       },
       {
         "key": "CRUDE",
@@ -876,8 +876,8 @@
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4124.899902,
-        "dailyChange": -0.85,
+        "last": 4122.799805,
+        "dailyChange": -0.9,
         "dailyChangeUnit": "percent",
         "bias": "BEARISH",
         "conviction": "LOW",
@@ -891,8 +891,8 @@
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 81362.36,
-        "dailyChange": -0.58,
+        "last": 82693.33,
+        "dailyChange": 1.05,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -1404,9 +1404,9 @@
   },
   "marketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "d8463e96-5e0d-4578-890c-0795baf3aa65",
-    "capturedAt": "2026-10-20T07:47:49.778Z",
-    "researchRunId": "1b0c7c79-5572-483c-899a-081a37b1dfe4",
+    "editionId": "6b86e83a-cd22-4cc2-a37d-0c914f0d5340",
+    "capturedAt": "2026-10-20T16:19:12.015Z",
+    "researchRunId": "440d7ff6-78dc-4d5e-9da4-d8bf65987372",
     "items": []
   },
   "upstreamGuardrails": [
@@ -1426,5 +1426,5 @@
     "Mismatched ticker/issuer labels are quarantined, never silently remapped to another security.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-20T11:44:57.087Z"
+  "syncedAt": "2026-10-20T17:14:21.285Z"
 }
