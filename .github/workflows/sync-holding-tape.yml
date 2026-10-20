@@ -1,6 +1,12 @@
 name: Sync holding tape
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/sync-holding-tape.mjs'
+      - 'scripts/quote-chart-source.mjs'
+      - '.github/workflows/sync-holding-tape.yml'
   workflow_dispatch:
   schedule:
     - cron: "15 */6 * * *"
