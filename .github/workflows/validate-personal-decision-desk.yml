@@ -16,6 +16,9 @@ on:
       - "app.js"
       - "research-library.html"
       - "data/personal-decision-desk.json"
+      - "data/portfolio-decision-review-2026-10-20.json"
+      - "research/2026-10-20-portfolio-decision-reconciliation.md"
+      - "scripts/check-portfolio-decision-review-2026-10-20.mjs"
       - "data/market-summary.json"
       - "data/ai-catalyst-gates.json"
       - "data/watchlist.json"
@@ -40,6 +43,9 @@ on:
       - "app.js"
       - "research-library.html"
       - "data/personal-decision-desk.json"
+      - "data/portfolio-decision-review-2026-10-20.json"
+      - "research/2026-10-20-portfolio-decision-reconciliation.md"
+      - "scripts/check-portfolio-decision-review-2026-10-20.mjs"
       - "data/market-summary.json"
       - "data/watchlist.json"
       - "data/holdings-fundamentals.json"
@@ -54,6 +60,8 @@ jobs:
           node-version: "22"
       - name: Validate source boundaries and decision gates
         run: node scripts/check-personal-decision-desk.mjs
+      - name: Validate updated portfolio investment research ledger
+        run: node scripts/check-portfolio-decision-review-2026-10-20.mjs
       - name: Validate thesis colours and recorded action gates
         run: node scripts/check-stock-states.mjs
       - name: Validate post-CPI 54-security decision review
