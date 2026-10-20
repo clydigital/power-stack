@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-20T17:14:21.433Z",
+  "generatedAt": "2026-10-20T21:36:19.093Z",
   "asOf": "2026-10-19T20:12:21.646+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -15,13 +15,13 @@
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-20T17:14:21.381Z",
+      "generatedAt": "2026-10-20T21:36:19.024Z",
       "status": "OK"
     },
     "holdingTape": {
       "contractVersion": "power-stack-holding-tape/1",
       "expectedContract": "power-stack-holding-tape/1",
-      "generatedAt": "2026-10-20T17:01:52.377Z",
+      "generatedAt": "2026-10-20T21:36:18.948Z",
       "unresolved": [
         "6742UW"
       ],
@@ -55,13 +55,13 @@
   },
   "portfolioTriage": {
     "tapeDivergences": [
+      "MISC",
       "HIBISCS",
       "YTLPOWR",
+      "TTWO",
       "TSLA"
     ],
     "tapeConfirmations": [
-      "XOM",
-      "MISC",
       "DAYANG"
     ],
     "highReview": [
@@ -135,9 +135,9 @@
   },
   "holdingResearchQueue": [
     {
-      "ticker": "TSLA",
-      "name": "Tesla",
-      "priorityScore": 205,
+      "ticker": "HIBISCS",
+      "name": "Hibiscus Petroleum Berhad",
+      "priorityScore": 198,
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
@@ -146,19 +146,58 @@
         "freshness": {
           "status": "CURRENT",
           "eligibleForComparison": true,
-          "sessionDate": "2026-10-19",
+          "sessionDate": "2026-10-20",
           "businessDaysOld": 1,
           "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-10-19",
-        "close": 368.06,
-        "previousClose": 354.72,
-        "change": 13.34,
-        "changePct": 3.761,
+        "sessionDate": "2026-10-20",
+        "close": 2.37,
+        "previousClose": 2.31,
+        "change": 0.06,
+        "changePct": 2.597,
+        "currency": "MYR",
+        "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
+        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/5199.KL?interval=1d&range=1mo&includePrePost=false",
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-20"
+      },
+      "currentAction": "HOLD / NO ADD",
+      "reasons": [
+        "completed-session tape moved against the directional market overlay",
+        "portfolio overlay marks the holding HIGH_REVIEW"
+      ],
+      "researchQuestion": "Has new company-specific evidence changed HIBISCS's current action gate or thesis risk?",
+      "requiredEvidence": [
+        "company-specific news/catalysts for the completed session",
+        "technical/flow context sufficient to test whether the divergence is company-specific or temporary",
+        "funding, valuation, cash-flow or operating evidence that could offset or reinforce the macro headwind"
+      ],
+      "possibleDecisionImpact": "Could change the current add/hold gate or create a new company-specific catalyst/invalidation."
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla",
+      "priorityScore": 188,
+      "overlayState": "HEADWIND",
+      "reviewPriority": "HIGH_REVIEW",
+      "actualReaction": {
+        "status": "DIVERGES",
+        "reason": "Completed-session tape moved against the direction implied by the current market overlay.",
+        "freshness": {
+          "status": "CURRENT",
+          "eligibleForComparison": true,
+          "sessionDate": "2026-10-20",
+          "businessDaysOld": 0,
+          "reason": "Completed-session price is within the market-local freshness window."
+        },
+        "sessionDate": "2026-10-20",
+        "close": 373.71,
+        "previousClose": 368.06,
+        "change": 5.65,
+        "changePct": 1.535,
         "currency": "USD",
         "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
         "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/TSLA?interval=1d&range=1mo&includePrePost=false",
-        "closeNotice": "Source-dated regular-session daily close: 2026-10-19"
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-20"
       },
       "currentAction": "HOLD / DO NOT AVERAGE DOWN",
       "reasons": [
@@ -176,45 +215,6 @@
     {
       "ticker": "YTLPOWR",
       "name": "YTL Power International Berhad",
-      "priorityScore": 198,
-      "overlayState": "HEADWIND",
-      "reviewPriority": "HIGH_REVIEW",
-      "actualReaction": {
-        "status": "DIVERGES",
-        "reason": "Completed-session tape moved against the direction implied by the current market overlay.",
-        "freshness": {
-          "status": "CURRENT",
-          "eligibleForComparison": true,
-          "sessionDate": "2026-10-19",
-          "businessDaysOld": 2,
-          "reason": "Completed-session price is within the market-local freshness window."
-        },
-        "sessionDate": "2026-10-19",
-        "close": 5.26,
-        "previousClose": 5.15,
-        "change": 0.11,
-        "changePct": 2.136,
-        "currency": "MYR",
-        "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
-        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/6742.KL?interval=1d&range=1mo&includePrePost=false",
-        "closeNotice": "Source-dated regular-session daily close: 2026-10-19"
-      },
-      "currentAction": "HOLD / NO ADD",
-      "reasons": [
-        "completed-session tape moved against the directional market overlay",
-        "portfolio overlay marks the holding HIGH_REVIEW"
-      ],
-      "researchQuestion": "Why did YTLPOWR rise despite a directional rates headwind, and does the answer improve or weaken the current HOLD / NO ADD gate?",
-      "requiredEvidence": [
-        "company-specific news/catalysts for the completed session",
-        "technical/flow context sufficient to test whether the divergence is company-specific or temporary",
-        "funding, valuation, cash-flow or operating evidence that could offset or reinforce the macro headwind"
-      ],
-      "possibleDecisionImpact": "Could change the current add/hold gate or create a new company-specific catalyst/invalidation."
-    },
-    {
-      "ticker": "HIBISCS",
-      "name": "Hibiscus Petroleum Berhad",
       "priorityScore": 180,
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
@@ -224,26 +224,26 @@
         "freshness": {
           "status": "CURRENT",
           "eligibleForComparison": true,
-          "sessionDate": "2026-10-19",
-          "businessDaysOld": 2,
+          "sessionDate": "2026-10-20",
+          "businessDaysOld": 1,
           "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-10-19",
-        "close": 2.31,
-        "previousClose": 2.29,
-        "change": 0.02,
-        "changePct": 0.873,
+        "sessionDate": "2026-10-20",
+        "close": 5.3,
+        "previousClose": 5.26,
+        "change": 0.04,
+        "changePct": 0.76,
         "currency": "MYR",
         "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
-        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/5199.KL?interval=1d&range=1mo&includePrePost=false",
-        "closeNotice": "Source-dated regular-session daily close: 2026-10-19"
+        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/6742.KL?interval=1d&range=1mo&includePrePost=false",
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-20"
       },
       "currentAction": "HOLD / NO ADD",
       "reasons": [
         "completed-session tape moved against the directional market overlay",
         "portfolio overlay marks the holding HIGH_REVIEW"
       ],
-      "researchQuestion": "Has new company-specific evidence changed HIBISCS's current action gate or thesis risk?",
+      "researchQuestion": "Why did YTLPOWR rise despite a directional rates headwind, and does the answer improve or weaken the current HOLD / NO ADD gate?",
       "requiredEvidence": [
         "company-specific news/catalysts for the completed session",
         "technical/flow context sufficient to test whether the divergence is company-specific or temporary",
@@ -439,16 +439,16 @@
     {
       "ticker": "XOM",
       "overlayState": "HEADWIND",
-      "reaction": "CONFIRMS",
+      "reaction": "FLAT",
       "action": "CORE HOLD / NO CHASE",
-      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
+      "reason": "No current decision-relevant divergence promoted into the capped queue."
     },
     {
       "ticker": "MISC",
       "overlayState": "HEADWIND",
-      "reaction": "CONFIRMS",
+      "reaction": "DIVERGES",
       "action": "HOLD",
-      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
+      "reason": "No current decision-relevant divergence promoted into the capped queue."
     },
     {
       "ticker": "6742UW",
@@ -460,7 +460,7 @@
     {
       "ticker": "TTWO",
       "overlayState": "HEADWIND",
-      "reaction": "FLAT",
+      "reaction": "DIVERGES",
       "action": "HOLD / NO ADD",
       "reason": "No current decision-relevant divergence promoted into the capped queue."
     },
