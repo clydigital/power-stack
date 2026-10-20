@@ -463,7 +463,8 @@ function buildOverlay(existingGeneratedAt = null) {
   const motionLinked = holdings.filter((item) => item.motionContext?.length).map((item) => item.ticker);
   const researchGaps = [
     ...holdings.filter((item) => item.profileStatus === "MISSING").map((item) => `Missing macro-sensitivity profile: ${item.ticker}`),
-    ...holdings.filter((item) => item.actualReaction?.status === "STALE").map((item) => `Stale holding quote blocks confirmation/divergence: ${item.ticker}`),
+    ...(holdings.some((item) => item.actualReaction?.status === "STALE")
+      ? [`Stale holding quotes block confirmation/divergence: ${holdings.filter((item) => item.actualReaction?.status === "STALE").map((item) => item.ticker).join(", ")}`] : []),
   ];
 
   return {
