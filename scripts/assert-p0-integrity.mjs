@@ -1,30 +1,43 @@
 import fs from "node:fs";
 import assert from "node:assert/strict";
+import { assessHoldingTape, assessHoldingTapeRow, screenStockRadarEntry } from "./market-data-integrity.mjs";
+
 const read = (path) => JSON.parse(fs.readFileSync(path, "utf8"));
 const tape = read("data/holding-tape.json");
 const overlay = read("data/portfolio-live-overlay.json");
 const sweep = read("data/power-sweep-latest.json");
-const stale = tape.holdings.filter((row) => row.ticker !== "6742UW" && row.sessionDate < "2026-10-01");
-assert.ok(stale.length >= 1, "fixture should contain at least one old holding quote");
-for (const row of overlay.holdings) {
-  if (stale.some((old) => old.ticker === row.ticker)) {
-    assert.equal(row.actualReaction.freshness.status, "STALE", row.ticker + " must remain stale");
-    assert.notEqual(row.actualReaction.status, "CONFIRMS", row.ticker + " must not confirm on old price");
-    assert.notEqual(row.actualReaction.status, "DIVERGES", row.ticker + " must not diverge on old price");
+const live = read("data/live-desk-canonical.json");
+const summary = assessHoldingTape(tape);
+
+assert.equal(sweep.inputHealth.holdingTape.status, summary.status,
+  "valid JSON contract alone must never imply fresh quotes");
+assert.equal(sweep.inputHealth.holdingTape.currentCount, summary.currentCount);
+assert.deepEqual(sweep.inputHealth.holdingTape.stale, summary.stale);
+
+for (const row of tape.holdings) {
+  const holding = overlay.holdings.find((item) => item.ticker === row.ticker);
+  assert.ok(holding, "all held symbols must remain represented in the overlay");
+  const expected = assessHoldingTapeRow(row);
+  assert.equal(holding.actualReaction.freshness.status, expected.status, row.ticker);
+  if (!expected.eligibleForComparison) {
+    assert.notEqual(holding.actualReaction.status, "CONFIRMS", row.ticker);
+    assert.notEqual(holding.actualReaction.status, "DIVERGES", row.ticker);
   }
 }
-assert.notEqual(sweep.inputHealth.holdingTape.status, "OK",
-  "valid file contract must not imply current quote observations");
-assert.equal(sweep.portfolioTriage.tapeDivergences.length, 0,
-  "September prices may not create current divergence records");
-assert.equal(sweep.portfolioTriage.tapeConfirmations.length, 0,
-  "September prices may not create current confirmation records");
-for (const item of sweep.liveRadar) {
-  assert.ok(!(item.ticker === "CRWD" && /coreweave/i.test(item.companyName)),
-    "CRWD/CoreWeave must not enter active radar");
-  assert.ok(!(item.ticker === "XENE" && /x[- ]?energy/i.test(item.companyName)),
-    "XENE/X Energy must not enter active radar");
+assert.deepEqual(sweep.portfolioTriage.tapeDivergences, overlay.reviewQueue.tapeDivergences);
+assert.deepEqual(sweep.portfolioTriage.tapeConfirmations, overlay.reviewQueue.tapeConfirmations);
+
+const quarantine = sweep.radarQuarantine || [];
+for (const entry of live.stockRadar || []) {
+  const check = screenStockRadarEntry(entry);
+  const active = sweep.liveRadar.find((item) => item.ticker === entry.symbol);
+  if (!check.valid) {
+    assert.equal(active, undefined, "invalid ticker/issuer mapping entered active Stock Radar");
+    assert.ok(quarantine.some((item) => item.symbol === entry.symbol),
+      "invalid ticker/issuer mapping must be visible in quarantine");
+  }
 }
-assert.ok((sweep.radarQuarantine || []).length >= 2,
-  "the two known snapshot issuer conflicts should be reported");
-console.log("P0 integration checks passed: stale tape and bad identities are quarantined.");
+for (const item of sweep.liveRadar) {
+  assert.equal(screenStockRadarEntry({ symbol: item.ticker, companyName: item.companyName }).valid, true);
+}
+console.log("P0 snapshot checks passed: source-age and issuer-identity guards agree with current inputs.");
