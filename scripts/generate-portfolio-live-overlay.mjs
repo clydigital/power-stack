@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { assessHoldingTapeRow } from "./market-data-integrity.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUTPUT = path.join(ROOT, "data/portfolio-live-overlay.json");
@@ -202,8 +203,9 @@ function effectReason(channel, effect, exposure, signal) {
 }
 
 function tapeAlignment(overlayState, row) {
-  if (!row || row.status !== "CLOSED" || !Number.isFinite(Number(row.changePct))) {
-    return { status: "UNRESOLVED", reason: "No completed-session holding tape is available." };
+  const freshness = assessHoldingTapeRow(row);
+  if (!freshness.eligibleForComparison) {
+    return { status: freshness.status === "STALE" ? "STALE" : "UNRESOLVED", reason: freshness.reason };
   }
   const move = Number(row.changePct);
   const threshold = 0.25;
@@ -409,6 +411,7 @@ function buildOverlay(existingGeneratedAt = null) {
       actualReaction: {
         status: reaction.status,
         reason: reaction.reason,
+        freshness: assessHoldingTapeRow(tape),
         sessionDate: tape?.sessionDate || null,
         close: tape?.close ?? null,
         previousClose: tape?.previousClose ?? null,
@@ -458,7 +461,11 @@ function buildOverlay(existingGeneratedAt = null) {
   const tapeDivergences = holdings.filter((item) => item.actualReaction?.status === "DIVERGES").map((item) => item.ticker);
   const tapeConfirmations = holdings.filter((item) => item.actualReaction?.status === "CONFIRMS").map((item) => item.ticker);
   const motionLinked = holdings.filter((item) => item.motionContext?.length).map((item) => item.ticker);
-  const researchGaps = holdings.filter((item) => item.profileStatus === "MISSING").map((item) => `Missing macro-sensitivity profile: ${item.ticker}`);
+  const researchGaps = [
+    ...holdings.filter((item) => item.profileStatus === "MISSING").map((item) => `Missing macro-sensitivity profile: ${item.ticker}`),
+    ...(holdings.some((item) => item.actualReaction?.status === "STALE")
+      ? [`Stale holding quotes block confirmation/divergence: ${holdings.filter((item) => item.actualReaction?.status === "STALE").map((item) => item.ticker).join(", ")}`] : []),
+  ];
 
   return {
     contractVersion: CONTRACT,
@@ -506,7 +513,7 @@ function buildOverlay(existingGeneratedAt = null) {
       "Power Stack action gates remain company- and portfolio-owned.",
       "Live contradictions remain open investigations until independently resolved.",
       "Portfolio divergence hypotheses are deterministic prompts for investigation, not causal proof.",
-      "Holding-tape confirmation uses completed regular sessions only; MIXED overlays are never forced into directional confirmation.",
+      "Only source-successful, market-local current completed sessions may CONFIRM or DIVERGE; historical closed quotes remain visible as STALE.",
       "Missing profiles remain RESEARCH_GAP rather than zero sensitivity.",
       ...(live.marketMotion ? ["Live promoted Market Motion raises research priority only; it does not alter overlay state or company-evidence component."] : []),
     ],

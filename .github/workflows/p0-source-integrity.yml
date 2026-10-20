@@ -1,0 +1,29 @@
+name: P0 source integrity regression
+on:
+  pull_request:
+    paths:
+      - 'scripts/market-data-integrity.mjs'
+      - 'scripts/test-market-data-integrity.mjs'
+      - 'scripts/assert-p0-integrity.mjs'
+      - 'scripts/sync-holding-tape.mjs'
+      - 'scripts/generate-portfolio-live-overlay.mjs'
+      - 'scripts/generate-power-sweep.mjs'
+      - 'scripts/sync-live-desk.mjs'
+      - '.github/workflows/p0-source-integrity.yml'
+  workflow_dispatch:
+jobs:
+  p0-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Pure regression checks
+        run: node --test scripts/test-market-data-integrity.mjs
+      - name: Regenerate derivative research outputs in CI workspace only
+        run: |
+          node scripts/generate-portfolio-live-overlay.mjs
+          node scripts/generate-power-sweep.mjs
+      - name: Assert real source-date and ticker guardrails
+        run: node scripts/assert-p0-integrity.mjs

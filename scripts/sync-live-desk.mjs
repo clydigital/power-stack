@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
+import { screenStockRadarEntry } from "./market-data-integrity.mjs";
 
 const ROOT = process.cwd();
 const OUTPUT = path.join(ROOT, "data", "live-desk-canonical.json");
@@ -190,6 +191,14 @@ async function main() {
 
   const assetState = live.marketState?.dailyAssetState || null;
   const marketMotion = normaliseMarketMotion(live.marketMotion);
+  const radarCandidates = normaliseRadar(live.stockRadar);
+  const radarReview = { accepted: [], quarantined: [] };
+  for (const candidate of radarCandidates) {
+    const verdict = screenStockRadarEntry(candidate);
+    if (verdict.valid) radarReview.accepted.push(candidate);
+    else radarReview.quarantined.push({ symbol: candidate.symbol, companyName: candidate.companyName,
+      reason: verdict.reason, status: "IDENTITY_MISMATCH", source: "Live Stock Radar" });
+  }
   const snapshot = {
     contractVersion: "power-stack-live-desk-canonical/2",
     sourceUrl: SOURCE,
@@ -227,7 +236,8 @@ async function main() {
     },
     stories: Array.isArray(live.stories) ? live.stories : [],
     investigations: Array.isArray(live.investigations) ? live.investigations : [],
-    stockRadar: normaliseRadar(live.stockRadar),
+    stockRadar: radarReview.accepted,
+    ...(radarReview.quarantined.length ? { stockRadarQuarantine: radarReview.quarantined } : {}),
     verification: normaliseVerification(live.creatorVerification),
     ...(marketMotion ? { marketMotion } : {}),
     upstreamGuardrails: Array.isArray(live.guardrails) ? live.guardrails : [],
@@ -238,6 +248,7 @@ async function main() {
       "No Live-derived macro score or confirmation may be exported back to Live.",
       "Creator-only claims never alter Power Stack scores without independent verification.",
       "A Live Stock Radar name is a research-priority signal, not an automatic Power Stack buy or rerank.",
+      "Mismatched ticker/issuer labels are quarantined, never silently remapped to another security.",
       "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself.",
     ],
   };

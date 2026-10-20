@@ -25,7 +25,19 @@
       "unresolved": [
         "6742UW"
       ],
-      "status": "OK"
+      "stale": [
+        "XOM",
+        "MISC",
+        "HIBISCS",
+        "YTLPOWR",
+        "TTWO",
+        "TSLA",
+        "DAYANG"
+      ],
+      "currentCount": 0,
+      "totalCount": 8,
+      "freshnessPolicy": "2 market-local weekdays; weekends excluded. Source failures block comparison. Exchange holidays not inferred.",
+      "status": "STALE"
     }
   },
   "regime": {
@@ -93,17 +105,8 @@
     ]
   },
   "portfolioTriage": {
-    "tapeDivergences": [
-      "XOM",
-      "YTLPOWR",
-      "DAYANG"
-    ],
-    "tapeConfirmations": [
-      "MISC",
-      "HIBISCS",
-      "TTWO",
-      "TSLA"
-    ],
+    "tapeDivergences": [],
+    "tapeConfirmations": [],
     "highReview": [
       "HIBISCS",
       "YTLPOWR",
@@ -175,70 +178,6 @@
   },
   "holdingResearchQueue": [
     {
-      "ticker": "DAYANG",
-      "name": "Dayang Enterprise Holdings Berhad",
-      "priorityScore": 198,
-      "overlayState": "HEADWIND",
-      "reviewPriority": "HIGH_REVIEW",
-      "actualReaction": {
-        "status": "DIVERGES",
-        "reason": "Completed-session tape moved against the direction implied by the current market overlay.",
-        "sessionDate": "2026-09-25",
-        "close": 1.5,
-        "previousClose": 1.47,
-        "change": 0.03,
-        "changePct": 2.04,
-        "currency": "MYR",
-        "sourceName": "Yahoo Finance delayed quote",
-        "sourceUrl": "https://sg.finance.yahoo.com/quote/5141.KL/",
-        "closeNotice": "At close: 4:50:59 pm MYT"
-      },
-      "currentAction": "HOLD / DO NOT AVERAGE DOWN",
-      "reasons": [
-        "completed-session tape moved against the directional market overlay",
-        "portfolio overlay marks the holding HIGH_REVIEW"
-      ],
-      "researchQuestion": "Has new company-specific evidence changed DAYANG's current action gate or thesis risk?",
-      "requiredEvidence": [
-        "company-specific news/catalysts for the completed session",
-        "technical/flow context sufficient to test whether the divergence is company-specific or temporary",
-        "funding, valuation, cash-flow or operating evidence that could offset or reinforce the macro headwind"
-      ],
-      "possibleDecisionImpact": "Could change the current add/hold gate or create a new company-specific catalyst/invalidation."
-    },
-    {
-      "ticker": "YTLPOWR",
-      "name": "YTL Power International Berhad",
-      "priorityScore": 188,
-      "overlayState": "HEADWIND",
-      "reviewPriority": "HIGH_REVIEW",
-      "actualReaction": {
-        "status": "DIVERGES",
-        "reason": "Completed-session tape moved against the direction implied by the current market overlay.",
-        "sessionDate": "2026-09-25",
-        "close": 5.89,
-        "previousClose": 5.8,
-        "change": 0.09,
-        "changePct": 1.55,
-        "currency": "MYR",
-        "sourceName": "Yahoo Finance delayed quote",
-        "sourceUrl": "https://sg.finance.yahoo.com/quote/6742.KL/",
-        "closeNotice": "At close: 4:54:42 pm MYT"
-      },
-      "currentAction": "HOLD / NO ADD",
-      "reasons": [
-        "completed-session tape moved against the directional market overlay",
-        "portfolio overlay marks the holding HIGH_REVIEW"
-      ],
-      "researchQuestion": "Why did YTLPOWR rise despite a directional rates headwind, and does the answer improve or weaken the current HOLD / NO ADD gate?",
-      "requiredEvidence": [
-        "company-specific news/catalysts for the completed session",
-        "technical/flow context sufficient to test whether the divergence is company-specific or temporary",
-        "funding, valuation, cash-flow or operating evidence that could offset or reinforce the macro headwind"
-      ],
-      "possibleDecisionImpact": "Could change the current add/hold gate or create a new company-specific catalyst/invalidation."
-    },
-    {
       "ticker": "6742UW",
       "name": "YTL Power structured warrant / linked instrument",
       "priorityScore": 165,
@@ -246,7 +185,12 @@
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
         "status": "UNRESOLVED",
-        "reason": "No completed-session holding tape is available.",
+        "reason": "Missing verified closed-session instrument or price data.",
+        "freshness": {
+          "status": "UNRESOLVED",
+          "eligibleForComparison": false,
+          "reason": "Missing verified closed-session instrument or price data."
+        },
         "sessionDate": null,
         "close": null,
         "previousClose": null,
@@ -268,6 +212,78 @@
         "funding, valuation, cash-flow or operating evidence that could offset or reinforce the macro headwind"
       ],
       "possibleDecisionImpact": "Could unlock accurate YTL-linked concentration and portfolio-weight measurement."
+    },
+    {
+      "ticker": "HIBISCS",
+      "name": "Hibiscus Petroleum Berhad",
+      "priorityScore": 80,
+      "overlayState": "HEADWIND",
+      "reviewPriority": "HIGH_REVIEW",
+      "actualReaction": {
+        "status": "STALE",
+        "reason": "Latest quote refresh failed or retained a prior row.",
+        "freshness": {
+          "status": "STALE",
+          "eligibleForComparison": false,
+          "sessionDate": "2026-09-25",
+          "businessDaysOld": 17,
+          "reason": "Latest quote refresh failed or retained a prior row."
+        },
+        "sessionDate": "2026-09-25",
+        "close": 2.23,
+        "previousClose": 2.3,
+        "change": -0.07,
+        "changePct": -3.04,
+        "currency": "MYR",
+        "sourceName": "Yahoo Finance delayed quote",
+        "sourceUrl": "https://sg.finance.yahoo.com/quote/5199.KL/",
+        "closeNotice": "At close: 4:59:53 pm MYT"
+      },
+      "currentAction": "HOLD / NO ADD",
+      "reasons": [
+        "portfolio overlay marks the holding HIGH_REVIEW"
+      ],
+      "researchQuestion": "Has new company-specific evidence changed HIBISCS's current action gate or thesis risk?",
+      "requiredEvidence": [
+        "funding, valuation, cash-flow or operating evidence that could offset or reinforce the macro headwind"
+      ],
+      "possibleDecisionImpact": "Monitor unless new company evidence changes the existing Power Stack action gate."
+    },
+    {
+      "ticker": "YTLPOWR",
+      "name": "YTL Power International Berhad",
+      "priorityScore": 80,
+      "overlayState": "HEADWIND",
+      "reviewPriority": "HIGH_REVIEW",
+      "actualReaction": {
+        "status": "STALE",
+        "reason": "Latest quote refresh failed or retained a prior row.",
+        "freshness": {
+          "status": "STALE",
+          "eligibleForComparison": false,
+          "sessionDate": "2026-09-25",
+          "businessDaysOld": 17,
+          "reason": "Latest quote refresh failed or retained a prior row."
+        },
+        "sessionDate": "2026-09-25",
+        "close": 5.89,
+        "previousClose": 5.8,
+        "change": 0.09,
+        "changePct": 1.55,
+        "currency": "MYR",
+        "sourceName": "Yahoo Finance delayed quote",
+        "sourceUrl": "https://sg.finance.yahoo.com/quote/6742.KL/",
+        "closeNotice": "At close: 4:54:42 pm MYT"
+      },
+      "currentAction": "HOLD / NO ADD",
+      "reasons": [
+        "portfolio overlay marks the holding HIGH_REVIEW"
+      ],
+      "researchQuestion": "Why did YTLPOWR rise despite a directional rates headwind, and does the answer improve or weaken the current HOLD / NO ADD gate?",
+      "requiredEvidence": [
+        "funding, valuation, cash-flow or operating evidence that could offset or reinforce the macro headwind"
+      ],
+      "possibleDecisionImpact": "Monitor unless new company evidence changes the existing Power Stack action gate."
     }
   ],
   "watchlistResearchQueue": [
@@ -429,22 +445,6 @@
   ],
   "liveRadar": [
     {
-      "ticker": "CRWD",
-      "companyName": "CoreWeave (proxy watching)",
-      "whyRelevant": "Core/AI capacity providers are sensitive to higher financing costs and HY stress; leads flagged intraday rallies.",
-      "researchQuestion": "Is CoreWeave's price action driven by sector flows or idiosyncratic news and is its financing/capex at risk from HY widening?",
-      "status": "DISCOVERY_ONLY",
-      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
-    },
-    {
-      "ticker": "XENE",
-      "companyName": "X Energy",
-      "whyRelevant": "Listed among research leads for intraday moves that could reflect sector rotation or energy‑specific flows.",
-      "researchQuestion": "Is X Energy's move idiosyncratic or tied to energy/inflation narratives that affect rates?",
-      "status": "DISCOVERY_ONLY",
-      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
-    },
-    {
       "ticker": "LEU",
       "companyName": "Centrus Energy (watch)",
       "whyRelevant": "Listed among intraday research leads with a rally that may reflect sector or macro flows.",
@@ -453,41 +453,55 @@
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     }
   ],
+  "radarQuarantine": [
+    {
+      "symbol": "CRWD",
+      "companyName": "CoreWeave (proxy watching)",
+      "reason": "Ticker and issuer label conflict with the known listed issuer.",
+      "status": "IDENTITY_MISMATCH"
+    },
+    {
+      "symbol": "XENE",
+      "companyName": "X Energy",
+      "reason": "Ticker and issuer label conflict with the known listed issuer.",
+      "status": "IDENTITY_MISMATCH"
+    }
+  ],
   "monitorOnly": [
     {
       "ticker": "XOM",
       "overlayState": "HEADWIND",
-      "reaction": "DIVERGES",
+      "reaction": "STALE",
       "action": "CORE HOLD / NO CHASE",
-      "reason": "No current decision-relevant divergence promoted into the capped queue."
+      "reason": "Historical close is stale; no current directional confirmation is available."
     },
     {
       "ticker": "MISC",
       "overlayState": "HEADWIND",
-      "reaction": "CONFIRMS",
+      "reaction": "STALE",
       "action": "HOLD",
-      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
-    },
-    {
-      "ticker": "HIBISCS",
-      "overlayState": "HEADWIND",
-      "reaction": "CONFIRMS",
-      "action": "HOLD / NO ADD",
-      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
+      "reason": "Historical close is stale; no current directional confirmation is available."
     },
     {
       "ticker": "TTWO",
       "overlayState": "HEADWIND",
-      "reaction": "CONFIRMS",
+      "reaction": "STALE",
       "action": "HOLD / NO ADD",
-      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
+      "reason": "Historical close is stale; no current directional confirmation is available."
     },
     {
       "ticker": "TSLA",
       "overlayState": "HEADWIND",
-      "reaction": "CONFIRMS",
+      "reaction": "STALE",
       "action": "HOLD / DO NOT AVERAGE DOWN",
-      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
+      "reason": "Historical close is stale; no current directional confirmation is available."
+    },
+    {
+      "ticker": "DAYANG",
+      "overlayState": "HEADWIND",
+      "reaction": "STALE",
+      "action": "HOLD / DO NOT AVERAGE DOWN",
+      "reason": "Historical close is stale; no current directional confirmation is available."
     }
   ],
   "newCapitalPriority": [
@@ -518,9 +532,12 @@
     }
   ],
   "researchGaps": [
+    "Stale holding quotes block confirmation/divergence: XOM, MISC, HIBISCS, YTLPOWR, TTWO, TSLA, DAYANG",
     "MARKET_DATA: Canonical MOVE/Treasury‑volatility and intraday fed‑funds‑futures + 2Y/10Y 5m–30m bars for Oct 14–16 are missing and materially block persistence/decomposition conclusions in MAIN_THREAD and CPI/Duration investigations.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence.",
-    "Holding tape unresolved: 6742UW"
+    "Holding tape stale: XOM, MISC, HIBISCS, YTLPOWR, TTWO, TSLA, DAYANG",
+    "Holding tape unresolved: 6742UW",
+    "Stock Radar identity mismatches quarantined: CRWD, XENE"
   ],
   "explicitNoChange": [
     "Do not change any company company-evidence component from Live macro state or holding-tape reaction alone.",

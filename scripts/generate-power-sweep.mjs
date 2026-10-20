@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { assessHoldingTape, screenStockRadarEntry } from "./market-data-integrity.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUTPUT = path.join(ROOT, "data/power-sweep-latest.json");
@@ -35,7 +36,8 @@ function importanceScore(holding) {
   if (holding.motionContext?.length) score += 35;
   if (holding.overlayState === "HEADWIND") score += 25;
   if (holding.overlayState === "MIXED") score += 10;
-  const move = Math.abs(Number(holding.actualReaction?.changePct || 0));
+  const move = holding.actualReaction?.freshness?.eligibleForComparison
+    ? Math.abs(Number(holding.actualReaction?.changePct || 0)) : 0;
   if (move >= 3) score += 25;
   else if (move >= 2) score += 18;
   else if (move >= 1) score += 8;
@@ -50,7 +52,8 @@ function holdingReason(holding) {
   if (holding.profileStatus === "MISSING") reasons.push("macro-sensitivity profile is missing");
   if (holding.reviewPriority === "HIGH_REVIEW") reasons.push("portfolio overlay marks the holding HIGH_REVIEW");
   if (holding.motionContext?.length) reasons.push("fresh promoted Live Market Motion is linked to the holding");
-  const move = Math.abs(Number(holding.actualReaction?.changePct || 0));
+  const move = holding.actualReaction?.freshness?.eligibleForComparison
+    ? Math.abs(Number(holding.actualReaction?.changePct || 0)) : 0;
   if (holding.overlayState === "MIXED" && move >= 2) reasons.push("mixed macro exposure coincided with a material one-session move");
   if (!reasons.length) reasons.push("monitoring only; no decision-relevant divergence");
   return reasons;
@@ -72,7 +75,7 @@ function holdingEvidence(holding) {
 function decisionImpact(holding) {
   if (holding.ticker === "6742UW") return "Could unlock accurate YTL-linked concentration and portfolio-weight measurement.";
   if (holding.actualReaction?.status === "DIVERGES") return "Could change the current add/hold gate or create a new company-specific catalyst/invalidation.";
-  if (holding.overlayState === "MIXED" && Math.abs(Number(holding.actualReaction?.changePct || 0)) >= 2) {
+  if (holding.overlayState === "MIXED" && holding.actualReaction?.freshness?.eligibleForComparison && Math.abs(Number(holding.actualReaction?.changePct || 0)) >= 2) {
     return "Could identify which macro/company channel is driving the position and whether the current action gate remains appropriate.";
   }
   return "Monitor unless new company evidence changes the existing Power Stack action gate.";
@@ -165,6 +168,7 @@ function build(existingGeneratedAt = null) {
   const portfolio = read("data/portfolio-management.json");
 
   const caps = config.powerSweep?.hardCaps || {};
+  const tapeHealth = assessHoldingTape(tape);
   const maxTotal = Number(caps.totalExternalInvestigations || 12);
   const inputHealth = {
     liveDesk: {
@@ -184,8 +188,12 @@ function build(existingGeneratedAt = null) {
       contractVersion: tape.contractVersion,
       expectedContract: "power-stack-holding-tape/1",
       generatedAt: tape.generatedAt || null,
-      unresolved: tape.unresolved || [],
-      status: tape.contractVersion === "power-stack-holding-tape/1" ? "OK" : "BLOCKING",
+      unresolved: tapeHealth.unresolved,
+      stale: tapeHealth.stale,
+      currentCount: tapeHealth.currentCount,
+      totalCount: tapeHealth.totalCount,
+      freshnessPolicy: tapeHealth.policy,
+      status: tape.contractVersion === "power-stack-holding-tape/1" ? tapeHealth.status : "BLOCKING",
     },
   };
 
@@ -210,7 +218,7 @@ function build(existingGeneratedAt = null) {
       item.actualReaction?.status === "DIVERGES"
       || item.actualReaction?.status === "UNRESOLVED"
       || (item.reviewPriority === "HIGH_REVIEW" && item.actualReaction?.status !== "CONFIRMS")
-      || (item.overlayState === "MIXED" && Math.abs(Number(item.actualReaction?.changePct || 0)) >= 2)
+      || (item.overlayState === "MIXED" && item.actualReaction?.freshness?.eligibleForComparison && Math.abs(Number(item.actualReaction?.changePct || 0)) >= 2)
       || item.motionContext?.length
     )
     .sort((a,b) => b.priorityScore - a.priorityScore);
@@ -289,7 +297,14 @@ function build(existingGeneratedAt = null) {
 
   const chinaAdjunct = chinaCandidates.slice(0, Math.min(Number(caps.chinaAdjunctNames || 3), remaining));
 
-  const liveRadar = (live.stockRadar || []).slice(0, Number(caps.liveRadarNames || 3)).map((item)=>({
+  const screenedRadar = (live.stockRadar || []).map((item) => ({ item, verdict: screenStockRadarEntry(item) }));
+  const radarQuarantine = [
+    ...(live.stockRadarQuarantine || []),
+    ...screenedRadar.filter(({ verdict }) => !verdict.valid).map(({ item, verdict }) => ({
+      symbol: item.symbol, companyName: item.companyName, reason: verdict.reason, status: "IDENTITY_MISMATCH",
+    })),
+  ];
+  const liveRadar = screenedRadar.filter(({ verdict }) => verdict.valid).slice(0, Number(caps.liveRadarNames || 3)).map(({ item })=>({
     ticker:item.symbol,
     companyName:item.companyName,
     whyRelevant:item.whyRelevant,
@@ -313,7 +328,9 @@ function build(existingGeneratedAt = null) {
       action:item.currentAction,
       reason:item.motionContext?.length
         ? "Fresh promoted Live Motion is linked, but this holding remains outside the capped deep-dive queue unless budget or priority changes."
-        : item.actualReaction?.status === "CONFIRMS"
+        : item.actualReaction?.status === "STALE"
+          ? "Historical close is stale; no current directional confirmation is available."
+          : item.actualReaction?.status === "CONFIRMS"
           ? "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
           : item.overlayState === "MIXED"
             ? "Mixed exposure is monitored without forcing a directional conclusion."
@@ -323,7 +340,9 @@ function build(existingGeneratedAt = null) {
   const researchGaps = [
     ...(overlay.reviewQueue?.researchGaps || []),
     ...(overlay.liveResearchGaps || []),
-    ...(tape.unresolved || []).map((ticker)=>"Holding tape unresolved: " + ticker),
+    ...(tapeHealth.stale.length ? ["Holding tape stale: " + tapeHealth.stale.join(", ")] : []),
+    ...(tapeHealth.unresolved || []).map((ticker)=>"Holding tape unresolved: " + ticker),
+    ...(radarQuarantine.length ? ["Stock Radar identity mismatches quarantined: " + radarQuarantine.map((item) => item.symbol).join(", ")] : []),
   ].filter(Boolean).slice(0, Number(caps.researchGaps || 6));
 
   const queueCounts = {
@@ -372,6 +391,7 @@ function build(existingGeneratedAt = null) {
     themeResearchQueue: blocking ? [] : themeQueue,
     chinaAdjunctQueue: blocking ? [] : chinaAdjunct,
     liveRadar,
+    ...(radarQuarantine.length ? { radarQuarantine } : {}),
     monitorOnly,
     newCapitalPriority: portfolio.newCapitalPriority || [],
     researchGaps,
