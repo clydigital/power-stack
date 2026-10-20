@@ -78,3 +78,43 @@ export async function fetchYahooChart(spec, host, { fetcher = fetch, now = new D
   const parsed = parseYahooDailyBars(payload, spec, now);
   return { ...parsed, sourceUrl: url, fetchedAt: now.toISOString() };
 }
+
+export function parseFinnhubUSQuote(payload, spec, now = new Date()) {
+  if (spec.market !== "US") throw new Error("Finnhub quote fallback is US-only");
+  const price = Number(payload?.c), previous = Number(payload?.pc), seconds = Number(payload?.t);
+  if (!Number.isFinite(price) || price <= 0 || !Number.isFinite(previous) || previous <= 0
+    || !Number.isFinite(seconds) || seconds <= 0) throw new Error("Finnhub quote lacks usable prices or event timestamp");
+  const eventTime = new Date(seconds * 1000);
+  const event = dateTimeParts(eventTime, spec.timeZone);
+  const sessionDate = localDate(event);
+  const current = dateTimeParts(now, spec.timeZone);
+  if (sessionDate > localDate(current)) throw new Error("Finnhub quote is future dated");
+  // Prevent a regular-hours intraday tick from being stamped as the closing quote.
+  if (Number(event.hour) < 16 || event.weekday === "Sat" || event.weekday === "Sun") {
+    throw new Error("Finnhub last-trade timestamp is not after the regular-session close");
+  }
+  if (sessionDate === localDate(current) && Number(current.hour) < 17) {
+    throw new Error("US current-session quote is not yet safely completed");
+  }
+  const change = price - previous;
+  return {
+    ticker: spec.ticker, providerSymbol: spec.providerSymbol, market: spec.market,
+    sessionDate, currency: "USD", close: round(price), previousClose: round(previous),
+    change: round(change), changePct: round(100 * change / previous, 3),
+    closeNotice: "Finnhub provider-stamped completed regular session: " + sessionDate,
+    sourceName: "Finnhub quote (provider-timestamped)",
+    status: "CLOSED", refreshStatus: "OK",
+  };
+}
+
+export async function fetchFinnhubUSQuote(spec, token, { fetcher = fetch, now = new Date(), timeoutMs = 8000 } = {}) {
+  if (!token || spec.market !== "US") throw new Error("Finnhub token unavailable or unsupported market");
+  const url = "https://finnhub.io/api/v1/quote?symbol=" + encodeURIComponent(spec.providerSymbol)
+    + "&token=" + encodeURIComponent(token);
+  const response = await fetcher(url, { headers: { accept: "application/json" }, signal: AbortSignal.timeout(timeoutMs) });
+  if (!response.ok) throw new Error("Finnhub quote HTTP " + response.status);
+  const parsed = parseFinnhubUSQuote(await response.json(), spec, now);
+  // Never persist credentials in snapshots, sourceUrls or diagnostics.
+  return { ...parsed, sourceUrl: "https://finnhub.io/api/v1/quote?symbol=" + encodeURIComponent(spec.providerSymbol),
+    fetchedAt: now.toISOString() };
+}
