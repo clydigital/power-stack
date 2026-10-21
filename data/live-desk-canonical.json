@@ -535,14 +535,14 @@
         "label": "US dollar transmission",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "US Dollar · UUP proxy 5D -0.45%.",
-        "asOf": "2026-10-19",
+        "detail": "US Dollar · UUP proxy 5D -0.41%.",
+        "asOf": "2026-10-20",
         "sourceName": "Nasdaq official etf history",
         "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical",
         "evidenceRefs": [],
         "metrics": {
-          "proxyLevel": 29,
-          "change5dPct": -0.45
+          "proxyLevel": 28.9,
+          "change5dPct": -0.41
         }
       },
       {
@@ -586,7 +586,7 @@
     "marketMonitor": "PARTIAL",
     "fredRates": "OK",
     "nyFedReferenceRates": "OK",
-    "nyFedPrimaryDealers": "OK",
+    "nyFedPrimaryDealers": "STALE",
     "treasuryBills": "OK",
     "treasurySupply": "UNRESOLVED"
   },
@@ -594,7 +594,7 @@
     {
       "id": "spx-rsp",
       "title": "Headline index and equal weight are separating",
-      "detail": "SPX cash -1.5% over 5D vs RSP 0.1%.",
+      "detail": "SPX cash -1.2% over 5D vs RSP 1.2%.",
       "assets": [
         "spx",
         "rsp"
@@ -604,6 +604,7 @@
   "researchGaps": [
     "DATA_BLOCKER: No canonical intraday Fed‑funds‑futures and MOVE series for Oct 14 CPI window; this blocks persistence tests for CPI‑driven repricing.",
     "DATA_BLOCKER: Canonical MOVE series and daily canonical HY/IG OAS feeds are absent, preventing robust volatility/credit transmission tests.",
+    "Latest primary-dealer report date 2026-10-07 is more than fourteen calendar days old.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],
   "marketRows": [
@@ -611,9 +612,9 @@
       "id": "dxy",
       "symbol": "UUP",
       "label": "US Dollar · UUP proxy",
-      "last": 29,
-      "change5d": -0.45,
-      "asOf": "2026-10-19",
+      "last": 28.9,
+      "change5d": -0.41,
+      "asOf": "2026-10-20",
       "sourceName": "Nasdaq official etf history",
       "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical"
     },
@@ -827,14 +828,14 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-20T21:36:27.229Z",
+    "asOf": "2026-10-21T04:41:54.884Z",
     "assets": [
       {
         "key": "SPX",
         "label": "S&P 500",
         "symbol": "SP500",
-        "last": 7690.73,
-        "dailyChange": 0.41,
+        "last": 7712.57,
+        "dailyChange": 0.28,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "MEDIUM",
@@ -842,7 +843,7 @@
         "confirmingSignal": "Large‑cap breadth is above 50/200 averages while AI basket breadth shows mixed shorter‑term weakness.",
         "contradictingSignal": "market-monitor:smh:2026-10-19",
         "invalidation": "Intraday fed‑funds‑futures + 2Y/10Y 5m–30m bars and canonical MOVE showing front‑end repricing reversed to pre‑print levels (evidence: intraday FF futures and MOVE series).",
-        "asOf": "2026-10-19"
+        "asOf": "2026-10-20"
       },
       {
         "key": "NASDAQ",
@@ -893,8 +894,8 @@
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4126.100098,
-        "dailyChange": -0.82,
+        "last": 4118.399902,
+        "dailyChange": -1,
         "dailyChangeUnit": "percent",
         "bias": "BEARISH",
         "conviction": "LOW",
@@ -902,14 +903,14 @@
         "confirmingSignal": null,
         "contradictingSignal": "market-monitor:us10y-breakeven:2026-10-19",
         "invalidation": "Intraday fed‑funds‑futures + 2Y/10Y 5m–30m bars and canonical MOVE showing front‑end repricing reversed to pre‑print levels (evidence: intraday FF futures and MOVE series).",
-        "asOf": "2026-10-20"
+        "asOf": "2026-10-21"
       },
       {
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 82766.02,
-        "dailyChange": 1.13,
+        "last": 82657.93,
+        "dailyChange": -0.34,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -917,7 +918,7 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": null,
-        "asOf": "2026-10-20"
+        "asOf": "2026-10-21"
       }
     ]
   },
@@ -1453,9 +1454,9 @@
   },
   "marketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "6b86e83a-cd22-4cc2-a37d-0c914f0d5340",
-    "capturedAt": "2026-10-20T16:19:12.015Z",
-    "researchRunId": "440d7ff6-78dc-4d5e-9da4-d8bf65987372",
+    "editionId": "88ea836a-8081-44e8-8af0-06fd860b0367",
+    "capturedAt": "2026-10-21T04:07:12.602Z",
+    "researchRunId": "e027e140-b04d-43e7-8c84-60de8d11d98f",
     "items": []
   },
   "upstreamGuardrails": [
@@ -1475,5 +1476,5 @@
     "Mismatched ticker/issuer labels are quarantined, never silently remapped to another security.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-20T21:40:42.772Z"
+  "syncedAt": "2026-10-21T04:55:56.998Z"
 }

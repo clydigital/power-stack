@@ -1,14 +1,14 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-21T04:44:22.109Z",
+  "generatedAt": "2026-10-21T04:55:57.129Z",
   "liveAsOf": "2026-10-20T18:44:10.882+00:00",
-  "liveSyncedAt": "2026-10-20T21:40:42.772Z",
+  "liveSyncedAt": "2026-10-21T04:55:56.998Z",
   "sourceHealth": {
     "dossier": "DEGRADED",
     "marketMonitor": "PARTIAL",
     "fredRates": "OK",
     "nyFedReferenceRates": "OK",
-    "nyFedPrimaryDealers": "OK",
+    "nyFedPrimaryDealers": "STALE",
     "treasuryBills": "OK",
     "treasurySupply": "UNRESOLVED"
   },
@@ -21,8 +21,8 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "6b86e83a-cd22-4cc2-a37d-0c914f0d5340",
-    "capturedAt": "2026-10-20T16:19:12.015Z",
+    "editionId": "88ea836a-8081-44e8-8af0-06fd860b0367",
+    "capturedAt": "2026-10-21T04:07:12.602Z",
     "itemCount": 0,
     "linkedHoldingCount": 0
   },
@@ -1299,7 +1299,7 @@
     {
       "id": "spx-rsp",
       "title": "Headline index and equal weight are separating",
-      "detail": "SPX cash -1.5% over 5D vs RSP 0.1%.",
+      "detail": "SPX cash -1.2% over 5D vs RSP 1.2%.",
       "assets": [
         "spx",
         "rsp"
@@ -1309,6 +1309,7 @@
   "liveResearchGaps": [
     "DATA_BLOCKER: No canonical intraday Fed‑funds‑futures and MOVE series for Oct 14 CPI window; this blocks persistence tests for CPI‑driven repricing.",
     "DATA_BLOCKER: Canonical MOVE series and daily canonical HY/IG OAS feeds are absent, preventing robust volatility/credit transmission tests.",
+    "Latest primary-dealer report date 2026-10-07 is more than fourteen calendar days old.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],
   "guardrails": [

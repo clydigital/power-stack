@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-21T04:44:22.186Z",
+  "generatedAt": "2026-10-21T04:55:57.204Z",
   "asOf": "2026-10-20T18:44:10.882+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -9,13 +9,13 @@
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
       "asOf": "2026-10-20T18:44:10.882+00:00",
-      "syncedAt": "2026-10-20T21:40:42.772Z",
+      "syncedAt": "2026-10-21T04:55:56.998Z",
       "status": "OK"
     },
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-21T04:44:22.109Z",
+      "generatedAt": "2026-10-21T04:55:57.129Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -48,8 +48,8 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "6b86e83a-cd22-4cc2-a37d-0c914f0d5340",
-    "capturedAt": "2026-10-20T16:19:12.015Z",
+    "editionId": "88ea836a-8081-44e8-8af0-06fd860b0367",
+    "capturedAt": "2026-10-21T04:07:12.602Z",
     "itemCount": 0,
     "items": []
   },
@@ -551,6 +551,7 @@
   "researchGaps": [
     "DATA_BLOCKER: No canonical intraday Fed‑funds‑futures and MOVE series for Oct 14 CPI window; this blocks persistence tests for CPI‑driven repricing.",
     "DATA_BLOCKER: Canonical MOVE series and daily canonical HY/IG OAS feeds are absent, preventing robust volatility/credit transmission tests.",
+    "Latest primary-dealer report date 2026-10-07 is more than fourteen calendar days old.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence.",
     "Holding tape unresolved: 6742UW"
   ],
