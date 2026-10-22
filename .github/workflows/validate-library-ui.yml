@@ -1,0 +1,33 @@
+name: Validate Full Library UI
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research-library.html'
+      - 'app.js'
+      - 'styles.css'
+      - 'scripts/check-library-ui.mjs'
+      - 'scripts/validate-static-html-js.mjs'
+      - '.github/workflows/validate-library-ui.yml'
+  pull_request:
+    paths:
+      - 'research-library.html'
+      - 'app.js'
+      - 'styles.css'
+      - 'scripts/check-library-ui.mjs'
+      - 'scripts/validate-static-html-js.mjs'
+      - '.github/workflows/validate-library-ui.yml'
+jobs:
+  library-ui:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate external JavaScript syntax
+        run: node --check app.js
+      - name: Validate Full Library inline scripts
+        run: node scripts/validate-static-html-js.mjs research-library.html
+      - name: Validate Full Library missing-data and layout guards
+        run: node scripts/check-library-ui.mjs
