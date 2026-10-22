@@ -1,0 +1,373 @@
+{
+  "contractVersion": "power-stack-risk-regime-review/1",
+  "date": "2026-10-22",
+  "researchTimestampMyt": "2026-10-22 20:34+08:00 snapshot plus provider follow-ups; pre-US cash open; later events not implied",
+  "status": "RESEARCH_ONLY_NONCANONICAL",
+  "sourceOfTruth": {
+    "live": "data/power-sweep-latest.json",
+    "portfolio": "data/portfolio-live-overlay.json",
+    "holdings": "data/holding-tape.json",
+    "macroPulse": "https://app.notion.com/p/400519b67a948144b53ae02c40fb4526",
+    "aiTracker": "https://app.notion.com/p/3f4519b67a9481639302eee63384c180",
+    "mining": "data/mining-full-spectrum-sweep-2026-10-22.json"
+  },
+  "posture": {
+    "state": "DEFENSIVE_RISK_REVIEW",
+    "signal": "RATE_ENERGY_AI_CREDIT_TRIPLE_PRESSURE",
+    "systemicCrisisConfirmed": false,
+    "confidence": "MODERATE",
+    "dominantRisk": "selective credit and sovereign stress may transmit to profitable index leaders even while underlying AI demand persists",
+    "macroOwnerUnchanged": true,
+    "existingMarketFamily": "RATES_LED_TIGHTENING",
+    "preExistingPowerSweep": "HAWKISH 4 confirming; 7 unresolved/neutral",
+    "writePolicy": "No position, thesis score, rank, quantity, capital allocation, canonical Live Desk Dossier/Story, scheduled tasks or execution permissions edited."
+  },
+  "evidence": [
+    {
+      "id": "UST_NOMINAL_REAL",
+      "asOf": "2026-10-21 US EOD",
+      "observations": {
+        "us2yPct": 4.81,
+        "us10yPct": 5.13,
+        "us20yPct": 5.47,
+        "us30yPct": 5.42,
+        "us10yRealPct": 2.76,
+        "us10yApproxCompensationPct": 2.37
+      },
+      "confidence": "PRIMARY_DATED_NOT_INTRADAY",
+      "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_yield_curve",
+      "realSource": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_real_yield_curve"
+    },
+    {
+      "id": "CREDIT",
+      "asOf": "2026-10-20",
+      "observations": {
+        "usHYOASbp": 333,
+        "HY5DChangeBp": 17,
+        "IGbp": 87,
+        "IG5DChangeBp": 4,
+        "HY20DChangeBpApprox": 65
+      },
+      "confidence": "CONNECTED_LIVE_OVERLAY_DATE_STAMPED",
+      "source": "data/portfolio-live-overlay.json"
+    },
+    {
+      "id": "FRANCE",
+      "asOf": "2026-10-22 Reuters market session",
+      "observations": {
+        "fr10yPct": 5.11,
+        "frBundSpreadBp": 173.58,
+        "highYieldTouchPct": 5.1415
+      },
+      "confidence": "REUTERS_SESSION_SNAPSHOT",
+      "source": "https://www.marketscreener.com/news/french-debt-risk-premium-reaches-euro-zone-sovereign-crisis-levels-ce785cded98ff225"
+    },
+    {
+      "id": "GULF",
+      "asOf": "2026-10-22 at 11:04 UTC Reuters",
+      "observations": {
+        "brentUSD": 111.88,
+        "brentChangePct": 2.81
+      },
+      "confidence": "DATE_STAMPED_REPORTING_NOT_SYNCHRONIZED",
+      "source": "https://www.reuters.com/business/energy/oil-rises-us-orders-diplomats-leave-saudi-arabia-amid-escalating-tensions-2026-10-22/",
+      "caveat": "No Aramco output loss independently proven; seven-vessel Iranian claim not independently verified"
+    },
+    {
+      "id": "GOLD",
+      "asOf": "2026-10-22 at 11:34 UTC Reuters",
+      "observations": {
+        "spotUSD": 4060.37,
+        "sessionChangePct": -1.9,
+        "silverUSD": 55.7225,
+        "silverChangePct": -3.9
+      },
+      "confidence": "DATE_STAMPED_REPORTING_NOT_SYNCHRONIZED",
+      "source": "https://www.reuters.com/world/india/gold-drops-over-1-oil-rally-reinforces-higher-for-longer-rate-outlook-2026-10-22/"
+    },
+    {
+      "id": "META_Q3",
+      "asOf": "2026-10-21 16:01 ET earnings",
+      "observations": {
+        "revenueUSDBn": 64.601,
+        "revenueYoYPct": 26,
+        "operatingCFOUSDBn": 32.786,
+        "reportedFCFUSDBn": -2.12,
+        "capex2026LowUSDBn": 135,
+        "capex2026HighUSDBn": 145,
+        "cashSecuritiesUSDBn": 82.45,
+        "legalChargeUSDBn": 9.89
+      },
+      "confidence": "ISSUER",
+      "source": "https://www.prnewswire.com/news-releases/meta-reports-third-quarter-2026-results-302915964.html",
+      "caveat": "GAAP operating margin hit by ~$9.89bn legal charge; do not infer cash inability or AI-only causality"
+    },
+    {
+      "id": "TESLA_Q3",
+      "asOf": "2026-10-21 earnings",
+      "observations": {
+        "fcfUSDBn": 1.53,
+        "capexQuarterUSDBn": 4.73,
+        "capex2026GuidanceUSDBn": 20,
+        "previousGuidanceGreaterThanUSDBn": 25
+      },
+      "confidence": "ISSUER_NOTICE_AND_REUTERS",
+      "source": "https://www.reuters.com/business/media-telecom/tesla-revenue-beats-estimates-deliveries-rebound-energy-storage-grows-2026-10-21/",
+      "caveat": "Q3 free cash improved partly because capex was below expectations; no firm funding distress implied"
+    },
+    {
+      "id": "AI_CDS",
+      "asOf": "2026-10-15 Reuters",
+      "observations": {
+        "coreWeaveCDS5yAboveBp": 1100,
+        "coreWeave2031BondPeakYieldPct": 16,
+        "oracleCDSApproxBp": 300
+      },
+      "confidence": "SECONDARY_DATED_NOT_LIVE",
+      "source": "https://ca.marketscreener.com/news/cost-of-ai-default-insurance-spikes-as-data-centre-confidence-wobbles-ce785dd3d888f127"
+    },
+    {
+      "id": "ASIA_TAPE",
+      "asOf": "2026-10-22 Reuters Asian session",
+      "observations": {
+        "MSCIAsiaExJapanPct": -1.8,
+        "kospiPctApprox": -4,
+        "hangSengPctApprox": -3,
+        "dxyApprox": 101.57,
+        "usdjpyApprox": 157.55
+      },
+      "confidence": "ATTRIBUTED_SESSION_SNAPSHOTS_NOT_SYNCHRONIZED",
+      "source": "https://www.reuters.com/world/china/global-markets-global-markets-2026-10-22/"
+    },
+    {
+      "id": "JAPAN_FLOWS",
+      "asOf": "week ended 2026-10-17 reported Oct 22",
+      "observations": {
+        "netLongForeignBondSellingJPYbn": 161.6,
+        "netShortForeignBillSellingJPYbn": 156.9,
+        "fiveWeekNetForeignBondSalesJPYtn": 3.43
+      },
+      "confidence": "REUTERS_REPORTING",
+      "source": "https://www.reuters.com/world/asia-pacific/japanese-investors-sell-foreign-bonds-fifth-straight-week-eye-home-market-2026-10-22/"
+    },
+    {
+      "id": "CRUDE_SHIPPING",
+      "asOf": "2026-10-18 Kpler-derived 7d average",
+      "observations": {
+        "allRoutesExIranMbd": 24.6,
+        "preWarReferenceMbd": 23.3
+      },
+      "confidence": "FT_KPLER_SECONDARY",
+      "caveat": "all export routes recovered, Hormuz-only down >1/3; not evidence diesel/LNG normalized",
+      "source": "https://www.ft.com/content/509c0ecf-625e-4473-96cf-e249edb7c86e"
+    },
+    {
+      "id": "ICSG_COPPER",
+      "asOf": "2026-10-14 forecast",
+      "observations": {
+        "refinedSurplus2026tonnes": 104000,
+        "refinedSurplus2027tonnes": 368000
+      },
+      "confidence": "PRIMARY_FORECAST",
+      "source": "https://icsg.org/download/2026-10-14-press-release-icsg-copper-market-forecast-2026-2027/"
+    },
+    {
+      "id": "MALAYSIAN_HOLDING_TAPE",
+      "asOf": "2026-10-22 MY regular close",
+      "observations": {
+        "MISC": {
+          "closeMYR": 8.25,
+          "changePct": -0.602
+        },
+        "HIBISCS": {
+          "closeMYR": 2.43,
+          "changePct": 4.292
+        },
+        "YTLPOWR": {
+          "closeMYR": 5.29,
+          "changePct": -0.936
+        },
+        "DAYANG": {
+          "closeMYR": 1.29,
+          "changePct": 3.2
+        }
+      },
+      "confidence": "DELAYED_DAILY_CLOSE",
+      "source": "data/holding-tape.json"
+    },
+    {
+      "id": "IMF_WARNING",
+      "asOf": "2026-10-13",
+      "observations": {
+        "categories": [
+          "AI bubble/capex repricing",
+          "sovereign yield jumps",
+          "NBFI leverage/liquidity"
+        ]
+      },
+      "confidence": "IMF_PRIMARY",
+      "source": "https://www.imf.org/en/Publications/GFSR/Issues/2026/10/13/global-financial-stability-report-october-2026"
+    }
+  ],
+  "riskMechanisms": [
+    {
+      "id": "AI_FINANCING",
+      "severity": "HIGH",
+      "type": "CREDIT_AND_CAPEX",
+      "path": "Higher real rates/borrowing costs -> leveraged cloud returns drop -> lender terms and capex financing tighten -> delivered GPU/data-centre orders delayed -> semis/power suppliers re-rated",
+      "falsifier": "Issuer bond spreads normalize and customer cash/FCF and utilization grow with funded capex",
+      "notYetVerified": "Industrywide cancelled signed orders or repeated issuer default"
+    },
+    {
+      "id": "ENERGY_INFLATION",
+      "severity": "HIGH",
+      "type": "STAGFLATION",
+      "path": "Higher diesel/war premia -> inflation and consumer squeeze -> Fed restrictiveness/term premium -> equity multiple compression and mine AISC increases",
+      "falsifier": "Saudi exports and refined/LNG supply confirm delivery recovery, freight/crack spreads fall and real yields stabilize",
+      "notYetVerified": "New Saudi operating outage, seven-vessel attack count"
+    },
+    {
+      "id": "SOVEREIGN_SPILLOVER",
+      "severity": "HIGH",
+      "type": "DURATION_AND_EURO_BANKS",
+      "path": "French OAT-Bund spread widens -> French bank debt/CDS reprices -> European funding stress -> global risk reduction",
+      "falsifier": "Spread compresses and bank credit stays benign while Bund/UST stable",
+      "notYetVerified": "Systemic funding seizure"
+    },
+    {
+      "id": "POSITIONING",
+      "severity": "MEDIUM_HIGH",
+      "type": "BREADTH_AND_FORCED_SELLING",
+      "path": "SMH lags QQQ, selling across Asian AI -> leveraged funds de-risk -> cap-weight index leaders become source of liquidity",
+      "falsifier": "RSP/SPX and semis breadth improve without credit deterioration",
+      "notYetVerified": "Current event-matched breadth/margin liquidations"
+    },
+    {
+      "id": "MINING_HEDGE_TRAP",
+      "severity": "MEDIUM_HIGH",
+      "type": "REAL_RATES_AND_AISC",
+      "path": "Gold down plus diesel up -> gold/mining FCF squeeze even as past 31% selected cohort margins remain high",
+      "falsifier": "Gold stabilizes while fuel cost normalizes, issuer normalized FCF multiples attract without higher metal assumptions",
+      "notYetVerified": "All miners show negative FCF"
+    }
+  ],
+  "scenarios": [
+    {
+      "title": "Volatile correction / selective credit stress",
+      "rank": "BASE_CASE_UNQUANTIFIED",
+      "key": "AI funding stress stays concentrated, oil settles or stabilizes, Fed patient, stronger cash-generation companies remain resilient; no broad defaults",
+      "publicEquityResponse": "Prioritise cash-rich and lower-multiple profitable issuers; small tranches only after issuer and tape validation."
+    },
+    {
+      "title": "Linked inflation-credit-equity selloff",
+      "rank": "MATERIAL_DOWNSIDE_UNQUANTIFIED",
+      "key": "Brent and diesel reaccelerate, France/banks spread contagion, HY OAS rises, several funded AI projects are delayed and semis leadership breaks",
+      "publicEquityResponse": "Cut correlated beta/leverage before treating gold miners as hedge; use quality and liquidity over speculative growth."
+    },
+    {
+      "title": "Relief / reacceleration",
+      "rank": "UPSIDE_UNQUANTIFIED",
+      "key": "Crude/refined freight normalize, real yields and OAT-Bund settle, CoreWeave/Oracle CDS tighten and funded AI equipment orders convert",
+      "publicEquityResponse": "Re-enter specific quality cash generators on fundamental and 20/50 EMA-band reclaims, not single headline rebounds."
+    }
+  ],
+  "scenarioSignalPanel": {
+    "credit": {
+      "source": "current HY 333bp Oct 20",
+      "guardrail": "Consecutive multi-week HY/IG broadening and several issuer cash/collateral failures, not arbitrary OAS threshold alone"
+    },
+    "rates": {
+      "source": "UST 10Y nominal 5.13%, real 2.76 Oct 21",
+      "guardrail": "Rise of real rates AND breakevens vs growth/shock-driven Treasury flight to safety"
+    },
+    "europe": {
+      "source": "France OAT-Bund 174bp Oct 22",
+      "guardrail": "France spread widens with French bank CDS, not a solo 5% print"
+    },
+    "energy": {
+      "source": "Brent $111.88 22 Oct",
+      "guardrail": "Physical export, tanker freight, ULSD cracks, LNG cargoes and confirmed Aramco operations"
+    },
+    "ai": {
+      "source": "META Q3 negative FCF, CRWV/ORCL specific credit",
+      "guardrail": "Actual customer paid utilization, cancellations, returns and refinancing coverage"
+    },
+    "technicals": {
+      "source": "No verified current EMA band chart",
+      "guardrail": "DXY 4H/1D 20EMA 1sd, JXY USDJPY weekly 20 EMA band, SPX rising log channel, SMH vs QQQ vs RSP, 2Y/5Y/10Y/20Y/30Y, 2Y-30Y spread; do not auto-infer technical breaks"
+    }
+  },
+  "portfolioReadOnly": [
+    {
+      "ticker": "DAYANG",
+      "risk": "operating thesis impaired; daily positive bounce does not cure Q2 production/profit deterioration",
+      "nextCheck": "Issuer Q3 outlook/work orders and capital-recycling exit review"
+    },
+    {
+      "ticker": "6742UW",
+      "risk": "instrument identity/strike/expiry unresolved",
+      "nextCheck": "Broker contract note and warrant terms before any decision"
+    },
+    {
+      "ticker": "YTLPOWR",
+      "risk": "high concentration together with unverified warrant and rate/financing dependency",
+      "nextCheck": "Combined weight and paid funded data-centre economics"
+    },
+    {
+      "ticker": "TSLA",
+      "risk": "reported Q3 capex guidance cut and FY2026 capex under-spend; equity-future valuations sensitive",
+      "nextCheck": "post-results trade reaction, cash FCF quality, merger process and liquidity"
+    },
+    {
+      "ticker": "HIBISCS",
+      "risk": "positive 22 Oct price is oil headline tailwind, not updated realised-margin proof",
+      "nextCheck": "production, fiscal regime, and cash after lifting/capex"
+    },
+    {
+      "ticker": "MISC",
+      "risk": "LNG/shipping duration vs Yinson transaction and bunker costs",
+      "nextCheck": "transaction obligations and net freight cash margins"
+    },
+    {
+      "ticker": "TTWO",
+      "risk": "November GTA catalyst, drawdown/rates effect",
+      "nextCheck": "issuer preorder/bookings, technical reclaim"
+    },
+    {
+      "ticker": "XOM",
+      "risk": "can monetize downstream/products but energy overlap already material",
+      "nextCheck": "Q3 refining FCF and current oil premium; no chase"
+    }
+  ],
+  "newCapitalResearchQueue": [
+    "AA pro forma AliGroup funding and FCF",
+    "NEM 22 Oct postmarket Q3, updated AISC/FCF",
+    "GFI gold normalized $3500-$4060 and FX/ADR verification",
+    "AEM 28 Oct Q3 and FCF after costs",
+    "LYC Meteoric dilution and Caldeira capex",
+    "GRAB Atome credit",
+    "BWXT backlog FCF",
+    "GEV/ETN order-to-cash and input-cost clauses",
+    "SCCO valuation at copper $11k-14.3k vs ICSG surplus"
+  ],
+  "researchIntegrity": {
+    "blocked": [
+      "Official current 22 Oct US claims result not retrieved as of research time; prior 199k 15 Oct, consensus 200k",
+      "Live DXY/JXY matching and 4H EMA band breakout status unavailable",
+      "No 22 Oct complete US session or synchronized cash/credit gold oil tape",
+      "No verified continuous Aramco oil output loss or seven verified tanker attacks",
+      "No current same-exchange market valuation for Canadian/SA gold ADR cohort",
+      "No authoritative 6742UW terms",
+      "AI specialist Notion 22 Oct partial 16/16 read; 14 child writes blocked at checkpoint; not verified canonical"
+    ],
+    "positiveCounterevidence": [
+      "Meta Q3 revenue +26%, large CFO and cash",
+      "TSMC strong Q3 demand and FCF in Notion specialist; company-specific proof should be renewed",
+      "Besi Q3 orders €342.6m vs €298m consensus (Oct 22)",
+      "Crude producer exports across all routes nearing pre-war Kpler-derived reference",
+      "US initial claims through Oct15 only 199k, layoffs still low",
+      "Treasury safety rally in equity selloff; credit spread not yet crisis-wide",
+      "Citadel Oct12 early equal-weight bounce and manufacturing demand resilience"
+    ]
+  }
+}
