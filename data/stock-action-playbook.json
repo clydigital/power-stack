@@ -1,8 +1,8 @@
 {
   "contractVersion": "power-stack-action-playbook/1",
-  "asOf": "2026-10-23T04:38:00+08:00",
+  "asOf": "2026-10-14T21:10:00+08:00",
   "basis": "Updated 22 Oct US close, verified issuer quarter, source-dated MY close; legacy score/rank held constant; see data/decision-refresh-2026-10-23.json",
-  "interpretationRule": "Plain action codes remain legacy validator-compatible. Read latestDecision/actionEvidence first: BUY, HOLD, TRIM/SELL RESEARCH instructions are not executed orders and require up-to-date quote, actual position sizing and source evidence.",
+  "interpretationRule": "These are not new trade instructions or automatically executable securities. Preserve inherited CPI asOf and codes; current read-only buy/sell decision overlays in latestDecision (23 Oct) require issuer and latest quote review.",
   "sourceLinks": [
     "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
     "https://app.notion.com/p/3f9519b67a948187b850f1562e1a5ad8",
@@ -20,7 +20,7 @@
       "existingAction": "HOLD",
       "existingScore": 88,
       "originalContradiction": "CONFIRMED",
-      "quoteAsOf": "2026-09-24",
+      "quoteAsOf": "2026-10-22",
       "executionReady": false,
       "previousNow": "Keep the existing position. Do not buy the fuel-inflation headline.",
       "latestDecision": "HOLD / NO ADD",
@@ -38,7 +38,7 @@
       "existingAction": "HOLD",
       "existingScore": 82,
       "originalContradiction": "CONFIRMED",
-      "quoteAsOf": "2026-09-24",
+      "quoteAsOf": "2026-10-22",
       "executionReady": false,
       "previousNow": "Hold the existing shares. Do not increase before the Yinson transaction structure and funding are clear.",
       "latestDecision": "HOLD / FUNDING CHECK",
@@ -56,7 +56,7 @@
       "existingAction": "HOLD",
       "existingScore": 72,
       "originalContradiction": "DIVERGING",
-      "quoteAsOf": "2026-09-24",
+      "quoteAsOf": "2026-10-22",
       "executionReady": false,
       "previousNow": "Hold; avoid adding until the chart and company production agree.",
       "latestDecision": "HOLD / NO CHASE",
@@ -74,7 +74,7 @@
       "existingAction": "HOLD",
       "existingScore": 73,
       "originalContradiction": "UNCONFIRMED",
-      "quoteAsOf": "2026-09-24",
+      "quoteAsOf": "2026-10-22",
       "executionReady": false,
       "previousNow": "Hold the parent shares. Do not add based solely on higher power prices or potential data-centre capacity.",
       "latestDecision": "TRIM IF CONCENTRATION EXCESS",
@@ -110,7 +110,7 @@
       "existingAction": "HOLD",
       "existingScore": 67,
       "originalContradiction": "DIVERGING",
-      "quoteAsOf": "2026-09-24",
+      "quoteAsOf": "2026-10-21",
       "executionReady": false,
       "previousNow": "Hold existing shares, but direct fresh capital elsewhere until the game-launch and price evidence improve.",
       "latestDecision": "HOLD / NO ADD",
@@ -128,7 +128,7 @@
       "existingAction": "HOLD",
       "existingScore": 58,
       "originalContradiction": "PRICE-LED",
-      "quoteAsOf": "2026-09-24",
+      "quoteAsOf": "2026-10-22",
       "executionReady": false,
       "previousNow": "Hold without averaging down. Do not treat sector optimism as Tesla-specific proof.",
       "latestDecision": "TRIM REVIEW",
@@ -146,7 +146,7 @@
       "existingAction": "HOLD",
       "existingScore": 52,
       "originalContradiction": "BREAKING",
-      "quoteAsOf": "2026-09-24",
+      "quoteAsOf": "2026-10-22",
       "executionReady": false,
       "previousNow": "Do not average down. Place this holding on the first capital-recycling and downside review list.",
       "latestDecision": "SELL / CAPITAL RECYCLING REVIEW",
@@ -766,5 +766,6 @@
       "decision": "WAIT_NOT_BUY",
       "category": "Equity"
     }
-  ]
+  ],
+  "currentDecisionAsOf": "2026-10-23T04:38:00+08:00"
 }
