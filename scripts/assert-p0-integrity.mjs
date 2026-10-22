@@ -24,6 +24,13 @@ for (const row of tape.holdings) {
     assert.notEqual(holding.actualReaction.status, "DIVERGES", row.ticker);
   }
 }
+assert.equal(sweep.inputHealth.liveDesk.sourceStatus, live.sourceStatus,
+  "transport OK cannot hide Dossier degraded state");
+assert.deepEqual(sweep.gapReconciliation.gaps.map(x => x.id).sort(),
+  [...new Set(sweep.gapReconciliation.gaps.map(x => x.id))].sort(),
+  "deduplicated gap inventory must keep stable identifiers");
+assert.equal(sweep.gapReconciliation.externallyVerified, false,
+  "PS reconciliation may not self-certify market evidence");
 assert.deepEqual(sweep.portfolioTriage.tapeDivergences, overlay.reviewQueue.tapeDivergences);
 assert.deepEqual(sweep.portfolioTriage.tapeConfirmations, overlay.reviewQueue.tapeConfirmations);
 

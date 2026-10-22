@@ -11,6 +11,8 @@ on:
       - 'scripts/quote-provider-smoke.mjs'
       - 'scripts/generate-portfolio-live-overlay.mjs'
       - 'scripts/generate-power-sweep.mjs'
+      - 'scripts/power-sweep-gap-contract.mjs'
+      - 'scripts/test-power-sweep-gap-contract.mjs'
       - 'scripts/sync-live-desk.mjs'
       - '.github/workflows/p0-source-integrity.yml'
   workflow_dispatch:
@@ -23,7 +25,7 @@ jobs:
         with:
           node-version: '22'
       - name: Pure regression checks
-        run: node --test scripts/test-market-data-integrity.mjs scripts/test-quote-chart-source.mjs
+        run: node --test scripts/test-market-data-integrity.mjs scripts/test-quote-chart-source.mjs scripts/test-power-sweep-gap-contract.mjs
       - name: Provider connectivity smoke (non-blocking diagnostic)
         run: node scripts/quote-provider-smoke.mjs
       - name: Regenerate derivative research outputs in CI workspace only
