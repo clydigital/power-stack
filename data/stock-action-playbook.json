@@ -1,8 +1,8 @@
 {
   "contractVersion": "power-stack-action-playbook/1",
-  "asOf": "2026-10-14T21:10:00+08:00",
-  "basis": "BLS September CPI and 14 Oct MacroPulse, existing holding and watchlist evidence, 54-security CPI overlay; not post-CPI closing prices",
-  "interpretationRule": "Directions are a research task and conditional review. They are not new trade instructions, orders, stop losses or target prices; all dated price levels require live re-verification.",
+  "asOf": "2026-10-23T04:38:00+08:00",
+  "basis": "Updated 22 Oct US close, verified issuer quarter, source-dated MY close; legacy score/rank held constant; see data/decision-refresh-2026-10-23.json",
+  "interpretationRule": "Plain action codes remain legacy validator-compatible. Read latestDecision/actionEvidence first: BUY, HOLD, TRIM/SELL RESEARCH instructions are not executed orders and require up-to-date quote, actual position sizing and source evidence.",
   "sourceLinks": [
     "https://www.bls.gov/news.release/archives/cpi_10142026.htm",
     "https://app.notion.com/p/3f9519b67a948187b850f1562e1a5ad8",
@@ -14,112 +14,144 @@
       "code": "HOLD_NO_CHASE",
       "label": "HOLD · DO NOT CHASE",
       "priority": "MEDIUM",
-      "now": "Keep the existing position. Do not buy the fuel-inflation headline.",
+      "now": "HOLD / NO ADD. Wait for Q3 integrated/refinery cash before new energy exposure",
       "addOnlyIf": "Review adding only after a fresh quote and valuation offer a better entry AND product crack spreads and operating cash flow remain firm. Historical $156–159 support and $164–166 reclaim are checkpoints, not current quotes.",
       "reviewOrReduceIf": "Review reducing exposure if fuel-product margins normalise, realised cash weakens or the energy premium fades while valuation remains stretched.",
       "existingAction": "HOLD",
       "existingScore": 88,
       "originalContradiction": "CONFIRMED",
       "quoteAsOf": "2026-09-24",
-      "executionReady": false
+      "executionReady": false,
+      "previousNow": "Keep the existing position. Do not buy the fuel-inflation headline.",
+      "latestDecision": "HOLD / NO ADD",
+      "decisionAsOf": "2026-10-23",
+      "decisionBasis": "Wait for Q3 integrated/refinery cash before new energy exposure"
     },
     {
       "ticker": "MISC",
       "code": "HOLD_NO_ADD",
       "label": "HOLD · NO ADD",
       "priority": "HIGH",
-      "now": "Hold the existing shares. Do not increase before the Yinson transaction structure and funding are clear.",
+      "now": "HOLD / FUNDING CHECK. Yinson liability and latest ship margin proof before adding",
       "addOnlyIf": "Only reassess an add after funding terms, balance-sheet impact and sustained freight cash earnings are verified; recheck historical RM7.75–7.90 support and RM8.00–8.10 repair against a fresh price.",
       "reviewOrReduceIf": "Review trimming if leverage or equity dilution becomes unfavourable, or tanker rates and cash conversion deteriorate.",
       "existingAction": "HOLD",
       "existingScore": 82,
       "originalContradiction": "CONFIRMED",
       "quoteAsOf": "2026-09-24",
-      "executionReady": false
+      "executionReady": false,
+      "previousNow": "Hold the existing shares. Do not increase before the Yinson transaction structure and funding are clear.",
+      "latestDecision": "HOLD / FUNDING CHECK",
+      "decisionAsOf": "2026-10-23",
+      "decisionBasis": "Yinson liability and latest ship margin proof before adding"
     },
     {
       "ticker": "HIBISCS",
       "code": "HOLD_NO_ADD",
       "label": "HOLD · NO ADD",
       "priority": "MEDIUM",
-      "now": "Hold; avoid adding until the chart and company production agree.",
+      "now": "HOLD / NO CHASE. Oil headline rally not verified realised FCF",
       "addOnlyIf": "Require new production and realised-price cash flow confirmation plus a fresh sustained reclaim of historical RM2.30–2.35, then RM2.46, before reconsidering new capital.",
       "reviewOrReduceIf": "Review risk if production, margins or cash flow weaken while the previous RM2.20 support area fails on a fresh chart.",
       "existingAction": "HOLD",
       "existingScore": 72,
       "originalContradiction": "DIVERGING",
       "quoteAsOf": "2026-09-24",
-      "executionReady": false
+      "executionReady": false,
+      "previousNow": "Hold; avoid adding until the chart and company production agree.",
+      "latestDecision": "HOLD / NO CHASE",
+      "decisionAsOf": "2026-10-23",
+      "decisionBasis": "Oil headline rally not verified realised FCF"
     },
     {
       "ticker": "YTLPOWR",
       "code": "HOLD_NO_ADD",
       "label": "HOLD · NO ADD",
       "priority": "HIGH",
-      "now": "Hold the parent shares. Do not add based solely on higher power prices or potential data-centre capacity.",
+      "now": "TRIM IF CONCENTRATION EXCESS. Normalize parent + warrant value and funded power contracts",
       "addOnlyIf": "Require signed paying load, funded project debt/equity, permits and cash-flow economics, then verify a fresh breakout; historic RM6.02 and RM6.14 are reference gates only.",
       "reviewOrReduceIf": "Review reducing if project financing becomes dilutive, contracted capacity slips or cash costs climb without paid utilisation; keep warrant risk separate.",
       "existingAction": "HOLD",
       "existingScore": 73,
       "originalContradiction": "UNCONFIRMED",
       "quoteAsOf": "2026-09-24",
-      "executionReady": false
+      "executionReady": false,
+      "previousNow": "Hold the parent shares. Do not add based solely on higher power prices or potential data-centre capacity.",
+      "latestDecision": "TRIM IF CONCENTRATION EXCESS",
+      "decisionAsOf": "2026-10-23",
+      "decisionBasis": "Normalize parent + warrant value and funded power contracts"
     },
     {
       "ticker": "6742UW",
       "code": "VERIFY_INSTRUMENT",
       "label": "NO INCREASE · VERIFY WARRANT",
       "priority": "URGENT",
-      "now": "No new warrant exposure. First obtain strike, conversion ratio, expiry, liquidity and actual instrument quote.",
+      "now": "VERIFY INSTRUMENT / NO ADD. Obtain issuer, ISIN, expiry and strike before any sale/add",
       "addOnlyIf": "No add gate exists until the warrant itself is valued independently of YTLPOWR; parent stock levels cannot substitute for warrant terms.",
       "reviewOrReduceIf": "Review exit/expiry exposure immediately once verified terms reveal time decay, insufficient liquidity, adverse strike or unmanageable downside.",
       "existingAction": "WAIT",
       "existingScore": 60,
       "originalContradiction": "UNCONFIRMED",
       "quoteAsOf": null,
-      "executionReady": false
+      "executionReady": false,
+      "previousNow": "No new warrant exposure. First obtain strike, conversion ratio, expiry, liquidity and actual instrument quote.",
+      "latestDecision": "VERIFY INSTRUMENT / NO ADD",
+      "decisionAsOf": "2026-10-23",
+      "decisionBasis": "Obtain issuer, ISIN, expiry and strike before any sale/add"
     },
     {
       "ticker": "TTWO",
       "code": "HOLD_NO_ADD",
       "label": "HOLD · NO ADD",
       "priority": "HIGH",
-      "now": "Hold existing shares, but direct fresh capital elsewhere until the game-launch and price evidence improve.",
+      "now": "HOLD / NO ADD. GTA paid demand and launch confidence",
       "addOnlyIf": "Need GTA VI launch execution, pre-order/guidance and cash conversion, with a new quote reclaiming prior ~$210 then $216–217 levels. Those levels are historical.",
       "reviewOrReduceIf": "Review sizing if launch timing/earnings guidance deteriorate or the share price fails to stabilise despite marketing catalysts.",
       "existingAction": "HOLD",
       "existingScore": 67,
       "originalContradiction": "DIVERGING",
       "quoteAsOf": "2026-09-24",
-      "executionReady": false
+      "executionReady": false,
+      "previousNow": "Hold existing shares, but direct fresh capital elsewhere until the game-launch and price evidence improve.",
+      "latestDecision": "HOLD / NO ADD",
+      "decisionAsOf": "2026-10-23",
+      "decisionBasis": "GTA paid demand and launch confidence"
     },
     {
       "ticker": "TSLA",
       "code": "HOLD_NO_ADD",
       "label": "HOLD · NO ADD",
       "priority": "HIGH",
-      "now": "Hold without averaging down. Do not treat sector optimism as Tesla-specific proof.",
+      "now": "TRIM REVIEW. Q3 net income drop despite positive FCF; assess post-earnings response and risk budget",
       "addOnlyIf": "Only reopen an add after actual vehicle/storage profit, financing incentives and autonomy/Semi unit economics improve alongside a refreshed chart; historic >$383 then ~$397 were confirmation levels.",
       "reviewOrReduceIf": "Review reducing if auto-margin, FCF or balance-sheet economics erode and pricing embeds unsupported future growth.",
       "existingAction": "HOLD",
       "existingScore": 58,
       "originalContradiction": "PRICE-LED",
       "quoteAsOf": "2026-09-24",
-      "executionReady": false
+      "executionReady": false,
+      "previousNow": "Hold without averaging down. Do not treat sector optimism as Tesla-specific proof.",
+      "latestDecision": "TRIM REVIEW",
+      "decisionAsOf": "2026-10-23",
+      "decisionBasis": "Q3 net income drop despite positive FCF; assess post-earnings response and risk budget"
     },
     {
       "ticker": "DAYANG",
       "code": "NO_AVERAGE_DOWN",
       "label": "NO AVERAGING DOWN",
       "priority": "URGENT",
-      "now": "Do not average down. Place this holding on the first capital-recycling and downside review list.",
+      "now": "SELL / CAPITAL RECYCLING REVIEW. Q2 operating deterioration; verify Friday bid and actual broker quantity before submission",
       "addOnlyIf": "No fresh investment until utilisation, work orders and earnings/cash conversion materially recover, with a fresh technical repair; historic RM1.50–1.52 and RM1.57 were recovery levels.",
       "reviewOrReduceIf": "Review trimming or exiting if utilisation and order conversion remain weak at the next results or the old RM1.42 support area fails when checked with an actual quote.",
       "existingAction": "HOLD",
       "existingScore": 52,
       "originalContradiction": "BREAKING",
       "quoteAsOf": "2026-09-24",
-      "executionReady": false
+      "executionReady": false,
+      "previousNow": "Do not average down. Place this holding on the first capital-recycling and downside review list.",
+      "latestDecision": "SELL / CAPITAL RECYCLING REVIEW",
+      "decisionAsOf": "2026-10-23",
+      "decisionBasis": "Q2 operating deterioration; verify Friday bid and actual broker quantity before submission"
     }
   ],
   "watchlist": [
@@ -700,6 +732,39 @@
       "priority": "NORMAL",
       "now": "Research diagnostic/equipment earnings, hospital capital budgets and valuation before issuing a rating.",
       "executionReady": false
+    }
+  ],
+  "latestBuyCandidates": [
+    {
+      "ticker": "VGIT",
+      "decision": "BUY_STARTER",
+      "category": "Treasury ETF",
+      "source": "data/decision-refresh-2026-10-23.json"
+    },
+    {
+      "ticker": "IEF",
+      "decision": "BUY_STARTER_ALTERNATIVE",
+      "category": "Treasury ETF"
+    },
+    {
+      "ticker": "TLT",
+      "decision": "BUY_SMALL_TACTICAL_ONLY",
+      "category": "Treasury ETF"
+    },
+    {
+      "ticker": "SGOV",
+      "decision": "BUY_CASH_PARKING",
+      "category": "Cash ETF"
+    },
+    {
+      "ticker": "CF",
+      "decision": "BUY_STARTER_FUNDAMENTAL",
+      "category": "Equity"
+    },
+    {
+      "ticker": "GRAB",
+      "decision": "WAIT_NOT_BUY",
+      "category": "Equity"
     }
   ]
 }
