@@ -1,9 +1,9 @@
 {
-  "asOf": "2026-10-14",
-  "capturedAt": "2026-10-14T05:26:00+08:00",
-  "title": "Power Stack Watchlist",
+  "asOf": "2026-10-23",
+  "capturedAt": "2026-10-23T04:38:00+08:00",
+  "title": "Power Stack · 23 Oct 2026 Decision Screen",
   "method": "Fresh-money queue. Score and Action are separate. Strong themes do not automatically rank highly: the business must be able to fund itself, the valuation must leave room, and price should eventually confirm the thesis. Unverified creator/research leads contribute zero points.",
-  "marketRegime": "Power Stack overlay (not new Live adjudication): 13 Oct close S&P 500 7,805.45 (-0.02%), Nasdaq 27,204.38 (-0.15%), SMH 588.12 (-0.49%): chip leadership weakens while broad US stocks remain near highs. US10Y ~5.216% in 13 Oct reporting, still expensive; CPI 14 Oct, TSMC 15 Oct. AI financing/LLM cash conversion is EARLY WARNING, not confirmed rollover. Live retains canonical macro authority; current watchlist prices are independently dated and many are STALE.",
+  "marketRegime": "RISK_OFF_TREASURY_RALLY_CREDIT_SPLIT: QQQ -2.86%, RSP +0.73%, TLT +1.87%, SMH -5.99%; high oil and France sovereign premium remain danger; issuer strength is uneven.",
   "buckets": [
     {
       "id": "buy",
@@ -35,15 +35,25 @@
       "market": "US",
       "score": 9.4,
       "bucket": "buy",
-      "action": "RESEARCH NOW · NO BLIND CHASE",
-      "price": "$927.60 · Sep 16",
+      "action": "WAIT HIGH BETA · 22 Oct -6.26%, HBM demand real but sector financing and midcycle valuation unresolved",
+      "price": "$856.49 · 22 Oct 2026 close",
       "entry": "Research the next clean pullback or consolidation rather than chase a vertical move.",
       "confirmation": "Verify HBM paid customer demand and prices plus cash conversion after CXMT concerns; do not confuse 13 Oct chip weakness with cancelled orders.",
       "invalidation": "Meaningful HBM pricing or customer orders weaken, inventories rise, and earnings/FCF guidance is cut; failed chart support alone is an early alert, not fundamental proof.",
       "theme": "AI memory · HBM scarcity",
       "thesis": "AI systems need far more high-end memory, and Micron is already turning that shortage into cash. The question is no longer whether demand is strong. It is how long today's exceptional margins can last.",
       "rateSensitivity": "MODERATE",
-      "researchContext": "13 Oct: SMH 588.12 (-0.49%) as US indices held near flat; refresh MU's actual current close (archived Sep price is stale) and valuation before entry."
+      "researchContext": "13 Oct: SMH 588.12 (-0.49%) as US indices held near flat; refresh MU's actual current close (archived Sep price is stale) and valuation before entry.",
+      "priorDatedPrice": "$927.60 · Sep 16",
+      "latestVerifiedPrice": {
+        "value": 856.49,
+        "currency": "USD",
+        "session": "2026-10-22",
+        "source": "Finnhub stock /quote session timestamp 2026-10-22T20:00:00Z",
+        "executionReady": false
+      },
+      "previousAction": "RESEARCH NOW · NO BLIND CHASE",
+      "latestDecision": "WAIT_HIGH_BETA"
     },
     {
       "rank": 2,
@@ -53,30 +63,43 @@
       "market": "US",
       "score": 9.2,
       "bucket": "buy",
-      "action": "RESEARCH NOW · CONTRACTED ENERGY",
+      "action": "WAIT CURRENT QUOTE · Contracted LNG economics strong but fresh quote unavailable",
       "price": "~$276.40 · Sep 24",
       "entry": "Prefer a pullback or stable base; do not chase an energy headline.",
       "confirmation": "Utilisation, contracts and distributable cash flow stay strong.",
       "invalidation": "Global LNG supply normalises faster than expected or cash generation weakens materially.",
       "theme": "LNG · energy security",
-      "thesis": "Europe and Asia still need gas, and Cheniere can ship US LNG into that gap. The business is producing cash while new capacity comes online, so this is more than a bet on higher gas prices."
+      "thesis": "Europe and Asia still need gas, and Cheniere can ship US LNG into that gap. The business is producing cash while new capacity comes online, so this is more than a bet on higher gas prices.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE",
+      "previousAction": "RESEARCH NOW · CONTRACTED ENERGY",
+      "latestDecision": "WAIT_CURRENT_QUOTE"
     },
     {
       "ticker": "CRDO",
       "name": "Credo Technology",
       "market": "US",
       "previousRank": null,
-      "price": "Verify current price",
+      "price": "$162.77 · 22 Oct 2026 close",
       "sources": [],
       "score": 9.1,
       "bucket": "buy",
-      "action": "RESEARCH NOW · AI INTERCONNECT",
+      "action": "WAIT CUSTOMER FUNDING · 10.7% session drop, hyperscaler contract/order durability to verify",
       "theme": "AI infrastructure · interconnect",
       "thesis": "Bigger AI clusters need more connections between chips, racks and data centres. Credo sells those connections, and revenue is already growing quickly without the company having to finance the data centres itself.",
       "entry": "Build an entry study around valuation and the next earnings/price reset.",
       "confirmation": "Revenue growth stays strong and cash remains healthy as hyperscaler demand broadens.",
       "invalidation": "Customer concentration rises further, growth slows sharply or margins fail to scale.",
-      "rank": 3
+      "rank": 3,
+      "priorDatedPrice": "Verify current price",
+      "latestVerifiedPrice": {
+        "value": 162.77,
+        "currency": "USD",
+        "session": "2026-10-22",
+        "source": "Finnhub stock /quote session timestamp 2026-10-22T20:00:00Z",
+        "executionReady": false
+      },
+      "previousAction": "RESEARCH NOW · AI INTERCONNECT",
+      "latestDecision": "WAIT_CUSTOMER_FUNDING"
     },
     {
       "rank": 4,
@@ -85,14 +108,24 @@
       "market": "US / Southeast Asia",
       "score": 8.9,
       "bucket": "buy",
-      "action": "ACTIVE BUY RESEARCH · CORE TURNAROUND PROVEN / CREDIT UNDERWRITE",
-      "price": "~$3.13 · Sep 25",
+      "action": "WAIT CREDIT UNDERWRITE · Atome lending and vendor pFCF 255x; market sell-off does not prove value",
+      "price": "$2.85 · 22 Oct 2026 close",
       "entry": "Build an entry study around post-Atome credit economics and updated price rather than treating the selloff alone as the signal.",
       "confirmation": "Core Mobility/Deliveries margins hold, free cash flow remains positive, loan growth does not outrun credit quality and Atome produces credible returns on the cash committed.",
       "invalidation": "Credit costs/impairments accelerate, incentives re-expand materially, Atome economics disappoint or buybacks are overwhelmed by acquisition and lending cash needs.",
       "theme": "Southeast Asia platforms · turnaround",
       "rateSensitivity": "MODERATE-HIGH",
-      "thesis": "Grab's marketplace is growing while EBITDA and free cash flow improve, so the turnaround is no longer the main question. The next rerating depends on whether Atome and the fast-growing lending book create high-return fintech earnings without turning Grab into a lower-quality consumer-credit allocator."
+      "thesis": "Grab's marketplace is growing while EBITDA and free cash flow improve, so the turnaround is no longer the main question. The next rerating depends on whether Atome and the fast-growing lending book create high-return fintech earnings without turning Grab into a lower-quality consumer-credit allocator.",
+      "priorDatedPrice": "~$3.13 · Sep 25",
+      "latestVerifiedPrice": {
+        "value": 2.85,
+        "currency": "USD",
+        "session": "2026-10-22",
+        "source": "Finnhub stock /quote session timestamp 2026-10-22T20:00:00Z",
+        "executionReady": false
+      },
+      "previousAction": "ACTIVE BUY RESEARCH · CORE TURNAROUND PROVEN / CREDIT UNDERWRITE",
+      "latestDecision": "WAIT_CREDIT_UNDERWRITE"
     },
     {
       "rank": 5,
@@ -102,13 +135,23 @@
       "market": "US",
       "score": 9,
       "bucket": "buy",
-      "action": "RESEARCH NOW · NUCLEAR/DEFENCE CASH FLOW / WAIT ENTRY",
-      "price": "Verify current price",
+      "action": "WAIT VALUATION · Quality backlog but 35x provisional PE; small down day not value",
+      "price": "$127.30 · 22 Oct 2026 close",
       "entry": "Research valuation and the next pullback/consolidation; do not chase strong guidance or contract headlines.",
       "confirmation": "2026 FCF/EBITDA guidance is delivered, backlog converts cleanly and commercial nuclear/defence capacity expansion does not dilute returns.",
       "invalidation": "Backlog conversion slips, government programme timing materially delays cash flow or expansion/M&A causes a sustained return-on-capital deterioration.",
       "theme": "Nuclear components · defence · commercial nuclear",
-      "thesis": "BWXT already earns real cash from nuclear and defence rather than depending on future reactor optionality. Q2 2026 beat expectations and management raised EBITDA, EPS and free-cash-flow guidance, making it a higher-quality nuclear expression than development-stage names."
+      "thesis": "BWXT already earns real cash from nuclear and defence rather than depending on future reactor optionality. Q2 2026 beat expectations and management raised EBITDA, EPS and free-cash-flow guidance, making it a higher-quality nuclear expression than development-stage names.",
+      "priorDatedPrice": "Verify current price",
+      "latestVerifiedPrice": {
+        "value": 127.3,
+        "currency": "USD",
+        "session": "2026-10-22",
+        "source": "Finnhub stock /quote session timestamp 2026-10-22T20:00:00Z",
+        "executionReady": false
+      },
+      "previousAction": "RESEARCH NOW · NUCLEAR/DEFENCE CASH FLOW / WAIT ENTRY",
+      "latestDecision": "WAIT_VALUATION"
     },
     {
       "ticker": "DELL",
@@ -125,7 +168,8 @@
       "entry": "Wait for a valuation/price setup that compensates for hardware-margin risk.",
       "confirmation": "AI backlog converts into revenue, margin and cash rather than revenue alone.",
       "invalidation": "Backlog conversion slows or AI server margins deteriorate.",
-      "rank": 6
+      "rank": 6,
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 7,
@@ -135,13 +179,23 @@
       "market": "US",
       "score": 9.3,
       "bucket": "buy",
-      "action": "PRIORITY RESEARCH · GOOGLE-CONTRACTED NUCLEAR / NO CHASE DEAL GAP",
-      "price": "Refresh after +13% deal reaction · Oct 6",
+      "action": "WAIT CONTRACTS · Google-backed energy demand and rate/AI funding overlap",
+      "price": "$255.21 · 22 Oct 2026 close",
       "entry": "Do not chase the deal gap. Wait for an orderly retest or consolidation and reassess valuation after the rerating.",
       "confirmation": "Google-backed 3.59-GW agreements proceed, fleet upgrades stay on budget and contracted cash economics remain attractive.",
       "invalidation": "Contract economics weaken, fleet-upgrade capex overruns emerge or power-market/regulatory terms deteriorate.",
       "theme": "Nuclear generation · AI power · long-duration contracts",
-      "thesis": "Google's 3.59-GW package turns AI power scarcity into long-duration contracted demand. Constellation already owns operating nuclear generation and plans more than $4.3B of fleet investment tied to the power package, so this is funded operating infrastructure rather than pre-revenue reactor optionality."
+      "thesis": "Google's 3.59-GW package turns AI power scarcity into long-duration contracted demand. Constellation already owns operating nuclear generation and plans more than $4.3B of fleet investment tied to the power package, so this is funded operating infrastructure rather than pre-revenue reactor optionality.",
+      "priorDatedPrice": "Refresh after +13% deal reaction · Oct 6",
+      "latestVerifiedPrice": {
+        "value": 255.21,
+        "currency": "USD",
+        "session": "2026-10-22",
+        "source": "Finnhub stock /quote session timestamp 2026-10-22T20:00:00Z",
+        "executionReady": false
+      },
+      "previousAction": "PRIORITY RESEARCH · GOOGLE-CONTRACTED NUCLEAR / NO CHASE DEAL GAP",
+      "latestDecision": "WAIT_CONTRACTS"
     },
     {
       "rank": 8,
@@ -158,7 +212,8 @@
       "invalidation": "Volume/pricing weakness persists, farm affordability hits demand or the standalone cost structure produces weaker-than-expected cash conversion.",
       "theme": "Crop protection · post-Vylor separation",
       "thesis": "The old Power Stack thesis is stale: Corteva completed the Vylor separation on 1 October, so CTVA no longer contains the seed/genetics business we were using as the diversification case. Re-underwrite New Corteva as a crop-protection company on standalone margins, cash flow and valuation before committing new capital.",
-      "scoreStatus": "LEGACY_PRE_SPIN_SCORE_REQUIRES_REUNDERWRITE"
+      "scoreStatus": "LEGACY_PRE_SPIN_SCORE_REQUIRES_REUNDERWRITE",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 9,
@@ -168,13 +223,23 @@
       "market": "US",
       "score": 8.5,
       "bucket": "selective",
-      "action": "WATCH · WAIT FOR MINE PROOF",
-      "price": "~$72.08 · Sep 24",
+      "action": "WAIT GRASBERG · Operational ramp and copper refined surplus",
+      "price": "$64.59 · 22 Oct 2026 close",
       "entry": "Wait for better operating proof or a price that pays us for the mine risk.",
       "confirmation": "Grasberg recovery improves while copper stays structurally tight.",
       "invalidation": "Production recovery slips again or copper demand weakens materially.",
       "theme": "Copper · electrification · AI power",
-      "thesis": "AI, grids and electrification all need copper. But Freeport still has to execute at Grasberg, so a strong copper price cannot do all the work for us."
+      "thesis": "AI, grids and electrification all need copper. But Freeport still has to execute at Grasberg, so a strong copper price cannot do all the work for us.",
+      "priorDatedPrice": "~$72.08 · Sep 24",
+      "latestVerifiedPrice": {
+        "value": 64.59,
+        "currency": "USD",
+        "session": "2026-10-22",
+        "source": "Finnhub stock /quote session timestamp 2026-10-22T20:00:00Z",
+        "executionReady": false
+      },
+      "previousAction": "WATCH · WAIT FOR MINE PROOF",
+      "latestDecision": "WAIT_GRASBERG"
     },
     {
       "rank": 10,
@@ -190,7 +255,8 @@
       "confirmation": "Potash volumes/pricing hold, capex discipline persists and retail/proprietary-product margins keep improving.",
       "invalidation": "Potash pricing rolls over, farmer affordability cuts application rates or cash returns weaken despite the lower capex plan.",
       "theme": "Fertilizer · agriculture",
-      "thesis": "Nutrien's Q2 evidence is better than the prior Power Stack read: it reported record first-half potash sales volumes, raised potash volume guidance and lowered capex guidance. It remains a broader agriculture input exposure than CF, but potash-cycle and entry-price risk keep it secondary."
+      "thesis": "Nutrien's Q2 evidence is better than the prior Power Stack read: it reported record first-half potash sales volumes, raised potash volume guidance and lowered capex guidance. It remains a broader agriculture input exposure than CF, but potash-cycle and entry-price risk keep it secondary.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "ticker": "AVGO",
@@ -208,7 +274,8 @@
       "confirmation": "Independently funded AI ASIC/networking orders produce cash margin without expanding risky supplier financing or contingent guarantees.",
       "invalidation": "Funding becomes necessary for incremental orders, expected customer cash receipts fail, or credit exposure erodes margins.",
       "rank": 11,
-      "researchContext": "Eisman circularity test: require deal funding terms and outside-customer demand, not just bookings."
+      "researchContext": "Eisman circularity test: require deal funding terms and outside-customer demand, not just bookings.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 12,
@@ -224,7 +291,8 @@
       "confirmation": "Reclaim ~$90-92 first; $95-100 stronger repair",
       "invalidation": "Persistent lower lows or deterioration in contracting/mine/Westinghouse execution",
       "theme": "Uranium · fuel cycle · operating assets",
-      "thesis": "Strategic nuclear/fuel-cycle thesis remains high quality and valuation has improved, but the falling tape means discount alone is not enough."
+      "thesis": "Strategic nuclear/fuel-cycle thesis remains high quality and valuation has improved, but the falling tape means discount alone is not enough.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 13,
@@ -234,13 +302,23 @@
       "market": "US",
       "score": 8.8,
       "bucket": "selective",
-      "action": "RESEARCH NOW · STRONG CASH / WAIT FOR BASE",
-      "price": "~$118.44 · Sep 24",
+      "action": "BUY STARTER · Valuation and observed nitrogen cash flow; gas/feedstock check Nov4 earnings",
+      "price": "$118.56 · 22 Oct 2026 close",
       "entry": "Wait for stabilization and recovery of roughly $120-123 rather than catching the decline",
       "confirmation": "Nitrogen pricing stays constructive, plants run reliably, Blue Point execution stays controlled and free cash flow remains strong.",
       "invalidation": "Nitrogen supply loosens quickly, farm affordability destroys volumes, North American gas costs erase the cost advantage or Blue Point absorbs too much cash.",
       "theme": "Nitrogen fertilizer · feedstock scarcity",
-      "thesis": "CF is currently the strongest operating agriculture input case in the stack: first-half 2026 earnings and trailing free cash flow are high, nitrogen supply-demand remains constructive into 2027, and North American gas feedstock still supports cost competitiveness. The risk is cyclicality, not a missing earnings engine."
+      "thesis": "CF is currently the strongest operating agriculture input case in the stack: first-half 2026 earnings and trailing free cash flow are high, nitrogen supply-demand remains constructive into 2027, and North American gas feedstock still supports cost competitiveness. The risk is cyclicality, not a missing earnings engine.",
+      "priorDatedPrice": "~$118.44 · Sep 24",
+      "latestVerifiedPrice": {
+        "value": 118.56,
+        "currency": "USD",
+        "session": "2026-10-22",
+        "source": "Finnhub stock /quote session timestamp 2026-10-22T20:00:00Z",
+        "executionReady": false
+      },
+      "previousAction": "RESEARCH NOW · STRONG CASH / WAIT FOR BASE",
+      "latestDecision": "BUY_STARTER"
     },
     {
       "previousRank": 13,
@@ -256,7 +334,8 @@
       "invalidation": "AI-cloud growth slows before returns improve, capex/dilution rises faster than monetisation or domestic weakness drags consolidated cash generation.",
       "theme": "China AI · cloud · models · custom silicon",
       "thesis": "Alibaba is the strongest broad China-AI platform in the current stack because external Cloud revenue accelerated 45% and AI-related product revenue has grown triple digits for twelve straight quarters. The open question is whether that growth produces enough cloud profit and cash return to justify the capex while domestic commerce remains softer.",
-      "rank": 14
+      "rank": 14,
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 15,
@@ -266,14 +345,24 @@
       "market": "US",
       "score": 9.4,
       "bucket": "selective",
-      "action": "TOP-TIER POWER/GRID · CUSTOMER-BACKED CAPEX CONFIRMED · WAIT RETEST",
-      "price": "$882.81 · Sep 16",
+      "action": "WAIT EARNINGS · Oct28 Q3 + project order to cash; Oct22 -10.64% is not enough",
+      "price": "$827.42 · 22 Oct 2026 close",
       "entry": "Refresh price; require orderly retest or consolidation",
       "confirmation": "Backlog is independently funded and converts to shipped turbine/electrical revenue, rising margins and FCF, not just announced data-centre demand.",
       "invalidation": "Project payment delays/cancellations or turbine/electrification backlog/margin deterioration; high multiple compresses without earnings catch-up.",
       "theme": "Gas power · electrification · grid · data-centre power",
       "thesis": "Google's new generation agreements confirm that AI load is beginning to underwrite real utility and generation capex. GEV remains one of the cleanest picks-and-shovels expressions through gas power, grid equipment and electrification, but high yields and valuation still make entry discipline essential.",
-      "researchContext": "Eisman infrastructure lane: attractive operating bottleneck, but no automatic safe-haven status or BUY at a stale September quote."
+      "researchContext": "Eisman infrastructure lane: attractive operating bottleneck, but no automatic safe-haven status or BUY at a stale September quote.",
+      "priorDatedPrice": "$882.81 · Sep 16",
+      "latestVerifiedPrice": {
+        "value": 827.42,
+        "currency": "USD",
+        "session": "2026-10-22",
+        "source": "Finnhub stock /quote session timestamp 2026-10-22T20:00:00Z",
+        "executionReady": false
+      },
+      "previousAction": "TOP-TIER POWER/GRID · CUSTOMER-BACKED CAPEX CONFIRMED · WAIT RETEST",
+      "latestDecision": "WAIT_EARNINGS"
     },
     {
       "rank": 16,
@@ -290,7 +379,8 @@
       "invalidation": "Sustained <$132 or hedge/PPA/generation deterioration",
       "theme": "Existing generation · peak load · AI power scarcity",
       "rateSensitivity": "MODERATE",
-      "thesis": "Existing dispatchable generation, signed PPAs and funded counterparties remain exactly what the duration-constrained power regime rewards. Physical load evidence strengthened again, but entry discipline still matters."
+      "thesis": "Existing dispatchable generation, signed PPAs and funded counterparties remain exactly what the duration-constrained power regime rewards. Physical load evidence strengthened again, but entry discipline still matters.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "previousRank": 16,
@@ -306,7 +396,8 @@
       "invalidation": "Localisation spending rolls over, constituent valuations detach from earnings or concentration rises enough that the ETF no longer meaningfully diversifies single-name risk.",
       "theme": "China semiconductors · domestic substitution",
       "thesis": "This is a real diversified implementation vehicle, not an identifier error: Global X China Semiconductor ETF holds 21 China semiconductor names, including Cambricon, NAURA and newly listed CXMT. It reduces single-name execution risk, but the 0.68% ongoing charge and expensive constituent valuations still matter.",
-      "rank": 17
+      "rank": 17,
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 18,
@@ -316,13 +407,23 @@
       "market": "US",
       "score": 9,
       "bucket": "selective",
-      "action": "EXCELLENT GRID EXPOSURE · CUSTOMER-BACKED BUILDOUT / DO NOT CHASE",
-      "price": "~$643.50 · Sep 24",
+      "action": "WAIT EARNINGS ENTRY · Cash conversion, clients funding, tender profitability",
+      "price": "$552.44 · 22 Oct 2026 close",
       "entry": "Prefer ~$610-625 or a fresh fundamental acceleration that justifies paying through the recent mean",
       "confirmation": "Backlog/order/FCF strength plus funded customer demand",
       "invalidation": "Backlog/margin deterioration or capex cancellations",
       "theme": "Transmission · grid · time-to-power",
-      "thesis": "Google-backed generation projects strengthen the case that AI load is becoming funded grid and interconnection work rather than speculative requested MW. Quanta remains a high-quality beneficiary, but 5%+ yields and premium valuation keep the entry hurdle high."
+      "thesis": "Google-backed generation projects strengthen the case that AI load is becoming funded grid and interconnection work rather than speculative requested MW. Quanta remains a high-quality beneficiary, but 5%+ yields and premium valuation keep the entry hurdle high.",
+      "priorDatedPrice": "~$643.50 · Sep 24",
+      "latestVerifiedPrice": {
+        "value": 552.44,
+        "currency": "USD",
+        "session": "2026-10-22",
+        "source": "Finnhub stock /quote session timestamp 2026-10-22T20:00:00Z",
+        "executionReady": false
+      },
+      "previousAction": "EXCELLENT GRID EXPOSURE · CUSTOMER-BACKED BUILDOUT / DO NOT CHASE",
+      "latestDecision": "WAIT_EARNINGS_ENTRY"
     },
     {
       "rank": 19,
@@ -332,14 +433,24 @@
       "market": "US",
       "score": 9.1,
       "bucket": "selective",
-      "action": "HIGH QUALITY ELECTRICAL BOTTLENECK · WAIT FOR PULLBACK",
-      "price": "~$438.20 · Sep 24",
+      "action": "WAIT EARNINGS ENTRY · Input copper inflation plus rate pressure; no automatic buy",
+      "price": "$368.99 · 22 Oct 2026 close",
       "entry": "Below ~$420 becomes materially more interesting; stronger value nearer prior $395-405 zone",
       "confirmation": "Electrical orders/backlog and margin/FCF improve, with customer-funded projects and current entry valuation confirmed.",
       "invalidation": "Electrical contract cancellations or margin/FCF decline, or the share price already reflects years of backlog growth.",
       "theme": "Electrical equipment · switchgear · data centres",
       "thesis": "Customer-backed generation and data-centre projects make electrical distribution, switchgear and power management more investable, not less. Eaton remains a high-quality bottleneck name, but the market already pays a premium for that quality.",
-      "researchContext": "Picks-and-shovels candidate; issuer-backed Electrical Americas orders +41%, backlog +43% YoY in Q2. Price quoted from September is stale."
+      "researchContext": "Picks-and-shovels candidate; issuer-backed Electrical Americas orders +41%, backlog +43% YoY in Q2. Price quoted from September is stale.",
+      "priorDatedPrice": "~$438.20 · Sep 24",
+      "latestVerifiedPrice": {
+        "value": 368.99,
+        "currency": "USD",
+        "session": "2026-10-22",
+        "source": "Finnhub stock /quote session timestamp 2026-10-22T20:00:00Z",
+        "executionReady": false
+      },
+      "previousAction": "HIGH QUALITY ELECTRICAL BOTTLENECK · WAIT FOR PULLBACK",
+      "latestDecision": "WAIT_EARNINGS_ENTRY"
     },
     {
       "rank": 20,
@@ -355,7 +466,8 @@
       "confirmation": "ARR/bookings/renewals continue accelerating",
       "invalidation": "AI-security monetization fails to improve recurring economics",
       "theme": "Cybersecurity · selective software",
-      "thesis": "AI security is a preferred software branch, but the recent move has outrun the 15-session tape; retain the company, not the current entry."
+      "thesis": "AI security is a preferred software branch, but the recent move has outrun the 15-session tape; retain the company, not the current entry.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "previousRank": 20,
@@ -371,7 +483,8 @@
       "invalidation": "DRAM pricing rolls over before HBM monetisation, capacity creates oversupply or advanced-memory execution stalls",
       "theme": "DRAM · HBM localisation · China AI memory",
       "thesis": "CXMT is now directly listed on the STAR Market as 688825, removing the earlier investability ambiguity. The investment case is still cycle-sensitive: conventional DRAM profitability is benefiting from a strong memory market, while HBM qualification and yields remain the evidence required for a structural AI rerating.",
-      "rank": 21
+      "rank": 21,
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 22,
@@ -388,7 +501,8 @@
       "invalidation": "Sustained <RM13.00 or weakening regulated grid/DC economics",
       "theme": "Malaysia grid · regulated power · data-centre load",
       "rateSensitivity": "LOW-MODERATE",
-      "thesis": "Malaysia data-centre demand is now observed load: data centres reached a record 9.3% of power use in mid-August. Regulated transmission/distribution remains a lower-duration way to own the buildout than speculative project developers."
+      "thesis": "Malaysia data-centre demand is now observed load: data centres reached a record 9.3% of power use in mid-August. Regulated transmission/distribution remains a lower-duration way to own the buildout than speculative project developers.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 23,
@@ -404,7 +518,8 @@
       "confirmation": "IET orders/RPO and Chart integration convert to EBITDA/FCF",
       "invalidation": "Chart integration/leverage deterioration or LNG order slowdown",
       "theme": "LNG equipment · gas turbines · data-centre power · thermal management",
-      "thesis": "New promotion. Q2 IET orders were $7.1B with record $37.1B IET RPO; current awards span LNG and 1.3GW of mobile gas turbines for data-centre/oil-and-gas applications. Chart adds cooling and gas-handling exposure."
+      "thesis": "New promotion. Q2 IET orders were $7.1B with record $37.1B IET RPO; current awards span LNG and 1.3GW of mobile gas turbines for data-centre/oil-and-gas applications. Chart adds cooling and gas-handling exposure.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 24,
@@ -420,7 +535,8 @@
       "confirmation": "LR2/MR TCE remains elevated and longer charters lock rates",
       "invalidation": "Rapid Hormuz normalisation, product-spread collapse or tanker-rate mean reversion",
       "theme": "Product tankers · refined-product rerouting",
-      "thesis": "The energy shock is increasingly about moving and refining the right barrels rather than simply finding crude. Product-market dislocations and route risk support tanker economics, but recovering Gulf flows mean this is a selective logistics thesis rather than a one-way war premium."
+      "thesis": "The energy shock is increasingly about moving and refining the right barrels rather than simply finding crude. Product-market dislocations and route risk support tanker economics, but recovering Gulf flows mean this is a selective logistics thesis rather than a one-way war premium.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "previousRank": 24,
@@ -436,7 +552,8 @@
       "invalidation": "CXL adoption slips, competitive standards compress margins or AI-server demand weakens materially",
       "theme": "CXL · DDR5 · PCIe · AI memory interconnect",
       "thesis": "Montage is correctly listed as 688008.SH / 6809.HK. PCIe 6.x/CXL 3.x retimer qualification and CXL 3.2 controller trial production confirm technical progress; the next proof is material revenue conversion, not another product announcement.",
-      "rank": 25
+      "rank": 25,
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "previousRank": 25,
@@ -452,7 +569,8 @@
       "invalidation": "US-China restrictions disrupt customer access, hyperscaler demand normalises sharply or optical pricing/margins compress",
       "theme": "AI optical networking · 800G/1.6T interconnect",
       "thesis": "One of the strongest realised AI-infrastructure earnings profiles in the China universe and a global, not purely domestic, AI exposure. Geopolitical/customer concentration and recent rerating keep it selective.",
-      "rank": 26
+      "rank": 26,
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 27,
@@ -468,7 +586,8 @@
       "confirmation": "Distillate/product cracks remain firm, inventories stay tight and refinery economics hold even as crude availability improves.",
       "invalidation": "Rapid product-inventory rebuild, crack-spread normalisation or sustained refinery-margin deterioration.",
       "theme": "Refining · diesel/product scarcity",
-      "thesis": "Gulf crude flows are recovering, but refined-product exports, replacement-barrel costs and infrastructure risk remain tight. That makes VLO a cleaner expression of the remaining energy problem than generic crude beta, but the stock still needs a better entry after the squeeze."
+      "thesis": "Gulf crude flows are recovering, but refined-product exports, replacement-barrel costs and infrastructure risk remain tight. That makes VLO a cleaner expression of the remaining energy problem than generic crude beta, but the stock still needs a better entry after the squeeze.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 28,
@@ -479,12 +598,20 @@
       "score": 8.7,
       "bucket": "selective",
       "action": "PRODUCT-TIGHTNESS RETEST · VERIFY CRACKS / NO CHASE",
-      "price": "$397.77 · Sep 8 close",
+      "price": "$459.28 · 22 Oct 2026 close",
       "entry": "No chase near highs; wait for pullback or crack reset",
       "confirmation": "Persistent diesel/gasoline cracks and throughput economics",
       "invalidation": "Rapid product-inventory rebuild or crack collapse",
       "theme": "Refining · product scarcity",
-      "thesis": "Strong direct beneficiary of limited spare refining slack, but price location remains the main problem. WTI below $90 increases the value of independently checking ULSD/3-2-1 and product inventories: downstream relative strength matters more than crude direction in this phase."
+      "thesis": "Strong direct beneficiary of limited spare refining slack, but price location remains the main problem. WTI below $90 increases the value of independently checking ULSD/3-2-1 and product inventories: downstream relative strength matters more than crude direction in this phase.",
+      "priorDatedPrice": "$397.77 · Sep 8 close",
+      "latestVerifiedPrice": {
+        "value": 459.28,
+        "currency": "USD",
+        "session": "2026-10-22",
+        "source": "Finnhub stock /quote session timestamp 2026-10-22T20:00:00Z",
+        "executionReady": false
+      }
     },
     {
       "rank": 29,
@@ -500,7 +627,8 @@
       "confirmation": "High cracks plus logistics/marketing resilience",
       "invalidation": "Crack-spread normalisation and weaker throughput",
       "theme": "Refining · midstream/logistics · product scarcity",
-      "thesis": "Useful downstream diversification and logistics exposure, but current valuation already embeds a large part of the near-term product squeeze. WTI below $90 increases the value of independently checking ULSD/3-2-1 and product inventories: downstream relative strength matters more than crude direction in this phase."
+      "thesis": "Useful downstream diversification and logistics exposure, but current valuation already embeds a large part of the near-term product squeeze. WTI below $90 increases the value of independently checking ULSD/3-2-1 and product inventories: downstream relative strength matters more than crude direction in this phase.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 30,
@@ -511,12 +639,20 @@
       "score": 8.8,
       "bucket": "selective",
       "action": "COOLING/ELECTRICAL BOTTLENECK WATCH",
-      "price": "Fresh quote required before action",
+      "price": "$127.67 · 22 Oct 2026 close",
       "entry": "Require fresh valuation/price retest before entry",
       "confirmation": "Liquid-cooling capacity converts to orders, margins and FCF",
       "invalidation": "AI infrastructure slowdown or capacity/integration execution failure",
       "theme": "Liquid cooling · electrical protection · data centres",
-      "thesis": "New promotion. nVent is adding its third liquid-cooling capacity expansion in three years, taking new space added above 400,000 sq ft. It offers narrower component-level exposure to the cooling/electrical bottleneck."
+      "thesis": "New promotion. nVent is adding its third liquid-cooling capacity expansion in three years, taking new space added above 400,000 sq ft. It offers narrower component-level exposure to the cooling/electrical bottleneck.",
+      "priorDatedPrice": "Fresh quote required before action",
+      "latestVerifiedPrice": {
+        "value": 127.67,
+        "currency": "USD",
+        "session": "2026-10-22",
+        "source": "Finnhub stock /quote session timestamp 2026-10-22T20:00:00Z",
+        "executionReady": false
+      }
     },
     {
       "rank": 31,
@@ -532,7 +668,8 @@
       "confirmation": "Named funded backlog + strong cash conversion",
       "invalidation": "Customer funding/backlog quality deteriorates",
       "theme": "AI power + thermal infrastructure",
-      "thesis": "Physical demand remains strong, but the new AI-financing theme raises the premium on named customers, deposits and cash conversion. Keep high research priority without treating all backlog equally. Sep 23 evening delta: stressed project finance and delayed pre-operating AI-infrastructure offerings increase the relative value of funded backlog, existing operating capacity and cash conversion; this improves selection quality but is not a reason to chase price."
+      "thesis": "Physical demand remains strong, but the new AI-financing theme raises the premium on named customers, deposits and cash conversion. Keep high research priority without treating all backlog equally. Sep 23 evening delta: stressed project finance and delayed pre-operating AI-infrastructure offerings increase the relative value of funded backlog, existing operating capacity and cash conversion; this improves selection quality but is not a reason to chase price.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 32,
@@ -548,7 +685,8 @@
       "confirmation": "Hold >RM3.79–3.80",
       "invalidation": "Sustained <RM3.20 or order-book/cash-conversion deterioration",
       "theme": "Substations · grid interconnection · data centres",
-      "thesis": "Company-specific order-book proof keeps MN Holdings high in the Malaysia grid stack. Price and smaller-cap liquidity keep it below TENAGA/GEV/ETN/PWR."
+      "thesis": "Company-specific order-book proof keeps MN Holdings high in the Malaysia grid stack. Price and smaller-cap liquidity keep it below TENAGA/GEV/ETN/PWR.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 33,
@@ -564,7 +702,8 @@
       "confirmation": "Gold holds/reclaims trend while real yields stop rising",
       "invalidation": "Persistent real-yield/USD breakout with major gold support loss",
       "theme": "Gold · reserve diversification · duration hedge",
-      "thesis": "Promoted structurally by record ETF holdings and persistent reserve diversification. High real yields remain the tactical timing conflict, so this is a staged hedge rather than a momentum chase. Gold remains a strategic hedge, but the current trade relief plus elevated US real yields/DXY keeps the near-term setup rate-sensitive."
+      "thesis": "Promoted structurally by record ETF holdings and persistent reserve diversification. High real yields remain the tactical timing conflict, so this is a staged hedge rather than a momentum chase. Gold remains a strategic hedge, but the current trade relief plus elevated US real yields/DXY keeps the near-term setup rate-sensitive.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 34,
@@ -580,7 +719,8 @@
       "confirmation": "Gold trend stabilises with real yields easing",
       "invalidation": "AISC/production deterioration or gold support loss",
       "theme": "Gold miner · FCF · net cash",
-      "thesis": "AEM remains a high-quality miner expression, but lower nominal yields alone are insufficient while DXY stays firm. Upgrade the tactical case only if real yields and the dollar soften or miners show durable relative strength versus bullion."
+      "thesis": "AEM remains a high-quality miner expression, but lower nominal yields alone are insufficient while DXY stays firm. Upgrade the tactical case only if real yields and the dollar soften or miners show durable relative strength versus bullion.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 35,
@@ -596,7 +736,8 @@
       "confirmation": "Kelvion integration + cooling growth + stable FCF",
       "invalidation": "Integration/leverage or service-cycle deterioration",
       "theme": "Energy services · data-centre cooling",
-      "thesis": "Energy security plus cooling remains interesting, but BKR now ranks above because its LNG/power/cooling backlog evidence is more directly aligned with the current theme stack."
+      "thesis": "Energy security plus cooling remains interesting, but BKR now ranks above because its LNG/power/cooling backlog evidence is more directly aligned with the current theme stack.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 36,
@@ -612,7 +753,8 @@
       "confirmation": "Gold holds with easing real yields",
       "invalidation": "Precious-metal thesis break",
       "theme": "Gold/silver streaming",
-      "thesis": "Cleaner cost structure than miners; still below GLDM/AEM for current implementation."
+      "thesis": "Cleaner cost structure than miners; still below GLDM/AEM for current implementation.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 37,
@@ -628,7 +770,8 @@
       "confirmation": "Double-digit pawn receivable growth with FCF intact",
       "invalidation": "Receivable growth normalises or leverage/regulation worsens",
       "theme": "Consumer stress · pawn · collateral credit",
-      "thesis": "High fuel, food and finance costs support the trade-down thesis, but this remains a second-order beneficiary rather than a top physical-scarcity exposure."
+      "thesis": "High fuel, food and finance costs support the trade-down thesis, but this remains a second-order beneficiary rather than a top physical-scarcity exposure.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 38,
@@ -644,7 +787,8 @@
       "confirmation": "Viterra integration creates durable margin/cash-flow gains and the enlarged platform continues to raise through-cycle earnings.",
       "invalidation": "Crush/trading margins normalise sharply, integration costs overwhelm synergies or leverage/cash conversion deteriorates.",
       "theme": "Agriculture · food flows · processing",
-      "thesis": "Bunge is less clean than CF or a pure seed/genetics name, but the latest evidence does not justify dropping it: Q2 earnings improved, Soybean/Softseed Processing and Refining were strong and full-year adjusted EPS guidance was raised. Keep it as a lower-priority global food-flow/integration case rather than a core agriculture expression."
+      "thesis": "Bunge is less clean than CF or a pure seed/genetics name, but the latest evidence does not justify dropping it: Q2 earnings improved, Soybean/Softseed Processing and Refining were strong and full-year adjusted EPS guidance was raised. Keep it as a lower-priority global food-flow/integration case rather than a core agriculture expression.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 39,
@@ -660,7 +804,8 @@
       "confirmation": "Irrigation/order recovery with better farmer margins",
       "invalidation": "Continued capex deferral",
       "theme": "Grid · irrigation · water resilience",
-      "thesis": "Quality business, but irrigation is capex-cyclical and current price does not offer enough asymmetry to justify daily attention."
+      "thesis": "Quality business, but irrigation is capex-cyclical and current price does not offer enough asymmetry to justify daily attention.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 40,
@@ -676,7 +821,8 @@
       "confirmation": "Durable AI monetization and improving growth/FCF",
       "invalidation": "Growth remains mediocre relative to duration/valuation",
       "theme": "Enterprise software · AI",
-      "thesis": "Broad SaaS is less differentiated than AI security and physical infrastructure in the current 5%+ yield regime."
+      "thesis": "Broad SaaS is less differentiated than AI security and physical infrastructure in the current 5%+ yield regime.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 41,
@@ -692,7 +838,8 @@
       "confirmation": "Q3/Q4 FCF delivery + recurring growth",
       "invalidation": "FCF cut or leverage deterioration",
       "theme": "Corporate simplification · recurring software",
-      "thesis": "Asymmetry remains, but the three-day duration/credit move makes leverage and slow top-line growth more expensive. Downgraded from selective starter to wait/confirm."
+      "thesis": "Asymmetry remains, but the three-day duration/credit move makes leverage and slow top-line growth more expensive. Downgraded from selective starter to wait/confirm.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 42,
@@ -708,7 +855,8 @@
       "confirmation": "Deployment ROI + backlog + FCF",
       "invalidation": "Deployment or financing deterioration",
       "theme": "Warehouse automation",
-      "thesis": "Commercial automation remains valid, but customer-capex and duration sensitivity lower relative priority."
+      "thesis": "Commercial automation remains valid, but customer-capex and duration sensitivity lower relative priority.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 43,
@@ -724,7 +872,8 @@
       "confirmation": "Activity/USDC/FCF remain strong with lower real yields",
       "invalidation": "Liquidity deterioration",
       "theme": "Crypto infrastructure",
-      "thesis": "Company fundamentals can be sound while the macro liquidity hurdle is poor. Duration and weak-end credit keep crypto beta below physical cash-flow scarcity."
+      "thesis": "Company fundamentals can be sound while the macro liquidity hurdle is poor. Duration and weak-end credit keep crypto beta below physical cash-flow scarcity.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 44,
@@ -740,7 +889,8 @@
       "confirmation": "Improving flows with easing real yields",
       "invalidation": "Sustained breakdown with liquidity deterioration",
       "theme": "Digital scarcity · liquidity beta",
-      "thesis": "Structural scarcity remains, but gold and cash-generative physical scarcity rank better under current real yields."
+      "thesis": "Structural scarcity remains, but gold and cash-generative physical scarcity rank better under current real yields.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 45,
@@ -756,7 +906,8 @@
       "confirmation": "BTC strength with financing stress easing",
       "invalidation": "mNAV/financing stress",
       "theme": "Bitcoin treasury · capital structure",
-      "thesis": "The current duration/credit regime directly worsens leveraged crypto convexity."
+      "thesis": "The current duration/credit regime directly worsens leveraged crypto convexity.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     },
     {
       "rank": 46,
@@ -772,7 +923,8 @@
       "confirmation": "Funded project + credible economics",
       "invalidation": "Continued dilution/financing weakness",
       "theme": "SMR · pre-revenue nuclear",
-      "thesis": "Nuclear is strategically strong, but pre-revenue project finance sits on the wrong side of the duration shortage. Prefer CCJ and operating/funded power assets."
+      "thesis": "Nuclear is strategically strong, but pre-revenue project finance sits on the wrong side of the duration shortage. Prefer CCJ and operating/funded power assets.",
+      "priceStatus": "STALE_OR_NO_NEW_QUOTE"
     }
   ],
   "researchQueue": [
@@ -873,8 +1025,8 @@
       "status": "IMPLEMENTATION RESEARCH — Identifier and fund structure verified: 21 securities, 0.68% ongoing charge, with Cambricon/NAURA/CXMT among the largest holdings. Compare basket valuation and concentration with direct CXMT and Montage."
     }
   ],
-  "priceCoverageNote": "12 Oct research narrative only. Many candidate price strings and holding completed-session tape are from September or early October, NOT 12 Oct live quotes; preserve their original dates and require fresh executable prices before investing. US dollar fixed-income markets observe a full-close recommendation Monday 12 Oct; latest US full nominal close used here is Friday 9 Oct. The research sweep must not be interpreted as a current-price refresh.",
-  "sweepNote": "14 Oct: Added Eisman financing-chain checks and 13 Oct completed-close backdrop to existing watchlist gate; no scoring, rank or holdings changes. ANET/CSCO are unscored research leads in research memo, not new ranked recommendations.",
+  "priceCoverageNote": "Of 46 scored watchlist candidates, only symbols with timestamped Oct22 Finnhub quotes receive updated price fields; old missing prices are explicitly stale and not entry quotes. Equity scores/ranks/buckets preserved; actual buy decisions in data/decision-refresh-2026-10-23.json.",
+  "sweepNote": "Direct decisions: BUY STARTER Treasury VGIT or IEF, smaller TLT satellite, SGOV cash; CF leading non-AI equity with verified half-year cash, all at next-session quote and risk sizing. GRAB downgraded WAIT pending credit/FCF; GEV/MU/TSM require issuer/technical proof.",
   "creatorPolicy": "Deep Research, Live Desk and creator/transcript material can change research priority, but company scores/actions change only where independent company or official evidence supports the move. Identifier confusion or unsupported synthesis is rejected rather than written through.",
   "macroDiagnostics": [
     {
@@ -1151,5 +1303,25 @@
         "action": "STAGED ONLY"
       }
     ]
+  },
+  "latestCrossAssetBuySell": {
+    "asOf": "2026-10-23T04:38:00+08:00",
+    "reference": "data/decision-refresh-2026-10-23.json",
+    "priorityBuys": [
+      "VGIT or IEF staged",
+      "TLT tactical small",
+      "SGOV liquidity",
+      "CF small equity research starter"
+    ],
+    "equityWait": [
+      "GRAB",
+      "GEV",
+      "TSM",
+      "MU",
+      "AA",
+      "NEM"
+    ],
+    "buyPolicy": "Current equity price and issuer earnings required; never imply quote or score = executable order",
+    "creatorPolicy": "Transcript claims are leads; official issuer/cross-asset facts are independent validators."
   }
 }
