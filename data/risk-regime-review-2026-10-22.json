@@ -369,5 +369,75 @@
       "Treasury safety rally in equity selloff; credit spread not yet crisis-wide",
       "Citadel Oct12 early equal-weight bounce and manufacturing demand resilience"
     ]
+  },
+  "audit": {
+    "auditDateMyt": "2026-10-23 03:14",
+    "source": "research/2026-10-23-market-risk-fact-check.md",
+    "status": "AUDITED_WITH_CAUSAL_AND_DATA_CAVEATS",
+    "verified": [
+      "FRED HY spread 333bp Oct20 and 65bp widened from Sep22",
+      "Meta Q3 CFO 32.786bn/FY26 capex $135–145bn and -2.120bn FCF",
+      "France 5.11% 10Y 173.58 bp spread was a publication-time session snapshot",
+      "SCCO Q3 38.4% net profit margin",
+      "AA Q3 $472m FCF",
+      "ICSG forecast +104kt 2026/+368kt 2027 refined copper surplus",
+      "WGC Q1 AISC $1,785/oz +16% YoY",
+      "Japanese cross-border long-term bond selling ¥3.43tn across five weeks"
+    ],
+    "corrections": [
+      {
+        "id": "META_CAPEX_BAND",
+        "status": "CLARIFY",
+        "correct": "2026 outlook narrowed from $130–145bn to $135–145bn; cannot infer AI-only return on capex; Q3 legal charge $9.89bn"
+      },
+      {
+        "id": "US_CLAIMS",
+        "status": "NEW_DATA_AVAILABLE",
+        "correct": "22 Oct 08:30 EDT release: 194,000 initial claims for week ended 17 Oct, 200,000 consensus; prior week revised to 200,000; 4w avg 197,750; continuing ~1.73m"
+      },
+      {
+        "id": "AI_CDS",
+        "status": "PRECISION_DOWNGRADE",
+        "correct": "15 Oct Reuters CoreWeave CDS above 1000bp, Oracle 288bp; claim above 1100 needs time-matched independent quote; not marketwide stress"
+      },
+      {
+        "id": "FRANCE_QUOTES",
+        "status": "TIMESTAMP_QUALIFICATION",
+        "correct": "173.58bp and 5.11% quoted 22 Oct news snapshot, not a closing quote, broad bank/ECB contagion unproven"
+      },
+      {
+        "id": "HY",
+        "status": "CONFIRMED",
+        "correct": "20 Oct HY OAS 3.33% vs 22 Sep 2.68%, +65bp; does not alone prove market dysfunction"
+      },
+      {
+        "id": "KPLER_EXPORTS",
+        "status": "SCOPE_QUALIFICATION",
+        "correct": "Oct18 one-week all-routes crude/condensate 24.6mbd, October-to-date under prewar; never equal to product/LNG/logistics normality"
+      },
+      {
+        "id": "MARKET_TIMING",
+        "status": "NO_FUTURE_CLOSE",
+        "correct": "At 23 Oct 03:14 MYT / 22 Oct 15:14 EDT, Oct22 US session is not yet complete; only Oct21 completed US closes valid"
+      },
+      {
+        "id": "VALUATIONS",
+        "status": "UNVERIFIED_DENOMINATOR",
+        "correct": "Cross-listed ADR prices vs CAD/ZAR/AUD issuer/vendor ratios unnormalized; none execution grade"
+      },
+      {
+        "id": "RISK_BARS",
+        "status": "NOT_NUMERICAL",
+        "correct": "Subjective chart heights reflect descriptive concern only; no calibrated probabilities"
+      }
+    ],
+    "positiveCounterevidence": [
+      "US initial claims below forecast and near 57-year lows",
+      "META +26% revenue and ~$82.45bn cash and marketable securities",
+      "Besi Q3 orders beat, thus no proof of universal AI demand collapse",
+      "Kpler all-routes crude recovery meaningful but scope-limited"
+    ],
+    "systemicCrisisConfirmed": false,
+    "executionReady": false
   }
 }
