@@ -53,21 +53,36 @@
     }
   ],
   "verdict": "Decision: BUY CANDIDATE in staged VGIT or IEF and, where risk budget allows, a small TLT satellite; keep SGOV for liquidity. CF is the leading independently cash-supported equity buy study. SELL/RECYCLE review DAYANG; TRIM review TSLA subject to actual position risk; HOLD XOM. No orders executed. Confirm Friday quotes, USD/MYR, broker access, tax and current issuer evidence before sizing.",
-  "dataLimits": [
-    "22 October US completed closes sourced to timestamped Finnhub quotes; not executable 23 October bids.",
-    "Official same-day Treasury closing curves, CPI-to-price synchronous reaction and current HY CDS are not fully reconciled.",
-    "Only priority names' current earnings and valuation reviewed; full 46-name issuer financials not freshly audited.",
-    "NEM Q3 release scheduled for Oct22 after close but actual numbers not independently found at the snapshot.",
-    "Malaysian Friday broker quotes and unidentified 6742UW terms remain open."
-  ],
+  "dataLimits": "Source-dated Oct22 U.S. closes only, not 23 October executable prices. Official same-day UST/TIPS closes and credit time-matched evidence incomplete; NEM Q3 and Malaysian Friday quotes still awaiting issuer/broker readback; 38/46 watchlist prices verified, other 8 unverified.",
   "sourceLinks": [
-    "https://apnews.com/article/1970e79d013cbddcae89c53b4b98f384",
-    "https://www.reuters.com/business/nasdaq-futures-drop-over-1-ai-worries-resurface-oil-climbs-2026-10-22/",
-    "https://www.ishares.com/us/products/239454/ishares-20-year-treasury-bond-etf",
-    "https://advisors.vanguard.com/investments/products/vgit/vanguard-intermediate-term-treasury-etf",
-    "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000726/a3q26e_withguidancexfinal.htm",
-    "https://ir.cfindustries.com/Investors/news/news-details/2026/CF-Industries-Holdings-Inc--Reports-First-Half-2026-Net-Earnings-of-1-34-Billion-Adjusted-EBITDA-of-2-18-Billion/default.aspx",
-    "https://www.prnewswire.com/news-releases/meta-reports-third-quarter-2026-results-302915964.html"
+    {
+      "label": "AP Oct22 stock closes",
+      "url": "https://apnews.com/article/1970e79d013cbddcae89c53b4b98f384"
+    },
+    {
+      "label": "Reuters AI-led stock selloff",
+      "url": "https://www.reuters.com/business/nasdaq-futures-drop-over-1-ai-worries-resurface-oil-climbs-2026-10-22/"
+    },
+    {
+      "label": "iShares TLT fund facts",
+      "url": "https://www.ishares.com/us/products/239454/ishares-20-year-treasury-bond-etf"
+    },
+    {
+      "label": "Vanguard VGIT fund facts",
+      "url": "https://advisors.vanguard.com/investments/products/vgit/vanguard-intermediate-term-treasury-etf"
+    },
+    {
+      "label": "TSMC Q3 SEC earnings",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000726/a3q26e_withguidancexfinal.htm"
+    },
+    {
+      "label": "CF official H1 results",
+      "url": "https://ir.cfindustries.com/Investors/news/news-details/2026/CF-Industries-Holdings-Inc--Reports-First-Half-2026-Net-Earnings-of-1-34-Billion-Adjusted-EBITDA-of-2-18-Billion/default.aspx"
+    },
+    {
+      "label": "Meta Q3 issuer report",
+      "url": "https://www.prnewswire.com/news-releases/meta-reports-third-quarter-2026-results-302915964.html"
+    }
   ],
   "editorial": {
     "voice": "LY client-facing British English: clear cause and effect, ordinary language, several short paragraphs, price reaction versus claims, conditional verdict",
@@ -93,5 +108,12 @@
     "asOf": "2026-10-14",
     "purpose": "Historical CPI analysis archived in Git history; do not conflate with current 22 Oct market close."
   },
-  "decisionLedgerPath": "data/decision-refresh-2026-10-23.json"
+  "decisionLedgerPath": "data/decision-refresh-2026-10-23.json",
+  "dataQualityGaps": [
+    "22 October US completed closes sourced to timestamped Finnhub quotes; not executable 23 October bids.",
+    "Official same-day Treasury closing curves, CPI-to-price synchronous reaction and current HY CDS are not fully reconciled.",
+    "Only priority names' current earnings and valuation reviewed; full 46-name issuer financials not freshly audited.",
+    "NEM Q3 release scheduled for Oct22 after close but actual numbers not independently found at the snapshot.",
+    "Malaysian Friday broker quotes and unidentified 6742UW terms remain open."
+  ]
 }
