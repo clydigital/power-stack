@@ -1,5 +1,10 @@
 # Power Stack
 
+## Manual PS updates — investment manifesto and confirmed RM13,491 one-year mandate
+
+The [manual investment update manifesto](PS_MANUAL_INVESTMENT_MANIFESTO.md) is the standing instruction for **“PS update”, “PS deep sweep”, “PS action”, “PS bonds”, “PS results”, “PS reset”**. It routes Notion MacroPulse/Research Gap and creator leads through **Live Desk's canonical market evidence**, treats **Bluebelly/Blue Desk as a read-only projection**, then uses GitHub, issuer filings, Finnhub/Alpha Vantage/FactIQ, equity analysis skills, and sovereign/FX checks to produce **ranked, dated BUY/HOLD/TRIM/SELL/WAIT decisions** with exact intended RM size, financing source and invalidation. The [machine-readable 12-month Rakuten capital mandate](data/rakuten-one-year-mandate.json) uses user-confirmed **RM13,491 TOTAL risk capital**, not extra cash; provisional target sleeves sum to 100%, and actual existing positions still require broker reconciliation. **No automated trades, new scheduled tasks, altered Live authority, or 46-stock rerank.**
+
+
 ## 23 October 2026 — global government bond opportunity / France fiscal contagion / Asia rates
 
 The [global sovereign-bond deep dive](research/2026-10-23-global-sovereign-bonds-asia-france.md) and [15-market, 10-ETF source-dated ledger](data/global-sovereign-bond-sweep-2026-10-23.json) extend the US duration decision to France/Bund/BTP, UK, Australia, New Zealand, Japan, Korea, China, India, ASEAN and Malaysia. **Recommendation:** staged intermediate US Treasuries (VGIT/IEF) and USD SGOV liquidity; small risk-capped TLT tactical only; investigate MYR 3–5Y MGS for domestic cash and AU IAF/VGB, UK IGLT, NZ NGB and Bund-only XBTR after their upcoming monetary/fiscal catalysts. **Do not buy 5%+ French OATs or 8% Philippines/Indonesia 10Y paper on nominal yield alone**. Quantified FR OAT-Bund ~178bp at Oct22 high, NZ Q3 CPI 3.7%, FX sensitivity and fund durations. [Bond watch](data/bond-watch.json) and regional sweep policy are cross-linked; no holdings, scores or broker orders were changed.
