@@ -1,5 +1,10 @@
 # Power Stack
 
+## 23 October 2026 — U.S. Treasury flight-to-safety and bond duration update
+
+The [bond watch](data/bond-watch.json) now incorporates the user-supplied 22 October TreasuryBonds.com yield snapshot (2Y 4.691%, 5Y 4.822%, 10Y 5.006%, 20Y 5.375%, 30Y 5.326%) as **vendor intraday, not official closing data**, and Reuters' independent report of a 10Y move below 5% on an equity risk-off haven bid. Paul Rubillo's conditional argument for locking fixed coupons is assessed against intermediate Treasury, TLT and short-bill rollover/inflation risks. No buying decision, score, holdings, Live Desk rate adjudication or automation was changed.
+
+
 ## 23 October 2026 — independent audit of market danger assessment
 
 The [claim-by-claim verification and correction log](research/2026-10-23-market-risk-fact-check.md) audits original issuer, FRED, Treasury, IMF, Reuters, and metals data. It **confirms elevated rates/credit fragility but not systemic crisis**, clarifies META capex range and its Q3 legal charge, replaces "US claims unknown" with **194k actual vs 200k forecast** at the 22 Oct release, downgrades unsupported CDS precision, preserves quote timestamps, and flags cross-listing mining valuation problems. The [original 22 Oct report](research/2026-10-22-market-danger-risk-regime-deep-update.md) now opens with this correction notice; the [research overlay](data/risk-regime-review-2026-10-22.json) carries a machine-readable `audit` field. No positions, issuer scores, canonical Live Desk, or schedules were changed.
