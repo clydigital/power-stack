@@ -256,3 +256,9 @@ body{
 .dialog-head{border-bottom-color:#2a3b4b}
 dialog{box-shadow:0 30px 90px rgba(0,0,0,.52),0 0 0 1px rgba(133,184,255,.025) inset}
 @media(max-width:900px){.workspace:before{left:0}.idea-table{min-width:1080px}}
+
+/* Full Library: incomplete research scores are unknown, not zero. */
+.score-line.score-unrated b,.row-meter.score-unrated b{color:var(--muted);font-weight:600}
+.score-line.score-unrated .bar-track,.row-meter.score-unrated .row-meter-track{opacity:.38}
+.score-line.score-unrated .bar-fill{width:0!important}
+.idea-card .card-tags .tag:empty{display:none}
