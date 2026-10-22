@@ -279,5 +279,23 @@
     "sourceDatedHold": "If quote or accounting period unavailable, mark UNVERIFIED not 0; do not promote from video transcript alone. Avoid quarantining sound investments simply because market broad regime is high risk.",
     "currentEvidence": "data/decision-refresh-2026-10-23.json",
     "upstreamAuthority": "Live Desk canonical macro state; PowerStack evidence overlay only; do not raise PowerSweep 12 external investigation hard cap."
+  },
+  "globalSovereignBondResearch": {
+    "asOf": "2026-10-23",
+    "path": "data/global-sovereign-bond-sweep-2026-10-23.json",
+    "report": "research/2026-10-23-global-sovereign-bonds-asia-france.md",
+    "scope": "US/EU/UK/AU/NZ/Asia 15 market 10Y yields, French spread, currency regime, bond ETF class and duration",
+    "requiredAtEveryRegionalSweep": [
+      "US 2Y/5Y/10Y/20Y/30Y nominal AND real, OAS and auction",
+      "Euro Bund/OAT/BTP 10Y and OAT-Bund spread, French banks CDS, ECB TPI",
+      "UK 2Y/10Y/30Y gilts, CPI, fiscal budgets and gilt auction tails",
+      "AU RBA rate, 3Y/5Y/10Y bonds, CPI, AUD FX and IAF/VGB YTM",
+      "NZ RBNZ OCR/CPI, NZGB bond yields and NZD FX/NGB",
+      "Japan JGB 2Y/10Y/30Y, USDJPY, Japan MOF foreign long bonds and actual TIC Treasuries",
+      "China/Korea/India/Indonesia/Philippines/HK/Singapore/Malaysia LCY bonds and local policy FX",
+      "Currency-hedged yield/net return to MYR vs local MGS, actual fees and broker accessibility"
+    ],
+    "selectionRules": "A regional 5% yield is never a buy without matched inflation, fiscal trajectory, curve trend, ETF duration, credit/FX and user base-currency stress. Bonds can be recommended when evidence passes; no forced blanket WAIT.",
+    "compatibility": "Do not alter 12 slot PowerSweep research cap or Live Desk macro owner."
   }
 }
