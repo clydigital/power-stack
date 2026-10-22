@@ -1,3 +1,4 @@
+import { assessLiveDeskInput, reconcilePowerStackGaps } from "./power-sweep-gap-contract.mjs";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -171,13 +172,7 @@ function build(existingGeneratedAt = null) {
   const tapeHealth = assessHoldingTape(tape);
   const maxTotal = Number(caps.totalExternalInvestigations || 12);
   const inputHealth = {
-    liveDesk: {
-      contractVersion: live.contractVersion,
-      expectedContract: "power-stack-live-desk-canonical/2",
-      asOf: live.asOf || null,
-      syncedAt: live.syncedAt || null,
-      status: live.contractVersion === "power-stack-live-desk-canonical/2" ? "OK" : "BLOCKING",
-    },
+    liveDesk: assessLiveDeskInput(live),
     portfolioOverlay: {
       contractVersion: overlay.contractVersion,
       expectedContract: "power-stack-portfolio-live-overlay/1",
@@ -395,6 +390,7 @@ function build(existingGeneratedAt = null) {
     monitorOnly,
     newCapitalPriority: portfolio.newCapitalPriority || [],
     researchGaps,
+    gapReconciliation: reconcilePowerStackGaps({ live, researchGaps, tape }),
     explicitNoChange: [
       "Do not change any company company-evidence component from Live macro state or holding-tape reaction alone.",
       "Do not mechanically rerank the watchlist from Live Stock Radar.",
