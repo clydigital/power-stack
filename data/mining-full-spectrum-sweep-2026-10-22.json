@@ -1,0 +1,374 @@
+{
+  "contractVersion": "power-stack-mining-full-spectrum-sweep/1",
+  "asOf": "2026-10-22",
+  "decisionType": "NON_EXECUTABLE_RESEARCH",
+  "sourceHierarchy": "Company filings/IR, primary ICSG/WGC, Reuters, then source-dated Finnhub quotes and preliminary metrics. New ideas do not enter canonical 46-name scored watchlist until company/valuation review.",
+  "scope": {
+    "screenedCompanies": 21,
+    "priorSecuritiesUntouched": true,
+    "priorScoredWatchlistUntouched": true,
+    "existingHoldingsUntouched": true,
+    "macroOwner": "Live Desk",
+    "powerSweepHardCapPreserved": 12
+  },
+  "regime": {
+    "source": "data/power-sweep-latest.json 2026-10-22T11:58:59.601Z",
+    "family": "RATES_LED_TIGHTENING",
+    "monetaryBaseline": "HAWKISH",
+    "meaning": "Higher real/nominal rates weigh on gold and longer-duration mining development while energy/diesel cost inflation can erode mining margins."
+  },
+  "commodity": {
+    "gold": {
+      "reference": "~US$4,060.37/oz 22 Oct Reuters snapshot; time-varying, not live quote",
+      "direction": "falling",
+      "risk": "Oil inflation/real yields/USD versus cost escalation",
+      "source": "https://www.reuters.com/world/india/gold-drops-over-1-oil-rally-reinforces-higher-for-longer-rate-outlook-2026-10-22/"
+    },
+    "copper": {
+      "reference": "~US$14,320/t LME 21 Oct; LME inventory build",
+      "projectedRefinedBalance2026T": 104000,
+      "projectedRefinedBalance2027T": 368000,
+      "latestForecastDate": "2026-10-14",
+      "criticalNuance": "Smelter refined-copper surplus can coexist with tight mined concentrate; inventory geography and arbitrage distort spot",
+      "source": "https://icsg.org/download/2026-10-14-press-release-icsg-copper-market-forecast-2026-2027/"
+    },
+    "lithium": {
+      "reference": "China carbonate prices -40.3% from May peak to end-Sep; Q4 supply pressure projected",
+      "source": "https://www.spglobal.com/energy/en/news-research/latest-news/metals/101226-trade-review-asian-lithium-market-likely-to-ease-late-q4-on-feedstock-arrivals"
+    },
+    "rareEarths": {
+      "reference": "TSMC early exploration of rare-earth-free automation, Japanese critical rare earth supply pressures; neither direct order book for specific miner",
+      "source": "https://www.reuters.com/world/china/tsmc-seeks-factory-equipment-alternatives-thwart-chinas-rare-earths-grip-sources-2026-10-22/"
+    },
+    "tin": {
+      "reference": "MSC 2Q26 average selling tin price RM208,400/t vs RM139,800/t prior; electronics solder",
+      "source": "https://links.sgx.com/FileOpen/MSC%202Q2026%20Media%20Release.ashx?App=Announcement&FileID=900455"
+    }
+  },
+  "priceAndValuationQA": {
+    "provider": "Finnhub source-dated US session",
+    "quoteCloseDate": "2026-10-21",
+    "notLiveOrExecutable": true,
+    "priceSelection": [
+      {
+        "ticker": "NEM",
+        "usd": 117.18
+      },
+      {
+        "ticker": "SCCO",
+        "usd": 198.07
+      },
+      {
+        "ticker": "FCX",
+        "usd": 68.9
+      },
+      {
+        "ticker": "AA",
+        "usd": 40.73
+      },
+      {
+        "ticker": "ALB",
+        "usd": 94.47
+      },
+      {
+        "ticker": "MP",
+        "usd": 39.5
+      },
+      {
+        "ticker": "GFI",
+        "usd": 36.8
+      },
+      {
+        "ticker": "AEM",
+        "usd": 187.36
+      },
+      {
+        "ticker": "KGC",
+        "usd": 23.82
+      },
+      {
+        "ticker": "B",
+        "usd": 40.76
+      },
+      {
+        "ticker": "WPM",
+        "usd": 132.17
+      }
+    ],
+    "sameListingIndicativeRatios": [
+      {
+        "ticker": "NEM",
+        "peTTM": 14.31,
+        "evEbitdaTTM": 7.63,
+        "pFCFTTM": 12.64
+      },
+      {
+        "ticker": "SCCO",
+        "peTTM": 28.66,
+        "evEbitdaTTM": 16.67,
+        "pFCFTTM": 31.82
+      },
+      {
+        "ticker": "FCX",
+        "peTTM": 33.4,
+        "evEbitdaTTM": 11.43,
+        "pFCFTTM": 39.84
+      },
+      {
+        "ticker": "AA",
+        "peTTM": 7.03,
+        "evEbitdaTTM": 4.33,
+        "pFCFTTM": 9.05
+      },
+      {
+        "ticker": "ALB",
+        "peTTM": 50,
+        "evEbitdaTTM": 11.97,
+        "pFCFTTM": 8.35
+      },
+      {
+        "ticker": "MP",
+        "peTTM": null,
+        "evEbitdaTTM": 259.03,
+        "pFCFTTM": 70.28
+      }
+    ],
+    "crossListingWarning": "Finnhub basic financials and company profile for AEM/KGC/B/WPM/GFI/RIO/BHP/FNV/PAAS refer to primary CAD/AUD/ZAR issuer markets while quote responses may reflect US ADR listing. Evidence includes 52-week highs far above quote and GFI issuer market-cap apparently ZAR mislabeled USD. Do not compare vendor ratios against US quote or interpret reported vendor market cap as USD without reconciling FX, ADR ratio, shares and timestamps.",
+    "valuationConclusion": "AA and NEM have more interesting preliminary valuation screens than SCCO or FCX, but AA acquisition/commodity cyclicality and NEM Q3 earnings are still outstanding. All ratios provider-based and may contain timing inconsistencies; must rerun post-Q3."
+  },
+  "companies": [
+    {
+      "ticker": "SCCO",
+      "theme": "Copper",
+      "researchBucket": "VALUATION_GATED",
+      "evidence": "Q3 38.4% net margin, $2.224bn CFO, $516m capex; Q3 output 232,396t (-1.1% QoQ)",
+      "firstRejection": "Price-dependent profits, copper refined surplus, 28.7x trailing PE / 31.8x P/FCF (vendor)",
+      "evidenceDate": "2026-10-20",
+      "source": "https://www.sec.gov/Archives/edgar/data/1001838/000110465926117588/scco-ex99d1.htm"
+    },
+    {
+      "ticker": "NEM",
+      "theme": "Gold",
+      "researchBucket": "ADVANCE_TO_DEEPER_RESEARCH",
+      "evidence": "Q2 $2.2bn FCF, ~1.3m oz gold production, $1,621/oz AISC",
+      "firstRejection": "Oct 22 Q3 earnings, real-yield/gold correction; share buyback sustainability",
+      "evidenceDate": "2026-07-23",
+      "source": "https://www.newmont.com/investors/news-release/news-details/2026/Newmont-Reports-Robust-Second-Quarter-2026-Results-Remains-on-Track-to-Achieve-Full-Year-Guidance/default.aspx"
+    },
+    {
+      "ticker": "AEM",
+      "theme": "Gold",
+      "researchBucket": "ADVANCE_TO_DEEPER_RESEARCH",
+      "evidence": "Q2 $1.335bn FCF, $3.267bn net cash, 2026 AISC guide $1400-1550/oz",
+      "firstRejection": "Barnat operational issue, gold correction and price vs FX/listing reconciliation",
+      "evidenceDate": "2026-07-29",
+      "source": "https://agnicoeagle.com/English/news-and-media/news-releases/news-details/2026/AGNICO-EAGLE-REPORTS-SECOND-QUARTER-2026-RESULTS---RECORD-QUARTERLY-FREE-CASH-FLOW-REFLECTS-SOLID-OPERATIONAL-PERFORMANCE-RECORD-QUARTERLY-SHAREHOLDER-RETURNS/default.aspx"
+    },
+    {
+      "ticker": "GFI",
+      "theme": "Gold",
+      "researchBucket": "ADVANCE_TO_DEEPER_RESEARCH",
+      "evidence": "H1 adjusted FCF $2.225bn (+134% YoY); AISC $1893/oz; net debt/EBITDA 0.06x",
+      "firstRejection": "Realised gold $4681/oz H1 above current $4060; JSE vs US ADR vendor valuation units",
+      "evidenceDate": "2026-08-25",
+      "source": "https://www.goldfields.com/reports/q2-2026/index.php"
+    },
+    {
+      "ticker": "KGC",
+      "theme": "Gold",
+      "researchBucket": "OPERATING_PROOF_GATED",
+      "evidence": "Q2 attributable FCF $726.8m, but Sept 23 reduced 2026/27 production 2-3% below prior low-end to 1.84-1.86m eq oz",
+      "firstRejection": "Production/weather/La Coipa/Round Mountain, higher $1850-1900 AISC guidance",
+      "evidenceDate": "2026-09-23",
+      "source": "https://www.kinross.com/English/news-and-investors/news-releases/press-release-details/2026/Kinross-provides-operational-and-return-of-capital-update/default.aspx"
+    },
+    {
+      "ticker": "B",
+      "theme": "Gold/copper",
+      "researchBucket": "OPERATING_PROOF_GATED",
+      "evidence": "Q2 total FCF $515m, attributable FCF $141m; copper AISC +36% YoY; $1.2bn buybacks",
+      "firstRejection": "Capital returns exceed attributable Q2 FCF; Reko Diq timing, $70 WTI cost assumption",
+      "evidenceDate": "2026-08-??",
+      "source": "https://www.barrick.com/English/news/news-details/2026/q2-2026-results/default.aspx"
+    },
+    {
+      "ticker": "WPM",
+      "theme": "Precious streams",
+      "researchBucket": "VALUATION_GATED",
+      "evidence": "Q2 CFO $649.5m; operating model diversifies direct extraction",
+      "firstRejection": "Streamer financing and acquisition outflows; US quoted trailing multiples not obviously cheap",
+      "evidenceDate": "2026-08-06",
+      "source": "https://www.wheatonpm.com/news/news-details/2026/Wheaton-Precious-Metals-Announces-Second-Quarter-2026-Results-and-Record-Year-to-Date-Production-Revenue-Earnings-and-Cash-Flow/default.aspx"
+    },
+    {
+      "ticker": "FCX",
+      "theme": "Copper",
+      "researchBucket": "OPERATING_PROOF_GATED",
+      "evidence": "Q3 copper ~830m lb; Grasberg ~67% normal throughput early Oct; 2027 recovery",
+      "firstRejection": "Copper refined surplus and Indonesia ramp/cost",
+      "evidenceDate": "2026-10-02",
+      "source": "https://investors.fcx.com/investors/news-releases/news-release-details/2026/Freeport-Provides-Third-Quarter-2026-Operational-Update/default.aspx"
+    },
+    {
+      "ticker": "RIO",
+      "theme": "Copper/iron",
+      "researchBucket": "DIVERSIFIED_RESEARCH",
+      "evidence": "Oyu Tolgoi copper +29% YTD; Simandou 10Mtpa run-rate Q3",
+      "firstRejection": "China iron ore and capex returns; not pure copper",
+      "evidenceDate": "2026-10-14",
+      "source": "https://www.riotinto.com/en/news/releases/2026/rio-tinto-releases-third-quarter-2026-production-results"
+    },
+    {
+      "ticker": "BHP",
+      "theme": "Copper/iron/potash",
+      "researchBucket": "WAIT_PRODUCTION_PROOF",
+      "evidence": "FY27 Q1 copper output -19%; Jansen potash capex",
+      "firstRejection": "Production, grades and project returns, China iron ore",
+      "evidenceDate": "2026-10-20",
+      "source": "https://www.bhp.com/news/media-centre/releases/2026/10/bhp-operational-review-for-the-quarter-ended-30-september-2026"
+    },
+    {
+      "ticker": "TECK",
+      "theme": "Copper/zinc",
+      "researchBucket": "EVENT_RISK_WATCH",
+      "evidence": "21 Oct strike notice at Highland Valley; action possible 24 Oct 08:00 PT",
+      "firstRejection": "Labour disruption, investment spending, merger",
+      "evidenceDate": "2026-10-21",
+      "source": "https://www.globenewswire.com/news-release/2026/10/21/3385806/0/en/teck-receives-highland-valley-copper-operations-strike-notice.html"
+    },
+    {
+      "ticker": "AA",
+      "theme": "Aluminium/alumina",
+      "researchBucket": "ADVANCE_TO_DEEPER_RESEARCH",
+      "evidence": "Q3 FCF $472m; net profit $483m, revenue $3.704bn; production sixth quarterly increase",
+      "firstRejection": "AliGroup acquisition funding and higher input cost; cycle peak/holdings overlap",
+      "evidenceDate": "2026-10-15",
+      "source": "https://investors.alcoa.com/press-releases/press-release-details/2026/Alcoa-Corporation-Reports-Third-Quarter-2026-Results/default.aspx"
+    },
+    {
+      "ticker": "LYC.AX",
+      "theme": "Rare earths",
+      "researchBucket": "ADVANCE_TO_DEEPER_RESEARCH",
+      "evidence": "FY26 NPAT A$222.4m vs A$8m; FY26 REO 13,089t; 12yr Japanese NdPr floor/offtake; Malaysian HRE output",
+      "firstRejection": "A$968m all-share Meteoric scheme at ~5.9% pro forma dilution and US$498m development capex",
+      "evidenceDate": "2026-10-01",
+      "source": "https://meteoric.com.au/lynas-takeover-offer/"
+    },
+    {
+      "ticker": "MP",
+      "theme": "Rare earths/magnets",
+      "researchBucket": "POLICY_CAPEX_WATCH",
+      "evidence": "Q2 NdPr output +41% to 840t; $17.6m price-protection income; consolidated net loss $20.3m",
+      "firstRejection": "Government payments != repeatable merchant margin; magnet ramp and capex",
+      "evidenceDate": "2026-08-06",
+      "source": "https://investors.mpmaterials.com/investor-news/news-details/2026/MP-Materials-Reports-Second-Quarter-2026-Results/default.aspx"
+    },
+    {
+      "ticker": "UUUU",
+      "theme": "Uranium/REE",
+      "researchBucket": "CAPEX_EXECUTION_WATCH",
+      "evidence": "White Mesa heavy REE facility underway; ASM acquired Aug 28; metal/alloy/magnets expansion path",
+      "firstRejection": "Integration, VAC planned acquisition, conditional government finance, commercial ramp 2027+",
+      "evidenceDate": "2026-08-28",
+      "source": "https://www.energyfuels.com/"
+    },
+    {
+      "ticker": "ALB",
+      "theme": "Lithium",
+      "researchBucket": "CYCLE_PRICE_GATED",
+      "evidence": "Q2 adjusted EBITDA $858m (+155%); FCF $638m boosted by working capital",
+      "firstRejection": "China carbonate -40.3% May-end Sep, potential Q4 supply, not a consistent earnings base",
+      "evidenceDate": "2026-10-12",
+      "source": "https://www.spglobal.com/energy/en/news-research/latest-news/metals/101226-trade-review-asian-lithium-market-likely-to-ease-late-q4-on-feedstock-arrivals"
+    },
+    {
+      "ticker": "CCJ",
+      "theme": "Uranium/fuel",
+      "researchBucket": "KEEP_EXISTING_RESEARCH",
+      "evidence": "Q2 uranium portfolio contracts >28m pounds annual delivery average over next five years",
+      "firstRejection": "Inventory purchases and valuation, Westinghouse execution",
+      "evidenceDate": "2026-08",
+      "source": "https://www.cameco.com/media/news/cameco-reports-2026-second-quarter-results"
+    },
+    {
+      "ticker": "MSC",
+      "theme": "Tin / Malaysia",
+      "researchBucket": "LOCAL_NICHE_RESEARCH",
+      "evidence": "Q2 revenue RM637.3m (+68.2% YoY); attributable profit RM34m (+144%), 5.34% net margin",
+      "firstRejection": "Low company net margin vs selected large miners, smelting costs and refined tin pricing",
+      "evidenceDate": "2026-08-12",
+      "source": "https://links.sgx.com/FileOpen/MSC%202Q2026%20Media%20Release.ashx?App=Announcement&FileID=900455"
+    },
+    {
+      "ticker": "PAAS",
+      "theme": "Silver/gold",
+      "researchBucket": "UNVERIFIED_WATCH",
+      "evidence": "Silver miner, higher volatility than gold; check Q2 statement before thesis upgrade",
+      "firstRejection": "Cyclical silver correction, unverified FCF and valuation",
+      "evidenceDate": "2026-10-22",
+      "source": null
+    },
+    {
+      "ticker": "FNV",
+      "theme": "Precious royalties",
+      "researchBucket": "VALUATION_GATED",
+      "evidence": "Royalty business lower direct operating cost risk than mines",
+      "firstRejection": "Premium valuation vs underlying mine payment growth; Q3 pending",
+      "evidenceDate": "2026-10-22",
+      "source": null
+    },
+    {
+      "ticker": "FQM.TO",
+      "theme": "Copper / Zambia",
+      "researchBucket": "DEPRIORITIZE_FINANCING_RISK",
+      "evidence": "Q2 net debt $5.407bn; CFO $130m vs $780m prior year; copper AISC $4.27/lb",
+      "firstRejection": "Debt and weaker operating cash despite copper rally; Panama uncertainty",
+      "evidenceDate": "2026-Q2",
+      "source": "https://www.first-quantum.com/news/first-quantum-minerals-reports-second-quarter-2026-results/"
+    }
+  ],
+  "macroCrosswalk": [
+    "Gold miners: inflation raises real yields and mine fuel/royalty costs; quality cash return beats raw margin.",
+    "Copper: distinguish mine feed scarcity vs refined surplus; AI power/grid is incremental demand, not blank cheque on price.",
+    "AI semiconductors: rare earth magnet bottlenecks have tangible factory equipment impact; TSMC substitution also long-run risk to REE intensity.",
+    "Existing Malaysian holdings: MSC is tin specialty diversification; no replacement for YTLPOWR/energy holdings risk reviews.",
+    "No automatic change to canonical PowerSweep 12-slot selection or single authority Live Desk.",
+    "Rare-earth capacity can be subsidized and never realize private shareholder returns if prices normalize."
+  ],
+  "watchEvents": [
+    {
+      "date": "2026-10-22",
+      "name": "NEM Q3 after US market close; before release no Q3 result assumptions"
+    },
+    {
+      "date": "2026-10-24",
+      "name": "TECK HVC strike earliest 08:00 PT"
+    },
+    {
+      "date": "2026-10-27",
+      "name": "FCX Q3 premarket"
+    },
+    {
+      "date": "2026-10-28",
+      "name": "AEM Q3 after close"
+    },
+    {
+      "date": "2026-10-30",
+      "name": "CCJ Q3 before US open"
+    },
+    {
+      "date": "2026-11-05",
+      "name": "WPM Q3 after close"
+    },
+    {
+      "date": "2027-01",
+      "name": "Meteoric Lynas scheme shareholder meeting indicative"
+    }
+  ],
+  "sourceNotes": [
+    "ICSG Oct 14 now projects refined surplus 104kt in 2026 and 368kt in 2027; supersedes older Apr estimates. Distinct from mine supply.",
+    "GAAP net margins vs non-GAAP AISC, CFO, attributable FCF, adjusted FCF are not interchangeable.",
+    "Some cross-listing quote metrics appear inconsistent; label provisional.",
+    "Primary evidence absent for 2026 PAAS/FNV latest issuer quarters here; no factual promotion."
+  ]
+}
