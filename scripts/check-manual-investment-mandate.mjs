@@ -46,7 +46,7 @@ assert.equal(watch.candidates.length,46);
 assert(Array.isArray(ideas) && ideas.length >= 56,"Research library should preserve all 56 baseline ideas");
 for(const x of ["Live Desk","Blue Desk","MacroPulse","Research Gap","GitHub","Notion","Finnhub","FMP","Quartr","Alpha Vantage","Supabase","Composio","FactIQ","StockedUp","Mark Malek","FXEvolution","TraderNick"])assert(manifesto.includes(x),x+" missing from manifesto");
 assert(manifesto.includes("Never include Lucid Trading"));
-assert(home.includes('id="mandate"') && home.includes("RM13,491") && home.includes("PS_MANUAL_INVESTMENT_MANIFESTO.md"));
+assert(home.includes('id="advisor"') && home.includes('id="next-moves"') && home.includes('id="investment-plan"') && home.includes("RM13,491") && home.includes("PS_MANUAL_INVESTMENT_MANIFESTO.md"));
 assert(readme.includes("data/rakuten-one-year-mandate.json"));
 assert(new Set(model.commandRouting.map(x=>x.command)).has("PS update"));
 console.log("Manual mandate verified: RM13491, 100% allocation, 12 manual reviews, read-only Live/Blue, no automation/trading and intact 8/46/56 baseline universes.");
