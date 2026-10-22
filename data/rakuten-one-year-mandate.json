@@ -1,0 +1,324 @@
+{
+  "schema": "power-stack-manual-investment-mandate/v1",
+  "effectiveDate": "2026-10-23",
+  "horizonEnd": "2027-10-23",
+  "timezone": "Asia/Kuala_Lumpur",
+  "capital": {
+    "startingAccountNAVMYR": 13491,
+    "confirmedByUser": true,
+    "confirmedAtDate": "2026-10-23",
+    "riskCapitalAllExpendable": true,
+    "isAdditionalDeposit": false,
+    "requiresBrokerHoldingReconciliation": true,
+    "existingBrokerCashUnknown": true,
+    "existingPositionsDoNotAddToMandate": true,
+    "noGuaranteedPrincipal": true,
+    "leverageAllowed": false,
+    "uncoveredOptionsAllowed": false,
+    "standingManualAuthorizationToTrade": false
+  },
+  "objectives": {
+    "stretchReturnRangePct": [
+      8,
+      12
+    ],
+    "illustrativeEndValueMYR": [
+      14570,
+      15110
+    ],
+    "benchmark": [
+      "MYR liquid risk-free/MGS 1yr",
+      "RSP one-year price+income after MYR FX",
+      "US 7-10-year government bond total return after MYR FX"
+    ],
+    "reviewNAVLossPct": -10,
+    "reviewNAVLevelMYR": 12142,
+    "reviewLevelHardLossCap": false,
+    "fxAndFeesMustBeIncluded": true
+  },
+  "sourceBindings": {
+    "manifesto": "PS_MANUAL_INVESTMENT_MANIFESTO.md",
+    "decisionLedger": "data/decision-refresh-2026-10-23.json",
+    "allocationStyle": "editable targets; no orders placed",
+    "canonicalLiveFallback": "data/live-desk-canonical.json",
+    "canonicalLiveApi": "https://alchemy-live-market-desk.vercel.app/api/market-intelligence-snapshot",
+    "livePSThemeRead": "https://alchemy-live-market-desk.vercel.app/api/power-stack-context",
+    "blueDesk": "https://bluebelly-desk.vercel.app/",
+    "notionMacroPulse": "https://app.notion.com/p/3ea519b67a948161ba4dec8f97ebf658",
+    "notionResearchGap": "https://app.notion.com/p/3ea519b67a9481f9aa03d9767069487e",
+    "notionAI": "https://app.notion.com/p/3f4519b67a9481639302eee63384c180"
+  },
+  "allocation": [
+    {
+      "symbol": "VGIT",
+      "name": "Intermediate US Treasury ETF",
+      "allocationPct": 30,
+      "targetMYR": 4047,
+      "status": "BUY_STAGED_RESEARCH",
+      "entryStages": [
+        {
+          "amountMYR": 2000,
+          "condition": "Verified actual Rakuten buying power, US ETF eligibility, contemporaneous yield+USD/MYR, no long-end repricing spike"
+        },
+        {
+          "amountMYR": 2047,
+          "condition": "Post Oct27-28 FOMC and rate/credit/term-premium evidence remains favorable; no averaging down solely on price"
+        }
+      ],
+      "protection": "Rate-duration shock and FX; evaluate if 10Y real yields and term premium rise persistently; compare IEF as substitute only"
+    },
+    {
+      "symbol": "CF",
+      "name": "CF Industries",
+      "allocationPct": 14,
+      "targetMYR": 1889,
+      "status": "BUY_AFTER_EARNINGS_RECHECK",
+      "entryStages": [
+        {
+          "amountMYR": 950,
+          "condition": "Nov4 Q3 official financials confirm normalised FCF, nitrogen spread, debt, next 12m returns and acceptable same-exchange valuation"
+        },
+        {
+          "amountMYR": 939,
+          "condition": "Follow-through earnings/stock reaction after initial tranche, no natural-gas margin collapse"
+        }
+      ],
+      "protection": "Thesis review if forward nitrogen-gas spread turns negative and working-capital improvement reverses"
+    },
+    {
+      "symbol": "RSP",
+      "name": "S&P 500 Equal Weight ETF",
+      "allocationPct": 12,
+      "targetMYR": 1619,
+      "status": "BUY_IF_BREADTH_VALUATION_SUPPORT",
+      "entryStages": [
+        {
+          "amountMYR": 1619,
+          "condition": "Real ETF order availability, valuation, breadth RSP/SPY and sector earnings; do not chase single-day defensive rally"
+        }
+      ],
+      "protection": "Broad-market drawdown and inflation risk; relative RSP/SPY and earnings revisions"
+    },
+    {
+      "symbol": "TSM",
+      "name": "TSMC US ADR",
+      "allocationPct": 9,
+      "targetMYR": 1214,
+      "status": "WAIT_FOR_QUALITY_ENTRY",
+      "entryStages": [
+        {
+          "amountMYR": 1214,
+          "condition": "Updated issuer earnings and capacity demand remain strong and QQQ/SMH risk/crowding stabilize; same-listing price and FX verified"
+        }
+      ],
+      "protection": "Advanced-node paid order backlog, Taiwan geopolitical and FX risk, customer capex delivery"
+    },
+    {
+      "symbol": "TLT",
+      "name": "20+ Year US Treasury ETF",
+      "allocationPct": 10,
+      "targetMYR": 1349,
+      "status": "TACTICAL_ONLY_IF_RATES_GATE",
+      "entryStages": [
+        {
+          "amountMYR": 1349,
+          "condition": "After FOMC and issuer duration/SEC yield/same-date 20y-30y yields; loss-budget and no inflation/term-premium reversal"
+        }
+      ],
+      "protection": "~14.8y indicative duration, 50bp adverse yield move around -7.4% price before convexity/carry/FX; not a guarantee"
+    },
+    {
+      "symbol": "SGOV",
+      "name": "0-3 Month US Treasury ETF",
+      "allocationPct": 10,
+      "targetMYR": 1349,
+      "status": "LIQUIDITY_IF_US_TAX_TRADABILITY_PASS",
+      "entryStages": [
+        {
+          "amountMYR": 1349,
+          "condition": "Broker ETF eligibility and current yield, distribution tax, FX charges compared with MYR deposit/MGS"
+        }
+      ],
+      "protection": "USD/MYR and counterparty/instrument mechanics, not long-duration interest-rate speculation"
+    },
+    {
+      "symbol": "MYR_CASH",
+      "name": "Rakuten MYR settlement cash",
+      "allocationPct": 15,
+      "targetMYR": 2024,
+      "status": "RETAIN_UNCOMMITTED",
+      "entryStages": [
+        {
+          "amountMYR": 2024,
+          "condition": "Keep as available buying power until a verified new opportunity exceeds the expected net MYR return of cash"
+        }
+      ],
+      "protection": "No return presumed; fees, available broker balance and settlement checks"
+    }
+  ],
+  "allocationSumMYR": 13491,
+  "allocationSumPct": 100,
+  "incumbentReview": [
+    {
+      "ticker": "DAYANG",
+      "action": "PRIORITY_EXIT_RESEARCH"
+    },
+    {
+      "ticker": "TSLA",
+      "action": "TRIM_REVIEW"
+    },
+    {
+      "ticker": "YTLPOWR",
+      "action": "CONCENTRATION_REBALANCE_REVIEW"
+    },
+    {
+      "ticker": "6742UW",
+      "action": "IDENTITY_AND_EXPIRY_VERIFICATION_REQUIRED"
+    },
+    {
+      "ticker": "HIBISCS",
+      "action": "ENERGY_OVERLAP_REVIEW"
+    },
+    {
+      "ticker": "MISC",
+      "action": "HOLD_IF_COMPETITIVE_RISK_ADJUSTED"
+    },
+    {
+      "ticker": "XOM",
+      "action": "HOLD_IF_COMPETITIVE_RISK_ADJUSTED"
+    },
+    {
+      "ticker": "TTWO",
+      "action": "CATALYST_AND_EVENT_REVIEW"
+    }
+  ],
+  "accountReconciliation": {
+    "checked": false,
+    "holdingsQuantitiesAreHistorical": true,
+    "latestHistoricalQuantityDate": "2026-10-02",
+    "unverifiedWarrant": "6742UW",
+    "expectedValueMYR": 13491,
+    "userConfirmedAccountTotalMYR": 13491,
+    "allOpenTradesBlocked": true,
+    "rule": "Do not finance purchases from assumed deposits or proceeds until exact broker positions, cash and latest order fill costs are verified."
+  },
+  "commandRouting": [
+    {
+      "command": "PS update",
+      "scope": "manual delta research and ranked action review; update dated artifacts in current run"
+    },
+    {
+      "command": "PS deep sweep",
+      "scope": "partition cross-asset, issuer, bonds, FX, Asia, Europe, commodities, creator and holdings; record completeness and independent corroboration"
+    },
+    {
+      "command": "PS action",
+      "scope": "two qualified buys plus two portfolio recycling candidates with target MYR, catalyst, quote and order blockers"
+    },
+    {
+      "command": "PS bonds",
+      "scope": "compare duration and foreign FX after MYR on US/EU/UK/AU/NZ/Asia government markets"
+    },
+    {
+      "command": "PS results",
+      "scope": "realized+unrealized net MYR P&L, dividends, FX, fees, drawdowns, benchmarks"
+    },
+    {
+      "command": "PS reset",
+      "scope": "after 2027-10-23, reconcile accounts and form fresh 12m mandate; no automatic reset purchases"
+    }
+  ],
+  "processControls": {
+    "liveDeskMacroAuthority": true,
+    "blueDeskProjectionOnly": true,
+    "creatorHypothesisOnly": true,
+    "newAutomationAllowed": false,
+    "schedulingCadenceChanged": false,
+    "externalPowerSweepInvestigationHardCap": 12,
+    "canonicalRegimeWriteAllowed": false,
+    "brokerOrdersAllowed": false,
+    "existingHoldingsUnchanged": true,
+    "existingWatchlistScoresUnchanged": true,
+    "stalenessExplicit": true,
+    "issuerDataRequired": true,
+    "sourceHashesAndTimestampsRequired": true,
+    "brokerPriceBeforeExecutionRequired": true,
+    "exactCashBeforeExecutionRequired": true,
+    "perBuyCanBeReplacedOnFailedGate": true
+  },
+  "monthlyReviews": [
+    {
+      "month": 1,
+      "reviewDateMYT": "2026-11-23",
+      "theme": "Reconcile broker capital, first FOMC, CF Q3 and initial Treasury entries",
+      "runMode": "MANUAL_USER_TRIGGERED_NOT_SCHEDULED"
+    },
+    {
+      "month": 2,
+      "reviewDateMYT": "2026-12-23",
+      "theme": "Yield/term premium checks and plan's remaining VGIT tranche",
+      "runMode": "MANUAL_USER_TRIGGERED_NOT_SCHEDULED"
+    },
+    {
+      "month": 3,
+      "reviewDateMYT": "2027-01-23",
+      "theme": "Q4 portfolio YTD and corporate earnings setup, rate thesis review",
+      "runMode": "MANUAL_USER_TRIGGERED_NOT_SCHEDULED"
+    },
+    {
+      "month": 4,
+      "reviewDateMYT": "2027-02-23",
+      "theme": "Latest semiconductor/CF earnings, AI credit and Asia risk",
+      "runMode": "MANUAL_USER_TRIGGERED_NOT_SCHEDULED"
+    },
+    {
+      "month": 5,
+      "reviewDateMYT": "2027-03-23",
+      "theme": "MYR FX, credit spreads, mining versus alternative returns",
+      "runMode": "MANUAL_USER_TRIGGERED_NOT_SCHEDULED"
+    },
+    {
+      "month": 6,
+      "reviewDateMYT": "2027-04-23",
+      "theme": "Six-month high-water/drawdown review and reallocation",
+      "runMode": "MANUAL_USER_TRIGGERED_NOT_SCHEDULED"
+    },
+    {
+      "month": 7,
+      "reviewDateMYT": "2027-05-23",
+      "theme": "Bonds coupon/price/FX versus MGS and defensive equity peers",
+      "runMode": "MANUAL_USER_TRIGGERED_NOT_SCHEDULED"
+    },
+    {
+      "month": 8,
+      "reviewDateMYT": "2027-06-23",
+      "theme": "Midyear global policy cycle, company cash conversions",
+      "runMode": "MANUAL_USER_TRIGGERED_NOT_SCHEDULED"
+    },
+    {
+      "month": 9,
+      "reviewDateMYT": "2027-07-23",
+      "theme": "Q2 earnings validation and late-stage take-profit decisions",
+      "runMode": "MANUAL_USER_TRIGGERED_NOT_SCHEDULED"
+    },
+    {
+      "month": 10,
+      "reviewDateMYT": "2027-08-23",
+      "theme": "T-minus-two-month exit path and trading/tax cost inventory",
+      "runMode": "MANUAL_USER_TRIGGERED_NOT_SCHEDULED"
+    },
+    {
+      "month": 11,
+      "reviewDateMYT": "2027-09-23",
+      "theme": "Harvest positions that matured; classify carryover theses",
+      "runMode": "MANUAL_USER_TRIGGERED_NOT_SCHEDULED"
+    },
+    {
+      "month": 12,
+      "reviewDateMYT": "2027-10-23",
+      "theme": "Final net MYR total return, withdrawal/reinvest decision, reset capital budget",
+      "runMode": "MANUAL_USER_TRIGGERED_NOT_SCHEDULED"
+    }
+  ],
+  "createdFrom": "Confirmed RM13491 user statement and existing Oct23 2026 one-year research model; not verified live Rakuten position export; only old position estimates exist."
+}
