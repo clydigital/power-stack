@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-stack-ai-catalyst-gates/1",
-  "asOf": "2026-10-14T06:11:00+08:00",
+  "asOf": "2026-10-23T04:38:00+08:00",
   "owner": "Power Stack investment research; Alchemy Live Desk retains canonical market regime and Motion authority",
   "policy": {
     "sourcePrecedence": [
@@ -22,8 +22,21 @@
       "event": "Q3 2026 earnings and guidance",
       "eventAtMYT": "2026-10-15T14:00:00+08:00",
       "timeBasis": "Issuer IR conference time: Thursday 15 October 2026 14:00 Taiwan time (MYT is same UTC+8). Results documents may appear ahead of the conference.",
-      "status": "PRE_RELEASE",
-      "observedResults": null,
+      "status": "ACTUAL_PRIMARY_VERIFIED",
+      "observedResults": {
+        "period": "Q3 2026",
+        "reportedAt": "2026-10-15",
+        "revenueUSDBn": 46.72,
+        "netIncomeTWDBn": 763.06,
+        "grossMarginPct": 66.4,
+        "operatingMarginPct": 58.7,
+        "q4RevenueGuidanceUSDBn": [
+          52.3,
+          54.3
+        ],
+        "source": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000726/a3q26e_withguidancexfinal.htm",
+        "status": "ACTUAL_PRIMARY_VERIFIED"
+      },
       "marketBaseline": {
         "asOf": "2026-10-13 US close",
         "usEquities": "S&P 500 7,805.45 (−0.02%); Nasdaq Composite 27,204.38 (−0.15%)",
@@ -225,7 +238,67 @@
           "sourceUrl": "https://apnews.com/article/a0a577dfd12f63ee6780a56ab02b55c4",
           "implication": "Market-breadth divergence requires dated credit/breadth confirmation, not price action as proof of failed financing."
         }
-      ]
+      ],
+      "priorStatus": "PRE_RELEASE",
+      "eventReadbackDate": "2026-10-23"
     }
-  ]
+  ],
+  "priorAsOf": "2026-10-14T06:11:00+08:00",
+  "latestIssuerReadback": {
+    "TSM": {
+      "period": "Q3 2026",
+      "reportedAt": "2026-10-15",
+      "revenueUSDBn": 46.72,
+      "netIncomeTWDBn": 763.06,
+      "grossMarginPct": 66.4,
+      "operatingMarginPct": 58.7,
+      "q4RevenueGuidanceUSDBn": [
+        52.3,
+        54.3
+      ],
+      "source": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000726/a3q26e_withguidancexfinal.htm",
+      "status": "ACTUAL_PRIMARY_VERIFIED"
+    },
+    "META": {
+      "period": "Q3 2026",
+      "reportedAt": "2026-10-21",
+      "revenueUSDBn": 64.601,
+      "operatingCFOUSDBn": 32.786,
+      "fcfUSDBn": -2.12,
+      "capex2026GuidanceUSDBn": [
+        135,
+        145
+      ],
+      "caveat": "Legal expense 9.89bn causes incomparable operating margin",
+      "status": "ACTUAL_PRIMARY_VERIFIED",
+      "source": "https://www.prnewswire.com/news-releases/meta-reports-third-quarter-2026-results-302915964.html"
+    },
+    "TSLA": {
+      "period": "Q3 2026",
+      "reportedAt": "2026-10-21",
+      "netIncomeUSDm": 787,
+      "fcfUSDBn": 1.5,
+      "capexUSDBn": 4.7,
+      "status": "REPORTED_AND_RECONCILED",
+      "source": "https://apnews.com/article/cfe0453f6bf0d08d22150022128492fa"
+    },
+    "GEV": {
+      "period": "Q3 2026",
+      "reportedAt": "2026-10-28",
+      "status": "SCHEDULED_NOT_RELEASED",
+      "source": "https://www.gevernova.com/news/press-releases/ge-vernova-announce-third-quarter-2026-financial-results-october-28"
+    },
+    "CF": {
+      "period": "Q3 2026",
+      "reportedAt": "2026-11-04",
+      "status": "SCHEDULED_NOT_RELEASED",
+      "source": "https://ir.cfindustries.com/Investors/news/news-details/2026/CF-Industries-Holdings-Inc--Declares-Quarterly-Dividend-and-Confirms-Dates-for-Third-Quarter-2026-Results-and-Conference-Call/default.aspx"
+    },
+    "NEM": {
+      "period": "Q3 2026",
+      "reportedAt": "2026-10-22_after_close",
+      "status": "SCHEDULED_NOT_INDEPENDENTLY_READBACK",
+      "source": "https://www.newmont.com/investors/news-release/news-details/2026/Newmont-Announces-Third-Quarter-2026-Results-Conference-Call/default.aspx"
+    }
+  }
 }
