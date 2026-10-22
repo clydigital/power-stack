@@ -1,0 +1,374 @@
+{
+  "contractVersion": "power-stack-global-sovereign-bond-sweep/1",
+  "asOf": "2026-10-23",
+  "observationCutoffs": {
+    "internationalBenchmarks": "2026-10-21 daily local close indicative, not tradeable screen quotes",
+    "frenchIntraday": "2026-10-22 Reuters intraday OAT >5.14%, spread ~177.7bp",
+    "asia": "2026-10-21 ADB AsianBondsOnline",
+    "etfFundFacts": "Issuer dates range Sep 8 to Oct 19 2026; separate NAV, YTM, SEC yield"
+  },
+  "authority": "Research-only noncanonical. Do not change PowerSweep, Live Desk macro regime, eight holdings, 46-score ranks, automation cadence or place orders.",
+  "regionYields": [
+    {
+      "country": "United Kingdom",
+      "tenYearPct": 5.38,
+      "asOf": "2026-10-21",
+      "currency": "GBP",
+      "policyRatePct": 3.75,
+      "inflationPct": 3.5,
+      "inflationPeriod": "2026-09 CPI",
+      "stance": "RATE_HIKE_RISK_AFTER_BUDGET",
+      "action": "WAIT_FOR_BUDGET_AND_BOE",
+      "trigger": "28 Oct fiscal budget and 5 Nov BoE; monitor 30Y >6% risk"
+    },
+    {
+      "country": "Australia",
+      "tenYearPct": 5.27,
+      "asOf": "2026-10-21",
+      "currency": "AUD",
+      "policyRatePct": 4.6,
+      "inflationPct": 4,
+      "inflationPeriod": "2026-08 CPI",
+      "stance": "ACTIVE_TIGHTENING",
+      "action": "WAIT_28OCT_CPI_3NOV_RBA",
+      "trigger": "CPI and peak rate proof; medium duration IAF / VGB"
+    },
+    {
+      "country": "United States",
+      "tenYearPct": 5.11,
+      "asOf": "2026-10-21",
+      "currency": "USD",
+      "policyRatePct": null,
+      "inflationPct": 3.7,
+      "inflationPeriod": "2026-09 CPI",
+      "stance": "FLIGHT_TO_QUALITY_FOLLOWING_AI_SELLOFF",
+      "action": "BUY_STAGED_VGIT_OR_IEF;_TLT_TACTICAL",
+      "trigger": "22 Oct UST 10Y sub5% intraday, official close and matched real yields unavailable"
+    },
+    {
+      "country": "New Zealand",
+      "tenYearPct": 5.06,
+      "asOf": "2026-10-21",
+      "currency": "NZD",
+      "policyRatePct": 2.75,
+      "inflationPct": 3.7,
+      "inflationPeriod": "2026-Q3 CPI released Oct22",
+      "stance": "OCR_HIKE_EXPECTATIONS",
+      "action": "WAIT_28OCT_RBNZ",
+      "trigger": "Quarterly CPI down from 4.1 to 3.7 (forecast 3.8), 28 Oct OCR announcement; NZD weak"
+    },
+    {
+      "country": "France",
+      "tenYearPct": 5.01,
+      "asOf": "2026-10-21",
+      "currency": "EUR",
+      "policyRatePct": 2.5,
+      "inflationPct": null,
+      "stance": "FISCAL_CREDIT_PREMIUM",
+      "action": "AVOID_LONG_FRENCH_OATS_NOW",
+      "trigger": "Spread above 177bp Oct22, bank CDS, budget, 2027 election, ECB TPI eligibility"
+    },
+    {
+      "country": "Italy",
+      "tenYearPct": 4.6,
+      "asOf": "2026-10-21",
+      "currency": "EUR",
+      "policyRatePct": 2.5,
+      "inflationPct": null,
+      "stance": "CONTAGION_WATCH",
+      "action": "WATCH_NOT_SAFE_HAVEN",
+      "trigger": "BTP-Bund spread and French contagion"
+    },
+    {
+      "country": "Germany",
+      "tenYearPct": 3.42,
+      "asOf": "2026-10-21",
+      "currency": "EUR",
+      "policyRatePct": 2.5,
+      "inflationPct": null,
+      "stance": "EUR_SAFE_HAVEN",
+      "action": "RESEARCH_5_10Y_BUND_ETF_AS_EU_HEDGE",
+      "trigger": "OAT–Bund further widening, ECB 29 Oct, FX EUR/MYR"
+    },
+    {
+      "country": "Japan",
+      "tenYearPct": 2.89,
+      "asOf": "2026-10-21",
+      "currency": "JPY",
+      "policyRatePct": 1.25,
+      "inflationPct": null,
+      "stance": "BOJ_NORMALIZATION_JAPAN_HOME_BIAS",
+      "action": "AVOID_LONG_JGB_FOR_CARRY;WATCH_YEN",
+      "trigger": "BoJ Oct29/30, MOF holdings/TIC FX, yen appreciation could dominate low yield"
+    },
+    {
+      "country": "India",
+      "tenYearPct": 7.44,
+      "asOf": "2026-10-21",
+      "currency": "INR",
+      "policyRatePct": null,
+      "inflationPct": null,
+      "stance": "HIGH_NOMINAL_WITH_OIL_CURRENCY_RISK",
+      "action": "RESEARCH_ONLY",
+      "trigger": "Oil/current account, rupee and international accessibility"
+    },
+    {
+      "country": "Malaysia",
+      "tenYearPct": 3.88,
+      "asOf": "2026-10-21",
+      "currency": "MYR",
+      "policyRatePct": 2.75,
+      "inflationPct": null,
+      "stance": "LOCAL_BASE_CURRENCY_ALTERNATIVE",
+      "action": "RESEARCH_3_5Y_MGS",
+      "trigger": "BNM 3Y 3.43 5Y 3.65; settlement minimum, retail broker access and inflation"
+    },
+    {
+      "country": "Korea",
+      "tenYearPct": 4.15,
+      "asOf": "2026-10-21",
+      "currency": "KRW",
+      "policyRatePct": 3,
+      "inflationPct": 2.9,
+      "inflationPeriod": "2026-09",
+      "stance": "AI_CAPEX_AND_BOK_TIGHTENING",
+      "action": "WAIT",
+      "trigger": "Nov BoK hikes and won; tech export growth"
+    },
+    {
+      "country": "China",
+      "tenYearPct": 1.63,
+      "asOf": "2026-10-21",
+      "currency": "CNY",
+      "policyRatePct": null,
+      "inflationPct": null,
+      "stance": "WEAK_DOMESTIC_DEMAND_DIVERGENCE",
+      "action": "LOW_CARRY_RESEARCH_ONLY",
+      "trigger": "China Q3 GDP 4.5, property weakness and PBoC easing"
+    },
+    {
+      "country": "Singapore",
+      "tenYearPct": 2.38,
+      "asOf": "2026-10-21",
+      "currency": "SGD",
+      "policyRatePct": null,
+      "inflationPct": null,
+      "stance": "HIGH_QUALITY_LOW_CARRY",
+      "action": "WATCH_BASE_CURRENCY_DIVERSIFICATION",
+      "trigger": "SGD/MYR and offshore availability"
+    },
+    {
+      "country": "Indonesia",
+      "tenYearPct": 7.42,
+      "asOf": "2026-10-21",
+      "currency": "IDR",
+      "policyRatePct": 5.75,
+      "inflationPct": null,
+      "stance": "HIGH_FX_AND_INFLATION_RISK",
+      "action": "AVOID_YIELD_CHASING",
+      "trigger": "foreign-flow, BI inflation and IDR"
+    },
+    {
+      "country": "Philippines",
+      "tenYearPct": 8,
+      "asOf": "2026-10-21",
+      "currency": "PHP",
+      "policyRatePct": 5.5,
+      "inflationPct": null,
+      "stance": "UNEXPECTED_50BP_HIKE_22OCT",
+      "action": "AVOID_YIELD_CHASING",
+      "trigger": "2026 inflation forecast 6.1, oil and El Nino"
+    }
+  ],
+  "frenchCrisis": {
+    "source": "Reuters Oct22/IMF Jul/ECB Sep/Allianz Oct9",
+    "oatPeakPct": 5.1415,
+    "spreadBp": 177.7,
+    "fiscal": {
+      "imfGrossDebtGDPpct2026": 118.5,
+      "imfDebtGDPpct2027": 120.3,
+      "imfFiscalDeficitGDPpct2026": 5.2
+    },
+    "monitor": [
+      "French OAT-Bund sustained spread >175bp vs stabilization <150bp (illustrative alert, not official threshold)",
+      "French bank 5Y CDS (BNP, SocGen), funding and subordinated debt; avoid direct contagion claim before bank indicators",
+      "Italian BTP-Bund and Belgian spreads",
+      "French budget and April 2027 presidential election",
+      "ECB TPI invoked only to counter unwarranted disorderly fragmentation, not any fundamental fiscal spread"
+    ],
+    "risk": "French OAT coupon 5% cannot be treated like 5% Bund risk. ECB TPI eligibility subject to fiscal criteria and assessment; not automatic unlimited insurance."
+  },
+  "etfs": [
+    {
+      "market": "US",
+      "ticker": "VGIT",
+      "currency": "USD",
+      "role": "MAIN_DURATION_CANDIDATE",
+      "durationYears": 4.8,
+      "feePct": 0.03,
+      "indicativeYieldPct": 4.52,
+      "yieldLabel": "30D SEC yield Sep8",
+      "source": "https://advisors.vanguard.com/investments/products/vgit/vanguard-intermediate-term-treasury-etf"
+    },
+    {
+      "market": "US",
+      "ticker": "IEF",
+      "currency": "USD",
+      "role": "MORE_DURATION_ALTERNATIVE",
+      "durationYears": 6.93,
+      "feePct": 0.15,
+      "indicativeYieldPct": 4.59,
+      "yieldLabel": "30D SEC yield Sep9",
+      "source": "https://www.ishares.com/us/products/239456/ishares-7-10-year-treasury-bond-etf"
+    },
+    {
+      "market": "US",
+      "ticker": "TLT",
+      "currency": "USD",
+      "role": "SMALL_TACTICAL_LONG_DURATION",
+      "durationYears": 14.79,
+      "feePct": 0.15,
+      "indicativeYieldPct": 5.41,
+      "yieldLabel": "30D SEC yield Oct16",
+      "source": "https://www.ishares.com/us/products/239454/ishares-20-year-treasury-bond-etf"
+    },
+    {
+      "market": "US",
+      "ticker": "SGOV",
+      "currency": "USD",
+      "role": "USD_LIQUIDITY",
+      "durationYears": 0.1,
+      "feePct": null,
+      "indicativeYieldPct": null,
+      "yieldLabel": "No current dated yield readback; duration Dec2025 BlackRock",
+      "source": "https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf"
+    },
+    {
+      "market": "Australia",
+      "ticker": "IAF.AX",
+      "currency": "AUD",
+      "role": "WATCH_INTERMEDIATE_AUS_GOV_SEMI_CREDIT",
+      "durationYears": 4.77,
+      "feePct": 0.1,
+      "indicativeYieldPct": 5.38,
+      "yieldLabel": "Issuer weighted portfolio YTM Oct14, NOT distribution yield. Govt and IG corporate mix.",
+      "source": "https://www.blackrock.com/au/products/251977/ishares-composite-bond-etf"
+    },
+    {
+      "market": "Australia",
+      "ticker": "VGB.AX",
+      "currency": "AUD",
+      "role": "WATCH_AUS_GOV_ONLY",
+      "durationYears": null,
+      "feePct": 0.16,
+      "indicativeYieldPct": null,
+      "yieldLabel": "Vanguard AUD government and state borrowing exposure; ETF YTM requires fresh issuer readback.",
+      "source": "https://www.vanguard.com.au/adviser/invest/funds-and-etfs"
+    },
+    {
+      "market": "UK",
+      "ticker": "IGLT.L",
+      "currency": "GBP",
+      "role": "WAIT_UK_BUDGET",
+      "durationYears": 7.01,
+      "feePct": 0.07,
+      "indicativeYieldPct": 5.1,
+      "yieldLabel": "Weighted portfolio YTM Oct16, NOT distribution rate; GBP share class.",
+      "source": "https://www.ishares.com/uk/individual/en/products/251806/ishares-uk-gilts-ucits-etf"
+    },
+    {
+      "market": "Germany",
+      "ticker": "XBTR.DE",
+      "currency": "EUR",
+      "role": "WATCH_GERMAN_BUND_HAVEN",
+      "durationYears": null,
+      "feePct": 0.15,
+      "indicativeYieldPct": null,
+      "yieldLabel": "Xtrackers Germany government ETF 1D; verify specific share class, primary listing, portfolio duration.",
+      "source": "https://etf.dws.com/de-de/LU0468896575-germany-government-bond-ucits-etf-1d/"
+    },
+    {
+      "market": "NZ",
+      "ticker": "NGB.NZ",
+      "currency": "NZD",
+      "role": "WAIT_RBNZ_LOCAL_SOVEREIGN",
+      "durationYears": null,
+      "feePct": null,
+      "indicativeYieldPct": null,
+      "yieldLabel": "Smart S&P/NZX NZ Government Bond ETF tracks NZ sovereigns (not NZB corporate mix).",
+      "source": "https://www.smartinvest.co.nz/funds-and-performance/etfs/bonds-and-cash"
+    },
+    {
+      "market": "Global ex-US",
+      "ticker": "BNDX",
+      "currency": "USD",
+      "role": "WATCH_DIVERSIFIED_EXUS_HEDGED_USD",
+      "durationYears": 6.5,
+      "feePct": 0.07,
+      "indicativeYieldPct": 3.77,
+      "yieldLabel": "30D SEC Sep10; USD hedged foreign bonds; USD/MYR not hedged",
+      "source": "https://advisors.vanguard.com/investments/products/bndx/vanguard-total-international-bond-etf"
+    }
+  ],
+  "returnRisk": {
+    "formula": "Approximate price-only bond sensitivity = -effectiveDuration * changeInYield (decimal). Excludes convexity, carry, FX, taxes and fund tracking.",
+    "shock50bp": {
+      "VGIT": 2.4,
+      "IEF": 3.465,
+      "TLT": 7.395,
+      "IAF": 2.385,
+      "IGLT": 3.505
+    },
+    "currencyExample": "Foreign 5.1% yield USD vs MGS 3.88% MYR: 2% depreciation of USD against MYR means approximate 3.0% MYR coupon-only before price changes (5.1*0.98 - 2 as percentage formulation), below 3.88% MGS. Not forecast.",
+    "hedgingRule": "USD-hedged global ETFs hedge underlying bond currency vs USD, NOT USD vs MYR. Forex hedging carries interest-rate differential/cross-currency basis and trading cost; cannot keep nominal yield without paying for hedge."
+  },
+  "upcoming": [
+    {
+      "date": "2026-10-27/28",
+      "event": "US Federal Reserve FOMC"
+    },
+    {
+      "date": "2026-10-28",
+      "event": "UK budget; NZ RBNZ OCR; Australian Sep CPI"
+    },
+    {
+      "date": "2026-10-29",
+      "event": "ECB policy meeting"
+    },
+    {
+      "date": "2026-10-29/30",
+      "event": "Bank of Japan policy meeting"
+    },
+    {
+      "date": "2026-11-03",
+      "event": "RBA policy meeting"
+    },
+    {
+      "date": "2026-11-05",
+      "event": "BoE policy decision"
+    }
+  ],
+  "sourceRefs": [
+    "https://countryeconomy.com/bonds",
+    "https://asianbondsonline.adb.org/",
+    "https://financialmarkets.bnm.gov.my/benchmark-yields",
+    "https://www.imf.org/en/news/articles/2026/07/22/pr26255-france-imf-executive-board-concludes-2026-article-iv-consultation",
+    "https://www.reuters.com/world/europe/french-debt-risk-premium-reaches-euro-zone-sovereign-crisis-levels-2026-10-22/",
+    "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp260910~314e508016.en.html",
+    "https://www.rba.gov.au/media-releases/2026/mr-26-27.html",
+    "https://www.rbnz.govt.nz/monetary-policy/about-monetary-policy/the-official-cash-rate",
+    "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/september-2026",
+    "https://www.boj.or.jp/en/",
+    "https://www3.parliament.nz/en/pb/library-research-papers/monthly-economic-review/monthly-economic-review-october-2026/",
+    "https://www.reuters.com/world/asia-pacific/new-zealand-q3-inflation-rises-07-previous-quarter-2026-10-21/"
+  ],
+  "discoveryGaps": [
+    "Issuer/market same-day Oct22 international bond closes not synchronized; 21 Oct table reference only.",
+    "EUR, GBP, AUD, NZD, JPY against MYR quotes/forward hedges not individually verified.",
+    "Current tax/residency, brokerage market eligibility, bid/ask liquidity and minimum trade denomination unknown.",
+    "Actual US HY/IG, French bank CDS vs country benchmark on Oct22 not time-matched.",
+    "Price/yield & return for local ETFs/VGB NGB XBTR not independently collected at Oct22 close.",
+    "Australia next CPI 28 Oct, NZ RBNZ 28 Oct, UK budget Oct28, ECB Oct29 and BoJ Oct29-30 could reverse risk premiums.",
+    "MGS retail access, accrued coupon prices, re-investment and local mark-to-market not confirmed."
+  ]
+}
