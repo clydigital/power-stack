@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "updatedAt": "2026-10-14",
+  "updatedAt": "2026-10-23T04:38:00+08:00",
   "purpose": "Machine-readable PowerSweep contract. Live Desk owns canonical macro/market state and immutable Market Motion. PowerSweep consumes that state, keeps its legacy Market Motion discovery only as an internal AUDIT_ONLY comparator, then spends a bounded research budget on portfolio translation, company evidence, divergences, hidden concentration and capital-allocation decisions.",
   "cranium": {
     "name": "Market Research Cranium",
@@ -240,5 +240,44 @@
       "researchPlaybook": "research/2026-10-14-live-ps-capability-routing.md",
       "policy": "Read-only, source-dated event research; TSMC Q3 is a test of supplier orders/margins and capital intensity, not private AI lab profitability. Record issuer readback before changing any company-specific gate. No new provider keys or independent scheduler."
     }
+  },
+  "buyDiscoveryPolicy": {
+    "asOf": "2026-10-23",
+    "objective": "Naturally discover investable public securities and Treasury exposure; NEVER enforce default WAIT across all security classes or mechanically upgrade a theme. BUY/SELL recommendations must be earned by evidenced business/cash economics, contemporaneous valuation and catalyst/price confirmation.",
+    "allowedDirectActions": [
+      "BUY_STARTER",
+      "BUY_ADDITIONAL_ON_CONFIRMATION",
+      "BUY_TACTICAL_SMALL",
+      "HOLD",
+      "TRIM",
+      "SELL_REVIEW",
+      "SELL_IF_INSTRUMENT_PROVEN",
+      "WAIT_MISSING_GATES",
+      "PASS"
+    ],
+    "stage1": {
+      "intake": [
+        "Official issuer earnings and free cash flow",
+        "FRED/Treasury rate, HY/IG, sector rotation and USD/MYR",
+        "Issuer capex/financing and forward guidance",
+        "Relevant primary macro and commodity physical data",
+        "Source-dated latest StockedUp/Mark Malek/FXEvolution/TraderNick transcripts only; creator evidence hypothesis weight 0"
+      ],
+      "discover": "Include unrelated sectors (agriculture, defensives, fixed income, materials, rates), not just familiar AI/power backlog; backtested counterfactual: look for overlooked winners when QQQ collapses but RSP rallies."
+    },
+    "stage2": {
+      "companyProof": "Revenue and margin quality, CFO minus capital PP&E, funded customer commitments and real return on capital; repeated earnings and unit economics",
+      "rateBondProof": "Duration effective, issuer SEC yield dates, close price, 10Y real vs breakeven, 20/30Y supply auctions, credit spreads and term premium",
+      "valuation": "Same-exchange dated shares/FX and normalized midcycle FCF and earnings; corporate action adjustments",
+      "risk": "Scenario mark-to-market loss, portfolio overlap, date-specific headline and cash/funding risk"
+    },
+    "stage3": {
+      "route": "Decisive personal review labels separate from operational execution; BUY should appear when minimum gates pass, with staged size if budget not known; SELL should follow broken operating case, not just a red candle.",
+      "invalidation": "For each buy/sell, explicitly state event or evidence that would reverse decision.",
+      "positionRules": "Never send broker order or assume active holdings quantity/cost; require current quote, permission, access, USD/MYR and risk cap for execution. Preserve 8 known holdings and scores/46 scored watchlist ranks unless issuer-level review supports explicit versioned rerank."
+    },
+    "sourceDatedHold": "If quote or accounting period unavailable, mark UNVERIFIED not 0; do not promote from video transcript alone. Avoid quarantining sound investments simply because market broad regime is high risk.",
+    "currentEvidence": "data/decision-refresh-2026-10-23.json",
+    "upstreamAuthority": "Live Desk canonical macro state; PowerStack evidence overlay only; do not raise PowerSweep 12 external investigation hard cap."
   }
 }
