@@ -1,0 +1,37 @@
+name: Validate client advisory desk
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'advisor-desk.js'
+      - 'advisor-desk.css'
+      - 'data/client-advisor.json'
+      - 'data/rakuten-one-year-mandate.json'
+      - 'data/research-sweep-config.json'
+      - 'scripts/check-client-advisor-ui.mjs'
+      - '.github/workflows/validate-client-advisor-ui.yml'
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'advisor-desk.js'
+      - 'advisor-desk.css'
+      - 'data/client-advisor.json'
+      - 'data/rakuten-one-year-mandate.json'
+      - 'data/research-sweep-config.json'
+      - 'scripts/check-client-advisor-ui.mjs'
+      - '.github/workflows/validate-client-advisor-ui.yml'
+jobs:
+  client-advisory-ui:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript
+        run: node --check advisor-desk.js
+      - name: Validate advisory decisions and visual hierarchy
+        run: node scripts/check-client-advisor-ui.mjs
+      - name: Validate inline scripts
+        run: node scripts/validate-static-html-js.mjs index.html
