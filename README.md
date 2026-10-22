@@ -1,5 +1,10 @@
 # Power Stack
 
+## 22 October 2026 — mining margin and commodity-opportunity review (research only)
+
+The [source-backed mining-profitability screen](research/2026-10-22-mining-profitability-opportunities.md) and refreshed [metals-research overlay](data/metals-research.json) evaluate the shared 31% mining-margin chart against SCCO Q3 cash results, AEM/WPM cash flow, BHP/Rio/FCX production, WGC mining costs and the current oil/rates/copper-inventory backdrop. **AEM, SCCO and WPM advance only to deeper research**, with FCX/Rio/BHP/NEM/CCJ on conditional watch; **no existing holdings, conviction scores, scored watchlist ranks, prior research rows, trade gates or Live Desk canonical regime were changed**. Current valuation/entry evidence remains unresolved.
+
+
 ## 18 October 2026 — AI regime and portfolio trade review (research only)
 
 The [18 October source-dated portfolio decision review](research/2026-10-18-ai-regime-portfolio-trade-review.md) and [machine-readable decision overlay](data/portfolio-decision-review-2026-10-18.json) reconcile the existing 16/16 current Notion AI-capex company trackers, Friday 16 October US/Malaysia share closes, the eight recorded holdings and seven conditional trade candidates. The first capital-recycling reviews are **DAYANG** (support/operating thesis broken), **YTLPOWR** (large verified MY common-equity concentration, former support broken), the **unverified warrant**, and **TSLA** (21 October binary earnings risk). Research priorities are **CF, ETN and BWXT** first; **GRAB, TSM and MU** require stronger specific confirmation. This does **not** overwrite company scores, positions, ranks, canonical Dossier or live trade permissions.
