@@ -1,5 +1,10 @@
 # Power Stack
 
+## 23 October 2026 — client-first Investment Advisory Desk
+
+The [client advisory homepage](https://clydigital.github.io/power-stack/) now prioritises **what to do next with the RM13,491 capital mandate**, how to fund buys by reviewing existing positions, exact allocations, staged bond/stock opportunities, sell/invalidation conditions, and the next catalyst dates. The page reads [source-dated client recommendations](data/client-advisor.json) plus the [one-year mandate](data/rakuten-one-year-mandate.json), with a non-executable cash-reconciliation warning. Its advisor components are in `advisor-desk.js` and `advisor-desk.css`; the long form market reasoning remains collapsible for clients who want it. **The portfolio outlook can adapt to newer independently verified market/issuer evidence without waiting for an old Live Dossier to be rewritten**, while the canonical Live Desk and Blue Desk boundaries remain intact. See [manual-investment manifesto](PS_MANUAL_INVESTMENT_MANIFESTO.md).
+
+
 ## Manual PS updates — investment manifesto and confirmed RM13,491 one-year mandate
 
 The [manual investment update manifesto](PS_MANUAL_INVESTMENT_MANIFESTO.md) is the standing instruction for **“PS update”, “PS deep sweep”, “PS action”, “PS bonds”, “PS results”, “PS reset”**. It routes Notion MacroPulse/Research Gap and creator leads through **Live Desk's canonical market evidence**, treats **Bluebelly/Blue Desk as a read-only projection**, then uses GitHub, issuer filings, Finnhub/Alpha Vantage/FactIQ, equity analysis skills, and sovereign/FX checks to produce **ranked, dated BUY/HOLD/TRIM/SELL/WAIT decisions** with exact intended RM size, financing source and invalidation. The [machine-readable 12-month Rakuten capital mandate](data/rakuten-one-year-mandate.json) uses user-confirmed **RM13,491 TOTAL risk capital**, not extra cash; provisional target sleeves sum to 100%, and actual existing positions still require broker reconciliation. **No automated trades, new scheduled tasks, altered Live authority, or 46-stock rerank.**
