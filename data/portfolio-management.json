@@ -1,6 +1,6 @@
 {
-  "asOf": "2026-10-14",
-  "capturedAt": "2026-10-14 05:26 MYT · selective AI-financing market overlay",
+  "asOf": "2026-10-23",
+  "capturedAt": "2026-10-23T04:38:00+08:00",
   "title": "Power Stack Portfolio Management Overlay",
   "purpose": "Position-sizing, concentration, add/trim/recycle and risk-budget overlay. This does not change company company-evidence components.",
   "dataQuality": {
@@ -10,11 +10,7 @@
     "rateResiliencePolicy": "The 10Y overlay may rerank research priority and tighten/loosen entry gates using already-verified company evidence. It does not mechanically change company-evidence components.",
     "aiFundingLens": "Dated 14 Oct analyst overlay; no repricing, security score change, inferred consolidated portfolio weight or feed-back into Live. Stale prices remain unsuitable for trades."
   },
-  "regime": {
-    "structural": "High long yields + selective AI customer financing + established power/electrical bottlenecks + product/logistics inflation risk",
-    "tactical": "13 Oct S&P 500 7,805.45 (-0.02%), Nasdaq 27,204.38 (-0.15%), SMH 588.12 (-0.49%). Semiconductor leadership weakens as CXMT competition grows, but market indices remain near highs and no broad AI order collapse is confirmed. US10Y ~5.216% (13 Oct reported) retains a high funding hurdle.",
-    "portfolioRead": "Remain selective. Do not sell all AI exposure just because chips weaken, but do not add another correlated power/memory/AI position without a fresh valuation, outside-customer cash demand and risk-budget test. Favour funded supplier contracts/FCF while checking energy-driven inflation and credit spillovers."
-  },
+  "regime": "RISK_OFF_TREASURY_SAFE_HAVEN / SELECTIVE_AI_CREDIT: after Oct22 QQQ -2.86%, SMH -5.99%, RSP +0.73%, TLT +1.87%, but oil and France risk persist.",
   "portfolioRules": [
     {
       "id": "single-name-concentration",
@@ -56,42 +52,57 @@
     {
       "ticker": "YTLPOWR",
       "role": "largest structural growth / Malaysia power concentration",
-      "action": "HOLD / NO ADD",
+      "action": "TRIM IF CONCENTRATION EXCESS",
       "sizingRead": "Concentration is the primary portfolio-management constraint even though the structural thesis remains strong.",
       "addGate": "Only reconsider after portfolio weight is normalized, price clears ~RM6.02/~RM6.14 and contracted load, funding, grid/self-supply, permitting and FCF conversion improve.",
-      "trimOrRecycleGate": "Consider partial risk reduction only if concentration exceeds the chosen cap, financing/contracted-load evidence weakens, or a confirmed breakout fails materially; do not trim solely because the position is profitable."
+      "trimOrRecycleGate": "Consider partial risk reduction only if concentration exceeds the chosen cap, financing/contracted-load evidence weakens, or a confirmed breakout fails materially; do not trim solely because the position is profitable.",
+      "priorAction": "HOLD / NO ADD",
+      "asOf": "2026-10-23",
+      "actionEvidence": "Normalize parent + warrant value and funded power contracts"
     },
     {
       "ticker": "6742UW",
       "role": "leveraged/decaying YTL-linked exposure",
-      "action": "NO INCREASE / TRACK TERMS",
+      "action": "VERIFY INSTRUMENT / NO ADD",
       "sizingRead": "Treat as part of YTLPOWR concentration, not as diversification.",
       "addGate": "None until strike, expiry, liquidity and standalone market value are verified.",
-      "trimOrRecycleGate": "Time decay/liquidity or parent-thesis deterioration can justify recycling before the parent equity."
+      "trimOrRecycleGate": "Time decay/liquidity or parent-thesis deterioration can justify recycling before the parent equity.",
+      "priorAction": "NO INCREASE / TRACK TERMS",
+      "asOf": "2026-10-23",
+      "actionEvidence": "Obtain issuer, ISIN, expiry and strike before any sale/add"
     },
     {
       "ticker": "XOM",
       "role": "core quality energy",
-      "action": "CORE HOLD / NO CHASE",
+      "action": "HOLD / NO ADD",
       "sizingRead": "Keep as the highest-quality energy anchor; do not add merely because refined-product stress persists.",
       "addGate": "Controlled retest plus product/crack confirmation and stable company operations.",
-      "trimOrRecycleGate": "Reduce only if energy cluster concentration is excessive or integrated/refining economics deteriorate; crude de-escalation alone is not enough."
+      "trimOrRecycleGate": "Reduce only if energy cluster concentration is excessive or integrated/refining economics deteriorate; crude de-escalation alone is not enough.",
+      "priorAction": "CORE HOLD / NO CHASE",
+      "asOf": "2026-10-23",
+      "actionEvidence": "Wait for Q3 integrated/refinery cash before new energy exposure"
     },
     {
       "ticker": "HIBISCS",
       "role": "higher-beta upstream energy",
-      "action": "HOLD / NO ADD",
+      "action": "HOLD / NO CHASE",
       "sizingRead": "Lower WTI reduces macro support; this should not receive fresh capital before repair.",
       "addGate": "Repair RM2.20-2.25 plus stable realized pricing/production.",
-      "trimOrRecycleGate": "Failure to repair with weakening operations makes it a candidate source of capital for higher-quality or less-correlated exposure."
+      "trimOrRecycleGate": "Failure to repair with weakening operations makes it a candidate source of capital for higher-quality or less-correlated exposure.",
+      "priorAction": "HOLD / NO ADD",
+      "asOf": "2026-10-23",
+      "actionEvidence": "Oil headline rally not verified realised FCF"
     },
     {
       "ticker": "MISC",
       "role": "shipping / logistics energy hedge",
-      "action": "HOLD",
+      "action": "HOLD / FUNDING CHECK",
       "sizingRead": "Useful diversification inside energy, but still tied to route/freight conditions and Yinson funding risk.",
       "addGate": "Yinson structure/funding clarity plus resilient freight/tanker economics.",
-      "trimOrRecycleGate": "Route normalization plus weaker freight or adverse funding terms reduce the case."
+      "trimOrRecycleGate": "Route normalization plus weaker freight or adverse funding terms reduce the case.",
+      "priorAction": "HOLD",
+      "asOf": "2026-10-23",
+      "actionEvidence": "Yinson liability and latest ship margin proof before adding"
     },
     {
       "ticker": "TTWO",
@@ -99,50 +110,59 @@
       "action": "HOLD / NO ADD",
       "sizingRead": "Do not use lower long yields as a substitute for GTA VI execution/cash-flow proof.",
       "addGate": "Sustained ~$210 then $216-217 reclaim plus catalyst execution.",
-      "trimOrRecycleGate": "Further technical deterioration or catalyst/cash-flow slippage."
+      "trimOrRecycleGate": "Further technical deterioration or catalyst/cash-flow slippage.",
+      "priorAction": "HOLD / NO ADD",
+      "asOf": "2026-10-23",
+      "actionEvidence": "GTA paid demand and launch confidence"
     },
     {
       "ticker": "TSLA",
       "role": "high-duration optionality / storage bridge",
-      "action": "HOLD / DO NOT AVERAGE DOWN",
+      "action": "TRIM REVIEW",
       "sizingRead": "Tactical rate relief helps, but valuation and execution remain the dominant risk-budget constraints.",
       "addGate": "Sustained >$383 then ~$397 plus stronger storage/autonomy cash-flow evidence.",
-      "trimOrRecycleGate": "Failure of repair, worsening auto economics or evidence that optionality is not converting into cash flow."
+      "trimOrRecycleGate": "Failure of repair, worsening auto economics or evidence that optionality is not converting into cash flow.",
+      "priorAction": "HOLD / DO NOT AVERAGE DOWN",
+      "asOf": "2026-10-23",
+      "actionEvidence": "Q3 net income drop despite positive FCF; assess post-earnings response and risk budget"
     },
     {
       "ticker": "DAYANG",
       "role": "lower-quality cyclical / operating recovery",
-      "action": "HOLD / DO NOT AVERAGE DOWN",
+      "action": "SELL / CAPITAL RECYCLING REVIEW",
       "sizingRead": "Highest-priority capital-recycling candidate if operating proof does not improve.",
       "addGate": "Utilization/work-order improvement plus RM1.50-1.52 recovery.",
-      "trimOrRecycleGate": "Break of RM1.42 or continued weak utilization/work-order conversion."
+      "trimOrRecycleGate": "Break of RM1.42 or continued weak utilization/work-order conversion.",
+      "priorAction": "HOLD / DO NOT AVERAGE DOWN",
+      "asOf": "2026-10-23",
+      "actionEvidence": "Q2 operating deterioration; verify Friday bid and actual broker quantity before submission"
     }
   ],
   "newCapitalPriority": [
     {
       "priority": 1,
-      "bucket": "Diversified growth / non-AI",
-      "instruction": "GRAB moves to active buy research because the core marketplace turnaround is increasingly proven. Do not add until Atome and the expanding lending book pass a credit-quality/FCF underwrite."
+      "bucket": "Treasury income and duration",
+      "instruction": "BUY staged VGIT or IEF after Friday quote; use SGOV for cash; TLT small tactical only, effective duration 14.79y and a +50bp rate stress approx -7.4% price."
     },
     {
       "priority": 2,
-      "bucket": "Nuclear cash flow and contracted power",
-      "instruction": "BWXT enters the scored Research Now list alongside CEG. BWXT offers defence/commercial nuclear cash flow without merchant-power concentration; CEG remains stronger contracted-power proof but should not be chased after the deal gap."
+      "bucket": "Non-AI cash and commodity",
+      "instruction": "BUY starter study CF ~$118.56 Oct22, with provisional PE 8.44x and issuer TTM FCF $1.82bn; guard Nov4 earnings, gas costs and oil/fertilizer feedback."
     },
     {
       "priority": 3,
-      "bucket": "Agriculture diversification",
-      "instruction": "Retire the old CTVA seed thesis. VYLR now owns seed/genetics and needs fresh underwriting; CF has the strongest current cash evidence; NTR is secondary; BG stays lower-priority but is not a stop-looking name."
+      "bucket": "Capital recycling first",
+      "instruction": "DAYANG SELL/EXIT REVIEW from damaged Q2 profits after Bursa price/liquidity check; TSLA TRIM REVIEW after Q3; YTL-linked concentration and warrant terms urgent."
     },
     {
       "priority": 4,
-      "bucket": "China / Hong Kong selective",
-      "instruction": "Alibaba remains the lead platform research name. Pair it with CGN/China Resources Power for cash-generating electricity exposure and use 3191/CXMT/Montage as distinct semiconductor-sovereignty implementations, not interchangeable tickers."
+      "bucket": "Quality opportunities still needing proof",
+      "instruction": "TSM, GEV, BWXT, NEM, AA, LNG, CEG and MU — entry proof or imminent earnings; no blanket AI dip buy."
     },
     {
       "priority": 5,
-      "bucket": "AI bottlenecks / overlap",
-      "instruction": "MU/CRDO remain serious candidates but increase correlation to existing power/AI exposures. Stress-test CXMT competition, actual cash collections, financing of end customers and entry valuation; GEV/ETN are diversified physical supplier alternatives, not risk-free substitutes. New ANET/CSCO leads are unscored until full issuer underwriting."
+      "bucket": "Credit-lending turnaround",
+      "instruction": "GRAB WAIT until Atome consumer-credit vintage losses and funded cash requirements reconcile; $2.85 quote is not standalone cheapness."
     }
   ],
   "riskDashboard": [
@@ -271,5 +291,43 @@
       "disorderlyRepricing": "10Y >5.25% + MOVE/credit widen → raise hurdle; financing-heavy/premium/distant-cash-flow names move toward WAIT/WATCH.",
       "growthCreditScare": "10Y falls + breadth/credit deteriorate → do not read lower yields mechanically as bullish; prefer balance-sheet resilience."
     }
+  },
+  "priorNewCapitalPriority": [
+    {
+      "priority": 1,
+      "bucket": "Diversified growth / non-AI",
+      "instruction": "GRAB moves to active buy research because the core marketplace turnaround is increasingly proven. Do not add until Atome and the expanding lending book pass a credit-quality/FCF underwrite."
+    },
+    {
+      "priority": 2,
+      "bucket": "Nuclear cash flow and contracted power",
+      "instruction": "BWXT enters the scored Research Now list alongside CEG. BWXT offers defence/commercial nuclear cash flow without merchant-power concentration; CEG remains stronger contracted-power proof but should not be chased after the deal gap."
+    },
+    {
+      "priority": 3,
+      "bucket": "Agriculture diversification",
+      "instruction": "Retire the old CTVA seed thesis. VYLR now owns seed/genetics and needs fresh underwriting; CF has the strongest current cash evidence; NTR is secondary; BG stays lower-priority but is not a stop-looking name."
+    },
+    {
+      "priority": 4,
+      "bucket": "China / Hong Kong selective",
+      "instruction": "Alibaba remains the lead platform research name. Pair it with CGN/China Resources Power for cash-generating electricity exposure and use 3191/CXMT/Montage as distinct semiconductor-sovereignty implementations, not interchangeable tickers."
+    },
+    {
+      "priority": 5,
+      "bucket": "AI bottlenecks / overlap",
+      "instruction": "MU/CRDO remain serious candidates but increase correlation to existing power/AI exposures. Stress-test CXMT competition, actual cash collections, financing of end customers and entry valuation; GEV/ETN are diversified physical supplier alternatives, not risk-free substitutes. New ANET/CSCO leads are unscored until full issuer underwriting."
+    }
+  ],
+  "decisionBoard": {
+    "source": "data/decision-refresh-2026-10-23.json",
+    "marketClose": "2026-10-22",
+    "sizingBlockedBy": [
+      "actual available cash",
+      "MYR/USD and currency conversion",
+      "user risk limit and horizon",
+      "unverified 6742UW warrant contract"
+    ],
+    "ordersPlaced": false
   }
 }
