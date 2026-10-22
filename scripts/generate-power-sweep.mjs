@@ -172,7 +172,7 @@ function build(existingGeneratedAt = null) {
   const tapeHealth = assessHoldingTape(tape);
   const maxTotal = Number(caps.totalExternalInvestigations || 12);
   const inputHealth = {
-    liveDesk: assessLiveDeskInput(live),
+    liveDesk: assessLiveDeskInput(live, new Date(live.syncedAt || live.asOf || 0)),
     portfolioOverlay: {
       contractVersion: overlay.contractVersion,
       expectedContract: "power-stack-portfolio-live-overlay/1",
