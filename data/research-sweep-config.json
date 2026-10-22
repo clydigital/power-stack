@@ -350,6 +350,20 @@
       "Date FX and trade quote, no broker order without separate explicit instructions and verified access",
       "Creator analysis hypotheses only; verify against primary issuer/authority",
       "No forced BUY/WAIT quota; generate next-best-alternative and explicit tradeoffs"
-    ]
+    ],
+    "clientAdvisory": {
+      "data": "data/client-advisor.json",
+      "homepage": "index.html",
+      "viewScripts": [
+        "advisor-desk.js",
+        "advisor-desk.css"
+      ],
+      "priority": "CLEAR_ACTIONABLE_CURRENT_RECOMMENDATIONS",
+      "updateRule": "Every manual PS update refresh evidence and this data feed with source dates; do not make older Live Dossier an investment decision gate.",
+      "verification": "Check money totals, user account status, pending broker quotes, current issuer reports and entry/exit gates; preserve non-executable status.",
+      "clientPage": "Above fold must show top actions, actual capital mandate, reconciliation status; research and dossier below fold.",
+      "allowedToReinterpretStaleLive": "YES_FROM_NEWER_INDEPENDENT_PRIMARY_EVIDENCE_WITH_SOURCE_DATE",
+      "neverModifyLiveCanonical": true
+    }
   }
 }
