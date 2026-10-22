@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-22T17:15:13.097Z",
+  "generatedAt": "2026-10-22T21:34:33.563Z",
   "asOf": "2026-10-22T15:05:32.495+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -27,13 +27,13 @@
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-22T17:15:13.019Z",
+      "generatedAt": "2026-10-22T21:34:33.500Z",
       "status": "OK"
     },
     "holdingTape": {
       "contractVersion": "power-stack-holding-tape/1",
       "expectedContract": "power-stack-holding-tape/1",
-      "generatedAt": "2026-10-22T17:09:21.412Z",
+      "generatedAt": "2026-10-22T21:34:33.434Z",
       "unresolved": [
         "6742UW"
       ],
@@ -109,22 +109,20 @@
   },
   "portfolioTriage": {
     "tapeDivergences": [
-      "YTLPOWR",
-      "TSLA"
+      "HIBISCS",
+      "TTWO",
+      "DAYANG"
     ],
     "tapeConfirmations": [
       "MISC",
-      "HIBISCS",
-      "TTWO",
-      "DAYANG"
+      "YTLPOWR",
+      "TSLA"
     ],
     "highReview": [
-      "HIBISCS",
-      "YTLPOWR",
+      "XOM",
       "6742UW",
       "TTWO",
-      "TSLA",
-      "DAYANG"
+      "TSLA"
     ],
     "mixed": [],
     "liveMotionLinkedHoldings": [
@@ -251,69 +249,8 @@
   },
   "holdingResearchQueue": [
     {
-      "ticker": "TSLA",
-      "name": "Tesla",
-      "priorityScore": 240,
-      "overlayState": "HEADWIND",
-      "reviewPriority": "HIGH_REVIEW",
-      "actualReaction": {
-        "status": "DIVERGES",
-        "reason": "Completed-session tape moved against the direction implied by the current market overlay.",
-        "freshness": {
-          "status": "CURRENT",
-          "eligibleForComparison": true,
-          "sessionDate": "2026-10-21",
-          "businessDaysOld": 1,
-          "reason": "Completed-session price is within the market-local freshness window."
-        },
-        "sessionDate": "2026-10-21",
-        "close": 386.47,
-        "previousClose": 373.71,
-        "change": 12.76,
-        "changePct": 3.414,
-        "currency": "USD",
-        "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
-        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/TSLA?interval=1d&range=1mo&includePrePost=false",
-        "closeNotice": "Source-dated regular-session daily close: 2026-10-21"
-      },
-      "currentAction": "HOLD / DO NOT AVERAGE DOWN",
-      "motionContext": [
-        {
-          "id": "05f6ccd2-0b2e-4610-a0ac-aaf29f48e81e",
-          "headline": "Earnings (SpaceX, Netflix, Tesla, Meta, IBM) and midterms are immediate catalysts the creator highlights for expected volatility.",
-          "category": "EARNINGS",
-          "verificationState": "LEAD",
-          "occurredAt": "2026-10-20T22:00:02.000Z",
-          "whyInteresting": "Transcript writing angle: Piece: 'When a Fake Peace Deal Moves Markets: Anatomy of an Intraday $400bn Shock' — use tick‑level news timestamps, market‑cap swings, liquidity metrics and dealer quotations to narrate causality.",
-          "bigPictureBridge": "Fresh rates / funding evidence → sovereign yields and financing costs → Cost of Capital regime",
-          "nextTest": "Verify transcript lead: Earnings (SpaceX, Netflix, Tesla, Meta, IBM) and midterms are immediate catalysts the creator highlights for expected volatility.",
-          "storyId": "1cf9ad1d-c350-48c4-b06e-d544771919d3",
-          "storyTitle": "Distillate Scarcity Persists Despite Crude-Flow Recovery",
-          "regimeSlug": "global-cost-of-capital",
-          "regimeLabel": "US Rate Regime",
-          "sourceName": "StockedUp",
-          "sourceUrl": "https://www.youtube.com/watch?v=v8pxKa9ks7Y",
-          "materiality": 88,
-          "relevance": 88
-        }
-      ],
-      "reasons": [
-        "completed-session tape moved against the directional market overlay",
-        "portfolio overlay marks the holding HIGH_REVIEW",
-        "fresh promoted Live Market Motion is linked to the holding"
-      ],
-      "researchQuestion": "Has new company-specific evidence changed TSLA's current action gate or thesis risk?",
-      "requiredEvidence": [
-        "company-specific news/catalysts for the completed session",
-        "technical/flow context sufficient to test whether the divergence is company-specific or temporary",
-        "funding, valuation, cash-flow or operating evidence that could offset or reinforce the macro headwind",
-        "independent company/official evidence testing whether the promoted Live Motion changes the action gate, thesis risk, cash flow or funding case"
-      ],
-      "possibleDecisionImpact": "Could change the current add/hold gate or create a new company-specific catalyst/invalidation."
-    },
-    {
-      "ticker": "YTLPOWR",
-      "name": "YTL Power International Berhad",
+      "ticker": "TTWO",
+      "name": "Take-Two Interactive Software",
       "priorityScore": 180,
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
@@ -323,26 +260,26 @@
         "freshness": {
           "status": "CURRENT",
           "eligibleForComparison": true,
-          "sessionDate": "2026-10-21",
-          "businessDaysOld": 2,
+          "sessionDate": "2026-10-22",
+          "businessDaysOld": 0,
           "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-10-21",
-        "close": 5.34,
-        "previousClose": 5.3,
-        "change": 0.04,
-        "changePct": 0.755,
-        "currency": "MYR",
+        "sessionDate": "2026-10-22",
+        "close": 207.81,
+        "previousClose": 206.16,
+        "change": 1.65,
+        "changePct": 0.8,
+        "currency": "USD",
         "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
-        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/6742.KL?interval=1d&range=1mo&includePrePost=false",
-        "closeNotice": "Source-dated regular-session daily close: 2026-10-21"
+        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/TTWO?interval=1d&range=1mo&includePrePost=false",
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-22"
       },
       "currentAction": "HOLD / NO ADD",
       "reasons": [
         "completed-session tape moved against the directional market overlay",
         "portfolio overlay marks the holding HIGH_REVIEW"
       ],
-      "researchQuestion": "Why did YTLPOWR rise despite a directional rates headwind, and does the answer improve or weaken the current HOLD / NO ADD gate?",
+      "researchQuestion": "Has new company-specific evidence changed TTWO's current action gate or thesis risk?",
       "requiredEvidence": [
         "company-specific news/catalysts for the completed session",
         "technical/flow context sufficient to test whether the divergence is company-specific or temporary",
@@ -374,7 +311,7 @@
         "sourceUrl": null,
         "closeNotice": null
       },
-      "currentAction": "NO INCREASE / TRACK TERMS",
+      "currentAction": "VERIFY INSTRUMENT / NO ADD",
       "reasons": [
         "completed-session tape/instrument data is unresolved",
         "portfolio overlay marks the holding HIGH_REVIEW"
@@ -385,6 +322,44 @@
         "funding, valuation, cash-flow or operating evidence that could offset or reinforce the macro headwind"
       ],
       "possibleDecisionImpact": "Could unlock accurate YTL-linked concentration and portfolio-weight measurement."
+    },
+    {
+      "ticker": "HIBISCS",
+      "name": "Hibiscus Petroleum Berhad",
+      "priorityScore": 150,
+      "overlayState": "HEADWIND",
+      "reviewPriority": "MONITOR",
+      "actualReaction": {
+        "status": "DIVERGES",
+        "reason": "Completed-session tape moved against the direction implied by the current market overlay.",
+        "freshness": {
+          "status": "CURRENT",
+          "eligibleForComparison": true,
+          "sessionDate": "2026-10-22",
+          "businessDaysOld": 1,
+          "reason": "Completed-session price is within the market-local freshness window."
+        },
+        "sessionDate": "2026-10-22",
+        "close": 2.43,
+        "previousClose": 2.33,
+        "change": 0.1,
+        "changePct": 4.292,
+        "currency": "MYR",
+        "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
+        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/5199.KL?interval=1d&range=1mo&includePrePost=false",
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-22"
+      },
+      "currentAction": "HOLD / NO CHASE",
+      "reasons": [
+        "completed-session tape moved against the directional market overlay"
+      ],
+      "researchQuestion": "Has new company-specific evidence changed HIBISCS's current action gate or thesis risk?",
+      "requiredEvidence": [
+        "company-specific news/catalysts for the completed session",
+        "technical/flow context sufficient to test whether the divergence is company-specific or temporary",
+        "funding, valuation, cash-flow or operating evidence that could offset or reinforce the macro headwind"
+      ],
+      "possibleDecisionImpact": "Could change the current add/hold gate or create a new company-specific catalyst/invalidation."
     }
   ],
   "watchlistResearchQueue": [
@@ -575,63 +550,63 @@
       "ticker": "XOM",
       "overlayState": "HEADWIND",
       "reaction": "FLAT",
-      "action": "CORE HOLD / NO CHASE",
+      "action": "HOLD / NO ADD",
       "reason": "No current decision-relevant divergence promoted into the capped queue."
     },
     {
       "ticker": "MISC",
       "overlayState": "HEADWIND",
       "reaction": "CONFIRMS",
-      "action": "HOLD",
+      "action": "HOLD / FUNDING CHECK",
       "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
     },
     {
-      "ticker": "HIBISCS",
+      "ticker": "YTLPOWR",
       "overlayState": "HEADWIND",
       "reaction": "CONFIRMS",
-      "action": "HOLD / NO ADD",
+      "action": "TRIM IF CONCENTRATION EXCESS",
       "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
     },
     {
-      "ticker": "TTWO",
+      "ticker": "TSLA",
       "overlayState": "HEADWIND",
       "reaction": "CONFIRMS",
-      "action": "HOLD / NO ADD",
-      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
+      "action": "TRIM REVIEW",
+      "reason": "Fresh promoted Live Motion is linked, but this holding remains outside the capped deep-dive queue unless budget or priority changes."
     },
     {
       "ticker": "DAYANG",
       "overlayState": "HEADWIND",
-      "reaction": "CONFIRMS",
-      "action": "HOLD / DO NOT AVERAGE DOWN",
-      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
+      "reaction": "DIVERGES",
+      "action": "SELL / CAPITAL RECYCLING REVIEW",
+      "reason": "No current decision-relevant divergence promoted into the capped queue."
     }
   ],
   "newCapitalPriority": [
     {
       "priority": 1,
-      "bucket": "Diversified growth / non-AI",
-      "instruction": "GRAB moves to active buy research because the core marketplace turnaround is increasingly proven. Do not add until Atome and the expanding lending book pass a credit-quality/FCF underwrite."
+      "bucket": "Treasury income and duration",
+      "instruction": "BUY staged VGIT or IEF after Friday quote; use SGOV for cash; TLT small tactical only, effective duration 14.79y and a +50bp rate stress approx -7.4% price."
     },
     {
       "priority": 2,
-      "bucket": "Nuclear cash flow and contracted power",
-      "instruction": "BWXT enters the scored Research Now list alongside CEG. BWXT offers defence/commercial nuclear cash flow without merchant-power concentration; CEG remains stronger contracted-power proof but should not be chased after the deal gap."
+      "bucket": "Non-AI cash and commodity",
+      "instruction": "BUY starter study CF ~$118.56 Oct22, with provisional PE 8.44x and issuer TTM FCF $1.82bn; guard Nov4 earnings, gas costs and oil/fertilizer feedback."
     },
     {
       "priority": 3,
-      "bucket": "Agriculture diversification",
-      "instruction": "Retire the old CTVA seed thesis. VYLR now owns seed/genetics and needs fresh underwriting; CF has the strongest current cash evidence; NTR is secondary; BG stays lower-priority but is not a stop-looking name."
+      "bucket": "Capital recycling first",
+      "instruction": "DAYANG SELL/EXIT REVIEW from damaged Q2 profits after Bursa price/liquidity check; TSLA TRIM REVIEW after Q3; YTL-linked concentration and warrant terms urgent."
     },
     {
       "priority": 4,
-      "bucket": "China / Hong Kong selective",
-      "instruction": "Alibaba remains the lead platform research name. Pair it with CGN/China Resources Power for cash-generating electricity exposure and use 3191/CXMT/Montage as distinct semiconductor-sovereignty implementations, not interchangeable tickers."
+      "bucket": "Quality opportunities still needing proof",
+      "instruction": "TSM, GEV, BWXT, NEM, AA, LNG, CEG and MU — entry proof or imminent earnings; no blanket AI dip buy."
     },
     {
       "priority": 5,
-      "bucket": "AI bottlenecks / overlap",
-      "instruction": "MU/CRDO remain serious candidates but increase correlation to existing power/AI exposures. Stress-test CXMT competition, actual cash collections, financing of end customers and entry valuation; GEV/ETN are diversified physical supplier alternatives, not risk-free substitutes. New ANET/CSCO leads are unscored until full issuer underwriting."
+      "bucket": "Credit-lending turnaround",
+      "instruction": "GRAB WAIT until Atome consumer-credit vintage losses and funded cash requirements reconcile; $2.85 quote is not standalone cheapness."
     }
   ],
   "researchGaps": [
