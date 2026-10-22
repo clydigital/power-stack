@@ -1,12 +1,12 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-22T11:50:34.394Z",
-  "liveAsOf": "2026-10-22T02:58:10.816+00:00",
-  "liveSyncedAt": "2026-10-22T04:55:39.670Z",
+  "generatedAt": "2026-10-22T11:58:59.550Z",
+  "liveAsOf": "2026-10-22T07:46:46.312+00:00",
+  "liveSyncedAt": "2026-10-22T11:58:59.429Z",
   "sourceHealth": {
     "dossier": "DEGRADED",
     "marketMonitor": "PARTIAL",
-    "fredRates": "PARTIAL",
+    "fredRates": "OK",
     "nyFedReferenceRates": "OK",
     "nyFedPrimaryDealers": "STALE",
     "treasuryBills": "OK",
@@ -14,10 +14,10 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "AI/large-cap leadership is holding up even as US yields stay elevated and HY spreads widen selectively.",
-    "answer": "US 10Y at 5.13% with ACM 10Y term premium ~0.73% (evidence present) while HY OAS widened sharply over 20 sessions; large‑cap breadth and megacap leadership remain intact and SMH has lagged QQQ but not collapsed, implying rates pressure is real yet broad market stress is not confirmed.",
-    "implication": "Higher nominal yields and front-end funding pressure are dominating market conditions, but equity breadth and megacap/AI strength blunt evidence of a broad risk‑off; watch whether HY widening and credit/volatility confirm a broader deterioration.",
-    "whatWouldChangeMind": "Sustained IG OAS widening, a persistent MOVE/VIX spike, or a material collapse in large‑cap breadth (all supported by canonical time‑series) would shift this assessment."
+    "headline": "Yields stay elevated while AI/megacaps hold; credit widening is selective, broad stress unconfirmed",
+    "answer": "US 10Y ~5.13% with ACM term premium ~0.73% while HY OAS widened ~65bp over 20 sessions; Magnificent Seven and AI-basket breadth remain strong and SMH lags QQQ. Meta’s Q3 beat and strong guidance supports near‑term AI/megacap leadership, but intraday yield/DXY/XAU confirmation of macro transmission is missing.",
+    "implication": "Higher long and real yields are the dominant market force, tightening conditions; equity strength is concentrated in mega‑caps/AI and has not yet produced broad credit or volatility stress.",
+    "whatWouldChangeMind": "Intraday Fed‑funds‑futures / 2Y/10Y bars and MOVE/Treasury volatility showing coordinated credit/volatility widening or persistent front‑end repricing would overturn the 'selective' finding."
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
@@ -29,10 +29,10 @@
   "currentSignals": {
     "rates": {
       "state": "TIGHTER",
-      "tighter": 1,
+      "tighter": 3,
       "easier": 0,
       "neutral": 2,
-      "unresolved": 3,
+      "unresolved": 1,
       "keys": [
         "RATES_POLICY",
         "RATES_FRONT_END",
@@ -48,31 +48,31 @@
           "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
           "detail": "No current deterministic policy impulse or directional next-meeting repricing is present in the bounded rate context.",
-          "asOf": "2026-10-22T02:58:10.816Z"
+          "asOf": "2026-10-22T07:46:46.312Z"
         },
         {
           "key": "RATES_FRONT_END",
           "label": "Front-end pricing",
-          "direction": "NEUTRAL",
-          "confirmation": "UNRESOLVED",
-          "detail": "US 2Y 4.81%; 5D n/a.",
-          "asOf": "2026-10-22T02:58:10.816Z"
+          "direction": "TIGHTER",
+          "confirmation": "CONFIRMING",
+          "detail": "US 2Y 4.81%; 5D n/a; vs effective fed funds +93.0 bp.",
+          "asOf": "2026-10-22T07:46:46.312Z"
         },
         {
           "key": "RATES_REAL_YIELDS",
           "label": "10Y real yield",
-          "direction": "UNRESOLVED",
-          "confirmation": "UNRESOLVED",
-          "detail": "10Y real-yield context is unavailable.",
-          "asOf": "2026-10-22T02:58:10.816Z"
+          "direction": "TIGHTER",
+          "confirmation": "CONFIRMING",
+          "detail": "10Y real yield 2.77%; 5D n/a.",
+          "asOf": "2026-10-22T07:46:46.312Z"
         },
         {
           "key": "RATES_BREAKEVENS",
           "label": "10Y inflation breakeven",
-          "direction": "UNRESOLVED",
+          "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
-          "detail": "10Y breakeven context is unavailable.",
-          "asOf": "2026-10-22T02:58:10.816Z"
+          "detail": "10Y breakeven 2.37%; 5D n/a.",
+          "asOf": "2026-10-22T07:46:46.312Z"
         },
         {
           "key": "RATES_LONG_END",
@@ -80,13 +80,13 @@
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
           "detail": "US 10Y 5.13%; 5D n/a; US 20Y 5.47%; 5D n/a; US 30Y 5.42%; 5D n/a.",
-          "asOf": "2026-10-22T02:58:10.816Z"
+          "asOf": "2026-10-22T07:46:46.312Z"
         },
         {
           "key": "BILLS",
           "label": "Treasury bills / front-end cash",
           "direction": "TIGHTER",
-          "confirmation": "UNRESOLVED",
+          "confirmation": "CONFIRMING",
           "detail": "3M 4.25%; 6M 4.35%; average vs EFFR +42.0 bp.",
           "asOf": "2026-10-21"
         }
@@ -115,7 +115,7 @@
           "key": "CREDIT",
           "label": "Credit spreads",
           "direction": "TIGHTER",
-          "confirmation": "UNRESOLVED",
+          "confirmation": "CONFIRMING",
           "detail": "HY OAS 3.33 (5D +17.0 bp); IG OAS 0.87 (5D +4.0 bp).",
           "asOf": "2026-10-20"
         }
@@ -124,7 +124,7 @@
     "physicalEnergy": {
       "status": "UNRESOLVED",
       "observed": false,
-      "detail": "Reporting suggests elevated forward oil-price context, but canonical dated final‑settlement curve and contract provenance are missing so no priced reaction is asserted.",
+      "detail": "Reporting suggests persistent crude upside risk and front‑month/backwardation concerns, but canonical WTI/Brent final settle curve evidence is missing from the packet.",
       "evidenceRefs": []
     }
   },
@@ -1236,7 +1236,7 @@
       "importance": "HIGH",
       "divergence": "PARTIAL",
       "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-      "actual": "Megacap/AI resilience continues; SMH lags QQQ on a 20‑session basis but recent daily moves positive.",
+      "actual": "equity_strength_concentrated",
       "affectedHoldings": [
         "TSLA",
         "TTWO",
@@ -1249,12 +1249,12 @@
         "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
       ],
       "evidenceFor": [
-        "Earnings (Meta) and issuer announcements can keep AI leadership bid even as yields rise; internal breadth within AI is mixed.",
-        "Broad market participation remains supportive of equity risk appetite even as rates tighten, limiting confirmation of systemic risk.",
-        "Nasdaq daily move -0.02 with bias UNRESOLVED."
+        "Meta’s release supports concentrated AI/megacap leadership; SMH underperformance vs QQQ suggests semiconductor breadth lags the megacap rally.",
+        "Large‑cap/Mag‑7 and AI‑basket breadth metrics remain above 50/200‑day averages, signalling concentrated leadership.",
+        "Nasdaq daily move -0.02 with bias MIXED."
       ],
       "evidenceAgainst": [
-        "Nominal yields are high while modelled term premium softened; supply/auction context and funding remain the next tests."
+        "Nominal and real yields are elevated; ACM shows a modest, governed term premium, leaving real yields and breakeven contributions partially unassigned."
       ],
       "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
       "confidence": "HIGH",
@@ -1299,10 +1299,7 @@
     }
   ],
   "liveResearchGaps": [
-    "DATA: Dated final‑settlement WTI and ICE Brent F1/F2 contract settlements with immutable provenance are missing, blocking a definitive energy→inflation assessment.",
-    "US 10Y real yield is missing from persistent rate context.",
-    "US 10Y breakeven is missing from persistent rate context.",
-    "Effective fed funds is missing from persistent rate context.",
+    "MARKET_DATA: Missing canonical intraday Fed‑funds‑futures and 2Y/10Y timestamped bars around Meta's 2026‑10‑21 release to test immediate transmission to yields and DXY/XAUUSD.",
     "Latest primary-dealer report date 2026-10-07 is more than fourteen calendar days old.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],
