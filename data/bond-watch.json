@@ -138,5 +138,66 @@
       "Crude/diesel reaccelerate and breakevens rise, reviving the inflation/term-premium shock."
     ],
     "source": "https://www.ishares.com/us/products/239454/ishares-20-year-treasury-bond-etf"
+  },
+  "latestDurationShock": {
+    "asOf": "2026-10-22",
+    "sourceScreenshot": "User-provided TreasuryBonds.com X post image; exact quote timestamp and venue unresolved",
+    "quotes": [
+      {
+        "tenor": "2Y",
+        "yieldPct": 4.691,
+        "changeBp": -11.2
+      },
+      {
+        "tenor": "5Y",
+        "yieldPct": 4.822,
+        "changeBp": -12.4
+      },
+      {
+        "tenor": "10Y",
+        "yieldPct": 5.006,
+        "changeBp": -11.2
+      },
+      {
+        "tenor": "20Y",
+        "yieldPct": 5.375,
+        "changeBp": -9.2
+      },
+      {
+        "tenor": "30Y",
+        "yieldPct": 5.326,
+        "changeBp": -8.6
+      }
+    ],
+    "corroboration": "Reuters 2026-10-22 says 10Y fell below 5% intraday as AI-equity selling spurred Treasury haven buying; screenshot is one unsynchronized vendor snapshot and is not Treasury official EOD; do not force exact quote and Reuters narrative into one timestamp",
+    "corroborationUrl": "https://www.reuters.com/world/china/global-markets-global-markets-2026-10-22/",
+    "hypothesis": "Safety bid / tech-liquidation / slowing financed AI capex may overpower immediate oil inflation; lower bond yields are not sufficient proof inflation is controlled or Fed will cut",
+    "bondIncomeClaim": "Paul Rubillo/TreasuryBonds.com argues locking in high yields before rates decline; valid conditional duration/rollover logic but no verified timing certainty, requires distinguishing individual bonds held to maturity from duration ETFs and inflation exposure",
+    "route": "Research-only overlay; preserve Live Desk as rate-state owner and original bond decisions",
+    "watch": [
+      "21/22 October official UST close and 10Y TIPS real yield decomposition",
+      "US 2Y vs 30Y spread and Treasury auction demand",
+      "HY OAS and France OAT-Bund alongside UST haven bid",
+      "DXY/JXY and USDJPY funding risk",
+      "SGOV/BIL/SHY vs IEF vs TLT vs TIP total return and loss scenarios",
+      "TLT modified duration and convexity; verify before trading"
+    ],
+    "scenarioFramework": [
+      {
+        "state": "Growth/credit risk dominates",
+        "conditions": "Equities weaken, HY OAS widens, Treasuries rally, oil inflation persists",
+        "implication": "Intermediate Treasuries could cushion equity drawdown; still monitor credit and inflation"
+      },
+      {
+        "state": "Inflation/term premium returns",
+        "conditions": "Brent/diesel remain high and long real/nominal yield rebound",
+        "implication": "Long-duration bonds/ETFs lose principal; short bills safer from mark-to-market"
+      },
+      {
+        "state": "Controlled disinflation",
+        "conditions": "Inflation and yields decline without credit stress, rate cuts credible",
+        "implication": "Locking longer fixed coupons benefits price/rollover relative to bills but entry valuation matters"
+      }
+    ]
   }
 }
