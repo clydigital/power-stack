@@ -297,5 +297,59 @@
     ],
     "selectionRules": "A regional 5% yield is never a buy without matched inflation, fiscal trajectory, curve trend, ETF duration, credit/FX and user base-currency stress. Bonds can be recommended when evidence passes; no forced blanket WAIT.",
     "compatibility": "Do not alter 12 slot PowerSweep research cap or Live Desk macro owner."
+  },
+  "manualInvestmentMandate": {
+    "version": "power-stack-manual-investment-mandate/v1",
+    "effectiveDateMYT": "2026-10-23",
+    "initialCapitalMYR": 13491,
+    "allCapitalRiskEligible": true,
+    "notAdditionalDeposit": true,
+    "reviewEnd": "2027-10-23",
+    "manifesto": "PS_MANUAL_INVESTMENT_MANIFESTO.md",
+    "mandateData": "data/rakuten-one-year-mandate.json",
+    "manualTriggers": [
+      "PS update",
+      "PS deep sweep",
+      "PS action",
+      "PS bonds",
+      "PS results",
+      "PS reset"
+    ],
+    "method": "Read latest canonical Live+dated cached source health, project Blue Desk without double-counting, use latest Notion MacroPulse/Gate AI-capex/creator leads, independently issuer-verify, screen buys/sells across all markets, reconcile MYR capital and cash, write dated PS decision memo/ledger and source QA. Partial runs must name missing coverage.",
+    "researchInputs": {
+      "liveCanonical": "https://alchemy-live-market-desk.vercel.app/api/market-intelligence-snapshot",
+      "livePowerStackContext": "https://alchemy-live-market-desk.vercel.app/api/power-stack-context",
+      "blueDeskPresenter": "https://bluebelly-desk.vercel.app/",
+      "notionMacroPulse": "3ea519b67a948161ba4dec8f97ebf658",
+      "notionGap": "3ea519b67a9481f9aa03d9767069487e",
+      "notionAI": "3f4519b67a9481639302eee63384c180"
+    },
+    "corePlugins": [
+      "GitHub",
+      "Notion",
+      "FinnHub",
+      "Alpha Vantage",
+      "FactIQ",
+      "Public Equity Investing"
+    ],
+    "asNeededPlugins": [
+      "Quartr",
+      "FMP only entitled endpoints",
+      "Exa",
+      "Firecrawl fallback",
+      "Browser or Opera user connection",
+      "Supabase authorised reads",
+      "Composio configured workflows"
+    ],
+    "rules": [
+      "No new automation from manual ping",
+      "Retain 12 PowerSweep external investigation max",
+      "Do not overwrite canonical Live status, Dossier, Market Motion, Story, Regime",
+      "Do not falsely mark latest generation time as latest market observation",
+      "No double-count of user-confirmed RM13491 and historical holdings values",
+      "Date FX and trade quote, no broker order without separate explicit instructions and verified access",
+      "Creator analysis hypotheses only; verify against primary issuer/authority",
+      "No forced BUY/WAIT quota; generate next-best-alternative and explicit tradeoffs"
+    ]
   }
 }
