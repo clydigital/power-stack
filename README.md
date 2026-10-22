@@ -1,5 +1,10 @@
 # Power Stack
 
+## 22 October 2026 — expanded 21-security mining and critical-minerals sweep (research only)
+
+The [full metals/mining diligence report](research/2026-10-22-mining-full-spectrum-sweep.md) and [21-name evidence ledger](data/mining-full-spectrum-sweep-2026-10-22.json) add NEM/GFI/AA/LYC, Canadian/copper execution risks, proposed Lynas–Meteoric all-share deal, Malaysia's MSC tin exposure and the 14 October ICSG refined-copper **surplus** forecast (104 kt in 2026, 368 kt in 2027). Also identifies exchange-currency mismatches in preliminary valuation data. All conclusions are **research-only**, with **no change** to 8 held securities, 46 scored watchlist names, historical scores, trade gates, 12-slot PowerSweep or canonical Live Desk ownership. The [metals data view](data/metals-research.json) links the expanded sweep while preserving prior `ideas` rows.
+
+
 ## 22 October 2026 — mining margin and commodity-opportunity review (research only)
 
 The [source-backed mining-profitability screen](research/2026-10-22-mining-profitability-opportunities.md) and refreshed [metals-research overlay](data/metals-research.json) evaluate the shared 31% mining-margin chart against SCCO Q3 cash results, AEM/WPM cash flow, BHP/Rio/FCX production, WGC mining costs and the current oil/rates/copper-inventory backdrop. **AEM, SCCO and WPM advance only to deeper research**, with FCX/Rio/BHP/NEM/CCJ on conditional watch; **no existing holdings, conviction scores, scored watchlist ranks, prior research rows, trade gates or Live Desk canonical regime were changed**. Current valuation/entry evidence remains unresolved.
