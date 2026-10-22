@@ -1,5 +1,10 @@
 # Power Stack
 
+## 23 October 2026 — direct buy/sell Power Stack refresh, earnings and bonds
+
+The [fully updated investment decision note](research/2026-10-23-direct-buy-sell-comprehensive-refresh.md), [source-dated 29+ US security quote and action ledger](data/decision-refresh-2026-10-23.json) and [creator speech/falsification ledger](data/creator-investment-signals-2026-10-23.json) combine the **22 October US market close** with new rate/ETF, Q3 TSMC/Meta/Tesla, CF, power/grid and mining evidence. **Buy candidates:** a staged VGIT or IEF starter, SGOV for liquidity, a smaller risk-capped TLT satellite and CF as the first non-AI cash-flow equity. **Sell/capital recycle review:** DAYANG; **trim review:** TSLA, plus YTLPOWR only on validated concentration. GRAB, GEV, MU and NEM have explicit hold gates rather than forced buys. The live watchlist has **38/46** source-dated 22 Oct prices, with **eight HK/MY/China/crypto gaps clearly flagged** and CTVA pre/post-spin prices declared non-comparable. Legacy market summary, latest market review, bond watch, watchlist, action playbook, holdings price overlays, portfolio management and TSMC event status were updated. Holdings, underlying 46 conviction scores and ranking, canonical Live Desk authority and the 12-slot automation limit were not changed; **no trades placed**.
+
+
 ## 23 October 2026 — U.S. Treasury flight-to-safety and bond duration update
 
 The [bond watch](data/bond-watch.json) now incorporates the user-supplied 22 October TreasuryBonds.com yield snapshot (2Y 4.691%, 5Y 4.822%, 10Y 5.006%, 20Y 5.375%, 30Y 5.326%) as **vendor intraday, not official closing data**, and Reuters' independent report of a 10Y move below 5% on an equity risk-off haven bid. Paul Rubillo's conditional argument for locking fixed coupons is assessed against intermediate Treasury, TLT and short-bill rollover/inflation risks. No buying decision, score, holdings, Live Desk rate adjudication or automation was changed.
