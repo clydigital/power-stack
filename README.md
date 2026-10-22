@@ -1,5 +1,10 @@
 # Power Stack
 
+## 22 October 2026 — deeper market danger and risk-regime review (research only)
+
+The [cross-asset danger assessment](research/2026-10-22-market-danger-risk-regime-deep-update.md) and [machine-readable dated risk evidence](data/risk-regime-review-2026-10-22.json) reconcile the 22 October Notion MacroPulse, AI-issuer tracker, latest PowerSweep, source-dated holdings, official US yields, French sovereign repricing, AI credit/Meta Q3/Tesla capex, oil/diesel and declining precious metals. The working posture is **elevated risk / selective funding stress; systemic crisis unconfirmed**. The companion mining research now sits in a harder gold/real-yield/diesel sensitivity regime; **miners are not automatic safe havens**. This is an **added, noncanonical research overlay**; existing 8 holdings, 46 scored watchlist securities, PowerSweep's 12 investigation limit, issuer scores, orders and Live Desk authority are preserved. Current quotes are session-dated and not execution ready.
+
+
 ## 22 October 2026 — expanded 21-security mining and critical-minerals sweep (research only)
 
 The [full metals/mining diligence report](research/2026-10-22-mining-full-spectrum-sweep.md) and [21-name evidence ledger](data/mining-full-spectrum-sweep-2026-10-22.json) add NEM/GFI/AA/LYC, Canadian/copper execution risks, proposed Lynas–Meteoric all-share deal, Malaysia's MSC tin exposure and the 14 October ICSG refined-copper **surplus** forecast (104 kt in 2026, 368 kt in 2027). Also identifies exchange-currency mismatches in preliminary valuation data. All conclusions are **research-only**, with **no change** to 8 held securities, 46 scored watchlist names, historical scores, trade gates, 12-slot PowerSweep or canonical Live Desk ownership. The [metals data view](data/metals-research.json) links the expanded sweep while preserving prior `ideas` rows.
