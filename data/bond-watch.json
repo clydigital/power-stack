@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-stack-bond-watch/1",
-  "asOf": "2026-10-02",
+  "asOf": "2026-10-23T04:38:00+08:00",
   "purpose": "Small bond/duration watchlist for capital-allocation research. Live Desk owns the rate state; Power Stack uses it to compare duration, inflation protection and cash alternatives.",
   "monitorPolicy": {
     "mainScreenMax": 5,
@@ -85,32 +85,19 @@
     "Compare USTs with JGBs/Bunds and USDJPY before calling the move US-specific.",
     "Compare SGOV/BIL/SHY, IEF, TLT and TIP on yield/duration/convexity rather than treating 'bonds' as one trade."
   ],
-  "currentRead": "September NFP created the first meaningful duration-relief signal: payrolls +29k, unemployment 4.2%, wages +0.1% m/m and -60k net revisions pulled the US 2Y/10Y sharply lower. Long duration is more interesting, but not a clean all-in bond bull yet because diesel/product inflation, Treasury term premium and long-end supply remain live risks.",
+  "currentRead": "22 Oct closing: 10Y UST under 5% intraday as QQQ -2.86% and RSP +0.73% showed rotation, TLT +1.87% to $81.74, IEF +1.08% to $91.20 and VGIT +0.79% to $57.45. Rate level is no longer one-way inflation pressure; credit/growth risk offers Treasury haven support but Brent/term premium still threaten reversal.",
   "currentDecision": {
-    "cashShort": "KEEP / DRY POWDER",
-    "intermediate": "PREFERRED FIRST DURATION ADD",
-    "longDuration": "TACTICAL STARTER / WATCH",
-    "inflationProtected": "SELECTIVE HEDGE"
+    "cashShort": "BUY SGOV FOR LIQUIDITY",
+    "intermediate": "BUY STARTER VGIT OR IEF — PREFERRED",
+    "longDuration": "SMALL TLT TACTICAL BUY ONLY; DO NOT ALL-IN",
+    "inflationProtected": "WAIT / COMPARE TIP AGAINST NOMINAL AND REAL YIELD"
   },
   "eventOverlay": {
-    "event": "US Employment Situation — September 2026",
-    "releasedAt": "2026-10-02T08:30:00-04:00",
-    "payrollsK": 29,
-    "consensusK": 90,
-    "unemploymentRatePct": 4.2,
-    "participationRatePct": 61.8,
-    "avgHourlyEarningsMoMPct": 0.1,
-    "avgHourlyEarningsYoYPct": 3,
-    "priorTwoMonthNetRevisionK": -60,
-    "policyRead": "The report materially weakens the case for an October hike because hiring, wages and revisions all cooled at once. It does not remove the year-end hike risk: Reuters reported December pricing still near 90% after the release.",
-    "marketReaction": "US 2Y fell toward 4.72% and US 10Y toward 5.18%; equities rallied and oil fell more than 3% intraday.",
-    "divergence": "The labour signal is bond-friendly, but the long end still has to prove that inflation/term-premium pressure is peaking. A one-session rally is not enough.",
-    "seasonalityCaveat": "Reuters noted that late-Labor-Day seasonal adjustment effects may have depressed the headline. Treat the print as a real policy input, but cross-check claims, revisions, household employment, wages and subsequent data before declaring a labour break.",
-    "sources": [
-      "https://www.bls.gov/news.release/archives/empsit_10022026.htm",
-      "https://www.reuters.com/business/fed-seen-skipping-october-rate-hike-job-market-cools-2026-10-02/",
-      "https://www.reuters.com/world/china/global-markets-wrapup-1-2026-10-02/"
-    ]
+    "event": "Oct 22 2026 AI-led equity rotation and Treasury haven rally",
+    "date": "2026-10-22",
+    "evidence": "Finnhub completed US closes: TLT $81.74 +1.87%, IEF $91.20 +1.08%, VGIT $57.45 +0.79%, QQQ -2.86%, RSP +0.73%; 10Y yields below 5% Reuters/WSJ time-specific",
+    "policyRead": "Falling 10Y during tech weakness is consistent with a safety bid but not definite disinflation or future Fed cut",
+    "source": "https://www.reuters.com/business/nasdaq-futures-drop-over-1-ai-worries-resurface-oil-climbs-2026-10-22/"
   },
   "positioning": {
     "tlt": {
@@ -123,9 +110,9 @@
     }
   },
   "tltFramework": {
-    "status": "TACTICAL_STARTER_ONLY",
-    "whyInteresting": "TLT now offers unusually high carry plus large convexity after the long-end selloff. iShares reported a 5.49% 30-day SEC yield, 5.65% portfolio YTM and 14.74-year effective duration on Sep 29.",
-    "whyNotFullSize": "TLT is still a concentrated bet that 20Y/30Y yields and real yields have peaked. Energy/product inflation, Treasury supply/term premium and another December Fed hike can still push the long end back up.",
+    "status": "BUY_SMALL_TACTICAL_AFTER_PRICE_CHECK",
+    "whyInteresting": "22 Oct close $81.74 +1.87%; iShares issuer effective duration 14.79 years Oct19, 30d SEC yield 5.41% Oct16; bond haven response returned as AI/credit concern rose.",
+    "whyNotFullSize": "A sudden 0.50pp long-yield rise implies approximately -7.4% TLT price before carry/convexity, plus US/MYR currency and inflation/term premium risks. TLT already jumped 1.87%.",
     "confirmation": [
       "US 10Y stops making new highs and sustains a move below 5.0%.",
       "US 20Y/30Y stop making new highs and the curve rally broadens beyond the 2Y.",
@@ -137,7 +124,9 @@
       "20Y/30Y yields make fresh highs while TLT loses the Oct 1 low area.",
       "Crude/diesel reaccelerate and breakevens rise, reviving the inflation/term-premium shock."
     ],
-    "source": "https://www.ishares.com/us/products/239454/ishares-20-year-treasury-bond-etf"
+    "source": "https://www.ishares.com/us/products/239454/ishares-20-year-treasury-bond-etf",
+    "buyDecision": "At most small tactical starter as rate-hedge satellite after fresh quote; prefer VGIT/IEF as main new duration and SGOV liquidity.",
+    "nextTest": "Post-FOMC 20/30-year yield direction, oil/refined fuel prices, real yields and matched HY OAS. Do not equate SEC yield to stable cash distribution."
   },
   "latestDurationShock": {
     "asOf": "2026-10-22",
@@ -199,5 +188,26 @@
         "implication": "Locking longer fixed coupons benefits price/rollover relative to bills but entry valuation matters"
       }
     ]
-  }
+  },
+  "historicalEventOverlay": {
+    "event": "US Employment Situation — September 2026",
+    "releasedAt": "2026-10-02T08:30:00-04:00",
+    "payrollsK": 29,
+    "consensusK": 90,
+    "unemploymentRatePct": 4.2,
+    "participationRatePct": 61.8,
+    "avgHourlyEarningsMoMPct": 0.1,
+    "avgHourlyEarningsYoYPct": 3,
+    "priorTwoMonthNetRevisionK": -60,
+    "policyRead": "The report materially weakens the case for an October hike because hiring, wages and revisions all cooled at once. It does not remove the year-end hike risk: Reuters reported December pricing still near 90% after the release.",
+    "marketReaction": "US 2Y fell toward 4.72% and US 10Y toward 5.18%; equities rallied and oil fell more than 3% intraday.",
+    "divergence": "The labour signal is bond-friendly, but the long end still has to prove that inflation/term-premium pressure is peaking. A one-session rally is not enough.",
+    "seasonalityCaveat": "Reuters noted that late-Labor-Day seasonal adjustment effects may have depressed the headline. Treat the print as a real policy input, but cross-check claims, revisions, household employment, wages and subsequent data before declaring a labour break.",
+    "sources": [
+      "https://www.bls.gov/news.release/archives/empsit_10022026.htm",
+      "https://www.reuters.com/business/fed-seen-skipping-october-rate-hike-job-market-cools-2026-10-02/",
+      "https://www.reuters.com/world/china/global-markets-wrapup-1-2026-10-02/"
+    ]
+  },
+  "sourceDecisionLedger": "data/decision-refresh-2026-10-23.json"
 }
