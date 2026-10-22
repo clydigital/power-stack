@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-22T04:55:39.938Z",
+  "generatedAt": "2026-10-22T11:50:34.454Z",
   "asOf": "2026-10-22T02:58:10.816+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -15,13 +15,13 @@
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-22T04:55:39.861Z",
+      "generatedAt": "2026-10-22T11:50:34.394Z",
       "status": "OK"
     },
     "holdingTape": {
       "contractVersion": "power-stack-holding-tape/1",
       "expectedContract": "power-stack-holding-tape/1",
-      "generatedAt": "2026-10-22T04:42:48.366Z",
+      "generatedAt": "2026-10-22T11:50:34.330Z",
       "unresolved": [
         "6742UW"
       ],
@@ -135,14 +135,14 @@
   },
   "portfolioTriage": {
     "tapeDivergences": [
-      "YTLPOWR",
-      "TSLA"
+      "HIBISCS",
+      "TSLA",
+      "DAYANG"
     ],
     "tapeConfirmations": [
       "MISC",
-      "HIBISCS",
-      "TTWO",
-      "DAYANG"
+      "YTLPOWR",
+      "TTWO"
     ],
     "highReview": [
       "HIBISCS",
@@ -309,9 +309,9 @@
       "possibleDecisionImpact": "Could change the current add/hold gate or create a new company-specific catalyst/invalidation."
     },
     {
-      "ticker": "YTLPOWR",
-      "name": "YTL Power International Berhad",
-      "priorityScore": 180,
+      "ticker": "HIBISCS",
+      "name": "Hibiscus Petroleum Berhad",
+      "priorityScore": 205,
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
@@ -320,26 +320,26 @@
         "freshness": {
           "status": "CURRENT",
           "eligibleForComparison": true,
-          "sessionDate": "2026-10-21",
-          "businessDaysOld": 1,
+          "sessionDate": "2026-10-22",
+          "businessDaysOld": 0,
           "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-10-21",
-        "close": 5.34,
-        "previousClose": 5.3,
-        "change": 0.04,
-        "changePct": 0.755,
+        "sessionDate": "2026-10-22",
+        "close": 2.43,
+        "previousClose": 2.33,
+        "change": 0.1,
+        "changePct": 4.292,
         "currency": "MYR",
         "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
-        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/6742.KL?interval=1d&range=1mo&includePrePost=false",
-        "closeNotice": "Source-dated regular-session daily close: 2026-10-21"
+        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/5199.KL?interval=1d&range=1mo&includePrePost=false",
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-22"
       },
       "currentAction": "HOLD / NO ADD",
       "reasons": [
         "completed-session tape moved against the directional market overlay",
         "portfolio overlay marks the holding HIGH_REVIEW"
       ],
-      "researchQuestion": "Why did YTLPOWR rise despite a directional rates headwind, and does the answer improve or weaken the current HOLD / NO ADD gate?",
+      "researchQuestion": "Has new company-specific evidence changed HIBISCS's current action gate or thesis risk?",
       "requiredEvidence": [
         "company-specific news/catalysts for the completed session",
         "technical/flow context sufficient to test whether the divergence is company-specific or temporary",
@@ -348,40 +348,43 @@
       "possibleDecisionImpact": "Could change the current add/hold gate or create a new company-specific catalyst/invalidation."
     },
     {
-      "ticker": "6742UW",
-      "name": "YTL Power structured warrant / linked instrument",
-      "priorityScore": 165,
+      "ticker": "DAYANG",
+      "name": "Dayang Enterprise Holdings Berhad",
+      "priorityScore": 205,
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
-        "status": "UNRESOLVED",
-        "reason": "Missing verified closed-session instrument or price data.",
+        "status": "DIVERGES",
+        "reason": "Completed-session tape moved against the direction implied by the current market overlay.",
         "freshness": {
-          "status": "UNRESOLVED",
-          "eligibleForComparison": false,
-          "reason": "Missing verified closed-session instrument or price data."
+          "status": "CURRENT",
+          "eligibleForComparison": true,
+          "sessionDate": "2026-10-22",
+          "businessDaysOld": 0,
+          "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": null,
-        "close": null,
-        "previousClose": null,
-        "change": null,
-        "changePct": null,
+        "sessionDate": "2026-10-22",
+        "close": 1.29,
+        "previousClose": 1.25,
+        "change": 0.04,
+        "changePct": 3.2,
         "currency": "MYR",
-        "sourceName": null,
-        "sourceUrl": null,
-        "closeNotice": null
+        "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
+        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/5141.KL?interval=1d&range=1mo&includePrePost=false",
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-22"
       },
-      "currentAction": "NO INCREASE / TRACK TERMS",
+      "currentAction": "HOLD / DO NOT AVERAGE DOWN",
       "reasons": [
-        "completed-session tape/instrument data is unresolved",
+        "completed-session tape moved against the directional market overlay",
         "portfolio overlay marks the holding HIGH_REVIEW"
       ],
-      "researchQuestion": "What are the verified strike, expiry, conversion ratio, liquidity and current market value of 6742UW, and how much YTL-linked risk does it add?",
+      "researchQuestion": "Has new company-specific evidence changed DAYANG's current action gate or thesis risk?",
       "requiredEvidence": [
-        "verified instrument symbol/terms and completed-session market data",
+        "company-specific news/catalysts for the completed session",
+        "technical/flow context sufficient to test whether the divergence is company-specific or temporary",
         "funding, valuation, cash-flow or operating evidence that could offset or reinforce the macro headwind"
       ],
-      "possibleDecisionImpact": "Could unlock accurate YTL-linked concentration and portfolio-weight measurement."
+      "possibleDecisionImpact": "Could change the current add/hold gate or create a new company-specific catalyst/invalidation."
     }
   ],
   "watchlistResearchQueue": [
@@ -583,24 +586,24 @@
       "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
     },
     {
-      "ticker": "HIBISCS",
+      "ticker": "YTLPOWR",
       "overlayState": "HEADWIND",
       "reaction": "CONFIRMS",
       "action": "HOLD / NO ADD",
       "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
+    },
+    {
+      "ticker": "6742UW",
+      "overlayState": "HEADWIND",
+      "reaction": "UNRESOLVED",
+      "action": "NO INCREASE / TRACK TERMS",
+      "reason": "No current decision-relevant divergence promoted into the capped queue."
     },
     {
       "ticker": "TTWO",
       "overlayState": "HEADWIND",
       "reaction": "CONFIRMS",
       "action": "HOLD / NO ADD",
-      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
-    },
-    {
-      "ticker": "DAYANG",
-      "overlayState": "HEADWIND",
-      "reaction": "CONFIRMS",
-      "action": "HOLD / DO NOT AVERAGE DOWN",
       "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
     }
   ],
