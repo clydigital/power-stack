@@ -1,0 +1,269 @@
+{
+  "contractVersion": "power-stack-client-advisor/1",
+  "asOf": "2026-10-23T06:30:00+08:00",
+  "marketDataThrough": "2026-10-22",
+  "heading": "Your next move starts with the money you already own.",
+  "standfirst": "A one-year investment plan to grow RM13,491, recycle weak positions and buy better opportunities as their evidence improves.",
+  "outlook": {
+    "label": "Selective opportunities · elevated risk",
+    "summary": "Stocks are rotating away from crowded AI names as Treasuries attract safety buying. That creates bond entry opportunities and a reason to look beyond technology. Oil and sovereign-debt pressures can still reverse the move.",
+    "asOf": "2026-10-23",
+    "whatChanges": "A new earnings report, policy surprise, yield reversal or valuation change can replace today's recommended candidates. The market view is evidence-led, not frozen by an older research dossier."
+  },
+  "capital": {
+    "totalMYR": 13491,
+    "yearEndDate": "2027-10-23",
+    "targetRangeMYR": [
+      14570,
+      15110
+    ],
+    "drawdownReviewMYR": 12142,
+    "stretchPct": [
+      8,
+      12
+    ],
+    "cashVerified": false,
+    "positionsVerified": false,
+    "riskNote": "Entire starting account is risk capital. Targets are not guarantees; the −10% level is a review trigger, not loss protection."
+  },
+  "firstMoves": [
+    {
+      "id": "funding",
+      "number": "01",
+      "label": "FIRST MOVE",
+      "title": "Review what to sell before buying",
+      "decision": "REBALANCE",
+      "tone": "caution",
+      "amountMYR": null,
+      "description": "DAYANG's weakened earnings case is the first exit review. Recheck TSLA and the combined YTL Power/warrant concentration.",
+      "do": "Confirm Rakuten quantities, cash balance and the warrant's expiry. Prioritise selling investments that no longer offer the best prospective return.",
+      "notYet": "Historical positions and RM13,491 total NAV do not establish how much free cash is available.",
+      "anchor": "#portfolio-review"
+    },
+    {
+      "id": "duration",
+      "number": "02",
+      "label": "BEST FIRST BUY IDEA",
+      "title": "Start with intermediate US Treasuries",
+      "decision": "BUY IN STAGES",
+      "tone": "positive",
+      "amountMYR": 2000,
+      "totalTargetMYR": 4047,
+      "symbol": "VGIT",
+      "description": "Treasury bonds have begun providing protection during technology selling. VGIT takes less long-rate risk than TLT.",
+      "do": "Prepare RM2,000 initial VGIT exposure, then RM2,047 only if post-Fed yields and USD/MYR still support the case.",
+      "notYet": "Requires proceeds or verified cash, next-session quote, ETF availability and duration/FX check.",
+      "anchor": "#investment-plan"
+    },
+    {
+      "id": "cash",
+      "number": "03",
+      "label": "KEEP FLEXIBILITY",
+      "title": "Leave room for better prices",
+      "decision": "KEEP LIQUID",
+      "tone": "neutral",
+      "amountMYR": 3373,
+      "description": "RM2,024 remains in MYR and RM1,349 is earmarked for SGOV if broker access, taxes and FX make sense.",
+      "do": "Don't deploy idle cash because the market is moving. Use it when another investment has passed the earnings and price tests.",
+      "notYet": "SGOV is a USD T-bill ETF, not MYR cash or a guaranteed 5% deposit.",
+      "anchor": "#investment-plan"
+    }
+  ],
+  "opportunities": [
+    {
+      "symbol": "VGIT",
+      "name": "Intermediate US Treasury ETF",
+      "action": "BUY STARTER",
+      "tone": "positive",
+      "group": "Bonds",
+      "targetMYR": 4047,
+      "firstStageMYR": 2000,
+      "remainingMYR": 2047,
+      "priceReference": "22 Oct 2026 close · USD 57.45",
+      "case": "Income plus moderate potential price gains if US yields keep falling.",
+      "buyWhen": "After checking the next executable price, Treasury real yields and USD/MYR. Second tranche after the 27–28 October Fed meeting if the bond thesis survives.",
+      "sellWhen": "Review after a substantial yield decline or if real yields and term premium begin rising persistently.",
+      "risk": "Currency movements and duration losses; not principal-guaranteed.",
+      "nextEvent": "27–28 Oct · US FOMC",
+      "source": "https://advisors.vanguard.com/investments/products/vgit/vanguard-intermediate-term-treasury-etf"
+    },
+    {
+      "symbol": "SGOV",
+      "name": "0–3 Month Treasury ETF",
+      "action": "CASH PARKING",
+      "tone": "positive",
+      "group": "Bonds",
+      "targetMYR": 1349,
+      "firstStageMYR": 1349,
+      "remainingMYR": 0,
+      "priceReference": "22 Oct 2026 close · USD 100.62",
+      "case": "Keep USD capital relatively liquid while waiting for higher-return entries.",
+      "buyWhen": "Confirm Rakuten eligibility, FX charges and tax treatment against simply keeping MYR cash.",
+      "sellWhen": "Redeploy only when a better idea meets the full investment test.",
+      "risk": "USD/MYR and distribution mechanics; not a MYR bank deposit.",
+      "nextEvent": "Next broker price and fee check",
+      "source": "https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf"
+    },
+    {
+      "symbol": "RSP",
+      "name": "Equal-weight S&P 500 ETF",
+      "action": "BUY IF BREADTH HOLDS",
+      "tone": "conditional",
+      "group": "Stocks",
+      "targetMYR": 1619,
+      "firstStageMYR": 1619,
+      "remainingMYR": 0,
+      "priceReference": "22 Oct 2026 close · USD 218.22",
+      "case": "Less dependence on a handful of mega-cap AI names; equal-weight stocks held up better during the technology sell-off.",
+      "buyWhen": "Fresh price and earnings breadth confirm the rotation, without paying an inflated short-term premium.",
+      "sellWhen": "Trim when broad earnings deteriorate or the position no longer beats cash and Treasuries on expected return.",
+      "risk": "Still equity downside; equal-weighting increases exposure to economically sensitive businesses.",
+      "nextEvent": "Q3 reporting and next broad market session",
+      "source": "https://www.invesco.com/us/financial-products/etfs/product-detail?productId=RSP"
+    },
+    {
+      "symbol": "CF",
+      "name": "CF Industries",
+      "action": "BUY AFTER EARNINGS",
+      "tone": "conditional",
+      "group": "Stocks",
+      "targetMYR": 1889,
+      "firstStageMYR": 950,
+      "remainingMYR": 939,
+      "priceReference": "22 Oct 2026 close · USD 118.56",
+      "case": "Substantial reported cash flow and potentially favourable nitrogen supply economics offer a non-AI return driver.",
+      "buyWhen": "Read 4 November Q3 results, remove one-off profit items, and confirm fertiliser pricing exceeds natural-gas cost pressure.",
+      "sellWhen": "Review if the nitrogen/gas margin advantage reverses or the cash economics deteriorate.",
+      "risk": "Agricultural cycle, energy feedstock cost and expensive entry after strong earnings.",
+      "nextEvent": "4 Nov · Q3 results",
+      "source": "https://ir.cfindustries.com/"
+    },
+    {
+      "symbol": "TLT",
+      "name": "20+ Year Treasury ETF",
+      "action": "SMALL TACTICAL ONLY",
+      "tone": "conditional",
+      "group": "Bonds",
+      "targetMYR": 1349,
+      "firstStageMYR": 1349,
+      "remainingMYR": 0,
+      "priceReference": "22 Oct 2026 close · USD 81.74",
+      "case": "Meaningful upside if long-term yields fall further during a credit or growth scare.",
+      "buyWhen": "Check the 20/30-year yield curve and inflation response after FOMC. Never add solely because bonds rose yesterday.",
+      "sellWhen": "Review partial profit after roughly 12–15% price appreciation or if a 50bp adverse yield reversal invalidates the thesis.",
+      "risk": "Roughly 14.8-year duration: a +0.50 percentage-point yield move can cause about a 7.4% price decline before income/convexity.",
+      "nextEvent": "27–28 Oct · FOMC and long-end yields",
+      "source": "https://www.ishares.com/us/products/239454/ishares-20-year-treasury-bond-etf"
+    },
+    {
+      "symbol": "TSM",
+      "name": "Taiwan Semiconductor (ADR)",
+      "action": "WAIT FOR ENTRY",
+      "tone": "neutral",
+      "group": "Stocks",
+      "targetMYR": 1214,
+      "firstStageMYR": 1214,
+      "remainingMYR": 0,
+      "priceReference": "22 Oct 2026 close · USD 412.35",
+      "case": "Exceptional actual Q3 revenue and margins, but semiconductor valuations and AI credit concerns remain exposed.",
+      "buyWhen": "Funded chip demand remains solid and sector breadth/valuation stabilise. Need a post-sell-off entry price, not an automatic dip buy.",
+      "sellWhen": "Reduce if advanced-node cash generation, bookings or balance-sheet outlook break.",
+      "risk": "Sector crowding, geopolitics and high valuation sensitivity.",
+      "nextEvent": "Next operating update and sector confirmation",
+      "source": "https://investor.tsmc.com/english/quarterly-results/2026/q3"
+    }
+  ],
+  "legacyActions": [
+    {
+      "ticker": "DAYANG",
+      "action": "SELL REVIEW",
+      "tone": "caution",
+      "lastKnown": "RM516 estimated · October 22 holding tape",
+      "why": "Weak operating earnings and uncertain repair. Assess proceeds against alternative returns.",
+      "gate": "Fresh Bursa bid/ask and updated operating orders."
+    },
+    {
+      "ticker": "TSLA",
+      "action": "TRIM REVIEW",
+      "tone": "caution",
+      "lastKnown": "Old quantity 1.1778 shares · price source 22 Oct",
+      "why": "High valuation for a one-year outcome, with earnings and financing risks.",
+      "gate": "Check current weight and the Q3 cash/earnings thesis."
+    },
+    {
+      "ticker": "YTLPOWR + 6742UW",
+      "action": "CONCENTRATION REVIEW",
+      "tone": "caution",
+      "lastKnown": "Older YTLPOWR estimate RM5,290; warrant unpriced",
+      "why": "Possible overlapping power and leveraged warrant exposure.",
+      "gate": "Confirm parent weight and 6742UW contract before any trade."
+    },
+    {
+      "ticker": "XOM · MISC · HIBISCS",
+      "action": "REASSESS OVERLAP",
+      "tone": "neutral",
+      "lastKnown": "Historical positions, not live account readback",
+      "why": "Energy and shipping holdings may react to similar oil/freight shocks.",
+      "gate": "Compare net MYR expected return against cash, bonds and CF."
+    },
+    {
+      "ticker": "TTWO",
+      "action": "HOLD IF THESIS WINS",
+      "tone": "neutral",
+      "lastKnown": "Historical position, unverified today",
+      "why": "Game-release catalyst may justify capital but competes with other 12-month ideas.",
+      "gate": "Updated launch evidence, valuation and actual holding size."
+    }
+  ],
+  "marketSignals": [
+    {
+      "name": "Treasuries",
+      "state": "Opportunity, with rate risk",
+      "body": "10-year US yields briefly fell below 5% as investors sought safety. Important for VGIT and TLT. Do not assume inflation has ended.",
+      "source": "https://www.ishares.com/us/products/239454/ishares-20-year-treasury-bond-etf"
+    },
+    {
+      "name": "Equity rotation",
+      "state": "Selective, not a full crash",
+      "body": "The technology-heavy Nasdaq fell sharply while the equal-weight S&P held up. Stock selection matters more than index direction.",
+      "source": "https://apnews.com/article/1970e79d013cbddcae89c53b4b98f384"
+    },
+    {
+      "name": "Europe and Asia",
+      "state": "Keep an eye on sovereign stress",
+      "body": "French government debt, Japanese funding flows, UK fiscal risk and Australian/NZ policy are reasons to compare foreign bonds carefully after MYR FX.",
+      "source": "https://www.imf.org/en/news/articles/2026/07/22/pr26255-france-imf-executive-board-concludes-2026-article-iv-consultation"
+    }
+  ],
+  "calendar": [
+    {
+      "date": "27–28 Oct",
+      "name": "US Federal Reserve decision",
+      "why": "Could change VGIT/TLT entry risk"
+    },
+    {
+      "date": "28 Oct",
+      "name": "UK budget, NZ central bank and Australian CPI",
+      "why": "Foreign bond yield opportunities may reprice"
+    },
+    {
+      "date": "4 Nov",
+      "name": "CF Industries Q3 earnings",
+      "why": "Determines whether the CF equity starter qualifies"
+    },
+    {
+      "date": "23 Nov",
+      "name": "First monthly account review",
+      "why": "Check net MYR performance, fills and remaining cash"
+    }
+  ],
+  "integrity": {
+    "ordersPlaced": false,
+    "liveBrokerConnected": false,
+    "latestCashBalanceKnown": false,
+    "legacyPositionsReconciled": false,
+    "sourceTimestampNote": "Model prepared 23 October 2026 from 21–22 October last-completed-session data; no intraday broker prices. Research changes on subsequent manual PS refreshes.",
+    "ownership": "Power Stack owns decisions; Live Desk and Bluebelly supply contextual evidence, never a mandatory buy/sell gate.",
+    "instructions": "Client-facing recommendation view. No auto-placement or auto-funded purchases. Replace data when newer corroborated evidence arrives."
+  }
+}
