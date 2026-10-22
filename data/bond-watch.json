@@ -83,9 +83,13 @@
     "Decompose long-end moves into real yield, breakeven inflation and term premium.",
     "Check Treasury auctions/supply and liquidity rather than using yield level alone.",
     "Compare USTs with JGBs/Bunds and USDJPY before calling the move US-specific.",
-    "Compare SGOV/BIL/SHY, IEF, TLT and TIP on yield/duration/convexity rather than treating 'bonds' as one trade."
+    "Compare SGOV/BIL/SHY, IEF, TLT and TIP on yield/duration/convexity rather than treating 'bonds' as one trade.",
+    "EU FR OAT-Bund bank 5Y CDS/ECB TPI and Italy/Belgium contagion",
+    "AU CPI 28 Oct, NZ OCR 28 Oct, UK budget 28 Oct, ECB 29 Oct, BoJ 29-30 Oct, RBA 3 Nov, BoE 5 Nov",
+    "Cross-currency USD/MYR, GBP/MYR, EUR/MYR, AUD/MYR, NZD/MYR hedged yields vs MGS",
+    "Issuer ETF fund NAV, SEC vs weighted YTM, 50bp duration shocks and market access"
   ],
-  "currentRead": "22 Oct closing: 10Y UST under 5% intraday as QQQ -2.86% and RSP +0.73% showed rotation, TLT +1.87% to $81.74, IEF +1.08% to $91.20 and VGIT +0.79% to $57.45. Rate level is no longer one-way inflation pressure; credit/growth risk offers Treasury haven support but Brent/term premium still threaten reversal.",
+  "currentRead": "23 Oct global sweep adds cross-border sovereign spreads and relative carry: US intermediate duration preferred; Malaysia 3Y/5Y MGS viable local currency, AU 5.27% UK 5.38% NZ 5.06% require upcoming policy/FX proof, FR 5.14% intraday driven by fiscal spread rather than risk-free carry. TLT is long-duration tactical, not safe 5% bank deposit.",
   "currentDecision": {
     "cashShort": "BUY SGOV FOR LIQUIDITY",
     "intermediate": "BUY STARTER VGIT OR IEF — PREFERRED",
@@ -209,5 +213,45 @@
       "https://www.reuters.com/world/china/global-markets-wrapup-1-2026-10-02/"
     ]
   },
-  "sourceDecisionLedger": "data/decision-refresh-2026-10-23.json"
+  "sourceDecisionLedger": "data/decision-refresh-2026-10-23.json",
+  "globalSovereignOverlay": {
+    "asOf": "2026-10-23",
+    "structuredData": "data/global-sovereign-bond-sweep-2026-10-23.json",
+    "report": "research/2026-10-23-global-sovereign-bonds-asia-france.md",
+    "cutoff": "21 Oct comparable local market benchmarks, French 22 Oct Reuters intraday, dated issuer portfolio facts",
+    "priority": [
+      "BUY_STARTER_US_VGIT_OR_IEF",
+      "SGOV_LIQUIDITY",
+      "TLT_SMALL_TACTICAL_ONLY",
+      "RESEARCH_MYR_3_5Y_MGS_DIRECT"
+    ],
+    "conditionalForeign": [
+      "WATCH_AU_IAF_OR_VGB_AFTER_OCT28_CPI_NOV3_RBA",
+      "WAIT_UK_IGLT_UNTIL_OCT28_BUDGET_NOV5_BOE",
+      "WAIT_NZ_NGB_AFTER_OCT28_RBNZ",
+      "WATCH_EUR_GERMAN_XBTR_BUND_IF_FRANCE_SPREAD_CONTINUES"
+    ],
+    "avoid": [
+      "FRANCE_LONG_OAT_FOR_HEADLINE_YIELD",
+      "INDONESIA_PHP_BONDS_AS_8_PERCENT_FREE_CARRY",
+      "LONG_JGB_AS_EASY_US_TREASURY_SUBSTITUTE"
+    ],
+    "domesticMYR": {
+      "govt3YPct": 3.43,
+      "govt5YPct": 3.65,
+      "govt10YPct": 3.88,
+      "asOf": "2026-10-21",
+      "source": "https://financialmarkets.bnm.gov.my/benchmark-yields"
+    },
+    "global5pctSource": "https://countryeconomy.com/bonds",
+    "franceRisk": {
+      "oct22Intraday10YPeakPct": 5.1415,
+      "spreadToBundBp": 177.7,
+      "imf2026DebtGDPpct": 118.5,
+      "imf2026DeficitGDPpct": 5.2,
+      "interpretation": "fiscal/political OAT fragmentation, not equivalent to Bund risk or guaranteed ECB TPI backstop"
+    },
+    "buyReadiness": "Broker market access, MYR/USD and other FX hedging prices, fund yield dates, portfolio cash/horizon, official latest same-day curves and bank-CDS mismatches remain open. No orders placed.",
+    "portfolioConflictPolicy": "Do not overwrite core scored securities/canonical rates; distinct overlay only."
+  }
 }
