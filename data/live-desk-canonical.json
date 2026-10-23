@@ -535,14 +535,14 @@
         "label": "US dollar transmission",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "US Dollar · UUP proxy 5D -0.69%.",
-        "asOf": "2026-10-21",
+        "detail": "US Dollar · UUP proxy 5D -0.34%.",
+        "asOf": "2026-10-22",
         "sourceName": "Nasdaq official etf history",
         "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical",
         "evidenceRefs": [],
         "metrics": {
-          "proxyLevel": 28.92,
-          "change5dPct": -0.69
+          "proxyLevel": 28.9,
+          "change5dPct": -0.34
         }
       },
       {
@@ -590,17 +590,7 @@
     "treasuryBills": "OK",
     "treasurySupply": "UNRESOLVED"
   },
-  "contradictions": [
-    {
-      "id": "spx-rsp",
-      "title": "Headline index and equal weight are separating",
-      "detail": "SPX cash 0.5% over 5D vs RSP 2.1%.",
-      "assets": [
-        "spx",
-        "rsp"
-      ]
-    }
-  ],
+  "contradictions": [],
   "researchGaps": [
     "DATA: Missing canonical intraday Fed‑funds‑futures and 5m–30m UST 2Y/10Y bars plus canonical MOVE/Treasury‑volatility series needed to test same‑session transmission and volatility response.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
@@ -610,9 +600,9 @@
       "id": "dxy",
       "symbol": "UUP",
       "label": "US Dollar · UUP proxy",
-      "last": 28.92,
-      "change5d": -0.69,
-      "asOf": "2026-10-21",
+      "last": 28.9,
+      "change5d": -0.34,
+      "asOf": "2026-10-22",
       "sourceName": "Nasdaq official etf history",
       "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical"
     },
@@ -820,7 +810,7 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-22T21:34:37.901Z",
+    "asOf": "2026-10-23T04:47:26.547Z",
     "assets": [
       {
         "key": "SPX",
@@ -886,8 +876,8 @@
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4025.300049,
-        "dailyChange": -3,
+        "last": 4004.5,
+        "dailyChange": -0.85,
         "dailyChangeUnit": "percent",
         "bias": "BEARISH",
         "conviction": "LOW",
@@ -895,14 +885,14 @@
         "confirmingSignal": null,
         "contradictingSignal": "Need timestamped XAUUSD around earnings/releases and policy windows.",
         "invalidation": "Canonical intraday Fed‑funds‑futures and 2Y/10Y timestamped bars plus canonical MOVE/Treasury volatility series and same‑session DXY/XAUUSD evidence showing either alignment or persistent divergence.",
-        "asOf": "2026-10-22"
+        "asOf": "2026-10-23"
       },
       {
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 81380.96,
-        "dailyChange": -3.15,
+        "last": 81561.67,
+        "dailyChange": 0.31,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -910,7 +900,7 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": null,
-        "asOf": "2026-10-22"
+        "asOf": "2026-10-23"
       }
     ]
   },
@@ -1472,52 +1462,10 @@
   },
   "marketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "37de0989-aa7f-4c8e-8a42-24dee4e4846a",
-    "capturedAt": "2026-10-22T14:40:57.606Z",
-    "researchRunId": "39222dcd-0ba7-4967-b3be-4e8ec6eeba21",
-    "items": [
-      {
-        "id": "05f6ccd2-0b2e-4610-a0ac-aaf29f48e81e",
-        "motionKey": "event:earnings:spacex",
-        "versionNumber": 11,
-        "headline": "Earnings (SpaceX, Netflix, Tesla, Meta, IBM) and midterms are immediate catalysts the creator highlights for expected volatility.",
-        "category": "EARNINGS",
-        "verificationState": "LEAD",
-        "lifecycleState": "PROMOTED",
-        "whatHappened": "StockedUp surfaced this in a recent transcript. It remains a creator-sourced lead until independently corroborated: Earnings (SpaceX, Netflix, Tesla, Meta, IBM) and midterms are immediate catalysts the creator highlights for expected volatility.",
-        "marketReaction": null,
-        "whyInteresting": "Transcript writing angle: Piece: 'When a Fake Peace Deal Moves Markets: Anatomy of an Intraday $400bn Shock' — use tick‑level news timestamps, market‑cap swings, liquidity metrics and dealer quotations to narrate causality.",
-        "bigPictureBridge": "Fresh rates / funding evidence → sovereign yields and financing costs → Cost of Capital regime",
-        "nextTest": "Verify transcript lead: Earnings (SpaceX, Netflix, Tesla, Meta, IBM) and midterms are immediate catalysts the creator highlights for expected volatility.",
-        "tickers": [
-          "SPACEX",
-          "META",
-          "NFLX",
-          "TSLA",
-          "NASDAQ",
-          "XAUUSD"
-        ],
-        "sourceName": "StockedUp",
-        "sourceUrl": "https://www.youtube.com/watch?v=v8pxKa9ks7Y",
-        "materiality": 88,
-        "relevance": 88,
-        "novelty": 88,
-        "occurredAt": "2026-10-20T22:00:02.000Z",
-        "storyId": "1cf9ad1d-c350-48c4-b06e-d544771919d3",
-        "storySlug": "iran-oil-inflation-rates",
-        "storyTitle": "Distillate Scarcity Persists Despite Crude-Flow Recovery",
-        "regimeSlug": "global-cost-of-capital",
-        "regimeLabel": "US Rate Regime",
-        "attentionTier": "PRIMARY",
-        "attentionScore": 84,
-        "writingPotential": "HIGH",
-        "attentionReasons": [
-          "high materiality",
-          "high market relevance",
-          "asset/ticker linked"
-        ]
-      }
-    ]
+    "editionId": "4b55110d-eb75-4e54-be27-ac97e1695dde",
+    "capturedAt": "2026-10-23T04:22:35.162Z",
+    "researchRunId": "ecf6597c-c547-43b9-91bc-00785f3e630b",
+    "items": []
   },
   "upstreamGuardrails": [
     "This snapshot is a read-only Live canonical market-intelligence view for downstream consumers.",
@@ -1536,5 +1484,5 @@
     "Mismatched ticker/issuer labels are quarantined, never silently remapped to another security.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-22T21:40:52.682Z"
+  "syncedAt": "2026-10-23T04:58:04.827Z"
 }

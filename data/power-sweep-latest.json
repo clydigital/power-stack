@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-23T04:47:28.564Z",
+  "generatedAt": "2026-10-23T04:58:05.000Z",
   "asOf": "2026-10-22T15:05:32.495+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -9,7 +9,7 @@
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
       "asOf": "2026-10-22T15:05:32.495+00:00",
-      "syncedAt": "2026-10-22T21:40:52.682Z",
+      "syncedAt": "2026-10-23T04:58:04.827Z",
       "sourceStatus": "degraded_latest",
       "sourceHealth": {
         "dossier": "DEGRADED",
@@ -18,7 +18,7 @@
         "nyFedPrimaryDealers": "OK",
         "treasurySupply": "UNRESOLVED"
       },
-      "ageHours": 6.6,
+      "ageHours": 13.9,
       "reasons": [
         "UPSTREAM_EVIDENCE_PARTIAL"
       ],
@@ -27,7 +27,7 @@
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-23T04:47:28.487Z",
+      "generatedAt": "2026-10-23T04:58:04.939Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -60,52 +60,10 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "37de0989-aa7f-4c8e-8a42-24dee4e4846a",
-    "capturedAt": "2026-10-22T14:40:57.606Z",
-    "itemCount": 1,
-    "items": [
-      {
-        "id": "05f6ccd2-0b2e-4610-a0ac-aaf29f48e81e",
-        "motionKey": "event:earnings:spacex",
-        "versionNumber": 11,
-        "headline": "Earnings (SpaceX, Netflix, Tesla, Meta, IBM) and midterms are immediate catalysts the creator highlights for expected volatility.",
-        "category": "EARNINGS",
-        "verificationState": "LEAD",
-        "lifecycleState": "PROMOTED",
-        "whatHappened": "StockedUp surfaced this in a recent transcript. It remains a creator-sourced lead until independently corroborated: Earnings (SpaceX, Netflix, Tesla, Meta, IBM) and midterms are immediate catalysts the creator highlights for expected volatility.",
-        "marketReaction": null,
-        "whyInteresting": "Transcript writing angle: Piece: 'When a Fake Peace Deal Moves Markets: Anatomy of an Intraday $400bn Shock' — use tick‑level news timestamps, market‑cap swings, liquidity metrics and dealer quotations to narrate causality.",
-        "bigPictureBridge": "Fresh rates / funding evidence → sovereign yields and financing costs → Cost of Capital regime",
-        "nextTest": "Verify transcript lead: Earnings (SpaceX, Netflix, Tesla, Meta, IBM) and midterms are immediate catalysts the creator highlights for expected volatility.",
-        "tickers": [
-          "SPACEX",
-          "META",
-          "NFLX",
-          "TSLA",
-          "NASDAQ",
-          "XAUUSD"
-        ],
-        "sourceName": "StockedUp",
-        "sourceUrl": "https://www.youtube.com/watch?v=v8pxKa9ks7Y",
-        "materiality": 88,
-        "relevance": 88,
-        "novelty": 88,
-        "occurredAt": "2026-10-20T22:00:02.000Z",
-        "storyId": "1cf9ad1d-c350-48c4-b06e-d544771919d3",
-        "storySlug": "iran-oil-inflation-rates",
-        "storyTitle": "Distillate Scarcity Persists Despite Crude-Flow Recovery",
-        "regimeSlug": "global-cost-of-capital",
-        "regimeLabel": "US Rate Regime",
-        "attentionTier": "PRIMARY",
-        "attentionScore": 84,
-        "writingPotential": "HIGH",
-        "attentionReasons": [
-          "high materiality",
-          "high market relevance",
-          "asset/ticker linked"
-        ]
-      }
-    ]
+    "editionId": "4b55110d-eb75-4e54-be27-ac97e1695dde",
+    "capturedAt": "2026-10-23T04:22:35.162Z",
+    "itemCount": 0,
+    "items": []
   },
   "portfolioTriage": {
     "tapeDivergences": [
@@ -125,9 +83,6 @@
       "TSLA"
     ],
     "mixed": [],
-    "liveMotionLinkedHoldings": [
-      "TSLA"
-    ],
     "hiddenConcentration": [
       {
         "id": "ytl-linked",
@@ -572,7 +527,7 @@
       "overlayState": "HEADWIND",
       "reaction": "CONFIRMS",
       "action": "TRIM REVIEW",
-      "reason": "Fresh promoted Live Motion is linked, but this holding remains outside the capped deep-dive queue unless budget or priority changes."
+      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
     },
     {
       "ticker": "DAYANG",
