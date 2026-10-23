@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-23T17:13:06.965Z",
+  "generatedAt": "2026-10-23T21:23:21.202Z",
   "asOf": "2026-10-23T15:05:32.442+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -27,13 +27,13 @@
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-23T17:13:06.887Z",
+      "generatedAt": "2026-10-23T21:23:21.146Z",
       "status": "OK"
     },
     "holdingTape": {
       "contractVersion": "power-stack-holding-tape/1",
       "expectedContract": "power-stack-holding-tape/1",
-      "generatedAt": "2026-10-23T17:05:31.427Z",
+      "generatedAt": "2026-10-23T21:23:21.075Z",
       "unresolved": [
         "6742UW"
       ],
@@ -111,13 +111,14 @@
   },
   "portfolioTriage": {
     "tapeDivergences": [
-      "HIBISCS",
-      "TTWO",
+      "XOM",
+      "MISC",
+      "YTLPOWR",
       "DAYANG"
     ],
     "tapeConfirmations": [
-      "MISC",
-      "YTLPOWR",
+      "HIBISCS",
+      "TTWO",
       "TSLA"
     ],
     "highReview": [
@@ -219,9 +220,9 @@
   },
   "holdingResearchQueue": [
     {
-      "ticker": "TTWO",
-      "name": "Take-Two Interactive Software",
-      "priorityScore": 180,
+      "ticker": "XOM",
+      "name": "ExxonMobil",
+      "priorityScore": 198,
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
@@ -230,26 +231,26 @@
         "freshness": {
           "status": "CURRENT",
           "eligibleForComparison": true,
-          "sessionDate": "2026-10-22",
-          "businessDaysOld": 1,
+          "sessionDate": "2026-10-23",
+          "businessDaysOld": 0,
           "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-10-22",
-        "close": 207.81,
-        "previousClose": 206.16,
-        "change": 1.65,
-        "changePct": 0.8,
+        "sessionDate": "2026-10-23",
+        "close": 183.21,
+        "previousClose": 178.23,
+        "change": 4.98,
+        "changePct": 2.794,
         "currency": "USD",
         "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
-        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/TTWO?interval=1d&range=1mo&includePrePost=false",
-        "closeNotice": "Source-dated regular-session daily close: 2026-10-22"
+        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/XOM?interval=1d&range=1mo&includePrePost=false",
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-23"
       },
       "currentAction": "HOLD / NO ADD",
       "reasons": [
         "completed-session tape moved against the directional market overlay",
         "portfolio overlay marks the holding HIGH_REVIEW"
       ],
-      "researchQuestion": "Has new company-specific evidence changed TTWO's current action gate or thesis risk?",
+      "researchQuestion": "Has new company-specific evidence changed XOM's current action gate or thesis risk?",
       "requiredEvidence": [
         "company-specific news/catalysts for the completed session",
         "technical/flow context sufficient to test whether the divergence is company-specific or temporary",
@@ -294,9 +295,9 @@
       "possibleDecisionImpact": "Could unlock accurate YTL-linked concentration and portfolio-weight measurement."
     },
     {
-      "ticker": "HIBISCS",
-      "name": "Hibiscus Petroleum Berhad",
-      "priorityScore": 150,
+      "ticker": "DAYANG",
+      "name": "Dayang Enterprise Holdings Berhad",
+      "priorityScore": 143,
       "overlayState": "HEADWIND",
       "reviewPriority": "MONITOR",
       "actualReaction": {
@@ -305,25 +306,25 @@
         "freshness": {
           "status": "CURRENT",
           "eligibleForComparison": true,
-          "sessionDate": "2026-10-22",
-          "businessDaysOld": 1,
+          "sessionDate": "2026-10-23",
+          "businessDaysOld": 0,
           "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-10-22",
-        "close": 2.43,
-        "previousClose": 2.33,
-        "change": 0.1,
-        "changePct": 4.292,
+        "sessionDate": "2026-10-23",
+        "close": 1.32,
+        "previousClose": 1.29,
+        "change": 0.03,
+        "changePct": 2.326,
         "currency": "MYR",
         "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
-        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/5199.KL?interval=1d&range=1mo&includePrePost=false",
-        "closeNotice": "Source-dated regular-session daily close: 2026-10-22"
+        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/5141.KL?interval=1d&range=1mo&includePrePost=false",
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-23"
       },
-      "currentAction": "HOLD / NO CHASE",
+      "currentAction": "SELL / CAPITAL RECYCLING REVIEW",
       "reasons": [
         "completed-session tape moved against the directional market overlay"
       ],
-      "researchQuestion": "Has new company-specific evidence changed HIBISCS's current action gate or thesis risk?",
+      "researchQuestion": "Has new company-specific evidence changed DAYANG's current action gate or thesis risk?",
       "requiredEvidence": [
         "company-specific news/catalysts for the completed session",
         "technical/flow context sufficient to test whether the divergence is company-specific or temporary",
@@ -517,24 +518,31 @@
   ],
   "monitorOnly": [
     {
-      "ticker": "XOM",
+      "ticker": "MISC",
       "overlayState": "HEADWIND",
-      "reaction": "FLAT",
-      "action": "HOLD / NO ADD",
+      "reaction": "DIVERGES",
+      "action": "HOLD / FUNDING CHECK",
       "reason": "No current decision-relevant divergence promoted into the capped queue."
     },
     {
-      "ticker": "MISC",
+      "ticker": "HIBISCS",
       "overlayState": "HEADWIND",
       "reaction": "CONFIRMS",
-      "action": "HOLD / FUNDING CHECK",
+      "action": "HOLD / NO CHASE",
       "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
     },
     {
       "ticker": "YTLPOWR",
       "overlayState": "HEADWIND",
-      "reaction": "CONFIRMS",
+      "reaction": "DIVERGES",
       "action": "TRIM IF CONCENTRATION EXCESS",
+      "reason": "No current decision-relevant divergence promoted into the capped queue."
+    },
+    {
+      "ticker": "TTWO",
+      "overlayState": "HEADWIND",
+      "reaction": "CONFIRMS",
+      "action": "HOLD / NO ADD",
       "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
     },
     {
@@ -543,13 +551,6 @@
       "reaction": "CONFIRMS",
       "action": "TRIM REVIEW",
       "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
-    },
-    {
-      "ticker": "DAYANG",
-      "overlayState": "HEADWIND",
-      "reaction": "DIVERGES",
-      "action": "SELL / CAPITAL RECYCLING REVIEW",
-      "reason": "No current decision-relevant divergence promoted into the capped queue."
     }
   ],
   "newCapitalPriority": [
