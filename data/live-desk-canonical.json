@@ -506,16 +506,16 @@
         "label": "Treasury bills / front-end cash",
         "direction": "TIGHTER",
         "confirmation": "CONFIRMING",
-        "detail": "3M 4.22%; 6M 4.29%; average vs EFFR +37.5 bp.",
-        "asOf": "2026-10-22",
+        "detail": "3M 4.22%; 6M 4.30%; average vs EFFR +38.0 bp.",
+        "asOf": "2026-10-23",
         "sourceName": "U.S. Department of the Treasury",
         "sourceUrl": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026",
         "evidenceRefs": [],
         "metrics": {
           "bill3m": 4.22,
-          "bill6m": 4.29,
+          "bill6m": 4.3,
           "effectiveFedFunds": 3.88,
-          "billsVsEffrBps": 37.5
+          "billsVsEffrBps": 38
         }
       },
       {
@@ -616,9 +616,9 @@
       "id": "us3m-bill",
       "symbol": "DGS3MO",
       "label": "US 3M Treasury Bill Yield",
-      "last": 4.25,
-      "change5d": -0.7,
-      "asOf": "2026-10-21",
+      "last": 4.22,
+      "change5d": -1.4,
+      "asOf": "2026-10-22",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/DGS3MO"
     },
@@ -626,9 +626,9 @@
       "id": "us6m-bill",
       "symbol": "DGS6MO",
       "label": "US 6M Treasury Bill Yield",
-      "last": 4.35,
-      "change5d": -0.46,
-      "asOf": "2026-10-21",
+      "last": 4.29,
+      "change5d": -1.38,
+      "asOf": "2026-10-22",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/DGS6MO"
     },
@@ -636,9 +636,9 @@
       "id": "us2y",
       "symbol": "US2Y",
       "label": "US 2Y Yield",
-      "last": 4.65,
-      "change5d": -2.52,
-      "asOf": "2026-10-22",
+      "last": 4.69,
+      "change5d": -1.05,
+      "asOf": "2026-10-23",
       "sourceName": "U.S. Department of the Treasury",
       "sourceUrl": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026"
     },
@@ -646,9 +646,9 @@
       "id": "us10y-fred",
       "symbol": "US10Y",
       "label": "US 10Y Yield · Treasury",
-      "last": 4.96,
-      "change5d": -2.75,
-      "asOf": "2026-10-22",
+      "last": 5,
+      "change5d": -1.77,
+      "asOf": "2026-10-23",
       "sourceName": "U.S. Department of the Treasury",
       "sourceUrl": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026"
     },
@@ -656,9 +656,9 @@
       "id": "us10y-real",
       "symbol": "DFII10",
       "label": "US 10Y Real Yield",
-      "last": 2.76,
-      "change5d": -2.82,
-      "asOf": "2026-10-21",
+      "last": 2.64,
+      "change5d": -5.04,
+      "asOf": "2026-10-22",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/DFII10"
     },
@@ -666,9 +666,9 @@
       "id": "us10y-breakeven",
       "symbol": "T10YIE",
       "label": "US 10Y Breakeven Inflation",
-      "last": 2.32,
-      "change5d": 0,
-      "asOf": "2026-10-22",
+      "last": 2.34,
+      "change5d": -0.43,
+      "asOf": "2026-10-23",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/T10YIE"
     },
@@ -678,7 +678,7 @@
       "label": "Effective Federal Funds Rate",
       "last": 3.88,
       "change5d": 0,
-      "asOf": "2026-10-21",
+      "asOf": "2026-10-22",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/DFF"
     },
@@ -812,7 +812,7 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-23T17:05:35.650Z",
+    "asOf": "2026-10-23T21:23:29.304Z",
     "assets": [
       {
         "key": "SPX",
@@ -863,8 +863,8 @@
         "key": "US_RATES",
         "label": "US 10Y",
         "symbol": "^TNX",
-        "last": 4.96,
-        "dailyChange": -17,
+        "last": 5,
+        "dailyChange": 4,
         "dailyChangeUnit": "bps",
         "bias": "HAWKISH",
         "conviction": "HIGH",
@@ -872,14 +872,14 @@
         "confirmingSignal": "10Y nominal ~4.96% and 10Y real ~2.76%; ACM term premium ~0.72% (NY Fed ACM).",
         "contradictingSignal": "MOVE/Treasury volatility canonical series is missing for persistence testing",
         "invalidation": "Sustained IG OAS widening and a canonical MOVE/VIX jump, a persistent collapse in large‑cap breadth beyond megacaps, or timestamped intraday Fed‑funds‑futures + UST 2Y/10Y moves showing same‑session macro repricing would indicate broadening transmission.",
-        "asOf": "2026-10-22"
+        "asOf": "2026-10-23"
       },
       {
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4000.699951,
-        "dailyChange": -1.47,
+        "last": 3996.899902,
+        "dailyChange": -1.56,
         "dailyChangeUnit": "percent",
         "bias": "BEARISH",
         "conviction": "LOW",
@@ -893,8 +893,8 @@
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 81657.71,
-        "dailyChange": 0.43,
+        "last": 81335.39,
+        "dailyChange": 0.03,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -1498,5 +1498,5 @@
     "Mismatched ticker/issuer labels are quarantined, never silently remapped to another security.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-23T17:13:06.756Z"
+  "syncedAt": "2026-10-23T21:27:41.154Z"
 }
