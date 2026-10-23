@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-23T11:45:08.769Z",
+  "generatedAt": "2026-10-23T17:05:31.583Z",
   "asOf": "2026-10-23T07:45:29.233+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -27,13 +27,13 @@
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-23T11:45:08.674Z",
+      "generatedAt": "2026-10-23T17:05:31.508Z",
       "status": "OK"
     },
     "holdingTape": {
       "contractVersion": "power-stack-holding-tape/1",
       "expectedContract": "power-stack-holding-tape/1",
-      "generatedAt": "2026-10-23T11:37:14.975Z",
+      "generatedAt": "2026-10-23T17:05:31.427Z",
       "unresolved": [
         "6742UW"
       ],
@@ -67,13 +67,13 @@
   },
   "portfolioTriage": {
     "tapeDivergences": [
-      "MISC",
-      "YTLPOWR",
+      "HIBISCS",
       "TTWO",
       "DAYANG"
     ],
     "tapeConfirmations": [
-      "HIBISCS",
+      "MISC",
+      "YTLPOWR",
       "TSLA"
     ],
     "highReview": [
@@ -279,9 +279,9 @@
       "possibleDecisionImpact": "Could unlock accurate YTL-linked concentration and portfolio-weight measurement."
     },
     {
-      "ticker": "DAYANG",
-      "name": "Dayang Enterprise Holdings Berhad",
-      "priorityScore": 143,
+      "ticker": "HIBISCS",
+      "name": "Hibiscus Petroleum Berhad",
+      "priorityScore": 150,
       "overlayState": "HEADWIND",
       "reviewPriority": "MONITOR",
       "actualReaction": {
@@ -290,25 +290,25 @@
         "freshness": {
           "status": "CURRENT",
           "eligibleForComparison": true,
-          "sessionDate": "2026-10-23",
-          "businessDaysOld": 0,
+          "sessionDate": "2026-10-22",
+          "businessDaysOld": 1,
           "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-10-23",
-        "close": 1.32,
-        "previousClose": 1.29,
-        "change": 0.03,
-        "changePct": 2.326,
+        "sessionDate": "2026-10-22",
+        "close": 2.43,
+        "previousClose": 2.33,
+        "change": 0.1,
+        "changePct": 4.292,
         "currency": "MYR",
         "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
-        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/5141.KL?interval=1d&range=1mo&includePrePost=false",
-        "closeNotice": "Source-dated regular-session daily close: 2026-10-23"
+        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/5199.KL?interval=1d&range=1mo&includePrePost=false",
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-22"
       },
-      "currentAction": "SELL / CAPITAL RECYCLING REVIEW",
+      "currentAction": "HOLD / NO CHASE",
       "reasons": [
         "completed-session tape moved against the directional market overlay"
       ],
-      "researchQuestion": "Has new company-specific evidence changed DAYANG's current action gate or thesis risk?",
+      "researchQuestion": "Has new company-specific evidence changed HIBISCS's current action gate or thesis risk?",
       "requiredEvidence": [
         "company-specific news/catalysts for the completed session",
         "technical/flow context sufficient to test whether the divergence is company-specific or temporary",
@@ -511,23 +511,16 @@
     {
       "ticker": "MISC",
       "overlayState": "HEADWIND",
-      "reaction": "DIVERGES",
-      "action": "HOLD / FUNDING CHECK",
-      "reason": "No current decision-relevant divergence promoted into the capped queue."
-    },
-    {
-      "ticker": "HIBISCS",
-      "overlayState": "HEADWIND",
       "reaction": "CONFIRMS",
-      "action": "HOLD / NO CHASE",
+      "action": "HOLD / FUNDING CHECK",
       "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
     },
     {
       "ticker": "YTLPOWR",
       "overlayState": "HEADWIND",
-      "reaction": "DIVERGES",
+      "reaction": "CONFIRMS",
       "action": "TRIM IF CONCENTRATION EXCESS",
-      "reason": "No current decision-relevant divergence promoted into the capped queue."
+      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
     },
     {
       "ticker": "TSLA",
@@ -535,6 +528,13 @@
       "reaction": "CONFIRMS",
       "action": "TRIM REVIEW",
       "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
+    },
+    {
+      "ticker": "DAYANG",
+      "overlayState": "HEADWIND",
+      "reaction": "DIVERGES",
+      "action": "SELL / CAPITAL RECYCLING REVIEW",
+      "reason": "No current decision-relevant divergence promoted into the capped queue."
     }
   ],
   "newCapitalPriority": [

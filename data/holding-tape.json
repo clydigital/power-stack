@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-stack-holding-tape/1",
-  "generatedAt": "2026-10-23T11:37:14.975Z",
+  "generatedAt": "2026-10-23T17:05:31.427Z",
   "policy": {
     "cadence": "refresh every 6 hours; only completed regular sessions are eligible",
     "sourcePolicy": "US: optional timestamped Finnhub close if FINNHUB_API_KEY is configured, then Yahoo chart JSON query2/query1, then delayed Yahoo rendered page. MY: Yahoo chart JSON then rendered page. Preserve source-dated sessions; never invent current closes on provider failure.",
@@ -22,58 +22,58 @@
       "status": "CLOSED",
       "refreshStatus": "OK",
       "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/XOM?interval=1d&range=1mo&includePrePost=false",
-      "fetchedAt": "2026-10-23T11:37:13.964Z"
+      "fetchedAt": "2026-10-23T17:05:30.608Z"
     },
     {
       "ticker": "MISC",
       "providerSymbol": "3816.KL",
       "market": "MY",
-      "sessionDate": "2026-10-23",
+      "sessionDate": "2026-10-22",
       "currency": "MYR",
-      "close": 8.3,
-      "previousClose": 8.25,
-      "change": 0.05,
-      "changePct": 0.606,
-      "closeNotice": "Source-dated regular-session daily close: 2026-10-23",
+      "close": 8.25,
+      "previousClose": 8.3,
+      "change": -0.05,
+      "changePct": -0.602,
+      "closeNotice": "Source-dated regular-session daily close: 2026-10-22",
       "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
       "status": "CLOSED",
       "refreshStatus": "OK",
       "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/3816.KL?interval=1d&range=1mo&includePrePost=false",
-      "fetchedAt": "2026-10-23T11:37:14.290Z"
+      "fetchedAt": "2026-10-23T17:05:31.146Z"
     },
     {
       "ticker": "HIBISCS",
       "providerSymbol": "5199.KL",
       "market": "MY",
-      "sessionDate": "2026-10-23",
+      "sessionDate": "2026-10-22",
       "currency": "MYR",
-      "close": 2.39,
-      "previousClose": 2.43,
-      "change": -0.04,
-      "changePct": -1.646,
-      "closeNotice": "Source-dated regular-session daily close: 2026-10-23",
+      "close": 2.43,
+      "previousClose": 2.33,
+      "change": 0.1,
+      "changePct": 4.292,
+      "closeNotice": "Source-dated regular-session daily close: 2026-10-22",
       "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
       "status": "CLOSED",
       "refreshStatus": "OK",
       "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/5199.KL?interval=1d&range=1mo&includePrePost=false",
-      "fetchedAt": "2026-10-23T11:37:14.422Z"
+      "fetchedAt": "2026-10-23T17:05:31.206Z"
     },
     {
       "ticker": "YTLPOWR",
       "providerSymbol": "6742.KL",
       "market": "MY",
-      "sessionDate": "2026-10-23",
+      "sessionDate": "2026-10-22",
       "currency": "MYR",
-      "close": 5.32,
-      "previousClose": 5.29,
-      "change": 0.03,
-      "changePct": 0.567,
-      "closeNotice": "Source-dated regular-session daily close: 2026-10-23",
+      "close": 5.29,
+      "previousClose": 5.34,
+      "change": -0.05,
+      "changePct": -0.936,
+      "closeNotice": "Source-dated regular-session daily close: 2026-10-22",
       "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
       "status": "CLOSED",
       "refreshStatus": "OK",
       "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/6742.KL?interval=1d&range=1mo&includePrePost=false",
-      "fetchedAt": "2026-10-23T11:37:14.530Z"
+      "fetchedAt": "2026-10-23T17:05:31.250Z"
     },
     {
       "ticker": "6742UW",
@@ -106,7 +106,7 @@
       "status": "CLOSED",
       "refreshStatus": "OK",
       "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/TTWO?interval=1d&range=1mo&includePrePost=false",
-      "fetchedAt": "2026-10-23T11:37:14.650Z"
+      "fetchedAt": "2026-10-23T17:05:31.303Z"
     },
     {
       "ticker": "TSLA",
@@ -123,24 +123,24 @@
       "status": "CLOSED",
       "refreshStatus": "OK",
       "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/TSLA?interval=1d&range=1mo&includePrePost=false",
-      "fetchedAt": "2026-10-23T11:37:14.754Z"
+      "fetchedAt": "2026-10-23T17:05:31.344Z"
     },
     {
       "ticker": "DAYANG",
       "providerSymbol": "5141.KL",
       "market": "MY",
-      "sessionDate": "2026-10-23",
+      "sessionDate": "2026-10-22",
       "currency": "MYR",
-      "close": 1.32,
-      "previousClose": 1.29,
-      "change": 0.03,
-      "changePct": 2.326,
-      "closeNotice": "Source-dated regular-session daily close: 2026-10-23",
+      "close": 1.29,
+      "previousClose": 1.25,
+      "change": 0.04,
+      "changePct": 3.2,
+      "closeNotice": "Source-dated regular-session daily close: 2026-10-22",
       "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
       "status": "CLOSED",
       "refreshStatus": "OK",
       "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/5141.KL?interval=1d&range=1mo&includePrePost=false",
-      "fetchedAt": "2026-10-23T11:37:14.855Z"
+      "fetchedAt": "2026-10-23T17:05:31.382Z"
     }
   ],
   "unresolved": [
@@ -167,24 +167,24 @@
         "ticker": "MISC",
         "status": "CURRENT",
         "eligibleForComparison": true,
-        "sessionDate": "2026-10-23",
-        "businessDaysOld": 0,
+        "sessionDate": "2026-10-22",
+        "businessDaysOld": 1,
         "reason": "Completed-session price is within the market-local freshness window."
       },
       {
         "ticker": "HIBISCS",
         "status": "CURRENT",
         "eligibleForComparison": true,
-        "sessionDate": "2026-10-23",
-        "businessDaysOld": 0,
+        "sessionDate": "2026-10-22",
+        "businessDaysOld": 1,
         "reason": "Completed-session price is within the market-local freshness window."
       },
       {
         "ticker": "YTLPOWR",
         "status": "CURRENT",
         "eligibleForComparison": true,
-        "sessionDate": "2026-10-23",
-        "businessDaysOld": 0,
+        "sessionDate": "2026-10-22",
+        "businessDaysOld": 1,
         "reason": "Completed-session price is within the market-local freshness window."
       },
       {
@@ -213,8 +213,8 @@
         "ticker": "DAYANG",
         "status": "CURRENT",
         "eligibleForComparison": true,
-        "sessionDate": "2026-10-23",
-        "businessDaysOld": 0,
+        "sessionDate": "2026-10-22",
+        "businessDaysOld": 1,
         "reason": "Completed-session price is within the market-local freshness window."
       }
     ],
