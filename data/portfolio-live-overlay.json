@@ -1,8 +1,8 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-23T11:37:15.030Z",
-  "liveAsOf": "2026-10-22T15:05:32.495+00:00",
-  "liveSyncedAt": "2026-10-23T04:58:04.827Z",
+  "generatedAt": "2026-10-23T11:45:08.674Z",
+  "liveAsOf": "2026-10-23T07:45:29.233+00:00",
+  "liveSyncedAt": "2026-10-23T11:45:08.546Z",
   "sourceHealth": {
     "dossier": "DEGRADED",
     "marketMonitor": "PARTIAL",
@@ -14,10 +14,10 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "Yields stay high and lead market tension; credit softens while mega‑cap tech (Meta) holds up",
-    "answer": "US yields remain elevated (10Y ~5.13%; ACM term premium ~0.73%) while HY spreads have widened over recent sessions even as large‑cap breadth and Meta’s beat/supportive guidance keep tech leadership intact; whether rising rates are transmitting broadly into volatility and sustained credit stress is unresolved without intraday Fed‑funds‑futures/MOVE and timestamped FX/gold evidence.",
-    "implication": "Rates-driven tightening is the dominant force: higher nominal and real yields are pressuring risk‑sensitive credit even though megacap/AI leadership still supports equity breadth at the large‑cap level; the key open question is whether credit/volatility will follow through.",
-    "whatWouldChangeMind": "Canonical intraday Fed‑funds‑futures and 2Y/10Y timestamped bars plus canonical MOVE/Treasury volatility series and same‑session DXY/XAUUSD evidence showing either alignment or persistent divergence."
+    "headline": "Yields and HY spreads have risen while large‑cap breadth holds — rates‑led tightening, not broad market stress.",
+    "answer": "UST yields remain high and HY OAS widened materially while large‑cap breadth and megacaps show resilience; Meta’s Q3 negative simple FCF and AI/semiconductor weakness raise issuer‑level concern but transmission into IG, MOVE and long‑end decomposition is unresolved.",
+    "implication": "Higher interest costs and front‑end hawkishness are tightening financing conditions; credit micro‑stress exists but broad market stress is not confirmed without MOVE/intraday timing or dealer evidence.",
+    "whatWouldChangeMind": "Canonical MOVE/Treasury‑volatility, intraday 2Y/10Y/Fed‑funds‑futures around issuer releases, or coordinated IG widening would shift this view toward broader stress."
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
@@ -48,39 +48,39 @@
           "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
           "detail": "No current deterministic policy impulse or directional next-meeting repricing is present in the bounded rate context.",
-          "asOf": "2026-10-22T15:05:32.495Z"
+          "asOf": "2026-10-23T07:45:29.233Z"
         },
         {
           "key": "RATES_FRONT_END",
           "label": "Front-end pricing",
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
-          "detail": "US 2Y 4.81%; 5D n/a; vs effective fed funds +93.0 bp.",
-          "asOf": "2026-10-22T15:05:32.495Z"
+          "detail": "US 2Y 4.65%; 5D n/a; vs effective fed funds +77.0 bp.",
+          "asOf": "2026-10-23T07:45:29.233Z"
         },
         {
           "key": "RATES_REAL_YIELDS",
           "label": "10Y real yield",
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
-          "detail": "10Y real yield 2.77%; 5D n/a.",
-          "asOf": "2026-10-22T15:05:32.495Z"
+          "detail": "10Y real yield 2.76%; 5D n/a.",
+          "asOf": "2026-10-23T07:45:29.233Z"
         },
         {
           "key": "RATES_BREAKEVENS",
           "label": "10Y inflation breakeven",
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
-          "detail": "10Y breakeven 2.37%; 5D n/a.",
-          "asOf": "2026-10-22T15:05:32.495Z"
+          "detail": "10Y breakeven 2.32%; 5D n/a.",
+          "asOf": "2026-10-23T07:45:29.233Z"
         },
         {
           "key": "RATES_LONG_END",
           "label": "Long-end nominal yields",
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
-          "detail": "US 10Y 5.13%; 5D n/a; US 20Y 5.47%; 5D n/a; US 30Y 5.42%; 5D n/a.",
-          "asOf": "2026-10-22T15:05:32.495Z"
+          "detail": "US 10Y 4.96%; 5D n/a; US 20Y 5.32%; 5D n/a; US 30Y 5.29%; 5D n/a.",
+          "asOf": "2026-10-23T07:45:29.233Z"
         },
         {
           "key": "BILLS",
@@ -124,7 +124,7 @@
     "physicalEnergy": {
       "status": "UNRESOLVED",
       "observed": false,
-      "detail": "No canonical priced oil forward‑curve or product crack evidence ingested to judge persistent inflationary pressure from energy; narrative research items exist but lack pricing confirmation.",
+      "detail": "News reports cite oil spikes and gold weakness, but canonical dated WTI/Brent curve and crack/physical product evidence are missing.",
       "evidenceRefs": []
     }
   },
@@ -1216,7 +1216,7 @@
       "importance": "HIGH",
       "divergence": "PARTIAL",
       "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-      "actual": "Meta reported a Q3 beat and stronger guidance; AI basket breadth remains elevated while SMH lags QQQ.",
+      "actual": "Semiconductor ETF SMH and several AI names fell on 22 Oct; CRWV and AMD posted large single‑day declines.",
       "affectedHoldings": [
         "TSLA",
         "TTWO",
@@ -1229,12 +1229,12 @@
         "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
       ],
       "evidenceFor": [
-        "Earnings/guidance support concentrated AI/megacap leadership; semiconductors underperformance versus QQQ suggests sectoral dispersion.",
-        "Breadth is held up by large‑cap/megacap leadership; this mitigates evidence of a broad market sell‑off even as credit frays.",
-        "Nasdaq daily move 1.05 with bias MIXED."
+        "Issuer‑level and sector weakness is evident, and Meta’s Q3 cash‑flow hit raises investor concern; breadth within AI basket is weak versus large‑cap breadth.",
+        "Market breadth is narrow: megacaps support headline breadth while AI/semis show internal weakness.",
+        "Nasdaq daily move 1.05 with bias BEARISH."
       ],
       "evidenceAgainst": [
-        "Nominal yields and a governed term premium are keeping financial‑conditions pressure elevated; long‑end decomposition is incomplete and MOVE is missing."
+        "Policy/front‑end hawkishness and elevated real yields keep yields high; term‑premium is observed but long‑end decomposition remains unresolved."
       ],
       "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
       "confidence": "HIGH",
@@ -1245,7 +1245,7 @@
       "importance": "HIGH",
       "divergence": "YES",
       "expected": "A persistent long-end tightening shock should eventually raise financing stress and widen credit spreads.",
-      "actual": "HY OAS materially wider over 20 sessions; IG OAS moved modestly.",
+      "actual": "HY OAS widened 54 bp (20s); IG OAS +11 bp (20s).",
       "affectedHoldings": [
         "TSLA",
         "TTWO",
@@ -1259,11 +1259,11 @@
         "Credit may simply be lagging rates and could become the next confirmation leg."
       ],
       "evidenceFor": [
-        "Credit shows selective stress concentrated in HY; broad credit stress is not yet confirmed.",
+        "Stress concentrated in HY; IG has moved modestly, so broad credit stress not yet confirmed.",
         "Funding/credit composite is currently NEUTRAL."
       ],
       "evidenceAgainst": [
-        "Rates-driven tightening is the dominant force: higher nominal and real yields are pressuring risk‑sensitive credit even though megacap/AI leadership still supports equity breadth at the large‑cap level; the key open question is whether credit/volatility will follow through."
+        "Higher interest costs and front‑end hawkishness are tightening financing conditions; credit micro‑stress exists but broad market stress is not confirmed without MOVE/intraday timing or dealer evidence."
       ],
       "leadingHypothesis": "The shock is rates-led, not yet systemic; keep dry powder because credit remains the key confirmation risk.",
       "confidence": "HIGH",
@@ -1293,7 +1293,9 @@
   },
   "divergences": [],
   "liveResearchGaps": [
-    "DATA: Missing canonical intraday Fed‑funds‑futures and 5m–30m UST 2Y/10Y bars plus canonical MOVE/Treasury‑volatility series needed to test same‑session transmission and volatility response.",
+    "MARKET_DATA: Canonical MOVE/Treasury‑volatility series is missing and blocks long‑end decomposition between real yields, breakevens and residual term‑premium.",
+    "MARKET_DATA: Intraday 5m–30m Fed‑funds‑futures and UST 2Y/10Y bars around issuer release windows (notably Meta) are absent, blocking same‑session transmission tests.",
+    "MARKET_STRUCTURE: Primary‑dealer position/fails data and tradeable dealer metrics are unavailable, blocking assessment of market‑structure amplification of Treasury moves.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],
   "guardrails": [
