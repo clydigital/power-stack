@@ -540,14 +540,14 @@
         "label": "US dollar transmission",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "US Dollar · UUP proxy 5D -0.34%.",
-        "asOf": "2026-10-22",
+        "detail": "US Dollar · UUP proxy 5D +0.14%.",
+        "asOf": "2026-10-23",
         "sourceName": "Nasdaq official etf history",
         "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical",
         "evidenceRefs": [],
         "metrics": {
-          "proxyLevel": 28.9,
-          "change5dPct": -0.34
+          "proxyLevel": 28.96,
+          "change5dPct": 0.14
         }
       },
       {
@@ -606,9 +606,9 @@
       "id": "dxy",
       "symbol": "UUP",
       "label": "US Dollar · UUP proxy",
-      "last": 28.9,
-      "change5d": -0.34,
-      "asOf": "2026-10-22",
+      "last": 28.96,
+      "change5d": 0.14,
+      "asOf": "2026-10-23",
       "sourceName": "Nasdaq official etf history",
       "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical"
     },
@@ -812,7 +812,7 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-23T21:23:29.304Z",
+    "asOf": "2026-10-24T04:34:43.739Z",
     "assets": [
       {
         "key": "SPX",
@@ -879,22 +879,22 @@
         "label": "Gold spot",
         "symbol": "XAUUSD",
         "last": 3996.899902,
-        "dailyChange": -1.56,
+        "dailyChange": -0.33,
         "dailyChangeUnit": "percent",
-        "bias": "BEARISH",
+        "bias": "UNRESOLVED",
         "conviction": "LOW",
         "primaryDriver": "No canonical XAUUSD evidence in packet; gold's role versus rising real yields is unresolved.",
         "confirmingSignal": null,
         "contradictingSignal": "XAUUSD intraday/close series",
         "invalidation": "Sustained IG OAS widening and a canonical MOVE/VIX jump, a persistent collapse in large‑cap breadth beyond megacaps, or timestamped intraday Fed‑funds‑futures + UST 2Y/10Y moves showing same‑session macro repricing would indicate broadening transmission.",
-        "asOf": "2026-10-23"
+        "asOf": "2026-10-24"
       },
       {
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 81335.39,
-        "dailyChange": 0.03,
+        "last": 80782.63,
+        "dailyChange": -0.36,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -902,7 +902,7 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": null,
-        "asOf": "2026-10-23"
+        "asOf": "2026-10-24"
       }
     ]
   },
@@ -1498,5 +1498,5 @@
     "Mismatched ticker/issuer labels are quarantined, never silently remapped to another security.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-23T21:27:41.154Z"
+  "syncedAt": "2026-10-24T04:42:55.599Z"
 }
