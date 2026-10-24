@@ -1,15 +1,15 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-24T15:56:20.976Z",
-  "asOf": "2026-10-23T15:05:32.442+00:00",
+  "generatedAt": "2026-10-24T16:01:02.429Z",
+  "asOf": "2026-10-24T15:05:32.649+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
   "inputHealth": {
     "liveDesk": {
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
-      "asOf": "2026-10-23T15:05:32.442+00:00",
-      "syncedAt": "2026-10-24T11:08:37.892Z",
+      "asOf": "2026-10-24T15:05:32.649+00:00",
+      "syncedAt": "2026-10-24T16:01:02.215Z",
       "sourceStatus": "degraded_latest",
       "sourceHealth": {
         "dossier": "DEGRADED",
@@ -18,7 +18,7 @@
         "nyFedPrimaryDealers": "OK",
         "treasurySupply": "UNRESOLVED"
       },
-      "ageHours": 20.1,
+      "ageHours": 0.9,
       "reasons": [
         "UPSTREAM_EVIDENCE_PARTIAL"
       ],
@@ -27,7 +27,7 @@
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-24T15:56:20.915Z",
+      "generatedAt": "2026-10-24T16:01:02.349Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -46,8 +46,8 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "Rates and real yields remain high; HY spreads widened while large‑cap breadth holds and Meta shows issuer cash‑flow strain.",
-    "implication": "Higher yields are tightening conditions and producing issuer‑level credit stress; however, there is no canonical evidence yet that this has become a broad market risk‑off event.",
+    "headline": "US yields remain elevated while HY spreads widened but large‑cap breadth and AI leaders hold up.",
+    "implication": "Higher US yields are tightening financial conditions; credit shows issuer‑level stress (HY) but equity breadth and AI/megacaps continue to support risk assets, so macro tightening is present without confirmed broad risk‑off.",
     "monetarySummary": "Rate baseline HAWKISH; 4 confirming, 0 contradicting, 7 unresolved/neutral monetary-market layers."
   },
   "queueCounts": {
@@ -60,10 +60,54 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "2375269c-f9ac-443c-8327-502ad0643328",
-    "capturedAt": "2026-10-24T07:28:00.926Z",
-    "itemCount": 0,
-    "items": []
+    "editionId": "3e41cf83-01ce-4ede-8694-c5b3773135ed",
+    "capturedAt": "2026-10-24T14:41:01.582Z",
+    "itemCount": 1,
+    "items": [
+      {
+        "id": "6b411ae3-d51b-4098-b4fd-b0a6aee8e5b4",
+        "motionKey": "event:rates_move:us10y",
+        "versionNumber": 29,
+        "headline": "Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
+        "category": "COMMODITY",
+        "verificationState": "LEAD",
+        "lifecycleState": "PROMOTED",
+        "whatHappened": "TraderNick surfaced this in a recent transcript. It remains a creator-sourced lead until independently corroborated: Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
+        "marketReaction": null,
+        "whyInteresting": "Transcript writing angle: Narrative hook: 'Why gold rallied despite hot inflation — an AI‑growth scare flipped the tape' — explore the intraday sequence (equities → bonds → gold) and test with time‑stamped flow data.",
+        "bigPictureBridge": "Fresh rates / funding evidence → sovereign yields and financing costs → Cost of Capital regime",
+        "nextTest": "Verify transcript lead: Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
+        "tickers": [
+          "US10Y",
+          "SOXX",
+          "SMH",
+          "NASDAQ",
+          "ULSD",
+          "XAUUSD",
+          "MU",
+          "NFLX"
+        ],
+        "sourceName": "TraderNick",
+        "sourceUrl": "https://www.youtube.com/watch?v=W7Mq_E9BZ6Y",
+        "materiality": 88,
+        "relevance": 88,
+        "novelty": 88,
+        "occurredAt": "2026-10-06T03:15:13.000Z",
+        "storyId": "849d173f-d1dc-42eb-b1f6-927c55bbc348",
+        "storySlug": "fed-hold-versus-hikes",
+        "storyTitle": "Fed hold versus hikes",
+        "regimeSlug": "global-cost-of-capital",
+        "regimeLabel": "US Rate Regime",
+        "attentionTier": "PRIMARY",
+        "attentionScore": 84,
+        "writingPotential": "MEDIUM",
+        "attentionReasons": [
+          "high materiality",
+          "high market relevance",
+          "asset/ticker linked"
+        ]
+      }
+    ]
   },
   "portfolioTriage": {
     "tapeDivergences": [
@@ -148,7 +192,7 @@
         "importance": "HIGH",
         "divergence": "PARTIAL",
         "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-        "actual": "AI/semiconductor names fell on the session (notably CoreWeave, SMH weakness; multiple large names down).",
+        "actual": "Major AI/semiconductor names closed mixed but many megacaps remain strong while semis underperformed QQQ over 20s.",
         "affectedHoldings": [
           "TSLA",
           "TTWO",
@@ -161,12 +205,12 @@
           "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
         ],
         "evidenceFor": [
-          "Pressures are visible in AI/semis and issuer‑level results (Meta); evidence so far points to sector/issuer stress rather than a durable demand collapse.",
-          "Breadth is narrow: large‑cap indices still show breadth support but AI/semis internal breadth is weak, consistent with concentrated leadership.",
-          "Nasdaq daily move -2.6 with bias BEARISH."
+          "AI/megacap leadership cushions risk assets even as rates tighten; semiconductor breadth and small AI names show stress.",
+          "Breadth confirms narrow leadership: megacaps underpin indices while AI/semiconductor internals show stress, limiting a broad risk‑off case.",
+          "Nasdaq daily move -0.21 with bias BEARISH."
         ],
         "evidenceAgainst": [
-          "Nominal and real yields are elevated with governed term‑premium evidence present; decomposition into residual term‑premium vs real/breakeven is unresolved."
+          "Front‑end and real yields remain the immediate tightening channel while ACM suggests term premium is subdued; long‑end decomposition unresolved."
         ],
         "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
         "confidence": "HIGH",
@@ -448,26 +492,18 @@
   ],
   "liveRadar": [
     {
-      "ticker": "META",
-      "companyName": "Meta Platforms",
-      "whyRelevant": "Filed Q3 with negative simple FCF and higher capex guidance; issuer‑level funding risk.",
-      "researchQuestion": "Will Meta's capex raise and negative FCF widen its CDS/IG spreads and cause sustained equity weakness?",
-      "status": "DISCOVERY_ONLY",
-      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
-    },
-    {
       "ticker": "CRWV",
       "companyName": "CoreWeave",
-      "whyRelevant": "Large session decline and high sensitivity to AI capex dynamics.",
-      "researchQuestion": "Is CoreWeave’s move driven by company‑specific flow or weaker hyperscaler demand?",
+      "whyRelevant": "Small AI/cloud GPU operator showing sharp short‑term declines and high idiosyncratic risk that could signal capital/earnings stress.",
+      "researchQuestion": "Does CRWV price/action reflect demand/capex weakness or issuer‑specific funding pressure?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     },
     {
       "ticker": "AMD",
       "companyName": "Advanced Micro Devices",
-      "whyRelevant": "Representative large AI/semiconductor name showing session weakness.",
-      "researchQuestion": "Does AMD weakness reflect earnings/capex risk or breadth‑driven sector derating?",
+      "whyRelevant": "Large AI‑infrastructure supplier whose share action helps test whether AI demand sustains equities despite higher yields.",
+      "researchQuestion": "Are AMD moves consistent with resilient AI demand offsetting rates pressure?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     }
@@ -537,14 +573,15 @@
     }
   ],
   "researchGaps": [
-    "MARKET_DATA: Missing canonical intraday 5m–30m Fed‑funds‑futures and UST 2Y/10Y bars timestamped to Meta's filing to test same‑session macro transmission.",
-    "MARKET_DATA: Canonical MOVE / Treasury‑volatility series is not yet present; needed to assess volatility and persistence of rate moves.",
+    "MARKET_STRUCTURE: Canonical MOVE/Treasury‑volatility series and primary‑dealer position/fails are missing, blocking a defensible long‑end term‑premium vs real‑yield decomposition.",
+    "INTRADAY_MARKETS: Intraday 5m–30m Fed‑funds‑futures + UST 2Y/10Y and intraday DXY/XAU around major issuer releases are missing, blocking same‑session transmission tests.",
+    "LIQUIDITY: Cross‑currency basis / FX‑swap offshore USD evidence is unavailable; cannot assess offshore dollar funding contribution to duration stress.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence.",
     "Holding tape unresolved: 6742UW"
   ],
   "gapReconciliation": {
     "contractVersion": "power-stack-gap-reconciliation/1",
-    "sourceAsOf": "2026-10-23T15:05:32.442+00:00",
+    "sourceAsOf": "2026-10-24T15:05:32.649+00:00",
     "sourceStatus": "degraded_latest",
     "owner": "Power Stack is read-only; Live owns all macro/rates evidence",
     "resolvedByReconciliation": 0,
@@ -552,7 +589,7 @@
     "gaps": [
       {
         "id": "INTRADAY_RATES",
-        "reportedGap": "MARKET_DATA: Missing canonical intraday 5m–30m Fed‑funds‑futures and UST 2Y/10Y bars timestamped to Meta's filing to test same‑session macro transmission.",
+        "reportedGap": "MARKET_STRUCTURE: Canonical MOVE/Treasury‑volatility series and primary‑dealer position/fails are missing, blocking a defensible long‑end term‑premium vs real‑yield decomposition.",
         "owner": "LIVE_DESK",
         "state": "REQUIRES_VALIDATED_INTRADAY_FEEDS",
         "presentInfrastructure": [
@@ -565,8 +602,8 @@
         "evidenceAuthority": "ORIGINAL_SOURCE_REQUIRED"
       },
       {
-        "id": "UNCLASSIFIED:market-data-canonical-move-treasury-volatility-series-is-not-yet-present-needed-to-assess-vo",
-        "reportedGap": "MARKET_DATA: Canonical MOVE / Treasury‑volatility series is not yet present; needed to assess volatility and persistence of rate moves.",
+        "id": "UNCLASSIFIED:liquidity-cross-currency-basis-fx-swap-offshore-usd-evidence-is-unavailable-cannot-assess-of",
+        "reportedGap": "LIQUIDITY: Cross‑currency basis / FX‑swap offshore USD evidence is unavailable; cannot assess offshore dollar funding contribution to duration stress.",
         "owner": "RESEARCH_GAP_GATE",
         "state": "UNCLASSIFIED_REQUIRES_SOURCE_CHECK",
         "presentInfrastructure": [],
