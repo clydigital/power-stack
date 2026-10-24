@@ -812,7 +812,7 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-24T04:34:43.739Z",
+    "asOf": "2026-10-24T10:57:11.432Z",
     "assets": [
       {
         "key": "SPX",
@@ -879,7 +879,7 @@
         "label": "Gold spot",
         "symbol": "XAUUSD",
         "last": 3996.899902,
-        "dailyChange": -0.33,
+        "dailyChange": -0.27,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "LOW",
@@ -893,8 +893,8 @@
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 80782.63,
-        "dailyChange": -0.36,
+        "last": 80528.31,
+        "dailyChange": -0.68,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -1432,54 +1432,10 @@
   },
   "marketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "6ad9b44f-a380-4e15-927a-327a6f3bf2e0",
-    "capturedAt": "2026-10-23T14:40:56.779Z",
-    "researchRunId": "bea40d05-fce7-41e0-815e-47b9d473240f",
-    "items": [
-      {
-        "id": "c2eabd13-cb1b-465b-9e9b-0b0fa86c525b",
-        "motionKey": "event:rates_move:us10y",
-        "versionNumber": 27,
-        "headline": "Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
-        "category": "COMMODITY",
-        "verificationState": "LEAD",
-        "lifecycleState": "PROMOTED",
-        "whatHappened": "TraderNick surfaced this in a recent transcript. It remains a creator-sourced lead until independently corroborated: Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
-        "marketReaction": null,
-        "whyInteresting": "Transcript writing angle: Narrative hook: 'Why gold rallied despite hot inflation — an AI‑growth scare flipped the tape' — explore the intraday sequence (equities → bonds → gold) and test with time‑stamped flow data.",
-        "bigPictureBridge": "Fresh rates / funding evidence → sovereign yields and financing costs → Cost of Capital regime",
-        "nextTest": "Verify transcript lead: Key catalysts the creator watches: further Nasdaq/semiconductor weakness, continued 10‑year yield declines and EdgeFinder flipping bullish — any of which would raise conviction for gold longs.",
-        "tickers": [
-          "SOXX",
-          "SMH",
-          "NASDAQ",
-          "US10Y",
-          "ULSD",
-          "XAUUSD",
-          "MU",
-          "NFLX"
-        ],
-        "sourceName": "TraderNick",
-        "sourceUrl": "https://www.youtube.com/watch?v=W7Mq_E9BZ6Y",
-        "materiality": 88,
-        "relevance": 88,
-        "novelty": 88,
-        "occurredAt": "2026-10-06T03:15:13.000Z",
-        "storyId": "849d173f-d1dc-42eb-b1f6-927c55bbc348",
-        "storySlug": "fed-hold-versus-hikes",
-        "storyTitle": "Fed hold versus hikes",
-        "regimeSlug": "global-cost-of-capital",
-        "regimeLabel": "US Rate Regime",
-        "attentionTier": "PRIMARY",
-        "attentionScore": 84,
-        "writingPotential": "MEDIUM",
-        "attentionReasons": [
-          "high materiality",
-          "high market relevance",
-          "asset/ticker linked"
-        ]
-      }
-    ]
+    "editionId": "2375269c-f9ac-443c-8327-502ad0643328",
+    "capturedAt": "2026-10-24T07:28:00.926Z",
+    "researchRunId": "561b9a36-63ea-4117-8a06-036d87e4aca4",
+    "items": []
   },
   "upstreamGuardrails": [
     "This snapshot is a read-only Live canonical market-intelligence view for downstream consumers.",
@@ -1498,5 +1454,5 @@
     "Mismatched ticker/issuer labels are quarantined, never silently remapped to another security.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-24T04:42:55.599Z"
+  "syncedAt": "2026-10-24T11:08:37.892Z"
 }
