@@ -56,6 +56,12 @@ function renderOpportunity(d){
  return '<article class="adv-idea" data-category="'+esc(grp)+'" data-action="'+esc(actionCat)+'"><div class="adv-idea-symbol-wrap"><div class="adv-idea-symbol">'+esc(x.symbol)+'</div><div class="adv-idea-name">'+esc(x.name)+'</div><div class="adv-idea-price">'+esc(x.priceReference||'Price check needed')+'</div></div><div class="adv-idea-copy"><span class="adv-tag '+esc(x.tone)+'">'+esc(x.action)+'</span><p>'+esc(x.case)+'</p><details class="adv-details"><summary>Entry, exit and risk</summary><div class="adv-detail-grid"><div><b>Buy only when</b><p>'+esc(x.buyWhen)+'</p></div><div><b>What makes me sell</b><p>'+esc(x.sellWhen)+'</p></div><div><b>Risk to watch</b><p>'+esc(x.risk)+'</p></div><div><b>Next checkpoint</b><p>'+esc(x.nextEvent)+'</p><a class="adv-inline-link" href="'+esc(x.source)+'" target="_blank" rel="noopener noreferrer">See primary/fund source ↗</a></div></div></details></div><div class="adv-idea-amount"><strong>'+money(x.targetMYR)+'</strong><span>Target allocation</span><span>First stage '+money(x.firstStageMYR)+'</span></div></article>'
  }).join('');
 }
+function renderResearchRadar(d){
+ const root=get('adv-idea-list');if(!root||!Array.isArray(d?.researchRadar))return;
+ const section=document.createElement('section');section.className='adv-radar-section';section.innerHTML='<h3>Under research — not funded</h3><p>These are candidates for comparison, not additional spending. Existing RM13,491 allocation remains unchanged.</p>';
+ section.innerHTML+=d.researchRadar.map(x=>'<article class="adv-idea"><div class="adv-idea-symbol-wrap"><div class="adv-idea-symbol">'+esc(x.symbol)+'</div><div class="adv-idea-name">'+esc(x.name)+'</div><div class="adv-idea-price">'+esc(x.priceReference)+'</div></div><div class="adv-idea-copy"><span class="adv-tag neutral">'+esc(x.action)+'</span><p>'+esc(x.case)+'</p><details class="adv-details"><summary>Entry, exit and risk</summary><div class="adv-detail-grid"><div><b>Buy only when</b><p>'+esc(x.buyWhen)+'</p></div><div><b>Reject thesis if</b><p>'+esc(x.sellWhen)+'</p></div><div><b>Risk</b><p>'+esc(x.risk)+'</p></div><div><b>Next checkpoint</b><p>'+esc(x.nextEvent)+'</p><a class="adv-inline-link" href="'+esc(x.source)+'" target="_blank" rel="noopener noreferrer">Issuer source ↗</a></div></div></details></div><div class="adv-idea-amount"><strong>RM0</strong><span>Not allocated</span></div></article>').join('');
+ root.after(section);
+}
 function renderPortfolio(d){
  const root=get('adv-legacy-review');if(!root||!Array.isArray(d?.legacyActions))return;
  root.innerHTML=d.legacyActions.map(x=>'<div class="adv-portfolio-item"><div><strong>'+esc(x.ticker)+'</strong><div class="adv-tag '+esc(x.tone)+'">'+esc(x.action)+'</div><small>'+esc(x.lastKnown)+'</small></div><p>'+esc(x.why)+' <strong>Verify:</strong> '+esc(x.gate)+'</p><a class="adv-inline-link" href="holdings.html">View holding →</a></div>').join('');
@@ -86,7 +92,7 @@ function handleCopy(){
 }
 async function load(){
  const [d,m]=await Promise.all([fetchJson('data/client-advisor.json'),fetchJson('data/rakuten-one-year-mandate.json')]);
- if(d&&d.contractVersion==='power-stack-client-advisor/1'){renderTimestamp(d);renderTop(d);renderMoves(d);renderOpportunity(d);renderPortfolio(d);renderResearch(d)}
+ if(d&&d.contractVersion==='power-stack-client-advisor/1'){renderTimestamp(d);renderTop(d);renderMoves(d);renderOpportunity(d);renderResearchRadar(d);renderPortfolio(d);renderResearch(d)}
  else{const s=get('adv-research-status');if(s)s.textContent='Live decision data unavailable · dated plan below requires new verification';}
  if(m&&m.schema==='power-stack-manual-investment-mandate/v1')renderAllocation(m);
  applyFilters();handleCopy();
