@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 const read=path=>readFileSync(path,'utf8');
 const sprite=read('assets/market-iconography/sprite.svg');
-const symbols=[...sprite.matchAll(/<symbol id="bb-([\w-]+)"\b/g)].map(m=>m[1]);
+const symbols=[...sprite.matchAll(/<symbol id="bb-([\w-]+)"/g)].map(m=>m[1]);
 assert.equal(symbols.length,40,'Hybrid sprite must contain forty canonical symbols');
 assert.equal(new Set(symbols).size,40,'Hybrid sprite has duplicate IDs');
 const script=read('ps-market-icons.js');
