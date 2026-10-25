@@ -15,6 +15,15 @@ on:
       - 'ps-ux.css'
       - 'holdings.html'
       - 'scripts/check-basket-ui.mjs'
+      - 'ps-market-icons.js'
+      - 'ps-market-icons.css'
+      - 'assets/market-iconography/sprite.svg'
+      - 'scripts/check-market-iconography.mjs'
+      - 'index.html'
+      - 'themes.html'
+      - 'watchlist.html'
+      - 'motion.html'
+      - 'capital-scarcity.html'
       - 'scripts/validate-static-html-js.mjs'
       - '.github/workflows/validate-library-ui.yml'
   pull_request:
@@ -31,6 +40,15 @@ on:
       - 'ps-ux.css'
       - 'holdings.html'
       - 'scripts/check-basket-ui.mjs'
+      - 'ps-market-icons.js'
+      - 'ps-market-icons.css'
+      - 'assets/market-iconography/sprite.svg'
+      - 'scripts/check-market-iconography.mjs'
+      - 'index.html'
+      - 'themes.html'
+      - 'watchlist.html'
+      - 'motion.html'
+      - 'capital-scarcity.html'
       - 'scripts/validate-static-html-js.mjs'
       - '.github/workflows/validate-library-ui.yml'
 jobs:
@@ -54,3 +72,7 @@ jobs:
           node scripts/validate-static-html-js.mjs holdings.html
           node scripts/validate-static-html-js.mjs baskets.html
           node scripts/check-basket-ui.mjs
+      - name: Validate first-party Hybrid market pictograms and page wiring
+        run: |
+          node --check ps-market-icons.js
+          node scripts/check-market-iconography.mjs
