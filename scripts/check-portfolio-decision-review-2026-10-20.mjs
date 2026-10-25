@@ -13,7 +13,12 @@ const watch = read("data/watchlist.json");
 assert.equal(updated.contractVersion, prev.contractVersion);
 assert.equal(updated.status, "RESEARCH_ONLY_NOT_EXECUTION_READY");
 assert.equal(updated.marketPriceDate, "2026-10-19");
-assert.equal(updated.sourceDossierId, live.dossierId);
+// Historical decision reviews pin the Dossier observed at research time.
+// The latest Live snapshot is mutable; its ID must not replace the archived reference.
+assert.match(updated.sourceDossierId, /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i);
+assert.ok(Number.isFinite(Date.parse(updated.sourceDossierAsOf)), "Archived source timestamp required");
+assert.ok(Date.parse(updated.sourceDossierAsOf) <= Date.parse(updated.researchAsOf + "T23:59:59Z"), "Archived Dossier cannot postdate its review");
+assert.ok(Number.isFinite(Date.parse(live.asOf)), "Current canonical Live timestamp required");
 assert.deepEqual(new Set(updated.holdings.map(x => x.ticker)), new Set(prev.holdings.map(x => x.ticker)));
 assert.deepEqual(new Set(updated.tradeCandidates.map(x => x.ticker)), new Set(prev.tradeCandidates.map(x => x.ticker)));
 assert.equal(updated.holdings.length, 8);
