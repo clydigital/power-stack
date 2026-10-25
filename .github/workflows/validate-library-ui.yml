@@ -7,6 +7,14 @@ on:
       - 'app.js'
       - 'styles.css'
       - 'scripts/check-library-ui.mjs'
+      - 'baskets.html'
+      - 'baskets.js'
+      - 'baskets.css'
+      - 'data/basket-strategies.json'
+      - 'ps-ux.js'
+      - 'ps-ux.css'
+      - 'holdings.html'
+      - 'scripts/check-basket-ui.mjs'
       - 'scripts/validate-static-html-js.mjs'
       - '.github/workflows/validate-library-ui.yml'
   pull_request:
@@ -15,6 +23,14 @@ on:
       - 'app.js'
       - 'styles.css'
       - 'scripts/check-library-ui.mjs'
+      - 'baskets.html'
+      - 'baskets.js'
+      - 'baskets.css'
+      - 'data/basket-strategies.json'
+      - 'ps-ux.js'
+      - 'ps-ux.css'
+      - 'holdings.html'
+      - 'scripts/check-basket-ui.mjs'
       - 'scripts/validate-static-html-js.mjs'
       - '.github/workflows/validate-library-ui.yml'
 jobs:
@@ -31,3 +47,10 @@ jobs:
         run: node scripts/validate-static-html-js.mjs research-library.html
       - name: Validate Full Library missing-data and layout guards
         run: node scripts/check-library-ui.mjs
+      - name: Validate basket model, investment taxonomy and Holdings integrity
+        run: |
+          node --check baskets.js
+          node --check ps-ux.js
+          node scripts/validate-static-html-js.mjs holdings.html
+          node scripts/validate-static-html-js.mjs baskets.html
+          node scripts/check-basket-ui.mjs
