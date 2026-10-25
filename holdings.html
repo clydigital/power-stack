@@ -21,6 +21,7 @@
     @media(max-width:650px){.metric-grid{grid-template-columns:1fr}.component-row{grid-template-columns:110px minmax(0,1fr) 42px}.ranking-head{align-items:flex-start;flex-direction:column}.score-orb{width:52px;height:52px;flex-basis:52px}}
   </style>
   <link rel="stylesheet" href="stock-states.css" />
+  <link rel="stylesheet" href="ps-ux.css" />
 </head>
 <body>
   <div class="app-shell">
@@ -324,6 +325,7 @@
       document.getElementById('liveOverlayMeta').textContent = 'Live portfolio overlay unavailable';
     });
   </script>
+  <script src="ps-ux.js"></script>
 </body>
 </html>
 :'RM') + Number(h.actualReaction.close).toLocaleString(undefined,{maximumFractionDigits:4}) + '</strong> <span style="color:' + (Number(h.actualReaction.changePct)>=0?'#8fd8ad':'#e5a0a4') + '">' + (Number(h.actualReaction.changePct)>0?'+':'') + Number(h.actualReaction.changePct).toFixed(2) + '%</span>') + '<br><span class="reaction-pill ' + (h.actualReaction?.status || 'UNRESOLVED') + '">' + (h.actualReaction?.status || 'UNRESOLVED') + '</span><br><span style="color:#77818a">' + (h.actualReaction?.sessionDate || 'no completed tape') + '</span></td>' +
