@@ -9,6 +9,7 @@ const script=read('ps-market-icons.js');
 const css=read('ps-market-icons.css');
 assert.ok(script.includes("const sprite = 'assets/market-iconography/sprite.svg#bb-'"),'Icon source path diverges from local sprite');
 assert.ok(script.includes('MutationObserver')&&script.includes('dataset.psMarketIcon'),'Dynamic rerender idempotency guard missing');
+assert.ok(script.includes(':scope > svg.ps-icon'),'Already decorated headings must not receive two pictograms');
 assert.ok(script.includes('aria-hidden="true"')&&script.includes('focusable="false"'),'Decorative icons missing accessibility safeguards');
 assert.ok(!script.includes('localStorage')&&!script.includes('fetch(')&&!script.includes('navigator.clipboard'),'Iconography must remain read-only');
 assert.ok(!script.includes('ordersPlaced')&&!script.includes('allocationPct')&&!script.includes('score='),'No investment state changes permitted');
