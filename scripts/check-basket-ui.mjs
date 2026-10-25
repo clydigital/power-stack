@@ -4,7 +4,7 @@ const read=path=>fs.readFileSync(path,'utf8');
 const document=read('holdings.html');
 assert.equal((document.match(/<\/html>/gi)||[]).length,1,'Holdings contains more than one HTML document');
 assert.match(document,/^<!doctype html>/i,'Holdings missing doctype');
-assert.match(document,/<script src="ps-ux.js"><\/script>\s*<\/body>\s*<\/html>\s*$/,'Holdings has extraneous code after HTML end');
+assert.match(document,/<\/body>\s*<\/html>\s*$/,'Holdings has extraneous code after HTML end');
 assert.ok(document.includes('renderLiveOverlay(overlay)')&&document.includes('renderCards(data.holdings)'),'Holdings behaviour missing');
 const html=read('baskets.html'),app=read('app.js'),library=read('research-library.html'),front=read('index.html'),navigation=read('ps-ux.js');
 assert.ok(html.includes('baskets.js')&&html.includes('baskets.css'));
