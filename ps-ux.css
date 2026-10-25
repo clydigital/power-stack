@@ -89,3 +89,24 @@
 @media(max-width:1050px){.ps-action-brief-grid{grid-template-columns:1fr}.ps-deep-ux .topbar{flex-wrap:wrap}.ps-deep-ux .top-actions{justify-content:flex-start}}
 @media(max-width:720px){.ps-holdings-action-brief{padding:16px}.ps-action-brief-head h2{font-size:20px}.ps-research-context{gap:7px 12px}.ps-context-description{width:100%}.ps-deep-ux .theme-head,.ps-deep-ux .watch-card,.ps-deep-ux .motion-card,.ps-deep-ux .holding-card{padding:14px}.ps-deep-ux .theme-grid{grid-template-columns:1fr}.ps-deep-ux .detail-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.ps-view-switch a{transition:none}}
+
+
+/* Strategy and exposure categorisation: source classification only, not a risk score. */
+.ps-front-icons .ps-basket-link{display:inline-flex;align-items:center;gap:8px}
+.ps-front-icons .adv-title-row>.adv-link-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.ps-basket-link .ps-icon{color:#9fd9b9;width:17px;height:17px}
+.ps-exposure-explainer{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:15px 17px;margin-bottom:17px;border:1px solid #345147;border-radius:11px;background:#13211e}
+.ps-exposure-explainer>div{display:flex;flex-direction:column;gap:5px;min-width:0}
+.ps-exposure-explainer strong{color:#c2ebd3;font-size:13px}
+.ps-exposure-explainer span{color:#a9c1b4;font-size:12px;line-height:1.7}
+.ps-exposure-explainer b{color:#d6efe2}
+.ps-exposure-explainer a{color:#b9e9d2;font-size:12px;font-weight:700;text-decoration:none}
+.ps-exposure-explainer a:hover{text-decoration:underline}
+.ps-link-icon-text .ps-exposure-icon{width:15px;height:15px;flex:0 0 15px;color:#9acdb2}
+.ps-exposure-tag{display:inline-flex;align-items:center;gap:6px;color:#bee6cb;border-color:#345849}
+.ps-exposure-tag .ps-exposure-icon{width:14px;height:14px}
+.ps-deep-ux .card-tags{gap:5px}
+.ps-deep-ux #exposureNav .nav-item .ps-link-icon-text{display:inline-flex;align-items:center;gap:7px}
+.ps-deep-ux #exposureNav .nav-item.active{background:#1e382d;border-color:#4b7c63;color:#e0f5e9}
+.ps-deep-ux .ps-research-navigator{scroll-margin-top:20px}
+@media(max-width:660px){.ps-exposure-explainer{padding:13px}.ps-front-icons .adv-title-row>.adv-link-row{gap:9px}}
