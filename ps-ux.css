@@ -1,0 +1,91 @@
+/* Power Stack navigation/readability layer. Only iconography is applied to the public advisory front page. */
+.ps-icon{width:17px;height:17px;flex:0 0 17px;vertical-align:-3px;color:currentColor}
+.ps-link-with-icon,.ps-link-icon-text{display:inline-flex;align-items:center;gap:7px}
+.ps-icon-heading{display:flex;align-items:center;gap:10px}
+.ps-icon-heading>.ps-icon{width:21px;height:21px;flex-basis:21px;color:#90cdb1}
+.ps-front-icons header nav a{display:inline-flex;align-items:center;gap:7px}
+.ps-front-icons .adv-title-row h2{gap:10px}
+.ps-front-icons .adv-title-row h2>.ps-icon{opacity:.9}
+
+/* Secondary research pages: prioritise legible explanations over dashboard density. */
+.ps-deep-ux{line-height:1.55}
+.ps-deep-ux .topbar{min-height:initial;align-items:center;padding-top:27px;padding-bottom:25px}
+.ps-deep-ux .topbar h1{font-size:clamp(33px,4vw,52px);line-height:1.08;margin-bottom:8px}
+.ps-deep-ux .topbar p,.ps-deep-ux .themes-top p,.ps-deep-ux .motion-top p{font-size:13px;line-height:1.65}
+.ps-deep-ux .side-heading,.ps-deep-ux .eyebrow,.ps-deep-ux .meta{font-size:10px;letter-spacing:.11em}
+.ps-deep-ux .side-micro,.ps-deep-ux .brand-sub{font-size:11px;line-height:1.6;color:#a1abb0}
+.ps-deep-ux .nav-top{font-size:12px;line-height:1.5}
+.ps-deep-ux .nav-item{min-height:38px;display:block;padding:9px 10px}
+.ps-deep-ux .nav-item:focus-visible,.ps-deep-ux .ghost-link:focus-visible,.ps-deep-ux .ps-view-switch a:focus-visible{outline:2px solid #9edfb9;outline-offset:3px}
+.ps-deep-ux .ghost-link{display:inline-flex;align-items:center;gap:7px;font-size:11px;line-height:1.4;padding:9px 12px}
+.ps-deep-ux .summary-card span,.ps-deep-ux .context-meta,.ps-deep-ux .context-rule{font-size:11px;line-height:1.55}
+.ps-deep-ux .company,.ps-deep-ux .holding-name,.ps-deep-ux .watch-name,.ps-deep-ux .theme-updated{font-size:11px;line-height:1.5;color:#adb9c1}
+.ps-deep-ux .idea-card,.ps-deep-ux .holding-card,.ps-deep-ux .watch-card,.ps-deep-ux .theme-card,.ps-deep-ux .motion-card{line-height:1.6}
+.ps-deep-ux .card-copy,.ps-deep-ux .card-body,.ps-deep-ux .detail p,.ps-deep-ux .theme-copy,.ps-deep-ux .theme-why,.ps-deep-ux .rank-copy{font-size:12px;line-height:1.72}
+.ps-deep-ux .detail h3,.ps-deep-ux .theme-panel h3,.ps-deep-ux .kicker,.ps-deep-ux .holding-card h3{font-size:11px}
+.ps-deep-ux .source-link,.ps-deep-ux .card-foot,.ps-deep-ux .footer{font-size:11px;line-height:1.6}
+.ps-deep-ux .rate-home p,.ps-deep-ux .bond-home p,.ps-deep-ux .motion-home p{font-size:12px;line-height:1.7}
+.ps-deep-ux .rate-chip,.ps-deep-ux .motion-home-card strong,.ps-deep-ux .bond-bucket strong,.ps-deep-ux .motion-home-card small{font-size:11px;line-height:1.55}
+.ps-deep-ux .bond-metric span,.ps-deep-ux .bond-metric small,.ps-deep-ux .bond-bucket span,.ps-deep-ux .bond-bucket p,.ps-deep-ux .motion-home-card span{font-size:10px;line-height:1.55}
+.ps-deep-ux .ranking th,.ps-deep-ux .ranking td{font-size:11px;line-height:1.6}
+.ps-deep-ux .ranking td:nth-child(2) span{font-size:10px}
+.ps-deep-ux .watch-card p,.ps-deep-ux .watch-card small,.ps-deep-ux .watch-hero-copy p,.ps-deep-ux .regime-panel p{font-size:12px;line-height:1.65}
+.ps-deep-ux .watch-stat span,.ps-deep-ux .bucket-head p,.ps-deep-ux .watch-card .action-guide{font-size:11px;line-height:1.55}
+.ps-deep-ux .motion-hero-copy p,.ps-deep-ux .motion-rule,.ps-deep-ux .motion-live-note,.ps-deep-ux .motion-card p,.ps-deep-ux .motion-card small{font-size:12px;line-height:1.7}
+.ps-deep-ux .motion-stat span,.ps-deep-ux .filter-row button{font-size:11px;line-height:1.5}
+.ps-deep-ux .premium,.ps-deep-ux .gate,.ps-deep-ux .rank-copy,.ps-deep-ux .note,.ps-deep-ux .live-meta{font-size:12px;line-height:1.7}
+.ps-deep-ux .themes-main,.ps-deep-ux .motion-main,.ps-deep-ux .main-content{min-width:0}
+.ps-deep-ux :is(.theme-copy,.theme-why,.motion-card,.watch-card,.holding-card,.detail,.rank-copy,.card-body) :is(p,small,span){overflow-wrap:anywhere}
+.ps-deep-ux .theme-list,.ps-deep-ux .bucket-grid,.ps-deep-ux .holdings-grid,.ps-deep-ux .motion-grid{gap:14px}
+.ps-deep-ux .theme-head,.ps-deep-ux .watch-card,.ps-deep-ux .motion-card,.ps-deep-ux .holding-card{padding:18px}
+.ps-deep-ux .theme-copy{max-width:90ch}
+.ps-deep-ux .theme-why{padding:15px 18px}
+.ps-deep-ux .theme-panel{padding:16px}
+.ps-deep-ux .theme-title{font-size:23px;line-height:1.2}
+.ps-deep-ux .motion-top h1,.ps-deep-ux .themes-top h1{font-size:clamp(34px,5vw,60px);line-height:1.08}
+.ps-deep-ux .summary-grid{gap:12px}
+.ps-deep-ux .idea-card{min-height:initial}
+
+/* Consistent wayfinding on every research page. */
+.ps-research-navigator{padding:14px 0 17px;margin:0 0 20px;border-bottom:1px solid #27353b}
+.ps-research-context{display:flex;align-items:center;gap:10px 15px;flex-wrap:wrap;padding:0 0 13px}
+.ps-context-kicker{font-size:10px;letter-spacing:.12em;color:#90bea6;font-weight:800}
+.ps-context-location{display:inline-flex;align-items:center;gap:7px;color:#eff5f0;font-weight:760;font-size:14px}
+.ps-context-description{color:#9eafb3;font-size:12px}
+.ps-view-switch{display:flex;flex-wrap:nowrap;align-items:center;gap:7px;overflow-x:auto;padding:2px 1px 8px;scrollbar-width:thin;scrollbar-color:#44544f transparent}
+.ps-view-switch a{display:inline-flex;align-items:center;gap:7px;flex:0 0 auto;color:#b6c5c4;text-decoration:none;border:1px solid #2c3b42;border-radius:10px;padding:9px 12px;background:#111a1e;font-size:12px;white-space:nowrap;min-height:40px}
+.ps-view-switch a:hover{border-color:#6b9d86;color:#e5f9ee}
+.ps-view-switch a[aria-current="page"]{background:#213a30;border-color:#6b9d86;color:#c8ffdf;font-weight:780}
+.ps-reading-guide{margin:8px 0 0;border:1px solid #2b4044;background:#10181b;border-radius:10px;padding:0}
+.ps-reading-guide summary{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:12px;line-height:1.55;padding:10px 12px;color:#acd7c1;font-weight:680;list-style:none}
+.ps-reading-guide summary::-webkit-details-marker{display:none}
+.ps-reading-guide summary::after{content:'+';margin-left:auto}
+.ps-reading-guide[open] summary::after{content:'−'}
+.ps-reading-guide p{border-top:1px solid #29383d;padding:13px 14px;margin:0;font-size:12px;line-height:1.75;color:#bccdcc;max-width:100ch}
+
+/* The back-office holdings action brief translates ambiguous labels to conditional decisions. */
+.ps-holdings-action-brief{border:1px solid #3d554d;background:linear-gradient(145deg,#12211e,#0d1417 72%);padding:22px;margin:0 0 24px;border-radius:13px}
+.ps-action-brief-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-bottom:16px}
+.ps-action-brief-head h2{display:flex;align-items:center;gap:9px;font-size:23px;line-height:1.3;letter-spacing:-.5px;margin:6px 0 8px}
+.ps-action-brief-head h2 .ps-icon{color:#a2e4c5;flex:0 0 20px}
+.ps-action-brief-head p{max-width:800px;color:#abbfb6;font-size:13px;line-height:1.65}
+.ps-action-brief-head a{font-size:12px;color:#b3e1c9;text-decoration:none;padding:5px 0}
+.ps-action-brief-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.ps-holding-explainer{border:1px solid #32413d;background:#101a1b;border-radius:11px;padding:18px;min-width:0}
+.ps-holding-explainer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap}
+.ps-holding-explainer-top strong{font-size:16px;color:#eaf9f0}
+.ps-holding-explainer-top span{font-size:10px;line-height:1.5;letter-spacing:.025em;color:#eed4a9;border:1px solid #65543a;border-radius:7px;padding:4px 7px;font-weight:750}
+.ps-holding-verdict{font-weight:700;color:#e0f3e7;font-size:13px;line-height:1.65;margin:12px 0}
+.ps-holding-target{display:flex;align-items:flex-start;gap:9px;padding:11px 12px;background:#182d29;border-left:2px solid #7ebda0;border-radius:6px;color:#c7e4d6;font-size:12px;line-height:1.65}
+.ps-holding-target>.ps-icon{margin-top:2px;flex:0 0 17px}
+.ps-holding-explainer dl{margin:14px 0;display:grid;gap:11px}
+.ps-holding-explainer dt{color:#86ba9f;font-size:10px;letter-spacing:.08em;font-weight:800;text-transform:uppercase;margin-bottom:4px}
+.ps-holding-explainer dd{margin:0;font-size:12px;line-height:1.7;color:#c2d2c9}
+.ps-holding-explainer details{border-top:1px solid #33443f;padding-top:10px;margin-top:7px}
+.ps-holding-explainer details summary{font-size:12px;color:#b5e2cc;cursor:pointer}
+.ps-holding-explainer details p{font-size:12px;line-height:1.7;color:#c1d1c9;margin:10px 0}
+.ps-holding-explainer details small{color:#91a79d;font-size:10px}
+.ps-loading{color:#aebfba;font-size:12px}
+@media(max-width:1050px){.ps-action-brief-grid{grid-template-columns:1fr}.ps-deep-ux .topbar{flex-wrap:wrap}.ps-deep-ux .top-actions{justify-content:flex-start}}
+@media(max-width:720px){.ps-holdings-action-brief{padding:16px}.ps-action-brief-head h2{font-size:20px}.ps-research-context{gap:7px 12px}.ps-context-description{width:100%}.ps-deep-ux .theme-head,.ps-deep-ux .watch-card,.ps-deep-ux .motion-card,.ps-deep-ux .holding-card{padding:14px}.ps-deep-ux .theme-grid{grid-template-columns:1fr}.ps-deep-ux .detail-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.ps-view-switch a{transition:none}}

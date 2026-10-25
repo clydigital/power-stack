@@ -64,7 +64,18 @@ function renderResearchRadar(d){
 }
 function renderPortfolio(d){
  const root=get('adv-legacy-review');if(!root||!Array.isArray(d?.legacyActions))return;
- root.innerHTML=d.legacyActions.map(x=>'<div class="adv-portfolio-item"><div><strong>'+esc(x.ticker)+'</strong><div class="adv-tag '+esc(x.tone)+'">'+esc(x.action)+'</div><small>'+esc(x.lastKnown)+'</small></div><p>'+esc(x.why)+' <strong>Verify:</strong> '+esc(x.gate)+'</p><a class="adv-inline-link" href="holdings.html">View holding →</a></div>').join('');
+ root.innerHTML=d.legacyActions.map(x=>{
+  const target=x.target||'No position-size decision until the account is reconciled.';
+  const action=x.plainAction||x.why;
+  const extra='<details class="adv-holding-explanation"><summary>Why this action? What must be true?</summary>'+
+   '<p><b>Reason:</b> '+esc(x.why)+'</p>'+
+   '<p><b>Act only if:</b> '+esc(x.trigger||x.gate)+'</p>'+
+   '<p><b>Check first:</b> '+esc(x.nextStep||x.gate)+'</p>'+
+   '<p><b>When to keep instead:</b> '+esc(x.holdInstead||'Await refreshed issuer evidence and current holdings.')+'</p></details>';
+  return '<div class="adv-portfolio-item"><div class="adv-portfolio-name"><strong>'+esc(x.ticker)+'</strong><div class="adv-tag '+esc(x.tone)+'">'+esc(x.action)+'</div><small>'+esc(x.lastKnown)+'</small></div>'+
+   '<div class="adv-portfolio-decision"><p class="adv-holding-action">'+esc(action)+'</p><p class="adv-holding-target">'+esc(target)+'</p>'+extra+'</div>'+
+   '<a class="adv-inline-link" href="holdings.html#ps-holdings-action-brief">Full decision notes →</a></div>'
+ }).join('');
 }
 function renderResearch(d){
  const market=get('adv-insight-grid'),cal=get('adv-event-list');
