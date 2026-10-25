@@ -1,0 +1,109 @@
+/*
+ * Market iconography borrowed from the first-party Alchemy Live Desk Hybrid SVG set.
+ * Icons identify a concept, not signal trade eligibility or source verification.
+ * No font, emoji, network icon library or mutable market data dependency.
+ */
+:root {
+  --ps-market-neutral:#b9cec4;
+  --ps-market-info:#9ccde4;
+  --ps-market-good:#a6dfbe;
+  --ps-market-warn:#ecc993;
+  --ps-market-risk:#e7a4a1;
+}
+.ps-market-icon{width:17px;height:17px;min-width:17px;display:inline-block;vertical-align:-3px;margin-right:6px;flex-shrink:0;pointer-events:none}
+.ps-market-icon--neutral{color:var(--ps-market-neutral)}
+.ps-market-icon--info{color:var(--ps-market-info)}
+.ps-market-icon--good{color:var(--ps-market-good)}
+.ps-market-icon--warn{color:var(--ps-market-warn)}
+.ps-market-icon--risk{color:var(--ps-market-risk)}
+.ps-market-has-glyph{overflow-wrap:anywhere}
+.ps-market-tile{width:31px;height:31px;flex:0 0 31px;display:inline-grid;place-items:center;vertical-align:middle;
+  border:1px solid #355247;border-radius:9px;background:linear-gradient(148deg,#20392f,#15251f);color:#acd9bf}
+.ps-market-tile .ps-market-icon{margin:0;width:19px;height:19px;min-width:19px}
+.ps-market-tile--info{background:linear-gradient(145deg,#1e3440,#13242b);border-color:#365764}
+.ps-market-tile--warn{background:linear-gradient(145deg,#3e2d1a,#242019);border-color:#6c5434}
+.ps-market-tile--risk{background:linear-gradient(145deg,#3f2526,#25191b);border-color:#674044}
+.ps-market-tile--good{background:linear-gradient(145deg,#204333,#13291f);border-color:#467b5d}
+.ps-market-has-tile{display:inline-flex;align-items:center;gap:9px;max-width:100%}
+.ps-market-has-tile>.ps-market-tile{flex-shrink:0}
+.ps-market-has-glyph>.ps-market-icon{color:var(--ps-market-info)}
+.ps-market-has-glyph>.ps-market-icon--neutral{color:var(--ps-market-neutral)}
+.ps-market-has-glyph>.ps-market-icon--good{color:var(--ps-market-good)}
+.ps-market-has-glyph>.ps-market-icon--warn{color:var(--ps-market-warn)}
+.ps-market-has-glyph>.ps-market-icon--risk{color:var(--ps-market-risk)}
+
+/* Library. Asset glyphs are editorial sector markers, not company ratings. */
+.ps-deep-ux .idea-card .ticker.ps-market-has-tile,.ps-deep-ux .idea-row .row-stock-top strong.ps-market-has-tile{display:inline-flex;gap:9px;align-items:center;min-width:0}
+.ps-deep-ux .idea-card .card-head{gap:10px}
+.ps-deep-ux .idea-card .card-head .ticker-row{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.ps-deep-ux .idea-card .ticker .ps-market-tile{width:31px;height:31px}
+.ps-deep-ux .idea-row .row-stock-top strong .ps-market-tile{width:26px;height:26px;flex-basis:26px;border-radius:7px}
+.ps-deep-ux .detail h3 .ps-market-icon,.ps-deep-ux .theme-panel h3 .ps-market-icon{margin-right:8px}
+.ps-deep-ux .bond-metric span.ps-market-has-glyph,.ps-deep-ux .summary-card span.ps-market-has-glyph{display:inline-flex;align-items:center;gap:5px}
+.ps-deep-ux .bond-metric span.ps-market-has-glyph .ps-market-icon,.ps-deep-ux .summary-card span.ps-market-has-glyph .ps-market-icon{width:14px;height:14px;min-width:14px;margin-right:0}
+.ps-deep-ux .rate-home h2 .ps-market-icon,.ps-deep-ux .bond-home h2 .ps-market-icon,.ps-deep-ux .motion-home h2 .ps-market-icon{width:21px;height:21px;min-width:21px}
+.ps-deep-ux .ps-exposure-explainer strong .ps-market-icon{margin-right:8px}
+
+/* Holdings: differentiation between source, observed outcome, risk and next test. */
+.ps-deep-ux .holding-ticker.ps-market-has-tile{display:inline-flex;align-items:center;gap:9px}
+.ps-deep-ux .holding-ticker .ps-market-tile{width:35px;height:35px;flex-basis:35px}
+.ps-deep-ux .holding-card .card-section h3.ps-market-has-glyph{display:block;line-height:1.5}
+.ps-deep-ux .divergence-card h4 .ps-market-icon{width:15px;height:15px;min-width:15px;margin-right:6px}
+.ps-deep-ux .divergence-card .div-top b.ps-market-has-glyph{display:inline-flex;align-items:center;gap:5px;flex-wrap:wrap}
+.ps-deep-ux .cluster-card b .ps-market-icon{margin-right:5px}
+.ps-holding-explainer-top>strong.ps-market-has-glyph{display:inline-flex;align-items:center;gap:6px}
+.ps-holding-explainer dt .ps-market-icon{width:14px;height:14px;min-width:14px}
+
+/* Watchlist: action class drives visual language, but the original text gate remains. */
+.ps-deep-ux .watch-ticker.ps-market-has-tile{display:inline-flex;align-items:center;gap:8px}
+.ps-deep-ux .watch-card .action-pill.ps-market-has-glyph{display:inline-flex;align-items:center;gap:5px;white-space:normal;line-height:1.4}
+.ps-deep-ux .watch-card .action-pill>.ps-market-icon{margin-right:0;width:14px;height:14px;min-width:14px}
+.ps-deep-ux .bucket-head h2 .ps-market-icon{width:19px;height:19px;min-width:19px}
+.ps-deep-ux .watch-hero-copy h2 .ps-market-icon{width:22px;height:22px;min-width:22px}
+
+/* Theme cards and motion: causal reading cues, not extra decorative badges. */
+.ps-deep-ux .theme-title.ps-market-has-tile{display:inline-flex;gap:9px;align-items:center;flex-wrap:wrap;min-width:0}
+.ps-deep-ux .theme-title .ps-market-tile{width:33px;height:33px;flex-basis:33px}
+.ps-deep-ux .theme-panel h3.ps-market-has-glyph{line-height:1.65}
+.ps-deep-ux .theme-why.ps-market-has-glyph{display:flex;align-items:flex-start;gap:8px}
+.ps-deep-ux .theme-why.ps-market-has-glyph .ps-market-icon{margin-top:2px;margin-right:0}
+.ps-deep-ux .news-date .ps-market-icon{width:13px;height:13px;min-width:13px}
+.ps-deep-ux .motion-card h3.ps-market-has-tile{display:flex;align-items:flex-start;gap:9px;max-width:100%}
+.ps-deep-ux .motion-card h3.ps-market-has-tile .ps-market-tile{width:33px;height:33px;flex-basis:33px}
+.ps-deep-ux .motion-kicker.ps-market-has-glyph{align-items:center}
+.ps-deep-ux .motion-toolbar .filter-row button.ps-market-has-glyph{display:inline-flex;gap:5px;align-items:center}
+.ps-deep-ux .motion-toolbar .filter-row button .ps-market-icon{margin-right:0;width:14px;height:14px;min-width:14px}
+
+/* Rates, capital scarcity and scenario baskets */
+.ps-deep-ux main.scarcity .section>.meta.ps-market-has-glyph{display:inline-flex;align-items:center;gap:6px;line-height:1.6}
+.ps-deep-ux main.scarcity .section>.meta .ps-market-icon{margin-right:0}
+.ps-deep-ux .signal .meta.ps-market-has-glyph{display:inline-flex;align-items:center;gap:6px}
+.ps-deep-ux .signal .meta .ps-market-icon{margin-right:0}
+.ps-deep-ux .rank-card .rank-ticker .ps-market-icon{width:15px;height:15px;min-width:15px}
+.ps-deep-ux .basket-evidence-row strong.ps-market-has-glyph{display:inline-flex;align-items:center;gap:5px}
+.ps-deep-ux .basket-card-outcome span.ps-market-has-glyph{display:inline-flex;gap:5px;align-items:center}
+.ps-deep-ux .basket-card-outcome span .ps-market-icon{width:14px;height:14px;min-width:14px;margin-right:0}
+.ps-deep-ux .basket-logic-grid h3 .ps-market-icon{margin-right:7px}
+.ps-deep-ux .basket-baseline p strong .ps-market-icon{color:#e9c98c}
+.ps-deep-ux .basket-hero-number>span.ps-market-has-glyph{display:flex;align-items:center;gap:7px}
+.ps-deep-ux .basket-hero-number>span .ps-market-icon{margin-right:0}
+
+/* Client front page: iconography only, preserve spacing, colour hierarchy and capital decisions. */
+.ps-front-icons .adv-move h3 .ps-market-icon,.ps-front-icons .adv-insight strong .ps-market-icon{width:17px;height:17px;min-width:17px}
+.ps-front-icons .adv-event .adv-overline.ps-market-has-glyph{display:inline-flex;align-items:center;gap:6px}
+.ps-front-icons .adv-event .adv-overline .ps-market-icon{margin-right:0}
+.ps-front-icons .adv-idea-symbol.ps-market-has-tile{display:inline-flex;align-items:center;gap:8px}
+.ps-front-icons .adv-idea-symbol .ps-market-tile{width:28px;height:28px;flex-basis:28px}
+.ps-front-icons .adv-move h3.ps-market-has-glyph{display:block}
+.ps-front-icons .adv-radar-section h3 .ps-market-icon{margin-right:7px}
+.ps-front-icons .adv-portfolio-name>strong.ps-market-has-glyph{display:inline-flex;align-items:center;gap:6px}
+
+/* Small screens and reduced animation */
+@media(max-width:640px){
+  .ps-market-tile{width:27px;height:27px;flex-basis:27px;border-radius:8px}
+  .ps-market-tile .ps-market-icon{width:17px;height:17px;min-width:17px}
+  .ps-deep-ux .theme-title.ps-market-has-tile{gap:7px}
+  .ps-deep-ux .motion-card h3.ps-market-has-tile{gap:7px}
+  .ps-front-icons .adv-idea-symbol .ps-market-tile{width:25px;height:25px;flex-basis:25px}
+}
+@media(prefers-reduced-motion:reduce){.ps-market-icon,.ps-market-tile{transition:none}}
