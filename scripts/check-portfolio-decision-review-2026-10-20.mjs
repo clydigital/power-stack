@@ -34,8 +34,12 @@ for (const item of updated.holdings) {
   assert.equal(item.averageCost, original.averageCost, item.ticker + ": cost basis was mutated");
   assert.equal(item.quantityVerified, false, item.ticker + ": broker is not verified");
   // The current tape advances each market day; dated research prices must remain frozen.
-  assert.equal(item.priceDate, updated.marketPriceDate, item.ticker + ": archived close session mismatch");
-  if (item.ticker !== "6742UW") assert.ok(Number.isFinite(item.close) && item.close > 0, item.ticker + ": archived price missing");
+  if (item.ticker !== "6742UW") {
+    assert.equal(item.priceDate, updated.marketPriceDate, item.ticker + ": archived close session mismatch");
+    assert.ok(Number.isFinite(item.close) && item.close > 0, item.ticker + ": archived price missing");
+  } else {
+    assert.equal(item.priceDate, null, "Unverified warrant must not have a false session date");
+  }
   assert.equal(item.executionReady, false, item.ticker + ": unauthorised readiness");
   assert.ok(item.primaryEvidence.length > 0 && item.primaryEvidence.every(x => x.startsWith("https://")), item.ticker);
   if (item.ticker !== "6742UW") {
