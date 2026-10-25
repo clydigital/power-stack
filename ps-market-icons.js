@@ -48,7 +48,7 @@
   function prepend(el, name, tone='neutral', presentation='inline') {
     if (!el || el.nodeType !== 1 || el.dataset.psMarketIcon === '1') return;
     if (!symbols.has(name)) return;
-    if (el.querySelector(':scope > svg.ps-market-icon, :scope > .ps-market-tile')) return;
+    if (el.querySelector(':scope > svg.ps-market-icon, :scope > .ps-market-tile, :scope > svg.ps-icon')) return;
     if (presentation==='tile') {
       const tile = document.createElement('span');
       tile.className='ps-market-tile ps-market-tile--'+tone;
