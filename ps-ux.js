@@ -5,6 +5,7 @@
   const pages = [
     {file:'index.html',title:'Decision desk',icon:'home',description:'Portfolio decisions and capital plan'},
     {file:'research-library.html',title:'Full library',icon:'library',description:'Research universe, scores and source history'},
+    {file:'baskets.html',title:'Strategy baskets',icon:'basket',description:'Alternative allocations compared by risk and thesis'},
     {file:'holdings.html',title:'Holdings',icon:'wallet',description:'What you own, why, and when to reduce risk'},
     {file:'watchlist.html',title:'Watchlist',icon:'list',description:'What qualifies for an entry and what does not'},
     {file:'themes.html',title:'Themes',icon:'layers',description:'Market stories and company transmission'},
@@ -17,6 +18,7 @@
     home:'<path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/>',
     library:'<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/><path d="M8 7h8M8 11h6"/>',
     wallet:'<rect x="3" y="5" width="18" height="15" rx="2"/><path d="M3 9h18M16 14h2"/>',
+    basket:'<path d="m4 10 2 11h12l2-11H4Z"/><path d="m8 10 4-7 4 7M9 14v3M15 14v3"/>',
     list:'<path d="M8 6h13M8 12h13M8 18h13"/><path d="M3 6h.01M3 12h.01M3 18h.01"/>',
     layers:'<path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/>',
     activity:'<path d="M2 12h4l3-8 5 16 3-8h5"/>',
@@ -76,7 +78,8 @@
   const main = document.querySelector('.main-content, .themes-main, .motion-main, main.scarcity');
   if (!main) return;
   const guide = {
-    'research-library.html':'This is the full historical universe, not a live buy list. Scores show research quality; prices, funding and source dates determine whether an idea is actionable.',
+    'research-library.html':'This is the full historical universe, not a live buy list. Research themes describe the industry. Economic exposure describes the driver. Neither is a funded allocation or a verified risk hedge.',
+    'baskets.html':'Each basket is one alternative portfolio using the same RM13,491. Categories describe the strategy and market factor; scenario percentages are illustrative sensitivities, not forecast probabilities. None is funded or executable.',
     'holdings.html':'Start with conditional sell/trim explanations. Check current broker holdings and issuer evidence before changing size. A review label never means an order was placed.',
     'watchlist.html':'Priority is not permission to buy. Each candidate needs an entry price, business proof, and an invalidation condition. Older market quotes can be stale.',
     'themes.html':'Read the transmission from event to business profit first. Themes suggest what to research; company financials and price determine investment decisions.',
@@ -92,6 +95,7 @@
   main.prepend(nav);
   const editorialIcons = {
     'research-library.html': [['#bondWatchHome h2','chart'],['#marketMotionHome h2','activity']],
+    'baskets.html': [['.basket-topbar h1','basket']],
     'holdings.html': [['.topbar h1','wallet']],
     'watchlist.html': [['.topbar h1','list']],
     'themes.html': [['.themes-top h1','layers']],
