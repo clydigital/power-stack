@@ -90,6 +90,21 @@
     pages.map(p => '<a href="' + p.file + '"' + (p.file===file?' aria-current="page"':'') + '>' + svg(p.icon) + '<span>' + esc(p.title) + '</span></a>').join('') + '</nav>' +
     '<details class="ps-reading-guide"><summary>' + svg('compass') + ' How to read this page</summary><p>' + esc(guide[file]) + '</p></details>';
   main.prepend(nav);
+  const editorialIcons = {
+    'research-library.html': [['#bondWatchHome h2','chart'],['#marketMotionHome h2','activity']],
+    'holdings.html': [['.topbar h1','wallet']],
+    'watchlist.html': [['.topbar h1','list']],
+    'themes.html': [['.themes-top h1','layers']],
+    'motion.html': [['.motion-top h1','activity']],
+    'capital-scarcity.html': [['.top h1','chart']]
+  };
+  for (const [selector,name] of editorialIcons[file] || []) {
+    const heading = document.querySelector(selector);
+    if (heading && !heading.querySelector('.ps-icon')) {
+      heading.insertAdjacentHTML('afterbegin',svg(name));
+      heading.classList.add('ps-icon-heading');
+    }
+  }
   if (file !== 'holdings.html') return;
 
   const section = document.createElement('section');
