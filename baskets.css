@@ -1,0 +1,53 @@
+/* Power Stack Strategy Baskets: exploratory decision support, no trading actions. */
+.basket-topbar{align-items:center}.basket-topbar h1{letter-spacing:-.04em}.basket-topbar p{max-width:720px}
+.basket-main{max-width:1570px;margin:auto}.basket-icon{width:18px;height:18px;flex:0 0 18px;vertical-align:middle}
+.basket-hero{display:grid;grid-template-columns:minmax(0,1fr) 235px;gap:24px;align-items:end;border:1px solid #294039;background:linear-gradient(120deg,#182723,#101719 76%);border-radius:15px;padding:27px 30px;margin:0 0 14px}
+.basket-label{font-size:10px;color:#8ec0a7;letter-spacing:.13em;font-weight:800}
+.basket-hero h2{font-size:clamp(26px,3.4vw,40px);letter-spacing:-1.25px;margin:9px 0 12px;color:#f3f8f4;line-height:1.18}
+.basket-hero h2 em{color:#9bdbbc;font-style:normal}.basket-hero p{color:#b8c9c2;font-size:13px;line-height:1.7;max-width:750px;margin:0}
+.basket-hero-number{border-left:1px solid #355349;padding-left:22px}.basket-hero-number span{font-size:11px;color:#a1b8ad}.basket-hero-number strong{display:block;font-size:31px;letter-spacing:-1px;color:#f0fff5;font-variant-numeric:tabular-nums;margin:5px 0}.basket-hero-number small{display:block;color:#92a99e;font-size:11px}
+.basket-baseline{display:flex;gap:12px;align-items:flex-start;padding:12px 16px;border:1px solid #5a503b;border-radius:10px;background:#1c1b17}
+.basket-baseline-mark{font-size:12px;font-weight:900;line-height:22px;flex:0 0 22px;text-align:center;border:1px solid #957a48;border-radius:50%;color:#e9c98c}
+.basket-baseline p{margin:0;color:#c9c5b8;font-size:12px;line-height:1.75}.basket-baseline strong{color:#f3d59c}
+.basket-section{margin-top:29px}.basket-heading{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap;margin-bottom:15px}.basket-heading h2{font-size:clamp(22px,2.6vw,30px);line-height:1.25;margin:5px 0}.basket-heading p{color:#a8bbb3;line-height:1.65;font-size:12px;max-width:780px;margin:0}.basket-count{color:#a8bfb0;font-variant-numeric:tabular-nums;font-size:12px}
+.basket-filters{display:flex;align-items:center;gap:7px;flex-wrap:wrap;border-bottom:1px solid #263731;padding-bottom:16px;margin-bottom:16px}
+.basket-filter{appearance:none;background:#10181b;color:#bfcdc8;border:1px solid #314340;border-radius:9px;padding:9px 11px;min-height:40px;display:inline-flex;align-items:center;gap:7px;cursor:pointer;font-size:12px}
+.basket-filter[aria-pressed=true]{border-color:#7cb69b;color:#caffdf;background:#213b31;font-weight:800}.basket-filter:hover{border-color:#6c9583}.basket-filter .basket-icon{width:17px;height:17px}
+.basket-scenario-toggle{display:inline-flex;gap:3px;margin-left:auto;border:1px solid #334642;background:#101719;padding:3px;border-radius:9px}
+.basket-scenario-toggle button{border:0;background:transparent;color:#9eafab;display:inline-flex;align-items:center;gap:6px;cursor:pointer;padding:7px 10px;border-radius:6px;font-size:12px;min-height:35px}
+.basket-scenario-toggle button[aria-pressed=true]{background:#324c41;color:#f1fffa}.basket-scenario-toggle button[data-mode=negative][aria-pressed=true]{background:#4c3734;color:#ffe0db}
+.basket-scenario-toggle .basket-icon{width:15px;height:15px}
+.basket-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}.basket-loading{color:#a0b4a8}
+.basket-card{min-width:0;border:1px solid #2b3a38;background:linear-gradient(156deg,#131b1d,#0e1417 72%);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.basket-card:hover{border-color:#507e69}.basket-card-head{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.basket-category{display:inline-flex;gap:8px;align-items:center;font-size:11px;font-weight:800;color:#acddc4;text-transform:uppercase;letter-spacing:.045em}
+.basket-category-defensive{color:#b3d6bd}.basket-category-high-conviction{color:#eec2a3}.basket-category-event{color:#ead08e}.basket-category-two-drivers{color:#a8cbe2}
+.basket-card-index{font-size:10px;letter-spacing:.12em;color:#71887c}
+.basket-card h3{font-size:24px;letter-spacing:-.8px;line-height:1.22;margin:1px 0 0;color:#edf9f0}
+.basket-subtitle{font-size:12px;color:#9fb4a8;margin:0}
+.basket-card-chips{display:flex;align-items:stretch;gap:8px;flex-wrap:wrap}
+.basket-asset{display:flex;align-items:center;gap:6px;padding:8px 10px;border:1px solid #30423d;border-radius:9px;background:#162120;font-size:11px;color:#a9c1b5;flex-wrap:wrap}
+.basket-asset strong{color:#edf5ed;font-size:12px}.basket-asset-icon{display:inline-flex;color:#8fd9b0}.basket-asset-icon .basket-icon{width:16px;height:16px}
+.basket-card-allocation{margin-top:2px}
+.basket-bar{display:flex;gap:3px;overflow:hidden;background:#222e2b;height:15px;border-radius:5px;width:100%}
+.basket-segment{height:100%;min-width:0}.basket-segment-urnm{background:#71bda0}.basket-segment-cf{background:#d6b67e}.basket-segment-xom{background:#cd8e64}.basket-segment-myr{background:#566b75}
+.basket-bar-legend{display:flex;justify-content:space-between;gap:10px;font-size:11px;color:#a7bdb0;margin-top:9px}
+.basket-card-outcome{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #293b35;border-bottom:1px solid #293b35;padding:12px 0}
+.basket-card-outcome>div{display:flex;gap:5px;flex-direction:column}.basket-card-outcome>div:last-child{border-left:1px solid #293b35;padding-left:18px}
+.basket-card-outcome span{font-size:11px;color:#9aafa4}.basket-card-outcome strong{font-size:23px;line-height:1.2;font-variant-numeric:tabular-nums}
+.basket-gain{color:#a1e1ba}.basket-loss{color:#efaaaa}
+.basket-case{font-size:13px;line-height:1.7;color:#c7d6cf;margin:0;min-height:55px}
+.basket-risk{margin:0;display:flex;gap:8px;align-items:flex-start;font-size:12px;color:#c6bbb1;line-height:1.6}
+.basket-risk strong{font-weight:650}.basket-risk .basket-icon{width:16px;height:16px;color:#d4b084}
+.basket-evidence{margin-top:auto;border-top:1px solid #2b3a35;padding-top:13px}.basket-evidence summary{cursor:pointer;color:#b1e5ca;font-size:12px;font-weight:800;list-style:none}.basket-evidence summary::-webkit-details-marker{display:none}.basket-evidence summary:after{content:' +';font-weight:900}.basket-evidence[open] summary:after{content:' −'}
+.basket-details{margin-top:12px;padding:13px;border:1px solid #30463f;background:#101d1b;border-radius:10px}
+.basket-details table{width:100%;border-collapse:collapse;font-size:12px}.basket-details th{font-size:10px;text-transform:uppercase;color:#829d90;font-weight:750;padding:6px 0 10px;text-align:left}.basket-details th:not(:first-child),.basket-details td:not(:first-child){text-align:right}.basket-details td{border-top:1px solid #294038;padding:10px 0;color:#cfddd5}.basket-details td:first-child{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.basket-details td span{color:#91a99a;font-size:11px}.basket-details .basket-icon{width:16px;height:16px;color:#9dcab0}.basket-num{font-variant-numeric:tabular-nums}
+.basket-evidence-row{border-top:1px solid #263a33;padding-top:11px;margin-top:9px}.basket-evidence-row strong{color:#b4ddc7;font-size:11px}.basket-evidence-row p{font-size:12px;line-height:1.75;color:#bdcfc3;margin:5px 0 0}
+.basket-logic{margin-top:38px;border-top:1px solid #344c41;padding-top:23px}.basket-logic h2{font-size:23px;margin:7px 0 15px}
+.basket-logic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.basket-logic-grid>div{border:1px solid #2b3d35;border-radius:12px;padding:17px;background:#101a1b}
+.basket-logic-symbol{font-size:11px;color:#85b99d;letter-spacing:.12em;font-weight:900}.basket-logic-grid h3{font-size:16px;margin:7px 0 6px;color:#e9f6ed}
+.basket-logic-grid p{font-size:12px;line-height:1.7;color:#a8b9ad;margin:0}
+.basket-footer{display:flex;flex-wrap:wrap;gap:10px 18px;border-top:1px solid #293a33;padding:20px 0;margin-top:25px}.basket-footer a{color:#a7e0c1;text-decoration:none;font-size:12px}.basket-footer a:hover{text-decoration:underline}
+@media(max-width:1100px){.basket-grid{grid-template-columns:1fr}.basket-card-outcome strong{font-size:21px}.basket-scenario-toggle{margin-left:0}}
+@media(max-width:750px){.basket-hero{grid-template-columns:1fr;padding:20px}.basket-hero-number{border-left:0;border-top:1px solid #355349;padding:13px 0 0}.basket-hero-number strong{font-size:27px}.basket-logic-grid{grid-template-columns:1fr}.basket-filter{font-size:11px}.basket-grid{gap:12px}.basket-card{padding:16px}.basket-card h3{font-size:21px}.basket-card-outcome strong{font-size:20px}}
+@media(prefers-reduced-motion:reduce){.basket-card{transition:none}}
