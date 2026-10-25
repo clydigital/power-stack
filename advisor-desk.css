@@ -181,3 +181,20 @@ main{padding-top:16px}
 .adv-history-archive>section{margin:28px 19px}
 .adv-detail-grid p,.adv-idea p{overflow-wrap:anywhere;word-break:normal}
 @media(max-width:600px){.adv-history-archive>summary{padding:17px}.adv-history-archive>section{margin:21px 12px}}
+
+
+/* Plain-language holdings risk decisions: keep the front-page layout intact. */
+.adv-portfolio-item{align-items:start}
+.adv-portfolio-name{display:grid;gap:5px}
+.adv-portfolio-name .adv-tag{white-space:normal;line-height:1.45}
+.adv-portfolio-decision{min-width:0}
+.adv-portfolio-decision .adv-holding-action{color:#e3eee6;font-weight:670;font-size:13px;line-height:1.6;margin:0}
+.adv-portfolio-decision .adv-holding-target{color:#abc6b8;font-size:12px;line-height:1.6;margin:7px 0 0}
+.adv-holding-explanation{background:transparent;border:0;border-top:1px solid #2c4138;border-radius:0;padding:8px 0 0;margin:11px 0 0}
+.adv-holding-explanation summary{font-size:12px;color:#a8e2c4;cursor:pointer;list-style:none}
+.adv-holding-explanation summary::-webkit-details-marker{display:none}
+.adv-holding-explanation summary::after{content:' +'}
+.adv-holding-explanation[open] summary::after{content:' −'}
+.adv-holding-explanation p{color:#b8cec0;font-size:12px;line-height:1.7;margin:8px 0 0}
+.adv-holding-explanation b{color:#e6f1e9}
+@media(max-width:720px){.adv-portfolio-item>.adv-inline-link{grid-column:1/-1}}
