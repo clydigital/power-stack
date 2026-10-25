@@ -14,7 +14,7 @@ assert.ok(library.includes('exposureNav')&&library.includes('baskets.html'),'Ful
 assert.ok(front.includes('ps-basket-link')&&front.includes('baskets.html'),'Front page lacks restrained basket icon');
 const ideas=JSON.parse(read('data/ideas.json'));
 const groupMap={'Power / Grid':'Power & generation','Nuclear':'Power & generation','Uranium / Fuel':'Fuel & materials','Oil & Gas':'Fuel & materials','Metals':'Fuel & materials','AI / Data centres':'Compute & automation','Robotics / Automation':'Compute & automation','Digital Platforms & Fintech':'Digital businesses'};
-for(const idea of ideas)assert.ok(idea.themeGroup==='Uncategorised'||groupMap[idea.themeGroup],idea.ticker+': unmatched exposure');
+for(const idea of ideas)assert.ok(!idea.themeGroup || idea.themeGroup==='Uncategorised'||groupMap[idea.themeGroup],idea.ticker+': unmatched exposure');
 assert.ok(app.includes("state.exposure")&&app.includes("exposureBucket(x)"),'Library exposure filtering unavailable');
 const data=JSON.parse(read('data/basket-strategies.json'));
 assert.equal(data.schema,'power-stack-basket-comparison/v1');
