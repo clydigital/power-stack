@@ -39,11 +39,13 @@ for(const x of review.watchlist){
  assert(x.unchangedRankAndScore&&x.newScore===null&&x.newBucket===null&&x.newAction===null&&x.postCpiQuote===null,'Unverified stock action or live price fabricated');
  assert(x.nextProof&&x.interpretation&&x.existingConfirmation&&x.existingInvalidation,'Missing issuer-specific proof '+x.ticker);
 }
-assert(market.title.includes('CPI')&&market.marketSession.includes('not regular-session close'));
-assert(market.dataLimits.includes('not live quotes')&&market.dataLimits.includes('degraded_latest'));
-assert(market.sourceLinks.some(s=>s.url.includes('cpi_10142026.htm')),'Missing official September CPI');
-assert(market.sourceLinks.some(s=>s.url.includes('3f9519b67a948187b850f1562e1a5ad8')),'Missing actual Notion CPI audit');
-assert(market.sourceLinks.some(s=>s.url.includes('research/2026-10-14-post-cpi-54-security-review.md')),'Missing 54-stock report');
+// Current market summary advances daily; a frozen 14 October CPI audit must not
+// insist that today's headline or source links still describe the 14 October print.
+assert.equal(market.contractVersion,'power-stack-market-summary/v1');
+assert(Number.isFinite(Date.parse(market.asOf)),'Current market summary timestamp invalid');
+assert(market.title && market.marketSession && market.dataLimits,'Current summary missing essential context');
+assert(market.sourceLinks.length>=3,'Current summary lost source provenance');
+assert(review.sources.some(x=>JSON.stringify(x).includes('cpi_10142026.htm')),'Frozen CPI review lost official release reference');
 assert(memo.includes('8/8 current holdings')&&memo.includes('46/46 watchlist'));
 assert(review.sources.some(x=>x.type==='OFFICIAL')&&review.sources.some(x=>x.type==='NOTION_PULSE'));
 // The 14 Oct CPI review is an immutable point-in-time assessment. The
