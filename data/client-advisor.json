@@ -265,5 +265,73 @@
     "sourceTimestampNote": "Model prepared 23 October 2026 from 21–22 October last-completed-session data; no intraday broker prices. Research changes on subsequent manual PS refreshes.",
     "ownership": "Power Stack owns decisions; Live Desk and Bluebelly supply contextual evidence, never a mandatory buy/sell gate.",
     "instructions": "Client-facing recommendation view. No auto-placement or auto-funded purchases. Replace data when newer corroborated evidence arrives."
-  }
+  },
+  "researchRadar": [
+    {
+      "symbol": "ECVT",
+      "name": "Ecovyst",
+      "action": "RESEARCH — NO BUY",
+      "tone": "conditional",
+      "group": "Sulphur & industrial chemicals",
+      "targetMYR": 0,
+      "firstStageMYR": 0,
+      "priceReference": "23 Oct 2026 close · USD 9.79 (vendor; reconfirm)",
+      "case": "Acid production/regeneration with sulphur cost pass-through; upside must come from real margin and volume, not sales inflation.",
+      "buyWhen": "Verify 5 Nov Q3 results, acquisition-adjusted cash flow, debt bridge, current enterprise value and broker availability. Indicative EV/2026 adjusted EBITDA ~7.4–7.8× using third-party EV; not an entry signal.",
+      "sellWhen": "Reject thesis if volumes, net pricing or free cash flow disappoint or leverage rises.",
+      "risk": "Sulphur input pass-through is not itself profit; acquisition and cyclical chemical demand risks.",
+      "nextEvent": "5 Nov · Q3 results",
+      "source": "https://investor.ecovyst.com/"
+    },
+    {
+      "symbol": "IVN",
+      "name": "Ivanhoe Mines",
+      "action": "RESEARCH — NO BUY",
+      "tone": "conditional",
+      "group": "Copper & sulphuric acid",
+      "targetMYR": 0,
+      "firstStageMYR": 0,
+      "priceReference": "Current executable quote not verified",
+      "case": "Kamoa-Kakula smelting produces sulphuric acid by-product; Q3 output 118,638 tonnes at ~$900/t realised acid price.",
+      "buyWhen": "Review 3 Nov results, attributable acid sales/profit, copper operating costs, country risk and current valuation; verify broker listing access.",
+      "sellWhen": "Reject if acid revenue is immaterial to enterprise value or copper execution risk overwhelms it.",
+      "risk": "Copper/DRC exposure dominates; produced acid tonnes are not sold tonnes or profit.",
+      "nextEvent": "3 Nov · Q3 results",
+      "source": "https://www.ivanhoemines.com/"
+    },
+    {
+      "symbol": "MOS",
+      "name": "Mosaic",
+      "action": "RECOVERY WATCH",
+      "tone": "neutral",
+      "group": "Phosphate fertiliser",
+      "targetMYR": 0,
+      "firstStageMYR": 0,
+      "priceReference": "Current executable quote not verified",
+      "case": "Expensive sulphur pressures phosphate margins; potential recovery only after input costs and production improve.",
+      "buyWhen": "Verify lower delivered sulphur costs, sustained phosphate prices, plant operating rates and valuation.",
+      "sellWhen": "Reject if sulphur costs persist or phosphate selling prices weaken faster.",
+      "risk": "Shortage can harm producer economics rather than help.",
+      "nextEvent": "Next operating/earnings update",
+      "source": "https://investors.mosaicco.com/"
+    },
+    {
+      "symbol": "VLO",
+      "name": "Valero Energy",
+      "action": "REFINING WATCH",
+      "tone": "neutral",
+      "group": "Diesel & refining",
+      "targetMYR": 0,
+      "firstStageMYR": 0,
+      "priceReference": "Current executable quote not verified",
+      "case": "Diesel crack spreads and refinery throughput are more direct drivers than crude price alone.",
+      "buyWhen": "Verify regional distillate cracks, utilisation, forward earnings, valuation and existing energy exposure.",
+      "sellWhen": "Reject if diesel cracks compress or refinery cost inflation overwhelms margins.",
+      "risk": "Existing XOM/MISC/HIBISCS/DAYANG exposure may duplicate energy risk.",
+      "nextEvent": "Next crack-spread and company update",
+      "source": "https://investorvalero.com/"
+    }
+  ],
+  "radarAsOf": "2026-10-26",
+  "radarSource": "research/2026-10-26-sulphur-valuation-addendum.md"
 }
