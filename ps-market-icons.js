@@ -21,8 +21,8 @@
     if (/power|grid|electric|utility|renewable|turbine/.test(t)) return 'energy';
     if (/gold|silver|precious/.test(t)) return 'gold';
     if (/oil|gas|gulf|hormuz|diesel|brent|refin/.test(t)) return 'oil';
-    if (/credit|financ|debt|spread|funding|lending|yield/.test(t)) return 'credit';
     if (/rate|treasury|bond|duration|fed|yield curve/.test(t)) return 'rates';
+    if (/credit|financ|debt|spread|funding|lending/.test(t)) return 'credit';
     if (/fx|forex|dollar|yen|currency/.test(t)) return 'currency';
     if (/chip|semiconduct|memory|hbm/.test(t)) return 'chip';
     if (/ai|compute|cloud|data cent|automati|robot|inference/.test(t)) return 'ai';
@@ -158,10 +158,6 @@
     inferred('.bucket-head h2',el=>{
       const s=text(el);
       return /buy/.test(s)?['check','good']:/avoid/.test(s)?['risk','risk']:/select/.test(s)?['evidence','warn']:['watch','info'];
-    });
-    inferred('.theme-why',el=>{
-      const s=text(el);
-      return /money chain|transmission/.test(s)?['transmission','info']:['deep-dive','info'];
     });
     inferred('.news-date',el=>['calendar','neutral']);
     inferred('.signal .meta',el=>[symbolForMarket(text(el)),'info']);
