@@ -1,0 +1,240 @@
+{
+  "schema": "power-stack-basket-comparison/v1",
+  "asOf": "2026-10-26",
+  "capitalMYR": 13491,
+  "horizon": "2027-10-23",
+  "status": "RESEARCH_ONLY_NOT_FUNDED",
+  "sourceResearch": "research/2026-10-26-uranium-oil-fiscal-factcheck-concentrated-baskets.md",
+  "sourcePR": "https://github.com/clydigital/power-stack/pull/54",
+  "notes": [
+    "These are four competing replacements for the SAME RM13,491 total; never add basket totals together.",
+    "The existing funded mandate and historical holdings remain unchanged. Current Rakuten positions, buying power, FX and product availability must be verified first.",
+    "Cash is a liquidity reserve, not a mathematical hedge. Negative illustrations are not maximum losses.",
+    "Illustrative company/ETF returns are deliberately assumed sensitivities rather than issuer-derived forecasts; exclude fees, FX, dividends and taxes."
+  ],
+  "groups": [
+    {
+      "id": "defensive",
+      "label": "Capital optionality",
+      "icon": "shield",
+      "subtitle": "Keep dry powder; participate selectively."
+    },
+    {
+      "id": "two-drivers",
+      "label": "Two catalysts",
+      "icon": "layers",
+      "subtitle": "Two distinct earnings or repricing engines."
+    },
+    {
+      "id": "event",
+      "label": "Geopolitical supply",
+      "icon": "fuel",
+      "subtitle": "A conditional oil supply disruption expression."
+    },
+    {
+      "id": "high-conviction",
+      "label": "Single-theme conviction",
+      "icon": "atom",
+      "subtitle": "High concentration, high volatility."
+    }
+  ],
+  "baskets": [
+    {
+      "id": "dry-powder",
+      "group": "defensive",
+      "icon": "shield",
+      "name": "Dry-powder optionality",
+      "short": "The defensive starting point",
+      "risk": "Lower market exposure, but not capital-protected",
+      "riskIndex": 2,
+      "capitalExposurePct": 35,
+      "why": "Build exposure to uranium re-rating and nitrogen profits while retaining cash for better entries.",
+      "whatCanGoWrong": "Uranium can keep selling off; cash earns no return in this illustration, and MYR purchasing power can erode.",
+      "reconsider": "CF's post-Q3 earnings weaken, uranium prices/contracting deteriorate, or existing holdings already consume the risk budget.",
+      "check": "Verify all account holdings, URNM eligibility and after-earnings CF valuation.",
+      "weights": [
+        {
+          "symbol": "URNM",
+          "role": "Uranium miners",
+          "pct": 20,
+          "rm": 2698,
+          "icon": "atom"
+        },
+        {
+          "symbol": "CF",
+          "role": "Nitrogen fertiliser",
+          "pct": 15,
+          "rm": 2024,
+          "icon": "leaf"
+        },
+        {
+          "symbol": "MYR",
+          "role": "Dry powder",
+          "pct": 65,
+          "rm": 8769,
+          "icon": "wallet"
+        }
+      ],
+      "illustrations": {
+        "positive": {
+          "pct": 10.25,
+          "profitMYR": 1383,
+          "navMYR": 14874,
+          "assumptions": "URNM +40%, CF +15%, MYR cash 0%."
+        },
+        "negative": {
+          "pct": -11,
+          "profitMYR": -1484,
+          "navMYR": 12007,
+          "assumptions": "URNM −40%, CF −20%, MYR cash 0%."
+        }
+      }
+    },
+    {
+      "id": "two-catalysts",
+      "group": "two-drivers",
+      "icon": "layers",
+      "name": "Nuclear + nitrogen",
+      "short": "Two drivers, concentrated",
+      "risk": "Elevated equity risk",
+      "riskIndex": 3,
+      "capitalExposurePct": 55,
+      "why": "Combine uranium miners' possible equity repricing with CF's nitrogen earnings exposure.",
+      "whatCanGoWrong": "Both positions can fall together in credit tightening or broad risk-off; nitrogen margins may narrow if input costs rise.",
+      "reconsider": "URNM sells off for fundamental reasons, CF profit quality weakens or ETF + producer overlap exceeds the funding budget.",
+      "check": "Review uranium miners' contract economics, CF Q3, real portfolio energy exposure and USD/MYR.",
+      "weights": [
+        {
+          "symbol": "URNM",
+          "role": "Uranium miners",
+          "pct": 30,
+          "rm": 4047,
+          "icon": "atom"
+        },
+        {
+          "symbol": "CF",
+          "role": "Nitrogen fertiliser",
+          "pct": 25,
+          "rm": 3373,
+          "icon": "leaf"
+        },
+        {
+          "symbol": "MYR",
+          "role": "Dry powder",
+          "pct": 45,
+          "rm": 6071,
+          "icon": "wallet"
+        }
+      ],
+      "illustrations": {
+        "positive": {
+          "pct": 15.75,
+          "profitMYR": 2125,
+          "navMYR": 15616,
+          "assumptions": "URNM +40%, CF +15%, MYR cash 0%."
+        },
+        "negative": {
+          "pct": -17,
+          "profitMYR": -2293,
+          "navMYR": 11198,
+          "assumptions": "URNM −40%, CF −20%, MYR cash 0%."
+        }
+      }
+    },
+    {
+      "id": "oil-nitrogen",
+      "group": "event",
+      "icon": "fuel",
+      "name": "Oil + fertiliser",
+      "short": "Gulf shortage scenario",
+      "risk": "Elevated energy/commodity overlap",
+      "riskIndex": 3,
+      "capitalExposurePct": 55,
+      "why": "Express higher-for-longer crude and a nitrogen margin opportunity, without owning many oil producers.",
+      "whatCanGoWrong": "A durable supply recovery may compress the oil premium; higher gas input costs can hurt CF. Existing XOM/energy exposure creates overlap.",
+      "reconsider": "EIA's Brent normalisation path becomes more likely, or current holdings already exceed intended energy limits.",
+      "check": "First reconcile existing XOM, MISC, HIBISCS and DAYANG holdings; then review crude/forward margins and CF results.",
+      "weights": [
+        {
+          "symbol": "XOM",
+          "role": "Integrated oil",
+          "pct": 30,
+          "rm": 4047,
+          "icon": "fuel"
+        },
+        {
+          "symbol": "CF",
+          "role": "Nitrogen fertiliser",
+          "pct": 25,
+          "rm": 3373,
+          "icon": "leaf"
+        },
+        {
+          "symbol": "MYR",
+          "role": "Dry powder",
+          "pct": 45,
+          "rm": 6071,
+          "icon": "wallet"
+        }
+      ],
+      "illustrations": {
+        "positive": {
+          "pct": 14,
+          "profitMYR": 1889,
+          "navMYR": 15380,
+          "assumptions": "XOM +30%, CF +20%, MYR cash 0%."
+        },
+        "negative": {
+          "pct": -14,
+          "profitMYR": -1889,
+          "navMYR": 11602,
+          "assumptions": "XOM −30%, CF −20%, MYR cash 0%."
+        }
+      }
+    },
+    {
+      "id": "uranium-repricing",
+      "group": "high-conviction",
+      "icon": "atom",
+      "name": "Uranium repricing",
+      "short": "One sharp thesis",
+      "risk": "High volatility and single-factor concentration",
+      "riskIndex": 4,
+      "capitalExposurePct": 55,
+      "why": "Make the miner/uranium commodity divergence the main bet instead of diversifying away the thesis.",
+      "whatCanGoWrong": "Mine economics, equity valuations or physical uranium can fall; 45% cash does not prevent large NAV drawdowns.",
+      "reconsider": "Spot/term uranium signals weaken or the miners' equity decline reflects structural rather than temporary issues.",
+      "check": "Validate URNM holdings and current market price, broker access, conversion costs and tolerance for >20% NAV drawdowns.",
+      "weights": [
+        {
+          "symbol": "URNM",
+          "role": "Uranium miners",
+          "pct": 55,
+          "rm": 7420,
+          "icon": "atom"
+        },
+        {
+          "symbol": "MYR",
+          "role": "Dry powder",
+          "pct": 45,
+          "rm": 6071,
+          "icon": "wallet"
+        }
+      ],
+      "illustrations": {
+        "positive": {
+          "pct": 22,
+          "profitMYR": 2968,
+          "navMYR": 16459,
+          "assumptions": "URNM +40%, MYR cash 0%."
+        },
+        "negative": {
+          "pct": -22,
+          "profitMYR": -2968,
+          "navMYR": 10523,
+          "assumptions": "URNM −40%, MYR cash 0%."
+        }
+      }
+    }
+  ]
+}
