@@ -26,4 +26,16 @@ assert.equal(f.validScore(6,5),null,'Out-of-scale score must be unrated, not sil
 assert(app.includes("Theme not assigned"),'Blank theme tags are exposed');
 assert(app.includes("n!==null&&n<=2"),'Unknown dependency must not be counted low-risk');
 assert(app.includes("if(av===null&&bv!==null)return 1"),'Unrated items should sort last, not first');
+
+/* The brand should anchor the main library header, while the sidebar is just a filter rail. */
+const brandAndTitle=html.match(/<header class="topbar">([\s\S]*?)<div class="top-actions">/)?.[1]||'';
+const sidebar=html.match(/<aside class="sidebar">([\s\S]*?)<nav class="side-scroll">/)?.[1]||'';
+assert(brandAndTitle.includes('class="library-wordmark"') && brandAndTitle.includes('>Full Library</h1>'),
+  'Library brand and page title must share the main header');
+assert(sidebar.includes('Browse research') && !sidebar.includes('class="brand">POWER STACK'),
+  'Filter rail must not duplicate the Power Stack title');
+assert(html.includes('<body class="ps-library-page">'),'Full Library layout requires the scoped styles');
+assert(fs.readFileSync('ps-ux.css','utf8').includes('.ps-library-page .library-wordmark'),
+  'Responsive title placement styles missing');
+
 console.log('Full Library UI guard checks passed: unknown ≠ zero, no NaN, honest missing theme, stable sort and clean layout');
