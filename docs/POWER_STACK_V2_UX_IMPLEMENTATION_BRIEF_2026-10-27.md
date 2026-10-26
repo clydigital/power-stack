@@ -85,3 +85,23 @@ Changes over the original wireframe: icons + labels for five navigation sections
 Review acceptance: 320/390/620/768/1024/1280/1440px without horizontal overflow; all five routes, keyboard navigation, decision drawers, sample research filtering, comparison toggles and scenario reset checked in headless Chromium with no JavaScript exceptions. Real account persistence, live quotes, full archive search and trade actions are excluded. See ChatGPT's downloadable visual prototype, preview images and review notes.
 
 The next code PR should implement the shared shell and decision ticket before changing production investment cards. Production launch requires a separate screenshot and accessibility review, and all sensitive brokerage details must remain outside GitHub Pages.
+
+## MacroPulse / Bluebelly / PowerSweep integration audit (27 October 2026)
+
+**Required upstream order:** Notion MacroPulse discovery (full daily post + Log, source IDs and timestamps) → Notion Research Gap/Gate (contradictions and unresolved evidence) → Alchemy Live Desk (independently admitted evidence, published Dossier, canonical Regime/Story/Motion) → Blue Desk / Bluebelly (read-only explanation, Markets and permitted Presenter Prep) → Power Stack (issuer verification, portfolio exposure, allocation and conditional recommendations).
+
+**What the current repository actually does:** `.github/workflows/sync-live-desk.yml` runs every six hours at minute 17, fetches `/api/market-intelligence-snapshot` through `scripts/sync-live-desk.mjs`, builds the portfolio overlay, and generates `data/power-sweep-latest.json`. `.github/workflows/sync-holding-tape.yml` also rebuilds the overlay and sweep. `scripts/generate-power-sweep.mjs` reads `data/live-desk-canonical.json`, `data/portfolio-live-overlay.json`, `data/holding-tape.json`, and local company/watchlist/theme/portfolio JSON files. **It does not directly fetch Notion MacroPulse, Research Gap pages or Bluebelly.** The result is an automatic *canonical Live-fed triage queue*, **not** proof that the latest complete MacroPulse or Gate has been reconciled into an actionable recommendation.
+
+**Manual-sweep contract already requires all three:** `PS_MANUAL_INVESTMENT_MANIFESTO.md` Pass 1 requires latest full MacroPulse + Log, latest Research Gap, canonical Live Dossier and Blue Desk presentation. `data/research-sweep-config.json` also describes these inputs. This requirement must survive the V2 presentation redesign.
+
+**Required V2 implementation without another scheduled job or extra macro brain:**
+1. Keep the existing six-hour PowerSweep generator, 12 external-investigation cap and read-only canonical Live input.
+2. In a *manual PS update*, read and reference the latest full Notion Pulse and Gate, and inspect Bluebelly's permitted presentation view; preserve Notion page IDs, original times, Live dossierId/asOf, evidence IDs and Bluebelly projection provenance.
+3. Add a **source coverage / freshness row** to advisor briefing outputs: MacroPulse full-post checked at, Research Gap checked at, Live Dossier asOf and health, Bluebelly edition viewed at, company/quote times. Show **NOT_CHECKED**, **STALE**, **ACCESS_DENIED** or **CURRENT** individually, never a collective fresh check based on the generator timestamp.
+4. For automatic ingestion, first verify a scoped, authenticated upstream transport of *approved* Notion/Gate source references into the existing Live research process or a controlled Power Stack handoff. Reuse an existing schedule, not a new one. **Do not claim this integration exists until end-to-end source ID readbacks pass.** The ChatGPT-side Composio/Notion connector is not a Vercel runtime secret; the Bluebelly editorial handoff documentation specifically says its production backend is not configured.
+5. Never double-count Live and Bluebelly as two independent confirmations; Bluebelly is a projection. Bluebelly-derived editorial content is distinct from canonical verified evidence.
+6. When the latest Pulse is newer than the cached Live Dossier, report the unadmitted catalyst separately as pending verification, not as a changed canonical Regime/Story or an automatic BUY.
+
+**Presentation copy:** retire `recycle capital`. Write `Review whether to keep, reduce or sell DAYANG` with concrete proceeds and alternative purchase only after account/cash verification. No automatic order permission.
+
+**Gate before claiming 'full PS sweep updated':** source coverage row filled, latest Pulse and Gate checked by original source URL + timestamp, Live snapshot and Blue Desk edition matched, new issuer claims corroborated, decisions and cash conditions dated. Otherwise title the output a *Live-fed triage refresh / partial research*.
