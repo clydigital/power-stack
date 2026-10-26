@@ -28,7 +28,7 @@ assert(app.includes("n!==null&&n<=2"),'Unknown dependency must not be counted lo
 assert(app.includes("if(av===null&&bv!==null)return 1"),'Unrated items should sort last, not first');
 
 /* The brand should anchor the main library header, while the sidebar is just a filter rail. */
-const brandAndTitle=html.match(/<header class="topbar">([\s\S]*?)<div class="top-actions">/)?.[1]||'';
+const brandAndTitle=html.match(/<header class="topbar">([\s\S]*?)<div class="top-actions[^"]*">/)?.[1]||'';
 const sidebar=html.match(/<aside class="sidebar">([\s\S]*?)<nav class="side-scroll"[^>]*>/)?.[1]||'';
 assert(brandAndTitle.includes('class="library-wordmark"') && brandAndTitle.includes('<h1 id="libraryTitle">Full Library</h1>'),
   'Library brand and page title must share the main header');
