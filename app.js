@@ -29,7 +29,9 @@ function exposureIcon(x){const p=exposureIconPaths[x]||exposureIconPaths['Other 
 function stockProfile(x){return macroProfileMap.get(x?.ticker)||null}
 function parseMs(v){const ms=Date.parse(v||'');return Number.isFinite(ms)?ms:null}
 function ageHours(v){const ms=parseMs(v);return ms===null?Infinity:(Date.now()-ms)/36e5}
-function liveDeskFresh(){return !!liveDeskContext?.asOf&&ageHours(liveDeskContext.asOf)<=48}
+function liveDeskFresh(){return !!liveDeskContext?.asOf&&ageHours(liveDeskContext.asOf)>=0&&ageHours(liveDeskContext.asOf)<=48}
+function macroFeedPartial(){const status=String(liveDeskContext?.sourceStatus||"unknown").toLowerCase();return !!liveDeskContext&&!["current","healthy","ok"].includes(status)}
+function macroFeedLabel(){return !liveDeskContext?"unavailable":!liveDeskFresh()?"dated":macroFeedPartial()?"partial evidence":"source updated"}
 const CORE_LIVE_SIGNAL_KEYS=['RATES_FRONT_END','RATES_REAL_YIELDS','RATES_BREAKEVENS','RATES_LONG_END','CREDIT'];
 const SIDEBAR_LIVE_SIGNAL_KEYS=['RATES_FRONT_END','RATES_REAL_YIELDS','RATES_LONG_END','CREDIT'];
 function selectedLiveSignals(signals,keys){const map=new Map((signals||[]).map(s=>[s.key,s]));return keys.map(k=>map.get(k)).filter(Boolean)}
@@ -79,7 +81,7 @@ function renderMacroPulse(){
       ? compact.map(s=>`<div class="pulse-row ${fresh?'':'stale'}"><div class="pulse-label"><span>${esc(s.label||s.key)}</span><b class="neutral">${esc(s.state||'UNRESOLVED')}</b></div><div class="pulse-regime">${esc(s.detail||'')}</div></div>`).join('')
       : '<div class="side-micro">Live snapshot is present; core rates fields are pending the next sync.</div>';
   }
-  $('#liveTimestamp').textContent=`${fresh?'Live snapshot':'Live snapshot stale'} · ${timeLabel(liveDeskContext.asOf)}`;
+  $('#liveTimestamp').textContent=`Market source · ${macroFeedLabel()} · snapshot ${timeLabel(liveDeskContext.asOf)}`;
 }
 
 function defaultSortDir(key){return key==='ticker'?'asc':key==='conviction'?'desc':'asc'}
@@ -117,7 +119,7 @@ function renderCard(x){
 function renderSummary(rows){const scored=rows.map(x=>validScore(x.conviction,10)).filter(n=>n!==null);const avg=scored.length?scored.reduce((s,n)=>s+n,0)/scored.length:null;const profiled=rows.filter(x=>stockProfile(x)).length;const priorities=rows.filter(x=>statusBucket(x)==='Priority').length;const lowTheme=rows.filter(x=>{const n=validScore(x.themeDependency,5);return n!==null&&n<=2}).length;$('#summaryStats').innerHTML=`<div class="summary-card"><b>${rows.length}</b><span>Ideas in view</span></div><div class="summary-card"><b>${avg===null?'—':avg.toFixed(1)}</b><span>Research score ${scored.length}/${rows.length} rated</span></div><div class="summary-card"><b>${profiled} / ${rows.length}</b><span>Macro profiles mapped</span></div><div class="summary-card"><b>${priorities} / ${lowTheme}</b><span>Priority / low dependency</span></div>`}
 
 function renderLiveDeskCrossCheck(){
-  if(!liveDeskContext)return '<div class="macro-section"><div class="macro-section-title">WHAT THE MARKET BACKDROP CHANGES</div><div class="context-copy">Live Desk snapshot unavailable. Power Stack keeps Research Score unchanged and records the market-context gap rather than rebuilding a competing regime.</div></div>';
+  if(!liveDeskContext)return '<div class="macro-section"><div class="macro-section-title">SOURCE-DATED MARKET CONTEXT</div><div class="context-copy">Live Desk snapshot unavailable. Power Stack keeps Research Score unchanged and records the market-context gap rather than rebuilding a competing regime.</div></div>';
   const fresh=liveDeskFresh(),regime=liveDeskContext.regime||{},allSignals=liveDeskContext?.monetarySignals?.signals||[],lenses=liveDeskContext.lenses||[];
   const coreSignals=selectedLiveSignals(allSignals,CORE_LIVE_SIGNAL_KEYS);
   const fallbackKeys=new Set(['US_RATES','BONDS','CREDIT']);
@@ -131,20 +133,20 @@ function renderLiveDeskCrossCheck(){
   const health=liveDeskContext.sourceHealth||{};
   const healthIssues=Object.entries(health).filter(([,v])=>!['OK','CURRENT'].includes(String(v).toUpperCase()));
   const healthHtml=healthIssues.length?`<div class="context-copy"><b>Data quality:</b> ${healthIssues.length} non-clean source layer${healthIssues.length===1?'':'s'} remain. Keep them in the next deep sweep rather than crowding the main monitor.</div>`:'';
-  return `<div class="macro-section"><div class="macro-section-title">LIVE RATES + MARKET BASELINE · ${fresh?'FRESH':'STALE'}</div><div class="single-context"><div class="context-copy"><b>${esc(regime.family||'UNRESOLVED')}</b> — ${esc(regime.headline||regime.answer||'No canonical regime headline.')}</div></div><div class="context-copy"><b>Portfolio read:</b> ${esc(regime.implication||'Use Live as the market baseline; Power Stack owns the company decision.')}</div><div class="context-themes">${signalHtml}</div>${openHtml}${healthHtml}<div class="context-copy" style="color:var(--muted)">Main monitor intentionally limited to front-end rates, real yields, breakevens, long-end yields and credit. Funding, bills, dealer positioning, Treasury-supply plumbing and Stock Radar stay off the home view unless a deeper sweep needs them.</div></div>`;
+  return `<div class="macro-section"><div class="macro-section-title">EXTERNAL MACRO EVIDENCE · ${macroFeedLabel().toUpperCase()}</div><div class="single-context"><div class="context-copy"><b>${esc(String(regime.family||'Unresolved').replaceAll('_',' ').toLowerCase())}</b> — ${esc(regime.headline||regime.answer||'No confirmed market summary.')}</div></div><div class="context-copy"><b>Live Desk market interpretation:</b> ${esc(regime.implication||'Market direction requires confirmation.')}</div><div class="context-copy ps-library-action-boundary"><b>Power Stack decision:</b> Use these signals to identify company exposure worth investigating. Verified issuer financials, current valuation, real holdings and available cash determine an actual action.</div><div class="context-themes">${signalHtml}</div>${openHtml}${healthHtml}<div class="context-copy" style="color:var(--muted)">Macro evidence covers rates, real yields, breakevens, long-end yields and credit. A snapshot date does not guarantee that every underlying observation is current.</div></div>`;
 }
 
 function renderContext(){
   const title=$('#contextTitle'),meta=$('#contextMeta'),body=$('#contextBody');
   if(!liveDeskContext){
-    title.textContent='Live rates & market state → Power Stack';
-    meta.textContent='Live snapshot unavailable · Research Score unchanged';
+    title.textContent='Macro source unavailable';
+    meta.textContent='No verified macro handoff · company research unchanged';
     body.innerHTML=renderLiveDeskCrossCheck();
     return;
   }
   const fresh=liveDeskFresh();
-  title.textContent=state.theme!=='All'?`${state.theme} · Live portfolio overlay`:'Live rates & market state → Power Stack';
-  meta.textContent=`Alchemy Live Desk · ${fresh?'fresh snapshot':'stale snapshot'} · ${timeLabel(liveDeskContext.asOf)}`;
+  title.textContent=state.theme!=='All'?`${state.theme} · market exposure context`:'Rates, funding and market risk';
+  meta.textContent=`Source: Live Desk · ${macroFeedLabel()} · snapshot ${timeLabel(liveDeskContext.asOf)}`;
   const profiled=state.theme!=='All'?ideas.filter(x=>x.themeGroup===state.theme&&stockProfile(x)).length:null;
   const profileNote=profiled===null?'':`<div class="context-copy"><b>Power Stack exposure map:</b> ${profiled} names in this theme have documented macro-sensitivity profiles. These profiles show where the market can help or hurt the business. They do not replace company evidence.</div>`;
   body.innerHTML=renderLiveDeskCrossCheck()+profileNote;
@@ -158,7 +160,7 @@ function renderSensitivityProfile(x){
   return `<div class="context-explain"><div class="formula-line"><b>Profile confidence ${Math.round(Number(p.profileConfidence||0)*100)}%.</b> This maps where the business is exposed. Market moves can change the setup, but they do not rewrite the company facts.</div><div class="reason-list">${rows.map(([key,f])=>`<div class="reason-row"><div class="reason-copy"><b>${esc(prettyKind(key))}</b><p>${esc(f.rationale||'Documented sensitivity.')}</p><div class="reason-meta"><span>Fundamental ${fmtSigned(f.fundamental,1)}/5</span><span>Market ${fmtSigned(f.market,1)}/5</span><span>Weight ${(Number(f.weight||0)*100).toFixed(0)}%</span></div></div></div>`).join('')}</div></div>`;
 }
 
-function render(){const rows=filteredIdeas(),container=$('#grid');$('#count').textContent=rows.length;container.className=state.view==='row'?'idea-row-view':'idea-grid';container.innerHTML=rows.length?(state.view==='row'?renderRowView(rows):rows.map(renderCard).join('')):'<div class="empty">No matching ideas.</div>';const selectedFilters=[state.exposure!=='All'?state.exposure:null,state.theme!=='All'?state.theme:null,state.region!=='All'?state.region:null,state.status!=='All'?state.status:null].filter(Boolean);$('#viewSubtitle').textContent=selectedFilters.length?'Showing '+selectedFilters.join(' · ')+' — company research and separately sourced market context.':'Company research with a separate Live-owned rates and market-risk overlay.';renderSummary(rows);renderContext();updateViewControls();bindIdeaOpeners()}
+function render(){const rows=filteredIdeas(),container=$('#grid');$('#count').textContent=rows.length;container.className=state.view==='row'?'idea-row-view':'idea-grid';container.innerHTML=rows.length?(state.view==='row'?renderRowView(rows):rows.map(renderCard).join('')):'<div class="empty">No matching ideas.</div>';const selectedFilters=[state.exposure!=='All'?state.exposure:null,state.theme!=='All'?state.theme:null,state.region!=='All'?state.region:null,state.status!=='All'?state.status:null].filter(Boolean);$('#viewSubtitle').textContent=selectedFilters.length?'Showing '+selectedFilters.join(' · ')+' — company and issuer research.':'Company theses, scores and investment research — with optional external macro evidence.';renderSummary(rows);renderContext();updateViewControls();bindIdeaOpeners()}
 
 function openDetail(x){
   if(!x)return;
@@ -176,12 +178,14 @@ async function loadLiveDeskContext(){
     if(!r.ok)throw new Error(`HTTP ${r.status}`);
     liveDeskContext=await r.json();
     const fresh=liveDeskFresh();
-    $('#liveBadge').className=`live-badge ${fresh?'online':'stale'}`;
-    $('#liveBadge').innerHTML=fresh?'<span></span> Live macro active':'<span></span> Live macro stale';
+    $('#liveBadge').className=`live-badge ${!fresh||macroFeedPartial()?'stale':'online'}`;
+    $('#liveBadge').innerHTML='<span></span> Macro source · '+esc(macroFeedLabel());
+    const evidenceStatus=$('#marketEvidenceStatus');if(evidenceStatus)evidenceStatus.textContent=macroFeedLabel()+' · '+timeLabel(liveDeskContext.asOf);
   }catch(_){
     liveDeskContext=null;
     $('#liveBadge').className='live-badge offline';
-    $('#liveBadge').innerHTML='<span></span> Live macro unavailable';
+    $('#liveBadge').innerHTML='<span></span> Macro source unavailable';
+    const evidenceStatus=$('#marketEvidenceStatus');if(evidenceStatus)evidenceStatus.textContent='Source unavailable';
   }
 }
 async function loadMacroProfiles(){

@@ -64,4 +64,25 @@ assert(fs.readFileSync('ps-ux.css','utf8').includes('body.ps-library-page .ps-li
 assert(fs.readFileSync('ps-ux.css','utf8').includes('border:0; border-bottom:2px solid transparent; border-radius:0'),
   'Library navigation must not render pill-style action buttons');
 
+
+// External market data remains accessible but is not the owner of research or actions.
+assert(html.includes('<details class="ps-macro-evidence"') && html.includes('id="marketEvidenceStatus"'),
+  'Optional market evidence must be a real, accessible disclosure with a source state');
+assert(html.indexOf('id="grid"') < html.indexOf('id="marketEvidence"'),
+  'Investment research should precede external market detail');
+assert(html.includes('id="livePulse"') && html.includes('id="contextBody"') && html.includes('id="bondMetrics"'),
+  'Collapsing macro panels must preserve their existing data containers');
+assert(html.includes('class="ps-sidebar-market-source"') && html.includes('Research ownership'),
+  'The sidebar should prioritise Power Stack research and make macro source details optional');
+assert(html.includes('Power Stack independently evaluates issuer fundamentals'),
+  'Explain market evidence ownership separately from company and portfolio authority');
+assert(css.includes('.ps-library-page .single-context{display:block;grid-template-columns:none'),
+  'Regime explanation must not be trapped in the unused 180px grid column');
+assert(app.includes('function macroFeedPartial()') && app.includes('sourceStatus'),
+  'Degraded Live Desk source health must not be presented as clean fresh evidence');
+assert(app.includes('Power Stack decision:') && app.includes('Live Desk market interpretation:'),
+  'External macro interpretation and Power Stack judgement must have separate labels');
+assert(!app.includes('Live rates & market state → Power Stack'),
+  'Library must not present a Live-branded page headline instead of research results');
+
 console.log('Full Library UI guard checks passed: unknown ≠ zero, no NaN, honest missing theme, stable sort and clean layout');
