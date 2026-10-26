@@ -49,15 +49,19 @@ assert(fs.readFileSync('ps-ux.css','utf8').includes('.ps-library-page .library-w
 
 
 const topbar=html.match(/<header class="topbar">([\s\S]*?)<\/header>/)?.[1]||'';
-assert(topbar.includes('class="top-actions library-utilities"')&&topbar.includes('Investment desk ↗'),
-  'Library header must have a simple status and investment-desk exit');
+assert(topbar.includes('class="top-actions library-utilities"') && topbar.includes('id="liveBadge"'),
+  'Library header must retain a compact live-status indicator');
+assert(!topbar.includes('Investment desk ↗'),
+  'Desk is part of the flat section navigation and should not be duplicated in the header');
 assert(!topbar.includes('Market Motion →')&&!topbar.includes('Developing Themes →')&&!topbar.includes('Current Holdings →')&&!topbar.includes('Strategy baskets →'),
   'Full research navigation should live in the workspace switcher, not large stacked header buttons');
 assert(!app.includes("$('h1').textContent="),
   'Filter interactions must never overwrite the permanent Full Library page heading');
 assert(app.includes('const selectedFilters=')&&app.includes("selectedFilters.join(' · ')"),
   'Selected research filters should remain visible beneath the fixed heading');
-assert(fs.readFileSync('ps-ux.css','utf8').includes('.ps-library-page .ps-research-context{display:none}'),
-  'Do not repeat the same Full Library heading in the workspace navigation');
+assert(fs.readFileSync('ps-ux.css','utf8').includes('body.ps-library-page .ps-library-tabs a[aria-current="page"]'),
+  'Library navigation needs a stable, underline-only active state');
+assert(fs.readFileSync('ps-ux.css','utf8').includes('border:0; border-bottom:2px solid transparent; border-radius:0'),
+  'Library navigation must not render pill-style action buttons');
 
 console.log('Full Library UI guard checks passed: unknown ≠ zero, no NaN, honest missing theme, stable sort and clean layout');
