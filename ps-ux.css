@@ -186,3 +186,60 @@
 @media(prefers-reduced-motion:reduce){
   .ps-library-page .side-scroll .nav-item{transition:none}
 }
+
+/* Library header: one permanent title, a restrained status/exit, then horizontal workspace navigation. */
+.ps-deep-ux.ps-library-page .topbar{
+  min-height:0;padding:23px clamp(20px,3.25vw,42px) 23px;
+  align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px 24px;
+}
+.ps-library-page .library-identity{flex:1 1 390px;max-width:730px;min-width:0}
+.ps-library-page .library-wordmark{font-size:15px;margin-bottom:16px}
+.ps-library-page .library-identity>.eyebrow{font-size:10px;letter-spacing:.11em}
+.ps-deep-ux.ps-library-page .topbar #libraryTitle{
+  font-size:clamp(32px,3vw,44px);font-weight:800;
+  letter-spacing:-.042em;line-height:1.14;margin:5px 0 8px;
+}
+.ps-library-page .library-identity #viewSubtitle{
+  max-width:66ch;font-size:12px;line-height:1.65;margin:0;color:#a5b8ba;
+}
+.ps-library-page .topbar .top-actions.library-utilities{
+  display:flex;align-items:center;justify-content:flex-end;
+  gap:9px;flex:0 1 auto;min-width:0;max-width:100%;flex-wrap:wrap;
+  margin-top:2px;
+}
+.ps-library-page .library-utilities .live-badge{
+  min-height:32px;font-size:10px;padding:6px 10px;
+  box-shadow:none;white-space:nowrap;
+}
+.ps-library-page .library-utilities .library-desk-link{
+  display:inline-flex;align-items:center;
+  min-height:32px;padding:6px 10px;font-size:11px;font-weight:650;
+  color:#bcd5c7;background:transparent;border:1px solid #33473d;
+  border-radius:8px;text-decoration:none;white-space:nowrap;box-shadow:none;
+}
+.ps-library-page .library-utilities .library-desk-link:hover{color:#e8faee;border-color:#659e80}
+.ps-library-page .ps-research-context{display:none}
+.ps-library-page .ps-research-navigator{
+  margin:0 0 16px;padding:3px 0 12px;
+  border-bottom:1px solid #263632;
+}
+.ps-library-page .ps-view-switch{gap:5px;padding:2px 1px 7px}
+.ps-library-page .ps-view-switch a{
+  min-height:34px;padding:7px 10px;font-size:11px;
+  border:1px solid transparent;background:transparent;color:#abbdba;
+  border-radius:8px;
+}
+.ps-library-page .ps-view-switch a:hover{border-color:#33483d;background:#14231c}
+.ps-library-page .ps-view-switch a[aria-current="page"]{
+  background:#1d3429;border-color:#48715b;color:#d7f6e4;
+}
+.ps-library-page .ps-reading-guide{margin-top:2px;border-color:#243a31;background:transparent}
+.ps-library-page .ps-reading-guide summary{font-size:11px;padding:8px 11px}
+@media(max-width:1050px){
+  .ps-library-page .topbar .top-actions.library-utilities{flex:1 1 100%;justify-content:flex-start;margin-top:0}
+}
+@media(max-width:650px){
+  .ps-deep-ux.ps-library-page .topbar{padding:18px 16px 19px;gap:12px}
+  .ps-library-page .library-wordmark{margin-bottom:12px}
+  .ps-deep-ux.ps-library-page .topbar #libraryTitle{font-size:34px}
+}
