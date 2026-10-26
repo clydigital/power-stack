@@ -29,11 +29,20 @@ assert(app.includes("if(av===null&&bv!==null)return 1"),'Unrated items should so
 
 /* The brand should anchor the main library header, while the sidebar is just a filter rail. */
 const brandAndTitle=html.match(/<header class="topbar">([\s\S]*?)<div class="top-actions">/)?.[1]||'';
-const sidebar=html.match(/<aside class="sidebar">([\s\S]*?)<nav class="side-scroll">/)?.[1]||'';
+const sidebar=html.match(/<aside class="sidebar">([\s\S]*?)<nav class="side-scroll"[^>]*>/)?.[1]||'';
 assert(brandAndTitle.includes('class="library-wordmark"') && brandAndTitle.includes('>Full Library</h1>'),
   'Library brand and page title must share the main header');
-assert(sidebar.includes('Browse research') && !sidebar.includes('class="brand">POWER STACK'),
-  'Filter rail must not duplicate the Power Stack title');
+assert(sidebar.includes('library-filter-title">Filters') && !sidebar.includes('class="brand">POWER STACK'),
+  'Filter rail must be a compact filter header without duplicated branding');
+assert(!sidebar.includes('LIBRARY FILTERS') && !sidebar.includes('Browse research'),
+  'Legacy two-line title must not reappear in the filter rail');
+assert(html.includes('class="side-section library-universe"') && html.includes('aria-label="Research filters"'),
+  'First filter must be compact and the filter navigation labelled');
+const libraryStyles=fs.readFileSync('ps-ux.css','utf8');
+assert(libraryStyles.includes('.ps-library-page .side-scroll .mini-track{display:none}'),
+  'Dashboard-like progress bars should be hidden in filter navigation');
+assert(libraryStyles.includes('flex:0 0 auto;min-height:56px') && libraryStyles.includes('.ps-library-page .library-filter-heading::after{display:none}'),
+  'Filter header must not shrink, clip or show the decorative overlay');
 assert(html.includes('<body class="ps-library-page">'),'Full Library layout requires the scoped styles');
 assert(fs.readFileSync('ps-ux.css','utf8').includes('.ps-library-page .library-wordmark'),
   'Responsive title placement styles missing');
