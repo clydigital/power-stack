@@ -481,20 +481,20 @@
         "label": "Secured funding / collateral",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR +0.7 bp. Volumes: SOFR $2945bn, TGCR $1192bn, BGCR $1222bn.",
-        "asOf": "2026-10-22",
+        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR +2.7 bp. Volumes: SOFR $3065bn, TGCR $1195bn, BGCR $1233bn.",
+        "asOf": "2026-10-23",
         "sourceName": "Federal Reserve Bank of New York",
         "sourceUrl": "https://markets.newyorkfed.org/api/rates/all/latest.json",
         "evidenceRefs": [],
         "metrics": {
           "effr": 3.88,
-          "sofr": 3.9,
-          "tgcr": 3.88,
-          "bgcr": 3.88,
-          "securedVsEffrBps": 0.7,
-          "sofrVolumeBillions": 2945,
-          "tgcrVolumeBillions": 1192,
-          "bgcrVolumeBillions": 1222
+          "sofr": 3.92,
+          "tgcr": 3.9,
+          "bgcr": 3.9,
+          "securedVsEffrBps": 2.7,
+          "sofrVolumeBillions": 3065,
+          "tgcrVolumeBillions": 1195,
+          "bgcrVolumeBillions": 1233
         }
       },
       {
@@ -787,7 +787,7 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-26T04:44:48.923Z",
+    "asOf": "2026-10-26T12:59:28.448Z",
     "assets": [
       {
         "key": "SPX",
@@ -853,8 +853,8 @@
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4013.899902,
-        "dailyChange": 0.15,
+        "last": 4018.100098,
+        "dailyChange": 0.25,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "LOW",
@@ -868,8 +868,8 @@
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 79872.38,
-        "dailyChange": -0.23,
+        "last": 80202.47,
+        "dailyChange": 0.19,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -1361,5 +1361,5 @@
     "Mismatched ticker/issuer labels are quarantined, never silently remapped to another security.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-26T04:53:53.154Z"
+  "syncedAt": "2026-10-26T13:11:07.490Z"
 }
