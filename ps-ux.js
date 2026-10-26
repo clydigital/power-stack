@@ -87,12 +87,43 @@
     'capital-scarcity.html':'The rate and funding regime is context, not a portfolio order. Check as-of dates and issuer evidence before extrapolating price or financing effects.'
   };
   const nav = document.createElement('div');
-  nav.className = 'ps-research-navigator';
-  nav.innerHTML = '<div class="ps-research-context"><span class="ps-context-kicker">RESEARCH WORKSPACE</span><span class="ps-context-location">' + svg(current.icon) + esc(current.title) + '</span><span class="ps-context-description">' + esc(current.description) + '</span></div>' +
-    '<nav class="ps-view-switch" aria-label="Switch Power Stack research page">' +
-    pages.map(p => '<a href="' + p.file + '"' + (p.file===file?' aria-current="page"':'') + '>' + svg(p.icon) + '<span>' + esc(p.title) + '</span></a>').join('') + '</nav>' +
-    '<details class="ps-reading-guide"><summary>' + svg('compass') + ' How to read this page</summary><p>' + esc(guide[file]) + '</p></details>';
-  main.prepend(nav);
+  if (file === 'research-library.html') {
+    // Full Library is a research workspace, not a landing-page CTA grid:
+    // one full-width text navigation bar with no pill buttons or repeated headings.
+    const libraryLabels = {
+      'index.html': 'Desk',
+      'research-library.html': 'Library',
+      'holdings.html': 'Holdings',
+      'watchlist.html': 'Watchlist',
+      'baskets.html': 'Baskets',
+      'themes.html': 'Themes',
+      'motion.html': 'Motion',
+      'capital-scarcity.html': 'Rates'
+    };
+    const libraryOrder = [
+      'index.html', 'research-library.html', 'holdings.html',
+      'watchlist.html', 'baskets.html', 'themes.html',
+      'motion.html', 'capital-scarcity.html'
+    ];
+    nav.className = 'ps-research-navigator ps-library-nav';
+    nav.innerHTML = '<nav class="ps-view-switch ps-library-tabs" aria-label="Power Stack sections">' +
+      libraryOrder.map(path => {
+        const page = pages.find(p => p.file === path);
+        return '<a href="' + page.file + '"' + (page.file === file ? ' aria-current="page"' : '') +
+          ' title="' + esc(page.title) + '">' + esc(libraryLabels[path]) + '</a>';
+      }).join('') + '</nav>';
+    const header = document.querySelector('.workspace > .topbar');
+    if (header) header.insertAdjacentElement('afterend', nav);
+    else main.prepend(nav);
+  } else {
+    // Keep the existing secondary-page navigation and reading guide unchanged.
+    nav.className = 'ps-research-navigator';
+    nav.innerHTML = '<div class="ps-research-context"><span class="ps-context-kicker">RESEARCH WORKSPACE</span><span class="ps-context-location">' + svg(current.icon) + esc(current.title) + '</span><span class="ps-context-description">' + esc(current.description) + '</span></div>' +
+      '<nav class="ps-view-switch" aria-label="Switch Power Stack research page">' +
+      pages.map(p => '<a href="' + p.file + '"' + (p.file===file?' aria-current="page"':'') + '>' + svg(p.icon) + '<span>' + esc(p.title) + '</span></a>').join('') + '</nav>' +
+      '<details class="ps-reading-guide"><summary>' + svg('compass') + ' How to read this page</summary><p>' + esc(guide[file]) + '</p></details>';
+    main.prepend(nav);
+  }
   const editorialIcons = {
     'research-library.html': [['#bondWatchHome h2','chart'],['#marketMotionHome h2','activity']],
     'baskets.html': [['.basket-topbar h1','basket']],

@@ -15,6 +15,15 @@ const src=read('ps-ux.js');
 for (const label of ['Decision desk','Full library','Holdings','Watchlist','Themes','Market motion','Rates & capital']) assert.ok(src.includes(label),'Missing navigation: '+label);
 assert.ok(src.includes("if (file === 'index.html')"),'Front page must keep icon-only treatment');
 assert.ok(src.includes('ps-holdings-action-brief'),'Holdings action explanation must exist');
+assert.ok(src.includes("nav.className = 'ps-research-navigator ps-library-nav'"),
+  'Full Library must use a dedicated top-level navigation surface');
+assert.ok(src.includes("header.insertAdjacentElement('afterend', nav)"),
+  'Library navigation belongs directly under the main page header');
+assert.ok(src.includes('ps-view-switch ps-library-tabs') && src.includes("aria-label=\"Power Stack sections\""),
+  'Library sections need one accessible, flat navigation bar');
+for (const page of ['index.html','research-library.html','holdings.html','watchlist.html','baskets.html','themes.html','motion.html','capital-scarcity.html']) {
+  assert.ok(src.includes("'"+page+"'"),'Library top-level nav must retain a link to '+page);
+}
 const data=JSON.parse(read('data/client-advisor.json'));
 assert.equal(data.contractVersion,'power-stack-client-advisor/1');
 assert.equal(data.capital.totalMYR,13491);
