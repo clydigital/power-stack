@@ -44,7 +44,7 @@ function timeLabel(v){if(!v)return'No timestamp';const d=new Date(v);return Numb
 function navButton(label,count,total,group,active){return `<button class="nav-item ${active?'active':''}" data-group="${group}" data-value="${esc(label)}"><div class="nav-top"><span>${esc(label)}</span><b>${count}</b></div><div class="mini-track"><span class="mini-fill" style="width:${total?count/total*100:0}%"></span></div></button>`}
 function renderSidebar(){
   const total=ideas.length;
-  $('#allIdeasNav').innerHTML=`<button class="nav-item all-ideas ${state.theme==='All'&&state.exposure==='All'&&state.region==='All'&&state.status==='All'?'active':''}" id="showAll"><div class="nav-top"><span>All ideas</span><b>${total}</b></div><div class="mini-track"><span class="mini-fill" style="width:100%"></span></div></button>`;
+  $('#allIdeasNav').innerHTML=`<button class="nav-item all-ideas ${state.theme==='All'&&state.exposure==='All'&&state.region==='All'&&state.status==='All'?'active':''}" id="showAll"><div class="nav-top"><span>ALL IDEAS</span><b>${total}</b></div><div class="mini-track"><span class="mini-fill" style="width:100%"></span></div></button>`;
   const exposureCounts=counts(ideas,exposureBucket);
   $('#exposureNav').innerHTML=Object.entries(exposureCounts).sort((a,b)=>b[1]-a[1]).map(([k,n])=>navButton(k,n,total,'exposure',state.exposure===k).replace('<span>'+esc(k)+'</span>','<span class="ps-link-icon-text">'+exposureIcon(k)+esc(k)+'</span>')).join('');
   const themes=counts(ideas,x=>x.themeGroup||'Other');
