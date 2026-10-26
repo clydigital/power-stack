@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap");
 /* Power Stack navigation/readability layer. Only iconography is applied to the public advisory front page. */
 .ps-icon{width:17px;height:17px;flex:0 0 17px;vertical-align:-3px;color:currentColor}
 .ps-link-with-icon,.ps-link-icon-text{display:inline-flex;align-items:center;gap:7px}
@@ -286,3 +287,6 @@ body.ps-library-page .ps-library-tabs a:focus-visible {
 @media(prefers-reduced-motion:reduce){
   body.ps-library-page .ps-library-tabs a {transition:none}
 }
+
+/* One lightweight brand typeface across Power Stack views. System font remains fallback. */
+body,button,input,select,textarea{font-family:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif}

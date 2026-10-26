@@ -30,4 +30,24 @@ assert(config.manualInvestmentMandate.clientAdvisory?.neverModifyLiveCanonical==
 assert(feed.marketDataThrough==="2026-10-22");
 assert(html.includes("Nothing on this page sends orders."));
 assert(html.includes("RM13,491"));
+// Advisor V2: investment ownership is the primary screen, not an appendix table.
+assert(html.includes('id="investing-now"')&&html.includes('id="adv-investment-cards"'),"Missing visual seven-position investment explorer");
+assert(html.indexOf('id="investing-now"')<html.indexOf('id="next-moves"'),"What is owned must precede the action queue");
+assert(html.indexOf('id="next-moves"')<html.indexOf('id="market-brief"')&&html.indexOf('id="market-brief"')<html.indexOf('id="investment-plan"'),"Actions then macro implications then detailed ledger");
+for (const id of ["adv-class-bonds","adv-class-stocks","adv-class-cash","adv-class-bonds-rm","adv-class-stocks-rm","adv-class-cash-rm"]) assert(html.includes('id="'+id+'"'),"Missing asset-class summary "+id);
+const sums=(symbols)=>mandate.allocation.filter(a=>symbols.includes(a.symbol)).reduce((tot,a)=>tot+a.allocationPct,0);
+assert.equal(sums(["VGIT","TLT","SGOV"]),50);
+assert.equal(sums(["CF","RSP","TSM"]),35);
+assert.equal(sums(["MYR_CASH"]),15);
+assert(js.includes('renderInvestmentOverview(m)')&&js.includes('investmentProfiles')&&js.includes('renderResearch(d)'),"Mandate and market lenses must drive visuals");
+assert(js.includes('rows.length!==7')&&js.includes('pct!==100'),"Reject mismatched allocation totals");
+assert(js.includes("source:'research/2026-10-14-ai-financing-picks-shovels.md'"),"AI theme must retain source provenance");
+assert(js.includes("source:'research/2026-10-22-market-danger-risk-regime-deep-update.md'"),"Oil/inflation theme must retain source provenance");
+assert(css.includes('.adv-position-cards')&&css.includes('.adv-class-grid')&&css.includes('#market-brief .adv-insight-grid'),"Investment and market visual component styling missing");
+const font=fs.readFileSync("ps-ux.css","utf8");
+assert(font.includes('Figtree')&&html.includes('family=Figtree'),"Figtree typography must reach all Power Stack pages");
+assert(html.includes('Target allocation, not actual holdings.'),"The target must never be labelled as verified broker ownership");
+assert(html.includes('id="adv-account-status"')&&html.includes("Nothing on this page sends orders."),"Investment safety states required");
+console.log("Advisor V2 UI guard OK: 7 sourced targets, 50/35/15 mix, 5 dated macro lenses, Figtree, no broker/trade claims.");
+
 console.log("Client advisory UI OK: 13491 MYR, 3 next moves, 6 sourced candidates, responsive actions before Dossier, broker status honest.");
