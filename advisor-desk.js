@@ -20,8 +20,8 @@ function renderTimestamp(d){
 function renderTop(d){
  if(!d||d.contractVersion!=='power-stack-client-advisor/1')return;
  const title=get('adv-hero-title'),desc=get('adv-hero-description');
- if(title)title.innerHTML='What I would do with <span>'+money(d.capital?.totalMYR)+'.</span>';
- if(desc)desc.textContent=d.standfirst;
+ if(title)title.innerHTML='What you\'re <span>investing in.</span>';
+ if(desc)desc.textContent='Seven proposed positions across US Treasuries, equities and MYR cash — a target portfolio, not a verified brokerage account.';
  const total=get('adv-total-capital');if(total)total.textContent=money(d.capital?.totalMYR);
  const goal=get('adv-target-value');if(goal)goal.textContent=money(d.capital?.targetRangeMYR?.[0])+'–'+money(d.capital?.targetRangeMYR?.[1]).replace('RM','');
  const floor=get('adv-review-value');if(floor)floor.textContent=money(d.capital?.drawdownReviewMYR);
@@ -36,6 +36,60 @@ function renderMoves(d){
  return '<article class="adv-move"><div class="adv-move-num">'+esc(x.number)+'</div><div><div class="adv-move-top"><span class="adv-tag '+esc(x.tone)+'">'+esc(x.label)+'</span><span class="adv-tag">'+esc(x.decision)+'</span></div><h3>'+esc(x.title)+'</h3><p>'+esc(x.description)+'</p><div class="adv-move-more"><strong>Do next:</strong> '+esc(x.do)+'</div></div><div class="adv-move-side"><strong>'+esc(amount)+'</strong><small>'+esc(sub)+'</small><a href="'+esc(x.anchor)+'">See the plan →</a></div></article>'
  }).join('');
 }
+
+const investmentProfiles={
+ VGIT:{kind:'bonds',icon:'bonds',label:'Intermediate US Treasuries',role:'Medium-term US government bonds. Core rate exposure and potential bond gains if yields fall.',risk:'Prices can fall if yields rise. USD/MYR also matters.',tag:'Staged candidate'},
+ TLT:{kind:'bonds',icon:'bonds',label:'Long US Treasuries',role:'Long-dated US government bonds. A more volatile rate-sensitive satellite.',risk:'A yield increase can cause a substantial price drop.',tag:'Tactical only'},
+ SGOV:{kind:'bonds',icon:'shield',label:'Short US Treasury bills',role:'Very short-term US government debt for liquid USD exposure.',risk:'Currency, tax and dealing costs; not ringgit cash.',tag:'Check USD costs'},
+ CF:{kind:'equity',icon:'plant',label:'Fertiliser producer',role:'Shares in CF Industries, a nitrogen fertiliser and ammonia producer.',risk:'Margins depend on fertiliser prices and natural-gas costs.',tag:'Wait for results'},
+ RSP:{kind:'equity',icon:'stocks',label:'Equal-weight US stocks',role:'ETF owning S&P 500 constituents at approximately equal weights.',risk:'Still exposed to broad US equity and cyclical earnings risk.',tag:'Breadth must hold'},
+ TSM:{kind:'equity',icon:'chip',label:'Advanced chip manufacturer',role:'US-listed TSMC shares. Exposure to leading-edge semiconductor manufacturing.',risk:'AI demand, valuations and geopolitical risk.',tag:'Wait for entry'},
+ MYR_CASH:{kind:'cash',icon:'cash',label:'MYR settlement reserve',role:'Ringgit held for a later investment that clears its checks.',risk:'Not a return guarantee; the real account cash amount is unverified.',tag:'Keep uncommitted'}
+};
+const shape={
+ bonds:'<path d="m3 9 9-6 9 6M4 9h16M6 9v10m4-10v10m4-10v10m4-10v10M3 21h18"/>',
+ stocks:'<path d="M4 19h16M6 16l5-5 4 2 4-8m-4 0h4v4"/>',
+ cash:'<rect x="3" y="5" width="18" height="15" rx="3"/><path d="M3 10h18M16 15h2"/>',
+ shield:'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>',
+ plant:'<path d="M12 22V12m0 5c-6 0-9-3-9-8 6 0 9 3 9 8zm0-5c0-6 3-9 9-9 0 6-3 9-9 9z"/>',
+ chip:'<rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 9h6v6H9zM9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4"/>',
+ world:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-5 5-5 13 0 18m0-18c5 5 5 13 0 18"/>'
+};
+function psIcon(name){return '<svg viewBox="0 0 24 24" aria-hidden="true">'+(shape[name]||shape.stocks)+'</svg>'}
+function renderInvestmentOverview(m){
+ const root=get('adv-investment-cards');
+ if(!root)return;
+ const rows=m?.allocation;
+ const pct=Array.isArray(rows)?rows.reduce((s,a)=>s+(Number(a.allocationPct)||0),0):NaN;
+ const total=Array.isArray(rows)?rows.reduce((s,a)=>s+(Number(a.targetMYR)||0),0):NaN;
+ if(m?.schema!=='power-stack-manual-investment-mandate/v1'||!Number.isFinite(total)||pct!==100||total!==Number(m.capital?.startingAccountNAVMYR)||rows.length!==7){
+  root.innerHTML='<div class="adv-card-loading">The proposed allocation could not be reconciled. Review the dated <a href="data/rakuten-one-year-mandate.json">mandate</a>; no buy is authorised.</div>';
+  return;
+ }
+ const definitions=[
+  ['bonds',['VGIT','TLT','SGOV'],'adv-class-bonds','adv-class-bonds-rm'],
+  ['equity',['CF','RSP','TSM'],'adv-class-stocks','adv-class-stocks-rm'],
+  ['cash',['MYR_CASH'],'adv-class-cash','adv-class-cash-rm']
+ ];
+ for(const [key,symbols,pctId,amountId] of definitions){
+  const subset=rows.filter(a=>symbols.includes(a.symbol));
+  const pp=subset.reduce((s,a)=>s+Number(a.allocationPct),0);
+  const rm=subset.reduce((s,a)=>s+Number(a.targetMYR),0);
+  const p=get(pctId),a=get(amountId);
+  if(p)p.textContent=pp+'%';
+  if(a)a.textContent=money(rm)+' · '+(key==='cash'?'MYR reserve':symbols.join(' / '));
+ }
+ root.innerHTML=rows.map(a=>{
+  const profile=investmentProfiles[a.symbol];
+  if(!profile)return '';
+  const first=a.entryStages?.[0]?.condition||'Confirm source-dated research and current broker cash.';
+  return '<article class="adv-position '+profile.kind+'"><div class="adv-position-head"><span class="adv-position-logo">'+psIcon(profile.icon)+'</span><span class="adv-position-tag">'+esc(profile.tag)+'</span></div>'+
+   '<div class="adv-position-main"><div class="adv-position-name"><strong>'+esc(a.symbol==='MYR_CASH'?'MYR cash':a.symbol)+'</strong><small>'+esc(profile.label)+'</small></div><div class="adv-position-money"><strong>'+money(a.targetMYR)+'</strong><small>'+esc(a.allocationPct)+'% target</small></div></div>'+
+   '<p class="adv-position-role">'+esc(profile.role)+'</p><p class="adv-position-risk">'+esc(profile.risk)+'</p>'+
+   '<details class="adv-position-detail"><summary>Why / when to enter</summary><p><b>First check:</b> '+esc(first)+'</p><p><b>Status:</b> '+esc(a.status.replaceAll('_',' ').toLowerCase())+'. Model only, not an order.</p></details></article>';
+ }).join('');
+}
+
 function renderAllocation(m){
  if(!m||!Array.isArray(m.allocation))return;
  const bar=get('adv-budget-bar'),table=get('adv-budget-body'),legend=get('adv-budget-legend');
@@ -79,9 +133,19 @@ function renderPortfolio(d){
 }
 function renderResearch(d){
  const market=get('adv-insight-grid'),cal=get('adv-event-list');
- if(market&&Array.isArray(d?.marketSignals))market.innerHTML=d.marketSignals.map(x=>'<div class="adv-insight"><strong>'+esc(x.name)+'</strong><small>'+esc(x.state)+'</small><p>'+esc(x.body)+'</p></div>').join('');
+ if(market&&Array.isArray(d?.marketSignals)){
+  const lens=d.marketSignals.map(x=>{
+   const name=(x.name||'').toLowerCase();
+   const isRate=name.includes('treasur'),isRotation=name.includes('rotation');
+   const role=isRate?'What it means: VGIT / TLT / SGOV':isRotation?'What it means: RSP / TSM':'What it means: foreign bonds / MYR';
+   const impact=isRate?'Treasury entries still depend on real yields, term premium and FX.':isRotation?'Review whether equal-weight earnings breadth persists before buying RSP.':'Do not fund a new overseas bond sleeve without yield and MYR-cost comparisons.';
+   return {name:x.name,caption:x.state,body:x.body,role,impact,icon:isRate?'bonds':isRotation?'stocks':'world',source:x.source||'https://alchemy-live-market-desk.vercel.app/',date:'23 Oct research'};
+  });
+  lens.splice(1,0,{name:'AI funding',caption:'Capital spending versus financing',body:'Separate paid chip demand from customers’ ability to fund AI build-outs.',role:'What it means: TSM / existing tech exposure',impact:'Prefer confirmed earnings and funded demand to chasing AI share-price rallies.',icon:'chip',source:'research/2026-10-14-ai-financing-picks-shovels.md',date:'14 Oct thesis'});
+  market.innerHTML=lens.map(x=>'<article class="adv-insight"><span class="adv-insight-icon">'+psIcon(x.icon)+'</span><strong>'+esc(x.name)+'</strong><small>'+esc(x.caption)+' · '+esc(x.date)+'</small><p>'+esc(x.body)+'</p><div class="adv-implication">'+esc(x.role)+'<br>'+esc(x.impact)+'</div><a href="'+esc(x.source)+'" target="_blank" rel="noopener noreferrer">Underlying source ↗</a></article>').join('');
+ }
  if(cal&&Array.isArray(d?.calendar))cal.innerHTML=d.calendar.map(x=>'<div class="adv-event"><span class="adv-overline">'+esc(x.date)+'</span><strong>'+esc(x.name)+'</strong><p>'+esc(x.why)+'</p></div>').join('');
- const guide=get('adv-signal-advice');if(guide&&d?.outlook?.whatChanges)guide.textContent=d.outlook.whatChanges;
+ const guide=get('adv-signal-advice');if(guide&&d?.outlook?.whatChanges)guide.textContent='These are '+fmtDate(d.asOf)+' research views, not live market signals. '+d.outlook.whatChanges+' Live Desk owns canonical macro evidence; Bluebelly is its presentation layer.';
 }
 function applyFilters(){
  const buttons=[...document.querySelectorAll('[data-adv-filter]')],root=get('adv-idea-list');
@@ -105,6 +169,7 @@ async function load(){
  const [d,m]=await Promise.all([fetchJson('data/client-advisor.json'),fetchJson('data/rakuten-one-year-mandate.json')]);
  if(d&&d.contractVersion==='power-stack-client-advisor/1'){renderTimestamp(d);renderTop(d);renderMoves(d);renderOpportunity(d);renderResearchRadar(d);renderPortfolio(d);renderResearch(d)}
  else{const s=get('adv-research-status');if(s)s.textContent='Live decision data unavailable · dated plan below requires new verification';}
+ renderInvestmentOverview(m);
  if(m&&m.schema==='power-stack-manual-investment-mandate/v1')renderAllocation(m);
  applyFilters();handleCopy();
 }
