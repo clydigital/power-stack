@@ -30,7 +30,7 @@ assert(app.includes("if(av===null&&bv!==null)return 1"),'Unrated items should so
 /* The brand should anchor the main library header, while the sidebar is just a filter rail. */
 const brandAndTitle=html.match(/<header class="topbar">([\s\S]*?)<div class="top-actions">/)?.[1]||'';
 const sidebar=html.match(/<aside class="sidebar">([\s\S]*?)<nav class="side-scroll"[^>]*>/)?.[1]||'';
-assert(brandAndTitle.includes('class="library-wordmark"') && brandAndTitle.includes('>Full Library</h1>'),
+assert(brandAndTitle.includes('class="library-wordmark"') && brandAndTitle.includes('<h1 id="libraryTitle">Full Library</h1>'),
   'Library brand and page title must share the main header');
 assert(sidebar.includes('library-filter-title">Filters') && !sidebar.includes('class="brand">POWER STACK'),
   'Filter rail must be a compact filter header without duplicated branding');
@@ -46,5 +46,18 @@ assert(libraryStyles.includes('flex:0 0 auto;min-height:56px') && libraryStyles.
 assert(html.includes('<body class="ps-library-page">'),'Full Library layout requires the scoped styles');
 assert(fs.readFileSync('ps-ux.css','utf8').includes('.ps-library-page .library-wordmark'),
   'Responsive title placement styles missing');
+
+
+const topbar=html.match(/<header class="topbar">([\s\S]*?)<\/header>/)?.[1]||'';
+assert(topbar.includes('class="top-actions library-utilities"')&&topbar.includes('Investment desk ↗'),
+  'Library header must have a simple status and investment-desk exit');
+assert(!topbar.includes('Market Motion →')&&!topbar.includes('Developing Themes →')&&!topbar.includes('Current Holdings →')&&!topbar.includes('Strategy baskets →'),
+  'Full research navigation should live in the workspace switcher, not large stacked header buttons');
+assert(!app.includes("$('h1').textContent="),
+  'Filter interactions must never overwrite the permanent Full Library page heading');
+assert(app.includes('const selectedFilters=')&&app.includes("selectedFilters.join(' · ')"),
+  'Selected research filters should remain visible beneath the fixed heading');
+assert(fs.readFileSync('ps-ux.css','utf8').includes('.ps-library-page .ps-research-context{display:none}'),
+  'Do not repeat the same Full Library heading in the workspace navigation');
 
 console.log('Full Library UI guard checks passed: unknown ≠ zero, no NaN, honest missing theme, stable sort and clean layout');
