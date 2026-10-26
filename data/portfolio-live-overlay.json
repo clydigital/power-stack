@@ -1,8 +1,8 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-26T04:45:17.002Z",
-  "liveAsOf": "2026-10-25T07:49:24.469+00:00",
-  "liveSyncedAt": "2026-10-25T20:55:23.558Z",
+  "generatedAt": "2026-10-26T04:53:53.267Z",
+  "liveAsOf": "2026-10-26T02:58:10.806+00:00",
+  "liveSyncedAt": "2026-10-26T04:53:53.154Z",
   "sourceHealth": {
     "dossier": "DEGRADED",
     "marketMonitor": "PARTIAL",
@@ -14,16 +14,16 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "High U.S. yields and elevated real yields are tightening conditions while HY spreads widened sharply; large-cap AI leaders remain intact.",
-    "answer": "US 10Y ~5% with a governed ACM term premium ~0.64%; HY OAS widened ~60bp over 20 sessions while IG moved ~10bp and AI/mega-cap closes were mixed-to-strong, implying a rates‑led tightening that is concentrated in HY rather than broad credit or equity breadth.",
-    "implication": "Rising nominal and real yields are the dominant tightening signal now; credit stress is concentrated in HY while big‑cap AI/semiconductor leadership cushions broad equity weakness.",
-    "whatWouldChangeMind": "Evidence that IG OAS and a canonical MOVE/VIX spike persistently widened alongside HY (e.g., IG OAS persistence plus canonical MOVE observations) or that broad equity breadth deteriorates beyond megacaps would overturn the concentrated‑stress reading."
+    "headline": "US yields remain elevated (10Y ~5%) and front-end pricing is hawkish, tightening conditions while broad credit/volatility confirmation is still unresolved.",
+    "answer": "Nominal and real yields are high (US10Y ~5%; 10Y real ~2.64%) and ACM term premium is low (~0.64%), supporting a rates‑led tightening narrative; dealer/short‑term collateral is mildly tighter, but canonical MOVE, HY/IG spread series and intraday Fed‑funds/UST bars are missing so broader transmission to credit and volatility is unresolved.",
+    "implication": "Falling risk appetite from higher nominal and real yields is pressuring funding-sensitive sectors, but without canonical credit‑spread or volatility confirmation the market is best described as rates‑driven tightening rather than a broad risk‑off.",
+    "whatWouldChangeMind": "Canonical MOVE/Treasury‑volatility and multi‑session IG/HY OAS time series showing persistent IG widening or a VIX/MOVE spike would materially shift this from a rates‑led tightening to broader market stress."
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "5e2aef32-8e3e-4c23-b8ae-4375e16ade49",
-    "capturedAt": "2026-10-25T02:47:38.288Z",
-    "itemCount": 1,
+    "editionId": "e40d0999-07f5-4f39-959d-39d96c5c6cc2",
+    "capturedAt": "2026-10-26T02:41:56.701Z",
+    "itemCount": 0,
     "linkedHoldingCount": 0
   },
   "currentSignals": {
@@ -48,7 +48,7 @@
           "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
           "detail": "No current deterministic policy impulse or directional next-meeting repricing is present in the bounded rate context.",
-          "asOf": "2026-10-25T07:49:24.469Z"
+          "asOf": "2026-10-26T02:58:10.806Z"
         },
         {
           "key": "RATES_FRONT_END",
@@ -56,7 +56,7 @@
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
           "detail": "US 2Y 4.69%; 5D n/a; vs effective fed funds +81.0 bp.",
-          "asOf": "2026-10-25T07:49:24.469Z"
+          "asOf": "2026-10-26T02:58:10.806Z"
         },
         {
           "key": "RATES_REAL_YIELDS",
@@ -64,7 +64,7 @@
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
           "detail": "10Y real yield 2.64%; 5D n/a.",
-          "asOf": "2026-10-25T07:49:24.469Z"
+          "asOf": "2026-10-26T02:58:10.806Z"
         },
         {
           "key": "RATES_BREAKEVENS",
@@ -72,7 +72,7 @@
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
           "detail": "10Y breakeven 2.34%; 5D n/a.",
-          "asOf": "2026-10-25T07:49:24.469Z"
+          "asOf": "2026-10-26T02:58:10.806Z"
         },
         {
           "key": "RATES_LONG_END",
@@ -80,7 +80,7 @@
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
           "detail": "US 10Y 5.00%; 5D n/a; US 20Y 5.37%; 5D n/a; US 30Y 5.33%; 5D n/a.",
-          "asOf": "2026-10-25T07:49:24.469Z"
+          "asOf": "2026-10-26T02:58:10.806Z"
         },
         {
           "key": "BILLS",
@@ -124,7 +124,7 @@
     "physicalEnergy": {
       "status": "UNRESOLVED",
       "observed": false,
-      "detail": "No canonical WTI/Brent or product‑curve evidence supplied in this packet to assess energy‑driven inflation risks.",
+      "detail": "Energy coverage in packet is explicitly unresolved; canonical WTI/Brent settle and product metrics are missing.",
       "evidenceRefs": []
     }
   },
@@ -1210,37 +1210,7 @@
       "nextCheck": "Normalize combined weight in base currency and verify warrant terms."
     }
   ],
-  "portfolioDivergences": [
-    {
-      "id": "rates-vs-tech-resilience",
-      "importance": "HIGH",
-      "divergence": "PARTIAL",
-      "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-      "actual": "Large‑cap AI/semiconductor closes mixed-to-strong at 10/23, indicating sector resilience through the period close.",
-      "affectedHoldings": [
-        "TSLA",
-        "TTWO",
-        "YTLPOWR",
-        "6742UW"
-      ],
-      "candidateExplanations": [
-        "Narrow AI/semiconductor leadership is offsetting broad duration pressure at index level.",
-        "Company-specific catalysts and funded/backlogged AI infrastructure demand are overpowering the discount-rate headwind in selected names.",
-        "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
-      ],
-      "evidenceFor": [
-        "Earnings/positioning support megacap leadership even as yields are high; this cushions a broad risk‑off outcome.",
-        "Supplied packet lacks a canonical breadth measure; cannot confirm whether equity strength is broad or narrow beyond provided megacap closes.",
-        "Nasdaq daily move -0.21 with bias MIXED."
-      ],
-      "evidenceAgainst": [
-        "Nominal and real yields are the primary tightening force; ACM term premium is modest, so real yields/breakevens account for much of the level."
-      ],
-      "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
-      "confidence": "HIGH",
-      "invalidation": "If breadth broadens materially while credit remains benign and real yields stay high, the rate headwind is less dominant than assumed. If AI/semiconductor leadership rolls over, the divergence resolves in the bearish direction."
-    }
-  ],
+  "portfolioDivergences": [],
   "reviewQueue": {
     "highReview": [
       "XOM",
@@ -1265,7 +1235,9 @@
   },
   "divergences": [],
   "liveResearchGaps": [
-    "MARKET_DATA: Canonical MOVE / Treasury volatility time series (intraday/5m–daily) is missing; this blocks term‑premium vs volatility decomposition and transmission tests.",
+    "DATA: Canonical MOVE/Treasury‑volatility series is not present in the packet but is necessary to test volatility transmission and validate the duration→credit pathway.",
+    "DATA: Canonical IG and HY OAS time series are missing, blocking assessment of whether credit spreads are broadening beyond concentrated HY names.",
+    "DATA: Intraday 5m–30m Fed‑funds‑futures and UST 2Y/10Y bars (and matching DXY/XAU) around issuer events are missing and block same‑session transmission testing.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],
   "guardrails": [
