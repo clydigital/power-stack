@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-26T13:11:07.608Z",
+  "generatedAt": "2026-10-26T22:39:16.004Z",
   "liveAsOf": "2026-10-26T02:58:10.806+00:00",
   "liveSyncedAt": "2026-10-26T13:11:07.490Z",
   "sourceHealth": {
@@ -145,19 +145,19 @@
         "freshness": {
           "status": "CURRENT",
           "eligibleForComparison": true,
-          "sessionDate": "2026-10-23",
-          "businessDaysOld": 1,
+          "sessionDate": "2026-10-26",
+          "businessDaysOld": 0,
           "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-10-23",
-        "close": 183.21,
-        "previousClose": 178.23,
-        "change": 4.98,
-        "changePct": 2.794,
+        "sessionDate": "2026-10-26",
+        "close": 184.54,
+        "previousClose": 183.21,
+        "change": 1.33,
+        "changePct": 0.726,
         "currency": "USD",
         "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
         "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/XOM?interval=1d&range=1mo&includePrePost=false",
-        "closeNotice": "Source-dated regular-session daily close: 2026-10-23"
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-26"
       },
       "effects": {
         "rates": "HEADWIND",
@@ -291,7 +291,7 @@
           "status": "CURRENT",
           "eligibleForComparison": true,
           "sessionDate": "2026-10-26",
-          "businessDaysOld": 0,
+          "businessDaysOld": 1,
           "reason": "Completed-session price is within the market-local freshness window."
         },
         "sessionDate": "2026-10-26",
@@ -428,7 +428,7 @@
           "status": "CURRENT",
           "eligibleForComparison": true,
           "sessionDate": "2026-10-26",
-          "businessDaysOld": 0,
+          "businessDaysOld": 1,
           "reason": "Completed-session price is within the market-local freshness window."
         },
         "sessionDate": "2026-10-26",
@@ -557,7 +557,7 @@
           "status": "CURRENT",
           "eligibleForComparison": true,
           "sessionDate": "2026-10-26",
-          "businessDaysOld": 0,
+          "businessDaysOld": 1,
           "reason": "Completed-session price is within the market-local freshness window."
         },
         "sessionDate": "2026-10-26",
@@ -807,24 +807,24 @@
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
-        "status": "CONFIRMS",
-        "reason": "Completed-session tape moved in the direction implied by the current market overlay.",
+        "status": "FLAT",
+        "reason": "The completed-session move is too small to count as confirmation or divergence.",
         "freshness": {
           "status": "CURRENT",
           "eligibleForComparison": true,
-          "sessionDate": "2026-10-23",
-          "businessDaysOld": 1,
+          "sessionDate": "2026-10-26",
+          "businessDaysOld": 0,
           "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-10-23",
-        "close": 203.69,
-        "previousClose": 207.81,
-        "change": -4.12,
-        "changePct": -1.983,
+        "sessionDate": "2026-10-26",
+        "close": 203.35,
+        "previousClose": 203.69,
+        "change": -0.34,
+        "changePct": -0.167,
         "currency": "USD",
         "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
         "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/TTWO?interval=1d&range=1mo&includePrePost=false",
-        "closeNotice": "Source-dated regular-session daily close: 2026-10-23"
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-26"
       },
       "effects": {
         "rates": "HEADWIND",
@@ -920,24 +920,24 @@
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
-        "status": "CONFIRMS",
-        "reason": "Completed-session tape moved in the direction implied by the current market overlay.",
+        "status": "DIVERGES",
+        "reason": "Completed-session tape moved against the direction implied by the current market overlay.",
         "freshness": {
           "status": "CURRENT",
           "eligibleForComparison": true,
-          "sessionDate": "2026-10-23",
-          "businessDaysOld": 1,
+          "sessionDate": "2026-10-26",
+          "businessDaysOld": 0,
           "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-10-23",
-        "close": 372.22,
-        "previousClose": 374.58,
-        "change": -2.36,
-        "changePct": -0.63,
+        "sessionDate": "2026-10-26",
+        "close": 391.62,
+        "previousClose": 372.22,
+        "change": 19.4,
+        "changePct": 5.212,
         "currency": "USD",
         "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
         "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/TSLA?interval=1d&range=1mo&includePrePost=false",
-        "closeNotice": "Source-dated regular-session daily close: 2026-10-23"
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-26"
       },
       "effects": {
         "rates": "HEADWIND",
@@ -1039,7 +1039,7 @@
           "status": "CURRENT",
           "eligibleForComparison": true,
           "sessionDate": "2026-10-26",
-          "businessDaysOld": 0,
+          "businessDaysOld": 1,
           "reason": "Completed-session price is within the market-local freshness window."
         },
         "sessionDate": "2026-10-26",
@@ -1223,13 +1223,12 @@
     "tapeDivergences": [
       "XOM",
       "MISC",
+      "TSLA",
       "DAYANG"
     ],
     "tapeConfirmations": [
       "HIBISCS",
-      "YTLPOWR",
-      "TTWO",
-      "TSLA"
+      "YTLPOWR"
     ],
     "researchGaps": []
   },

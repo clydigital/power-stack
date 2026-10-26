@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-26T13:11:07.677Z",
+  "generatedAt": "2026-10-26T22:39:16.062Z",
   "asOf": "2026-10-26T02:58:10.806+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -27,13 +27,13 @@
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-26T13:11:07.608Z",
+      "generatedAt": "2026-10-26T22:39:16.004Z",
       "status": "OK"
     },
     "holdingTape": {
       "contractVersion": "power-stack-holding-tape/1",
       "expectedContract": "power-stack-holding-tape/1",
-      "generatedAt": "2026-10-26T13:00:14.386Z",
+      "generatedAt": "2026-10-26T22:39:15.942Z",
       "unresolved": [
         "6742UW"
       ],
@@ -69,13 +69,12 @@
     "tapeDivergences": [
       "XOM",
       "MISC",
+      "TSLA",
       "DAYANG"
     ],
     "tapeConfirmations": [
       "HIBISCS",
-      "YTLPOWR",
-      "TTWO",
-      "TSLA"
+      "YTLPOWR"
     ],
     "highReview": [
       "XOM",
@@ -146,9 +145,9 @@
   },
   "holdingResearchQueue": [
     {
-      "ticker": "XOM",
-      "name": "ExxonMobil",
-      "priorityScore": 198,
+      "ticker": "TSLA",
+      "name": "Tesla",
+      "priorityScore": 195,
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
@@ -157,19 +156,58 @@
         "freshness": {
           "status": "CURRENT",
           "eligibleForComparison": true,
-          "sessionDate": "2026-10-23",
-          "businessDaysOld": 1,
+          "sessionDate": "2026-10-26",
+          "businessDaysOld": 0,
           "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-10-23",
-        "close": 183.21,
-        "previousClose": 178.23,
-        "change": 4.98,
-        "changePct": 2.794,
+        "sessionDate": "2026-10-26",
+        "close": 391.62,
+        "previousClose": 372.22,
+        "change": 19.4,
+        "changePct": 5.212,
+        "currency": "USD",
+        "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
+        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/TSLA?interval=1d&range=1mo&includePrePost=false",
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-26"
+      },
+      "currentAction": "TRIM REVIEW",
+      "reasons": [
+        "completed-session tape moved against the directional market overlay",
+        "portfolio overlay marks the holding HIGH_REVIEW"
+      ],
+      "researchQuestion": "Has new company-specific evidence changed TSLA's current action gate or thesis risk?",
+      "requiredEvidence": [
+        "company-specific news/catalysts for the completed session",
+        "technical/flow context sufficient to test whether the divergence is company-specific or temporary",
+        "funding, valuation, cash-flow or operating evidence that could offset or reinforce the macro headwind"
+      ],
+      "possibleDecisionImpact": "Could change the current add/hold gate or create a new company-specific catalyst/invalidation."
+    },
+    {
+      "ticker": "XOM",
+      "name": "ExxonMobil",
+      "priorityScore": 180,
+      "overlayState": "HEADWIND",
+      "reviewPriority": "HIGH_REVIEW",
+      "actualReaction": {
+        "status": "DIVERGES",
+        "reason": "Completed-session tape moved against the direction implied by the current market overlay.",
+        "freshness": {
+          "status": "CURRENT",
+          "eligibleForComparison": true,
+          "sessionDate": "2026-10-26",
+          "businessDaysOld": 0,
+          "reason": "Completed-session price is within the market-local freshness window."
+        },
+        "sessionDate": "2026-10-26",
+        "close": 184.54,
+        "previousClose": 183.21,
+        "change": 1.33,
+        "changePct": 0.726,
         "currency": "USD",
         "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
         "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/XOM?interval=1d&range=1mo&includePrePost=false",
-        "closeNotice": "Source-dated regular-session daily close: 2026-10-23"
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-26"
       },
       "currentAction": "HOLD / NO ADD",
       "reasons": [
@@ -219,44 +257,6 @@
         "funding, valuation, cash-flow or operating evidence that could offset or reinforce the macro headwind"
       ],
       "possibleDecisionImpact": "Could unlock accurate YTL-linked concentration and portfolio-weight measurement."
-    },
-    {
-      "ticker": "DAYANG",
-      "name": "Dayang Enterprise Holdings Berhad",
-      "priorityScore": 150,
-      "overlayState": "HEADWIND",
-      "reviewPriority": "MONITOR",
-      "actualReaction": {
-        "status": "DIVERGES",
-        "reason": "Completed-session tape moved against the direction implied by the current market overlay.",
-        "freshness": {
-          "status": "CURRENT",
-          "eligibleForComparison": true,
-          "sessionDate": "2026-10-26",
-          "businessDaysOld": 0,
-          "reason": "Completed-session price is within the market-local freshness window."
-        },
-        "sessionDate": "2026-10-26",
-        "close": 1.38,
-        "previousClose": 1.32,
-        "change": 0.06,
-        "changePct": 4.545,
-        "currency": "MYR",
-        "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
-        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/5141.KL?interval=1d&range=1mo&includePrePost=false",
-        "closeNotice": "Source-dated regular-session daily close: 2026-10-26"
-      },
-      "currentAction": "SELL / CAPITAL RECYCLING REVIEW",
-      "reasons": [
-        "completed-session tape moved against the directional market overlay"
-      ],
-      "researchQuestion": "Has new company-specific evidence changed DAYANG's current action gate or thesis risk?",
-      "requiredEvidence": [
-        "company-specific news/catalysts for the completed session",
-        "technical/flow context sufficient to test whether the divergence is company-specific or temporary",
-        "funding, valuation, cash-flow or operating evidence that could offset or reinforce the macro headwind"
-      ],
-      "possibleDecisionImpact": "Could change the current add/hold gate or create a new company-specific catalyst/invalidation."
     }
   ],
   "watchlistResearchQueue": [
@@ -442,16 +442,16 @@
     {
       "ticker": "TTWO",
       "overlayState": "HEADWIND",
-      "reaction": "CONFIRMS",
+      "reaction": "FLAT",
       "action": "HOLD / NO ADD",
-      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
+      "reason": "No current decision-relevant divergence promoted into the capped queue."
     },
     {
-      "ticker": "TSLA",
+      "ticker": "DAYANG",
       "overlayState": "HEADWIND",
-      "reaction": "CONFIRMS",
-      "action": "TRIM REVIEW",
-      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
+      "reaction": "DIVERGES",
+      "action": "SELL / CAPITAL RECYCLING REVIEW",
+      "reason": "No current decision-relevant divergence promoted into the capped queue."
     }
   ],
   "newCapitalPriority": [
