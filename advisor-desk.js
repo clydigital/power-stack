@@ -53,7 +53,8 @@ const shape={
  shield:'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>',
  plant:'<path d="M12 22V12m0 5c-6 0-9-3-9-8 6 0 9 3 9 8zm0-5c0-6 3-9 9-9 0 6-3 9-9 9z"/>',
  chip:'<rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 9h6v6H9zM9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4"/>',
- world:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-5 5-5 13 0 18m0-18c5 5 5 13 0 18"/>'
+ world:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-5 5-5 13 0 18m0-18c5 5 5 13 0 18"/>',
+ flame:'<path d="M12 22c4.8 0 8-3.4 8-7.5 0-4-3-6.8-4-8-.4 2.7-2 4-3 4-1-2-1-5-3-8-1 4-6 7-6 12 0 4.5 3.4 7.5 8 7.5z"/>'
 };
 function psIcon(name){return '<svg viewBox="0 0 24 24" aria-hidden="true">'+(shape[name]||shape.stocks)+'</svg>'}
 function renderInvestmentOverview(m){
@@ -141,7 +142,7 @@ function renderResearch(d){
    const impact=isRate?'Treasury entries still depend on real yields, term premium and FX.':isRotation?'Review whether equal-weight earnings breadth persists before buying RSP.':'Do not fund a new overseas bond sleeve without yield and MYR-cost comparisons.';
    return {name:x.name,caption:x.state,body:x.body,role,impact,icon:isRate?'bonds':isRotation?'stocks':'world',source:x.source||'https://alchemy-live-market-desk.vercel.app/',date:'23 Oct research'};
   });
-  lens.splice(1,0,{name:'AI funding',caption:'Capital spending versus financing',body:'Separate paid chip demand from customers’ ability to fund AI build-outs.',role:'What it means: TSM / existing tech exposure',impact:'Prefer confirmed earnings and funded demand to chasing AI share-price rallies.',icon:'chip',source:'research/2026-10-14-ai-financing-picks-shovels.md',date:'14 Oct thesis'});
+  lens.splice(1,0,{name:'AI funding',caption:'Capital spending versus financing',body:'Separate paid chip demand from customers’ ability to fund AI build-outs.',role:'What it means: TSM / existing tech exposure',impact:'Prefer confirmed earnings and funded demand to chasing AI share-price rallies.',icon:'chip',source:'research/2026-10-14-ai-financing-picks-shovels.md',date:'14 Oct thesis'},{name:'Oil and inflation',caption:'Energy shortages can complicate rate cuts',body:'Gulf supply and fuel-price shocks can sustain inflation even while equities sell off.',role:'What it means: XOM / MISC / HIBISCS / Treasuries',impact:'Check energy concentration and whether inflation threatens the bond case.',icon:'flame',source:'research/2026-10-22-market-danger-risk-regime-deep-update.md',date:'22 Oct research'});
   market.innerHTML=lens.map(x=>'<article class="adv-insight"><span class="adv-insight-icon">'+psIcon(x.icon)+'</span><strong>'+esc(x.name)+'</strong><small>'+esc(x.caption)+' · '+esc(x.date)+'</small><p>'+esc(x.body)+'</p><div class="adv-implication">'+esc(x.role)+'<br>'+esc(x.impact)+'</div><a href="'+esc(x.source)+'" target="_blank" rel="noopener noreferrer">Underlying source ↗</a></article>').join('');
  }
  if(cal&&Array.isArray(d?.calendar))cal.innerHTML=d.calendar.map(x=>'<div class="adv-event"><span class="adv-overline">'+esc(x.date)+'</span><strong>'+esc(x.name)+'</strong><p>'+esc(x.why)+'</p></div>').join('');
