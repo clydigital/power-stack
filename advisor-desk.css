@@ -298,3 +298,17 @@ main{padding-top:16px}
  header nav a{white-space:nowrap;flex:0 0 auto;padding:6px 0}
 }
 @media(prefers-reduced-motion:reduce){.adv-position{transition:none}}
+
+/* Source-dated investigation updates are distinct from the older model mandate. */
+.adv-investigation-update{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:12px 0 22px;padding:17px 19px;border:1px solid #476d65;border-radius:15px;background:linear-gradient(110deg,#1a352e,#15272e 70%,#232b3e);box-shadow:0 12px 28px #0002}
+.adv-investigation-icon{flex:0 0 43px;width:43px;height:43px;display:grid;place-items:center;background:#a8e5c5;color:#163b2a;border-radius:12px}
+.adv-investigation-icon svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.adv-investigation-body{flex:1 1 360px;min-width:0}
+.adv-investigation-body small{display:block;color:#a7eecb;font-size:10px;font-weight:900;letter-spacing:.07em}
+.adv-investigation-body strong{display:block;color:#f7f9f7;font-size:15px;line-height:1.4;margin:3px 0}
+.adv-investigation-body p{font-size:11px;color:#bfcec7;line-height:1.55;margin:0}
+.adv-investigation-body p b{color:#f1dfac}
+.adv-investigation-update>a{margin-left:auto;white-space:nowrap;align-self:center;border-radius:9px;border:1px solid #6aa88b;color:#dbfce5;text-decoration:none;font-size:11px;font-weight:850;padding:10px 12px}
+.adv-investigation-update>a:hover{background:#234737}
+.adv-investigation-update>a:focus-visible{outline:2px solid #c0f6d8;outline-offset:3px}
+@media(max-width:700px){.adv-investigation-update{padding:14px;gap:10px}.adv-investigation-update>a{margin-left:0}.adv-investigation-body{flex:1 1 220px}}
