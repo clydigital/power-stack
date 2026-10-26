@@ -1,15 +1,15 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-26T22:39:16.062Z",
-  "asOf": "2026-10-26T02:58:10.806+00:00",
+  "generatedAt": "2026-10-26T22:43:12.397Z",
+  "asOf": "2026-10-26T15:05:32.368+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
   "inputHealth": {
     "liveDesk": {
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
-      "asOf": "2026-10-26T02:58:10.806+00:00",
-      "syncedAt": "2026-10-26T13:11:07.490Z",
+      "asOf": "2026-10-26T15:05:32.368+00:00",
+      "syncedAt": "2026-10-26T22:43:12.134Z",
       "sourceStatus": "degraded_latest",
       "sourceHealth": {
         "dossier": "DEGRADED",
@@ -18,7 +18,7 @@
         "nyFedPrimaryDealers": "OK",
         "treasurySupply": "UNRESOLVED"
       },
-      "ageHours": 10.2,
+      "ageHours": 7.6,
       "reasons": [
         "UPSTREAM_EVIDENCE_PARTIAL"
       ],
@@ -27,7 +27,7 @@
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-26T22:39:16.004Z",
+      "generatedAt": "2026-10-26T22:43:12.322Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -46,9 +46,9 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "US yields remain elevated (10Y ~5%) and front-end pricing is hawkish, tightening conditions while broad credit/volatility confirmation is still unresolved.",
-    "implication": "Falling risk appetite from higher nominal and real yields is pressuring funding-sensitive sectors, but without canonical credit‑spread or volatility confirmation the market is best described as rates‑driven tightening rather than a broad risk‑off.",
-    "monetarySummary": "Rate baseline HAWKISH; 4 confirming, 0 contradicting, 7 unresolved/neutral monetary-market layers."
+    "headline": "US yields remain elevated and front‑end funding is tighter, but credit/volatility transmission is unresolved.",
+    "implication": "Higher nominal and real yields plus tighter short‑term collateral raise financing costs; absent canonical credit and volatility evidence, broader market stress is not yet established.",
+    "monetarySummary": "Rate baseline HAWKISH; 3 confirming, 0 contradicting, 8 unresolved/neutral monetary-market layers."
   },
   "queueCounts": {
     "holdings": 3,
@@ -60,8 +60,8 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "e40d0999-07f5-4f39-959d-39d96c5c6cc2",
-    "capturedAt": "2026-10-26T02:41:56.701Z",
+    "editionId": "58c55726-1ca6-4d5f-92ba-d112d1fa5691",
+    "capturedAt": "2026-10-26T14:02:16.988Z",
     "itemCount": 0,
     "items": []
   },
@@ -416,7 +416,24 @@
       "researchQuestion": "Does current China/HK credit transmission, policy and demand evidence strengthen or weaken 9988.HK's company thesis?"
     }
   ],
-  "liveRadar": [],
+  "liveRadar": [
+    {
+      "ticker": "META",
+      "companyName": "Meta Platforms",
+      "whyRelevant": "Reported large equity‑raise plans and is central to AI funding chatter that could affect tech sentiment.",
+      "researchQuestion": "Did Meta's financing announcement produce measurable same‑session macro repricing in yields, USD or gold?",
+      "status": "DISCOVERY_ONLY",
+      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
+    },
+    {
+      "ticker": "AAPL",
+      "companyName": "Apple",
+      "whyRelevant": "Strong early demand for new product could support consumer hardware revenue and sector resilience amid rates pressure.",
+      "researchQuestion": "Is demand strength for new iPhone supporting broader tech leadership despite rising yields?",
+      "status": "DISCOVERY_ONLY",
+      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
+    }
+  ],
   "monitorOnly": [
     {
       "ticker": "MISC",
@@ -482,15 +499,15 @@
     }
   ],
   "researchGaps": [
-    "DATA: Canonical MOVE/Treasury‑volatility series is not present in the packet but is necessary to test volatility transmission and validate the duration→credit pathway.",
-    "DATA: Canonical IG and HY OAS time series are missing, blocking assessment of whether credit spreads are broadening beyond concentrated HY names.",
-    "DATA: Intraday 5m–30m Fed‑funds‑futures and UST 2Y/10Y bars (and matching DXY/XAU) around issuer events are missing and block same‑session transmission testing.",
+    "DATA: Canonical MOVE/Treasury‑volatility and multi‑session IG/HY OAS series are not in the packet; this blocks testing yield→credit/volatility transmission.",
+    "DATA: Intraday 5m–30m Fed‑funds‑futures, UST 2Y/10Y, DXY and XAU bars around major issuer events are missing, preventing same‑session transmission tests.",
+    "DATA: Primary‑dealer position/fails and cross‑currency basis / FX‑swap canonical feeds are absent, limiting diagnosis of funding and offshore USD stress.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence.",
     "Holding tape unresolved: 6742UW"
   ],
   "gapReconciliation": {
     "contractVersion": "power-stack-gap-reconciliation/1",
-    "sourceAsOf": "2026-10-26T02:58:10.806+00:00",
+    "sourceAsOf": "2026-10-26T15:05:32.368+00:00",
     "sourceStatus": "degraded_latest",
     "owner": "Power Stack is read-only; Live owns all macro/rates evidence",
     "resolvedByReconciliation": 0,
@@ -498,7 +515,7 @@
     "gaps": [
       {
         "id": "INTRADAY_RATES",
-        "reportedGap": "DATA: Canonical MOVE/Treasury‑volatility series is not present in the packet but is necessary to test volatility transmission and validate the duration→credit pathway.",
+        "reportedGap": "DATA: Canonical MOVE/Treasury‑volatility and multi‑session IG/HY OAS series are not in the packet; this blocks testing yield→credit/volatility transmission.",
         "owner": "LIVE_DESK",
         "state": "REQUIRES_VALIDATED_INTRADAY_FEEDS",
         "presentInfrastructure": [
@@ -511,13 +528,15 @@
         "evidenceAuthority": "ORIGINAL_SOURCE_REQUIRED"
       },
       {
-        "id": "UNCLASSIFIED:data-canonical-ig-and-hy-oas-time-series-are-missing-blocking-assessment-of-whether-credit-spr",
-        "reportedGap": "DATA: Canonical IG and HY OAS time series are missing, blocking assessment of whether credit spreads are broadening beyond concentrated HY names.",
-        "owner": "RESEARCH_GAP_GATE",
-        "state": "UNCLASSIFIED_REQUIRES_SOURCE_CHECK",
-        "presentInfrastructure": [],
-        "missingProof": "Original source data and contract evidence for this observation",
-        "nextStep": "Review existing Live/PS source mapping; don't mark as resolved from text alone",
+        "id": "PRIMARY_DEALERS",
+        "reportedGap": "DATA: Primary‑dealer position/fails and cross‑currency basis / FX‑swap canonical feeds are absent, limiting diagnosis of funding and offshore USD stress.",
+        "owner": "LIVE_DESK",
+        "state": "UPSTREAM_STALE",
+        "presentInfrastructure": [
+          "Official New York Fed primary-dealer REST adapter"
+        ],
+        "missingProof": "Fresh official publication with an as-of date and parser-verified positions/fails",
+        "nextStep": "Re-query the existing NY Fed endpoint at the existing rates source-integrity cadence; keep stale if publisher remains delayed",
         "isClosed": false,
         "evidenceAuthority": "ORIGINAL_SOURCE_REQUIRED"
       },
@@ -553,7 +572,7 @@
     ],
     "byStatus": {
       "REQUIRES_VALIDATED_INTRADAY_FEEDS": 1,
-      "UNCLASSIFIED_REQUIRES_SOURCE_CHECK": 1,
+      "UPSTREAM_STALE": 1,
       "EVIDENCE_PRESENT_INTERPRETATION_UNRESOLVED": 1,
       "INSTRUMENT_NOT_VERIFIED": 1
     }
