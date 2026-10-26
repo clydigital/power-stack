@@ -243,3 +243,46 @@
   .ps-library-page .library-wordmark{margin-bottom:12px}
   .ps-deep-ux.ps-library-page .topbar #libraryTitle{font-size:34px}
 }
+
+/* Full Library navigation: an actual top-level tab bar, not a row of action pills.
+   The rest of Power Stack's secondary pages retain their original navigation. */
+body.ps-library-page .ps-research-navigator.ps-library-nav {
+  width:100%; min-width:0;
+  margin:0; padding:0 clamp(20px,3.25vw,42px);
+  background:#10171d; border-top:0; border-bottom:1px solid #2a373c;
+  box-shadow:inset 0 1px rgba(255,255,255,.025);
+}
+body.ps-library-page .ps-library-tabs {
+  display:flex; flex-wrap:nowrap; justify-content:flex-start; align-items:stretch;
+  gap:clamp(4px,.8vw,11px); overflow-x:auto; overscroll-behavior-x:contain;
+  margin:0; padding:0; scrollbar-width:thin; scrollbar-color:#34463e transparent;
+}
+body.ps-library-page .ps-library-tabs a {
+  position:relative; display:inline-flex; align-items:center; justify-content:center;
+  flex:0 0 auto; min-height:48px; padding:0 clamp(9px,1vw,15px);
+  border:0; border-bottom:2px solid transparent; border-radius:0;
+  background:transparent; box-shadow:none; text-decoration:none;
+  color:#a5b8b6; font-size:12px; font-weight:600; letter-spacing:.005em;
+  line-height:1.3; white-space:nowrap;
+  transition:color .15s ease, border-color .15s ease;
+}
+body.ps-library-page .ps-library-tabs a:hover {
+  background:transparent; border-color:transparent; border-bottom-color:#517765;
+  color:#e3f0e9;
+}
+body.ps-library-page .ps-library-tabs a[aria-current="page"],
+body.ps-library-page .ps-library-tabs a[aria-current="page"]:hover {
+  background:transparent; border-color:transparent; border-bottom-color:#9ed9b5;
+  color:#e5f8ec; font-weight:750;
+}
+body.ps-library-page .ps-library-tabs a:focus-visible {
+  outline:2px solid #9edfb9; outline-offset:-5px; border-radius:3px;
+}
+@media(max-width:900px){
+  body.ps-library-page .ps-research-navigator.ps-library-nav { padding:0 13px; }
+  body.ps-library-page .ps-library-tabs { gap:3px; }
+  body.ps-library-page .ps-library-tabs a { min-height:44px; padding:0 12px; font-size:12px; }
+}
+@media(prefers-reduced-motion:reduce){
+  body.ps-library-page .ps-library-tabs a {transition:none}
+}
