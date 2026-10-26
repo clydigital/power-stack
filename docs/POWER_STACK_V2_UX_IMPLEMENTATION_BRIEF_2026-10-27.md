@@ -75,3 +75,13 @@ Acceptance across phases: zero invented live/broker values; ticker detail consis
 ## Release gate
 
 This spec is *planning*; the clickable HTML concept in the accompanying ChatGPT response uses example historic research and does not connect to broker or production data. Review the interaction model before replacing the existing public pages. Implement in small PRs, validate rendered screenshots (not only static source assertions), and provide rollback for the shared shell independently of research JSON.
+
+## Visual redesign review (27 October 2026)
+
+A revised standalone, offline HTML design target has been produced as **Power_Stack_V2_Visual_Navigation_Prototype.html** in the ChatGPT deliverables. This is not merged production code and uses illustrative archived research from the 23 October mandate.
+
+Changes over the original wireframe: icons + labels for five navigation sections; tablet icon rail and mobile labelled bottom navigation; keyboard search/jump (Ctrl/Cmd+K or /); a three-ticket decision board with consistent source/countercase detail drawers; capital verification vs model allocation explicitly separated; a seven-segment 100% model donut, not a fake current-account chart; up-to-three-candidate qualitative comparison; search-first sample research and visual causal chain; sliders for a duration/FX *example*, showing assumptions and exclusions.
+
+Review acceptance: 320/390/620/768/1024/1280/1440px without horizontal overflow; all five routes, keyboard navigation, decision drawers, sample research filtering, comparison toggles and scenario reset checked in headless Chromium with no JavaScript exceptions. Real account persistence, live quotes, full archive search and trade actions are excluded. See ChatGPT's downloadable visual prototype, preview images and review notes.
+
+The next code PR should implement the shared shell and decision ticket before changing production investment cards. Production launch requires a separate screenshot and accessibility review, and all sensitive brokerage details must remain outside GitHub Pages.
