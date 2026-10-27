@@ -27,7 +27,17 @@ function renderQuickAssessment(d){
  if(date)date.textContent=a.assessedOn+' research review';
  if(summary)summary.textContent=a.summary;
  if(caveat)caveat.innerHTML='<strong>Before any trade:</strong> '+esc(a.accountWarning);
- root.innerHTML=a.actions.map((x,i)=>'<article class="ps-decision-card ps-decision-'+esc(x.key)+'"><div class="ps-decision-card-top"><span class="ps-decision-index">0'+(i+1)+'</span><span class="ps-decision-state">'+esc(x.status)+'</span></div><h3>'+esc(x.title)+'</h3><p>'+esc(x.summary)+'</p><p class="ps-decision-condition">'+esc(x.next)+'</p><a href="'+esc(x.href)+'">Decision details ↗</a></article>').join('');
+ if(a.verdict){
+   const v=a.verdict;
+   for(const [id,value] of [['ps-verdict-status',v.status],['ps-verdict-headline',v.headline],['ps-verdict-reason',v.reason],['ps-verdict-blocker',v.blocker],['ps-verdict-next','Next: '+v.nextCheck]]){
+     const el=get(id);if(el && typeof value==='string')el.textContent=value;
+   }
+ }
+ const allowedAnchors=new Set(['#portfolio-review','#investment-plan','#market-brief']);
+ root.innerHTML=a.actions.map((x,i)=>{
+   const href=allowedAnchors.has(x.href)?x.href:'#next-moves';
+   return '<article class="ps-decision-card ps-decision-'+esc(x.key)+'"><div class="ps-decision-card-top"><span class="ps-decision-index">0'+(i+1)+'</span><span class="ps-decision-state">'+esc(x.status)+'</span></div><h3>'+esc(x.title)+'</h3><p>'+esc(x.summary)+'</p><details class="ps-decision-detail"><summary>What must be true?</summary><p>'+esc(x.next)+'</p><a href="'+href+'">Full decision reasoning ↗</a></details></article>';
+ }).join('');
 }
 function renderTop(d){
  if(!d||d.contractVersion!=='power-stack-client-advisor/1')return;
