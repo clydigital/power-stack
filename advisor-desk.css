@@ -20,8 +20,8 @@ main{padding-top:16px}
 .adv-status-right{color:#93aca5}
 .adv-hero{display:grid;grid-template-columns:minmax(0,1.48fr) minmax(280px,.83fr);gap:48px;padding:46px 0 37px;align-items:end}
 .adv-overline{color:#88ceb0;font-size:11px;text-transform:uppercase;letter-spacing:1.6px;font-weight:750}
-.adv-hero h1{font-size:clamp(38px,5.15vw,68px);max-width:780px;font-weight:760;letter-spacing:-2.8px;line-height:1.035;margin:14px 0 18px;text-wrap:balance}
-.adv-hero h1 span{color:#b7e3ce}
+.adv-hero h2{font-size:clamp(38px,5.15vw,68px);max-width:780px;font-weight:760;letter-spacing:-2.8px;line-height:1.035;margin:14px 0 18px;text-wrap:balance}
+.adv-hero h2 span{color:#b7e3ce}
 .adv-hero p{max-width:640px;font-size:15px;color:#b9c8c3;line-height:1.68}
 .adv-hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0 0}
 .adv-button{appearance:none;min-height:42px;border:1px solid #3a6055;background:#20382f;color:#e8fff3;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;text-decoration:none;font-size:12px;font-weight:750;cursor:pointer;transition:background .16s ease,border-color .16s ease,transform .16s ease}
@@ -138,7 +138,7 @@ main{padding-top:16px}
  nav{gap:11px}
  nav a{font-size:11px}
  .adv-hero{padding:31px 0 24px}
- .adv-hero h1{font-size:clamp(34px,10vw,47px);letter-spacing:-1.9px}
+ .adv-hero h2{font-size:clamp(34px,10vw,47px);letter-spacing:-1.9px}
  .adv-move{grid-template-columns:35px minmax(0,1fr);gap:12px}
  .adv-move-side{grid-column:2;text-align:left;padding:0}
  .adv-move-side strong{display:inline-block;font-size:16px}
@@ -164,7 +164,7 @@ main{padding-top:16px}
  .adv-event:nth-child(4){border-top:0}
  .adv-goal-grid strong{font-size:16px}
  nav .adv-nav-cta{display:none}
- .adv-hero h1{font-size:37px}
+ .adv-hero h2{font-size:37px}
  .adv-button{flex:1 0 140px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.adv-button,.adv-money-bar>div{transition:none}}
@@ -206,7 +206,7 @@ main{padding-top:16px}
 .adv-investment-overview .adv-title-row h2{font-size:clamp(25px,3vw,33px);letter-spacing:-.05em}
 .adv-investment-overview .adv-title-row p strong{color:#e6f7eb}
 .adv-hero{padding-top:32px;padding-bottom:24px;gap:30px}
-.adv-hero h1{font-size:clamp(34px,4.3vw,55px);font-weight:850;letter-spacing:-.055em}
+.adv-hero h2{font-size:clamp(34px,4.3vw,55px);font-weight:850;letter-spacing:-.055em}
 .adv-hero p{font-size:14px;line-height:1.55}
 .adv-hero-number{background:linear-gradient(145deg,rgba(56,103,83,.18),rgba(12,22,26,.8));border:1px solid #345d4e;border-radius:18px;padding:20px 22px;box-shadow:0 16px 35px #0002}
 .adv-warning-line{background:#1a211e;border-color:#4f604b}
@@ -312,3 +312,35 @@ main{padding-top:16px}
 .adv-investigation-update>a:hover{background:#234737}
 .adv-investigation-update>a:focus-visible{outline:2px solid #c0f6d8;outline-offset:3px}
 @media(max-width:700px){.adv-investigation-update{padding:14px;gap:10px}.adv-investigation-update>a{margin-left:0}.adv-investigation-body{flex:1 1 220px}}
+
+
+/* Decision desk is the primary first-screen read; allocation and evidence follow beneath. */
+.ps-decision-brief{padding:28px 0 23px;border-bottom:1px solid var(--adv-rule);scroll-margin-top:85px}
+.ps-decision-heading{display:flex;justify-content:space-between;align-items:end;gap:14px;margin-bottom:18px}
+.ps-decision-heading h1{font-size:clamp(27px,3.5vw,41px);line-height:1.13;letter-spacing:-1.25px;margin:6px 0 7px;color:#eff8f3}
+.ps-decision-heading p{max-width:790px;margin:0;color:#afc3b8;font-size:14px;line-height:1.55}
+.ps-decision-more{flex:0 0 auto;min-height:36px;color:#a1e0c1;text-decoration:underline;text-underline-offset:4px;font-size:12px;font-weight:650}
+.ps-decision-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.ps-decision-card{min-width:0;display:flex;flex-direction:column;align-items:start;gap:8px;border:1px solid #2d4540;border-radius:13px;background:#15201e;padding:17px 16px;box-shadow:0 2px 11px rgba(0,0,0,.12)}
+.ps-decision-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%}
+.ps-decision-index{font-size:12px;font-weight:750;color:#739c8b;font-variant-numeric:tabular-nums}
+.ps-decision-state{font-size:10px;letter-spacing:.45px;text-transform:uppercase;font-weight:800;color:#e1c594;line-height:1.3;text-align:right}
+.ps-decision-prepare .ps-decision-state{color:#9de0bf}
+.ps-decision-liquid .ps-decision-state{color:#bed2cf}
+.ps-decision-wait .ps-decision-state{color:#cfb8a1}
+.ps-decision-card h3{font-size:17px;line-height:1.27;letter-spacing:-.2px;color:#edf8f0;margin:1px 0 0}
+.ps-decision-card>p{font-size:12px;line-height:1.55;color:#ccd9d2;margin:0}
+.ps-decision-card .ps-decision-condition{font-size:11px;color:#9cafaa}
+.ps-decision-card>a{margin-top:auto;padding-top:5px;font-size:11px;color:#aadfc6;text-decoration:underline;text-underline-offset:3px}
+.ps-decision-footer{display:flex;align-items:start;justify-content:space-between;gap:6px 24px;flex-wrap:wrap;padding:12px 0 0;font-size:11px;line-height:1.5;color:#abbcb6}
+.ps-decision-footer p{margin:0;max-width:850px;font-size:11px}
+.ps-decision-footer strong{color:#e3cfaa}
+.ps-decision-footer a{color:#b4dfce}
+.adv-hero{padding-top:20px}
+@media(max-width:1020px){.ps-decision-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ps-decision-heading{align-items:start}}
+@media(max-width:720px){.ps-decision-brief{padding:22px 0 17px}.ps-decision-heading{display:block}.ps-decision-more{display:inline-block;margin-top:10px}.ps-decision-card{padding:16px}}
+@media(max-width:460px){.ps-decision-grid{grid-template-columns:1fr;gap:9px}.ps-decision-card{gap:6px}.ps-decision-card .ps-decision-condition{font-size:11px}.ps-decision-footer{gap:8px}}
+
+/* The investment allocation is a supporting view, not a second hero competing with the decisions. */
+.adv-hero h2{font-size:clamp(28px,3.6vw,43px);letter-spacing:-1.55px}
+.adv-hero{gap:24px;padding-bottom:21px}

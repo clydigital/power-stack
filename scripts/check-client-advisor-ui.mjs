@@ -30,7 +30,19 @@ assert(config.manualInvestmentMandate.clientAdvisory?.neverModifyLiveCanonical==
 assert(feed.marketDataThrough==="2026-10-22");
 assert(html.includes("Nothing on this page sends orders."));
 assert(html.includes("RM13,491"));
-// Advisor V2: investment ownership is the primary screen, not an appendix table.
+// Advisor V3: recommendations must be visibly above the portfolio catalogue.
+assert(html.includes('id="decision-brief"') && html.includes('id="ps-decision-grid"'),"Missing first-screen decision desk");
+assert(html.indexOf('id="decision-brief"') < html.indexOf('id="advisor"') && html.indexOf('id="advisor"') < html.indexOf('id="investing-now"'),"Assessments must be above the capital and seven-position model");
+assert(html.includes('href="#decision-brief"') && html.includes('href="#next-moves"'),"Both quick decision and expanded rationale must be reachable");
+assert.equal(feed.quickAssessment.actions.length,4,"Exactly four actionable quick decisions");
+assert.deepEqual(feed.quickAssessment.actions.map(x=>x.key),["review","prepare","liquid","wait"]);
+assert(feed.quickAssessment.actions.every(x=>x.status && x.title && x.summary && x.next && x.href),"Quick cards require verdict, evidence and detail link");
+assert(feed.quickAssessment.mandateAsOf==="23 Oct 2026" && feed.quickAssessment.assessedOn==="27 Oct 2026","Don't misdate inherited recommendations");
+assert(feed.quickAssessment.accountWarning.includes("not confirmed available cash"),"Buying power must be marked unverified");
+for (const x of feed.quickAssessment.actions) assert(html.includes(x.title),"No-JS first screen must match authored recommendation");
+assert(js.includes("function renderQuickAssessment(d)") && js.includes("renderQuickAssessment(d);"),"Feed must update visible quick actions");
+assert(css.includes(".ps-decision-grid") && css.includes(".ps-decision-card"),"Quick assessment styling missing");
+// Advisor V2: the investment ownership model is still accessible below the decision brief, not an appendix table.
 assert(html.includes('id="investing-now"')&&html.includes('id="adv-investment-cards"'),"Missing visual seven-position investment explorer");
 assert(html.indexOf('id="investing-now"')<html.indexOf('id="next-moves"'),"What is owned must precede the action queue");
 assert(html.indexOf('id="next-moves"')<html.indexOf('id="market-brief"')&&html.indexOf('id="market-brief"')<html.indexOf('id="investment-plan"'),"Actions then macro implications then detailed ledger");
