@@ -39,6 +39,33 @@ function renderQuickAssessment(d){
    return '<article class="ps-decision-card ps-decision-'+esc(x.key)+'"><div class="ps-decision-card-top"><span class="ps-decision-index">0'+(i+1)+'</span><span class="ps-decision-state">'+esc(x.status)+'</span></div><h3>'+esc(x.title)+'</h3><p>'+esc(x.summary)+'</p><details class="ps-decision-detail"><summary>What must be true?</summary><p>'+esc(x.next)+'</p><a href="'+href+'">Full decision reasoning ↗</a></details></article>';
  }).join('');
 }
+function renderDeepDecision(d){
+ const state=d?.deepDecision;
+ if(!state||state.schema!=='power-stack-evidence-led-decision/1')return;
+ const safeHref=url=>{
+   const u=String(url||'');
+   return /^https:\/\//.test(u)||/^(data|research)\/[A-Za-z0-9_./-]+$/.test(u)?esc(u):'#new-since';
+ };
+ const link=url=>'<a href="'+safeHref(url)+'" target="_blank" rel="noopener noreferrer">Underlying evidence ↗</a>';
+ const strip=get('ps-evidence-strip');
+ if(strip){strip.innerHTML='<a href="'+safeHref(state.coverage?.source)+'">MacroPulse Gate '+esc(state.coverage?.fullyRead)+'/'+esc(state.coverage?.eligible)+' read · '+esc(state.coverage?.state)+'</a><span>'+esc(state.coverage?.companyTracker)+'</span><span>Rakuten holdings / cash not verified</span><span>US prices: '+esc(state.newestRegularClose)+' close</span>';}
+ const change=x=>'<article class="ps-change-item"><div class="ps-item-eyebrow"><span>'+esc(x.date)+'</span><span>'+esc(x.status)+'</span><span>'+esc(x.impact)+' impact</span></div><h3>'+esc(x.title)+'</h3><p>'+esc(x.fact)+'</p><p class="ps-impact"><b>Portfolio:</b> '+esc(x.portfolio)+'</p><details><summary>Countercase and source</summary><p>'+esc(x.counter)+'</p>'+link(x.source)+'</details></article>';
+ const news=get('ps-new-items');
+ if(news&&Array.isArray(state.changes))news.innerHTML=state.changes.slice(0,5).map(change).join('');
+ const extra=get('ps-extra-changes');
+ if(extra&&Array.isArray(state.changes))extra.innerHTML='<summary>Another verified change · Meta financing</summary>'+state.changes.slice(5).map(change).join('');
+ const call=x=>'<article class="ps-call-card"><div class="ps-call-top"><strong>'+esc(x.symbol)+'</strong><span>'+esc(x.action)+'</span></div><p class="ps-call-why">'+esc(x.why)+'</p><details><summary>Countercase, decision gate and evidence</summary><p><b>Counter:</b> '+esc(x.counter)+'</p><p><b>Reassess when:</b> '+esc(x.gate)+'</p>'+link(x.source)+'</details></article>';
+ const sec=get('ps-security-calls');
+ if(sec&&Array.isArray(state.calls)){
+   const existing=state.calls.filter(x=>x.type==='EXISTING');
+   const targets=state.calls.filter(x=>x.type==='MODEL TARGET');
+   sec.innerHTML='<h3 class="ps-call-subtitle">Existing holdings · review before buying</h3><div class="ps-call-grid">'+existing.map(call).join('')+'</div><h3 class="ps-call-subtitle">Research targets · conditional capital allocation</h3><div class="ps-call-grid">'+targets.map(call).join('')+'</div>';
+ }
+ const event=x=>'<article class="ps-event-card"><div class="ps-item-eyebrow"><span>'+esc(x.status)+'</span><span>ET '+esc(x.dateET)+'</span></div><h3>'+esc(x.name)+'</h3><p class="ps-event-time">MYT '+esc(x.dateMYT)+' · '+esc(x.timeMYT)+'</p><p><b>Impacts:</b> '+esc(x.affects)+'</p><details><summary>What result would change the call?</summary><p>'+esc(x.check)+'</p>'+link(x.source)+'</details></article>';
+ const ev=get('ps-event-cards'),extraEv=get('ps-more-events');
+ if(ev&&Array.isArray(state.catalysts))ev.innerHTML=state.catalysts.slice(0,5).map(event).join('');
+ if(extraEv&&Array.isArray(state.catalysts))extraEv.innerHTML='<summary>More catalysts · TSMC monthly sales and Tesla merger watch</summary>'+state.catalysts.slice(5).map(event).join('');
+}
 function renderTop(d){
  if(!d||d.contractVersion!=='power-stack-client-advisor/1')return;
  const title=get('adv-hero-title'),desc=get('adv-hero-description');
@@ -167,8 +194,8 @@ function renderResearch(d){
   lens.splice(1,0,{name:'AI funding',caption:'Capital spending versus financing',body:'Separate paid chip demand from customers’ ability to fund AI build-outs.',role:'What it means: TSM / existing tech exposure',impact:'Prefer confirmed earnings and funded demand to chasing AI share-price rallies.',icon:'chip',source:'research/2026-10-14-ai-financing-picks-shovels.md',date:'14 Oct thesis'},{name:'Oil and inflation',caption:'Energy shortages can complicate rate cuts',body:'Gulf supply and fuel-price shocks can sustain inflation even while equities sell off.',role:'What it means: XOM / MISC / HIBISCS / Treasuries',impact:'Check energy concentration and whether inflation threatens the bond case.',icon:'flame',source:'research/2026-10-22-market-danger-risk-regime-deep-update.md',date:'22 Oct research'});
   market.innerHTML=lens.map(x=>'<article class="adv-insight"><span class="adv-insight-icon">'+psIcon(x.icon)+'</span><strong>'+esc(x.name)+'</strong><small>'+esc(x.caption)+' · '+esc(x.date)+'</small><p>'+esc(x.body)+'</p><div class="adv-implication">'+esc(x.role)+'<br>'+esc(x.impact)+'</div><a href="'+esc(x.source)+'" target="_blank" rel="noopener noreferrer">Underlying source ↗</a></article>').join('');
  }
- if(cal&&Array.isArray(d?.calendar))cal.innerHTML=d.calendar.map(x=>'<div class="adv-event"><span class="adv-overline">'+esc(x.date)+'</span><strong>'+esc(x.name)+'</strong><p>'+esc(x.why)+'</p></div>').join('');
- const guide=get('adv-signal-advice');if(guide&&d?.outlook?.whatChanges)guide.textContent='These are '+fmtDate(d.asOf)+' research views, not live market signals. '+d.outlook.whatChanges+' Live Desk owns canonical macro evidence; Bluebelly is its presentation layer.';
+ if(cal&&Array.isArray(d?.deepDecision?.catalysts))cal.innerHTML=d.deepDecision.catalysts.filter(x=>x.status!=='UNSCHEDULED / EVENT WATCH').slice(0,5).map(x=>'<div class="adv-event"><span class="adv-overline">'+esc(x.dateMYT)+' MYT · '+esc(x.status)+'</span><strong>'+esc(x.name)+'</strong><p>'+esc(x.check)+'</p></div>').join('');
+ const guide=get('adv-signal-advice');if(guide&&d?.outlook?.whatChanges)guide.textContent='These are '+fmtDate(d.asOf)+' research views, not live market signals. '+d.outlook.whatChanges+' Bluebelly is the intended canonical user-facing research successor; MacroPulse and Research Gap remain evidence discovery sources, not order execution.';
 }
 function applyFilters(){
  const buttons=[...document.querySelectorAll('[data-adv-filter]')],root=get('adv-idea-list');
@@ -190,7 +217,7 @@ function handleCopy(){
 }
 async function load(){
  const [d,m]=await Promise.all([fetchJson('data/client-advisor.json'),fetchJson('data/rakuten-one-year-mandate.json')]);
- if(d&&d.contractVersion==='power-stack-client-advisor/1'){renderTimestamp(d);renderQuickAssessment(d);renderTop(d);renderMoves(d);renderOpportunity(d);renderResearchRadar(d);renderPortfolio(d);renderResearch(d)}
+ if(d&&d.contractVersion==='power-stack-client-advisor/1'){renderTimestamp(d);renderQuickAssessment(d);renderDeepDecision(d);renderTop(d);renderMoves(d);renderOpportunity(d);renderResearchRadar(d);renderPortfolio(d);renderResearch(d)}
  else{const s=get('adv-research-status');if(s)s.textContent='Live decision data unavailable · dated plan below requires new verification';}
  renderInvestmentOverview(m);
  if(m&&m.schema==='power-stack-manual-investment-mandate/v1')renderAllocation(m);
