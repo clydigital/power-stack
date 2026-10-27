@@ -1,14 +1,14 @@
 {
   "contractVersion": "power-stack-client-advisor/1",
-  "asOf": "2026-10-23T06:30:00+08:00",
-  "marketDataThrough": "2026-10-22",
-  "heading": "Your next move starts with the money you already own.",
-  "standfirst": "A one-year investment plan to grow RM13,491, recycle weak positions and buy better opportunities as their evidence improves.",
+  "asOf": "2026-10-27T09:12:00+08:00",
+  "marketDataThrough": "2026-10-26",
+  "heading": "What deserves capital after the latest evidence?",
+  "standfirst": "Fresh investment decisions, not automatic orders. Separate new events from source-date gaps and the old 23 October mandate.",
   "outlook": {
-    "label": "Selective opportunities · elevated risk",
-    "summary": "Stocks are rotating away from crowded AI names as Treasuries attract safety buying. That creates bond entry opportunities and a reason to look beyond technology. Oil and sovereign-debt pressures can still reverse the move.",
-    "asOf": "2026-10-23",
-    "whatChanges": "A new earnings report, policy surprise, yield reversal or valuation change can replace today's recommended candidates. The market view is evidence-led, not frozen by an older research dossier."
+    "label": "AI financing stress, healthy chip demand, unresolved inflation",
+    "summary": "Tesla's possible SpaceX combination requires a transaction valuation, not a headline trim. TSMC's Q3 supports the operating thesis; Broadcom/Anthropic financing raises residual-value questions. UST yields near 5% and physical Gulf energy risks make bond entries conditional.",
+    "asOf": "2026-10-27",
+    "whatChanges": "Post-Fed nominal and real yields; hyperscaler earnings and genuine customer-paid compute; original merger terms; issuer cash-flow evidence; reconciled brokerage cash."
   },
   "capital": {
     "totalMYR": 13491,
@@ -30,50 +30,50 @@
     {
       "id": "funding",
       "number": "01",
-      "label": "FIRST MOVE",
-      "title": "Decide which existing holdings still deserve capital",
-      "decision": "CONDITIONAL ACTIONS",
+      "label": "EXISTING HOLDINGS FIRST",
+      "title": "Review concentration and deal exposure before changing the portfolio",
+      "decision": "RE-UNDERWRITE; NO ORDER",
       "tone": "caution",
       "amountMYR": null,
-      "description": "DAYANG: test for a full exit if its operating case is still weak. TSLA: only trim above a proposed 5% weight. YTL Power and 6742UW: verify warrant terms and consider a combined 20% exposure cap.",
-      "do": "Check actual Rakuten quantities, updated issuer results, warrant terms and executable prices. Determine exact sale quantities only after the account is reconciled.",
-      "notYet": "Historical positions and RM13,491 total NAV do not establish how much free cash is available.",
-      "anchor": "#portfolio-review"
+      "description": "Historical YTL Power exposure may dominate NAV; its 6742UW warrant adds unpriced leverage. Tesla's SpaceX committee changes the risk case without proving dilution or a value-accretive merger. DAYANG is an operating-thesis review.",
+      "do": "Reconcile actual broker positions and warrant terms; evaluate YTL's debt/contracts, Tesla merger exchange terms and DAYANG order flow. Do not force sales based on 2 October quantities.",
+      "notYet": "No verified current account weights, free cash, warrant value or agreed merger terms.",
+      "anchor": "#security-decisions"
     },
     {
       "id": "duration",
       "number": "02",
-      "label": "BEST FIRST BUY IDEA",
-      "title": "Start with intermediate US Treasuries",
-      "decision": "BUY IN STAGES",
-      "tone": "positive",
+      "label": "PREPARE NOT BUY",
+      "title": "Choose between intermediate Treasuries and a valued TSMC starter",
+      "decision": "CONDITIONAL ENTRIES",
+      "tone": "conditional",
       "amountMYR": 2000,
       "totalTargetMYR": 4047,
       "symbol": "VGIT",
-      "description": "Treasury bonds have begun providing protection during technology selling. VGIT takes less long-rate risk than TLT.",
-      "do": "Prepare RM2,000 initial VGIT exposure, then RM2,047 only if post-Fed yields and USD/MYR still support the case.",
-      "notYet": "Requires proceeds or verified cash, next-session quote, ETF availability and duration/FX check.",
-      "anchor": "#investment-plan"
+      "description": "VGIT RM2,000 is a possible first bond stage after rates/FX checks; TSM's RM1,214 target becomes a conditional entry candidate after hyperscaler results and same-listing valuation.",
+      "do": "Compare prospective net MYR returns and downside for VGIT versus TSM. Check Fed, 5Y auction, 10Y real yields, TSM valuation, customer capex, live FX and broker cash first.",
+      "notYet": "Neither candidate has a verified executable entry or cash budget.",
+      "anchor": "#security-decisions"
     },
     {
       "id": "cash",
       "number": "03",
       "label": "KEEP FLEXIBILITY",
-      "title": "Leave room for better prices",
-      "decision": "KEEP LIQUID",
+      "title": "Preserve capacity for post-earnings repricing",
+      "decision": "HOLD LIQUIDITY",
       "tone": "neutral",
       "amountMYR": 3373,
-      "description": "RM2,024 remains in MYR and RM1,349 is earmarked for SGOV if broker access, taxes and FX make sense.",
-      "do": "Don't deploy idle cash because the market is moving. Use it when another investment has passed the earnings and price tests.",
-      "notYet": "SGOV is a USD T-bill ETF, not MYR cash or a guaranteed 5% deposit.",
-      "anchor": "#investment-plan"
+      "description": "RM2,024 MYR is a model reserve, not a confirmed settlement cash balance; RM1,349 SGOV is separate possible USD liquidity exposure.",
+      "do": "Compare cash versus SGOV after tax, brokerage and currency costs. CF Nov 4 and broader market breadth are later decision gates.",
+      "notYet": "Do not double count SGOV and ringgit cash or fund purchases before reconciled cash.",
+      "anchor": "#catalyst-window"
     }
   ],
   "opportunities": [
     {
       "symbol": "VGIT",
       "name": "Intermediate US Treasury ETF",
-      "action": "BUY STARTER",
+      "action": "PREPARE STARTER AFTER RATE GATE",
       "tone": "positive",
       "group": "Bonds",
       "targetMYR": 4047,
@@ -81,7 +81,7 @@
       "remainingMYR": 2047,
       "priceReference": "22 Oct 2026 close · USD 57.45",
       "case": "Income plus moderate potential price gains if US yields keep falling.",
-      "buyWhen": "After checking the next executable price, Treasury real yields and USD/MYR. Second tranche after the 27–28 October Fed meeting if the bond thesis survives.",
+      "buyWhen": "FOMC 28 October US time, 5Y/10Y nominal+real yields, oil/breakevens, USD/MYR, Rakuten buying power and ETF eligibility must be checked. RM2,000 is unfunded planning.",
       "sellWhen": "Review after a substantial yield decline or if real yields and term premium begin rising persistently.",
       "risk": "Currency movements and duration losses; not principal-guaranteed.",
       "nextEvent": "27–28 Oct · US FOMC",
@@ -158,19 +158,20 @@
     {
       "symbol": "TSM",
       "name": "Taiwan Semiconductor (ADR)",
-      "action": "WAIT FOR ENTRY",
-      "tone": "neutral",
+      "action": "STAGED ENTRY CANDIDATE",
+      "tone": "conditional",
       "group": "Stocks",
       "targetMYR": 1214,
       "firstStageMYR": 1214,
       "remainingMYR": 0,
       "priceReference": "22 Oct 2026 close · USD 412.35",
-      "case": "Exceptional actual Q3 revenue and margins, but semiconductor valuations and AI credit concerns remain exposed.",
-      "buyWhen": "Funded chip demand remains solid and sector breadth/valuation stabilise. Need a post-sell-off entry price, not an automatic dip buy.",
+      "case": "Q3 issuer revenue, operating margin and cash conversion remain strong; valuation and expected returns determine whether a new TSM ADR purchase is justified.",
+      "buyWhen": "After 28–29 October hyperscaler results, verify current ADR earnings/FCF valuation, USD/MYR, paid leading-edge orders and market breadth. RM1,214 is a model cap, not funding or an order.",
       "sellWhen": "Reduce if advanced-node cash generation, bookings or balance-sheet outlook break.",
       "risk": "Sector crowding, geopolitics and high valuation sensitivity.",
       "nextEvent": "Next operating update and sector confirmation",
-      "source": "https://investor.tsmc.com/english/quarterly-results/2026/q3"
+      "source": "https://investor.tsmc.com/english/quarterly-results/2026/q3",
+      "nextCheckpoint": "28–29 Oct 2026 hyperscaler prints; 10 Nov 2026 TSMC October sales"
     }
   ],
   "legacyActions": [
@@ -373,58 +374,424 @@
     "assessedOn": "27 Oct 2026",
     "mandateAsOf": "23 Oct 2026",
     "headline": "What I would do now",
-    "summary": "One decision, four actions. Detailed research is below.",
-    "accountWarning": "RM13,491 is total proposed account capital, not confirmed available cash. Confirm Rakuten holdings, buying power and live quotes before any order.",
+    "summary": "New evidence changes the ranking; nothing here automatically buys or sells.",
+    "accountWarning": "RM13,491 is total proposed account capital, not confirmed available cash. Broker holdings, warrant terms and live quotes are not yet reconciled.",
     "sourceLinks": [
       {
-        "label": "23 Oct portfolio mandate",
+        "label": "Deep decision refresh",
+        "url": "research/2026-10-27-deep-decision-refresh-plan.md"
+      },
+      {
+        "label": "MacroPulse Gap, partial",
+        "url": "https://app.notion.com/p/406519b67a9481ca9874e9ba45b77e00"
+      },
+      {
+        "label": "Model mandate",
         "url": "data/rakuten-one-year-mandate.json"
-      },
-      {
-        "label": "27 Oct AI risk assessment",
-        "url": "research/2026-10-27-traders-reality-ai-crash-risk-reassessment.md"
-      }
-    ],
-    "actions": [
-      {
-        "key": "review",
-        "status": "REVIEW",
-        "title": "DAYANG · TSLA · YTL",
-        "summary": "Check exits, sizing and the warrant before funding anything new.",
-        "next": "DAYANG earnings/exit thesis; TSLA weight; YTLPOWR + 6742UW total exposure and warrant terms. No sale quantity until broker holdings are checked.",
-        "href": "#portfolio-review"
-      },
-      {
-        "key": "prepare",
-        "status": "PREPARE",
-        "title": "VGIT · RM2,000",
-        "summary": "Preferred staged entry candidate, not a trade order.",
-        "next": "First verify actual buying power, ETF eligibility, 2–10Y yields, USD/MYR and broker costs. Do not enter only because yields dipped.",
-        "href": "#investment-plan"
-      },
-      {
-        "key": "liquid",
-        "status": "KEEP",
-        "title": "RM2,024 in MYR",
-        "summary": "Preserve reserve; SGOV RM1,349 is a separate USD option.",
-        "next": "Keep MYR cash uncommitted. SGOV is subject to US ETF eligibility, FX charges and tax; it is not MYR cash.",
-        "href": "#investment-plan"
-      },
-      {
-        "key": "wait",
-        "status": "WAIT",
-        "title": "TSM · CF · TLT",
-        "summary": "Wait for sector, earnings and long-yield confirmation.",
-        "next": "TSM: valuation and chip/credit stabilisation. CF: 4 Nov results and nitrogen/gas margin. TLT: post-Fed long yields and inflation premium.",
-        "href": "#market-brief"
       }
     ],
     "verdict": {
       "status": "NO NEW ORDER CLEARED",
-      "headline": "Review holdings first. Prepare, don't chase.",
-      "reason": "AI financing stress is selective; a demand collapse is not proven. New purchases still need price, yield and cash checks.",
-      "blocker": "Broker cash, quantities, current quotes and the 6742UW contract are not yet reconciled.",
-      "nextCheck": "27–28 Oct Fed decision · 4 Nov CF earnings"
+      "headline": "Review concentration. Put TSM and VGIT on deck.",
+      "reason": "TSLA's merger committee is real but deal economics are unknown. TSMC Q3 cash generation supports the company, while rates and AI financing still require selectivity.",
+      "blocker": "Broker cash, quantities, FX, deal terms and warrant 6742UW are not yet reconciled.",
+      "nextCheck": "28 Oct Fed + MSFT/Alphabet · 29 Oct Amazon · 4 Nov CF"
+    },
+    "actions": [
+      {
+        "key": "review",
+        "status": "REVIEW",
+        "title": "YTL / TSLA / DAYANG",
+        "summary": "Concentration, merger terms and contract strength come first.",
+        "next": "YTL + warrant combined weight may be large; use verified Rakuten quantities. TSLA: wait for terms, model dilution and combined FCF. DAYANG: inspect orders, earnings and opportunity cost.",
+        "href": "#security-decisions"
+      },
+      {
+        "key": "prepare",
+        "status": "PREPARE",
+        "title": "TSM · RM1,214 / VGIT · RM2,000",
+        "summary": "Two different conditional candidates; compare return after FX.",
+        "next": "TSM: current ADR valuation and post-hyperscaler cash capex. VGIT: nominal/real yields after the Fed, inflation sensitivity and actual buying power. No cash committed.",
+        "href": "#security-decisions"
+      },
+      {
+        "key": "liquid",
+        "status": "KEEP",
+        "title": "RM2,024 MYR reserve",
+        "summary": "Model reserve only; SGOV RM1,349 is a separate USD option.",
+        "next": "Check fees, yield, tax and FX and do not mistake the target reserve for verified Rakuten balance.",
+        "href": "#investment-plan"
+      },
+      {
+        "key": "wait",
+        "status": "WATCH",
+        "title": "Fed · Big Tech · CF",
+        "summary": "Upcoming results can reverse today's preferred entry.",
+        "next": "Use exact issuer publication times and compare capex, CFO, paid AI usage, demand, cash returns, 5Y/10Y yields and nitrogen-versus-gas spreads.",
+        "href": "#catalyst-window"
+      }
+    ]
+  },
+  "deepDecision": {
+    "schema": "power-stack-evidence-led-decision/1",
+    "preparedAtMyt": "2026-10-27T09:12:00+08:00",
+    "newestRegularClose": "2026-10-26",
+    "exchangeCloseWarning": "26 Oct US regular closes; none is a 27 Oct executable broker quote. Only TSLA/TSM/VGIT/TLT/CF/RSP/SGOV quoted below.",
+    "capitalMYR": 13491,
+    "mandateDate": "2026-10-23",
+    "cashVerified": false,
+    "positionsVerified": false,
+    "executionsAllowed": false,
+    "coverage": {
+      "lastGate": "2026-10-27 08:40 MYT",
+      "state": "PARTIAL",
+      "eligible": 46,
+      "fullyRead": 8,
+      "unconsumed": 38,
+      "companyTracker": "16/16 company checkpoints read back",
+      "canonicalDossier": "UNAVAILABLE",
+      "source": "https://app.notion.com/p/406519b67a9481ca9874e9ba45b77e00",
+      "meaning": "Latest Gate only read 8 of 46 eligible MacroPulse posts. Separate direct issuer verification partly compensates; do not label comprehensive or automatically approve orders."
+    },
+    "mainVerdict": "Reconcile YTL+warrant risk first; TSLA becomes a deal-underwriting HOLD. TSMC earns a valuation-gated entry review; VGIT is a conditional post-Fed starter.",
+    "eventCutoff": "09:12 MYT 27 Oct 2026; US closing bar 26 Oct. Later results not assumed.",
+    "changes": [
+      {
+        "id": "tsla-merger",
+        "date": "2026-10-21",
+        "status": "PRIMARY CONFIRMED",
+        "impact": "HIGH",
+        "title": "Tesla formed an independent committee for possible SpaceX ties",
+        "fact": "A combination is explicitly being explored; there is no agreed merger, price, exchange ratio or approval. Tesla Q3 cash generation improved, but SpaceX 9M cash PP&E exceeded operating cash by ~$35bn.",
+        "portfolio": "TSLA: replace rule-of-thumb trim with event underwriting; check actual weight before deciding exposure.",
+        "actionChanged": true,
+        "counter": "Fair terms and capital synergies could create value, while holding no new money avoids paying the rumour premium.",
+        "source": "https://ir.tesla.com/_flysystem/s3/sec/000162828026066775/tsla-20260930-gen.pdf"
+      },
+      {
+        "id": "tsmc-q3",
+        "date": "2026-10-15",
+        "status": "PRIMARY CONFIRMED",
+        "impact": "HIGH",
+        "title": "TSMC reported strong Q3 earnings and cash generation",
+        "fact": "US$46.72bn revenue (+41.2% YoY), 66.4% gross margin; Q3 CFO NT$919.77bn less cash capex NT$443.21bn = simple FCF NT$476.56bn. Latest 26 Oct ADR close US$424.37.",
+        "portfolio": "TSM: upgraded from blanket WAIT to conditional staged-entry candidate, subject to earnings/FCF valuation and customers' Q4 capex.",
+        "actionChanged": true,
+        "counter": "High-quality earnings can still deliver poor forward shareholder returns when valuation/cycle/geopolitical risks are high.",
+        "source": "https://pr.tsmc.com/english/news/3346"
+      },
+      {
+        "id": "anthropic-avgo",
+        "date": "2026-10-26",
+        "status": "PRIMARY ANNOUNCEMENT / TERMS PARTIAL",
+        "impact": "HIGH",
+        "title": "Broadcom and banks announced US$63bn Anthropic hardware SPV",
+        "fact": "Bank first-lien, Blackstone second-lien and Broadcom residual-value support; actual draw, first-lien size and lease economics unverified.",
+        "portfolio": "AI crash: financed demand still exists, but collateral/obsolescence and circular financing require credit scrutiny.",
+        "actionChanged": true,
+        "counter": "Loan structure may reflect efficient financing of genuine, cash-paying workloads rather than a bubble.",
+        "source": "https://investors.broadcom.com/news-releases/news-release-details/bank-america-blackstone-citi-and-morgan-stanley-announce"
+      },
+      {
+        "id": "rates",
+        "date": "2026-10-26",
+        "status": "PRIMARY DATED CLOSE",
+        "impact": "HIGH",
+        "title": "US Treasury 10Y remained around 5%; real 10Y 2.66%",
+        "fact": "Treasury 2/5/10/20/30Y 4.68/4.84/5.00/5.35/5.31%; 26 Oct 2Y auction high 4.708% and 2.59 bid/cover. An auction yield alone is not a matched price reaction.",
+        "portfolio": "VGIT entry still needs post-Fed rate/FX tests; TLT could fail as a hedge if oil inflation/term premium stay elevated.",
+        "actionChanged": false,
+        "counter": "A growth shock could still favour duration even without immediate Fed cuts.",
+        "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610"
+      },
+      {
+        "id": "hormuz",
+        "date": "2026-10-27",
+        "status": "OBSERVED AIS / FLOW UNVERIFIED",
+        "impact": "MEDIUM",
+        "title": "Hormuz AIS counts improved modestly, not proven cargo exports",
+        "fact": "33 rolling 24h all-vessel crossings at source observed 26 Oct 21:31 UTC; 185 vs 173 in preceding complete seven UTC days. Not oil barrels, vessel loads or clean LNG export proof.",
+        "portfolio": "Do not dump XOM/MISC/HIBISCS solely on improving AIS ship counts; assess distinct operating cash drivers.",
+        "actionChanged": false,
+        "counter": "Better port/export deliveries and falling war premium could still hurt some energy positions.",
+        "source": "https://app.notion.com/p/405519b67a94812dbc66ebb8217596dc"
+      },
+      {
+        "id": "meta-financing",
+        "date": "2026-10-26",
+        "status": "ISSUER LAUNCH, NOT CLOSED CAPITAL",
+        "impact": "HIGH",
+        "title": "Meta launched ~$35bn offerings and contemplated more",
+        "fact": "US$22.5bn common forward and ~$12.5bn mandatory convertible; additional US$60bn ATM not yet established. Not US$95bn proceeds in the bank.",
+        "portfolio": "Track financing terms and ownership dilution versus actual advertising/AI cash return, not just capex headlines.",
+        "actionChanged": false,
+        "counter": "Meta advertising cash generation makes its risk different from debt-dependent neocloud projects.",
+        "source": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Announces-Launch-of-Offering-of-Depositary-Shares-Representing-Series-A-Mandatory-Convertible-Preferred-Stock-and-Offering-of-Class-A-Common-Stock-in-Connection-with-Forward-Sale-Agreements/default.aspx"
+      }
+    ],
+    "quotes": [
+      {
+        "symbol": "TSLA",
+        "usd": 391.62,
+        "close": "2026-10-26",
+        "provider": "Finnhub",
+        "source": "https://finnhub.io/docs/api/quote"
+      },
+      {
+        "symbol": "TSM",
+        "usd": 424.37,
+        "close": "2026-10-26",
+        "provider": "Finnhub",
+        "source": "https://finnhub.io/docs/api/quote"
+      },
+      {
+        "symbol": "VGIT",
+        "usd": 57.39,
+        "close": "2026-10-26",
+        "provider": "Finnhub",
+        "source": "https://finnhub.io/docs/api/quote"
+      },
+      {
+        "symbol": "TLT",
+        "usd": 81.68,
+        "close": "2026-10-26",
+        "provider": "Finnhub",
+        "source": "https://finnhub.io/docs/api/quote"
+      },
+      {
+        "symbol": "CF",
+        "usd": 120.84,
+        "close": "2026-10-26",
+        "provider": "Finnhub",
+        "source": "https://finnhub.io/docs/api/quote"
+      },
+      {
+        "symbol": "RSP",
+        "usd": 217.29,
+        "close": "2026-10-26",
+        "provider": "Finnhub",
+        "source": "https://finnhub.io/docs/api/quote"
+      },
+      {
+        "symbol": "SGOV",
+        "usd": 100.67,
+        "close": "2026-10-26",
+        "provider": "Finnhub",
+        "source": "https://finnhub.io/docs/api/quote"
+      }
+    ],
+    "calls": [
+      {
+        "symbol": "YTLPOWR + 6742UW",
+        "type": "EXISTING",
+        "action": "CONCENTRATION REVIEW",
+        "level": "FIRST",
+        "why": "Archived YTLPOWR position RM5,290 (~39.2% of mandate) before unpriced warrant, if unchanged. AI power demand real but capital and customer contracts must cash-convert.",
+        "counter": "Contracted power plus grid scarcity can support longer-run value; avoid indiscriminate exits.",
+        "gate": "Confirm broker quantity, warrant expiry/strike/delta, company debt, PPA economics and actual combined account weight.",
+        "source": "data/holdings-fundamentals.json"
+      },
+      {
+        "symbol": "TSLA",
+        "type": "EXISTING",
+        "action": "EVENT HOLD / NO CHASE",
+        "level": "HIGH",
+        "why": "Independent merger committee and Tesla cash resilience; no signed terms. Price US$391.62 on 26 Oct after deal optimism.",
+        "counter": "A fair combination may create synergies; SpaceX's investment/FCF needs and dilution could destroy value.",
+        "gate": "Signed terms, independent fairness, exchange ratio, combined net debt/FCF and actual portfolio weight. No automatic trim.",
+        "source": "https://ir.tesla.com/_flysystem/s3/sec/000162828026066775/tsla-20260930-gen.pdf"
+      },
+      {
+        "symbol": "DAYANG",
+        "type": "EXISTING",
+        "action": "EXIT THESIS REVIEW",
+        "level": "HIGH",
+        "why": "Archived thesis questioned offshore utilisation/orders; opportunity cost relative to TSM, bonds and cash.",
+        "counter": "Higher offshore spending can revive utilisation and earnings.",
+        "gate": "Most recent Bursa work orders, realised margins, same-session bid and verified position weight.",
+        "source": "data/holdings-fundamentals.json"
+      },
+      {
+        "symbol": "XOM / MISC / HIBISCS",
+        "type": "EXISTING",
+        "action": "DIFFERENTIATED HOLD",
+        "level": "MEDIUM",
+        "why": "Producer/refining cash, tanker charter economics and upstream Malaysian field yields react differently to Gulf disruptions.",
+        "counter": "Risk-premium compression or a supply recovery can reduce realised earnings.",
+        "gate": "Issuer cash FCF/fixtures/offshore production vs dated Brent/diesel/LNG and actual account concentration.",
+        "source": "https://app.notion.com/p/405519b67a94812dbc66ebb8217596dc"
+      },
+      {
+        "symbol": "TTWO",
+        "type": "EXISTING",
+        "action": "HOLD / EVENT VERIFY",
+        "level": "MEDIUM",
+        "why": "GTA launch-driven case differs from AI financing; valuation and delays matter.",
+        "counter": "Release delays or expensive pricing can undermine upside.",
+        "gate": "Original company release calendar, release economics, latest price/weight.",
+        "source": "data/holdings-fundamentals.json"
+      },
+      {
+        "symbol": "TSM",
+        "type": "MODEL TARGET",
+        "action": "VALUATION-GATED STAGED ENTRY",
+        "level": "HIGH",
+        "modelMYR": 1214,
+        "why": "Strong Q3 cash-generative advanced-node chip demand; US$424.37 26 Oct ADR, not a bargain verdict.",
+        "counter": "Overpaying a premium multiple, Taiwan concentration, or a 2027 AI customer capex slowdown.",
+        "gate": "Hyperscaler 28–29 Oct reports, same-listing forward EPS/FCF multiple and estimate revisions, FX, entry/stop and cash source.",
+        "source": "https://pr.tsmc.com/english/news/3346"
+      },
+      {
+        "symbol": "VGIT",
+        "type": "MODEL TARGET",
+        "action": "PREPARE POST-FED",
+        "level": "HIGH",
+        "modelMYR": 4047,
+        "stageMYR": 2000,
+        "why": "Intermediate US Treasuries avoid some long-end sensitivity; 26 Oct close $57.39.",
+        "counter": "Oil inflation and higher real yields could cause losses despite equity selloff.",
+        "gate": "FOMC, new 5/10Y yields, inflation compensation, USD/MYR, ETF costs and verified buying power.",
+        "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610"
+      },
+      {
+        "symbol": "TLT",
+        "type": "MODEL TARGET",
+        "action": "WAIT / TACTICAL ONLY",
+        "level": "MEDIUM",
+        "modelMYR": 1349,
+        "why": "Long Treasury duration may benefit from disinflationary growth slowdown.",
+        "counter": "Long-term supply/term premium/oil inflation can erase expected hedge payoff.",
+        "gate": "After Fed 20/30Y nominal/real yields and stress +50bp before commitment.",
+        "source": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610"
+      },
+      {
+        "symbol": "CF",
+        "type": "MODEL TARGET",
+        "action": "WAIT FOR 4 NOV RESULTS",
+        "level": "MEDIUM",
+        "modelMYR": 1889,
+        "why": "Nitrogen cash flow diversifies AI but gas input prices may squeeze the margin.",
+        "counter": "Low-priced gas and strong nitrogen pricing support durable returns.",
+        "gate": "4 Nov after-close issuer results and 5 Nov call; CFO/FCF, nitrogen-minus-gas spread, capex and valuation.",
+        "source": "https://ir.cfindustries.com/Investors/news/news-details/2026/CF-Industries-Holdings-Inc--Declares-Quarterly-Dividend-and-Confirms-Dates-for-Third-Quarter-2026-Results-and-Conference-Call/default.aspx"
+      },
+      {
+        "symbol": "RSP",
+        "type": "MODEL TARGET",
+        "action": "WAIT FOR EARNINGS BREADTH",
+        "level": "MEDIUM",
+        "modelMYR": 1619,
+        "why": "Equal weight can diversify megacap concentration.",
+        "counter": "A broad macro slowdown pressures cyclical companies even with lower mega-cap concentration.",
+        "gate": "RSP/SPY breadth and revised forward earnings yield versus Treasuries, FX/costs.",
+        "source": "research/2026-10-27-deep-decision-refresh-plan.md"
+      },
+      {
+        "symbol": "SGOV / MYR",
+        "type": "MODEL TARGET",
+        "action": "RETAIN OPTIONALITY",
+        "level": "HIGH",
+        "modelMYR": 3373,
+        "why": "Model RM2,024 MYR and RM1,349 SGOV, not confirmed cash; retain ability to respond to earnings repricing.",
+        "counter": "USD liquidity can carry tax/FX cost while MYR cash has different opportunity cost.",
+        "gate": "Broker eligibility, distribution taxes, live net USD yield, actual MYR cash and transaction costs.",
+        "source": "data/rakuten-one-year-mandate.json"
+      }
+    ],
+    "catalysts": [
+      {
+        "id": "fomc",
+        "dateET": "2026-10-28",
+        "timeET": "14:00 EDT",
+        "dateMYT": "2026-10-29",
+        "timeMYT": "02:00",
+        "status": "CONFIRMED",
+        "name": "FOMC decision / press 02:30 MYT",
+        "affects": "VGIT · TLT · USD/MYR · equity valuations",
+        "check": "Statement, 2/5/10/20/30y real vs nominal yields, oil and inflation expectations; do not act on a pre-release quote.",
+        "source": "https://www.federalreserve.gov/newsevents/2026-october.htm"
+      },
+      {
+        "id": "msft",
+        "dateET": "2026-10-28",
+        "timeET": "After US close",
+        "dateMYT": "2026-10-29",
+        "timeMYT": "Morning; exact release TBD",
+        "status": "ISSUER DATE CONFIRMED",
+        "name": "Microsoft FY27 Q1",
+        "affects": "TSM · AI finance · YTL power",
+        "check": "Azure growth, customer monetisation, capex/CFO, cash profitability, depreciation.",
+        "source": "https://www.microsoft.com/en-us/investor/default"
+      },
+      {
+        "id": "googl",
+        "dateET": "2026-10-28",
+        "timeET": "16:30 EDT call (calendar)",
+        "dateMYT": "2026-10-29",
+        "timeMYT": "04:30 call (calendar)",
+        "status": "CALENDAR / RECHECK IR",
+        "name": "Alphabet Q3 2026",
+        "affects": "TSM · AI adoption and paid usage",
+        "check": "Google Cloud revenue, Gemini/inference conversion, capex and estimated 2027 commitments.",
+        "source": "https://abc.xyz/investor/"
+      },
+      {
+        "id": "amzn",
+        "dateET": "2026-10-29",
+        "timeET": "17:00 EDT call (calendar)",
+        "dateMYT": "2026-10-30",
+        "timeMYT": "05:00 call (calendar)",
+        "status": "CALENDAR / RECHECK IR",
+        "name": "Amazon Q3 2026",
+        "affects": "TSM · RSP · AI demand",
+        "check": "AWS operating profit, cloud revenue growth, capital spending and operating cash returns.",
+        "source": "https://ir.aboutamazon.com/"
+      },
+      {
+        "id": "cf",
+        "dateET": "2026-11-04",
+        "timeET": "After US close",
+        "dateMYT": "2026-11-05",
+        "timeMYT": "Morning; exact release TBD",
+        "status": "ISSUER CONFIRMED",
+        "name": "CF Industries Q3 results",
+        "affects": "CF nitrogen equity thesis",
+        "check": "Realised nitrogen margins less gas input costs; issuer FCF and capex; 5 Nov 11:00 ET call = 6 Nov 00:00 MYT (EST).",
+        "source": "https://ir.cfindustries.com/Investors/news/news-details/2026/CF-Industries-Holdings-Inc--Declares-Quarterly-Dividend-and-Confirms-Dates-for-Third-Quarter-2026-Results-and-Conference-Call/default.aspx"
+      },
+      {
+        "id": "tsm-sales",
+        "dateET": "2026-11-10",
+        "timeET": "13:30 Asia/Taipei",
+        "dateMYT": "2026-11-10",
+        "timeMYT": "13:30",
+        "status": "ISSUER CONFIRMED",
+        "name": "TSMC October monthly sales",
+        "affects": "TSM · foundry demand",
+        "check": "Year-on-year/m-o-m revenue, guidance pacing, order mix; not a substitute for customer cash margins.",
+        "source": "https://investor.tsmc.com/english/financial-calendar"
+      },
+      {
+        "id": "merger",
+        "dateET": "TBD",
+        "timeET": "No signed timeline",
+        "dateMYT": "TBD",
+        "timeMYT": "No published event time",
+        "status": "UNSCHEDULED / EVENT WATCH",
+        "name": "Tesla–SpaceX transaction terms",
+        "affects": "TSLA existing allocation",
+        "check": "Special-committee recommendation, consideration, exchange ratio, debt assumption, shareholder vote, regulatory terms.",
+        "source": "https://ir.tesla.com/_flysystem/s3/sec/000162828026066775/tsla-20260930-gen.pdf"
+      }
+    ],
+    "sourceHealth": {
+      "fmpQuotes": "PLAN ACCESS DENIED; do not assume available",
+      "finnhubQuotes": "26 OCT 2026 CLOSES VERIFIED FOR SEVEN SYMBOLS",
+      "notionGate": "PARTIAL; 8/46",
+      "aiTracker": "16/16 as of 27 Oct 06:00 MYT",
+      "broker": "UNVERIFIED",
+      "bluebelly": "Source view only; no canonical writes"
     }
   }
 }
