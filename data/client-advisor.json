@@ -31,41 +31,41 @@
       "id": "funding",
       "number": "01",
       "label": "EXISTING HOLDINGS FIRST",
-      "title": "Review concentration and deal exposure before changing the portfolio",
+      "title": "Check holdings before deciding what to sell",
       "decision": "RE-UNDERWRITE; NO ORDER",
       "tone": "caution",
       "amountMYR": null,
-      "description": "Historical YTL Power exposure may dominate NAV; its 6742UW warrant adds unpriced leverage. Tesla's SpaceX committee changes the risk case without proving dilution or a value-accretive merger. DAYANG is an operating-thesis review.",
-      "do": "Reconcile actual broker positions and warrant terms; evaluate YTL's debt/contracts, Tesla merger exchange terms and DAYANG order flow. Do not force sales based on 2 October quantities.",
-      "notYet": "No verified current account weights, free cash, warrant value or agreed merger terms.",
+      "description": "YTL Power and its warrant may take up too much of the account. Tesla's SpaceX deal has no agreed terms. DAYANG needs a new contracts check.",
+      "do": "Open Rakuten and confirm each holding, the warrant details and cash available. Then decide whether holding, trimming or exiting has the better expected outcome.",
+      "notYet": "No current holdings or order size has been verified.",
       "anchor": "#security-decisions"
     },
     {
       "id": "duration",
       "number": "02",
       "label": "PREPARE NOT BUY",
-      "title": "Choose between intermediate Treasuries and a valued TSMC starter",
+      "title": "Compare TSM with a possible RM2,000 VGIT start",
       "decision": "CONDITIONAL ENTRIES",
       "tone": "conditional",
       "amountMYR": 2000,
       "totalTargetMYR": 4047,
       "symbol": "VGIT",
-      "description": "VGIT RM2,000 is a possible first bond stage after rates/FX checks; TSM's RM1,214 target becomes a conditional entry candidate after hyperscaler results and same-listing valuation.",
-      "do": "Compare prospective net MYR returns and downside for VGIT versus TSM. Check Fed, 5Y auction, 10Y real yields, TSM valuation, customer capex, live FX and broker cash first.",
-      "notYet": "Neither candidate has a verified executable entry or cash budget.",
+      "description": "TSM is the chip-growth candidate (RM1,214 model target). VGIT is the medium-term Treasury candidate (RM2,000 possible first stage). Neither is a buy instruction.",
+      "do": "After the Fed and major cloud earnings, compare current price, possible losses, USD/MYR and fees. Use only verified cash or proceeds from an agreed sale.",
+      "notYet": "No verified buying power or current entry valuation.",
       "anchor": "#security-decisions"
     },
     {
       "id": "cash",
       "number": "03",
       "label": "KEEP FLEXIBILITY",
-      "title": "Preserve capacity for post-earnings repricing",
+      "title": "Keep the RM2,024 MYR reserve available",
       "decision": "HOLD LIQUIDITY",
       "tone": "neutral",
       "amountMYR": 3373,
-      "description": "RM2,024 MYR is a model reserve, not a confirmed settlement cash balance; RM1,349 SGOV is separate possible USD liquidity exposure.",
-      "do": "Compare cash versus SGOV after tax, brokerage and currency costs. CF Nov 4 and broader market breadth are later decision gates.",
-      "notYet": "Do not double count SGOV and ringgit cash or fund purchases before reconciled cash.",
+      "description": "RM2,024 is a planned ringgit reserve, not confirmed cash. SGOV's RM1,349 is a separate US-dollar ETF idea.",
+      "do": "Check the actual account balance first. Compare keeping MYR with SGOV after currency conversion, tax and all dealing costs.",
+      "notYet": "Do not count planned cash twice or treat SGOV as MYR.",
       "anchor": "#catalyst-window"
     }
   ],
@@ -384,7 +384,7 @@
     "assessedOn": "27 Oct 2026",
     "mandateAsOf": "23 Oct 2026",
     "headline": "Your RM13,491. Your next move.",
-    "summary": "A personal investment brief, rebuilt around the evidence that changed your decisions—not a list of market headlines.",
+    "summary": "Check what you already own, then decide whether TSM or VGIT offers better value. No money is committed.",
     "accountWarning": "RM13,491 is total proposed account capital, not confirmed available cash. Broker holdings, warrant terms and live quotes are not yet reconciled.",
     "sourceLinks": [
       {
@@ -402,42 +402,46 @@
     ],
     "verdict": {
       "status": "NO NEW ORDER CLEARED",
-      "headline": "Review concentration. Put TSM and VGIT on deck.",
-      "reason": "TSLA's merger committee is real but deal economics are unknown. TSMC Q3 cash generation supports the company, while rates and AI financing still require selectivity.",
-      "blocker": "Broker cash, quantities, FX, deal terms and warrant 6742UW are not yet reconciled.",
+      "headline": "Check concentration first. Prepare TSM or VGIT next.",
+      "reason": "TSLA may merge with SpaceX, but terms are unknown. TSMC's chip sales are strong. US Treasury bonds still carry inflation and currency risk.",
+      "blocker": "Your latest Rakuten holdings, cash available to spend, and YTL warrant terms have not been checked.",
       "nextCheck": "29 Oct MYT Fed + MSFT/Alphabet · 30 Oct Amazon · 5 Nov CF"
     },
     "actions": [
       {
         "key": "review",
-        "status": "REVIEW",
-        "title": "YTL / TSLA / DAYANG",
-        "summary": "Concentration, merger terms and contract strength come first.",
-        "next": "YTL + warrant combined weight may be large; use verified Rakuten quantities. TSLA: wait for terms, model dilution and combined FCF. DAYANG: inspect orders, earnings and opportunity cost.",
+        "icon": "risk",
+        "status": "FIRST · CHECK HOLDINGS",
+        "title": "Check YTL, TSLA and DAYANG",
+        "summary": "Work out what you own today before deciding what to sell.",
+        "next": "Open the holdings review. Check YTL Power plus its warrant together, your TSLA position size, and DAYANG's latest contracts. Do not place an exit order until the quantities and evidence match.",
         "href": "#security-decisions"
       },
       {
         "key": "prepare",
-        "status": "PREPARE",
-        "title": "TSM · RM1,214 / VGIT · RM2,000",
-        "summary": "Two different conditional candidates; compare return after FX.",
-        "next": "TSM: current ADR valuation and post-hyperscaler cash capex. VGIT: nominal/real yields after the Fed, inflation sensitivity and actual buying power. No cash committed.",
+        "icon": "compare",
+        "status": "COMPARE · NO ORDER",
+        "title": "Compare TSM with VGIT",
+        "summary": "TSM: RM1,214 model idea. VGIT: possible RM2,000 first stage.",
+        "next": "For TSM, check the price paid against earnings and what cloud customers report. For VGIT, check US yields after the Fed, USD/MYR and all dealing costs. Pick neither if the numbers do not work.",
         "href": "#security-decisions"
       },
       {
         "key": "liquid",
-        "status": "KEEP",
-        "title": "RM2,024 MYR reserve",
-        "summary": "Model reserve only; SGOV RM1,349 is a separate USD option.",
-        "next": "Check fees, yield, tax and FX and do not mistake the target reserve for verified Rakuten balance.",
+        "icon": "shield",
+        "status": "KEEP CASH OPTION",
+        "title": "Keep RM2,024 aside",
+        "summary": "That is the model's MYR reserve, not a verified account balance.",
+        "next": "Confirm real buying power in Rakuten. Keep SGOV's separate RM1,349 USD allocation out of the MYR-cash total; compare fund taxes, FX and fees before using it.",
         "href": "#investment-plan"
       },
       {
         "key": "wait",
-        "status": "WATCH",
-        "title": "Fed · Big Tech · CF",
-        "summary": "Upcoming results can reverse today's preferred entry.",
-        "next": "Use exact issuer publication times and compare capex, CFO, paid AI usage, demand, cash returns, 5Y/10Y yields and nitrogen-versus-gas spreads.",
+        "icon": "calendar",
+        "status": "CHECK AFTER RESULTS",
+        "title": "Fed, cloud earnings, CF",
+        "summary": "These reports can change which investment is worth buying.",
+        "next": "29 Oct Malaysia time: Fed, Microsoft and Alphabet. 30 Oct: Amazon. 5 Nov: CF results. Read the releases first, then compare new cash-flow and demand numbers before changing your plan.",
         "href": "#catalyst-window"
       }
     ]
@@ -803,5 +807,86 @@
       "broker": "UNVERIFIED",
       "bluebelly": "Source view only; no canonical writes"
     }
+  },
+  "basketGuidance": {
+    "schema": "power-stack-basket-guidance/1",
+    "assessedOn": "2026-10-27T10:47:00+08:00",
+    "evidenceCutoff": "2026-10-27T09:12:00+08:00",
+    "basketModelsAsOf": "2026-10-26",
+    "quoteClose": "2026-10-26",
+    "status": "RESEARCH_COMPARISON_ONLY",
+    "sourceResearch": "research/2026-10-27-deep-decision-refresh-plan.md",
+    "sourceBaskets": "data/basket-strategies.json",
+    "brokerVerified": false,
+    "automaticReallocation": false,
+    "headline": "Which basket would I actually use?",
+    "subhead": "Start with the existing plan. Compare alternatives only if the risks they solve fit your holdings.",
+    "firstInstruction": "Check the Rakuten positions and available cash. Do not treat any alternative as a second RM13,491 pot.",
+    "choices": [
+      {
+        "id": "current-model",
+        "icon": "layers",
+        "label": "START HERE",
+        "title": "Current seven-position plan",
+        "summary": "50% US Treasury ETFs · 35% equities · 15% MYR cash. This is the current research baseline, not a funded basket.",
+        "recommendation": "Keep it as the comparison point. VGIT and TSM can qualify after prices, earnings and cash are checked; no automatic purchase.",
+        "action": "Review current model",
+        "href": "#investing-now",
+        "kind": "baseline"
+      },
+      {
+        "id": "dry-powder",
+        "icon": "shield",
+        "label": "COMPARE FIRST",
+        "title": "Cash-heavy alternative",
+        "summary": "65% MYR cash · 20% URNM · 15% CF. Less invested, but the remaining investments are concentrated.",
+        "recommendation": "Only a defensive comparison. URNM is still a volatile miner ETF; CF needs its November earnings. Do not call it safe cash.",
+        "action": "See the cash-heavy basket",
+        "href": "baskets.html#basket-dry-powder",
+        "kind": "alternative"
+      },
+      {
+        "id": "theme-baskets",
+        "icon": "risk",
+        "label": "NOT MY FIRST MOVE",
+        "title": "Uranium and oil bets",
+        "summary": "The other three scenarios require a stronger single-sector view or take more overlapping commodity risk.",
+        "recommendation": "Wait for uranium contract evidence, Gulf cargo flows and CF results. Check current oil holdings first. None clears a new trade today.",
+        "action": "Compare the riskier baskets",
+        "href": "baskets.html#basket-compare-title",
+        "kind": "risk"
+      }
+    ],
+    "rankings": [
+      {
+        "id": "dry-powder",
+        "verdict": "COMPARE FIRST, NOT A BUY",
+        "question": "Would more MYR cash help while earnings and Fed rates settle?",
+        "why": "65% stays as MYR in this model. The 35% invested remains volatile URNM/CF.",
+        "blocker": "Actual account/cash missing; URNM eligibility and CF earnings not refreshed."
+      },
+      {
+        "id": "two-catalysts",
+        "verdict": "WATCH AFTER CF EARNINGS",
+        "question": "Are both uranium and nitrogen earnings improving enough to justify 55% equity exposure?",
+        "why": "Two return drivers, but both can suffer in a liquidity or commodity sell-off.",
+        "blocker": "4 Nov US CF report and uranium contract/pricing evidence not yet checked."
+      },
+      {
+        "id": "oil-nitrogen",
+        "verdict": "ONLY IF GULF THESIS HOLDS",
+        "question": "Do verified physical export constraints outweigh your existing oil exposure?",
+        "why": "The existing XOM/MISC/HIBISCS/DAYANG cluster may already give you plenty of energy risk.",
+        "blocker": "Actual holdings and comparable cargo and crude data unverified."
+      },
+      {
+        "id": "uranium-repricing",
+        "verdict": "NOT RECOMMENDED NOW",
+        "question": "Can you tolerate a concentrated miner-led drawdown while keeping necessary liquidity?",
+        "why": "55% URNM puts most invested risk in a single theme.",
+        "blocker": "Concentration, fund price/eligibility and actual available cash unresolved."
+      }
+    ],
+    "riskNotice": "All four baskets are mutually exclusive examples using the same RM13,491—not four allocations to combine. Their ± figures illustrate assumptions, not likely outcomes or maximum losses. FX, tax, fees and distributions are excluded."
   }
 }

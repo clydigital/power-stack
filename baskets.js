@@ -18,6 +18,7 @@
   };
   const svg = key => '<svg class="basket-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round">' + (icons[key]||icons.scope) + '</svg>';
   let model = null;
+  let guidance = null;
   let filter = 'all';
   let mode = 'positive';
   const full = id => model.baskets.find(b => b.id===id);
@@ -27,6 +28,7 @@
     $('#basket-count').textContent=visible.length+' of '+model.baskets.length+' alternatives';
     root.innerHTML=visible.map((b,i)=>{
       const group=model.groups.find(g=>g.id===b.group);
+      const review=guidance?.rankings?.find(x=>x.id===b.id);
       const illustration=b.illustrations[mode];
       const pct=illustration.pct;
       const outcome=(pct>=0?'+':'')+pct.toFixed(pct%1?2:0)+'%';
@@ -36,10 +38,11 @@
       return '<article class="basket-card" data-group="'+esc(b.group)+'" id="basket-'+esc(b.id)+'">'+
        '<div class="basket-card-head"><span class="basket-category basket-category-'+esc(b.group)+'">'+svg(b.icon)+esc(group.label)+'</span><span class="basket-card-index">'+String(i+1).padStart(2,'0')+' / 04</span></div>'+
        '<h3>'+esc(b.name)+'</h3><p class="basket-subtitle">'+esc(b.short)+'</p>'+
+       (review?'<div class="basket-current-view"><strong>'+esc(review.verdict)+'</strong><p>'+esc(review.question)+'</p></div>':'')+
        '<div class="basket-card-chips">'+chips+'</div>'+
        '<div class="basket-card-allocation"><div class="basket-bar" role="img" aria-label="'+esc(b.weights.map(w=>w.symbol+' '+w.pct+'%').join(', '))+'">'+spans+'</div>'+
        '<div class="basket-bar-legend"><span>'+b.capitalExposurePct+'% market exposure</span><span>'+ (100-b.capitalExposurePct)+'% MYR liquidity</span></div></div>'+
-       '<div class="basket-card-outcome"><div><span>'+ (mode==='positive'?'Illustrative positive':'Illustrative negative') +'</span><strong class="'+(pct>=0?'basket-gain':'basket-loss')+'">'+outcome+'</strong></div><div><span>Portfolio impact</span><strong class="'+(pct>=0?'basket-gain':'basket-loss')+'">'+(illustration.profitMYR>=0?'+':'−')+money(Math.abs(illustration.profitMYR))+'</strong></div></div>'+
+       '<div class="basket-card-outcome"><div><span>'+ (mode==='positive'?'If the positive example happens':'If the negative example happens') +'</span><strong class="'+(pct>=0?'basket-gain':'basket-loss')+'">'+outcome+'</strong></div><div><span>Portfolio impact</span><strong class="'+(pct>=0?'basket-gain':'basket-loss')+'">'+(illustration.profitMYR>=0?'+':'−')+money(Math.abs(illustration.profitMYR))+'</strong></div></div>'+
        '<p class="basket-case">'+esc(b.why)+'</p>'+
        '<p class="basket-risk"><span>'+svg('alert')+'</span><strong>'+esc(b.risk)+'</strong></p>'+
        '<details class="basket-evidence"><summary>Allocation, assumptions & failure test</summary>'+
@@ -47,9 +50,25 @@
        '<div class="basket-evidence-row"><strong>Scenario maths</strong><p>'+esc(illustration.assumptions)+' NAV would be '+money(illustration.navMYR)+'. Hypothetical only; FX, tax, fees, dividends and distributions excluded.</p></div>'+
        '<div class="basket-evidence-row"><strong>Key downside</strong><p>'+esc(b.whatCanGoWrong)+'</p></div>'+
        '<div class="basket-evidence-row"><strong>Reassess if</strong><p>'+esc(b.reconsider)+'</p></div>'+
-       '<div class="basket-evidence-row"><strong>Required before trading</strong><p>'+esc(b.check)+'</p></div></div></details></article>';
+       '<div class="basket-evidence-row"><strong>Required before trading</strong><p>'+esc(b.check)+'</p></div>'+
+       (review?'<div class="basket-evidence-row"><strong>Why not now?</strong><p>'+esc(review.why)+' '+esc(review.blocker)+'</p></div>':'')+
+       '</div></details></article>';
     }).join('');
     if(!visible.length)root.innerHTML='<p>No baskets match that filter.</p>';
+  }
+  function renderAdviser(){
+    if(guidance?.schema!=='power-stack-basket-guidance/1')return;
+    const root=$('#basket-adviser-steps');
+    const hrefs={'current-model':'index.html#investing-now','dry-powder':'#basket-dry-powder','theme-baskets':'#basket-compare-title'};
+    if(root&&Array.isArray(guidance.choices)){
+      root.innerHTML=guidance.choices.map((x,i)=>{
+        const href=hrefs[x.id]||'index.html';
+        const glyph=x.icon==='risk'?'alert':(x.icon==='layers'?'layers':'shield');
+        return '<div class="basket-adviser-step">'+svg(glyph)+'<div><strong>'+(i+1)+'. '+esc(x.title)+'</strong><p>'+esc(x.summary)+'</p></div><a href="'+href+'">'+esc(x.action)+' ↗</a></div>';
+      }).join('');
+    }
+    const note=$('#basket-adviser-caution');
+    if(note)note.textContent=guidance.riskNotice;
   }
   function renderFilters(){
     const groups=[{id:'all',label:'All strategies',icon:'scope'},...model.groups];
@@ -59,15 +78,22 @@
     $('#basket-filters').querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{mode=b.dataset.mode;renderFilters();summaryCards()});
   }
   async function load(){
-    const response=await fetch('data/basket-strategies.json',{cache:'no-store'});
+    const [response,advisory]=await Promise.all([
+      fetch('data/basket-strategies.json',{cache:'no-store'}),
+      fetch('data/client-advisor.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)
+    ]);
     if(!response.ok)throw Error('HTTP '+response.status);
     model=await response.json();
+    if(advisory?.deepDecision?.capitalMYR===model.capitalMYR &&
+       advisory?.basketGuidance?.schema==='power-stack-basket-guidance/1'){
+      guidance=advisory.basketGuidance;
+    }
     if(model.schema!=='power-stack-basket-comparison/v1'||!Array.isArray(model.baskets)||model.baskets.length!==4||!Array.isArray(model.groups))throw Error('Unexpected research contract');
     for(const b of model.baskets){
       if(!model.groups.some(g=>g.id===b.group)||b.weights.reduce((s,x)=>s+x.pct,0)!==100||b.weights.reduce((s,x)=>s+x.rm,0)!==model.capitalMYR)throw Error('Invalid funding total for '+b.id);
       if(!full(b.id))throw Error('Missing '+b.id);
     }
-    renderFilters();summaryCards();
+    renderAdviser();renderFilters();summaryCards();
   }
   load().catch(error=>{
     $('#basket-grid').textContent='Basket research unavailable ('+error.message+'). No portfolio actions have been changed.';
