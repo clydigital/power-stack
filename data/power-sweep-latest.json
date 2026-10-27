@@ -1,15 +1,15 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-27T12:09:52.254Z",
-  "asOf": "2026-10-26T15:05:32.368+00:00",
+  "generatedAt": "2026-10-27T12:19:01.417Z",
+  "asOf": "2026-10-27T08:06:00.164+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
   "inputHealth": {
     "liveDesk": {
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
-      "asOf": "2026-10-26T15:05:32.368+00:00",
-      "syncedAt": "2026-10-27T05:11:54.806Z",
+      "asOf": "2026-10-27T08:06:00.164+00:00",
+      "syncedAt": "2026-10-27T12:19:01.233Z",
       "sourceStatus": "degraded_latest",
       "sourceHealth": {
         "dossier": "DEGRADED",
@@ -18,7 +18,7 @@
         "nyFedPrimaryDealers": "OK",
         "treasurySupply": "UNRESOLVED"
       },
-      "ageHours": 14.1,
+      "ageHours": 4.2,
       "reasons": [
         "UPSTREAM_EVIDENCE_PARTIAL"
       ],
@@ -27,7 +27,7 @@
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-27T12:09:52.176Z",
+      "generatedAt": "2026-10-27T12:19:01.347Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -46,8 +46,8 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "US yields remain elevated and front‑end funding is tighter, but credit/volatility transmission is unresolved.",
-    "implication": "Higher nominal and real yields plus tighter short‑term collateral raise financing costs; absent canonical credit and volatility evidence, broader market stress is not yet established.",
+    "headline": "Higher U.S. yields and tighter front‑end funding coexist with contained credit stress and still‑healthy large‑cap breadth.",
+    "implication": "Rising yields and slightly tighter dollar liquidity are tightening financial conditions, but credit weakness is concentrated in HY so far and equity breadth remains supportive; persistence across IG, volatility (MOVE/VIX) and auctions would be needed to confirm broader stress.",
     "monetarySummary": "Rate baseline HAWKISH; 3 confirming, 0 contradicting, 8 unresolved/neutral monetary-market layers."
   },
   "queueCounts": {
@@ -60,10 +60,89 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "58c55726-1ca6-4d5f-92ba-d112d1fa5691",
-    "capturedAt": "2026-10-26T14:02:16.988Z",
-    "itemCount": 0,
-    "items": []
+    "editionId": "1cc14940-aa3c-4578-8f2a-a81af67ec646",
+    "capturedAt": "2026-10-27T08:05:28.801Z",
+    "itemCount": 2,
+    "items": [
+      {
+        "id": "20ba5568-fd51-4e9e-bfb7-6fcc6d14d8df",
+        "motionKey": "event:fomc:2026-10",
+        "versionNumber": 10,
+        "headline": "FOMC meeting (Oct 28) and major Mag7 earnings (Microsoft on Wednesday, memory names after hours) are singled out as near‑term catalysts that could validate or reverse the sentiment moves.",
+        "category": "EARNINGS",
+        "verificationState": "LEAD",
+        "lifecycleState": "PROMOTED",
+        "whatHappened": "StockedUp surfaced this in a recent transcript. It remains a creator-sourced lead until independently corroborated: FOMC meeting (Oct 28) and major Mag7 earnings (Microsoft on Wednesday, memory names after hours) are singled out as near‑term catalysts that could validate or reverse the sentiment moves.",
+        "marketReaction": null,
+        "whyInteresting": "Transcript writing angle: Investigate 'Anthropic S‑1: the largest IPO narrative — what really sits in the numbers?' — juxtapose claimed H1 revenue/growth with realistic IPO sizing and investor appetite.",
+        "bigPictureBridge": "Fresh AI / technology evidence → supply, demand or financing channel → US–China AI regime",
+        "nextTest": "Verify transcript lead: FOMC meeting (Oct 28) and major Mag7 earnings (Microsoft on Wednesday, memory names after hours) are singled out as near‑term catalysts that could validate or reverse the sentiment moves.",
+        "tickers": [
+          "MSFT",
+          "SPACEX",
+          "GOOGL",
+          "META",
+          "AAPL",
+          "NVDA",
+          "TSLA"
+        ],
+        "sourceName": "StockedUp",
+        "sourceUrl": "https://www.youtube.com/watch?v=jP3LF03ChGQ",
+        "materiality": 88,
+        "relevance": 88,
+        "novelty": 88,
+        "occurredAt": "2026-10-21T22:00:04.000Z",
+        "storyId": "def056d7-1d52-4512-814e-0e7e8598c667",
+        "storySlug": "private-ai-capital",
+        "storyTitle": "Private AI capital",
+        "regimeSlug": "us-china-ai",
+        "regimeLabel": "AI Capital Cycle",
+        "attentionTier": "PRIMARY",
+        "attentionScore": 84,
+        "writingPotential": "HIGH",
+        "attentionReasons": [
+          "high materiality",
+          "high market relevance",
+          "asset/ticker linked"
+        ]
+      },
+      {
+        "id": "ffcc97a6-15fe-4f62-a655-73413defd593",
+        "motionKey": "event:ipo:anthropic",
+        "versionNumber": 9,
+        "headline": "Near‑term catalysts flagged: CPI print (one hour pre‑open), TSMC/ASML earnings, Anthropic Q3 disclosure/IPO process; these should be prioritized when testing the thesis.",
+        "category": "EARNINGS",
+        "verificationState": "LEAD",
+        "lifecycleState": "PROMOTED",
+        "whatHappened": "StockedUp surfaced this in a recent transcript. It remains a creator-sourced lead until independently corroborated: Near‑term catalysts flagged: CPI print (one hour pre‑open), TSMC/ASML earnings, Anthropic Q3 disclosure/IPO process; these should be prioritized when testing the thesis.",
+        "marketReaction": null,
+        "whyInteresting": "Transcript writing angle: Frame a piece around 'Narrow leadership + looming AI IPO supply + rekindled energy risk: is the market misreading breadth and liquidity?' combining the record low equal‑vs‑cap correlation stat with Anthropic IPO sizing and verified shipping/attack data.",
+        "bigPictureBridge": "Fresh AI / technology evidence → supply, demand or financing channel → US–China AI regime",
+        "nextTest": "Verify transcript lead: Near‑term catalysts flagged: CPI print (one hour pre‑open), TSMC/ASML earnings, Anthropic Q3 disclosure/IPO process; these should be prioritized when testing the thesis.",
+        "tickers": [
+          "MSFT"
+        ],
+        "sourceName": "StockedUp",
+        "sourceUrl": "https://www.youtube.com/watch?v=ddRqBVme3aQ",
+        "materiality": 88,
+        "relevance": 88,
+        "novelty": 88,
+        "occurredAt": "2026-10-13T22:00:01.000Z",
+        "storyId": "1cf9ad1d-c350-48c4-b06e-d544771919d3",
+        "storySlug": "iran-oil-inflation-rates",
+        "storyTitle": "Distillate Scarcity Persists Despite Crude-Flow Recovery",
+        "regimeSlug": "us-china-ai",
+        "regimeLabel": "AI Capital Cycle",
+        "attentionTier": "PRIMARY",
+        "attentionScore": 84,
+        "writingPotential": "HIGH",
+        "attentionReasons": [
+          "high materiality",
+          "high market relevance",
+          "asset/ticker linked"
+        ]
+      }
+    ]
   },
   "portfolioTriage": {
     "tapeDivergences": [
@@ -83,6 +162,9 @@
       "TSLA"
     ],
     "mixed": [],
+    "liveMotionLinkedHoldings": [
+      "TSLA"
+    ],
     "hiddenConcentration": [
       {
         "id": "ytl-linked",
@@ -141,13 +223,72 @@
         "nextCheck": "Normalize combined weight in base currency and verify warrant terms."
       }
     ],
-    "portfolioDivergences": []
+    "portfolioDivergences": [
+      {
+        "id": "rates-vs-tech-resilience",
+        "importance": "HIGH",
+        "divergence": "PARTIAL",
+        "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
+        "actual": "Semiconductor ETF (SMH) shows mixed performance; AI basket internals weakened while large caps retain strength.",
+        "affectedHoldings": [
+          "TSLA",
+          "TTWO",
+          "YTLPOWR",
+          "6742UW"
+        ],
+        "candidateExplanations": [
+          "Narrow AI/semiconductor leadership is offsetting broad duration pressure at index level.",
+          "Company-specific catalysts and funded/backlogged AI infrastructure demand are overpowering the discount-rate headwind in selected names.",
+          "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
+        ],
+        "evidenceFor": [
+          "AI/semis are uneven: leadership concentration supports equity indices, but internals warn of narrower participation.",
+          "Broad large‑cap participation cushions market risk despite concentrated weaknesses in AI/infra names.",
+          "Nasdaq daily move -0.21 with bias MIXED."
+        ],
+        "evidenceAgainst": [
+          "Rates tightening is driven mainly by real/policy repricing rather than a large term‑premium shock."
+        ],
+        "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
+        "confidence": "HIGH",
+        "invalidation": "If breadth broadens materially while credit remains benign and real yields stay high, the rate headwind is less dominant than assumed. If AI/semiconductor leadership rolls over, the divergence resolves in the bearish direction."
+      },
+      {
+        "id": "rates-vs-credit-transmission",
+        "importance": "HIGH",
+        "divergence": "YES",
+        "expected": "A persistent long-end tightening shock should eventually raise financing stress and widen credit spreads.",
+        "actual": "HY OAS widened ~45bp (20s) while IG OAS rose ~10bp (20s).",
+        "affectedHoldings": [
+          "TSLA",
+          "TTWO",
+          "YTLPOWR",
+          "6742UW",
+          "MISC"
+        ],
+        "candidateExplanations": [
+          "The current move is still primarily a rates/term-premium shock rather than a broad solvency or funding shock.",
+          "Strong nominal growth and healthy corporate balance sheets may be delaying credit transmission.",
+          "Credit may simply be lagging rates and could become the next confirmation leg."
+        ],
+        "evidenceFor": [
+          "Credit stress is concentrated in HY; IG remains only modestly wider, so broad credit transmission is unproven.",
+          "Funding/credit composite is currently UNRESOLVED."
+        ],
+        "evidenceAgainst": [
+          "Rising yields and slightly tighter dollar liquidity are tightening financial conditions, but credit weakness is concentrated in HY so far and equity breadth remains supportive; persistence across IG, volatility (MOVE/VIX) and auctions would be needed to confirm broader stress."
+        ],
+        "leadingHypothesis": "The shock is rates-led, not yet systemic; keep dry powder because credit remains the key confirmation risk.",
+        "confidence": "HIGH",
+        "invalidation": "Sustained HY/IG widening with weaker breadth and higher volatility would confirm transmission and require a stricter portfolio-risk posture."
+      }
+    ]
   },
   "holdingResearchQueue": [
     {
       "ticker": "TSLA",
       "name": "Tesla",
-      "priorityScore": 195,
+      "priorityScore": 230,
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
@@ -171,15 +312,37 @@
         "closeNotice": "Source-dated regular-session daily close: 2026-10-26"
       },
       "currentAction": "TRIM REVIEW",
+      "motionContext": [
+        {
+          "id": "20ba5568-fd51-4e9e-bfb7-6fcc6d14d8df",
+          "headline": "FOMC meeting (Oct 28) and major Mag7 earnings (Microsoft on Wednesday, memory names after hours) are singled out as near‑term catalysts that could validate or reverse the sentiment moves.",
+          "category": "EARNINGS",
+          "verificationState": "LEAD",
+          "occurredAt": "2026-10-21T22:00:04.000Z",
+          "whyInteresting": "Transcript writing angle: Investigate 'Anthropic S‑1: the largest IPO narrative — what really sits in the numbers?' — juxtapose claimed H1 revenue/growth with realistic IPO sizing and investor appetite.",
+          "bigPictureBridge": "Fresh AI / technology evidence → supply, demand or financing channel → US–China AI regime",
+          "nextTest": "Verify transcript lead: FOMC meeting (Oct 28) and major Mag7 earnings (Microsoft on Wednesday, memory names after hours) are singled out as near‑term catalysts that could validate or reverse the sentiment moves.",
+          "storyId": "def056d7-1d52-4512-814e-0e7e8598c667",
+          "storyTitle": "Private AI capital",
+          "regimeSlug": "us-china-ai",
+          "regimeLabel": "AI Capital Cycle",
+          "sourceName": "StockedUp",
+          "sourceUrl": "https://www.youtube.com/watch?v=jP3LF03ChGQ",
+          "materiality": 88,
+          "relevance": 88
+        }
+      ],
       "reasons": [
         "completed-session tape moved against the directional market overlay",
-        "portfolio overlay marks the holding HIGH_REVIEW"
+        "portfolio overlay marks the holding HIGH_REVIEW",
+        "fresh promoted Live Market Motion is linked to the holding"
       ],
       "researchQuestion": "Has new company-specific evidence changed TSLA's current action gate or thesis risk?",
       "requiredEvidence": [
         "company-specific news/catalysts for the completed session",
         "technical/flow context sufficient to test whether the divergence is company-specific or temporary",
-        "funding, valuation, cash-flow or operating evidence that could offset or reinforce the macro headwind"
+        "funding, valuation, cash-flow or operating evidence that could offset or reinforce the macro headwind",
+        "independent company/official evidence testing whether the promoted Live Motion changes the action gate, thesis risk, cash flow or funding case"
       ],
       "possibleDecisionImpact": "Could change the current add/hold gate or create a new company-specific catalyst/invalidation."
     },
@@ -418,18 +581,18 @@
   ],
   "liveRadar": [
     {
-      "ticker": "META",
-      "companyName": "Meta Platforms",
-      "whyRelevant": "Reported large equity‑raise plans and is central to AI funding chatter that could affect tech sentiment.",
-      "researchQuestion": "Did Meta's financing announcement produce measurable same‑session macro repricing in yields, USD or gold?",
+      "ticker": "CRWV",
+      "companyName": "CoreWeave",
+      "whyRelevant": "AI‑infrastructure provider with recent share weakness; relevant to AI capex/funding sensitivity.",
+      "researchQuestion": "Is CoreWeave share weakness signalling lower AI infra demand or issuer‑specific funding pressure?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     },
     {
-      "ticker": "AAPL",
-      "companyName": "Apple",
-      "whyRelevant": "Strong early demand for new product could support consumer hardware revenue and sector resilience amid rates pressure.",
-      "researchQuestion": "Is demand strength for new iPhone supporting broader tech leadership despite rising yields?",
+      "ticker": "META",
+      "companyName": "Meta Platforms",
+      "whyRelevant": "Megacap whose intraday moves test issuer‑to‑macro transmission.",
+      "researchQuestion": "Did Meta's moves generate same‑session repricing in yields or USD?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     }
@@ -499,15 +662,13 @@
     }
   ],
   "researchGaps": [
-    "DATA: Canonical MOVE/Treasury‑volatility and multi‑session IG/HY OAS series are not in the packet; this blocks testing yield→credit/volatility transmission.",
-    "DATA: Intraday 5m–30m Fed‑funds‑futures, UST 2Y/10Y, DXY and XAU bars around major issuer events are missing, preventing same‑session transmission tests.",
-    "DATA: Primary‑dealer position/fails and cross‑currency basis / FX‑swap canonical feeds are absent, limiting diagnosis of funding and offshore USD stress.",
+    "MARKET_DATA: Canonical MOVE/Treasury‑volatility time series and VIX are missing and block assessment of whether yield moves have broadened into volatility.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence.",
     "Holding tape unresolved: 6742UW"
   ],
   "gapReconciliation": {
     "contractVersion": "power-stack-gap-reconciliation/1",
-    "sourceAsOf": "2026-10-26T15:05:32.368+00:00",
+    "sourceAsOf": "2026-10-27T08:06:00.164+00:00",
     "sourceStatus": "degraded_latest",
     "owner": "Power Stack is read-only; Live owns all macro/rates evidence",
     "resolvedByReconciliation": 0,
@@ -515,7 +676,7 @@
     "gaps": [
       {
         "id": "INTRADAY_RATES",
-        "reportedGap": "DATA: Canonical MOVE/Treasury‑volatility and multi‑session IG/HY OAS series are not in the packet; this blocks testing yield→credit/volatility transmission.",
+        "reportedGap": "MARKET_DATA: Canonical MOVE/Treasury‑volatility time series and VIX are missing and block assessment of whether yield moves have broadened into volatility.",
         "owner": "LIVE_DESK",
         "state": "REQUIRES_VALIDATED_INTRADAY_FEEDS",
         "presentInfrastructure": [
@@ -524,19 +685,6 @@
         ],
         "missingProof": "Observed timestamped Fed-funds-futures, UST 2Y/10Y bars, and licenced MOVE close/series with raw URLs",
         "nextStep": "Check existing Barchart entitlement; integrate direct intraday licensed providers into Live only, with release-aligned timestamps",
-        "isClosed": false,
-        "evidenceAuthority": "ORIGINAL_SOURCE_REQUIRED"
-      },
-      {
-        "id": "PRIMARY_DEALERS",
-        "reportedGap": "DATA: Primary‑dealer position/fails and cross‑currency basis / FX‑swap canonical feeds are absent, limiting diagnosis of funding and offshore USD stress.",
-        "owner": "LIVE_DESK",
-        "state": "UPSTREAM_STALE",
-        "presentInfrastructure": [
-          "Official New York Fed primary-dealer REST adapter"
-        ],
-        "missingProof": "Fresh official publication with an as-of date and parser-verified positions/fails",
-        "nextStep": "Re-query the existing NY Fed endpoint at the existing rates source-integrity cadence; keep stale if publisher remains delayed",
         "isClosed": false,
         "evidenceAuthority": "ORIGINAL_SOURCE_REQUIRED"
       },
@@ -572,7 +720,6 @@
     ],
     "byStatus": {
       "REQUIRES_VALIDATED_INTRADAY_FEEDS": 1,
-      "UPSTREAM_STALE": 1,
       "EVIDENCE_PRESENT_INTERPRETATION_UNRESOLVED": 1,
       "INSTRUMENT_NOT_VERIFIED": 1
     }
