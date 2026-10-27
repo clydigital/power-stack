@@ -312,3 +312,31 @@ main{padding-top:16px}
 .adv-investigation-update>a:hover{background:#234737}
 .adv-investigation-update>a:focus-visible{outline:2px solid #c0f6d8;outline-offset:3px}
 @media(max-width:700px){.adv-investigation-update{padding:14px;gap:10px}.adv-investigation-update>a{margin-left:0}.adv-investigation-body{flex:1 1 220px}}
+
+
+/* Decision desk is the primary first-screen read; allocation and evidence follow beneath. */
+.ps-decision-brief{padding:28px 0 23px;border-bottom:1px solid var(--adv-rule);scroll-margin-top:85px}
+.ps-decision-heading{display:flex;justify-content:space-between;align-items:end;gap:14px;margin-bottom:18px}
+.ps-decision-heading h1{font-size:clamp(27px,3.5vw,41px);line-height:1.13;letter-spacing:-1.25px;margin:6px 0 7px;color:#eff8f3}
+.ps-decision-heading p{max-width:790px;margin:0;color:#afc3b8;font-size:14px;line-height:1.55}
+.ps-decision-more{flex:0 0 auto;min-height:36px;color:#a1e0c1;text-decoration:underline;text-underline-offset:4px;font-size:12px;font-weight:650}
+.ps-decision-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.ps-decision-card{min-width:0;display:flex;flex-direction:column;align-items:start;gap:8px;border:1px solid #2d4540;border-radius:13px;background:#15201e;padding:17px 16px;box-shadow:0 2px 11px rgba(0,0,0,.12)}
+.ps-decision-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%}
+.ps-decision-index{font-size:12px;font-weight:750;color:#739c8b;font-variant-numeric:tabular-nums}
+.ps-decision-state{font-size:10px;letter-spacing:.45px;text-transform:uppercase;font-weight:800;color:#e1c594;line-height:1.3;text-align:right}
+.ps-decision-prepare .ps-decision-state{color:#9de0bf}
+.ps-decision-liquid .ps-decision-state{color:#bed2cf}
+.ps-decision-wait .ps-decision-state{color:#cfb8a1}
+.ps-decision-card h3{font-size:17px;line-height:1.27;letter-spacing:-.2px;color:#edf8f0;margin:1px 0 0}
+.ps-decision-card>p{font-size:12px;line-height:1.55;color:#ccd9d2;margin:0}
+.ps-decision-card .ps-decision-condition{font-size:11px;color:#9cafaa}
+.ps-decision-card>a{margin-top:auto;padding-top:5px;font-size:11px;color:#aadfc6;text-decoration:underline;text-underline-offset:3px}
+.ps-decision-footer{display:flex;align-items:start;justify-content:space-between;gap:6px 24px;flex-wrap:wrap;padding:12px 0 0;font-size:11px;line-height:1.5;color:#abbcb6}
+.ps-decision-footer p{margin:0;max-width:850px;font-size:11px}
+.ps-decision-footer strong{color:#e3cfaa}
+.ps-decision-footer a{color:#b4dfce}
+.adv-hero{padding-top:20px}
+@media(max-width:1020px){.ps-decision-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ps-decision-heading{align-items:start}}
+@media(max-width:720px){.ps-decision-brief{padding:22px 0 17px}.ps-decision-heading{display:block}.ps-decision-more{display:inline-block;margin-top:10px}.ps-decision-card{padding:16px}}
+@media(max-width:460px){.ps-decision-grid{grid-template-columns:1fr;gap:9px}.ps-decision-card{gap:6px}.ps-decision-card .ps-decision-condition{font-size:11px}.ps-decision-footer{gap:8px}}
