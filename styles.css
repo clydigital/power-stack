@@ -315,3 +315,6 @@ dialog{box-shadow:0 30px 90px rgba(0,0,0,.52),0 0 0 1px rgba(133,184,255,.025) i
  .ps-library-page .context-meta{text-align:left}
 }
 @media(prefers-reduced-motion:reduce){.ps-library-page .ps-macro-evidence-chevron{transition:none}}
+
+/* Research-library metrics: show the shared priority/low-dependency subset and independently labelled totals. */
+.ps-library-page #summaryStats .summary-card small{display:block;margin-top:7px;font-size:10px;line-height:1.5;color:#9fb0bb;text-transform:none;letter-spacing:0}

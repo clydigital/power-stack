@@ -14,6 +14,7 @@ a{color:var(--mint)}a:focus-visible,button:focus-visible{outline:2px solid var(-
 header{border-bottom:1px solid var(--line);background:#0e1216}header .wrap{padding-top:17px;padding-bottom:17px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .logo{font-size:17px;font-weight:850;letter-spacing:-.4px;color:white;text-decoration:none}.logo small{font-size:11px;font-weight:500;color:var(--muted);margin-left:10px}
 nav{display:flex;gap:18px;flex-wrap:wrap}nav a{color:#d0d8d8;text-decoration:none;font-size:12px}nav a:hover{color:var(--mint)}
+html{scroll-behavior:smooth}main section[id]{scroll-margin-top:28px}header nav a[aria-current="location"]{color:var(--mint);text-decoration:underline;text-underline-offset:7px}main section[id]:target>.adv-title-row h2{color:var(--mint)}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 main{padding-top:34px}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--mint);font-weight:750}
 h1{font-size:clamp(30px,4vw,48px);line-height:1.09;letter-spacing:-1.5px;margin:8px 0 12px}h2{font-size:23px;letter-spacing:-.5px;margin:0}h3{font-size:15px;margin:0 0 8px}p{margin:6px 0 0}
 .lead{font-size:16px;color:#c5cfd1;max-width:750px}.meta{font-size:11px;color:var(--muted)}
@@ -62,7 +63,7 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:#7d8a90;font-size:1
 </head>
 <body>
 <header><div class="wrap"><a class="logo" href="index.html">POWER <em>STACK</em> <small>Investment advisory desk</small></a>
-<nav aria-label="Primary"><a href="#investing-now" aria-current="page">My investments</a><a href="#next-moves">What to do</a><a href="#market-brief">Macro themes</a><a href="#portfolio-review">My holdings</a><a href="#market-summary">Market summary</a><a href="research-library.html">Research library</a></nav></div></header>
+<nav aria-label="Primary"><a href="#investing-now" aria-current="location">My investments</a><a href="#next-moves">What to do</a><a href="themes.html">Macro themes</a><a href="holdings.html">My holdings</a><a href="#market-summary">Market summary</a><a href="research-library.html">Research library</a></nav></div></header>
 <main class="wrap">
 
 <div class="adv-status" aria-label="Investment research freshness"><span><span class="adv-status-dot"></span><strong>Investment research, not a live trading feed.</strong> <span id="adv-research-status">Research 23 Oct 2026 · US prices to 22 Oct.</span></span><span class="adv-status-right">MYR base · No orders placed</span></div>
@@ -94,8 +95,8 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:#7d8a90;font-size:1
 <div class="adv-title-row"><div><div class="adv-overline">03 / THE MACRO CASE</div><h2 id="adv-market-heading">What changes the portfolio?</h2><p>Research-dated themes translated into the specific investments they affect.</p></div><a class="adv-inline-link" href="https://bluebelly-desk.vercel.app/" target="_blank" rel="noopener noreferrer">Bluebelly market view ↗</a></div>
 <aside class="adv-investigation-update" aria-label="27 October investment research update">
  <div class="adv-investigation-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19h16M6 16l4-4 3 2 5-8M15 6h3v3"/></svg></div>
- <div class="adv-investigation-body"><small>27 OCT · NEW POWER STACK RESEARCH</small><strong>AI's financing pressure is real. A collapse in chip demand is not established.</strong><p>CCC credit stress is widening while broader high-yield is not. Meet Kevin's oil/rates scenario and Traders Reality's expectations lens were tested against source-dated issuer and Treasury evidence. <b>Existing allocation remains conditional.</b></p></div>
- <a href="https://github.com/clydigital/power-stack/blob/main/research/2026-10-27-power-stack-decision-gap-sweep-meet-kevin-traders-reality.md" target="_blank" rel="noopener noreferrer">Read research ↗</a>
+ <div class="adv-investigation-body"><small>27 OCT · AI CRASH RISK REASSESSMENT</small><strong>AI adoption can grow even while financing-dependent AI shares fail.</strong><p>Traders Reality's authenticated 26 October transcript distinguishes vulnerable GPU-cloud refinancing from cash-generating hyperscalers. CoreWeave's June filing confirms heavy debt, while TSMC's October results still show strong demand. <b>Selective funding stress is credible; an industry-wide demand collapse or systemic credit crash is not established.</b> The seven-position target stays unchanged pending credit, earnings and broker checks.</p></div>
+ <a href="https://github.com/clydigital/power-stack/blob/main/research/2026-10-27-traders-reality-ai-crash-risk-reassessment.md" target="_blank" rel="noopener noreferrer">Read risk assessment ↗</a>
 </aside>
 <div id="adv-insight-grid" class="adv-insight-grid"><div class="adv-insight"><strong>Treasuries</strong><small>Opportunity, with rate risk</small><p>10-year US yields briefly fell below 5% as investors sought safety. Important for VGIT and TLT. Do not assume inflation has ended.</p></div>
 <div class="adv-insight"><strong>Equity rotation</strong><small>Selective, not a full crash</small><p>The technology-heavy Nasdaq fell sharply while the equal-weight S&amp;P held up. Stock selection matters more than index direction.</p></div>
@@ -211,6 +212,22 @@ footer{border-top:1px solid var(--line);padding:22px 0;color:#7d8a90;font-size:1
 </details>
 </main>
 <footer><div class="wrap">Market views and stock ideas are for information and discussion. Prices may have changed since the stated research time; consider your own financial circumstances before making an investment decision.</div></footer>
+<script>
+/* Make homepage jump destinations and location feedback explicit; full sections use their own pages. */
+(() => {
+  const nav = document.querySelector('header nav[aria-label="Primary"]');
+  if (!nav) return;
+  const updateLocation = () => {
+    const hash = window.location.hash || '#investing-now';
+    nav.querySelectorAll('a').forEach(a => {
+      if (a.getAttribute('href') === hash) a.setAttribute('aria-current','location');
+      else a.removeAttribute('aria-current');
+    });
+  };
+  window.addEventListener('hashchange', updateLocation);
+  updateLocation();
+})();
+</script>
 <script src="stock-states.js"></script>
 <script>
 (()=>{'use strict';
