@@ -117,7 +117,7 @@ for(const q of ["TSM","TSLA","VGIT"]){assert(html.includes('class="ps-quote-pill
 assert(html.includes('ps-nav-more')&&html.includes('href="holdings.html"')&&html.includes('href="themes.html"'),"Navigation must retain full routes in progressive disclosure");
 assert(html.includes('id="ps-verdict-next"')&&html.includes('id="ps-verdict-blocker"'),"All warnings in visible verdict area required");
 assert(js.includes("function renderVisualBrief(d)")&&js.includes("renderVisualBrief(d);"),"Client API must bind visual hero to its data feed");
-assert(js.includes("x.close===snapshot.newestRegularClose"),"No cross-date quote pills");
+assert(js.includes("x.close===state.newestRegularClose"),"No cross-date quote pills");
 assert(css.includes('.ps-hero-layout')&&css.includes('.ps-money-emphasis')&&css.includes('.ps-quote-pill'),"Mockup styling missing");
 assert(css.includes('@media(max-width:800px)')&&css.includes('@media(max-width:640px)')&&css.includes('@media(max-width:460px)'),"Responsive layout gates missing");
 assert.equal(feed.quickAssessment.headline,"Your RM13,491. Your next move.");
