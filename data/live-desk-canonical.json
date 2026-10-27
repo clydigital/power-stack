@@ -485,9 +485,9 @@
       {
         "key": "FUNDING",
         "label": "Secured funding / collateral",
-        "direction": "UNRESOLVED",
+        "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR n/a. Volumes: SOFR $3086bn, TGCR $1197bn, BGCR $1232bn.",
+        "detail": "EFFR 3.88%; SOFR/TGCR/BGCR average spread vs EFFR +3.7 bp. Volumes: SOFR $3086bn, TGCR $1197bn, BGCR $1232bn.",
         "asOf": "2026-10-26",
         "sourceName": "Federal Reserve Bank of New York",
         "sourceUrl": "https://markets.newyorkfed.org/api/rates/all/latest.json",
@@ -497,7 +497,7 @@
           "sofr": 3.93,
           "tgcr": 3.91,
           "bgcr": 3.91,
-          "securedVsEffrBps": null,
+          "securedVsEffrBps": 3.7,
           "sofrVolumeBillions": 3086,
           "tgcrVolumeBillions": 1197,
           "bgcrVolumeBillions": 1232
@@ -508,16 +508,16 @@
         "label": "Treasury bills / front-end cash",
         "direction": "TIGHTER",
         "confirmation": "CONFIRMING",
-        "detail": "3M 4.22%; 6M 4.35%; average vs EFFR +40.5 bp.",
-        "asOf": "2026-10-26",
+        "detail": "3M 4.22%; 6M 4.34%; average vs EFFR +40.0 bp.",
+        "asOf": "2026-10-27",
         "sourceName": "U.S. Department of the Treasury",
         "sourceUrl": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026",
         "evidenceRefs": [],
         "metrics": {
           "bill3m": 4.22,
-          "bill6m": 4.35,
+          "bill6m": 4.34,
           "effectiveFedFunds": 3.88,
-          "billsVsEffrBps": 40.5
+          "billsVsEffrBps": 40
         }
       },
       {
@@ -525,16 +525,16 @@
         "label": "Credit spreads",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "HY OAS 3.38 (5D +7.0 bp); IG OAS 0.91 (5D +6.0 bp).",
-        "asOf": "2026-10-23",
+        "detail": "HY OAS 3.3 (5D +1.0 bp); IG OAS 0.9 (5D +3.0 bp).",
+        "asOf": "2026-10-26",
         "sourceName": "Federal Reserve Economic Data",
         "sourceUrl": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
         "evidenceRefs": [],
         "metrics": {
-          "hyOas": 3.38,
-          "hyOas5dBps": 7,
-          "igOas": 0.91,
-          "igOas5dBps": 6
+          "hyOas": 3.3,
+          "hyOas5dBps": 1,
+          "igOas": 0.9,
+          "igOas5dBps": 3
         }
       },
       {
@@ -601,7 +601,7 @@
     {
       "id": "spx-rsp",
       "title": "Headline index and equal weight are separating",
-      "detail": "SPX cash -0.5% over 5D vs RSP 1.8%.",
+      "detail": "SPX cash -0.2% over 5D vs RSP 1.8%.",
       "assets": [
         "spx",
         "rsp"
@@ -628,8 +628,8 @@
       "symbol": "DGS3MO",
       "label": "US 3M Treasury Bill Yield",
       "last": 4.22,
-      "change5d": -0.94,
-      "asOf": "2026-10-23",
+      "change5d": -1.17,
+      "asOf": "2026-10-26",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/DGS3MO"
     },
@@ -637,9 +637,9 @@
       "id": "us6m-bill",
       "symbol": "DGS6MO",
       "label": "US 6M Treasury Bill Yield",
-      "last": 4.3,
-      "change5d": -0.92,
-      "asOf": "2026-10-23",
+      "last": 4.35,
+      "change5d": -0.46,
+      "asOf": "2026-10-26",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/DGS6MO"
     },
@@ -647,9 +647,9 @@
       "id": "us2y",
       "symbol": "US2Y",
       "label": "US 2Y Yield",
-      "last": 4.68,
-      "change5d": -1.89,
-      "asOf": "2026-10-26",
+      "last": 4.7,
+      "change5d": -1.88,
+      "asOf": "2026-10-27",
       "sourceName": "U.S. Department of the Treasury",
       "sourceUrl": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026"
     },
@@ -657,9 +657,9 @@
       "id": "us10y-fred",
       "symbol": "US10Y",
       "label": "US 10Y Yield · Treasury",
-      "last": 5,
-      "change5d": -2.91,
-      "asOf": "2026-10-26",
+      "last": 4.99,
+      "change5d": -2.54,
+      "asOf": "2026-10-27",
       "sourceName": "U.S. Department of the Treasury",
       "sourceUrl": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026"
     },
@@ -668,8 +668,8 @@
       "symbol": "DFII10",
       "label": "US 10Y Real Yield",
       "last": 2.66,
-      "change5d": -2.92,
-      "asOf": "2026-10-23",
+      "change5d": -5,
+      "asOf": "2026-10-26",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/DFII10"
     },
@@ -677,9 +677,9 @@
       "id": "us10y-breakeven",
       "symbol": "T10YIE",
       "label": "US 10Y Breakeven Inflation",
-      "last": 2.34,
-      "change5d": -0.43,
-      "asOf": "2026-10-26",
+      "last": 2.35,
+      "change5d": 0,
+      "asOf": "2026-10-27",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/T10YIE"
     },
@@ -689,7 +689,7 @@
       "label": "Effective Federal Funds Rate",
       "last": 3.88,
       "change5d": 0,
-      "asOf": "2026-10-23",
+      "asOf": "2026-10-26",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/DFF"
     },
@@ -697,9 +697,9 @@
       "id": "hy-oas",
       "symbol": "BAMLH0A0HYM2",
       "label": "US High Yield OAS",
-      "last": 3.38,
-      "change5d": 2.11,
-      "asOf": "2026-10-23",
+      "last": 3.3,
+      "change5d": 0.3,
+      "asOf": "2026-10-26",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
     },
@@ -707,9 +707,9 @@
       "id": "ig-oas",
       "symbol": "BAMLC0A0CM",
       "label": "US Investment Grade OAS",
-      "last": 0.91,
-      "change5d": 7.06,
-      "asOf": "2026-10-23",
+      "last": 0.9,
+      "change5d": 3.45,
+      "asOf": "2026-10-26",
       "sourceName": "Federal Reserve Economic Data",
       "sourceUrl": "https://fred.stlouisfed.org/series/BAMLC0A0CM"
     }
@@ -818,14 +818,14 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-27T12:09:09.501Z",
+    "asOf": "2026-10-27T22:12:47.119Z",
     "assets": [
       {
         "key": "SPX",
         "label": "S&P 500",
         "symbol": "SP500",
-        "last": 7623.68,
-        "dailyChange": -0.52,
+        "last": 7676.77,
+        "dailyChange": 0.7,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "HIGH",
@@ -833,14 +833,14 @@
         "confirmingSignal": "Large‑cap breadth is robust while AI basket internals are weaker.",
         "contradictingSignal": null,
         "invalidation": "Multi‑session canonical MOVE/VIX spike plus persistent IG OAS widening and auction demand deterioration (canonical MOVE and persistent IG OAS time series) would indicate broadening stress; absence of those would preserve the current scoped tightening view.",
-        "asOf": "2026-10-23"
+        "asOf": "2026-10-26"
       },
       {
         "key": "NASDAQ",
         "label": "Nasdaq Composite",
         "symbol": "^IXIC",
-        "last": 25955.34,
-        "dailyChange": -0.21,
+        "last": 26169.38,
+        "dailyChange": 0.82,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "HIGH",
@@ -848,7 +848,7 @@
         "confirmingSignal": "Semiconductor ETF (SMH) shows mixed performance; AI basket internals weakened while large caps retain strength.",
         "contradictingSignal": null,
         "invalidation": "Multi‑session canonical MOVE/VIX spike plus persistent IG OAS widening and auction demand deterioration (canonical MOVE and persistent IG OAS time series) would indicate broadening stress; absence of those would preserve the current scoped tightening view.",
-        "asOf": "2026-10-23"
+        "asOf": "2026-10-26"
       },
       {
         "key": "CRUDE",
@@ -869,8 +869,8 @@
         "key": "US_RATES",
         "label": "US 10Y",
         "symbol": "^TNX",
-        "last": 5,
-        "dailyChange": 0,
+        "last": 4.99,
+        "dailyChange": -1,
         "dailyChangeUnit": "bps",
         "bias": "HAWKISH",
         "conviction": "HIGH",
@@ -878,16 +878,16 @@
         "confirmingSignal": "Elevated nominal 10Y (~5%) with higher real yields; ACM term premium small (~0.67%).",
         "contradictingSignal": "Canonical MOVE/Treasury‑volatility",
         "invalidation": "Multi‑session canonical MOVE/VIX spike plus persistent IG OAS widening and auction demand deterioration (canonical MOVE and persistent IG OAS time series) would indicate broadening stress; absence of those would preserve the current scoped tightening view.",
-        "asOf": "2026-10-26"
+        "asOf": "2026-10-27"
       },
       {
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4017.5,
-        "dailyChange": -0.52,
+        "last": 4062.300049,
+        "dailyChange": 0.59,
         "dailyChangeUnit": "percent",
-        "bias": "BEARISH",
+        "bias": "BULLISH",
         "conviction": "LOW",
         "primaryDriver": "No canonical XAUUSD evidence supplied; cannot assess safe‑haven dynamics relative to rates.",
         "confirmingSignal": null,
@@ -899,8 +899,8 @@
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 79730.29,
-        "dailyChange": -0.35,
+        "last": 80799.87,
+        "dailyChange": 0.99,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -1424,14 +1424,14 @@
   },
   "marketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "1cc14940-aa3c-4578-8f2a-a81af67ec646",
-    "capturedAt": "2026-10-27T08:05:28.801Z",
-    "researchRunId": "3bbf8298-28db-4c1d-9eb5-6c31c258d3be",
+    "editionId": "9199d16f-8222-4b94-a121-3333331c44ae",
+    "capturedAt": "2026-10-27T14:41:01.310Z",
+    "researchRunId": "285ee00a-27a3-4b35-8d91-fe8b539b02f4",
     "items": [
       {
-        "id": "20ba5568-fd51-4e9e-bfb7-6fcc6d14d8df",
+        "id": "4097c486-3ffa-4a51-998e-f0c1760ec9b2",
         "motionKey": "event:fomc:2026-10",
-        "versionNumber": 10,
+        "versionNumber": 11,
         "headline": "FOMC meeting (Oct 28) and major Mag7 earnings (Microsoft on Wednesday, memory names after hours) are singled out as near‑term catalysts that could validate or reverse the sentiment moves.",
         "category": "EARNINGS",
         "verificationState": "LEAD",
@@ -1469,42 +1469,6 @@
           "high market relevance",
           "asset/ticker linked"
         ]
-      },
-      {
-        "id": "ffcc97a6-15fe-4f62-a655-73413defd593",
-        "motionKey": "event:ipo:anthropic",
-        "versionNumber": 9,
-        "headline": "Near‑term catalysts flagged: CPI print (one hour pre‑open), TSMC/ASML earnings, Anthropic Q3 disclosure/IPO process; these should be prioritized when testing the thesis.",
-        "category": "EARNINGS",
-        "verificationState": "LEAD",
-        "lifecycleState": "PROMOTED",
-        "whatHappened": "StockedUp surfaced this in a recent transcript. It remains a creator-sourced lead until independently corroborated: Near‑term catalysts flagged: CPI print (one hour pre‑open), TSMC/ASML earnings, Anthropic Q3 disclosure/IPO process; these should be prioritized when testing the thesis.",
-        "marketReaction": null,
-        "whyInteresting": "Transcript writing angle: Frame a piece around 'Narrow leadership + looming AI IPO supply + rekindled energy risk: is the market misreading breadth and liquidity?' combining the record low equal‑vs‑cap correlation stat with Anthropic IPO sizing and verified shipping/attack data.",
-        "bigPictureBridge": "Fresh AI / technology evidence → supply, demand or financing channel → US–China AI regime",
-        "nextTest": "Verify transcript lead: Near‑term catalysts flagged: CPI print (one hour pre‑open), TSMC/ASML earnings, Anthropic Q3 disclosure/IPO process; these should be prioritized when testing the thesis.",
-        "tickers": [
-          "MSFT"
-        ],
-        "sourceName": "StockedUp",
-        "sourceUrl": "https://www.youtube.com/watch?v=ddRqBVme3aQ",
-        "materiality": 88,
-        "relevance": 88,
-        "novelty": 88,
-        "occurredAt": "2026-10-13T22:00:01.000Z",
-        "storyId": "1cf9ad1d-c350-48c4-b06e-d544771919d3",
-        "storySlug": "iran-oil-inflation-rates",
-        "storyTitle": "Distillate Scarcity Persists Despite Crude-Flow Recovery",
-        "regimeSlug": "us-china-ai",
-        "regimeLabel": "AI Capital Cycle",
-        "attentionTier": "PRIMARY",
-        "attentionScore": 84,
-        "writingPotential": "HIGH",
-        "attentionReasons": [
-          "high materiality",
-          "high market relevance",
-          "asset/ticker linked"
-        ]
       }
     ]
   },
@@ -1525,5 +1489,5 @@
     "Mismatched ticker/issuer labels are quarantined, never silently remapped to another security.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-27T12:19:01.233Z"
+  "syncedAt": "2026-10-27T22:19:07.402Z"
 }
