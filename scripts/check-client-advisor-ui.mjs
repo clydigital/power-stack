@@ -27,7 +27,7 @@ for(const p of ["@media(max-width:720px)","@media(max-width:460px)",":focus-visi
 for(const p of ["data/client-advisor.json","data/rakuten-one-year-mandate.json","data-adv-filter","aria-pressed","fetchJson","renderTimestamp"])assert(js.includes(p),"Missing live data filter/refresh "+p);
 assert(config.manualInvestmentMandate.clientAdvisory?.data==="data/client-advisor.json");
 assert(config.manualInvestmentMandate.clientAdvisory?.neverModifyLiveCanonical===true);
-assert(feed.marketDataThrough==="2026-10-22");
+assert.equal(feed.marketDataThrough,"2026-10-26","26 Oct completed US session must be dated");
 assert(html.includes("Nothing on this page sends orders."));
 assert(html.includes("RM13,491"));
 // Advisor V3: recommendations must be visibly above the portfolio catalogue.
@@ -67,6 +67,45 @@ const font=fs.readFileSync("ps-ux.css","utf8");
 assert(font.includes('Figtree')&&html.includes('family=Figtree'),"Figtree typography must reach all Power Stack pages");
 assert(html.includes('Target allocation, not actual holdings.'),"The target must never be labelled as verified broker ownership");
 assert(html.includes('id="adv-account-status"')&&html.includes("Nothing on this page sends orders."),"Investment safety states required");
+
+const deep=feed.deepDecision;
+assert.equal(deep.schema,"power-stack-evidence-led-decision/1");
+assert.equal(deep.capitalMYR,13491);
+assert.equal(deep.newestRegularClose,"2026-10-26");
+assert.equal(deep.coverage.state,"PARTIAL");
+assert.equal(deep.coverage.eligible,46);
+assert.equal(deep.coverage.fullyRead,8);
+assert.equal(deep.coverage.unconsumed,38);
+assert.deepEqual([deep.cashVerified,deep.positionsVerified,deep.executionsAllowed],[false,false,false]);
+assert.equal(deep.changes.length,6);
+assert.equal(deep.calls.length,11);
+assert(deep.calls.every(x=>x.action&&x.counter&&x.gate&&x.source),"No unsupported one-way security calls");
+assert.equal(deep.catalysts.length,7);
+assert(deep.catalysts.some(x=>x.id==="tsm-sales"&&x.dateMYT==="2026-11-10"),"TSMC Q3 is already reported; next issuer monthly sales matter");
+assert(deep.catalysts.some(x=>x.id==="cf"&&x.status==="ISSUER CONFIRMED"),"CF earnings source verification must survive");
+assert(deep.catalysts.some(x=>x.id==="merger"&&x.status==="UNSCHEDULED / EVENT WATCH"),"No invented signed Tesla-SpaceX merger deadline");
+assert(deep.changes.some(x=>x.id==="tsla-merger"&&x.actionChanged),"Tesla committee must actually change decision");
+assert(deep.changes.some(x=>x.id==="tsmc-q3"&&x.actionChanged),"TSM latest earnings must actually change decision");
+assert(deep.quotes.every(x=>x.close==="2026-10-26"&&Number.isFinite(x.usd)),"Quoted prices must share a verified closed session");
+assert(html.indexOf('id="decision-brief"')<html.indexOf('id="new-since"')
+ &&html.indexOf('id="new-since"')<html.indexOf('id="security-decisions"')
+ &&html.indexOf('id="security-decisions"')<html.indexOf('id="catalyst-window"')
+ &&html.indexOf('id="catalyst-window"')<html.indexOf('id="advisor"'),"Decision, changes, security comparisons and dates must be ahead of model catalogue");
+for(const id of ["ps-evidence-strip","ps-new-items","ps-security-calls","ps-event-cards","ps-extra-changes","ps-more-events"])assert(html.includes('id="'+id+'"'),"Missing progressive-disclosure section "+id);
+assert(html.includes("Existing positions — archival")&&html.includes("Seven-position model — not owned"),"Broker actual versus proposal not separated");
+assert(html.includes("MacroPulse Gate 8/46 read · PARTIAL"),"Partial Gate coverage warning must survive no-JS");
+assert(html.includes('2026-10-27-deep-decision-refresh-plan.md'),"Research plan missing from public source lineage");
+for(const q of deep.changes.slice(0,5))assert(html.includes(q.title),"No-JS change story mismatch "+q.id);
+for(const c of deep.calls)assert(html.includes(c.symbol),"No-JS company judgement absent "+c.symbol);
+for(const c of deep.catalysts)assert(html.includes(c.name),"No-JS catalyst absent "+c.name);
+assert(js.includes("function renderDeepDecision(d)")&&js.includes("renderDeepDecision(d);"),"Single client-advisor feed must drive detailed sections");
+assert(js.includes("power-stack-evidence-led-decision/1")&&js.includes("state.coverage?.fullyRead"),"Research coverage must stay wired to feed");
+assert(css.includes(".ps-truth-duo")&&css.includes(".ps-change-grid")&&css.includes(".ps-event-grid"),"Responsive research/feed styles missing");
+assert.equal(mandate.allocation.find(x=>x.symbol==="TSM").status,"CONDITIONAL_ENTRY_RESEARCH");
+assert.equal(mandate.allocationSumMYR,13491);
+assert.deepEqual(mandate.allocation.map(x=>x.targetMYR),[4047,1889,1619,1214,1349,1349,2024],"No position sizing was silently altered");
+assert.deepEqual(feed.firstMoves.map(x=>x.id),["funding","duration","cash"],"Three existing workflows retained");
+
 console.log("Advisor V2 UI guard OK: 7 sourced targets, 50/35/15 mix, 5 dated macro lenses, Figtree, no broker/trade claims.");
 
 console.log("Client advisory UI OK: 13491 MYR, 3 next moves, 6 sourced candidates, responsive actions before Dossier, broker status honest.");
