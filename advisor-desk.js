@@ -36,7 +36,7 @@ function renderQuickAssessment(d){
  const allowedAnchors=new Set(['#portfolio-review','#investment-plan','#market-brief']);
  root.innerHTML=a.actions.map((x,i)=>{
    const href=allowedAnchors.has(x.href)?x.href:'#next-moves';
-   return '<article class="ps-decision-card ps-decision-'+esc(x.key)+'"><div class="ps-decision-card-top"><span class="ps-decision-index">0'+(i+1)+'</span><span class="ps-decision-state">'+esc(x.status)+'</span></div><h3>'+esc(x.title)+'</h3><p>'+esc(x.summary)+'</p><details class="ps-decision-detail"><summary>What must be true?</summary><p>'+esc(x.next)+'</p><a href="'+href+'">Full decision reasoning ↗</a></details></article>';
+   return '<article class="ps-decision-card ps-decision-'+esc(x.key)+'"><div class="ps-decision-card-top"><span class="ps-decision-index">0'+(i+1)+'</span><span class="ps-decision-state">'+esc(x.status)+'</span></div><h3>'+esc(x.title)+'</h3><p>'+esc(x.summary)+'</p><details class="ps-decision-detail"><summary>What clears this call?</summary><p>'+esc(x.next)+'</p><a href="'+href+'">Review the evidence ↗</a></details></article>';
  }).join('');
 }
 function renderDeepDecision(d){
@@ -65,6 +65,27 @@ function renderDeepDecision(d){
  const ev=get('ps-event-cards'),extraEv=get('ps-more-events');
  if(ev&&Array.isArray(state.catalysts))ev.innerHTML=state.catalysts.slice(0,5).map(event).join('');
  if(extraEv&&Array.isArray(state.catalysts))extraEv.innerHTML='<summary>More catalysts · TSMC monthly sales and Tesla merger watch</summary>'+state.catalysts.slice(5).map(event).join('');
+}
+function renderVisualBrief(d){
+ const capital=get('ps-hero-capital'),target=get('ps-hero-target'),review=get('ps-hero-review'),headCapital=get('ps-hero-headline-capital');
+ if(capital&&Number.isFinite(d?.capital?.totalMYR))capital.textContent=money(d.capital.totalMYR);
+ if(headCapital&&Number.isFinite(d?.capital?.totalMYR))headCapital.textContent=money(d.capital.totalMYR)+'.';
+ const range=d?.capital?.targetRangeMYR;
+ if(target&&Array.isArray(range)&&range.length===2&&range.every(Number.isFinite))target.textContent=money(range[0])+'–'+money(range[1]).replace('RM','');
+ if(review&&Number.isFinite(d?.capital?.drawdownReviewMYR))review.textContent=money(d.capital.drawdownReviewMYR);
+ const state=d?.deepDecision,holder=get('ps-hero-quote-list'),vintage=get('ps-quote-vintage');
+ if(!holder||state?.schema!=='power-stack-evidence-led-decision/1')return;
+ const chosen=['TSM','TSLA','VGIT'];
+ const matched=chosen.map(symbol=>(state.quotes||[]).find(x=>x.symbol===symbol && x.close===state.newestRegularClose && Number.isFinite(x.usd)));
+ if(matched.some(x=>!x))return;
+ const nodes=matched.map(x=>{
+   const pill=document.createElement('span');pill.className='ps-quote-pill';
+   const ticker=document.createElement('b');ticker.textContent=x.symbol;
+   const price=document.createElement('strong');price.textContent=String.fromCharCode(36)+Number(x.usd).toFixed(2);
+   pill.append(ticker,price);return pill;
+ });
+ holder.replaceChildren(...nodes);
+ if(vintage){const d=new Date(state.newestRegularClose+'T12:00:00Z');vintage.textContent=new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}).format(d)+' US close';}
 }
 function renderTop(d){
  if(!d||d.contractVersion!=='power-stack-client-advisor/1')return;
@@ -217,7 +238,7 @@ function handleCopy(){
 }
 async function load(){
  const [d,m]=await Promise.all([fetchJson('data/client-advisor.json'),fetchJson('data/rakuten-one-year-mandate.json')]);
- if(d&&d.contractVersion==='power-stack-client-advisor/1'){renderTimestamp(d);renderQuickAssessment(d);renderDeepDecision(d);renderTop(d);renderMoves(d);renderOpportunity(d);renderResearchRadar(d);renderPortfolio(d);renderResearch(d)}
+ if(d&&d.contractVersion==='power-stack-client-advisor/1'){renderTimestamp(d);renderQuickAssessment(d);renderDeepDecision(d);renderVisualBrief(d);renderTop(d);renderMoves(d);renderOpportunity(d);renderResearchRadar(d);renderPortfolio(d);renderResearch(d)}
  else{const s=get('adv-research-status');if(s)s.textContent='Live decision data unavailable · dated plan below requires new verification';}
  renderInvestmentOverview(m);
  if(m&&m.schema==='power-stack-manual-investment-mandate/v1')renderAllocation(m);

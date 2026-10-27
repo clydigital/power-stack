@@ -106,6 +106,27 @@ assert.equal(mandate.allocationSumMYR,13491);
 assert.deepEqual(mandate.allocation.map(x=>x.targetMYR),[4047,1889,1619,1214,1349,1349,2024],"No position sizing was silently altered");
 assert.deepEqual(feed.firstMoves.map(x=>x.id),["funding","duration","cash"],"Three existing workflows retained");
 
+
+/* Mockup V2: investment advice belongs above research rows and keeps actual/model isolation. */
+assert(html.includes('id="ps-decision-heading"')&&html.includes('id="ps-hero-capital"'),"Previous capital + next-move mockup hero must be retained");
+assert(html.includes('id="ps-hero-headline-capital"'),"Hero capital must be source-bound");
+assert(html.includes('Your next move.')&&html.includes("YOUR CAPITAL PLAN"),"Editorial decision and separate portfolio snapshot required");
+assert(html.indexOf('class="ps-hero-layout"')<html.indexOf('id="ps-decision-grid"'),"High-level verdict and capital must appear before action list");
+assert(html.includes('id="ps-hero-quote-list"')&&html.includes('26 Oct US close'),"Source-dated and clearly not-live market snapshot required");
+for(const q of ["TSM","TSLA","VGIT"]){assert(html.includes('class="ps-quote-pill"><b>'+q+'</b>'),"Missing dated price pill "+q);}
+assert(html.includes('ps-nav-more')&&html.includes('href="holdings.html"')&&html.includes('href="themes.html"'),"Navigation must retain full routes in progressive disclosure");
+assert(html.includes('id="ps-verdict-next"')&&html.includes('id="ps-verdict-blocker"'),"All warnings in visible verdict area required");
+assert(js.includes("function renderVisualBrief(d)")&&js.includes("renderVisualBrief(d);"),"Client API must bind visual hero to its data feed");
+assert(js.includes("x.close===state.newestRegularClose"),"No cross-date quote pills");
+assert(css.includes('.ps-hero-layout')&&css.includes('.ps-money-emphasis')&&css.includes('.ps-quote-pill'),"Mockup styling missing");
+assert(css.includes('@media(max-width:800px)')&&css.includes('@media(max-width:640px)')&&css.includes('@media(max-width:460px)'),"Responsive layout gates missing");
+assert.equal(feed.quickAssessment.headline,"Your RM13,491. Your next move.");
+assert.equal(feed.capital.totalMYR,13491);
+assert.equal(feed.deepDecision.newestRegularClose,"2026-10-26");
+assert.equal(feed.deepDecision.coverage.state,"PARTIAL");
+assert.equal(feed.deepDecision.coverage.fullyRead,8);
+assert.equal(feed.deepDecision.coverage.eligible,46);
+
 console.log("Advisor V2 UI guard OK: 7 sourced targets, 50/35/15 mix, 5 dated macro lenses, Figtree, no broker/trade claims.");
 
 console.log("Client advisory UI OK: 13491 MYR, 3 next moves, 6 sourced candidates, responsive actions before Dossier, broker status honest.");
