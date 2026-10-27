@@ -55,6 +55,15 @@ assert((market.sourceLinks||[]).length >= 3 && market.sourceLinks.every(x=>/^htt
 assert(home.includes('id="market-summary"') && home.includes("renderMarketSummary(vals.market)") && home.includes("data/market-summary.json"), "Client market summary must be displayed and wired to its dated data");
 assert(home.includes("marketSummaryFreshness") && home.includes("marketSummarySources"), "Missing freshness or sources");
 
+assert(market.asOf.startsWith("2026-10-27"), "27 Oct creator research timestamp missing");
+assert(market.sections.some(x=>x.label.includes("Credit")) && market.sections.some(x=>x.label.includes("money behind")), "Creator financing and credit reasoning missing");
+assert(market.sections.every(x=>x.sources?.length>0 && x.sources.every(s=>/^https:\/\//.test(s.url))), "Each market act must have traceable source links");
+assert(market.dataLimits.includes("creator views") && market.dataLimits.includes("23 Oct"), "Creator provenance or different market vintages concealed");
+assert(market.verdict.includes("no automatic orders"), "Market summary cannot authorize trades from creator commentary");
+assert(visibleArticle.includes("market-section-sources") && visibleArticle.includes("Meta SEC financing"), "Static market narrative must mirror section-level evidence links");
+assert(home.includes("market-section-sources';for(const src of (sec.sources||[])"), "Client renderer must preserve section-level source evidence");
+
+
 assert.equal(catalyst.contractVersion, "power-stack-ai-catalyst-gates/1");
 assert.equal(catalyst.events.length, 1, "Event calendar must not create an unlimited parallel intake queue");
 const tsmc = catalyst.events[0];
