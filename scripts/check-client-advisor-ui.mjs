@@ -37,7 +37,7 @@ assert(html.includes('href="#decision-brief"') && html.includes('href="#next-mov
 assert.equal(feed.quickAssessment.actions.length,4,"Exactly four actionable quick decisions");
 assert(feed.quickAssessment.verdict.status==="NO NEW ORDER CLEARED" && feed.quickAssessment.verdict.blocker.includes("not yet reconciled"),"Do not make an executable buy call from unverified broker data");
 assert(html.indexOf('id="ps-decision-verdict"')<html.indexOf('id="ps-decision-grid"'),"One-glance verdict must appear above action cards");
-assert(html.includes('id="ps-verdict-next"') && html.includes(feed.quickAssessment.verdict.headline),"Decision headline, blocker and next event must render without JS");
+assert(html.includes('id="ps-verdict-next"') && html.includes(feed.quickAssessment.verdict.headline.replaceAll("\'","&#39;")),"Decision headline, blocker and next event must render without JS");
 assert((html.slice(html.indexOf('id="decision-brief"'),html.indexOf('id="advisor"')).match(/<details class="ps-decision-detail">/g)||[]).length===4,"All four proof requirements should be collapsed by default");
 assert(js.includes('ps-verdict-blocker')&&js.includes('ps-decision-detail')&&js.includes('allowedAnchors'),"Client renderer should mirror short-form proof disclosures with safe destinations");
 assert(css.includes('.ps-decision-verdict')&&css.includes('.ps-decision-detail summary:focus-visible'),"Compact verdict and disclosure accessibility missing");
