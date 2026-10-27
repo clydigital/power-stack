@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-27T12:19:01.417Z",
+  "generatedAt": "2026-10-27T17:59:59.400Z",
   "asOf": "2026-10-27T08:06:00.164+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -27,13 +27,13 @@
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-27T12:19:01.347Z",
+      "generatedAt": "2026-10-27T17:59:59.348Z",
       "status": "OK"
     },
     "holdingTape": {
       "contractVersion": "power-stack-holding-tape/1",
       "expectedContract": "power-stack-holding-tape/1",
-      "generatedAt": "2026-10-27T12:09:52.094Z",
+      "generatedAt": "2026-10-27T17:59:59.294Z",
       "unresolved": [
         "6742UW"
       ],
@@ -147,13 +147,13 @@
   "portfolioTriage": {
     "tapeDivergences": [
       "XOM",
-      "HIBISCS",
-      "YTLPOWR",
-      "TSLA"
+      "MISC",
+      "TSLA",
+      "DAYANG"
     ],
     "tapeConfirmations": [
-      "MISC",
-      "DAYANG"
+      "HIBISCS",
+      "YTLPOWR"
     ],
     "highReview": [
       "XOM",
@@ -601,23 +601,23 @@
     {
       "ticker": "MISC",
       "overlayState": "HEADWIND",
-      "reaction": "CONFIRMS",
+      "reaction": "DIVERGES",
       "action": "HOLD / FUNDING CHECK",
-      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
+      "reason": "No current decision-relevant divergence promoted into the capped queue."
     },
     {
       "ticker": "HIBISCS",
       "overlayState": "HEADWIND",
-      "reaction": "DIVERGES",
+      "reaction": "CONFIRMS",
       "action": "HOLD / NO CHASE",
-      "reason": "No current decision-relevant divergence promoted into the capped queue."
+      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
     },
     {
       "ticker": "YTLPOWR",
       "overlayState": "HEADWIND",
-      "reaction": "DIVERGES",
+      "reaction": "CONFIRMS",
       "action": "TRIM IF CONCENTRATION EXCESS",
-      "reason": "No current decision-relevant divergence promoted into the capped queue."
+      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
     },
     {
       "ticker": "TTWO",
@@ -629,9 +629,9 @@
     {
       "ticker": "DAYANG",
       "overlayState": "HEADWIND",
-      "reaction": "CONFIRMS",
+      "reaction": "DIVERGES",
       "action": "SELL / CAPITAL RECYCLING REVIEW",
-      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
+      "reason": "No current decision-relevant divergence promoted into the capped queue."
     }
   ],
   "newCapitalPriority": [
