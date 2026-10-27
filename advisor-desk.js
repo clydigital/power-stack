@@ -68,19 +68,26 @@ function renderDeepDecision(d){
 }
 function renderVisualBrief(d){
  const capital=get('ps-hero-capital'),target=get('ps-hero-target'),review=get('ps-hero-review'),headCapital=get('ps-hero-headline-capital');
- const format=num=>money(num);
- if(capital&&Number.isFinite(d?.capital?.totalMYR))capital.textContent=format(d.capital.totalMYR);
- if(headCapital&&Number.isFinite(d?.capital?.totalMYR))headCapital.textContent=format(d.capital.totalMYR)+'.';
+ if(capital&&Number.isFinite(d?.capital?.totalMYR))capital.textContent=money(d.capital.totalMYR);
+ if(headCapital&&Number.isFinite(d?.capital?.totalMYR))headCapital.textContent=money(d.capital.totalMYR)+'.';
  const range=d?.capital?.targetRangeMYR;
- if(target&&Array.isArray(range)&&range.length===2&&range.every(Number.isFinite))target.textContent=format(range[0])+'–'+format(range[1]).replace('RM','');
- if(review&&Number.isFinite(d?.capital?.drawdownReviewMYR))review.textContent=format(d.capital.drawdownReviewMYR);
- const snapshot=d?.deepDecision,holder=get('ps-hero-quote-list'),vintage=get('ps-quote-vintage');
- if(snapshot?.schema!=='power-stack-evidence-led-decision/1'||!holder)return;
- const names=['TSM','TSLA','VGIT'];
- const quoteMap=new Map((snapshot.quotes||[]).filter(x=>Number.isFinite(x.usd)&&x.close===snapshot.newestRegularClose).map(x=>[x.symbol,x]));
- const q=names.map(sym=>quoteMap.get(sym));
- if(q.every(Boolean)){
-    holder.innerHTML=q.map(x=>'<span class="ps-quote-pill"><b>'+esc(x.symbol)+'</b> <strong>
+ if(target&&Array.isArray(range)&&range.length===2&&range.every(Number.isFinite))target.textContent=money(range[0])+'–'+money(range[1]).replace('RM','');
+ if(review&&Number.isFinite(d?.capital?.drawdownReviewMYR))review.textContent=money(d.capital.drawdownReviewMYR);
+ const state=d?.deepDecision,holder=get('ps-hero-quote-list'),vintage=get('ps-quote-vintage');
+ if(!holder||state?.schema!=='power-stack-evidence-led-decision/1')return;
+ const chosen=['TSM','TSLA','VGIT'];
+ const matched=chosen.map(symbol=>(state.quotes||[]).find(x=>x.symbol===symbol && x.close===state.newestRegularClose && Number.isFinite(x.usd)));
+ if(matched.some(x=>!x))return;
+ const nodes=matched.map(x=>{
+   const pill=document.createElement('span');pill.className='ps-quote-pill';
+   const ticker=document.createElement('b');ticker.textContent=x.symbol;
+   const price=document.createElement('strong');price.textContent=String.fromCharCode(36)+Number(x.usd).toFixed(2);
+   pill.append(ticker,price);return pill;
+ });
+ holder.replaceChildren(...nodes);
+ if(vintage){const d=new Date(state.newestRegularClose+'T12:00:00Z');vintage.textContent=new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}).format(d)+' US close';}
+}
+function renderTop(d){
  if(!d||d.contractVersion!=='power-stack-client-advisor/1')return;
  const title=get('adv-hero-title'),desc=get('adv-hero-description');
  if(title)title.innerHTML='What you\'re <span>investing in.</span>';
