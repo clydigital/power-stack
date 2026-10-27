@@ -314,32 +314,44 @@ main{padding-top:16px}
 @media(max-width:700px){.adv-investigation-update{padding:14px;gap:10px}.adv-investigation-update>a{margin-left:0}.adv-investigation-body{flex:1 1 220px}}
 
 
-/* Decision desk is the primary first-screen read; allocation and evidence follow beneath. */
-.ps-decision-brief{padding:28px 0 23px;border-bottom:1px solid var(--adv-rule);scroll-margin-top:85px}
-.ps-decision-heading{display:flex;justify-content:space-between;align-items:end;gap:14px;margin-bottom:18px}
-.ps-decision-heading h1{font-size:clamp(27px,3.5vw,41px);line-height:1.13;letter-spacing:-1.25px;margin:6px 0 7px;color:#eff8f3}
-.ps-decision-heading p{max-width:790px;margin:0;color:#afc3b8;font-size:14px;line-height:1.55}
-.ps-decision-more{flex:0 0 auto;min-height:36px;color:#a1e0c1;text-decoration:underline;text-underline-offset:4px;font-size:12px;font-weight:650}
-.ps-decision-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.ps-decision-card{min-width:0;display:flex;flex-direction:column;align-items:start;gap:8px;border:1px solid #2d4540;border-radius:13px;background:#15201e;padding:17px 16px;box-shadow:0 2px 11px rgba(0,0,0,.12)}
-.ps-decision-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%}
-.ps-decision-index{font-size:12px;font-weight:750;color:#739c8b;font-variant-numeric:tabular-nums}
-.ps-decision-state{font-size:10px;letter-spacing:.45px;text-transform:uppercase;font-weight:800;color:#e1c594;line-height:1.3;text-align:right}
+/* Decision desk: one verdict, four one-glance actions, depth on demand. */
+.ps-decision-brief{padding:18px 0 17px;border-bottom:1px solid var(--adv-rule);scroll-margin-top:85px}
+.ps-decision-heading{display:flex;justify-content:space-between;align-items:end;gap:14px;margin-bottom:12px}
+.ps-decision-heading h1{font-size:clamp(25px,3.15vw,35px);line-height:1.13;letter-spacing:-1.15px;margin:4px 0;color:#eff8f3}
+.ps-decision-heading p{max-width:780px;margin:0;color:#98aaa5;font-size:12px;line-height:1.4}
+.ps-decision-more{flex:0 0 auto;color:#a1e0c1;text-decoration:underline;text-underline-offset:3px;font-size:11px;font-weight:650}
+.ps-decision-verdict{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(220px,.9fr);gap:12px 25px;border-top:1px solid #456257;border-bottom:1px solid #34473f;padding:12px 0 14px;margin:4px 0 12px}
+.ps-verdict-main{display:flex;flex-direction:column;gap:4px}
+.ps-verdict-status{font-size:10px;letter-spacing:1px;font-weight:850;color:#e8c693}
+.ps-verdict-main>strong{font-size:clamp(17px,2vw,23px);letter-spacing:-.35px;line-height:1.2;color:#f1f8f2}
+.ps-verdict-main p{margin:0;color:#bbccc3;line-height:1.45;font-size:12px}
+.ps-verdict-evidence{display:flex;flex-direction:column;justify-content:center;gap:6px;font-size:11px;line-height:1.45;color:#afbfb9}
+.ps-verdict-next{font-size:11px;font-weight:750;color:#b9e4c9}
+.ps-decision-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.ps-decision-card{min-width:0;display:flex;flex-direction:column;gap:5px;background:#111b1a;border:1px solid #2b413b;border-radius:10px;padding:12px 13px}
+.ps-decision-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.ps-decision-index{font-size:10px;font-weight:750;color:#729a88;font-variant-numeric:tabular-nums}
+.ps-decision-state{font-size:10px;letter-spacing:.45px;text-transform:uppercase;font-weight:800;color:#e2ca9d}
 .ps-decision-prepare .ps-decision-state{color:#9de0bf}
 .ps-decision-liquid .ps-decision-state{color:#bed2cf}
-.ps-decision-wait .ps-decision-state{color:#cfb8a1}
-.ps-decision-card h3{font-size:17px;line-height:1.27;letter-spacing:-.2px;color:#edf8f0;margin:1px 0 0}
-.ps-decision-card>p{font-size:12px;line-height:1.55;color:#ccd9d2;margin:0}
-.ps-decision-card .ps-decision-condition{font-size:11px;color:#9cafaa}
-.ps-decision-card>a{margin-top:auto;padding-top:5px;font-size:11px;color:#aadfc6;text-decoration:underline;text-underline-offset:3px}
-.ps-decision-footer{display:flex;align-items:start;justify-content:space-between;gap:6px 24px;flex-wrap:wrap;padding:12px 0 0;font-size:11px;line-height:1.5;color:#abbcb6}
-.ps-decision-footer p{margin:0;max-width:850px;font-size:11px}
+.ps-decision-wait .ps-decision-state{color:#d0b4a2}
+.ps-decision-card h3{font-size:15px;line-height:1.25;letter-spacing:-.2px;color:#edf8f0;margin:2px 0 0}
+.ps-decision-card>p{font-size:11.5px;line-height:1.48;color:#bfcfc7;margin:0}
+.ps-decision-detail{margin-top:auto;padding-top:7px;font-size:11px;color:#a6bcb3}
+.ps-decision-detail summary{cursor:pointer;color:#a7dfc2;text-decoration:underline;text-underline-offset:3px}
+.ps-decision-detail summary:focus-visible{outline:2px solid #9fd7bb;outline-offset:3px}
+.ps-decision-detail[open] summary{margin-bottom:7px}
+.ps-decision-detail p{margin:0 0 7px;line-height:1.5;color:#b3c5bb}
+.ps-decision-detail a{color:#b5eacb;text-decoration:underline;text-underline-offset:3px}
+.ps-decision-footer{display:flex;align-items:start;justify-content:space-between;gap:5px 22px;flex-wrap:wrap;padding:9px 0 0;font-size:10px;line-height:1.4;color:#91a99f}
+.ps-decision-footer p{margin:0;max-width:800px;font-size:10px}
 .ps-decision-footer strong{color:#e3cfaa}
 .ps-decision-footer a{color:#b4dfce}
-.adv-hero{padding-top:20px}
+.adv-hero{padding-top:12px}
 @media(max-width:1020px){.ps-decision-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ps-decision-heading{align-items:start}}
-@media(max-width:720px){.ps-decision-brief{padding:22px 0 17px}.ps-decision-heading{display:block}.ps-decision-more{display:inline-block;margin-top:10px}.ps-decision-card{padding:16px}}
-@media(max-width:460px){.ps-decision-grid{grid-template-columns:1fr;gap:9px}.ps-decision-card{gap:6px}.ps-decision-card .ps-decision-condition{font-size:11px}.ps-decision-footer{gap:8px}}
+@media(max-width:720px){.ps-decision-brief{padding:14px 0}.ps-decision-heading{display:block}.ps-decision-more{display:inline-block;margin-top:9px}.ps-decision-verdict{grid-template-columns:1fr;gap:10px}.ps-decision-card{padding:13px}}
+@media(max-width:530px){.ps-decision-grid{grid-template-columns:1fr;gap:7px}.ps-decision-card{gap:4px}.ps-decision-footer{gap:7px}}
+@media(prefers-reduced-motion:reduce){.ps-decision-detail summary{scroll-behavior:auto}}
 
 /* The investment allocation is a supporting view, not a second hero competing with the decisions. */
 .adv-hero h2{font-size:clamp(28px,3.6vw,43px);letter-spacing:-1.55px}

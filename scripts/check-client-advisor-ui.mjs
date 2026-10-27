@@ -35,6 +35,13 @@ assert(html.includes('id="decision-brief"') && html.includes('id="ps-decision-gr
 assert(html.indexOf('id="decision-brief"') < html.indexOf('id="advisor"') && html.indexOf('id="advisor"') < html.indexOf('id="investing-now"'),"Assessments must be above the capital and seven-position model");
 assert(html.includes('href="#decision-brief"') && html.includes('href="#next-moves"'),"Both quick decision and expanded rationale must be reachable");
 assert.equal(feed.quickAssessment.actions.length,4,"Exactly four actionable quick decisions");
+assert(feed.quickAssessment.verdict.status==="NO NEW ORDER CLEARED" && feed.quickAssessment.verdict.blocker.includes("not yet reconciled"),"Do not make an executable buy call from unverified broker data");
+assert(html.indexOf('id="ps-decision-verdict"')<html.indexOf('id="ps-decision-grid"'),"One-glance verdict must appear above action cards");
+assert(html.includes('id="ps-verdict-next"') && html.includes(feed.quickAssessment.verdict.headline.replaceAll("\'","&#39;")),"Decision headline, blocker and next event must render without JS");
+assert((html.slice(html.indexOf('id="decision-brief"'),html.indexOf('id="advisor"')).match(/<details class="ps-decision-detail">/g)||[]).length===4,"All four proof requirements should be collapsed by default");
+assert(js.includes('ps-verdict-blocker')&&js.includes('ps-decision-detail')&&js.includes('allowedAnchors'),"Client renderer should mirror short-form proof disclosures with safe destinations");
+assert(css.includes('.ps-decision-verdict')&&css.includes('.ps-decision-detail summary:focus-visible'),"Compact verdict and disclosure accessibility missing");
+
 assert.deepEqual(feed.quickAssessment.actions.map(x=>x.key),["review","prepare","liquid","wait"]);
 assert(feed.quickAssessment.actions.every(x=>x.status && x.title && x.summary && x.next && x.href),"Quick cards require verdict, evidence and detail link");
 assert(feed.quickAssessment.mandateAsOf==="23 Oct 2026" && feed.quickAssessment.assessedOn==="27 Oct 2026","Don't misdate inherited recommendations");
