@@ -11,11 +11,23 @@ function renderTimestamp(d){
  const status=get('adv-research-status');
  const stamp=d?.asOf;const time=Date.parse(stamp||'');
  if(!status)return;
+ if(d?.quickAssessment?.assessedOn)status.dataset.quickAssessment=d.quickAssessment.assessedOn;
  if(!Number.isFinite(time)){status.textContent='Research date unavailable · decisions not trade-ready';status.dataset.freshness='missing';return;}
  const age=(Date.now()-time)/3600000;
  const txt='Research '+fmtDate(stamp)+' · last market prices '+esc(d.marketDataThrough||'unconfirmed');
  status.textContent=(age>72?'OLDER RESEARCH — verify before acting · ':age>24?'Research ageing — new evidence required · ':'Research snapshot · ')+txt;
  status.dataset.freshness=age>72?'stale':'dated';
+}
+function renderQuickAssessment(d){
+ const a=d?.quickAssessment,root=get('ps-decision-grid');
+ if(!root||!a||!Array.isArray(a.actions)||a.actions.length!==4)return;
+ const keys=new Set(a.actions.map(x=>x.key));
+ if(keys.size!==4||!['review','prepare','liquid','wait'].every(k=>keys.has(k)))return;
+ const date=get('ps-decision-date'),summary=get('ps-decision-summary'),caveat=get('ps-decision-caveat');
+ if(date)date.textContent=a.assessedOn+' research review';
+ if(summary)summary.textContent=a.summary;
+ if(caveat)caveat.innerHTML='<strong>Before any trade:</strong> '+esc(a.accountWarning);
+ root.innerHTML=a.actions.map((x,i)=>'<article class="ps-decision-card ps-decision-'+esc(x.key)+'"><div class="ps-decision-card-top"><span class="ps-decision-index">0'+(i+1)+'</span><span class="ps-decision-state">'+esc(x.status)+'</span></div><h3>'+esc(x.title)+'</h3><p>'+esc(x.summary)+'</p><p class="ps-decision-condition">'+esc(x.next)+'</p><a href="'+esc(x.href)+'">Decision details ↗</a></article>').join('');
 }
 function renderTop(d){
  if(!d||d.contractVersion!=='power-stack-client-advisor/1')return;
@@ -168,7 +180,7 @@ function handleCopy(){
 }
 async function load(){
  const [d,m]=await Promise.all([fetchJson('data/client-advisor.json'),fetchJson('data/rakuten-one-year-mandate.json')]);
- if(d&&d.contractVersion==='power-stack-client-advisor/1'){renderTimestamp(d);renderTop(d);renderMoves(d);renderOpportunity(d);renderResearchRadar(d);renderPortfolio(d);renderResearch(d)}
+ if(d&&d.contractVersion==='power-stack-client-advisor/1'){renderTimestamp(d);renderQuickAssessment(d);renderTop(d);renderMoves(d);renderOpportunity(d);renderResearchRadar(d);renderPortfolio(d);renderResearch(d)}
  else{const s=get('adv-research-status');if(s)s.textContent='Live decision data unavailable · dated plan below requires new verification';}
  renderInvestmentOverview(m);
  if(m&&m.schema==='power-stack-manual-investment-mandate/v1')renderAllocation(m);
