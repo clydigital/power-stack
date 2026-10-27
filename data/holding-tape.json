@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-stack-holding-tape/1",
-  "generatedAt": "2026-10-26T22:39:15.942Z",
+  "generatedAt": "2026-10-27T05:02:37.608Z",
   "policy": {
     "cadence": "refresh every 6 hours; only completed regular sessions are eligible",
     "sourcePolicy": "US: optional timestamped Finnhub close if FINNHUB_API_KEY is configured, then Yahoo chart JSON query2/query1, then delayed Yahoo rendered page. MY: Yahoo chart JSON then rendered page. Preserve source-dated sessions; never invent current closes on provider failure.",
@@ -22,7 +22,7 @@
       "status": "CLOSED",
       "refreshStatus": "OK",
       "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/XOM?interval=1d&range=1mo&includePrePost=false",
-      "fetchedAt": "2026-10-26T22:39:14.969Z"
+      "fetchedAt": "2026-10-27T05:02:36.822Z"
     },
     {
       "ticker": "MISC",
@@ -39,7 +39,7 @@
       "status": "CLOSED",
       "refreshStatus": "OK",
       "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/3816.KL?interval=1d&range=1mo&includePrePost=false",
-      "fetchedAt": "2026-10-26T22:39:15.398Z"
+      "fetchedAt": "2026-10-27T05:02:37.079Z"
     },
     {
       "ticker": "HIBISCS",
@@ -56,7 +56,7 @@
       "status": "CLOSED",
       "refreshStatus": "OK",
       "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/5199.KL?interval=1d&range=1mo&includePrePost=false",
-      "fetchedAt": "2026-10-26T22:39:15.499Z"
+      "fetchedAt": "2026-10-27T05:02:37.172Z"
     },
     {
       "ticker": "YTLPOWR",
@@ -73,7 +73,7 @@
       "status": "CLOSED",
       "refreshStatus": "OK",
       "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/6742.KL?interval=1d&range=1mo&includePrePost=false",
-      "fetchedAt": "2026-10-26T22:39:15.587Z"
+      "fetchedAt": "2026-10-27T05:02:37.250Z"
     },
     {
       "ticker": "6742UW",
@@ -106,7 +106,7 @@
       "status": "CLOSED",
       "refreshStatus": "OK",
       "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/TTWO?interval=1d&range=1mo&includePrePost=false",
-      "fetchedAt": "2026-10-26T22:39:15.687Z"
+      "fetchedAt": "2026-10-27T05:02:37.339Z"
     },
     {
       "ticker": "TSLA",
@@ -123,7 +123,7 @@
       "status": "CLOSED",
       "refreshStatus": "OK",
       "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/TSLA?interval=1d&range=1mo&includePrePost=false",
-      "fetchedAt": "2026-10-26T22:39:15.770Z"
+      "fetchedAt": "2026-10-27T05:02:37.413Z"
     },
     {
       "ticker": "DAYANG",
@@ -140,7 +140,7 @@
       "status": "CLOSED",
       "refreshStatus": "OK",
       "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/5141.KL?interval=1d&range=1mo&includePrePost=false",
-      "fetchedAt": "2026-10-26T22:39:15.851Z"
+      "fetchedAt": "2026-10-27T05:02:37.488Z"
     }
   ],
   "unresolved": [
@@ -160,7 +160,7 @@
         "status": "CURRENT",
         "eligibleForComparison": true,
         "sessionDate": "2026-10-26",
-        "businessDaysOld": 0,
+        "businessDaysOld": 1,
         "reason": "Completed-session price is within the market-local freshness window."
       },
       {
@@ -198,7 +198,7 @@
         "status": "CURRENT",
         "eligibleForComparison": true,
         "sessionDate": "2026-10-26",
-        "businessDaysOld": 0,
+        "businessDaysOld": 1,
         "reason": "Completed-session price is within the market-local freshness window."
       },
       {
@@ -206,7 +206,7 @@
         "status": "CURRENT",
         "eligibleForComparison": true,
         "sessionDate": "2026-10-26",
-        "businessDaysOld": 0,
+        "businessDaysOld": 1,
         "reason": "Completed-session price is within the market-local freshness window."
       },
       {
