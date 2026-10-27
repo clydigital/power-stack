@@ -81,4 +81,21 @@ assert(market.sourceLinks.some(x=>x.url.includes("sec.gov/Archives/edgar/data/10
 assert(market.sourceLinks.some(x=>x.url.includes("broadcom-ceo-says-biggest-hurdle")), "Capital risk narrative missing Reuters source");
 assert(catalyst.events[0].preReleaseReadback?.some(x=>x.class==="ISSUER_VERIFIED" && x.sourceUrl.includes("sec.gov")), "TSMC catalyst lacks first-party pre-release revenue");
 assert(catalyst.events[0].preReleaseReadback?.some(x=>x.class==="TECHNOLOGY_CLAIM_REPORTED"), "CXMT commercial-scale claim must stay provisional");
+
+const libraryJs = readText("app.js");
+const riskStudy = readText("research/2026-10-27-traders-reality-ai-crash-risk-reassessment.md");
+const libCss = readText("styles.css");
+assert(home.includes('href="#next-moves">What to do</a>'), "What to do must have a real destination");
+assert(home.includes('id="next-moves"'), "What to do destination missing");
+assert(home.includes('href="themes.html">Macro themes</a>'), "Macro themes should open its full workspace");
+assert(home.includes('href="holdings.html">My holdings</a>'), "Holdings should open the dedicated holdings workspace");
+assert(home.includes('href="research-library.html">Research library</a>'), "Library route missing");
+assert(home.includes("window.addEventListener('hashchange', updateLocation)") && home.includes('aria-current="location"'), "Homepage jump location feedback missing");
+assert(!libraryJs.includes('<b>${priorities} / ${lowTheme}</b>'), "Misleading priority/low dependency ratio must not return");
+assert(libraryJs.includes('Priority AND low theme dependency') && libraryJs.includes('priorityRows.filter'), "Library must count only the intersection");
+assert(libCss.includes(".ps-library-page #summaryStats .summary-card small"), "Library metric explanation must be legible");
+assert(riskStudy.includes("ndpZTceNzbg") && riskStudy.includes("CoreWeave") && riskStudy.includes("Meta") && riskStudy.includes("TSMC"), "Original creator and primary source investigation absent");
+assert(riskStudy.includes("no automatic repositioning") || riskStudy.includes("no automatic repositioning".toUpperCase()) || riskStudy.includes("no automatic repositioning,"), "No-trade boundary absent");
+assert(home.includes("2026-10-27-traders-reality-ai-crash-risk-reassessment.md"), "AI risk research link missing from client macro section");
+
 console.log("Personal decision desk validation OK: 8 focused names, 8 holdings, archived research preserved, Live/read-only source, unscored adjacent candidates, no unsupported buy signal.");
