@@ -20,8 +20,8 @@ main{padding-top:16px}
 .adv-status-right{color:#93aca5}
 .adv-hero{display:grid;grid-template-columns:minmax(0,1.48fr) minmax(280px,.83fr);gap:48px;padding:46px 0 37px;align-items:end}
 .adv-overline{color:#88ceb0;font-size:11px;text-transform:uppercase;letter-spacing:1.6px;font-weight:750}
-.adv-hero h1{font-size:clamp(38px,5.15vw,68px);max-width:780px;font-weight:760;letter-spacing:-2.8px;line-height:1.035;margin:14px 0 18px;text-wrap:balance}
-.adv-hero h1 span{color:#b7e3ce}
+.adv-hero h2{font-size:clamp(38px,5.15vw,68px);max-width:780px;font-weight:760;letter-spacing:-2.8px;line-height:1.035;margin:14px 0 18px;text-wrap:balance}
+.adv-hero h2 span{color:#b7e3ce}
 .adv-hero p{max-width:640px;font-size:15px;color:#b9c8c3;line-height:1.68}
 .adv-hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0 0}
 .adv-button{appearance:none;min-height:42px;border:1px solid #3a6055;background:#20382f;color:#e8fff3;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 16px;text-decoration:none;font-size:12px;font-weight:750;cursor:pointer;transition:background .16s ease,border-color .16s ease,transform .16s ease}
@@ -138,7 +138,7 @@ main{padding-top:16px}
  nav{gap:11px}
  nav a{font-size:11px}
  .adv-hero{padding:31px 0 24px}
- .adv-hero h1{font-size:clamp(34px,10vw,47px);letter-spacing:-1.9px}
+ .adv-hero h2{font-size:clamp(34px,10vw,47px);letter-spacing:-1.9px}
  .adv-move{grid-template-columns:35px minmax(0,1fr);gap:12px}
  .adv-move-side{grid-column:2;text-align:left;padding:0}
  .adv-move-side strong{display:inline-block;font-size:16px}
@@ -164,7 +164,7 @@ main{padding-top:16px}
  .adv-event:nth-child(4){border-top:0}
  .adv-goal-grid strong{font-size:16px}
  nav .adv-nav-cta{display:none}
- .adv-hero h1{font-size:37px}
+ .adv-hero h2{font-size:37px}
  .adv-button{flex:1 0 140px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.adv-button,.adv-money-bar>div{transition:none}}
@@ -206,7 +206,7 @@ main{padding-top:16px}
 .adv-investment-overview .adv-title-row h2{font-size:clamp(25px,3vw,33px);letter-spacing:-.05em}
 .adv-investment-overview .adv-title-row p strong{color:#e6f7eb}
 .adv-hero{padding-top:32px;padding-bottom:24px;gap:30px}
-.adv-hero h1{font-size:clamp(34px,4.3vw,55px);font-weight:850;letter-spacing:-.055em}
+.adv-hero h2{font-size:clamp(34px,4.3vw,55px);font-weight:850;letter-spacing:-.055em}
 .adv-hero p{font-size:14px;line-height:1.55}
 .adv-hero-number{background:linear-gradient(145deg,rgba(56,103,83,.18),rgba(12,22,26,.8));border:1px solid #345d4e;border-radius:18px;padding:20px 22px;box-shadow:0 16px 35px #0002}
 .adv-warning-line{background:#1a211e;border-color:#4f604b}
@@ -340,3 +340,7 @@ main{padding-top:16px}
 @media(max-width:1020px){.ps-decision-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ps-decision-heading{align-items:start}}
 @media(max-width:720px){.ps-decision-brief{padding:22px 0 17px}.ps-decision-heading{display:block}.ps-decision-more{display:inline-block;margin-top:10px}.ps-decision-card{padding:16px}}
 @media(max-width:460px){.ps-decision-grid{grid-template-columns:1fr;gap:9px}.ps-decision-card{gap:6px}.ps-decision-card .ps-decision-condition{font-size:11px}.ps-decision-footer{gap:8px}}
+
+/* The investment allocation is a supporting view, not a second hero competing with the decisions. */
+.adv-hero h2{font-size:clamp(28px,3.6vw,43px);letter-spacing:-1.55px}
+.adv-hero{gap:24px;padding-bottom:21px}
