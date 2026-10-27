@@ -68,7 +68,7 @@ Meet Kevin's scenario (separate from Tino) connects diplomacy / Hormuz cargo rec
 
 The [26 Oct $69bn US 2-year auction](https://www.treasurydirect.gov/instit/annceresult/press/preanre/2026/R_20261026_3.pdf) was awarded at **4.708%** with **2.59 bid-to-cover**. It does not determine long-end or TIPS real-yield direction. For **VGIT and TLT**, rising term premium or inflation can offset a risk-off rally, especially for TLT's greater duration.
 
-**Physical market discriminator:** a sharp drop in comparable GPU cloud rental price **and** renewals/utilisation would threaten the entire AI-capex ROI chain more directly than one junior unsecured bond yield. Pricing must be same SKU, delivery region, rental duration, contract terms and date. [FT CoreWeave financing debate, 21 Oct](https://www.ft.com/content/4fb42dd7-a72c-4e20-9e7c-dcdc9d3215159) is a useful analytical lead but is not a measured industry pricing series. A real GPU-rental-price panel is currently unavailable.
+**Physical market discriminator:** a sharp drop in comparable GPU cloud rental price **and** renewals/utilisation would threaten the entire AI-capex ROI chain more directly than one junior unsecured bond yield. Pricing must be same SKU, delivery region, rental duration, contract terms and date. [FT CoreWeave financing debate, 21 Oct](https://www.ft.com/content/4fb42dd7-a72c-4e20-9e7c-cdc9d3215159) is a useful analytical lead but is not a measured industry pricing series. A real GPU-rental-price panel is currently unavailable.
 
 ## Falsifiable branches — without invented probabilities
 
