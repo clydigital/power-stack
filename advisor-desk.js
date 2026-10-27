@@ -92,7 +92,7 @@ const investmentProfiles={
  SGOV:{kind:'bonds',icon:'shield',label:'Short US Treasury bills',role:'Very short-term US government debt for liquid USD exposure.',risk:'Currency, tax and dealing costs; not ringgit cash.',tag:'Check USD costs'},
  CF:{kind:'equity',icon:'plant',label:'Fertiliser producer',role:'Shares in CF Industries, a nitrogen fertiliser and ammonia producer.',risk:'Margins depend on fertiliser prices and natural-gas costs.',tag:'Wait for results'},
  RSP:{kind:'equity',icon:'stocks',label:'Equal-weight US stocks',role:'ETF owning S&P 500 constituents at approximately equal weights.',risk:'Still exposed to broad US equity and cyclical earnings risk.',tag:'Breadth must hold'},
- TSM:{kind:'equity',icon:'chip',label:'Advanced chip manufacturer',role:'US-listed TSMC shares. Exposure to leading-edge semiconductor manufacturing.',risk:'AI demand, valuations and geopolitical risk.',tag:'Wait for entry'},
+ TSM:{kind:'equity',icon:'chip',label:'Advanced chip manufacturer',role:'US-listed TSMC shares. Exposure to leading-edge semiconductor manufacturing.',risk:'AI demand, valuations and geopolitical risk.',tag:'Valuation-gated entry'},
  MYR_CASH:{kind:'cash',icon:'cash',label:'MYR settlement reserve',role:'Ringgit held for a later investment that clears its checks.',risk:'Not a return guarantee; the real account cash amount is unverified.',tag:'Keep uncommitted'}
 };
 const shape={
@@ -189,7 +189,7 @@ function renderResearch(d){
    const isRate=name.includes('treasur'),isRotation=name.includes('rotation');
    const role=isRate?'What it means: VGIT / TLT / SGOV':isRotation?'What it means: RSP / TSM':'What it means: foreign bonds / MYR';
    const impact=isRate?'Treasury entries still depend on real yields, term premium and FX.':isRotation?'Review whether equal-weight earnings breadth persists before buying RSP.':'Do not fund a new overseas bond sleeve without yield and MYR-cost comparisons.';
-   return {name:x.name,caption:x.state,body:x.body,role,impact,icon:isRate?'bonds':isRotation?'stocks':'world',source:x.source||'https://alchemy-live-market-desk.vercel.app/',date:'23 Oct research'};
+   return {name:x.name,caption:x.state,body:x.body,role,impact,icon:isRate?'bonds':isRotation?'stocks':'world',source:x.source||'https://bluebelly-desk.vercel.app/',date:'23 Oct research'};
   });
   lens.splice(1,0,{name:'AI funding',caption:'Capital spending versus financing',body:'Separate paid chip demand from customers’ ability to fund AI build-outs.',role:'What it means: TSM / existing tech exposure',impact:'Prefer confirmed earnings and funded demand to chasing AI share-price rallies.',icon:'chip',source:'research/2026-10-14-ai-financing-picks-shovels.md',date:'14 Oct thesis'},{name:'Oil and inflation',caption:'Energy shortages can complicate rate cuts',body:'Gulf supply and fuel-price shocks can sustain inflation even while equities sell off.',role:'What it means: XOM / MISC / HIBISCS / Treasuries',impact:'Check energy concentration and whether inflation threatens the bond case.',icon:'flame',source:'research/2026-10-22-market-danger-risk-regime-deep-update.md',date:'22 Oct research'});
   market.innerHTML=lens.map(x=>'<article class="adv-insight"><span class="adv-insight-icon">'+psIcon(x.icon)+'</span><strong>'+esc(x.name)+'</strong><small>'+esc(x.caption)+' · '+esc(x.date)+'</small><p>'+esc(x.body)+'</p><div class="adv-implication">'+esc(x.role)+'<br>'+esc(x.impact)+'</div><a href="'+esc(x.source)+'" target="_blank" rel="noopener noreferrer">Underlying source ↗</a></article>').join('');
