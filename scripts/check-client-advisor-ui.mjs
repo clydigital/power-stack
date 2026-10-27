@@ -127,6 +127,29 @@ assert.equal(feed.deepDecision.coverage.state,"PARTIAL");
 assert.equal(feed.deepDecision.coverage.fullyRead,8);
 assert.equal(feed.deepDecision.coverage.eligible,46);
 
+
+const basketGuide=feed.basketGuidance;
+assert.equal(basketGuide.schema,"power-stack-basket-guidance/1");
+assert.equal(basketGuide.status,"RESEARCH_COMPARISON_ONLY");
+assert.equal(basketGuide.brokerVerified,false);
+assert.equal(basketGuide.automaticReallocation,false);
+assert.equal(basketGuide.evidenceCutoff,feed.deepDecision.preparedAtMyt);
+assert.equal(basketGuide.basketModelsAsOf,"2026-10-26");
+assert.equal(basketGuide.choices.length,3);
+assert.deepEqual(basketGuide.rankings.map(x=>x.id),["dry-powder","two-catalysts","oil-nitrogen","uranium-repricing"]);
+assert(basketGuide.choices[0].summary.includes("50% US Treasury ETFs"),"Baseline must stay independent of model alternatives");
+assert(basketGuide.choices[1].summary.includes("65% MYR cash"),"Defensive comparison's true exposures must remain visible");
+assert(basketGuide.choices[2].recommendation.includes("None clears a new trade"),"Theme baskets cannot silently become new orders");
+assert(html.includes('id="basket-recommendations"') && html.includes('id="ps-home-basket-guides"'),"Homepage basket guidance missing");
+assert(html.indexOf('id="ps-decision-grid"')<html.indexOf('id="basket-recommendations"')&&html.indexOf('id="basket-recommendations"')<html.indexOf('id="new-since"'),"Basket recommendations must follow actions, precede deep research");
+assert(html.includes('id="ps-basket-next"') && html.includes('baskets.html#basket-dry-powder'),"Basket destination and first practical step absent");
+for (const row of basketGuide.choices) assert(html.includes(row.title)&&html.includes(row.action),"No-JS basket recommendation differs from advisory feed");
+for (const action of feed.quickAssessment.actions){ assert(html.includes(action.title)&&html.includes('bb-'+action.icon),"Semantic action icon or instruction absent: "+action.key); }
+assert(js.includes("function deskIcon(")&&js.includes("function renderBasketGuidance(")&&js.includes("renderBasketGuidance(d);"),"Rendered semantic icons and basket guidance must bind to source feed");
+assert(js.includes("'#security-decisions'")&&js.includes("'#catalyst-window'"),"Decision links must reach intended sections rather than generic action queue");
+assert(css.includes(".ps-semantic-icon")&&css.includes(".ps-basket-guides"),"Consistent semantic icon and basket styling missing");
+assert(basketGuide.riskNotice.includes("mutually exclusive")&&basketGuide.riskNotice.includes("not likely outcomes"),"Portfolio budget and sensitivity caveats must be explicit");
+
 console.log("Advisor V2 UI guard OK: 7 sourced targets, 50/35/15 mix, 5 dated macro lenses, Figtree, no broker/trade claims.");
 
 console.log("Client advisory UI OK: 13491 MYR, 3 next moves, 6 sourced candidates, responsive actions before Dossier, broker status honest.");
