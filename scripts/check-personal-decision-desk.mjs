@@ -85,8 +85,8 @@ assert(catalyst.events[0].preReleaseReadback?.some(x=>x.class==="TECHNOLOGY_CLAI
 const libraryJs = readText("app.js");
 const riskStudy = readText("research/2026-10-27-traders-reality-ai-crash-risk-reassessment.md");
 const libCss = readText("styles.css");
-assert(home.includes('href="#next-moves">What to do</a>'), "What to do must have a real destination");
-assert(home.includes('id="next-moves"'), "What to do destination missing");
+assert(home.includes('href="#decision-brief" aria-current="location">What to do</a>'), "Primary navigation must open the 30-second decision brief");
+assert(home.includes('id="decision-brief"') && home.includes('id="next-moves"'), "Brief or detailed decision target missing");
 assert(home.includes('href="themes.html">Macro themes</a>'), "Macro themes should open its full workspace");
 assert(home.includes('href="holdings.html">My holdings</a>'), "Holdings should open the dedicated holdings workspace");
 assert(home.includes('href="research-library.html">Research library</a>'), "Library route missing");
