@@ -37,4 +37,19 @@ for(const item of data.baskets){
 const js=read('baskets.js');
 assert.ok(js.includes('aria-pressed')&&js.includes('data-mode')&&js.includes('data-group'),'Basket controls lack operational state');
 assert.ok(js.includes('schema')&&js.includes('illustrations'));
+
+const advisor=JSON.parse(read('data/client-advisor.json'));
+const guide=advisor.basketGuidance;
+assert.equal(guide.schema,"power-stack-basket-guidance/1");
+assert.equal(guide.automaticReallocation,false);
+assert.equal(guide.brokerVerified,false);
+assert.equal(guide.rankings.length,4);
+assert.deepEqual(new Set(guide.rankings.map(x=>x.id)),new Set(data.baskets.map(x=>x.id)));
+assert.ok(html.includes('id="basket-adviser"')&&html.includes('id="basket-adviser-steps"')&&html.includes('id="basket-adviser-caution"'),"Dedicated basket advice/source warning missing");
+assert.ok(html.includes('id="basket-scenario-instruction"'),"Scenario outcomes must be explained in plain language");
+assert.ok(js.includes("guidance?.rankings")&&js.includes("renderAdviser()")&&js.includes("advisory?.basketGuidance"),"Basket current suitability must come from advisory source");
+assert.ok(js.includes("If the positive example happens")&&js.includes("If the negative example happens"),"Sensitivity numbers cannot appear as probability forecasts");
+const basketCss=read('baskets.css');
+assert.ok(basketCss.includes(".basket-current-view")&&basketCss.includes(".basket-adviser-steps"),"Missing responsive evidence-ranked basket styles");
+
 console.log('Basket view, 56 historical ideas, 4 allocation alternatives and clean Holdings markup checks passed.');
