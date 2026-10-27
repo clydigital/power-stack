@@ -18,6 +18,13 @@ function renderTimestamp(d){
  status.textContent=(age>72?'OLDER RESEARCH — verify before acting · ':age>24?'Research ageing — new evidence required · ':'Research snapshot · ')+txt;
  status.dataset.freshness=age>72?'stale':'dated';
 }
+
+function deskIcon(name,tone='neutral'){
+ const approved=new Set(['risk','compare','shield','calendar','layers','spark','rates','oil','chip','credit','catalyst','equities','chart']);
+ const glyph=approved.has(name)?name:'compare';
+ const shade=['good','warn','risk','info','neutral'].includes(tone)?tone:'neutral';
+ return '<span class="ps-semantic-icon ps-semantic-icon--'+shade+'" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="assets/market-iconography/sprite.svg#bb-'+glyph+'"></use></svg></span>';
+}
 function renderQuickAssessment(d){
  const a=d?.quickAssessment,root=get('ps-decision-grid');
  if(!root||!a||!Array.isArray(a.actions)||a.actions.length!==4)return;
@@ -33,11 +40,25 @@ function renderQuickAssessment(d){
      const el=get(id);if(el && typeof value==='string')el.textContent=value;
    }
  }
- const allowedAnchors=new Set(['#portfolio-review','#investment-plan','#market-brief']);
+ const allowedAnchors=new Set(['#security-decisions','#portfolio-review','#investment-plan','#market-brief','#catalyst-window']);
+ const tones={review:'warn',prepare:'info',liquid:'good',wait:'neutral'};
  root.innerHTML=a.actions.map((x,i)=>{
    const href=allowedAnchors.has(x.href)?x.href:'#next-moves';
-   return '<article class="ps-decision-card ps-decision-'+esc(x.key)+'"><div class="ps-decision-card-top"><span class="ps-decision-index">0'+(i+1)+'</span><span class="ps-decision-state">'+esc(x.status)+'</span></div><h3>'+esc(x.title)+'</h3><p>'+esc(x.summary)+'</p><details class="ps-decision-detail"><summary>What clears this call?</summary><p>'+esc(x.next)+'</p><a href="'+href+'">Review the evidence ↗</a></details></article>';
+   return '<article class="ps-decision-card ps-decision-'+esc(x.key)+'"><div class="ps-decision-card-top"><span class="ps-action-graphic">'+deskIcon(x.icon||'compare',tones[x.key])+'<span class="ps-decision-index">0'+(i+1)+'</span></span><span class="ps-decision-state">'+esc(x.status)+'</span></div><h3>'+esc(x.title)+'</h3><p>'+esc(x.summary)+'</p><details class="ps-decision-detail"><summary>What to check first</summary><p>'+esc(x.next)+'</p><a href="'+href+'">Open the full assessment ↗</a></details></article>';
  }).join('');
+}
+function renderBasketGuidance(d){
+ const b=d?.basketGuidance,root=get('ps-home-basket-guides');
+ if(!root||b?.schema!=='power-stack-basket-guidance/1'||!Array.isArray(b.choices)||b.choices.length!==3)return;
+ const possible=new Set(['#investing-now','baskets.html#basket-dry-powder','baskets.html#basket-compare-title']);
+ root.innerHTML=b.choices.map(x=>{
+   const url=possible.has(x.href)?x.href:'baskets.html';
+   const tone=x.kind==='risk'?'warn':x.kind==='baseline'?'good':'info';
+   return '<article class="ps-home-basket-card ps-home-basket-card--'+esc(x.kind)+'"><div class="ps-home-basket-card-top">'+deskIcon(x.icon,tone)+'<span>'+esc(x.label)+'</span></div><h3>'+esc(x.title)+'</h3><p>'+esc(x.summary)+'</p><details><summary>Why this choice?</summary><p>'+esc(x.recommendation)+'</p></details><a href="'+url+'" class="ps-basket-cta">'+esc(x.action)+' <span aria-hidden="true">↗</span></a></article>';
+ }).join('');
+ const start=get('ps-basket-next'),note=get('ps-basket-qualification');
+ if(start)start.innerHTML='<strong>First practical step:</strong> '+esc(b.firstInstruction)+' <a href="holdings.html">Check my holdings ↗</a>';
+ if(note)note.textContent=b.riskNotice;
 }
 function renderDeepDecision(d){
  const state=d?.deepDecision;
@@ -238,7 +259,7 @@ function handleCopy(){
 }
 async function load(){
  const [d,m]=await Promise.all([fetchJson('data/client-advisor.json'),fetchJson('data/rakuten-one-year-mandate.json')]);
- if(d&&d.contractVersion==='power-stack-client-advisor/1'){renderTimestamp(d);renderQuickAssessment(d);renderDeepDecision(d);renderVisualBrief(d);renderTop(d);renderMoves(d);renderOpportunity(d);renderResearchRadar(d);renderPortfolio(d);renderResearch(d)}
+ if(d&&d.contractVersion==='power-stack-client-advisor/1'){renderTimestamp(d);renderQuickAssessment(d);renderBasketGuidance(d);renderDeepDecision(d);renderVisualBrief(d);renderTop(d);renderMoves(d);renderOpportunity(d);renderResearchRadar(d);renderPortfolio(d);renderResearch(d)}
  else{const s=get('adv-research-status');if(s)s.textContent='Live decision data unavailable · dated plan below requires new verification';}
  renderInvestmentOverview(m);
  if(m&&m.schema==='power-stack-manual-investment-mandate/v1')renderAllocation(m);
