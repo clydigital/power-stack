@@ -535,14 +535,14 @@
         "label": "US dollar transmission",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "US Dollar · UUP proxy 5D +0.14%.",
-        "asOf": "2026-10-23",
+        "detail": "US Dollar · UUP proxy 5D +0.03%.",
+        "asOf": "2026-10-26",
         "sourceName": "Nasdaq official etf history",
         "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical",
         "evidenceRefs": [],
         "metrics": {
-          "proxyLevel": 28.96,
-          "change5dPct": 0.14
+          "proxyLevel": 29.01,
+          "change5dPct": 0.03
         }
       },
       {
@@ -594,7 +594,7 @@
     {
       "id": "spx-rsp",
       "title": "Headline index and equal weight are separating",
-      "detail": "SPX cash -0.5% over 5D vs RSP 1.1%.",
+      "detail": "SPX cash -0.5% over 5D vs RSP 1.8%.",
       "assets": [
         "spx",
         "rsp"
@@ -612,9 +612,9 @@
       "id": "dxy",
       "symbol": "UUP",
       "label": "US Dollar · UUP proxy",
-      "last": 28.96,
-      "change5d": 0.14,
-      "asOf": "2026-10-23",
+      "last": 29.01,
+      "change5d": 0.03,
+      "asOf": "2026-10-26",
       "sourceName": "Nasdaq official etf history",
       "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical"
     },
@@ -808,7 +808,7 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-26T22:39:14.868Z",
+    "asOf": "2026-10-27T05:01:45.714Z",
     "assets": [
       {
         "key": "SPX",
@@ -874,8 +874,8 @@
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4014.699951,
-        "dailyChange": 0.17,
+        "last": 4011.899902,
+        "dailyChange": -0.22,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "LOW",
@@ -883,14 +883,14 @@
         "confirmingSignal": null,
         "contradictingSignal": "Canonical XAU bars around macro/issuer events",
         "invalidation": "Persistent canonical evidence of credit stress (multi‑session IG/HY OAS widening and a sustained MOVE spike), or a sustained fall in real yields/term premium, would weaken the rates‑led tightening read.",
-        "asOf": "2026-10-26"
+        "asOf": "2026-10-27"
       },
       {
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 79801.55,
-        "dailyChange": -0.31,
+        "last": 79621.83,
+        "dailyChange": -0.48,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -898,7 +898,7 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": null,
-        "asOf": "2026-10-26"
+        "asOf": "2026-10-27"
       }
     ]
   },
@@ -1437,5 +1437,5 @@
     "Mismatched ticker/issuer labels are quarantined, never silently remapped to another security.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-26T22:43:12.134Z"
+  "syncedAt": "2026-10-27T05:11:54.806Z"
 }
