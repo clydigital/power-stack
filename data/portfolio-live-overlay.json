@@ -1,8 +1,8 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-28T22:33:52.069Z",
-  "liveAsOf": "2026-10-28T09:00:01.513+00:00",
-  "liveSyncedAt": "2026-10-28T13:01:51.655Z",
+  "generatedAt": "2026-10-28T22:38:45.054Z",
+  "liveAsOf": "2026-10-28T15:05:32.386+00:00",
+  "liveSyncedAt": "2026-10-28T22:38:44.954Z",
   "sourceHealth": {
     "dossier": "DEGRADED",
     "marketMonitor": "PARTIAL",
@@ -14,15 +14,15 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "UST yields remain elevated and tightening conditions, while large‑cap breadth holds but AI/semiconductor internals lag and HY shows concentrated stress.",
-    "answer": "10Y ~5% and elevated real yields are keeping policy pressure; HY spreads have widened materially while IG moves are modest, large‑cap breadth is healthy, and AI/semiconductor internals underperform — so rates are the dominant tightening force but broad market stress is not yet proven. Next test: canonical MOVE/VIX and intraday UST/Fed‑funds bars.",
-    "implication": "Higher yields are tightening financial conditions, but evidence shows a narrow leadership: large caps hold up while AI/semiconductor internals and HY credit show local stress, leaving broad market stress unresolved.",
-    "whatWouldChangeMind": "Canonical MOVE/Treasury‑volatility and intraday Fed‑funds/UST bars showing no sustained transmission into IG, VIX or breadth would weaken the rates‑dominant conclusion."
+    "headline": "Yields Are High and Driving Tightening; HY Credit Narrowly Weak while AI/semis Hold Up",
+    "answer": "US 10Y ~4.99% and hawkish front‑end pricing coincide with a low ACM term premium (0.63%); HY spreads have widened more than IG while large‑cap breadth remains healthy and SMH lags QQQ. Evidence shows a rates‑led tightening so far, but canonical MOVE/VIX and intraday UST/fed‑funds bars are missing to confirm broader stress.",
+    "implication": "Higher nominal and real yields are the dominant tightening force now; that explains concentrated HY stress and narrow equity leadership, but broader credit/volatility transmission is unresolved until canonical MOVE/VIX and intraday UST/futures evidence arrive.",
+    "whatWouldChangeMind": "Persistent canonical broadening of credit (sustained IG OAS widening in market-monitor:ig-oas:2026-10-27 or market-monitor-measured:ig_oas_20s:2026-09-29:2026-10-27), a canonical MOVE/VIX uplift, or intraday UST/fed‑funds bars showing broad volatility would move the regime away from rates‑led tightening."
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "a2b89fd1-007a-47d9-a7d9-4dbdc3f2c57a",
-    "capturedAt": "2026-10-28T08:45:56.874Z",
+    "editionId": "691b68b4-313b-4ca9-935e-99024731c05f",
+    "capturedAt": "2026-10-28T14:41:06.984Z",
     "itemCount": 0,
     "linkedHoldingCount": 0
   },
@@ -48,7 +48,7 @@
           "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
           "detail": "No current deterministic policy impulse or directional next-meeting repricing is present in the bounded rate context.",
-          "asOf": "2026-10-28T09:00:01.513Z"
+          "asOf": "2026-10-28T15:05:32.386Z"
         },
         {
           "key": "RATES_FRONT_END",
@@ -56,7 +56,7 @@
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
           "detail": "US 2Y 4.70%; 5D n/a; vs effective fed funds +82.0 bp.",
-          "asOf": "2026-10-28T09:00:01.513Z"
+          "asOf": "2026-10-28T15:05:32.386Z"
         },
         {
           "key": "RATES_REAL_YIELDS",
@@ -64,7 +64,7 @@
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
           "detail": "10Y real yield 2.66%; 5D n/a.",
-          "asOf": "2026-10-28T09:00:01.513Z"
+          "asOf": "2026-10-28T15:05:32.386Z"
         },
         {
           "key": "RATES_BREAKEVENS",
@@ -72,7 +72,7 @@
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
           "detail": "10Y breakeven 2.35%; 5D n/a.",
-          "asOf": "2026-10-28T09:00:01.513Z"
+          "asOf": "2026-10-28T15:05:32.386Z"
         },
         {
           "key": "RATES_LONG_END",
@@ -80,15 +80,15 @@
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
           "detail": "US 10Y 4.99%; 5D n/a; US 20Y 5.34%; 5D n/a; US 30Y 5.30%; 5D n/a.",
-          "asOf": "2026-10-28T09:00:01.513Z"
+          "asOf": "2026-10-28T15:05:32.386Z"
         },
         {
           "key": "BILLS",
           "label": "Treasury bills / front-end cash",
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
-          "detail": "3M 4.22%; 6M 4.34%; average vs EFFR +40.0 bp.",
-          "asOf": "2026-10-27"
+          "detail": "3M 4.18%; 6M 4.32%; average vs EFFR +37.0 bp.",
+          "asOf": "2026-10-28"
         }
       ]
     },
@@ -116,15 +116,15 @@
           "label": "Credit spreads",
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
-          "detail": "HY OAS 3.3 (5D +1.0 bp); IG OAS 0.9 (5D +3.0 bp).",
-          "asOf": "2026-10-26"
+          "detail": "HY OAS 3.18 (5D -15.0 bp); IG OAS 0.88 (5D +1.0 bp).",
+          "asOf": "2026-10-27"
         }
       ]
     },
     "physicalEnergy": {
       "status": "UNRESOLVED",
       "observed": false,
-      "detail": "No canonical WTI/Brent or product crack evidence supplied; inflation transmission via energy remains unresolved.",
+      "detail": "No canonical crude/product settlement evidence present in packet; energy‑inflation transmission is unresolved.",
       "evidenceRefs": []
     }
   },
@@ -1216,7 +1216,7 @@
       "importance": "HIGH",
       "divergence": "PARTIAL",
       "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-      "actual": "Large AI financing headlines and selective strength in some AI/semiconductor names (e.g., AVGO, SMH) while SMH internals lag vs QQQ.",
+      "actual": "Semiconductor ETF SMH and AMD are up while SMH underperformed QQQ over 20 sessions, indicating narrow leadership.",
       "affectedHoldings": [
         "TSLA",
         "TTWO",
@@ -1229,12 +1229,12 @@
         "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
       ],
       "evidenceFor": [
-        "Dealflow shows heavy AI financing demand which could sustain capex, but canonical issuer capex/ordering confirmations and same‑session macro transmission are unresolved.",
-        "Index strength is narrow; concentration risk persists and is a counterpoint to a broad risk‑on thesis.",
+        "AI/semiconductor names help sustain indices but internals are mixed; durability depends on issuer earnings, capex and financing evidence.",
+        "Headline indices are supported by large caps, producing a narrow market profile that can mask concentrated stress elsewhere.",
         "Nasdaq daily move 1.18 with bias MIXED."
       ],
       "evidenceAgainst": [
-        "Policy/real‑rate repricing is the dominant force; long‑end term‑premium remains low so structural term‑premium shock is not confirmed."
+        "Policy‑sensitive front end and elevated real yields are keeping conditions restrictive; ACM term premium is present but modest."
       ],
       "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
       "confidence": "HIGH",
@@ -1245,7 +1245,7 @@
       "importance": "HIGH",
       "divergence": "YES",
       "expected": "A persistent long-end tightening shock should eventually raise financing stress and widen credit spreads.",
-      "actual": "HY OAS widening materially over 20 sessions while IG OAS shows modest widening.",
+      "actual": "HY spreads have widened materially over the 20‑session window while IG moves are modest.",
       "affectedHoldings": [
         "TSLA",
         "TTWO",
@@ -1259,11 +1259,11 @@
         "Credit may simply be lagging rates and could become the next confirmation leg."
       ],
       "evidenceFor": [
-        "Credit stress appears concentrated in HY; broad credit stress not yet observed in IG.",
+        "Credit pressure is concentrated in lower quality bonds so far; broad systemic credit stress is not yet observed.",
         "Funding/credit composite is currently NEUTRAL."
       ],
       "evidenceAgainst": [
-        "Higher yields are tightening financial conditions, but evidence shows a narrow leadership: large caps hold up while AI/semiconductor internals and HY credit show local stress, leaving broad market stress unresolved."
+        "Higher nominal and real yields are the dominant tightening force now; that explains concentrated HY stress and narrow equity leadership, but broader credit/volatility transmission is unresolved until canonical MOVE/VIX and intraday UST/futures evidence arrive."
       ],
       "leadingHypothesis": "The shock is rates-led, not yet systemic; keep dry powder because credit remains the key confirmation risk.",
       "confidence": "HIGH",
@@ -1293,7 +1293,7 @@
   },
   "divergences": [],
   "liveResearchGaps": [
-    "MARKET_DATA: Canonical MOVE/Treasury‑volatility and VIX series are missing, blocking a decisive transmission test from yields to volatility and credit.",
+    "MARKET_MONITORING: Canonical MOVE/Treasury volatility and intraday 5–30m UST / fed‑funds‑futures bars are missing, blocking confirmation of transmission from yields into volatility and IG credit.",
     "Latest primary-dealer report date 2026-10-14 is more than fourteen calendar days old.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],
