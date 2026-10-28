@@ -542,14 +542,14 @@
         "label": "US dollar transmission",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "US Dollar · UUP proxy 5D +0.03%.",
-        "asOf": "2026-10-26",
+        "detail": "US Dollar · UUP proxy 5D +0.76%.",
+        "asOf": "2026-10-27",
         "sourceName": "Nasdaq official etf history",
         "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical",
         "evidenceRefs": [],
         "metrics": {
-          "proxyLevel": 29.01,
-          "change5dPct": 0.03
+          "proxyLevel": 29.12,
+          "change5dPct": 0.76
         }
       },
       {
@@ -593,23 +593,14 @@
     "marketMonitor": "PARTIAL",
     "fredRates": "OK",
     "nyFedReferenceRates": "OK",
-    "nyFedPrimaryDealers": "OK",
+    "nyFedPrimaryDealers": "STALE",
     "treasuryBills": "OK",
     "treasurySupply": "UNRESOLVED"
   },
-  "contradictions": [
-    {
-      "id": "spx-rsp",
-      "title": "Headline index and equal weight are separating",
-      "detail": "SPX cash -0.2% over 5D vs RSP 1.8%.",
-      "assets": [
-        "spx",
-        "rsp"
-      ]
-    }
-  ],
+  "contradictions": [],
   "researchGaps": [
     "MARKET_DATA: Canonical MOVE/Treasury‑volatility time series and VIX are missing and block assessment of whether yield moves have broadened into volatility.",
+    "Latest primary-dealer report date 2026-10-14 is more than fourteen calendar days old.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],
   "marketRows": [
@@ -617,9 +608,9 @@
       "id": "dxy",
       "symbol": "UUP",
       "label": "US Dollar · UUP proxy",
-      "last": 29.01,
-      "change5d": 0.03,
-      "asOf": "2026-10-26",
+      "last": 29.12,
+      "change5d": 0.76,
+      "asOf": "2026-10-27",
       "sourceName": "Nasdaq official etf history",
       "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical"
     },
@@ -818,14 +809,14 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-27T22:12:47.119Z",
+    "asOf": "2026-10-28T05:36:03.213Z",
     "assets": [
       {
         "key": "SPX",
         "label": "S&P 500",
         "symbol": "SP500",
-        "last": 7676.77,
-        "dailyChange": 0.7,
+        "last": 7722.6,
+        "dailyChange": 0.6,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "HIGH",
@@ -833,7 +824,7 @@
         "confirmingSignal": "Large‑cap breadth is robust while AI basket internals are weaker.",
         "contradictingSignal": null,
         "invalidation": "Multi‑session canonical MOVE/VIX spike plus persistent IG OAS widening and auction demand deterioration (canonical MOVE and persistent IG OAS time series) would indicate broadening stress; absence of those would preserve the current scoped tightening view.",
-        "asOf": "2026-10-26"
+        "asOf": "2026-10-27"
       },
       {
         "key": "NASDAQ",
@@ -884,23 +875,23 @@
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4062.300049,
-        "dailyChange": 0.59,
+        "last": 4036.300049,
+        "dailyChange": -0.85,
         "dailyChangeUnit": "percent",
-        "bias": "BULLISH",
+        "bias": "BEARISH",
         "conviction": "LOW",
         "primaryDriver": "No canonical XAUUSD evidence supplied; cannot assess safe‑haven dynamics relative to rates.",
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": "Multi‑session canonical MOVE/VIX spike plus persistent IG OAS widening and auction demand deterioration (canonical MOVE and persistent IG OAS time series) would indicate broadening stress; absence of those would preserve the current scoped tightening view.",
-        "asOf": "2026-10-27"
+        "asOf": "2026-10-28"
       },
       {
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 80799.87,
-        "dailyChange": 0.99,
+        "last": 80803.1,
+        "dailyChange": 0,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -908,7 +899,7 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": null,
-        "asOf": "2026-10-27"
+        "asOf": "2026-10-28"
       }
     ]
   },
@@ -1489,5 +1480,5 @@
     "Mismatched ticker/issuer labels are quarantined, never silently remapped to another security.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-27T22:19:07.402Z"
+  "syncedAt": "2026-10-28T05:48:40.472Z"
 }

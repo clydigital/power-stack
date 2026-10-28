@@ -1,14 +1,14 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-28T05:40:26.062Z",
+  "generatedAt": "2026-10-28T05:48:40.584Z",
   "liveAsOf": "2026-10-27T08:06:00.164+00:00",
-  "liveSyncedAt": "2026-10-27T22:19:07.402Z",
+  "liveSyncedAt": "2026-10-28T05:48:40.472Z",
   "sourceHealth": {
     "dossier": "DEGRADED",
     "marketMonitor": "PARTIAL",
     "fredRates": "OK",
     "nyFedReferenceRates": "OK",
-    "nyFedPrimaryDealers": "OK",
+    "nyFedPrimaryDealers": "STALE",
     "treasuryBills": "OK",
     "treasurySupply": "UNRESOLVED"
   },
@@ -1315,19 +1315,10 @@
     ],
     "researchGaps": []
   },
-  "divergences": [
-    {
-      "id": "spx-rsp",
-      "title": "Headline index and equal weight are separating",
-      "detail": "SPX cash -0.2% over 5D vs RSP 1.8%.",
-      "assets": [
-        "spx",
-        "rsp"
-      ]
-    }
-  ],
+  "divergences": [],
   "liveResearchGaps": [
     "MARKET_DATA: Canonical MOVE/Treasury‑volatility time series and VIX are missing and block assessment of whether yield moves have broadened into volatility.",
+    "Latest primary-dealer report date 2026-10-14 is more than fourteen calendar days old.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],
   "guardrails": [

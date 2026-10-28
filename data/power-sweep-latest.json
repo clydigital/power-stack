@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-28T05:40:26.135Z",
+  "generatedAt": "2026-10-28T05:48:40.652Z",
   "asOf": "2026-10-27T08:06:00.164+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -9,16 +9,16 @@
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
       "asOf": "2026-10-27T08:06:00.164+00:00",
-      "syncedAt": "2026-10-27T22:19:07.402Z",
+      "syncedAt": "2026-10-28T05:48:40.472Z",
       "sourceStatus": "degraded_latest",
       "sourceHealth": {
         "dossier": "DEGRADED",
         "marketMonitor": "PARTIAL",
         "fredRates": "OK",
-        "nyFedPrimaryDealers": "OK",
+        "nyFedPrimaryDealers": "STALE",
         "treasurySupply": "UNRESOLVED"
       },
-      "ageHours": 14.2,
+      "ageHours": 21.7,
       "reasons": [
         "UPSTREAM_EVIDENCE_PARTIAL"
       ],
@@ -27,7 +27,7 @@
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-28T05:40:26.062Z",
+      "generatedAt": "2026-10-28T05:48:40.584Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -627,6 +627,7 @@
   ],
   "researchGaps": [
     "MARKET_DATA: Canonical MOVE/Treasury‑volatility time series and VIX are missing and block assessment of whether yield moves have broadened into volatility.",
+    "Latest primary-dealer report date 2026-10-14 is more than fourteen calendar days old.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence.",
     "Holding tape unresolved: 6742UW"
   ],
@@ -649,6 +650,19 @@
         ],
         "missingProof": "Observed timestamped Fed-funds-futures, UST 2Y/10Y bars, and licenced MOVE close/series with raw URLs",
         "nextStep": "Check existing Barchart entitlement; integrate direct intraday licensed providers into Live only, with release-aligned timestamps",
+        "isClosed": false,
+        "evidenceAuthority": "ORIGINAL_SOURCE_REQUIRED"
+      },
+      {
+        "id": "PRIMARY_DEALERS",
+        "reportedGap": "Latest primary-dealer report date 2026-10-14 is more than fourteen calendar days old.",
+        "owner": "LIVE_DESK",
+        "state": "UPSTREAM_STALE",
+        "presentInfrastructure": [
+          "Official New York Fed primary-dealer REST adapter"
+        ],
+        "missingProof": "Fresh official publication with an as-of date and parser-verified positions/fails",
+        "nextStep": "Re-query the existing NY Fed endpoint at the existing rates source-integrity cadence; keep stale if publisher remains delayed",
         "isClosed": false,
         "evidenceAuthority": "ORIGINAL_SOURCE_REQUIRED"
       },
@@ -684,6 +698,7 @@
     ],
     "byStatus": {
       "REQUIRES_VALIDATED_INTRADAY_FEEDS": 1,
+      "UPSTREAM_STALE": 1,
       "EVIDENCE_PRESENT_INTERPRETATION_UNRESOLVED": 1,
       "INSTRUMENT_NOT_VERIFIED": 1
     }
