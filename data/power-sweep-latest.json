@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-28T13:01:51.785Z",
+  "generatedAt": "2026-10-28T22:33:52.118Z",
   "asOf": "2026-10-28T09:00:01.513+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -27,13 +27,13 @@
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-28T13:01:51.739Z",
+      "generatedAt": "2026-10-28T22:33:52.069Z",
       "status": "OK"
     },
     "holdingTape": {
       "contractVersion": "power-stack-holding-tape/1",
       "expectedContract": "power-stack-holding-tape/1",
-      "generatedAt": "2026-10-28T12:52:37.393Z",
+      "generatedAt": "2026-10-28T22:33:52.017Z",
       "unresolved": [
         "6742UW"
       ],
@@ -67,14 +67,14 @@
   },
   "portfolioTriage": {
     "tapeDivergences": [
+      "XOM",
       "YTLPOWR",
-      "TSLA",
       "DAYANG"
     ],
     "tapeConfirmations": [
-      "XOM",
       "HIBISCS",
-      "TTWO"
+      "TTWO",
+      "TSLA"
     ],
     "highReview": [
       "XOM",
@@ -204,9 +204,9 @@
   },
   "holdingResearchQueue": [
     {
-      "ticker": "TSLA",
-      "name": "Tesla",
-      "priorityScore": 195,
+      "ticker": "XOM",
+      "name": "ExxonMobil",
+      "priorityScore": 188,
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
@@ -215,26 +215,26 @@
         "freshness": {
           "status": "CURRENT",
           "eligibleForComparison": true,
-          "sessionDate": "2026-10-27",
-          "businessDaysOld": 1,
+          "sessionDate": "2026-10-28",
+          "businessDaysOld": 0,
           "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-10-27",
-        "close": 407.46,
-        "previousClose": 391.62,
-        "change": 15.84,
-        "changePct": 4.045,
+        "sessionDate": "2026-10-28",
+        "close": 182.02,
+        "previousClose": 179.91,
+        "change": 2.11,
+        "changePct": 1.173,
         "currency": "USD",
         "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
-        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/TSLA?interval=1d&range=1mo&includePrePost=false",
-        "closeNotice": "Source-dated regular-session daily close: 2026-10-27"
+        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/XOM?interval=1d&range=1mo&includePrePost=false",
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-28"
       },
-      "currentAction": "TRIM REVIEW",
+      "currentAction": "HOLD / NO ADD",
       "reasons": [
         "completed-session tape moved against the directional market overlay",
         "portfolio overlay marks the holding HIGH_REVIEW"
       ],
-      "researchQuestion": "Has new company-specific evidence changed TSLA's current action gate or thesis risk?",
+      "researchQuestion": "Has new company-specific evidence changed XOM's current action gate or thesis risk?",
       "requiredEvidence": [
         "company-specific news/catalysts for the completed session",
         "technical/flow context sufficient to test whether the divergence is company-specific or temporary",
@@ -291,7 +291,7 @@
           "status": "CURRENT",
           "eligibleForComparison": true,
           "sessionDate": "2026-10-28",
-          "businessDaysOld": 0,
+          "businessDaysOld": 1,
           "reason": "Completed-session price is within the market-local freshness window."
         },
         "sessionDate": "2026-10-28",
@@ -494,13 +494,6 @@
   ],
   "monitorOnly": [
     {
-      "ticker": "XOM",
-      "overlayState": "HEADWIND",
-      "reaction": "CONFIRMS",
-      "action": "HOLD / NO ADD",
-      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
-    },
-    {
       "ticker": "MISC",
       "overlayState": "HEADWIND",
       "reaction": "FLAT",
@@ -519,6 +512,13 @@
       "overlayState": "HEADWIND",
       "reaction": "CONFIRMS",
       "action": "HOLD / NO ADD",
+      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
+    },
+    {
+      "ticker": "TSLA",
+      "overlayState": "HEADWIND",
+      "reaction": "CONFIRMS",
+      "action": "TRIM REVIEW",
       "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
     },
     {
