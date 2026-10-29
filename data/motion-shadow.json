@@ -1,23 +1,40 @@
 {
   "contractVersion": "power-stack-motion-shadow/1",
   "mode": "SHADOW_ONLY",
-  "generatedAt": "2026-10-28T14:41:06.984Z",
+  "generatedAt": "2026-10-29T08:42:30.026Z",
   "freshnessWindowHours": 48,
   "safetyLimit": 18,
   "activeSource": "LIVE_IMMUTABLE_EDITION",
   "shadowSource": "POWER_STACK_DISCOVERY",
-  "liveEditionId": "691b68b4-313b-4ca9-935e-99024731c05f",
-  "liveCapturedAt": "2026-10-28T14:41:06.984Z",
+  "liveEditionId": "26a5938b-0c8e-49f4-baae-2483ca18981f",
+  "liveCapturedAt": "2026-10-29T08:42:30.026Z",
   "summary": {
-    "liveItemCount": 0,
+    "liveItemCount": 1,
     "localFreshCandidateCount": 0,
     "overlapCount": 0,
-    "liveOnlyCount": 0,
+    "liveOnlyCount": 1,
     "localOnlyCount": 0,
     "overlapRate": null
   },
   "overlap": [],
-  "liveOnly": [],
+  "liveOnly": [
+    {
+      "id": "e378d91d-deb9-4148-88c5-ab6bf5ef367f",
+      "headline": "Federal Reserve issues FOMC statement",
+      "category": "MACRO",
+      "tickers": [
+        "TSLA"
+      ],
+      "sourceUrl": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+      "sourceName": "Federal Reserve Board",
+      "occurredAt": "2026-10-28T18:00:00.000Z",
+      "storyId": "952d443f-dbbf-4a8a-a1e4-44d4a9e72fe4",
+      "storyTitle": "Weak jobs meet expensive oil; CPI becomes the tie-breaker",
+      "regimeSlug": "global-cost-of-capital",
+      "attentionTier": "PRIMARY",
+      "attentionScore": 89
+    }
+  ],
   "localOnly": [],
   "promotionGate": "Shadow-only Power Stack discovery cannot enter active portfolio research priority. A future migration decision must explicitly enable residual discovery after shadow coverage is reviewed.",
   "guardrails": [

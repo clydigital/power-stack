@@ -1,15 +1,15 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-29T12:58:40.435Z",
-  "asOf": "2026-10-28T15:05:32.386+00:00",
+  "generatedAt": "2026-10-29T13:09:29.608Z",
+  "asOf": "2026-10-29T08:44:11.778+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
   "inputHealth": {
     "liveDesk": {
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
-      "asOf": "2026-10-28T15:05:32.386+00:00",
-      "syncedAt": "2026-10-29T05:53:37.500Z",
+      "asOf": "2026-10-29T08:44:11.778+00:00",
+      "syncedAt": "2026-10-29T13:09:29.451Z",
       "sourceStatus": "degraded_latest",
       "sourceHealth": {
         "dossier": "DEGRADED",
@@ -18,7 +18,7 @@
         "nyFedPrimaryDealers": "STALE",
         "treasurySupply": "UNRESOLVED"
       },
-      "ageHours": 14.8,
+      "ageHours": 4.4,
       "reasons": [
         "UPSTREAM_EVIDENCE_PARTIAL"
       ],
@@ -27,7 +27,7 @@
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-29T12:58:40.366Z",
+      "generatedAt": "2026-10-29T13:09:29.549Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -46,8 +46,8 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "Yields Are High and Driving Tightening; HY Credit Narrowly Weak while AI/semis Hold Up",
-    "implication": "Higher nominal and real yields are the dominant tightening force now; that explains concentrated HY stress and narrow equity leadership, but broader credit/volatility transmission is unresolved until canonical MOVE/VIX and intraday UST/futures evidence arrive.",
+    "headline": "Fed held policy; US yields remain elevated while AI/large-cap breadth still holds up",
+    "implication": "Evidence supports a rates‑led tightening environment that is not yet transmitting into broad market stress; AI/large‑cap leadership partly offsets risk‑off pressure.",
     "monetarySummary": "Rate baseline HAWKISH; 3 confirming, 0 contradicting, 8 unresolved/neutral monetary-market layers."
   },
   "queueCounts": {
@@ -60,10 +60,48 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "691b68b4-313b-4ca9-935e-99024731c05f",
-    "capturedAt": "2026-10-28T14:41:06.984Z",
-    "itemCount": 0,
-    "items": []
+    "editionId": "26a5938b-0c8e-49f4-baae-2483ca18981f",
+    "capturedAt": "2026-10-29T08:42:30.026Z",
+    "itemCount": 1,
+    "items": [
+      {
+        "id": "e378d91d-deb9-4148-88c5-ab6bf5ef367f",
+        "motionKey": "event:fomc:reserve",
+        "versionNumber": 3,
+        "headline": "Federal Reserve issues FOMC statement",
+        "category": "MACRO",
+        "verificationState": "VERIFIED",
+        "lifecycleState": "PROMOTED",
+        "whatHappened": "The Committee decided to maintain the target range for the federal funds rate at 3-3/4 to 4 percent, in support of the Federal Reserve's dual mandate.",
+        "marketReaction": null,
+        "whyInteresting": "Original issuer/regulator announcement. A related price move or market impact has not been established.",
+        "bigPictureBridge": "Fresh rates / funding evidence → sovereign yields and financing costs → Cost of Capital regime",
+        "nextTest": "Original official RSS publication clock and directly linked same-host press-release HTML checked. Headline describes the announcement only, not its financial effect.",
+        "tickers": [
+          "TSLA"
+        ],
+        "sourceName": "Federal Reserve Board",
+        "sourceUrl": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+        "materiality": 86,
+        "relevance": 86,
+        "novelty": 86,
+        "occurredAt": "2026-10-28T18:00:00.000Z",
+        "storyId": "952d443f-dbbf-4a8a-a1e4-44d4a9e72fe4",
+        "storySlug": "fed-rate-repricing",
+        "storyTitle": "Weak jobs meet expensive oil; CPI becomes the tie-breaker",
+        "regimeSlug": "global-cost-of-capital",
+        "regimeLabel": "US Rate Regime",
+        "attentionTier": "PRIMARY",
+        "attentionScore": 89,
+        "writingPotential": "MEDIUM",
+        "attentionReasons": [
+          "high materiality",
+          "high market relevance",
+          "primary/official verification",
+          "asset/ticker linked"
+        ]
+      }
+    ]
   },
   "portfolioTriage": {
     "tapeDivergences": [
@@ -83,6 +121,9 @@
       "TSLA"
     ],
     "mixed": [],
+    "liveMotionLinkedHoldings": [
+      "TSLA"
+    ],
     "hiddenConcentration": [
       {
         "id": "ytl-linked",
@@ -147,7 +188,7 @@
         "importance": "HIGH",
         "divergence": "PARTIAL",
         "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-        "actual": "Semiconductor ETF SMH and AMD are up while SMH underperformed QQQ over 20 sessions, indicating narrow leadership.",
+        "actual": "Mixed: SMH underperforms QQQ over 20 sessions while select names (Micron, AMD) and large caps rally.",
         "affectedHoldings": [
           "TSLA",
           "TTWO",
@@ -160,12 +201,12 @@
           "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
         ],
         "evidenceFor": [
-          "AI/semiconductor names help sustain indices but internals are mixed; durability depends on issuer earnings, capex and financing evidence.",
-          "Headline indices are supported by large caps, producing a narrow market profile that can mask concentrated stress elsewhere.",
-          "Nasdaq daily move 1.18 with bias MIXED."
+          "Narrow, issuer‑specific strength supports equities despite rates; MSFT cashflow shows capacity for capex but not AI‑specific causation.",
+          "Index gains are supported by broad large‑cap internals even as AI/infra breadth softens, consistent with narrow leadership.",
+          "Nasdaq daily move 0.27 with bias MIXED."
         ],
         "evidenceAgainst": [
-          "Policy‑sensitive front end and elevated real yields are keeping conditions restrictive; ACM term premium is present but modest."
+          "Front‑end hawkishness and elevated nominal yields dominate; term premium is low, leaving decomposition unresolved."
         ],
         "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
         "confidence": "HIGH",
@@ -176,7 +217,7 @@
         "importance": "HIGH",
         "divergence": "YES",
         "expected": "A persistent long-end tightening shock should eventually raise financing stress and widen credit spreads.",
-        "actual": "HY spreads have widened materially over the 20‑session window while IG moves are modest.",
+        "actual": "HY OAS +10bp (20s) vs IG OAS +4bp (20s).",
         "affectedHoldings": [
           "TSLA",
           "TTWO",
@@ -190,11 +231,11 @@
           "Credit may simply be lagging rates and could become the next confirmation leg."
         ],
         "evidenceFor": [
-          "Credit pressure is concentrated in lower quality bonds so far; broad systemic credit stress is not yet observed.",
+          "Credit shows higher dispersion with HY under more pressure; IG has not matched HY widening over the same window.",
           "Funding/credit composite is currently NEUTRAL."
         ],
         "evidenceAgainst": [
-          "Higher nominal and real yields are the dominant tightening force now; that explains concentrated HY stress and narrow equity leadership, but broader credit/volatility transmission is unresolved until canonical MOVE/VIX and intraday UST/futures evidence arrive."
+          "Evidence supports a rates‑led tightening environment that is not yet transmitting into broad market stress; AI/large‑cap leadership partly offsets risk‑off pressure."
         ],
         "leadingHypothesis": "The shock is rates-led, not yet systemic; keep dry powder because credit remains the key confirmation risk.",
         "confidence": "HIGH",
@@ -476,18 +517,26 @@
   ],
   "liveRadar": [
     {
-      "ticker": "AMD",
-      "companyName": "Advanced Micro Devices",
-      "whyRelevant": "Representative AI/semiconductor name showing recent strength and intra‑sector leadership signals.",
-      "researchQuestion": "Is AMD's strength mirrored by broader semiconductor order/capex or driven by positioning?",
+      "ticker": "MSFT",
+      "companyName": "Microsoft Corporation",
+      "whyRelevant": "Large issuer with high capex and cash flow; Q1 SEC cashflow shows substantial cash FCF.",
+      "researchQuestion": "Is MSFT capex/FCF profile consistent with continued AI capex demand or efficiency‑led moderation?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     },
     {
-      "ticker": "SMH",
-      "companyName": "VanEck Semiconductor ETF (SMH)",
-      "whyRelevant": "Sector proxy for semiconductor internals and AI hardware exposure.",
-      "researchQuestion": "Is SMH underperformance versus QQQ persistent and linked to earnings/capex evidence?",
+      "ticker": "AMD",
+      "companyName": "Advanced Micro Devices",
+      "whyRelevant": "Representative AI/semiconductor name; recent closes show strong price action.",
+      "researchQuestion": "Is AMD's price action driven by durable demand for AI compute or by short‑term flows?",
+      "status": "DISCOVERY_ONLY",
+      "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
+    },
+    {
+      "ticker": "MU",
+      "companyName": "Micron Technology",
+      "whyRelevant": "Strong recent move and direct exposure to memory demand for AI.",
+      "researchQuestion": "Are Micron's gains indicative of durable end‑demand for HBM/storage or idiosyncratic positioning?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     }
@@ -519,7 +568,7 @@
       "overlayState": "HEADWIND",
       "reaction": "CONFIRMS",
       "action": "TRIM REVIEW",
-      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
+      "reason": "Fresh promoted Live Motion is linked, but this holding remains outside the capped deep-dive queue unless budget or priority changes."
     },
     {
       "ticker": "DAYANG",
@@ -557,22 +606,35 @@
     }
   ],
   "researchGaps": [
-    "MARKET_MONITORING: Canonical MOVE/Treasury volatility and intraday 5–30m UST / fed‑funds‑futures bars are missing, blocking confirmation of transmission from yields into volatility and IG credit.",
+    "MARKET_DATA: Canonical MOVE (Treasury volatility) and VIX series are not present; blocks testing whether rates repricing is transmitting to volatility.",
+    "MARKET_DATA: Intraday 5–30m UST yields and fed‑funds‑futures bars around issuer/announcement timestamps are missing; blocks same‑session spillover tests.",
+    "MARKET_STRUCTURE: Primary‑dealer position/fails data are unavailable, limiting long‑end market‑structure decomposition.",
     "Latest primary-dealer report date 2026-10-14 is more than fourteen calendar days old.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence.",
     "Holding tape unresolved: 6742UW"
   ],
   "gapReconciliation": {
     "contractVersion": "power-stack-gap-reconciliation/1",
-    "sourceAsOf": "2026-10-28T15:05:32.386+00:00",
+    "sourceAsOf": "2026-10-29T08:44:11.778+00:00",
     "sourceStatus": "degraded_latest",
     "owner": "Power Stack is read-only; Live owns all macro/rates evidence",
     "resolvedByReconciliation": 0,
     "externallyVerified": false,
     "gaps": [
       {
+        "id": "UNCLASSIFIED:market-data-canonical-move-treasury-volatility-and-vix-series-are-not-present-blocks-testing",
+        "reportedGap": "MARKET_DATA: Canonical MOVE (Treasury volatility) and VIX series are not present; blocks testing whether rates repricing is transmitting to volatility.",
+        "owner": "RESEARCH_GAP_GATE",
+        "state": "UNCLASSIFIED_REQUIRES_SOURCE_CHECK",
+        "presentInfrastructure": [],
+        "missingProof": "Original source data and contract evidence for this observation",
+        "nextStep": "Review existing Live/PS source mapping; don't mark as resolved from text alone",
+        "isClosed": false,
+        "evidenceAuthority": "ORIGINAL_SOURCE_REQUIRED"
+      },
+      {
         "id": "INTRADAY_RATES",
-        "reportedGap": "MARKET_MONITORING: Canonical MOVE/Treasury volatility and intraday 5–30m UST / fed‑funds‑futures bars are missing, blocking confirmation of transmission from yields into volatility and IG credit.",
+        "reportedGap": "MARKET_DATA: Intraday 5–30m UST yields and fed‑funds‑futures bars around issuer/announcement timestamps are missing; blocks same‑session spillover tests.",
         "owner": "LIVE_DESK",
         "state": "REQUIRES_VALIDATED_INTRADAY_FEEDS",
         "presentInfrastructure": [
@@ -586,7 +648,7 @@
       },
       {
         "id": "PRIMARY_DEALERS",
-        "reportedGap": "Latest primary-dealer report date 2026-10-14 is more than fourteen calendar days old.",
+        "reportedGap": "MARKET_STRUCTURE: Primary‑dealer position/fails data are unavailable, limiting long‑end market‑structure decomposition.",
         "owner": "LIVE_DESK",
         "state": "UPSTREAM_STALE",
         "presentInfrastructure": [
@@ -628,6 +690,7 @@
       }
     ],
     "byStatus": {
+      "UNCLASSIFIED_REQUIRES_SOURCE_CHECK": 1,
       "REQUIRES_VALIDATED_INTRADAY_FEEDS": 1,
       "UPSTREAM_STALE": 1,
       "EVIDENCE_PRESENT_INTERPRETATION_UNRESOLVED": 1,
