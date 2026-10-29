@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-29T13:09:29.608Z",
+  "generatedAt": "2026-10-29T22:44:09.975Z",
   "asOf": "2026-10-29T08:44:11.778+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -27,13 +27,13 @@
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-29T13:09:29.549Z",
+      "generatedAt": "2026-10-29T22:44:09.903Z",
       "status": "OK"
     },
     "holdingTape": {
       "contractVersion": "power-stack-holding-tape/1",
       "expectedContract": "power-stack-holding-tape/1",
-      "generatedAt": "2026-10-29T12:58:40.294Z",
+      "generatedAt": "2026-10-29T22:44:09.823Z",
       "unresolved": [
         "6742UW"
       ],
@@ -111,8 +111,7 @@
     "tapeConfirmations": [
       "MISC",
       "HIBISCS",
-      "TTWO",
-      "TSLA"
+      "TTWO"
     ],
     "highReview": [
       "XOM",
@@ -247,7 +246,7 @@
     {
       "ticker": "XOM",
       "name": "ExxonMobil",
-      "priorityScore": 188,
+      "priorityScore": 180,
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
@@ -256,19 +255,19 @@
         "freshness": {
           "status": "CURRENT",
           "eligibleForComparison": true,
-          "sessionDate": "2026-10-28",
-          "businessDaysOld": 1,
+          "sessionDate": "2026-10-29",
+          "businessDaysOld": 0,
           "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-10-28",
-        "close": 182.02,
-        "previousClose": 179.91,
-        "change": 2.11,
-        "changePct": 1.173,
+        "sessionDate": "2026-10-29",
+        "close": 183.29,
+        "previousClose": 182.02,
+        "change": 1.27,
+        "changePct": 0.698,
         "currency": "USD",
         "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
         "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/XOM?interval=1d&range=1mo&includePrePost=false",
-        "closeNotice": "Source-dated regular-session daily close: 2026-10-28"
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-29"
       },
       "currentAction": "HOLD / NO ADD",
       "reasons": [
@@ -332,7 +331,7 @@
           "status": "CURRENT",
           "eligibleForComparison": true,
           "sessionDate": "2026-10-29",
-          "businessDaysOld": 0,
+          "businessDaysOld": 1,
           "reason": "Completed-session price is within the market-local freshness window."
         },
         "sessionDate": "2026-10-29",
@@ -566,7 +565,7 @@
     {
       "ticker": "TSLA",
       "overlayState": "HEADWIND",
-      "reaction": "CONFIRMS",
+      "reaction": "FLAT",
       "action": "TRIM REVIEW",
       "reason": "Fresh promoted Live Motion is linked, but this holding remains outside the capped deep-dive queue unless budget or priority changes."
     },
