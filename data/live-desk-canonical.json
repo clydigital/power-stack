@@ -541,14 +541,14 @@
         "label": "US dollar transmission",
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
-        "detail": "US Dollar · UUP proxy 5D +0.76%.",
-        "asOf": "2026-10-27",
+        "detail": "US Dollar · UUP proxy 5D +0.48%.",
+        "asOf": "2026-10-28",
         "sourceName": "Nasdaq official etf history",
         "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical",
         "evidenceRefs": [],
         "metrics": {
-          "proxyLevel": 29.12,
-          "change5dPct": 0.76
+          "proxyLevel": 29.06,
+          "change5dPct": 0.48
         }
       },
       {
@@ -607,9 +607,9 @@
       "id": "dxy",
       "symbol": "UUP",
       "label": "US Dollar · UUP proxy",
-      "last": 29.12,
-      "change5d": 0.76,
-      "asOf": "2026-10-27",
+      "last": 29.06,
+      "change5d": 0.48,
+      "asOf": "2026-10-28",
       "sourceName": "Nasdaq official etf history",
       "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical"
     },
@@ -812,14 +812,14 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-28T22:34:16.597Z",
+    "asOf": "2026-10-29T05:45:37.539Z",
     "assets": [
       {
         "key": "SPX",
         "label": "S&P 500",
         "symbol": "SP500",
-        "last": 7722.6,
-        "dailyChange": 0.6,
+        "last": 7743.98,
+        "dailyChange": 0.28,
         "dailyChangeUnit": "percent",
         "bias": "MIXED",
         "conviction": "HIGH",
@@ -827,7 +827,7 @@
         "confirmingSignal": "Large‑cap breadth is strong while AI‑basket internals are weaker.",
         "contradictingSignal": null,
         "invalidation": "Persistent canonical broadening of credit (sustained IG OAS widening in market-monitor:ig-oas:2026-10-27 or market-monitor-measured:ig_oas_20s:2026-09-29:2026-10-27), a canonical MOVE/VIX uplift, or intraday UST/fed‑funds bars showing broad volatility would move the regime away from rates‑led tightening.",
-        "asOf": "2026-10-27"
+        "asOf": "2026-10-28"
       },
       {
         "key": "NASDAQ",
@@ -878,23 +878,23 @@
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4056.600098,
-        "dailyChange": -0.44,
+        "last": 4038.5,
+        "dailyChange": -0.7,
         "dailyChangeUnit": "percent",
-        "bias": "UNRESOLVED",
+        "bias": "BEARISH",
         "conviction": "LOW",
         "primaryDriver": "No canonical XAU evidence supplied; safe‑haven balance versus USD/real yields unresolved.",
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": "Persistent canonical broadening of credit (sustained IG OAS widening in market-monitor:ig-oas:2026-10-27 or market-monitor-measured:ig_oas_20s:2026-09-29:2026-10-27), a canonical MOVE/VIX uplift, or intraday UST/fed‑funds bars showing broad volatility would move the regime away from rates‑led tightening.",
-        "asOf": "2026-10-28"
+        "asOf": "2026-10-29"
       },
       {
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 81291.21,
-        "dailyChange": 0.61,
+        "last": 80205.97,
+        "dailyChange": -1.28,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -902,7 +902,7 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": null,
-        "asOf": "2026-10-28"
+        "asOf": "2026-10-29"
       }
     ]
   },
@@ -1455,5 +1455,5 @@
     "Mismatched ticker/issuer labels are quarantined, never silently remapped to another security.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-28T22:38:44.954Z"
+  "syncedAt": "2026-10-29T05:53:37.500Z"
 }
