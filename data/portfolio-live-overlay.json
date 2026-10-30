@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-30T13:02:09.029Z",
+  "generatedAt": "2026-10-30T22:18:14.981Z",
   "liveAsOf": "2026-10-30T08:48:09.444+00:00",
   "liveSyncedAt": "2026-10-30T13:02:08.931Z",
   "sourceHealth": {
@@ -145,19 +145,19 @@
         "freshness": {
           "status": "CURRENT",
           "eligibleForComparison": true,
-          "sessionDate": "2026-10-29",
-          "businessDaysOld": 1,
+          "sessionDate": "2026-10-30",
+          "businessDaysOld": 0,
           "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-10-29",
-        "close": 183.29,
-        "previousClose": 182.02,
-        "change": 1.27,
-        "changePct": 0.698,
+        "sessionDate": "2026-10-30",
+        "close": 187.25,
+        "previousClose": 183.29,
+        "change": 3.96,
+        "changePct": 2.161,
         "currency": "USD",
         "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
         "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/XOM?interval=1d&range=1mo&includePrePost=false",
-        "closeNotice": "Source-dated regular-session daily close: 2026-10-29"
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-30"
       },
       "effects": {
         "rates": "HEADWIND",
@@ -812,19 +812,19 @@
         "freshness": {
           "status": "CURRENT",
           "eligibleForComparison": true,
-          "sessionDate": "2026-10-29",
-          "businessDaysOld": 1,
+          "sessionDate": "2026-10-30",
+          "businessDaysOld": 0,
           "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-10-29",
-        "close": 193.39,
-        "previousClose": 195.29,
-        "change": -1.9,
-        "changePct": -0.973,
+        "sessionDate": "2026-10-30",
+        "close": 190.17,
+        "previousClose": 193.39,
+        "change": -3.22,
+        "changePct": -1.665,
         "currency": "USD",
         "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
         "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/TTWO?interval=1d&range=1mo&includePrePost=false",
-        "closeNotice": "Source-dated regular-session daily close: 2026-10-29"
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-30"
       },
       "effects": {
         "rates": "HEADWIND",
@@ -940,24 +940,24 @@
       "overlayState": "HEADWIND",
       "reviewPriority": "HIGH_REVIEW",
       "actualReaction": {
-        "status": "FLAT",
-        "reason": "The completed-session move is too small to count as confirmation or divergence.",
+        "status": "CONFIRMS",
+        "reason": "Completed-session tape moved in the direction implied by the current market overlay.",
         "freshness": {
           "status": "CURRENT",
           "eligibleForComparison": true,
-          "sessionDate": "2026-10-29",
-          "businessDaysOld": 1,
+          "sessionDate": "2026-10-30",
+          "businessDaysOld": 0,
           "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-10-29",
-        "close": 403.3,
-        "previousClose": 404.22,
-        "change": -0.92,
-        "changePct": -0.228,
+        "sessionDate": "2026-10-30",
+        "close": 399.81,
+        "previousClose": 403.3,
+        "change": -3.49,
+        "changePct": -0.865,
         "currency": "USD",
         "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
         "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/TSLA?interval=1d&range=1mo&includePrePost=false",
-        "closeNotice": "Source-dated regular-session daily close: 2026-10-29"
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-30"
       },
       "effects": {
         "rates": "HEADWIND",
@@ -1307,7 +1307,8 @@
       "DAYANG"
     ],
     "tapeConfirmations": [
-      "TTWO"
+      "TTWO",
+      "TSLA"
     ],
     "motionLinked": [
       "TSLA"
