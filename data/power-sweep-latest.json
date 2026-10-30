@@ -1,15 +1,15 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-30T12:53:21.267Z",
-  "asOf": "2026-10-29T15:05:32.351+00:00",
+  "generatedAt": "2026-10-30T13:02:09.086Z",
+  "asOf": "2026-10-30T08:48:09.444+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
   "inputHealth": {
     "liveDesk": {
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
-      "asOf": "2026-10-29T15:05:32.351+00:00",
-      "syncedAt": "2026-10-30T05:55:22.194Z",
+      "asOf": "2026-10-30T08:48:09.444+00:00",
+      "syncedAt": "2026-10-30T13:02:08.931Z",
       "sourceStatus": "degraded_latest",
       "sourceHealth": {
         "dossier": "DEGRADED",
@@ -18,7 +18,7 @@
         "nyFedPrimaryDealers": "OK",
         "treasurySupply": "UNRESOLVED"
       },
-      "ageHours": 14.8,
+      "ageHours": 4.2,
       "reasons": [
         "UPSTREAM_EVIDENCE_PARTIAL"
       ],
@@ -27,7 +27,7 @@
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-30T12:53:21.210Z",
+      "generatedAt": "2026-10-30T13:02:09.029Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -46,8 +46,8 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "Fed held rates; long and real yields remain elevated while credit is only modestly wider and AI/semiconductor leaders are holding up.",
-    "implication": "Rates and front‑end pricing remain the dominant tightening force; credit and equity breadth do not yet confirm a broad market stress, so the picture is rates‑led tightening with mixed cross‑asset confirmation.",
+    "headline": "US yields remain elevated and dollar liquidity is tightening while credit and large-cap breadth stay relatively calm.",
+    "implication": "Rising yields and slightly tighter dollar liquidity are a net tightening force for financial conditions, but current canonical evidence does not show broad credit stress or volatility confirming systemic risk.",
     "monetarySummary": "Rate baseline HAWKISH; 3 confirming, 0 contradicting, 8 unresolved/neutral monetary-market layers."
   },
   "queueCounts": {
@@ -188,7 +188,7 @@
         "importance": "HIGH",
         "divergence": "PARTIAL",
         "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-        "actual": "Select AI/semiconductor names closed higher (GOOGL, AMD, MU) and AI‑basket breadth is mixed, indicating leadership concentration.",
+        "actual": "Semiconductor/AI leadership is narrow: SMH underperforming QQQ over 20 sessions while some names keep rallying; issuer cashflow shows heavy capex.",
         "affectedHoldings": [
           "TSLA",
           "TTWO",
@@ -201,12 +201,12 @@
           "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
         ],
         "evidenceFor": [
-          "Price action shows narrow AI/semiconductor leadership supported by issuer cash‑flow evidence, but company‑level capex isolation and supplier order data are missing.",
-          "Index strength is supported by a subset of constituents; breadth does not confirm broad risk‑on.",
-          "Nasdaq daily move 0.27 with bias MIXED."
+          "Issuer cashflow supports capex but AI-specific procurement and supplier confirmations are missing, leaving demand durability unresolved.",
+          "Broad large-cap participation limits immediate breadth-concern, but AI/infra breadth narrowing flags concentrated leadership risk.",
+          "Nasdaq daily move -1.38 with bias MIXED."
         ],
         "evidenceAgainst": [
-          "Rates are the principal tightening influence; the low governed term premium suggests much of long yield is driven by real yields and front‑end pricing."
+          "Policy path and real-yield strength create a hawkish rate regime; long-end decomposition remains unresolved."
         ],
         "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
         "confidence": "HIGH",
@@ -217,7 +217,7 @@
         "importance": "HIGH",
         "divergence": "YES",
         "expected": "A persistent long-end tightening shock should eventually raise financing stress and widen credit spreads.",
-        "actual": "HY spreads modestly wider (HY OAS ~3.14%); IG remains contained (~0.86%); 20‑session diagnostics show HY moved more than IG.",
+        "actual": "HY and IG 20-session OAS changes are small (2 bp), indicating limited near-term spread stress.",
         "affectedHoldings": [
           "TSLA",
           "TTWO",
@@ -231,11 +231,11 @@
           "Credit may simply be lagging rates and could become the next confirmation leg."
         ],
         "evidenceFor": [
-          "Credit shows limited, concentrated widening in HY rather than broad IG stress; broader confirmation requires volatility and persistence.",
+          "Credit spreads have not meaningfully repriced despite higher yields, so credit transmission is currently limited.",
           "Funding/credit composite is currently NEUTRAL."
         ],
         "evidenceAgainst": [
-          "Rates and front‑end pricing remain the dominant tightening force; credit and equity breadth do not yet confirm a broad market stress, so the picture is rates‑led tightening with mixed cross‑asset confirmation."
+          "Rising yields and slightly tighter dollar liquidity are a net tightening force for financial conditions, but current canonical evidence does not show broad credit stress or volatility confirming systemic risk."
         ],
         "leadingHypothesis": "The shock is rates-led, not yet systemic; keep dry powder because credit remains the key confirmation risk.",
         "confidence": "HIGH",
@@ -518,25 +518,25 @@
   "liveRadar": [
     {
       "ticker": "GOOGL",
-      "companyName": "Alphabet Inc.",
-      "whyRelevant": "Large issuer filing (10‑Q) and positive close amid ad/search news; useful to reconcile reported cash flows and price reaction.",
-      "researchQuestion": "Does Alphabet's reported operating cash flow and PP&E support ongoing AI capex and explain recent price action?",
+      "companyName": "Alphabet",
+      "whyRelevant": "Large issuer with heavy cash PP&E spending this quarter; key to AI capex funding assessment.",
+      "researchQuestion": "Will Alphabet's guidance or supplier order confirmation show sustained AI capex?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     },
     {
-      "ticker": "MSFT",
-      "companyName": "Microsoft Corporation",
-      "whyRelevant": "Quarterly cash‑flow and capex profile informs AI capex funding and hyperscaler demand balance.",
-      "researchQuestion": "Is Microsoft simple cash FCF sufficient to fund AI capex without external financing pressure?",
+      "ticker": "AMD",
+      "companyName": "AMD",
+      "whyRelevant": "Representative AI/semiconductor leader; recent close shows market pricing for AI demand exposure.",
+      "researchQuestion": "Does AMD price action and guidance align with persistent AI demand?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     },
     {
-      "ticker": "MU",
-      "companyName": "Micron Technology",
-      "whyRelevant": "Strong recent closes highlight supplier dynamics in AI hardware and sentiment for memory demand.",
-      "researchQuestion": "Is Micron's price strength consistent with durable end‑demand improvements for memory linked to AI growth?",
+      "ticker": "AMZN",
+      "companyName": "Amazon",
+      "whyRelevant": "Large cloud/AI end‑user; earnings Motion present and price reaction noted in news.",
+      "researchQuestion": "Do Amazon results materially change cloud/AI capex outlook?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     }
@@ -606,14 +606,13 @@
     }
   ],
   "researchGaps": [
-    "MARKET_DATA: Canonical MOVE and VIX series (intraday and daily) are not present, blocking assessment of volatility transmission from rates to credit and equities.",
-    "MARKET_DATA: Intraday 5–30m UST and fed‑funds‑futures bars around FOMC and major issuer events are missing, blocking same‑session spillover analysis.",
+    "MARKET_DATA: Canonical MOVE and VIX series plus intraday 5–30m UST and fed‑funds‑futures bars are missing, blocking a decision on whether rates repricing transmitted into volatility and IG credit.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence.",
     "Holding tape unresolved: 6742UW"
   ],
   "gapReconciliation": {
     "contractVersion": "power-stack-gap-reconciliation/1",
-    "sourceAsOf": "2026-10-29T15:05:32.351+00:00",
+    "sourceAsOf": "2026-10-30T08:48:09.444+00:00",
     "sourceStatus": "degraded_latest",
     "owner": "Power Stack is read-only; Live owns all macro/rates evidence",
     "resolvedByReconciliation": 0,
@@ -621,7 +620,7 @@
     "gaps": [
       {
         "id": "INTRADAY_RATES",
-        "reportedGap": "MARKET_DATA: Canonical MOVE and VIX series (intraday and daily) are not present, blocking assessment of volatility transmission from rates to credit and equities.",
+        "reportedGap": "MARKET_DATA: Canonical MOVE and VIX series plus intraday 5–30m UST and fed‑funds‑futures bars are missing, blocking a decision on whether rates repricing transmitted into volatility and IG credit.",
         "owner": "LIVE_DESK",
         "state": "REQUIRES_VALIDATED_INTRADAY_FEEDS",
         "presentInfrastructure": [
