@@ -1,118 +1,194 @@
 {
   "contractVersion": "power-stack-market-summary/v1",
-  "asOf": "2026-10-27T06:00:00+08:00",
+  "asOf": "2026-10-30T12:15:00+08:00",
   "timezone": "Asia/Kuala_Lumpur",
-  "marketSession": "27 Oct 2026 06:00 MYT research cut-off; 22 Oct US equity close is a historical reference, 23 Oct ICE/FRED credit is a separate observation, and 26 Oct issuer/auction events are later. No intraday live prices, matched Brent settlement or broker execution quotes.",
-  "title": "AI Spending Survives, but Who Can Finance It?",
-  "intro": "AI companies can still sell more products while their shares and creditors struggle. The new Meet Kevin and Traders Reality summaries point to different sides of that tension. We checked what the companies actually filed, what credit prices showed, and what that means for a RM13,491 investment plan.",
+  "marketSession": "30 October 2026 12:15 MYT research cut-off. 29 Oct was the last completed US regular session; 30 Oct Japan and FX/oil observations were intraday Asia prices, not US cash closes. Some earnings reactions were 29 Oct post-market. 22 Oct holdings/watchlist stored prices must not be passed off as current.",
+  "title": "When AI Spending Meets the Cash-Flow Test",
+  "intro": "The Nasdaq's decline is not yet an all-stock crash. A few large companies and capital-intensive AI stories are being repriced, while many smaller US shares advanced. For your existing portfolio, the urgent question is whether a holding's earnings or financing changed, not whether its ticker moved with tech.",
   "sections": [
     {
-      "label": "Act 1 — When the market sells a good business",
-      "text": "A falling share price and a failing business are different claims.",
+      "label": "Act 1 — AI is selling more; the cash bill is still due",
+      "text": "Good revenue growth and investable free cash flow are different things.",
       "paragraphs": [
-        "Traders Reality's lens starts with what investors expected. When money is tight, funds can sell profitable companies to raise cash. The useful question is whether customers cancelled orders or whether investors simply stopped paying the old price for those orders.",
-        "TSMC's 15 October quarterly report showed US$46.72bn revenue, 66.4% gross margin and 58.7% operating margin. Its fourth-quarter revenue guidance was US$52.3–54.3bn. Those reported operations still look strong; an attractive purchase price for the US-listed TSM shares is a separate decision.",
-        "The subsequent 26 October US close showed a selective rebound: the S&P 500 gained 0.70%, the Nasdaq Composite gained 0.83% and the Philadelphia Semiconductor Index gained 2.8%, while Meta fell 1.9% after its financing announcement. This followed Traders Reality's livestream, and weakens an uninterrupted sector-crash interpretation without showing that neocloud funding stress has disappeared."
+        "Amazon's original Q3 results reported AWS sales up 39.3%, but its issuer-defined free cash flow for the quarter was negative $33.456 billion: $42.422 billion operating cash flow less $75.878 billion net cash capital investment. The trailing-twelve-month free-cash-flow figure was negative $42.357 billion. The two periods must not be mixed.",
+        "Intel reported a stronger third quarter, but a $15–16 billion fourth-quarter sales outlook and weaker PC demand complicated the recovery. Sandisk's stronger data-centre numbers faced high expectations and a broad technology repricing. These are three different reasons to be cautious, not three proofs that AI demand collapsed.",
+        "Power Stack implication: MU, CRDO, AVGO, DELL and high-multiple grid suppliers require current valuations, customer funding proof and sustained issuer cash conversion. TSMC's strong earlier results are supportive of demand, not an automatic entry price."
       ],
       "sources": [
         {
-          "label": "TSMC Q3 issuer results · 15 Oct",
-          "url": "https://investor.tsmc.com/english/quarterly-results/2026/q3"
+          "label": "Amazon Q3 2026 original",
+          "url": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Third-Quarter-Results/default.aspx"
         },
         {
-          "label": "22 Oct equity-session source and comparisons",
-          "url": "https://apnews.com/article/1970e79d013cbddcae89c53b4b98f384"
+          "label": "Intel Q3 original",
+          "url": "https://www.intc.com/news-events/press-releases/detail/1786/intel-reports-third-quarter-2026-financial-results"
         },
         {
-          "label": "Reuters · 26 Oct US close, after video",
-          "url": "https://www.reuters.com/business/us-stock-futures-edge-up-oil-falls-heading-into-earnings-barrage-2026-10-26/"
+          "label": "Bluebelly official earnings scorecards",
+          "url": "https://github.com/clydigital/alchemy-live-market-desk/blob/60bcd112620f2132f60af3fe4173a4a898f177f8/lib/blue-desk-earnings-results.ts"
         },
         {
-          "label": "Traders Reality · authenticated 26 Oct video",
-          "url": "https://www.youtube.com/watch?v=ndpZTceNzbg"
+          "label": "30 Oct 09:45 editorial reaction addendum · research-only",
+          "url": "https://app.notion.com/p/409519b67a9481bdb969cf3045152a09"
         }
       ]
     },
     {
-      "label": "Act 2 — Credit distinguishes the weak from the strong",
-      "text": "The price of borrowing is exposing who needs outside capital most.",
+      "label": "Act 2 — The Nasdaq headline hid a rotation",
+      "text": "Investors were repricing market leadership, not indiscriminately liquidating every company.",
       "paragraphs": [
-        "ICE credit data available through FRED for 23 October showed the lowest-rated CCC-and-below group at a 13.56% option-adjusted spread, compared with 3.38% for the broader high-yield index. The two figures measure different groups, not the borrowing rate for any single AI company. Weak-credit stress is clearer than a market-wide funding shutdown.",
-        "That distinction changes how I approach AI. A business already generating cash from paying customers is not the same as a highly leveraged data-centre project that needs another refinancing. Before calling the sell-off contagious, I want same-date investment-grade spreads, lender terms, issuer cash flow and a matched market reaction."
+        "Bluebelly's source-dated 29 October breadth review saw 406 S&P constituents advancing against 97 declining, while an equal-weight S&P proxy gained about 1.20% and the cap-weighted proxy fell about 0.38%. Russell 2000 also rose. The observed split matters for the RSP versus concentrated-tech watch, but is not yet a multiweek breadth confirmation.",
+        "The 28 October available broad high-yield option-adjusted spread was about 3.14%, below 3.18% a session earlier. Because this credit observation predates the 29 October stock-session close, it argues against declaring an already-confirmed broad high-yield crisis; it does not guarantee credit remained calm into the Amazon after-hours shock.",
+        "Power Stack should distinguish a sell-off driven by inflated share-price expectations from one where financing covenants, default risk or customers' willingness to pay have deteriorated. An AI data-centre customer and a profitable electrical equipment supplier need different underwriting."
       ],
       "sources": [
         {
-          "label": "FRED · CCC-and-below spread, observed 23 Oct",
-          "url": "https://fred.stlouisfed.org/series/BAMLH0A3HYC"
+          "label": "Bluebelly cross-asset breadth and credit review · 30 Oct",
+          "url": "https://github.com/clydigital/alchemy-live-market-desk/blob/60bcd112620f2132f60af3fe4173a4a898f177f8/lib/bluebelly-regime-verified-crossasset.ts"
         },
         {
-          "label": "FRED · broad high-yield spread, observed 23 Oct",
+          "label": "ICE BofA High Yield OAS history",
           "url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
+        },
+        {
+          "label": "Power Stack decision bridge and issuer proof",
+          "url": "https://github.com/clydigital/power-stack/blob/main/data/bluebelly-portfolio-bridge-2026-10-30.json"
         }
       ]
     },
     {
-      "label": "Act 3 — The money behind the AI promises",
-      "text": "Financing announcements are not the same as cash already collected.",
+      "label": "Act 3 — Sticky PCE, but bonds still rallied",
+      "text": "Inflation constrains the Fed without mechanically setting the next day's Treasury and dollar direction.",
       "paragraphs": [
-        "Meta's 26 October filing described roughly US$35bn in launched offerings: US$22.5bn in common shares through forward sale arrangements and US$12.5bn in mandatory-convertible preferred depositary shares. A further possible US$60bn programme had not been established. Calling all US$95bn funded, or calculating final dilution from that headline, would jump ahead of the documents.",
-        "Anthropic's 26 October IPO filing reported a US$80.75bn first-half net loss, but roughly US$72.4bn was fair-value remeasurement of financing instruments. That is not the same as US$80bn leaving the bank account. The investor's harder question is the remaining operating cash requirement and the cost of compute contracts. SpaceX's reported US$40bn GPU debt financing also needs executed terms before it becomes a bankable comparison."
+        "The BEA's September PCE report showed headline prices up 3.6% year over year and 0.5% month over month; core PCE rose 3.1% and 0.3%. These readings were largely in line with cited analyst expectations, but remain higher than the Fed's longer-run 2% objective. Nominal consumer outlays rose 0.5% while inflation-adjusted spending was essentially flat.",
+        "Bluebelly's reviewed 29 October yield comparison saw indicative 10-year Treasury yields fall from 5.05% to about 4.98% and 2-year yields fall from 4.67% to 4.61%. A separately sourced 10-year real-yield comparison also declined. Government duration may benefit from a growth/risk scare even when inflation is high.",
+        "For VGIT, IEF, TLT and a possible cash reserve, the unresolved issue is whether lower yields last and how MYR exchange rates affect returns. Do not confuse a Treasury rally with cheap borrowing for leveraged AI firms, and do not call DXY technically broken without a completed 4H/daily series."
       ],
       "sources": [
         {
-          "label": "Meta SEC financing announcement · 26 Oct",
-          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526431036/d116268dfwp.htm"
+          "label": "BEA official September PCE · 29 Oct",
+          "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-september-2026"
         },
         {
-          "label": "Anthropic SEC S-1 · 26 Oct",
-          "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm"
+          "label": "Bluebelly rates, dollar and Treasury evidence",
+          "url": "https://github.com/clydigital/alchemy-live-market-desk/blob/60bcd112620f2132f60af3fe4173a4a898f177f8/lib/bluebelly-regime-verified-crossasset.ts"
         },
         {
-          "label": "Reuters · SpaceX financing assertion · 25 Oct",
-          "url": "https://www.reuters.com/business/media-telecom/musk-says-spacex-raised-40-billion-debt-gpus-2026-10-25/"
+          "label": "US Treasury daily rates",
+          "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates"
         }
       ]
     },
     {
-      "label": "Act 4 — Oil, the Fed and the bond trap",
-      "text": "An inflation shock can spoil an otherwise appealing safety trade.",
+      "label": "Act 4 — Japan and oil complicate the risk picture",
+      "text": "Physical energy and currency transmission are live questions, not completed investment verdicts.",
       "paragraphs": [
-        "Meet Kevin's recovered argument looks to Iran/Hormuz diplomacy as possible relief for oil prices, inflation and bond yields. But a diplomatic headline does not tell us how many barrels or LNG cargoes actually arrived. Different Brent contracts and times have been quoted in recent research; I will not call that a verified price collapse or recovery without matching them.",
-        "The US Treasury's 26 October two-year auction sold US$69bn at 4.708% with 2.59 times bid coverage. Indirect allocations were lower, but direct bidders picked up more. That was somewhat soft demand, not proof that Treasury buyers disappeared. VGIT and especially TLT still need confirmation from five-to-thirty-year nominal and real yields, Fed policy and the oil response."
+        "The Bank of Japan held its policy rate at 1.25% by an 8–1 vote on 30 October, with one member favouring 1.50%. Its inflation projections and higher planned ETF disposal pace made the hold less straightforwardly dovish, but the ETF-sale change takes effect in January 2027. A weaker Nasdaq and falling US yields may also have contributed to yen strength; there is no verified completed carry-trade unwind.",
+        "Reuters' 30 October 03:23 UTC report distinguished expiring December Brent near $116.08 from January Brent near $112.19. They are different contracts, not evidence of a $3.89 intraday fall. UKMTO's ship-incident description and subsequent reporting differed on the weapon; neither proves the exact cargo or lost barrels.",
+        "For your XOM, HIBISCS and MISC positions, keep integrated production/refining, upstream cash generation and contracted maritime/LNG earnings separate. YTLPOWR and TENAGA demand forecasts also need customer/funding proof rather than a generic 'AI infrastructure beneficiary' label."
       ],
       "sources": [
         {
-          "label": "US Treasury official 2Y auction · 26 Oct",
-          "url": "https://www.treasurydirect.gov/instit/annceresult/press/preanre/2026/R_20261026_3.pdf"
+          "label": "BoJ 30 Oct policy statement",
+          "url": "https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k261030a.pdf"
         },
         {
-          "label": "26 Oct MacroPulse oil-contract caveat",
-          "url": "https://app.notion.com/p/405519b67a9481d4b26fc6f593025623"
+          "label": "30 Oct MacroPulse oil and policy reconciliation · research only",
+          "url": "https://app.notion.com/p/409519b67a94813ab201eebf64a4bc44"
+        },
+        {
+          "label": "Reuters 30 Oct oil contract observations",
+          "url": "https://www.reuters.com/business/energy/oil-rises-supply-concerns-houthis-attack-saudi-arabia-2026-10-30/"
         }
       ]
     },
     {
-      "label": "Act 5 — What I would do with RM13,491",
-      "text": "No additional trade is funded merely because the research changed.",
+      "label": "Act 5 — What I'd review with the existing RM13,491",
+      "text": "Before rotating capital, understand the risks already owned.",
       "paragraphs": [
-        "The seven-position target stays 50% US Treasury exposure, 35% equities and 15% MYR reserve, but these are planned weights rather than confirmed broker holdings. VGIT remains a staged duration candidate; TLT has more risk if long yields rise; SGOV is liquid USD exposure, not MYR cash. TSM is a strong-company, price-sensitive entry study; CF waits for its 4 November earnings; RSP needs broader earnings participation.",
-        "Before adding money, check actual Rakuten cash and positions. DAYANG remains an operating-thesis exit review, TSLA a valuation-and-weight review, and YTLPOWR plus 6742UW a combined exposure and warrant-terms check. No automatic sale or purchase follows from either creator's view. The next decision turns on credit spreading beyond weak borrowers, new issuer cash-flow evidence, matched oil shipments and post-Fed yields."
+        "Your eight recorded holdings have not changed. First validate YTL-linked warrant 6742UW's actual strike, expiry, bid/ask and cost; then reassess YTLPOWR's portfolio concentration and funded AI/data-centre economics; review DAYANG's operating recovery and whether capital remains justified; and check Tesla's earnings/cash/SpaceX-related terms on issuer filings. These are review priorities, not forced sale orders.",
+        "The energy cluster (XOM, HIBISCS, MISC) must be tested against realised prices, volumes, refined margins and physical shipping evidence. TTWO deserves its own bookings/release-catalyst analysis instead of a blanket AI-market call. Diversifying into CF, VGIT/IEF, RSP or grid suppliers still requires current security prices, liquidity and a costed MYR funding plan.",
+        "The RM13,491 mandate describes total starting risk capital—not an additional RM13,491 cash balance. Historical holdings quotes mostly dated 21–22 October, unverified warrant price, missing XOM/warrant cost and unknown brokerage cash block an executable NAV-weighted rebalance. No positions, company scores, targets or orders were changed by this market-summary update."
       ],
       "sources": [
         {
-          "label": "Power Stack · 27 Oct research and source ledger",
-          "url": "https://github.com/clydigital/power-stack/blob/main/research/2026-10-27-power-stack-decision-gap-sweep-meet-kevin-traders-reality.md"
+          "label": "Power Stack confirmed capital mandate",
+          "url": "https://github.com/clydigital/power-stack/blob/main/data/rakuten-one-year-mandate.json"
         },
         {
-          "label": "TSMC · official Q3 results",
-          "url": "https://investor.tsmc.com/english/quarterly-results/2026/q3"
+          "label": "Bluebelly → portfolio decision view",
+          "url": "https://github.com/clydigital/power-stack/blob/main/market-to-portfolio.html"
+        },
+        {
+          "label": "Tesla Q3 SEC 10-Q",
+          "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066775/tsla-20260930.htm"
         }
       ]
     }
   ],
-  "verdict": "My current verdict: KEEP the RM13,491 target model under review, with no automatic orders or company-score changes. Prioritise evidence of credit contagion versus contained stress, issuer cash generation, matched oil shipments and post-Fed real yields. A convincing setup needs an affordable entry, verified funding and a clear condition for being wrong.",
-  "dataLimits": "These are not live quotes. Equity prices include dated 22 Oct ETF closes and a separate 26 Oct US index rebound; credit observations end 23 Oct; issuer and Treasury events are 26 Oct. Traders Reality's 26 Oct video has a verified full transcript and ID (ndpZTceNzbg), while other creator views remain attributed to their available summaries here. Do not treat unrelated trading sessions or indices as matched; no 27 Oct intraday broker cash, same-contract Brent/TTF price, warrant 6742UW terms or completed trade has been verified.",
+  "verdict": "Current personal-investment verdict: review existing capital before adding AI risk. Prioritise 6742UW contract terms, YTLPOWR concentration and fundamentals, DAYANG operating thesis and TSLA cash/valuation; keep energy exposures distinct. The last completed US session showed selective AI repricing and broadening breadth, not a verified general credit meltdown. No order without current exchange price, issuer evidence, FX/broker cash and a written invalidation.",
+  "dataLimits": "These are not live quotes. RESEARCH ONLY. As of 30 Oct 2026 12:15 MYT: latest completed US share session 29 Oct, with separate extended-hours reactions; BoJ/FX/Brent 30 Oct Asia observations intraday and partly secondary. Official PCE is Sep release 29 Oct. The repository's 8 holdings and 46 scored watchlist prices mostly date 21–22 Oct, with Bursa/HK/China older. No synchronized 30 Oct live quotations, exact warrant 6742UW terms, full brokerage cash balance, NAV or executed trades verified. 29 Oct Notion Research Gap is PARTIAL and research addenda are not promoted canonical evidence.",
   "sourceLinks": [
+    {
+      "label": "Amazon Q3 2026 original",
+      "url": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Third-Quarter-Results/default.aspx"
+    },
+    {
+      "label": "Intel Q3 original",
+      "url": "https://www.intc.com/news-events/press-releases/detail/1786/intel-reports-third-quarter-2026-financial-results"
+    },
+    {
+      "label": "Bluebelly official earnings scorecards",
+      "url": "https://github.com/clydigital/alchemy-live-market-desk/blob/60bcd112620f2132f60af3fe4173a4a898f177f8/lib/blue-desk-earnings-results.ts"
+    },
+    {
+      "label": "30 Oct 09:45 editorial reaction addendum · research-only",
+      "url": "https://app.notion.com/p/409519b67a9481bdb969cf3045152a09"
+    },
+    {
+      "label": "Bluebelly rates, dollar and Treasury evidence",
+      "url": "https://github.com/clydigital/alchemy-live-market-desk/blob/60bcd112620f2132f60af3fe4173a4a898f177f8/lib/bluebelly-regime-verified-crossasset.ts"
+    },
+    {
+      "label": "FRED broad HY spreads · 23 Oct",
+      "url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
+    },
+    {
+      "label": "Power Stack decision bridge and issuer proof",
+      "url": "https://github.com/clydigital/power-stack/blob/main/data/bluebelly-portfolio-bridge-2026-10-30.json"
+    },
+    {
+      "label": "BEA official September PCE · 29 Oct",
+      "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-september-2026"
+    },
+    {
+      "label": "US Treasury daily rates",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates"
+    },
+    {
+      "label": "BoJ 30 Oct policy statement",
+      "url": "https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k261030a.pdf"
+    },
+    {
+      "label": "30 Oct MacroPulse oil and policy reconciliation · research only",
+      "url": "https://app.notion.com/p/409519b67a94813ab201eebf64a4bc44"
+    },
+    {
+      "label": "Reuters 30 Oct oil contract observations",
+      "url": "https://www.reuters.com/business/energy/oil-rises-supply-concerns-houthis-attack-saudi-arabia-2026-10-30/"
+    },
+    {
+      "label": "Power Stack confirmed capital mandate",
+      "url": "https://github.com/clydigital/power-stack/blob/main/data/rakuten-one-year-mandate.json"
+    },
+    {
+      "label": "Bluebelly → portfolio decision view",
+      "url": "https://github.com/clydigital/power-stack/blob/main/market-to-portfolio.html"
+    },
+    {
+      "label": "Tesla Q3 SEC 10-Q",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066775/tsla-20260930.htm"
+    },
     {
       "label": "Traders Reality · 26 Oct original video",
       "url": "https://www.youtube.com/watch?v=ndpZTceNzbg"
@@ -136,10 +212,6 @@
     {
       "label": "FRED CCC spreads · 23 Oct",
       "url": "https://fred.stlouisfed.org/series/BAMLH0A3HYC"
-    },
-    {
-      "label": "FRED broad HY spreads · 23 Oct",
-      "url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
     },
     {
       "label": "Treasury auction · 26 Oct",
@@ -201,23 +273,20 @@
   "editorial": {
     "voice": "LY client-facing British English: clear cause and effect, ordinary language, several short paragraphs, price reaction versus claims, conditional verdict",
     "inputs": [
-      "27 October Creator Run State: original Traders Reality / Tino ndpZTceNzbg 26 Oct 22:00 MYT, time-coded full video transcript (00:00:01–00:24:58)",
-      "User-supplied 26 Oct Meet Kevin and Traders Reality interpreted transcript summaries: provisional, original media metadata unavailable",
-      "26 Oct SEC Meta prospectus and Anthropic S-1",
-      "TSMC 15 Oct official Q3 report",
-      "23 Oct dated FRED/ICE CCC and broad HY observations",
-      "26 Oct Treasury auction official result",
-      "26 Oct Notion MacroPulse oil contract caveat",
-      "Power Stack 27 Oct issuer/decision-gap review and dated 23 Oct mandate",
-      "Reuters 26 October US completed session: post-livestream index rebound, Meta financing divergence"
+      "Bluebelly public 30 Oct Regime editor-reviewed cross-asset ledger",
+      "Bluebelly official 29 Oct post-close Amazon, Intel, Sandisk scorecards",
+      "29 Oct BEA September PCE release",
+      "30 Oct BoJ original rate/ETF decision",
+      "29–30 Oct Notion MacroPulse issuer/market reporting and 29 Oct partial Research Gap",
+      "PowerStack 8 confirmed unchanged holdings, 46 scored watchlist, RM13,491 existing mandate"
     ],
     "writePolicy": "Source-dated Power Stack market reasoning; preserve standalone non-JS homepage fallback, embedded section-level sources, source observation vintage, creator-versus-primary distinctions, and conditional action gates. Do not promote creator views into canonical Bluebelly Dossier.",
     "freshnessHours": 24,
-    "provenanceCorrection": "Authenticated original Traders Reality video in the 27 October creator run; previously used fallback reconstructed notes. Time-of-run beyond the 06:00 market research cutoff is not separately asserted."
+    "provenanceCorrection": "Bluebelly public editorial is a presentation/review projection; MacroPulse and Research Gap are sources and hypotheses, not independent canonical Dossier authorities. Quote clocks, issuer fiscal-period FCF and instrument contracts never silently align."
   },
   "introParagraphs": [
-    "On 22 October, QQQ lost 2.86% and semiconductor ETF SMH fell 5.99%, while equal-weight RSP rose 0.73%. The completed-session figures show a sharp change in what investors preferred, not proof that AI orders disappeared.",
-    "Traders Reality's 26 October video is now matched to a complete time-coded transcript (YouTube video ndpZTceNzbg). He separates genuine AI adoption from refinancing risk for neoclouds. Meet Kevin's oil-and-rates scenario remains a separate attributed interpretation, not independent proof of a market move."
+    "On 29 October, the Nasdaq Composite declined roughly 1.4%, but Russell 2000 rose about 1% and a Bluebelly breadth review counted 406 S&P 500 advancers against 97 decliners. That is a genuine split between headline index performance and underlying participation; one day cannot prove a durable rotation.",
+    "September PCE inflation remains above the Fed's target. Meanwhile, 29 October US Treasury yields fell and the dollar weakened, so it would be wrong to assert that every inflation warning must lift yields or DXY immediately. Bluebelly's 30 October Asia observations are intraday, not a 30 October US closing signal."
   ],
   "previousArticle": {
     "title": "Tech Sells Off as Treasuries Rally: Where I'd Put Cash",
@@ -226,11 +295,12 @@
   },
   "decisionLedgerPath": "data/decision-refresh-2026-10-23.json",
   "dataQualityGaps": [
-    "Original current Meet Kevin and Traders Reality video IDs, publication timestamps and full transcripts not recovered: views are attributed reconstructions only.",
-    "Credit is ICE/FRED through 23 Oct; issuer/auction events 26 Oct. No proof of AI-specific default spillover from broad index observations.",
-    "Exact Meta settlement and Anthropic operating cash obligations require financing cash-flow checks; SpaceX debt legal close unverified.",
-    "Brent/TTF pricing cross-provider contract and timestamp mismatch; vessel AIS is not physical crude/LNG volume.",
-    "Real yields and 5Y/7Y/long-end auction proof pending; Rakuten cash, positions, warrant 6742UW contract and bid/ask unknown."
+    "Most stored holding and watchlist price references are dated 21–22 October, not the 29 October US close or 30 October Bursa live price.",
+    "Unknown/uncertified warrant 6742UW strike, expiry and price; missing reliable XOM and warrant average costs; unverified broker cash; no cross-currency current NAV.",
+    "29 October Research Gap has only partial original post read coverage; research-only statements cannot overwrite canonical Regime or company-scoring state.",
+    "29 October HY credit OAS date precedes 29 October US stock close; headline breadth is single-session; don't call it either settled contagion or settled recovery.",
+    "Oil Reuters reports December and January Brent contracts at distinct prices; UKMTO incident cargo and actual supply loss not verified.",
+    "BoJ Ueda afternoon press conference and 30 Oct completed US close were future relative to this noon MYT research cutoff."
   ],
   "globalBondResearch": {
     "asOf": "2026-10-23",
@@ -239,5 +309,12 @@
     "read": "International 10Y yields around 5% in US/UK/AU/NZ/France have different reasons. Prefer staged VGIT/IEF and MYR 3-5Y MGS research; avoid French OAT headline yield; evaluate UK/AU/NZ after policy dates, Bund for EUR haven.",
     "viewPriority": "Secondary sovereign-bond research; 27 Oct market summary supersedes the 23 Oct headline without rewriting historical bond study."
   },
-  "marketDataThrough": "23 Oct credit/last verified ETF closes; 26 Oct issuer filings and US 2Y auction"
+  "marketDataThrough": "29 Oct 2026 completed US cash session; 30 Oct 2026 Asia session intraday; Power Stack stock-ledger prices mostly 21–22 Oct (stale)",
+  "previousArticleHistory": [
+    {
+      "title": "AI Spending Survives, but Who Can Finance It?",
+      "asOf": "2026-10-27T06:00:00+08:00",
+      "purpose": "Superseded historical 27 Oct market commentary; full contents remain in Git history at prior main SHA e34f21e43255efc48041ce8dd1b3c473e064bb16."
+    }
+  ]
 }

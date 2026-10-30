@@ -55,12 +55,12 @@ assert((market.sourceLinks||[]).length >= 3 && market.sourceLinks.every(x=>/^htt
 assert(home.includes('id="market-summary"') && home.includes("renderMarketSummary(vals.market)") && home.includes("data/market-summary.json"), "Client market summary must be displayed and wired to its dated data");
 assert(home.includes("marketSummaryFreshness") && home.includes("marketSummarySources"), "Missing freshness or sources");
 
-assert(market.asOf.startsWith("2026-10-27"), "27 Oct creator research timestamp missing");
-assert(market.sections.some(x=>x.label.includes("Credit")) && market.sections.some(x=>x.label.includes("money behind")), "Creator financing and credit reasoning missing");
+assert(market.asOf.startsWith("2026-10-30"), "30 Oct Bluebelly market and newsroom research timestamp missing");
+assert(market.sections.some(x=>x.label.includes("AI")) && market.sections.some(x=>x.label.includes("PCE")) && market.sections.some(x=>x.label.includes("Japan")), "30 Oct AI, inflation and Japan context missing");
 assert(market.sections.every(x=>x.sources?.length>0 && x.sources.every(s=>/^https:\/\//.test(s.url))), "Each market act must have traceable source links");
-assert(market.dataLimits.includes("creator views") && market.dataLimits.includes("23 Oct"), "Creator provenance or different market vintages concealed");
-assert(market.verdict.includes("no automatic orders"), "Market summary cannot authorize trades from creator commentary");
-assert(visibleArticle.includes("market-section-sources") && visibleArticle.includes("Meta SEC financing"), "Static market narrative must mirror section-level evidence links");
+assert(market.dataLimits.includes("21–22 Oct") && market.dataLimits.includes("Research Gap") && market.dataLimits.includes("not live quotes"), "Source vintages, partial research, or stale price flags concealed");
+assert(/No order/i.test(market.verdict) && /6742UW/.test(market.verdict), "Market summary cannot authorize trades without warrant or prices");
+assert(visibleArticle.includes("market-section-sources") && visibleArticle.includes("BEA official September PCE"), "Static market narrative must mirror latest section-level evidence links");
 assert(home.includes("market-section-sources';for(const src of (sec.sources||[])"), "Client renderer must preserve section-level source evidence");
 
 

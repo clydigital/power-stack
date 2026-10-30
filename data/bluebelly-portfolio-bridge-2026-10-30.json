@@ -1,0 +1,371 @@
+{
+  "contractVersion": "power-stack-bluebelly-portfolio-bridge/1",
+  "reviewDate": "2026-10-30",
+  "reviewCutoff": "30 Oct 2026 12:15 MYT (Asia session; before 30 Oct US open)",
+  "purpose": "Read-only, source-dated translation of Bluebelly public newsroom, Market and Regime editorial into Power Stack research priorities. It is not a live quote feed, new canonical regime engine, re-score, broker reconciliation or trade instruction.",
+  "sourceAuthority": {
+    "publicDesk": "https://bluebelly-desk.vercel.app/",
+    "newsroom": "https://bluebelly-desk.vercel.app/newsroom",
+    "markets": "https://bluebelly-desk.vercel.app/markets",
+    "regimes": "https://bluebelly-desk.vercel.app/key-stories",
+    "publicRepo": "https://github.com/clydigital/alchemy-live-market-desk",
+    "publicEditorialRevision": "60bcd112620f2132f60af3fe4173a4a898f177f8",
+    "researchNotion": "https://app.notion.com/p/408519b67a9481999367c3f5f9f51928",
+    "researchGap": "https://app.notion.com/p/408519b67a94811c9bcbc4147176da27",
+    "powerStackSnapshot": {
+      "asOf": "2026-10-29T15:05:32.351Z",
+      "dossierId": "36e51d3c-14ac-413e-b482-bce822ab17c6",
+      "status": "degraded_latest",
+      "family": "RATES_LED_TIGHTENING",
+      "note": "This snapshot predates 29 Oct completed US close and 30 Oct Asia editorial; never present its regime as the current live outcome."
+    }
+  },
+  "verdict": {
+    "title": "The AI trade is dividing by funding quality—not yet a general credit panic.",
+    "summary": "Nasdaq weakness contrasted with 29 Oct broad equity participation, falling 2Y/10Y Treasury yields and previously tight high-yield OAS. High inflation still constrains the Fed; falling yields are an observed market response, not proof of easy policy. Reduce concentration uncertainty in existing holdings before allocating new risk.",
+    "condition": "Review only. Check current broker cash, warrant terms, dated securities quotes, issuer cash conversion and MYR FX before trading.",
+    "reviewState": "RESEARCH_ONLY"
+  },
+  "marketObservations": [
+    {
+      "id": "us-breadth",
+      "label": "US equity rotation",
+      "observation": "29 Oct Nasdaq −1.37%; Russell 2000 +1.0%; monitored S&P breadth 406 advances / 97 declines; RSP about +1.20% vs SPY about −0.38%.",
+      "asOf": "2026-10-29 US completed cash session",
+      "confidence": "DATED_MIXED_PROVIDER",
+      "implication": "Mega-cap AI valuation reset ≠ proved market-wide liquidation; assess sustained equal-weight strength.",
+      "source": {
+        "label": "Bluebelly reviewed breadth regime, 30 Oct",
+        "url": "https://github.com/clydigital/alchemy-live-market-desk/blob/60bcd112620f2132f60af3fe4173a4a898f177f8/lib/bluebelly-regime-verified-crossasset.ts"
+      },
+      "test": "30 Oct close breadth and RSP/SPY 3–5 sessions; same-vintage credit spread."
+    },
+    {
+      "id": "us-rates",
+      "label": "Treasury repricing",
+      "observation": "29 Oct US indicative 10Y yield 4.98% from 5.05% on 28 Oct; 2Y 4.61% from 4.67%; real 10Y 2.63% from 2.67% in dated secondary series.",
+      "asOf": "29 Oct completed US close, Asia follow-through not a matched settlement",
+      "confidence": "DATED_SECONDARY_PLUS_PROXY",
+      "implication": "Duration benefited as risk appetite weakened, despite inflation. Corporate AI financing rates do not equal Treasury yields.",
+      "source": {
+        "label": "Bluebelly reviewed Treasury regime, 30 Oct",
+        "url": "https://github.com/clydigital/alchemy-live-market-desk/blob/60bcd112620f2132f60af3fe4173a4a898f177f8/lib/bluebelly-regime-verified-crossasset.ts"
+      },
+      "test": "Next official real/nominal curve, auctions, IG/HY spreads; no automatic VGIT/TLT order."
+    },
+    {
+      "id": "pce",
+      "label": "Fed inflation constraint",
+      "observation": "September headline PCE 3.6% YoY / 0.5% MoM; core PCE 3.1% YoY / 0.3% MoM; real spending essentially flat.",
+      "asOf": "BEA release 29 Oct 2026 08:30 EDT",
+      "confidence": "ORIGINAL_OFFICIAL",
+      "implication": "Inflation remains above target while real consumption stalls; PCE matched forecasts, not a surprise beat.",
+      "source": {
+        "label": "US BEA Personal Income and Outlays, Sep 2026",
+        "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-september-2026"
+      },
+      "test": "Next core services, labor, Fed path; avoid assuming inflation automatically lifts DXY."
+    },
+    {
+      "id": "boj",
+      "label": "Japan carry/yen",
+      "observation": "BoJ held 1.25% by 8–1 on 30 Oct; raised FY27 inflation outlook, accelerated planned ETF disposals effective Jan 2027. Reuters USD/JPY ~157.115 observed Asia session.",
+      "asOf": "30 Oct Asia session before Ueda press conference",
+      "confidence": "ORIGINAL_POLICY_REPORTING_FX",
+      "implication": "Yen strength/overseas risk financing are watch factors; no confirmed carry unwind or closed 4H break.",
+      "source": {
+        "label": "BoJ 30 Oct statement",
+        "url": "https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k261030a.pdf"
+      },
+      "test": "Closed USDJPY/DXY 4H + daily bands, JGB yields, post-Ueda reaction."
+    },
+    {
+      "id": "energy",
+      "label": "Oil, ships and inflation",
+      "observation": "30 Oct 03:23 UTC Reuters quoted expiring December Brent $116.08 and January Brent $112.19; UKMTO #186 original attack description and secondary reporting differ on weapon. No measured cargo loss.",
+      "asOf": "30 Oct 03:23 UTC Reuters intraday, distinct futures months",
+      "confidence": "REPORTING_WITH_OPEN_CONTRADICTION",
+      "implication": "Energy and freight premiums matter for XOM/MISC/HIBISCS and inflation; don't compare different expiry contracts as a daily oil move.",
+      "source": {
+        "label": "30 Oct MacroPulse original/secondary reconciliation",
+        "url": "https://app.notion.com/p/409519b67a94813ab201eebf64a4bc44"
+      },
+      "test": "Obtain UKMTO numbered PDF, same-month Brent/WTI settlements, EIA inventory, cargo and freight evidence."
+    },
+    {
+      "id": "crypto",
+      "label": "Custody / crypto contagion",
+      "observation": "Binance disclosed estimated $6.3bn gross impact; earlier ~$3bn frozen assets are not net recovered proceeds. BTC near $77.4k in dated intraday readings.",
+      "asOf": "30 Oct 11:00 MYT source investigation",
+      "confidence": "ISSUER_DISCLOSURE_NOT_FORENSIC",
+      "implication": "BTC/COIN/MSTR and crypto allocation carry custody/liquidity headline risk. Do not assert final losses or Binance insolvency.",
+      "source": {
+        "label": "Bluebelly public reported editorial and issuer disclosure",
+        "url": "https://github.com/clydigital/alchemy-live-market-desk/blob/60bcd112620f2132f60af3fe4173a4a898f177f8/lib/bluebelly-reported-editorial.ts"
+      },
+      "test": "Official post-mortem, proof of reserves, withdrawals restoration and dated BTC market control."
+    }
+  ],
+  "newsroom": [
+    {
+      "id": "earnings",
+      "title": "Three falling tech stocks, three different objections",
+      "status": "RESEARCH_ADDENDUM_NOT_CANONICAL",
+      "asOf": "30 Oct 09:45 MYT",
+      "evidence": "INTC guidance disappointed; AMZN reported AWS +39.3% but TTM FCF −$42.357bn; SNDK strong data-centre results met high expectations and broad risk-off.",
+      "investorMeaning": "Separate expectations, future guidance, capex/FCF and pre- vs after-results price reactions.",
+      "sourceUrl": "https://app.notion.com/p/409519b67a9481bdb969cf3045152a09"
+    },
+    {
+      "id": "official",
+      "title": "Bluebelly officially sourced earnings",
+      "status": "PUBLIC_SOURCE_REVIEWED",
+      "asOf": "29 Oct US after close",
+      "evidence": "AMZN Q3 CFO $42.422bn less net PPE $75.878bn = −$33.456bn issuer-definition quarterly FCF; trailing FCF −$42.357bn. INTC Q4 revenue guide $15–16bn.",
+      "investorMeaning": "Amazon's profitable cloud growth does not erase funding/cash-consumption risk; Intel's quarter does not settle the weaker forward outlook.",
+      "sourceUrl": "https://github.com/clydigital/alchemy-live-market-desk/blob/60bcd112620f2132f60af3fe4173a4a898f177f8/lib/blue-desk-earnings-results.ts"
+    },
+    {
+      "id": "boj",
+      "title": "BoJ hawkish hold; ETF-sales pace to rise",
+      "status": "OFFICIAL_POLICY_PLUS_RESEARCH_ONLY_REACTION",
+      "asOf": "30 Oct 12:00 MYT Pulse",
+      "evidence": "1.25% hold, 8–1 vote and January 2027 planned ETF-sale acceleration; contemporaneous Japanese share declines also reflect US AI losses.",
+      "investorMeaning": "Update yen/carry risk questions without asserting a verified unwind or assigning every Nikkei move to BoJ.",
+      "sourceUrl": "https://app.notion.com/p/409519b67a94813ab201eebf64a4bc44"
+    },
+    {
+      "id": "security",
+      "title": "Binance incident affects crypto risk",
+      "status": "PUBLIC_REPORTED_EDITORIAL",
+      "asOf": "30 Oct 11:00 MYT",
+      "evidence": "Issuer estimated impact $6.3bn; frozen assets and net loss unconfirmed.",
+      "investorMeaning": "Do not promote crypto as a defensive alternative while custody/market impacts unresolved.",
+      "sourceUrl": "https://github.com/clydigital/alchemy-live-market-desk/blob/60bcd112620f2132f60af3fe4173a4a898f177f8/lib/bluebelly-reported-editorial.ts"
+    }
+  ],
+  "holdings": [
+    {
+      "ticker": "6742UW",
+      "priority": 1,
+      "review": "VERIFY INSTRUMENT / CAPITAL AT RISK",
+      "why": "Structured warrant identity, strike, expiry, cost and live bid are not verified. The option can decay even if YTL Power common shares hold.",
+      "test": "Broker contract particulars, expiry, exercise level, bid/ask and worst-case loss.",
+      "affectedBy": [
+        "Malaysia AI/grid",
+        "risk appetite"
+      ],
+      "actionGate": "No buy/trim/sell instruction until instrument is verified."
+    },
+    {
+      "ticker": "YTLPOWR",
+      "priority": 2,
+      "review": "CONCENTRATION / PROFIT-PROTECTION REVIEW",
+      "why": "Largest documented Malaysian holding; AI/data-centre revaluation can affect YTL earnings expectations independently of actual electricity demand. Link warrant exposure only after terms verified.",
+      "test": "Project contracts, debt, customer guarantees, segment cash returns, current quote and weight in verified MYR NAV.",
+      "affectedBy": [
+        "AI funding",
+        "Malaysia power"
+      ],
+      "actionGate": "Consider sizing review only with broker weights, fundamentals and current price."
+    },
+    {
+      "ticker": "DAYANG",
+      "priority": 3,
+      "review": "THESIS RE-UNDERWRITE / DO NOT AVERAGE DOWN",
+      "why": "Historical loss and operating-proof gaps matter more than headline oil price rebound.",
+      "test": "Latest issuer order book, collections, receivables, margins, customer spending and current Bursa tape.",
+      "affectedBy": [
+        "oil",
+        "offshore capex"
+      ],
+      "actionGate": "Review potential capital recycling; no automatic sell."
+    },
+    {
+      "ticker": "TSLA",
+      "priority": 4,
+      "review": "CASH CONVERSION / RELATED-PARTY CHECK",
+      "why": "Tesla Q3 operating margin weakened while nine-month capex rose; Tesla-SpaceX transactions and potential merger remain conditional.",
+      "test": "Tesla Q3 10-Q, 2027 capex, SpaceX Megapack receivables, signed merger terms (none yet), latest valuation.",
+      "affectedBy": [
+        "AI financing",
+        "risk premium"
+      ],
+      "actionGate": "Review after matched price and issuer cash data; merger not executed."
+    },
+    {
+      "ticker": "MISC",
+      "priority": 5,
+      "review": "LNG / SHIPPING SCENARIO",
+      "why": "Tanker headlines and AIS vessel counts do not prove LNG cargoes, freight rate or contract earnings.",
+      "test": "Charter mix, charter duration, cargo rates, marine insurance and issuer margins.",
+      "affectedBy": [
+        "Hormuz",
+        "LNG"
+      ],
+      "actionGate": "Keep distinct from E&P economics and wait for vessel/cargo proof."
+    },
+    {
+      "ticker": "HIBISCS",
+      "priority": 6,
+      "review": "OIL CASH / PRODUCTION",
+      "why": "Higher Brent may help revenue but depletion, realised pricing and capex determine shareholder cash.",
+      "test": "Issuer realised oil price, volumes, lifting costs, debt, next production guidance.",
+      "affectedBy": [
+        "Brent",
+        "energy"
+      ],
+      "actionGate": "Do not size from mixed Brent contracts or unverified oil move."
+    },
+    {
+      "ticker": "XOM",
+      "priority": 7,
+      "review": "ENERGY QUALITY / EARNINGS",
+      "why": "Integrated energy economics and dividend coverage differ from offshore services and LNG shipping.",
+      "test": "Q3 earnings, CFO, buybacks, refining spreads and latest US close.",
+      "affectedBy": [
+        "Brent",
+        "refined products"
+      ],
+      "actionGate": "Hold/review pending earnings and current quote; no rule-based trim."
+    },
+    {
+      "ticker": "TTWO",
+      "priority": 8,
+      "review": "SEPARATE FROM AI SELL-OFF",
+      "why": "Gaming execution/release timing and recurring bookings are independent issuer risks.",
+      "test": "Upcoming releases, bookings and guidance, current valuation.",
+      "affectedBy": [
+        "consumer demand",
+        "growth valuations"
+      ],
+      "actionGate": "Review own thesis; do not infer from AI headlines."
+    }
+  ],
+  "watchlistLanes": [
+    {
+      "id": "ai",
+      "title": "AI earnings: demand versus funding",
+      "tickers": [
+        "MU",
+        "CRDO",
+        "DELL",
+        "AVGO",
+        "CRM",
+        "SMR"
+      ],
+      "signal": "RESEARCH_NOT_BUY",
+      "thesis": "Supplier growth can persist while the biggest buyers face a negative FCF cycle. Do not assume all chips reprice alike.",
+      "required": "Current price/valuation; management cash commitments and debt; order conversion, customer funding, HBM or interconnect margin, free cash flow.",
+      "risk": "Capex repricing, financing credit, supplier multiple compression."
+    },
+    {
+      "id": "grid",
+      "title": "Power/grid picks-and-shovels",
+      "tickers": [
+        "GEV",
+        "PWR",
+        "ETN",
+        "CEG",
+        "VST",
+        "NVT",
+        "TENAGA",
+        "MNHLDG",
+        "BWXT"
+      ],
+      "signal": "SELECTIVE_UNDERWRITE",
+      "thesis": "Grid equipment and contracted utility demand may prove more durable than pure AI capacity speculation, not valuation immune.",
+      "required": "Signed backlog, customer cash guarantees, financing, actual margins/FCF, Malaysia tariff regulation and next quote.",
+      "risk": "Overextended valuations and project timing; no automatic Malaysia beneficiary assumption."
+    },
+    {
+      "id": "rates",
+      "title": "Treasury / quality versus funding stress",
+      "tickers": [
+        "VGIT",
+        "IEF",
+        "TLT",
+        "SGOV",
+        "RSP",
+        "CF"
+      ],
+      "signal": "STAGED_CANDIDATES_ONLY",
+      "thesis": "Recent Treasury rally supports duration on the tape, but hot PCE, real yields, FX and inflation shocks can reverse it.",
+      "required": "MYR fees/FX, dated 2–30Y nominal and real Treasury curve, high yield OAS, issuer cash if equity.",
+      "risk": "Duration loss, currency, opportunity cost; cash is not automatically available."
+    },
+    {
+      "id": "energy",
+      "title": "Oil, LNG, refiners and fertiliser",
+      "tickers": [
+        "LNG",
+        "BKR",
+        "STNG",
+        "VLO",
+        "MPC",
+        "PSX",
+        "SLB",
+        "NTR"
+      ],
+      "signal": "PHYSICAL_PROOF_REQUIRED",
+      "thesis": "Hormuz, refined-product cracks and LNG transmission differ; don't invest from an unverified shipping count.",
+      "required": "Same-contract crude settles, cargo/flow data, refined-product margins, issuer FCF and freight/insurance.",
+      "risk": "Conflict de-escalation, reversal of margins, commodity volatility."
+    },
+    {
+      "id": "asia",
+      "title": "Bursa / China: AI orders versus margins",
+      "tickers": [
+        "9988.HK",
+        "3191.HK",
+        "688825",
+        "6809.HK",
+        "3308.HK",
+        "GRAB"
+      ],
+      "signal": "PRICE_AND_FUNDAMENTALS_GATE",
+      "thesis": "China memory/optical AI and Malaysia grid themes are not automatically cheap in a global tech drawdown.",
+      "required": "Current local exchange quotes, issuer filings, FX and regulator constraints, orders, pricing and cash conversion.",
+      "risk": "Old HK/MY reference prices; liquidity and policy risk; GRAB credit acquisition."
+    },
+    {
+      "id": "crypto",
+      "title": "Crypto exposure and market plumbing",
+      "tickers": [
+        "BTC",
+        "COIN",
+        "MSTR"
+      ],
+      "signal": "REVIEW_CUSTODY_AND_CREDIT",
+      "thesis": "Exchange incident is issuer-reported; do not infer settled losses or structural insolvency.",
+      "required": "Issuer technical post-mortem, proof of reserves, exchange functionality and matched timestamps.",
+      "risk": "Custody, volatility and crypto-linked equity leverage."
+    }
+  ],
+  "dataQuality": {
+    "holdingsLedger": "data/holdings-fundamentals.json",
+    "watchlistLedger": "data/watchlist.json",
+    "holdingPriceWindow": "Mostly 21–22 Oct 2026, not 30 Oct",
+    "watchlistPriceWindow": "38/46 US source-dated 22 Oct; eight non-US/crypto or missing as previously flagged; 30 Oct quotes not refreshed by this bridge",
+    "unverifiedWarrant": "6742UW",
+    "unknownAverageCost": [
+      "XOM",
+      "6742UW"
+    ],
+    "knownUserStatement": "User confirmed 30 Oct 2026 no transactions since previous sweep and recorded quantities/costs unchanged; not evidence broker settled cash or all warrants are priced.",
+    "sourceHealth": "Notion 29 Oct Research Gap marked PARTIAL/DEGRADED; newsroom addendum is editorial research, not admitted canonical regime.",
+    "tradePermission": "NONE",
+    "holdingsChanged": false,
+    "watchlistScoresChanged": false,
+    "ordersPlaced": false,
+    "newScheduledTasks": false,
+    "notionGapNote": "29 Oct PM Gap full-read 8 of 80 eligible inputs in that run; incomplete coverage is not a clearance signal.",
+    "nextReconciliation": [
+      "Refresh 8 holding exchange quotes and FX on matching timestamps.",
+      "Obtain exact warrant identity, expiry and cost.",
+      "Compute MYR-weighted NAV only with brokerage cash and warrant value.",
+      "Refresh 46 scored watchlist quotes with local exchange identifiers; do not use archived price as execution gate.",
+      "Verify post-30 Oct US closes, issuer disclosures, completed DXY/USDJPY bars and matched credit spreads."
+    ]
+  }
+}
