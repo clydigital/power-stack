@@ -5,6 +5,7 @@
   const pages = [
     {file:'index.html',title:'Decision desk',icon:'home',description:'Portfolio decisions and capital plan'},
     {file:'market-to-portfolio.html',title:'Market → portfolio',icon:'compass',description:'Bluebelly news and Regime evidence translated into holdings and watchlist review'},
+    {file:'security-news.html',title:'Company news',icon:'library',description:'8 holdings + 46 watchlist: source-dated issuer news, countercases and next proof'},
     {file:'research-library.html',title:'Full library',icon:'library',description:'Research universe, scores and source history'},
     {file:'baskets.html',title:'Strategy baskets',icon:'basket',description:'Alternative allocations compared by risk and thesis'},
     {file:'holdings.html',title:'Holdings',icon:'wallet',description:'What you own, why, and when to reduce risk'},
@@ -65,7 +66,7 @@
     panel.setAttribute('aria-label','Latest Bluebelly to portfolio review');
     panel.className='ps-bluebelly-bridge-teaser';
     panel.style.cssText='border:1px solid #365048;border-radius:12px;background:linear-gradient(115deg,#10231f,#14191b);padding:14px 17px;margin:12px 0 18px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap';
-    panel.innerHTML='<div style="min-width:200px;max-width:770px"><strong style="color:#9edbc2;font-size:11px;letter-spacing:.06em">BLUEBELLY → POWER STACK · 30 OCT SOURCE REVIEW</strong><p class="ps-bb-bridge-msg" style="font-size:12px;color:#c4d0ce;line-height:1.65;margin:5px 0 0">AI cash conversion and Treasury/yield divergence: dated research, not executable prices.</p><small class="ps-bb-bridge-time" style="color:#9baead;font-size:10px">Checking research receipt…</small></div><a href="market-to-portfolio.html" style="color:#a2e1c7;font-size:12px;font-weight:800;white-space:nowrap">What changes for my holdings →</a>';
+    panel.innerHTML='<div style="min-width:200px;max-width:770px"><strong style="color:#9edbc2;font-size:11px;letter-spacing:.06em">BLUEBELLY → POWER STACK · 30 OCT SOURCE REVIEW</strong><p class="ps-bb-bridge-msg" style="font-size:12px;color:#c4d0ce;line-height:1.65;margin:5px 0 0">AI cash conversion and Treasury/yield divergence: dated research, not executable prices.</p><small class="ps-bb-bridge-time" style="color:#9baead;font-size:10px">Checking research receipt…</small></div><a href="market-to-portfolio.html" style="color:#a2e1c7;font-size:12px;font-weight:800;white-space:nowrap">What changes for my holdings →</a><a href="security-news.html" style="color:#b6cdea;font-size:12px;font-weight:800;white-space:nowrap">54-company news audit →</a>';
     if(placement==='prepend')anchor.prepend(panel);else anchor.insertAdjacentElement('afterend',panel);
     fetch('data/bluebelly-portfolio-bridge-2026-10-30.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('bridge unavailable');return r.json()}).then(d=>{
       if(d.contractVersion!=='power-stack-bluebelly-portfolio-bridge/1'||d.reviewDate!=='2026-10-30')throw Error('bridge invalid');
@@ -96,6 +97,7 @@
   if (!main) return;
   const guide = {
     'market-to-portfolio.html':'Dated Bluebelly Newsroom, Markets and Regime evidence becomes portfolio questions only. Unknown quote/FX/warrant terms block orders; company scores remain separate.',
+    'security-news.html':'Review 54 dated issuer or market developments with their source class, opposing case and next evidence test. Older company scores are historical, not fresh trade instructions.',
     'research-library.html':'This is the full historical universe, not a live buy list. Research themes describe the industry. Economic exposure describes the driver. Neither is a funded allocation or a verified risk hedge.',
     'baskets.html':'Each basket is one alternative portfolio using the same RM13,491. Categories describe the strategy and market factor; scenario percentages are illustrative sensitivities, not forecast probabilities. None is funded or executable.',
     'holdings.html':'Start with conditional sell/trim explanations. Check current broker holdings and issuer evidence before changing size. A review label never means an order was placed.',
@@ -111,6 +113,7 @@
     const libraryLabels = {
       'index.html': 'Desk',
       'market-to-portfolio.html': 'Bridge',
+      'security-news.html': 'News',
       'research-library.html': 'Library',
       'holdings.html': 'Holdings',
       'watchlist.html': 'Watchlist',
@@ -120,7 +123,7 @@
       'capital-scarcity.html': 'Rates'
     };
     const libraryOrder = [
-      'index.html', 'market-to-portfolio.html', 'research-library.html', 'holdings.html',
+      'index.html', 'market-to-portfolio.html', 'security-news.html', 'research-library.html', 'holdings.html',
       'watchlist.html', 'baskets.html', 'themes.html',
       'motion.html', 'capital-scarcity.html'
     ];
