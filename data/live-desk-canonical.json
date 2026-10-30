@@ -540,12 +540,12 @@
         "direction": "NEUTRAL",
         "confirmation": "UNRESOLVED",
         "detail": "US Dollar · UUP proxy 5D +0.48%.",
-        "asOf": "2026-10-28",
+        "asOf": "2026-10-29",
         "sourceName": "Nasdaq official etf history",
         "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical",
         "evidenceRefs": [],
         "metrics": {
-          "proxyLevel": 29.06,
+          "proxyLevel": 29.04,
           "change5dPct": 0.48
         }
       },
@@ -594,7 +594,17 @@
     "treasuryBills": "OK",
     "treasurySupply": "UNRESOLVED"
   },
-  "contradictions": [],
+  "contradictions": [
+    {
+      "id": "copper-china",
+      "title": "Copper is decoupling from China equities",
+      "detail": "Copper proxy 3.3% vs China A-shares -0.2%.",
+      "assets": [
+        "copper",
+        "csi300"
+      ]
+    }
+  ],
   "researchGaps": [
     "MARKET_DATA: Canonical MOVE and VIX series (intraday and daily) are not present, blocking assessment of volatility transmission from rates to credit and equities.",
     "MARKET_DATA: Intraday 5–30m UST and fed‑funds‑futures bars around FOMC and major issuer events are missing, blocking same‑session spillover analysis.",
@@ -605,9 +615,9 @@
       "id": "dxy",
       "symbol": "UUP",
       "label": "US Dollar · UUP proxy",
-      "last": 29.06,
+      "last": 29.04,
       "change5d": 0.48,
-      "asOf": "2026-10-28",
+      "asOf": "2026-10-29",
       "sourceName": "Nasdaq official etf history",
       "sourceUrl": "https://www.nasdaq.com/market-activity/etf/uup/historical"
     },
@@ -814,7 +824,7 @@
   ],
   "assetState": {
     "contractVersion": "daily-asset-state/1",
-    "asOf": "2026-10-29T22:44:51.843Z",
+    "asOf": "2026-10-30T05:45:59.716Z",
     "assets": [
       {
         "key": "SPX",
@@ -880,8 +890,8 @@
         "key": "GOLD",
         "label": "Gold spot",
         "symbol": "XAUUSD",
-        "last": 4022.899902,
-        "dailyChange": -0.71,
+        "last": 4003.5,
+        "dailyChange": -0.74,
         "dailyChangeUnit": "percent",
         "bias": "BEARISH",
         "conviction": "LOW",
@@ -889,14 +899,14 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": "Sustained IG OAS widening plus canonical MOVE/VIX uptick and persistent long‑end real‑yield rise (with matching intraday UST/fed‑funds evidence) would indicate broader transmission.",
-        "asOf": "2026-10-29"
+        "asOf": "2026-10-30"
       },
       {
         "key": "BITCOIN",
         "label": "Bitcoin spot",
         "symbol": "BTCUSD",
-        "last": 78882.55,
-        "dailyChange": -2.91,
+        "last": 78524.74,
+        "dailyChange": 0.96,
         "dailyChangeUnit": "percent",
         "bias": "UNRESOLVED",
         "conviction": "UNRESOLVED",
@@ -904,7 +914,7 @@
         "confirmingSignal": null,
         "contradictingSignal": null,
         "invalidation": null,
-        "asOf": "2026-10-29"
+        "asOf": "2026-10-30"
       }
     ]
   },
@@ -1448,14 +1458,14 @@
   },
   "marketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "96c54776-d3a3-432c-ab9b-10c6238833c1",
-    "capturedAt": "2026-10-29T14:41:07.068Z",
-    "researchRunId": "1ae8f2cf-1fcb-464f-bff6-ce701f6a5a1b",
+    "editionId": "644dcbbe-0175-47cd-897c-cd8d3d434843",
+    "capturedAt": "2026-10-30T02:02:59.765Z",
+    "researchRunId": "6554a3e8-dfc8-4d08-9714-0b79a391b796",
     "items": [
       {
-        "id": "66dcda3b-6dd1-4c53-80ab-c7bc966a1b50",
+        "id": "0feac82b-2547-4229-8e93-fc8b17c658e3",
         "motionKey": "event:fomc:reserve",
-        "versionNumber": 4,
+        "versionNumber": 5,
         "headline": "Federal Reserve issues FOMC statement",
         "category": "MACRO",
         "verificationState": "VERIFIED",
@@ -1508,5 +1518,5 @@
     "Mismatched ticker/issuer labels are quarantined, never silently remapped to another security.",
     "Promoted Live Market Motion may raise research priority but cannot change company fundamentals, conviction, ranking or sizing by itself."
   ],
-  "syncedAt": "2026-10-29T22:48:30.625Z"
+  "syncedAt": "2026-10-30T05:55:22.194Z"
 }

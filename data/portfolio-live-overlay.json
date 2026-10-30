@@ -1,8 +1,8 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-30T05:46:42.480Z",
+  "generatedAt": "2026-10-30T05:55:22.321Z",
   "liveAsOf": "2026-10-29T15:05:32.351+00:00",
-  "liveSyncedAt": "2026-10-29T22:48:30.625Z",
+  "liveSyncedAt": "2026-10-30T05:55:22.194Z",
   "sourceHealth": {
     "dossier": "DEGRADED",
     "marketMonitor": "PARTIAL",
@@ -21,8 +21,8 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "96c54776-d3a3-432c-ab9b-10c6238833c1",
-    "capturedAt": "2026-10-29T14:41:07.068Z",
+    "editionId": "644dcbbe-0175-47cd-897c-cd8d3d434843",
+    "capturedAt": "2026-10-30T02:02:59.765Z",
     "itemCount": 1,
     "linkedHoldingCount": 1
   },
@@ -916,7 +916,7 @@
       "fundamentalGrade": "C",
       "motionContext": [
         {
-          "id": "66dcda3b-6dd1-4c53-80ab-c7bc966a1b50",
+          "id": "0feac82b-2547-4229-8e93-fc8b17c658e3",
           "headline": "Federal Reserve issues FOMC statement",
           "category": "MACRO",
           "verificationState": "VERIFIED",
@@ -1313,7 +1313,17 @@
     ],
     "researchGaps": []
   },
-  "divergences": [],
+  "divergences": [
+    {
+      "id": "copper-china",
+      "title": "Copper is decoupling from China equities",
+      "detail": "Copper proxy 3.3% vs China A-shares -0.2%.",
+      "assets": [
+        "copper",
+        "csi300"
+      ]
+    }
+  ],
   "liveResearchGaps": [
     "MARKET_DATA: Canonical MOVE and VIX series (intraday and daily) are not present, blocking assessment of volatility transmission from rates to credit and equities.",
     "MARKET_DATA: Intraday 5–30m UST and fed‑funds‑futures bars around FOMC and major issuer events are missing, blocking same‑session spillover analysis.",
