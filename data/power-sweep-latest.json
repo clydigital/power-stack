@@ -1,6 +1,6 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-30T05:55:22.397Z",
+  "generatedAt": "2026-10-30T12:53:21.267Z",
   "asOf": "2026-10-29T15:05:32.351+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
@@ -27,13 +27,13 @@
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-30T05:55:22.321Z",
+      "generatedAt": "2026-10-30T12:53:21.210Z",
       "status": "OK"
     },
     "holdingTape": {
       "contractVersion": "power-stack-holding-tape/1",
       "expectedContract": "power-stack-holding-tape/1",
-      "generatedAt": "2026-10-30T05:46:42.420Z",
+      "generatedAt": "2026-10-30T12:53:21.147Z",
       "unresolved": [
         "6742UW"
       ],
@@ -106,11 +106,12 @@
   "portfolioTriage": {
     "tapeDivergences": [
       "XOM",
-      "YTLPOWR"
-    ],
-    "tapeConfirmations": [
       "MISC",
       "HIBISCS",
+      "YTLPOWR",
+      "DAYANG"
+    ],
+    "tapeConfirmations": [
       "TTWO"
     ],
     "highReview": [
@@ -319,9 +320,9 @@
       "possibleDecisionImpact": "Could unlock accurate YTL-linked concentration and portfolio-weight measurement."
     },
     {
-      "ticker": "YTLPOWR",
-      "name": "YTL Power International Berhad",
-      "priorityScore": 125,
+      "ticker": "DAYANG",
+      "name": "Dayang Enterprise Holdings Berhad",
+      "priorityScore": 143,
       "overlayState": "HEADWIND",
       "reviewPriority": "MONITOR",
       "actualReaction": {
@@ -330,25 +331,25 @@
         "freshness": {
           "status": "CURRENT",
           "eligibleForComparison": true,
-          "sessionDate": "2026-10-29",
-          "businessDaysOld": 1,
+          "sessionDate": "2026-10-30",
+          "businessDaysOld": 0,
           "reason": "Completed-session price is within the market-local freshness window."
         },
-        "sessionDate": "2026-10-29",
-        "close": 5.3,
-        "previousClose": 5.27,
+        "sessionDate": "2026-10-30",
+        "close": 1.39,
+        "previousClose": 1.36,
         "change": 0.03,
-        "changePct": 0.569,
+        "changePct": 2.206,
         "currency": "MYR",
         "sourceName": "Yahoo Finance chart daily bars (unofficial/delayed)",
-        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/6742.KL?interval=1d&range=1mo&includePrePost=false",
-        "closeNotice": "Source-dated regular-session daily close: 2026-10-29"
+        "sourceUrl": "https://query2.finance.yahoo.com/v8/finance/chart/5141.KL?interval=1d&range=1mo&includePrePost=false",
+        "closeNotice": "Source-dated regular-session daily close: 2026-10-30"
       },
-      "currentAction": "TRIM IF CONCENTRATION EXCESS",
+      "currentAction": "SELL / CAPITAL RECYCLING REVIEW",
       "reasons": [
         "completed-session tape moved against the directional market overlay"
       ],
-      "researchQuestion": "Why did YTLPOWR rise despite a directional rates headwind, and does the answer improve or weaken the current HOLD / NO ADD gate?",
+      "researchQuestion": "Has new company-specific evidence changed DAYANG's current action gate or thesis risk?",
       "requiredEvidence": [
         "company-specific news/catalysts for the completed session",
         "technical/flow context sufficient to test whether the divergence is company-specific or temporary",
@@ -544,16 +545,23 @@
     {
       "ticker": "MISC",
       "overlayState": "HEADWIND",
-      "reaction": "CONFIRMS",
+      "reaction": "DIVERGES",
       "action": "HOLD / FUNDING CHECK",
-      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
+      "reason": "No current decision-relevant divergence promoted into the capped queue."
     },
     {
       "ticker": "HIBISCS",
       "overlayState": "HEADWIND",
-      "reaction": "CONFIRMS",
+      "reaction": "DIVERGES",
       "action": "HOLD / NO CHASE",
-      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
+      "reason": "No current decision-relevant divergence promoted into the capped queue."
+    },
+    {
+      "ticker": "YTLPOWR",
+      "overlayState": "HEADWIND",
+      "reaction": "DIVERGES",
+      "action": "TRIM IF CONCENTRATION EXCESS",
+      "reason": "No current decision-relevant divergence promoted into the capped queue."
     },
     {
       "ticker": "TTWO",
@@ -568,13 +576,6 @@
       "reaction": "FLAT",
       "action": "TRIM REVIEW",
       "reason": "Fresh promoted Live Motion is linked, but this holding remains outside the capped deep-dive queue unless budget or priority changes."
-    },
-    {
-      "ticker": "DAYANG",
-      "overlayState": "HEADWIND",
-      "reaction": "FLAT",
-      "action": "SELL / CAPITAL RECYCLING REVIEW",
-      "reason": "No current decision-relevant divergence promoted into the capped queue."
     }
   ],
   "newCapitalPriority": [
