@@ -13,7 +13,7 @@ assert.equal(bridge.reviewDate,'2026-10-30');
 assert.equal(market.contractVersion,'power-stack-market-summary/v1');
 assert.match(market.asOf,/^2026-10-30T12:15/);
 assert.equal(market.sections.length,5);
-assert.match(market.dataLimits,/not the 29 October|not the 29 Oct|not the 29 October US|not the 29 October US close|dated 21–22 October/i);
+assert.match(market.dataLimits,/21–22 Oct/i);
 assert.match(market.verdict,/6742UW/);
 assert.match(market.verdict,/No order/);
 assert.match(market.sections[0].paragraphs.join(' '),/free cash flow/i);
