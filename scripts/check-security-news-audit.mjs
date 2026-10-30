@@ -1,0 +1,41 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const read=p=>fs.readFileSync(p,'utf8');
+const json=p=>JSON.parse(read(p));
+const audit=json('data/security-news-research-2026-10-30.json');
+const held=json('data/holdings-fundamentals.json').holdings;
+const watch=json('data/watchlist.json').candidates;
+const html=read('security-news.html');
+const report=read('research/2026-10-30-all-54-securities-news-deep-dive.md');
+const nav=read('ps-ux.js');
+assert.equal(audit.schema,'power-stack/security-news-research/v1');
+assert.equal(audit.date,'2026-10-30');
+assert.equal(audit.scope.total,54);
+assert.equal(audit.holdings.length,8);
+assert.equal(audit.watchlist.length,46);
+assert.equal(audit.coverage.fullCount,54);
+assert.equal(held.length,8);
+assert.equal(watch.length,46);
+assert.deepEqual(audit.holdings.map(x=>x.ticker),held.map(x=>x.ticker));
+assert.deepEqual(audit.watchlist.map(x=>x.ticker),watch.map(x=>x.ticker));
+assert.equal(new Set([...audit.holdings,...audit.watchlist].map(x=>x.ticker)).size,54);
+for(const row of [...audit.holdings,...audit.watchlist]) {
+  assert.ok(row.eventDate<=audit.date,'Future information was presented as occurred: '+row.ticker);
+  assert.ok(row.ticker&&row.evidenceClass&&row.headline,'Missing security identity/news status');
+  for(const key of ['facts','impact','countercase','nextProof'])
+    assert.ok(typeof row[key]==='string'&&row[key].length>=70,'Too little individual depth: '+row.ticker+' '+key);
+  assert.ok(row.sources.length>0&&row.sources.every(s=>/^https:\/\//.test(s.url)),'Missing traceable security source: '+row.ticker);
+  assert.ok(report.includes('### '+row.ticker+' — '),'Missing Markdown security: '+row.ticker);
+  assert.ok(html.includes('data-ticker="'+row.ticker+'"'),'Missing static page card: '+row.ticker);
+}
+assert.equal((html.match(/class="news-card"/g)||[]).length,54);
+assert.ok(html.includes('id="newsSearch"')&&html.includes('news-filter')&&html.includes('news-card'));
+assert.ok(html.includes('countercase')||html.includes('Countercase'));
+assert.ok(html.includes('source')&&html.includes('30 Oct, 12:15 MYT'));
+assert.ok(nav.includes('security-news.html'));
+assert.ok(report.includes('research only') || report.includes('research only'.toUpperCase()) || report.includes('research only:'));
+assert.ok(audit.holdings.find(x=>x.ticker==='6742UW').evidenceClass.includes('UNVERIFIED'),'Warrant identity risk obscured');
+for(const ticker of ['XOM','CCJ','NVT']) assert.ok(audit[ticker==='XOM'?'holdings':'watchlist'].find(x=>x.ticker===ticker).evidenceClass==='UPCOMING_RELEASE','Premature Q3 print claimed for '+ticker);
+for(const ticker of ['CTVA','3191.HK','BTC']) assert.ok(audit.watchlist.some(x=>x.ticker===ticker),'Special instrument lost');
+assert.equal(audit.researchProtocol.apiHealth.includes('rate-limited'),true);
+console.log('PASS: 54 security-specific evidence records; 8 unchanged holdings, 46 unchanged watchlist, 54 static cards, source links and full thesis tests.');
