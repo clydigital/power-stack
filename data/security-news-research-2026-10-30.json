@@ -1,0 +1,197 @@
+{
+  "schema": "power-stack/security-news-research/v1",
+  "cutoff": "2026-10-30T12:15:00+08:00",
+  "timezone": "Asia/Kuala_Lumpur",
+  "date": "2026-10-30",
+  "scope": {
+    "holdings": 8,
+    "watchlist": 46,
+    "total": 54,
+    "source": "clydigital/power-stack main, data/holdings-fundamentals.json and data/watchlist.json"
+  },
+  "researchProtocol": {
+    "lookback": "Last 30–60 days for material events, with most recent available issuer results and explicitly dated future releases.",
+    "evidenceClass": "Original filings/IR and official releases preferred. Reuters/industry reporters secondary. Source gaps flagged explicitly. None of this is a contemporaneous executable quote or verified broker account.",
+    "readiness": "News != sufficient valuation; issuer cash, guidance, price, debt, consensus, event timing and broker holdings require separate proof.",
+    "restrictions": "No changes to original holdings, cost, conviction scores, watchlist categories, allocation, trade status or canonical Bluebelly Dossier. No orders or new scheduled tasks.",
+    "apiHealth": "FMP stock-news endpoint rejected, Alpha Vantage news rate-limited, Finnhub newsroom denied 403. Public issuer/filings and dated news searched independently. Exhaustive real-time newswire retrieval not claimed."
+  },
+  "marketContext": {
+    "asOf": "29 Oct US close / 30 Oct pre-US-open Asia",
+    "themes": [
+      "AI buyer capex vs supplier cash collection",
+      "Technology concentration vs equity breadth",
+      "sticky September PCE vs falling Treasuries",
+      "Japanese policy and yen funding",
+      "oil/LNG product spread versus real cargoes",
+      "crypto custody and exchange risk"
+    ],
+    "source": "https://github.com/clydigital/alchemy-live-market-desk/blob/main/lib/bluebelly-regime-verified-crossasset.ts"
+  },
+  "holdings": [
+    {
+      "ticker": "XOM",
+      "eventDate": "2026-10-30",
+      "evidenceClass": "UPCOMING_RELEASE",
+      "headline": "Q3 earnings are scheduled; do not treat estimates as reported results.",
+      "facts": "ExxonMobil's investor relations calendar schedules its Q3 2026 financial results for 30 October US morning, after the 12:15 MYT research cutoff. Brent above $110 in some October contract-month readings is supportive of crude realisations, but refining margins, chemical margins, upstream production and taxes determine consolidated earnings. No verified Q3 result is admitted here.",
+      "impact": "The earnings test can materially change the valuation of the existing XOM position. The investor needs Q3 operating cash, organic capex, dividend/buyback coverage, Guyana and Permian volume, realised crude/gas prices and refining spreads before upgrading the hold.",
+      "countercase": "Strong integrated diversification and long-cycle low-cost barrels could stabilise cash generation even if the oil-risk premium fades. Conversely a high crude quote can coexist with weak products and heavy capex.",
+      "nextProof": "Obtain 30 October issuer release and 10-Q after publication; compare consolidated CFO minus cash capex, segment EPS, dividend+buyback and realised benchmark price with the prior two quarters.",
+      "sources": [
+        {
+          "label": "Primary or most specific evidence",
+          "url": "https://investor.exxonmobil.com/company-information/press-releases/detail/1212/exxonmobil-to-release-third-quarter-2026-financial-results"
+        }
+      ]
+    },
+    {
+      "ticker": "MISC",
+      "eventDate": "2026-10-09",
+      "evidenceClass": "ORIGINAL_COMPANY_DISCLOSURE",
+      "headline": "Long charters improve revenue visibility, but signed terms and build cash still matter.",
+      "facts": "On 7 October the company disclosed letters of award for five newbuild LNG carriers intended for 20-year charters starting in 2030; a separate 9 October announcement described a new 18,700-cbm LNG carrier and 10-year charter scheduled from 2028. These are two distinct vessels/contract families. October press also cited an extension of a possible Yinson privatisation proposal, not a completed acquisition.",
+      "impact": "Contracted shipping backlog is positive for long-run earning visibility and offsets some volatile spot LNG-market exposure, but the short-term share-price call depends on shipbuilding capex, debt/lease structure and current operating tanker/vessel earnings. Do not count non-final LOAs as already earning cash.",
+      "countercase": "Long-tenor charters can finance newbuilds through contracted customer payments; the countercase is capital tie-up, delivery slippage and lower long-term charter returns after shipyard costs.",
+      "nextProof": "Verify final charter party signatures and counterparties, purchase/construction costs, charter rates or contracted margin, financing structure, delivery schedule and FY26 earnings excluding vessel-disposal gains.",
+      "sources": [
+        {
+          "label": "Primary or most specific evidence",
+          "url": "https://cdn.klsescreener.com/v2/announcements/view/11681189"
+        },
+        {
+          "label": "Additional supporting evidence",
+          "url": "https://cdn.klsescreener.com/v2/announcements/view/11681979"
+        },
+        {
+          "label": "Additional supporting evidence",
+          "url": "https://www.miscgroup.com/media/media-releases/misc-group-financial-results-for-the-second-quarter-of-2026"
+        }
+      ]
+    },
+    {
+      "ticker": "HIBISCS",
+      "eventDate": "2026-10-29",
+      "evidenceClass": "ISSUER_IR_PARTIAL",
+      "headline": "FY2026 profits improved; test how much is repeatable at today’s realised oil prices.",
+      "facts": "Hibiscus's investor-relations material and recent FY2026 reports cite profit around RM361 million, up sharply year on year, with a 10-sen annual dividend. The latest 29 October AGM updates are governance communications rather than a new Q3 earnings event. Production volumes, depreciation, depletion and field-level cash costs were not completely reconciled in this sweep.",
+      "impact": "The holding is fundamentally different from refiners or tanker operators: oil and gas selling prices matter, but sustaining mature-field production and cash after development spending matters more. Higher Brent is not proof the production profile or net free cash flow improved.",
+      "countercase": "Existing producing fields may generate cash at attractive realised prices and support distributions. The downside is declining output, well interventions, licensing/tax exposure and rising restoration commitments.",
+      "nextProof": "Read latest September-quarter or AGM presentation: FY26 actual production by basin, realised gas/oil prices, lifting cost/boe, capex, debt, reserves and payout affordability.",
+      "sources": [
+        {
+          "label": "Primary or most specific evidence",
+          "url": "https://ir2.chartnexus.com/hibiscuspetroleum/investor-relations/"
+        }
+      ]
+    },
+    {
+      "ticker": "YTLPOWR",
+      "eventDate": "2026-10-29",
+      "evidenceClass": "ORIGINAL_JV_ANNOUNCEMENT",
+      "headline": "A large Selangor industrial-park partnership is strategic acreage, not proven contracted AI cash.",
+      "facts": "YTL Power, SD Guthrie and Bumi Assets announced a partnership around approximately 1,623 acres in Bukit Kerayong, Selangor. The planned interest split is 35% YTL Power, 30% SD Guthrie and 35% Bumi Assets, with land valued near RM934 million in the venture. The company has also announced Siemens gas-turbine-related power equipment initiatives. These arrangements are not equivalent to signed, financed data-centre tenants or a new consolidated earnings contribution.",
+      "impact": "The company has credible exposure to Malaysian power and industrial development, but significant common-stock and linked-warrant concentration means new project ambitions increase sensitivity to financing, execution and electricity tariff economics. Distinguish property JV equity and utility operating earnings.",
+      "countercase": "Land access and power availability may become scarce strategic assets and attract credible operators. Alternatively construction cost, dilution, project debt and tenants’ willingness to pay could compress equity returns.",
+      "nextProof": "Obtain JV filings, stage-specific capital commitments, tenant offtake, interconnection cost recovery, regulated earnings and current Bursa position value before considering additional capital.",
+      "sources": [
+        {
+          "label": "Primary or most specific evidence",
+          "url": "https://www.sdguthrie.com/index.php/press-releases/guthrie-bumi-assets-and-ytl-power-partner-to-advance-strategic-development-in-selangor"
+        },
+        {
+          "label": "Additional supporting evidence",
+          "url": "https://www.ytlpowerinternational.com/press-releases/"
+        }
+      ]
+    },
+    {
+      "ticker": "6742UW",
+      "eventDate": "2026-10-30",
+      "evidenceClass": "INSTRUMENT_ID_UNVERIFIED",
+      "headline": "Your YTL-linked warrant cannot be underwritten as an ordinary share.",
+      "facts": "PowerStack's broker-ledger alias 6742UW remains unresolved: it is not safely mapped to a current Bursa structured-warrant ISIN, issuer or term sheet. Web results show several distinct YTLPOWR structured call warrants with different strikes, conversion ratios and 2027 expiries, plus the company's separate 2025–28 own-issued warrant; none can safely be treated as 6742UW without confirmation. A stock rise need not rescue an out-of-money, time-decaying warrant.",
+      "impact": "Capital at risk can be 100% of premium with high sensitivity to underlying price, remaining life, implied volatility, exercise terms and market-maker quotes. This warrants verification ahead of all other portfolio news. Do not claim the company’s 2028 ordinary-share-exercisable warrant is the same as an unrelated 2027 structured call.",
+      "countercase": "A correctly identified warrant may offer positive leveraged upside if the share moves enough before expiry. Liquidity, spread widening and accelerated time decay can instead erase the position despite a sound company thesis.",
+      "nextProof": "Match the exact broker contract description, Bursa short name and ISIN, issuer, call/put, exercise price, conversion ratio, adjusted underlying, expiry, issue/market price, bid/ask and held units. Then compute cash-settlement payoff and breakeven.",
+      "sources": [
+        {
+          "label": "Primary or most specific evidence",
+          "url": "https://www.ytlpowerinternational.com/warrantsexercise/"
+        },
+        {
+          "label": "Additional supporting evidence",
+          "url": "https://www.klsescreener.com/v2/announcements/view/11661087"
+        },
+        {
+          "label": "Additional supporting evidence",
+          "url": "https://www.klsescreener.com/v2/announcements/view/11647139"
+        }
+      ]
+    },
+    {
+      "ticker": "TTWO",
+      "eventDate": "2026-08-07",
+      "evidenceClass": "ORIGINAL_PREVIOUS_RESULTS",
+      "headline": "GTA VI launch is approaching; bookings are not the same as cash collected today.",
+      "facts": "Take-Two's first-quarter fiscal 2027 release showed approximately $1.39 billion in net bookings and full-year bookings guidance of $8.0–8.2 billion. The last issuer-verified public launch target used in this audit is 19 November 2026 for Grand Theft Auto VI. Do not assert that it has shipped or estimate full game unit sales before launch.",
+      "impact": "The approaching major product cycle can strengthen the long-run content economics, but the stock's discounted future cash may already anticipate strong day-one sales. Marketing, development expenditure, platform take rates, online engagement and execution/delay risk can all shift the risk/reward. Next reported results matter more than social pre-order rumours.",
+      "countercase": "A record franchise launch and durable online spending could justify very high initial expectations. Another scheduling change, pricing resistance or poor monetisation could create outsized disappointment.",
+      "nextProof": "Check latest official Rockstar/Take-Two launch confirmation, fiscal Q2 actual bookings/adjusted operating income, remaining software costs, preorder disclosure and no-delayed-launch warnings.",
+      "sources": [
+        {
+          "label": "Primary or most specific evidence",
+          "url": "https://www.take2games.com/ir/news/take-two-interactive-software-inc-reports-results-fiscal-first-6"
+        },
+        {
+          "label": "Additional supporting evidence",
+          "url": "https://www.take2games.com/ir/news/rockstar-games-announces-pre-orders-grand-theft-auto-vi"
+        }
+      ]
+    },
+    {
+      "ticker": "TSLA",
+      "eventDate": "2026-10-22",
+      "evidenceClass": "SEC_10Q_VERIFIED",
+      "headline": "The SpaceX possibility adds event risk to an operating-margin and free-cash-flow question.",
+      "facts": "Tesla's Q3 SEC 10-Q reported revenue about $28.05 billion and GAAP operating income about $0.718 billion; operating margin was roughly 2.6%, down sharply year on year. Nine-month cash flow from operations was $14.897 billion against $13.014 billion cash property/equipment spending, yielding simple FCF about $1.883 billion, well below the previous year's comparable simple FCF. Tesla invested roughly $2.002 billion in SpaceX equity separately from cash capex; it also disclosed SpaceX commercial receivables and deferred revenue. Both boards have explored a possible combination through special committees, but no signed merger ratio or closing is established.",
+      "impact": "The company has substantial cash plus securities, but operating profitability and capex payback drive intrinsic returns. Its SpaceX financing and commercial linkages must be treated as disclosed exposures, not proven misconduct or an executed merger. Security pricing at or near $400 needs a separate valuation sensitivity.",
+      "countercase": "Tesla's energy deployments, AI/robotics options and substantial liquidity may support long-duration returns. However, the standalone car margin squeeze, launch spending and potential related-party complexity can hurt shareholders even in a strong tech market.",
+      "nextProof": "Reconcile Q3/YTD margins, CFO versus cash capex and SpaceX settlement; obtain definitive merger legal terms if announced; compare current price with forward earnings/FCF and realistic energy/vehicle unit economics.",
+      "sources": [
+        {
+          "label": "Primary or most specific evidence",
+          "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066775/tsla-20260930.htm"
+        }
+      ]
+    },
+    {
+      "ticker": "DAYANG",
+      "eventDate": "2026-08-26",
+      "evidenceClass": "ORIGINAL_QUARTERLY_RESULTS",
+      "headline": "Weak contract execution makes this an operating-repair story, not merely an oil-price bet.",
+      "facts": "Dayang reported second-quarter 2026 revenue approximately RM161.2 million, compared with RM267.3 million one year earlier; profit attributable to owners fell to approximately RM32.8 million from RM76.6 million. The source is a completed quarterly earnings filing, not a forecast. Recent October ownership or corporate announcements do not by themselves demonstrate restoration of vessel activity, offshore maintenance utilisation or margin.",
+      "impact": "For this existing losing position, a higher Brent future improves customer incentive to spend only after project budgets, backlog conversions and invoice collections follow through. With the profit base markedly lower, do not average down purely on crude prices or an unchanged historical share score.",
+      "countercase": "A temporary contract lull could reverse as Malaysia offshore work orders and customer spending rise; alternatively lower utilisation, wage/vessel cost and working-capital pressure may persist for several quarters.",
+      "nextProof": "Obtain next Bursa quarterly results and latest order-book utilisation, vessel days, receivables, cash/debt, new contract awards and subcontractor costs; reassess whether cash would be better deployed elsewhere.",
+      "sources": [
+        {
+          "label": "Primary or most specific evidence",
+          "url": "https://dayang.listedcompany.com/news.html/id/2625162"
+        }
+      ]
+    }
+  ],
+  "watchlist": [],
+  "coverage": {
+    "fullCount": 0,
+    "originalOrOfficial": 0,
+    "partialOrUnverified": 0
+  },
+  "nextSteps": [
+    "Verify every ticker local listing, earnings release and current quote before repricing security.",
+    "Distinguish historic earnings, today-published figures and future earnings.",
+    "Preserve Bluebelly/Notion research-only distinction and conflicting provider clocks.",
+    "Investigate instrument 6742UW and Rakuten holdings/cash before any trade."
+  ]
+}
