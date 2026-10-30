@@ -12,6 +12,10 @@ on:
       - 'baskets.css'
       - 'data/basket-strategies.json'
       - 'ps-ux.js'
+      - 'security-news.html'
+      - 'data/security-news-research-2026-10-30.json'
+      - 'research/2026-10-30-all-54-securities-news-deep-dive.md'
+      - 'scripts/check-security-news-audit.mjs'
       - 'market-to-portfolio.html'
       - 'data/market-summary.json'
       - 'data/bluebelly-portfolio-bridge-2026-10-30.json'
@@ -41,6 +45,10 @@ on:
       - 'baskets.css'
       - 'data/basket-strategies.json'
       - 'ps-ux.js'
+      - 'security-news.html'
+      - 'data/security-news-research-2026-10-30.json'
+      - 'research/2026-10-30-all-54-securities-news-deep-dive.md'
+      - 'scripts/check-security-news-audit.mjs'
       - 'market-to-portfolio.html'
       - 'data/market-summary.json'
       - 'data/bluebelly-portfolio-bridge-2026-10-30.json'
@@ -89,3 +97,8 @@ jobs:
           node --check ps-ux.js
           node scripts/validate-static-html-js.mjs market-to-portfolio.html
           node scripts/check-bluebelly-portfolio-bridge.mjs
+      - name: Validate 54-security detailed news review
+        run: |
+          node --check ps-ux.js
+          node scripts/validate-static-html-js.mjs security-news.html
+          node scripts/check-security-news-audit.mjs
