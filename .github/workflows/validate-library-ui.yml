@@ -12,6 +12,9 @@ on:
       - 'baskets.css'
       - 'data/basket-strategies.json'
       - 'ps-ux.js'
+      - 'market-to-portfolio.html'
+      - 'data/bluebelly-portfolio-bridge-2026-10-30.json'
+      - 'scripts/check-bluebelly-portfolio-bridge.mjs'
       - 'ps-ux.css'
       - 'holdings.html'
       - 'scripts/check-basket-ui.mjs'
@@ -37,6 +40,9 @@ on:
       - 'baskets.css'
       - 'data/basket-strategies.json'
       - 'ps-ux.js'
+      - 'market-to-portfolio.html'
+      - 'data/bluebelly-portfolio-bridge-2026-10-30.json'
+      - 'scripts/check-bluebelly-portfolio-bridge.mjs'
       - 'ps-ux.css'
       - 'holdings.html'
       - 'scripts/check-basket-ui.mjs'
@@ -76,3 +82,8 @@ jobs:
         run: |
           node --check ps-market-icons.js
           node scripts/check-market-iconography.mjs
+      - name: Validate Bluebelly-to-Power-Stack source-dated decision bridge
+        run: |
+          node --check ps-ux.js
+          node scripts/validate-static-html-js.mjs market-to-portfolio.html
+          node scripts/check-bluebelly-portfolio-bridge.mjs
