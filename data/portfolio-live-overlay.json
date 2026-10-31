@@ -1,8 +1,8 @@
 {
   "contractVersion": "power-stack-portfolio-live-overlay/1",
-  "generatedAt": "2026-10-31T05:38:32.270Z",
-  "liveAsOf": "2026-10-30T19:42:30.847+00:00",
-  "liveSyncedAt": "2026-10-30T22:25:31.163Z",
+  "generatedAt": "2026-10-31T05:51:00.865Z",
+  "liveAsOf": "2026-10-31T02:58:10.773+00:00",
+  "liveSyncedAt": "2026-10-31T05:51:00.753Z",
   "sourceHealth": {
     "dossier": "DEGRADED",
     "marketMonitor": "PARTIAL",
@@ -14,17 +14,17 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "Yields remain firm while credit and volatility have not yet cracked; AI/semiconductor leadership is narrow.",
-    "answer": "Front-end and long real‑yield evidence show a hawkish rates backdrop (2Y 4.61%; 10Y 4.98%; ACM term premium ~0.66%), but canonical credit spread measures show only small 20‑session OAS moves and breadth is concentrated in large caps and semiconductors; transmission into broad credit and volatility is therefore unresolved.",
-    "implication": "Rates are tightening financial conditions, however credit spreads and volatility have not provided canonical confirmation that stress has broadened; narrow AI/semiconductor leadership remains a counterweight.",
-    "whatWouldChangeMind": "Persistent, canonical MOVE and VIX uptick plus sustained IG OAS widening and matched intraday UST/fed‑funds bars would indicate transmission; JGB/Bund long‑end confirmation would support global duration shock."
+    "headline": "US yields are elevated and tightening conditions, but credit/volatility transmission is unresolved",
+    "answer": "Front‑end and real yields are high (2Y 4.56%; 10Y 4.94%; ACM TP ~0.66%), large‑cap breadth is healthy while AI/semis breadth is weak, and canonical IG/HY OAS moves are small — so rates are exerting a tightening impulse but transmission into credit and volatility remains unresolved.",
+    "implication": "Higher real yields and tighter front‑end funding are raising financial‑condition pressure; however narrow equity leadership and muted canonical OAS moves mean broad market stress is not yet confirmed.",
+    "whatWouldChangeMind": "Sustained IG/HY OAS widening and a canonical MOVE/VIX uptick, persistent long‑end real‑yield increases, or clear dealer balance‑sheet stress would convert the tightening impulse into broad market stress."
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "586ba41e-5c31-4f7f-a60d-e2be6b76c4b9",
-    "capturedAt": "2026-10-30T14:41:01.051Z",
-    "itemCount": 1,
-    "linkedHoldingCount": 1
+    "editionId": "645ed9e4-75bd-4a3d-bf1d-bcfd4d4971d0",
+    "capturedAt": "2026-10-31T02:47:26.794Z",
+    "itemCount": 0,
+    "linkedHoldingCount": 0
   },
   "currentSignals": {
     "rates": {
@@ -48,47 +48,47 @@
           "direction": "UNRESOLVED",
           "confirmation": "UNRESOLVED",
           "detail": "No current deterministic policy impulse or directional next-meeting repricing is present in the bounded rate context.",
-          "asOf": "2026-10-30T19:42:30.847Z"
+          "asOf": "2026-10-31T02:58:10.773Z"
         },
         {
           "key": "RATES_FRONT_END",
           "label": "Front-end pricing",
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
-          "detail": "US 2Y 4.61%; 5D n/a; vs effective fed funds +73.0 bp.",
-          "asOf": "2026-10-30T19:42:30.847Z"
+          "detail": "US 2Y 4.56%; 5D n/a; vs effective fed funds +68.0 bp.",
+          "asOf": "2026-10-31T02:58:10.773Z"
         },
         {
           "key": "RATES_REAL_YIELDS",
           "label": "10Y real yield",
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
-          "detail": "10Y real yield 2.67%; 5D n/a.",
-          "asOf": "2026-10-30T19:42:30.847Z"
+          "detail": "10Y real yield 2.63%; 5D n/a.",
+          "asOf": "2026-10-31T02:58:10.773Z"
         },
         {
           "key": "RATES_BREAKEVENS",
           "label": "10Y inflation breakeven",
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
-          "detail": "10Y breakeven 2.35%; 5D n/a.",
-          "asOf": "2026-10-30T19:42:30.847Z"
+          "detail": "10Y breakeven 2.34%; 5D n/a.",
+          "asOf": "2026-10-31T02:58:10.773Z"
         },
         {
           "key": "RATES_LONG_END",
           "label": "Long-end nominal yields",
           "direction": "NEUTRAL",
           "confirmation": "UNRESOLVED",
-          "detail": "US 10Y 4.98%; 5D n/a; US 20Y 5.35%; 5D n/a; US 30Y 5.32%; 5D n/a.",
-          "asOf": "2026-10-30T19:42:30.847Z"
+          "detail": "US 10Y 4.94%; 5D n/a; US 20Y 5.34%; 5D n/a; US 30Y 5.31%; 5D n/a.",
+          "asOf": "2026-10-31T02:58:10.773Z"
         },
         {
           "key": "BILLS",
           "label": "Treasury bills / front-end cash",
           "direction": "TIGHTER",
           "confirmation": "CONFIRMING",
-          "detail": "3M 4.18%; 6M 4.28%; average vs EFFR +35.0 bp.",
-          "asOf": "2026-10-29"
+          "detail": "3M 4.16%; 6M 4.25%; average vs EFFR +32.5 bp.",
+          "asOf": "2026-10-30"
         }
       ]
     },
@@ -124,7 +124,7 @@
     "physicalEnergy": {
       "status": "UNRESOLVED",
       "observed": false,
-      "detail": "News context exists around policy/energy geopolitics but canonical WTI/Brent final settles and product evidence are missing.",
+      "detail": "No canonical crude curve/back‑product canonical evidence in packet; news context exists on policy risks but physical delivery and curve confirmations are missing.",
       "evidenceRefs": []
     }
   },
@@ -914,26 +914,6 @@
       "name": "Tesla",
       "fundamentalScore": 58,
       "fundamentalGrade": "C",
-      "motionContext": [
-        {
-          "id": "61b11d63-1278-4687-8612-47903d5de530",
-          "headline": "Federal Reserve issues FOMC statement",
-          "category": "MACRO",
-          "verificationState": "VERIFIED",
-          "occurredAt": "2026-10-28T18:00:00.000Z",
-          "whyInteresting": "Original issuer/regulator announcement. A related price move or market impact has not been established.",
-          "bigPictureBridge": "Fresh rates / funding evidence → sovereign yields and financing costs → Cost of Capital regime",
-          "nextTest": "Original official RSS publication clock and directly linked same-host press-release HTML checked. Headline describes the announcement only, not its financial effect.",
-          "storyId": "952d443f-dbbf-4a8a-a1e4-44d4a9e72fe4",
-          "storyTitle": "Weak jobs meet expensive oil; CPI becomes the tie-breaker",
-          "regimeSlug": "global-cost-of-capital",
-          "regimeLabel": "US Rate Regime",
-          "sourceName": "Federal Reserve Board",
-          "sourceUrl": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
-          "materiality": 86,
-          "relevance": 86
-        }
-      ],
       "profileStatus": "MAPPED",
       "inheritedFrom": null,
       "profileConfidence": 0.84,
@@ -1236,7 +1216,7 @@
       "importance": "HIGH",
       "divergence": "PARTIAL",
       "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-      "actual": "Semiconductor ETF and select names remain strong while AI‑basket breadth lags.",
+      "actual": "Semiconductors underperformed broader Nasdaq (SMH vs QQQ −9.26pp over 20 sessions); individual names (MRVL, AMD) show sharp moves.",
       "affectedHoldings": [
         "TSLA",
         "TTWO",
@@ -1249,12 +1229,12 @@
         "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
       ],
       "evidenceFor": [
-        "Leadership is narrow; issuer cashflow evidence is mixed so durable capex is unresolved.",
-        "Breadth is mixed and concentrated, supporting narrow leadership interpretation.",
-        "Nasdaq daily move -1.38 with bias MIXED."
+        "Leadership is concentrated and AI/semis breadth is weak, raising issuer‑level capex sustainability questions.",
+        "Breadth divergence supports a narrow leadership regime rather than a broad risk‑on.",
+        "Nasdaq daily move -1.38 with bias BEARISH."
       ],
       "evidenceAgainst": [
-        "Policy and real‑yield forces are exerting hawkish pressure; long‑end decomposition unresolved."
+        "Front‑end hawkishness and elevated real yields are raising financing costs; long‑end decomposition into real vs breakeven is unresolved."
       ],
       "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
       "confidence": "HIGH",
@@ -1265,7 +1245,7 @@
       "importance": "HIGH",
       "divergence": "YES",
       "expected": "A persistent long-end tightening shock should eventually raise financing stress and widen credit spreads.",
-      "actual": "HY and IG 20‑session OAS changes are small diagnostic moves.",
+      "actual": "Canonical 20‑session OAS changes are small (IG +3bp; HY +2bp), indicating limited spread repricing over that window.",
       "affectedHoldings": [
         "TSLA",
         "TTWO",
@@ -1279,11 +1259,11 @@
         "Credit may simply be lagging rates and could become the next confirmation leg."
       ],
       "evidenceFor": [
-        "Credit spreads so far show limited broad widening; transmission remains unresolved.",
+        "Credit has not yet materially repriced wider in canonical measures despite higher yields.",
         "Funding/credit composite is currently NEUTRAL."
       ],
       "evidenceAgainst": [
-        "Rates are tightening financial conditions, however credit spreads and volatility have not provided canonical confirmation that stress has broadened; narrow AI/semiconductor leadership remains a counterweight."
+        "Higher real yields and tighter front‑end funding are raising financial‑condition pressure; however narrow equity leadership and muted canonical OAS moves mean broad market stress is not yet confirmed."
       ],
       "leadingHypothesis": "The shock is rates-led, not yet systemic; keep dry powder because credit remains the key confirmation risk.",
       "confidence": "HIGH",
@@ -1310,24 +1290,11 @@
       "TTWO",
       "TSLA"
     ],
-    "motionLinked": [
-      "TSLA"
-    ],
     "researchGaps": []
   },
-  "divergences": [
-    {
-      "id": "copper-china",
-      "title": "Copper is decoupling from China equities",
-      "detail": "Copper proxy 3.3% vs China A-shares -0.2%.",
-      "assets": [
-        "copper",
-        "csi300"
-      ]
-    }
-  ],
+  "divergences": [],
   "liveResearchGaps": [
-    "MARKET_MONITORING: Canonical MOVE and VIX series and intraday UST/fed‑funds bars are missing, blocking verification whether yield moves transmitted into volatility and credit.",
+    "MARKET_DATA: Canonical MOVE and VIX time series and intraday UST/fed‑funds bars are not present; this blocks resolving whether yields are transmitting into volatility and credit.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence."
   ],
   "guardrails": [

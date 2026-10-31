@@ -1,15 +1,15 @@
 {
   "contractVersion": "power-sweep/1",
-  "generatedAt": "2026-10-31T05:38:32.335Z",
-  "asOf": "2026-10-30T19:42:30.847+00:00",
+  "generatedAt": "2026-10-31T05:51:00.932Z",
+  "asOf": "2026-10-31T02:58:10.773+00:00",
   "blocked": false,
   "purpose": "Bounded Live-first PowerSweep plan for portfolio research and capital-allocation decisions.",
   "inputHealth": {
     "liveDesk": {
       "contractVersion": "power-stack-live-desk-canonical/2",
       "expectedContract": "power-stack-live-desk-canonical/2",
-      "asOf": "2026-10-30T19:42:30.847+00:00",
-      "syncedAt": "2026-10-30T22:25:31.163Z",
+      "asOf": "2026-10-31T02:58:10.773+00:00",
+      "syncedAt": "2026-10-31T05:51:00.753Z",
       "sourceStatus": "degraded_latest",
       "sourceHealth": {
         "dossier": "DEGRADED",
@@ -18,7 +18,7 @@
         "nyFedPrimaryDealers": "OK",
         "treasurySupply": "UNRESOLVED"
       },
-      "ageHours": 2.7,
+      "ageHours": 2.9,
       "reasons": [
         "UPSTREAM_EVIDENCE_PARTIAL"
       ],
@@ -27,7 +27,7 @@
     "portfolioOverlay": {
       "contractVersion": "power-stack-portfolio-live-overlay/1",
       "expectedContract": "power-stack-portfolio-live-overlay/1",
-      "generatedAt": "2026-10-31T05:38:32.270Z",
+      "generatedAt": "2026-10-31T05:51:00.865Z",
       "status": "OK"
     },
     "holdingTape": {
@@ -46,8 +46,8 @@
   },
   "regime": {
     "family": "RATES_LED_TIGHTENING",
-    "headline": "Yields remain firm while credit and volatility have not yet cracked; AI/semiconductor leadership is narrow.",
-    "implication": "Rates are tightening financial conditions, however credit spreads and volatility have not provided canonical confirmation that stress has broadened; narrow AI/semiconductor leadership remains a counterweight.",
+    "headline": "US yields are elevated and tightening conditions, but credit/volatility transmission is unresolved",
+    "implication": "Higher real yields and tighter front‑end funding are raising financial‑condition pressure; however narrow equity leadership and muted canonical OAS moves mean broad market stress is not yet confirmed.",
     "monetarySummary": "Rate baseline HAWKISH; 3 confirming, 0 contradicting, 8 unresolved/neutral monetary-market layers."
   },
   "queueCounts": {
@@ -60,48 +60,10 @@
   },
   "liveMarketMotion": {
     "contractVersion": "market-motion-edition/v1",
-    "editionId": "586ba41e-5c31-4f7f-a60d-e2be6b76c4b9",
-    "capturedAt": "2026-10-30T14:41:01.051Z",
-    "itemCount": 1,
-    "items": [
-      {
-        "id": "61b11d63-1278-4687-8612-47903d5de530",
-        "motionKey": "event:fomc:reserve",
-        "versionNumber": 6,
-        "headline": "Federal Reserve issues FOMC statement",
-        "category": "MACRO",
-        "verificationState": "VERIFIED",
-        "lifecycleState": "PROMOTED",
-        "whatHappened": "The Committee decided to maintain the target range for the federal funds rate at 3-3/4 to 4 percent, in support of the Federal Reserve's dual mandate.",
-        "marketReaction": null,
-        "whyInteresting": "Original issuer/regulator announcement. A related price move or market impact has not been established.",
-        "bigPictureBridge": "Fresh rates / funding evidence → sovereign yields and financing costs → Cost of Capital regime",
-        "nextTest": "Original official RSS publication clock and directly linked same-host press-release HTML checked. Headline describes the announcement only, not its financial effect.",
-        "tickers": [
-          "TSLA"
-        ],
-        "sourceName": "Federal Reserve Board",
-        "sourceUrl": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
-        "materiality": 86,
-        "relevance": 86,
-        "novelty": 86,
-        "occurredAt": "2026-10-28T18:00:00.000Z",
-        "storyId": "952d443f-dbbf-4a8a-a1e4-44d4a9e72fe4",
-        "storySlug": "fed-rate-repricing",
-        "storyTitle": "Weak jobs meet expensive oil; CPI becomes the tie-breaker",
-        "regimeSlug": "global-cost-of-capital",
-        "regimeLabel": "US Rate Regime",
-        "attentionTier": "PRIMARY",
-        "attentionScore": 89,
-        "writingPotential": "MEDIUM",
-        "attentionReasons": [
-          "high materiality",
-          "high market relevance",
-          "primary/official verification",
-          "asset/ticker linked"
-        ]
-      }
-    ]
+    "editionId": "645ed9e4-75bd-4a3d-bf1d-bcfd4d4971d0",
+    "capturedAt": "2026-10-31T02:47:26.794Z",
+    "itemCount": 0,
+    "items": []
   },
   "portfolioTriage": {
     "tapeDivergences": [
@@ -122,9 +84,6 @@
       "TSLA"
     ],
     "mixed": [],
-    "liveMotionLinkedHoldings": [
-      "TSLA"
-    ],
     "hiddenConcentration": [
       {
         "id": "ytl-linked",
@@ -189,7 +148,7 @@
         "importance": "HIGH",
         "divergence": "PARTIAL",
         "expected": "A tighter real/long-yield regime should normally pressure long-duration growth and high-multiple technology.",
-        "actual": "Semiconductor ETF and select names remain strong while AI‑basket breadth lags.",
+        "actual": "Semiconductors underperformed broader Nasdaq (SMH vs QQQ −9.26pp over 20 sessions); individual names (MRVL, AMD) show sharp moves.",
         "affectedHoldings": [
           "TSLA",
           "TTWO",
@@ -202,12 +161,12 @@
           "Positioning or short-covering may be amplifying resilience, but the current PS/Live contract does not yet verify that directly."
         ],
         "evidenceFor": [
-          "Leadership is narrow; issuer cashflow evidence is mixed so durable capex is unresolved.",
-          "Breadth is mixed and concentrated, supporting narrow leadership interpretation.",
-          "Nasdaq daily move -1.38 with bias MIXED."
+          "Leadership is concentrated and AI/semis breadth is weak, raising issuer‑level capex sustainability questions.",
+          "Breadth divergence supports a narrow leadership regime rather than a broad risk‑on.",
+          "Nasdaq daily move -1.38 with bias BEARISH."
         ],
         "evidenceAgainst": [
-          "Policy and real‑yield forces are exerting hawkish pressure; long‑end decomposition unresolved."
+          "Front‑end hawkishness and elevated real yields are raising financing costs; long‑end decomposition into real vs breakeven is unresolved."
         ],
         "leadingHypothesis": "Narrow leadership is masking the rate headwind rather than proving that duration sensitivity has disappeared.",
         "confidence": "HIGH",
@@ -218,7 +177,7 @@
         "importance": "HIGH",
         "divergence": "YES",
         "expected": "A persistent long-end tightening shock should eventually raise financing stress and widen credit spreads.",
-        "actual": "HY and IG 20‑session OAS changes are small diagnostic moves.",
+        "actual": "Canonical 20‑session OAS changes are small (IG +3bp; HY +2bp), indicating limited spread repricing over that window.",
         "affectedHoldings": [
           "TSLA",
           "TTWO",
@@ -232,11 +191,11 @@
           "Credit may simply be lagging rates and could become the next confirmation leg."
         ],
         "evidenceFor": [
-          "Credit spreads so far show limited broad widening; transmission remains unresolved.",
+          "Credit has not yet materially repriced wider in canonical measures despite higher yields.",
           "Funding/credit composite is currently NEUTRAL."
         ],
         "evidenceAgainst": [
-          "Rates are tightening financial conditions, however credit spreads and volatility have not provided canonical confirmation that stress has broadened; narrow AI/semiconductor leadership remains a counterweight."
+          "Higher real yields and tighter front‑end funding are raising financial‑condition pressure; however narrow equity leadership and muted canonical OAS moves mean broad market stress is not yet confirmed."
         ],
         "leadingHypothesis": "The shock is rates-led, not yet systemic; keep dry powder because credit remains the key confirmation risk.",
         "confidence": "HIGH",
@@ -519,25 +478,25 @@
   "liveRadar": [
     {
       "ticker": "AMZN",
-      "companyName": "Amazon.com",
-      "whyRelevant": "Issuer Q3 filing shows large operating cashflow and is central to AI capex funding debate.",
-      "researchQuestion": "Is Amazon's operating cashflow sufficient to fund AI capex without external financing?",
+      "companyName": "Amazon.com, Inc.",
+      "whyRelevant": "Issuer SEC shows large cash PP&E leading to negative simple FCF; central to AI capex durability question.",
+      "researchQuestion": "Will AMZN CFO minus cash PP&E recover next quarter or force capex guidance change?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     },
     {
-      "ticker": "GOOGL",
-      "companyName": "Alphabet Inc.",
-      "whyRelevant": "SEC‑derived cashflow shows negative simple FCF this quarter, relevant to capex durability.",
-      "researchQuestion": "Does Alphabet's cashflow pattern imply sustained external financing needs for AI capex?",
+      "ticker": "AMD",
+      "companyName": "Advanced Micro Devices, Inc.",
+      "whyRelevant": "Semiconductor price action is a barometer for AI/infrastructure demand and breadth.",
+      "researchQuestion": "Does AMD pricing and guidance align with broader semis order flow and capex expectations?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     },
     {
-      "ticker": "CRWV",
-      "companyName": "CoreWeave",
-      "whyRelevant": "Representative AI compute operator and market proxy for infrastructure demand and sentiment.",
-      "researchQuestion": "Are compute‑operator share moves reflecting demand or idiosyncratic positioning?",
+      "ticker": "MRVL",
+      "companyName": "Marvell Technology",
+      "whyRelevant": "Large intraday and 5‑day moves indicate issuer‑specific stress within AI supply chain.",
+      "researchQuestion": "Are MRVL moves driven by supply‑chain/earnings news or by broader semis repricing?",
       "status": "DISCOVERY_ONLY",
       "rule": "May enter PowerSweep only if independent company evidence or portfolio relevance justifies consuming research budget."
     }
@@ -576,7 +535,7 @@
       "overlayState": "HEADWIND",
       "reaction": "CONFIRMS",
       "action": "TRIM REVIEW",
-      "reason": "Fresh promoted Live Motion is linked, but this holding remains outside the capped deep-dive queue unless budget or priority changes."
+      "reason": "Tape currently confirms the market overlay; no extra research budget unless company evidence changes."
     }
   ],
   "newCapitalPriority": [
@@ -607,13 +566,13 @@
     }
   ],
   "researchGaps": [
-    "MARKET_MONITORING: Canonical MOVE and VIX series and intraday UST/fed‑funds bars are missing, blocking verification whether yield moves transmitted into volatility and credit.",
+    "MARKET_DATA: Canonical MOVE and VIX time series and intraday UST/fed‑funds bars are not present; this blocks resolving whether yields are transmitting into volatility and credit.",
     "Treasury supply/auction state is not yet resolved from verified Live rate evidence.",
     "Holding tape unresolved: 6742UW"
   ],
   "gapReconciliation": {
     "contractVersion": "power-stack-gap-reconciliation/1",
-    "sourceAsOf": "2026-10-30T19:42:30.847+00:00",
+    "sourceAsOf": "2026-10-31T02:58:10.773+00:00",
     "sourceStatus": "degraded_latest",
     "owner": "Power Stack is read-only; Live owns all macro/rates evidence",
     "resolvedByReconciliation": 0,
@@ -621,7 +580,7 @@
     "gaps": [
       {
         "id": "INTRADAY_RATES",
-        "reportedGap": "MARKET_MONITORING: Canonical MOVE and VIX series and intraday UST/fed‑funds bars are missing, blocking verification whether yield moves transmitted into volatility and credit.",
+        "reportedGap": "MARKET_DATA: Canonical MOVE and VIX time series and intraday UST/fed‑funds bars are not present; this blocks resolving whether yields are transmitting into volatility and credit.",
         "owner": "LIVE_DESK",
         "state": "REQUIRES_VALIDATED_INTRADAY_FEEDS",
         "presentInfrastructure": [
